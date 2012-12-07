@@ -33,3 +33,7 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Compiled Script    #
+######################
+*.dso
