@@ -3200,17 +3200,21 @@ function Wt_LauncherDropdown::onSelect(%this)
 /// </summary>
 function Wt_ProjectileDropdown::onSelect(%this)
 {
-    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized || $RefreshInProgress)
+    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized || $RefreshInProgress || %this.ignoreSelection)
         return;
-
+    echo(" @@@ selection: " @ %this.getSelected());
     for ( %i = 1; %i < 6; %i++ )
     {
-        %dropdown = "Wt_Projectile" @ %index @ "Dropdown";
+        %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
         if ( %dropdown.getName() $= %this.getName() )
             continue;
         %selected = %this.getSelected();
         if ( %selected == %dropdown.getSelected() && %selected > 0 )
+        {
+            %this.ignoreSelection = true;
             %this.setSelected(0);
+            %this.ignoreSelection = false;
+        }
     }
 
     if ( %this.getSelected() > 1 )
