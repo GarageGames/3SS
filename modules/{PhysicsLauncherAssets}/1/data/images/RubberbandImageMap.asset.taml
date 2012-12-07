@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="RubberbandImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Vine" />

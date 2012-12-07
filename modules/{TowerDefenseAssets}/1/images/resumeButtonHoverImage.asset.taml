@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="resumeButtonHoverImage"
+    AssetCategory="gui"
+    imageFile="@assetFile=#resumeButtonHover.png" />

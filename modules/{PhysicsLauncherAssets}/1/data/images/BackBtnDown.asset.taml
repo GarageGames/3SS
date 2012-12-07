@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="BackBtnDownImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#BackBtnDown.png" />

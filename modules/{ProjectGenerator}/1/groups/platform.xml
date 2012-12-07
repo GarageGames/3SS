@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="platform">
+	<EngineSourceDirectory name="menus" includeChildren="1"/>
+	<EngineSourceDirectory name="nativeDialogs" includeChildren="1"/>
+	<EngineSourceDirectory name="threads" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

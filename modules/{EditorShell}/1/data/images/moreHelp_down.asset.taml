@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="moreHelp_downImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#moreHelp_down.png" />

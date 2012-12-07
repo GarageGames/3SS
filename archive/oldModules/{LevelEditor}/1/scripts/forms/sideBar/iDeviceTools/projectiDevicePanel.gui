@@ -1,0 +1,228 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(ProjectiDevicePanel) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiTransparentProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "190 230";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiControl() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "20 0";
+      Extent = "177 225";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      tooltipprofile = "GuiDefaultProfile";
+      hovertime = "1000";
+
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "111 200";
+         Extent = "58 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "ProjectiDeviceSettings::setiOSOptions();";
+         hovertime = "1000";
+         text = "Apply";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "11 15";
+         Extent = "98 17";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Device Settings";
+         maxLength = "1024";
+      };
+   };
+   new GuiControl() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "25 33";
+      Extent = "164 160";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+
+      new GuiPopUpMenuCtrl(ProjectiDevicePanelDeviceType) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiPopUpMenuProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 38";
+         Extent = "151 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "iPhone / iPod Touch";
+         maxLength = "1024";
+         maxPopupHeight = "200";
+         sbUsesNAColor = "0";
+         reverseTextList = "0";
+         bitmapBounds = "16 16";
+         Command = "ProjectiDevicePanelDeviceType.onChanged();";
+         
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "7 63";
+         Extent = "110 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Screen Orientation";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "7 20";
+         Extent = "82 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Target Platform";
+         maxLength = "1024";
+      };
+      new GuiPopUpMenuCtrl(ProjectiDevicePanelScreenOrientation) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiPopUpMenuProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 79";
+         Extent = "151 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Landscape";
+         maxLength = "1024";
+         maxPopupHeight = "200";
+         sbUsesNAColor = "0";
+         reverseTextList = "0";
+         bitmapBounds = "16 16";
+         Command = "ProjectiDevicePanelScreenOrientation.onChanged();";
+      };
+      new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableOrientation) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiCheckBoxProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "6 110";
+         Extent = "145 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         tooltipprofile = "GuiDefaultProfile";
+         ToolTip = "Allow orientation change of view when device is rotated";
+         hovertime = "1000";
+         text = "Enable rotation";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         useInactiveState = "0";
+      };
+      new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableAutorotate) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiCheckBoxProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "6 125";
+         Extent = "145 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         tooltipprofile = "GuiDefaultProfile";
+         ToolTip = "Allow rotation to landscape mode.";
+         hovertime = "1000";
+         text = "Allow auto-rotation";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         useInactiveState = "0";
+      };
+      /*new GuiPopUpMenuCtrl(ProjectiDevicePanelScreenResolution) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiPopUpMenuProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "54 115";
+         Extent = "102 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Full (1024x768)";
+         maxLength = "1024";
+         maxPopupHeight = "200";
+         sbUsesNAColor = "0";
+         reverseTextList = "0";
+         bitmapBounds = "16 16";
+      };
+      new GuiTextCtrl(ProjectiDevicePanelScreenResolutionLabel) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "105 99";
+         Extent = "52 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Resolution";
+         maxLength = "1024";
+      };*/
+   };
+};
+//--- OBJECT WRITE END ---

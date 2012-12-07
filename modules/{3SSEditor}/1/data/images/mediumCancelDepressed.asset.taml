@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="mediumCancelDepressed"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#mediumCancelDepressed.png" />

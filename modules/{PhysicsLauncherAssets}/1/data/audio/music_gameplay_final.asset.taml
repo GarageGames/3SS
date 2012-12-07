@@ -1,0 +1,6 @@
+<AudioAsset
+    AssetName="music_gameplay_finalSound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#music_gameplay_final.wav"
+    VolumeChannel="1"
+    Looping="1" />

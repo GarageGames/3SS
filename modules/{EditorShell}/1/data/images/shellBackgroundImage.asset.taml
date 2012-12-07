@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="shellBackgroundImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#shellBackground.png" />

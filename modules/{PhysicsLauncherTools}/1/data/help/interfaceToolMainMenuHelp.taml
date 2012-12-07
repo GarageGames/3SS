@@ -1,0 +1,18 @@
+<SimSet
+    Name="InterfaceToolMainMenuHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Put some time and effort into the graphics for your Main Menu page. Every single person who plays your game will see this page every time they open the game." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Details like the quality of your button images make a big difference in the perception players will have of your game." />
+    <ScriptObject
+        Name="Tip2"
+        Text="Adding additional images for the Up, Over, Down, and Disabled states takes some extra work but the quality of the end results is worth it." />
+    <ScriptObject
+        Name="Tip3"
+        Text="The graphics you use for the Main Menu page will set the tone for your overall game theme." />
+    <ScriptObject
+        Name="Tip4"
+        Text="Unchecking the Include Credits checkbox will make the Credits tab unavailable." />
+</SimSet>

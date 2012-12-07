@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{FontEditor}"
+	VersionId="1"
+	Description="Font Editor"
+	Group="oldTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	ScopeSet="FontEditorSet"
+	CreateFunction="initializeFontEditor"
+	DestroyFunction="destroyFontEditor"
+	/>
+

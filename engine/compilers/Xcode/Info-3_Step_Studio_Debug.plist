@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>it2dproj</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>t2dproj.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>iTorque 2D Project</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>****</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>3StepStudio_Debug</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Copyright GarageGames, LLC 2012</string>
+	<key>CFBundleIconFile</key>
+	<string>torque2d.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.garagegames.threeStepStudio</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>3StepStudio_Debug</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>Copyright GarageGames.com 2000 - 2012 All Rights Reserved.</string>
+	<key>CFBundleSignature</key>
+	<string>GG2d</string>
+	<key>CFBundleVersion</key>
+	<string>1.5</string>
+</dict>
+</plist>

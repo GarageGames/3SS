@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="penetrationCardImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/penetrationCard" />

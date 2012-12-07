@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{3SSCollisionEditor}"
+	VersionId="1"
+	Description="3 Step Studio Collision Editor"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	ScopeSet="3SSCollisionEditorSet"
+	CreateFunction="initialize3SSCollisionEditor"
+	DestroyFunction="destroy3SSCollisionEditor"
+	DeclaredAssetManifest="^{3SSCollisionEditor}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^3SSCollisionEditor/ReferencedAssets.manifest.taml" />

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="loginButtonImage"
+    AssetCategory="gui"
+	AssetInternal="1"
+    imageFile="@assetFile=#loginbutton.png" />

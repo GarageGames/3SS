@@ -1,0 +1,3 @@
+find ..\engine\source -name "*.cc" -exec sh -c 'echo >> {}' \; 
+find ..\engine\source -name "*.cpp" -exec sh -c 'echo >> {}' \;
+find ..\engine\source -name "*.h" -exec sh -c 'echo >> {}' \; 

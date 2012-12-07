@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="Rules_OverlaySprite"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Rules_Overlay"
+    FilterMode="SMOOTH" />

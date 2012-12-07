@@ -1,0 +1,606 @@
+r59943
+- Updated binary builds for CoreUnstable
+---------------------
+r59942
+- Merged all the fixes and changes from trunk into CoreUnstable. 
+---------------------
+r59533
+MMGCCORE-117: Fixed cell width/height causing issues on preview simply by resetting them to zero (auto calculation) when changing cell columns/rows.
+---------------------
+r59531
+MMGDCORE-116: Preview sounds now stop playing when exiting the sound importer.
+---------------------
+r59387
+- Removed hard reference to ITGB directory
+---------------------
+r59386
+- Fixing bad paths for file and lib references. They were pointing to CoreUnstable.
+---------------------
+r59372
+- Removed all spaces from 3 Step Studio binaries - Changed Xcode runtime target name from iT2DGame to 3StepStudioGame, iT2DGameDebug to 3StepStudioGameDebug
+---------------------
+r59361
+- Integrated Matt's latest art changes to the Template Selector.
+---------------------
+r59340
+- Changed 3 Step Studio Projects to 3StepStudioProjects. The spaces were interfering with certain operations on OS X.
+---------------------
+r59337
+- Updated editor script responsible for saving flags to Xcode config files. It now points to 3StepStudio, instead of iTorque2D
+---------------------
+r59336
+- Flipped the switch that causes the editor to open the Xcode_iOS project (binary).
+---------------------
+r59334
+- Updated XCode_iOS project to be 3StepStudio instead of iTorque
+---------------------
+r59333
+- Updated Xcode projects in trunk to use 3 Step Studio instead of iTorque
+---------------------
+r59331
+- Updated Xcode builds for editor and runtime to use 3SS references
+---------------------
+r59330
+- Updated the scripts to look for 3StepStudioGame when running/testing from the editor.
+---------------------
+r59327
+- Merged some appearance fixes from trunk
+---------------------
+r59319
+- Modified template tools panel to not use stacks or rollouts. - Started process of removing all "MMGD" references. WIP - Started process of renaming as many public facing references to Torque and iTorque to 3 Step Studio. WIP
+---------------------
+r59293
+- Disabled ogg selection in the Sound Editor. This resolves the crash reported in MMGDCORE-104
+---------------------
+r59292
+- Removed font tab from Asset Library
+---------------------
+r59250
+- Merged some fixes and general improvements from trunk to CoreUnstable
+---------------------
+r59224
+- Merged skinning changes from trunk.
+---------------------
+r59219
+- Fixed the various audio file saving issues in the Sound Editor - Cleaned up some console spam - Updated binary
+---------------------
+r59190
+- Changed the prefs that are saved out for the editor. It should no longer save $pref::video::fullscreen. That's for a game project only. The editor uses $pref::T2D::fullscreen.
+---------------------
+r59183
+- Fixed issue with editor being forced into fullscreen if the last project it saved had fullscreen turned on.
+---------------------
+r59166
+- Fixed issue with the editor being forced into full screen if $pref::video::fullscreen had been previously set on the last project it saved. Still need to fix this on OS X.
+---------------------
+r59155
+- Added VS2010 and Xcode projects that can be used to build executables for tgb/templates/commonFiles. We can use these to update binaries for new projects and nightly builds (previously committed to trunk). 
+---------------------
+r59132
+- Brought over skinning changes from trunk.
+---------------------
+r59130
+- WIP shell script that will update Xcode projects' file references to point to their installed directory, rather than a relative directory.
+---------------------
+r59116
+- Fix a lot of variable names and logic errors that were preventing the Xcode_iPhone project from updating its file references
+---------------------
+r59114
+- Set headers search path to use the Xcode config variable provided by the editor
+---------------------
+r59103
+- Reverting further back to fix Xcode_iPhone project for new games
+---------------------
+r59101
+- Reverted my changes that broke the Xcode projects
+---------------------
+r59099
+- Changed the Xcode config file to point to engine, instead of engine/source. This makes the variable reusable for lib locations as well - Updated the Xcode_iOS and Xcode_iPhone projects create for new games
+---------------------
+r59097
+- Removed file references for Dictionary and Namespace
+---------------------
+r59094
+- Merged skinning changes from trunk to CoreUnstable - Fixed syntax error in TowerDefense template profiles.ed.cs - The editor now updates Xcode config files to point to the headers directory, which will allow for compiling projects outside...
+---------------------
+r59049
+- Forcing a save of the configuration when publishing.
+---------------------
+r59040
+- Updated binary project with latest source changes
+---------------------
+r59039
+- Updated binary libs with latest source changes
+---------------------
+r59033
+- Fixed fullscreen crash issue.
+---------------------
+r59017
+- Re-implemented the $pref::Video::fullscreen variable. This will only be used on Windows and OS X. If set to true, your game will run in full screen - Finished publishing code for Windows and OS X (including full screen toggling) - Merged ...
+---------------------
+r58964
+- Got the iOS publishing option disabled on Windows. Still need to test on a Mac without Xcode.
+---------------------
+r58963
+- Got the Publisher to spit out a Mac "build", which is the same as the Windows build except it is copying a .app instead of the .exe.
+---------------------
+r58962
+- New projects will have their executables named based on what the user supplies. There will not be an iTorque2DGame.exe or iTorque2DGame.app.  - The Publisher is successfully packaging and spitting out a Windows build (no zip yet).
+---------------------
+r58947
+- Brought over interface skin changes from trunk
+---------------------
+r58943
+- Converted the list of platforms to three separate GUIBitmapButtonCtrls. Each has its own four bitmap images for the separate states (normal, depressed, hilight and inactive)
+---------------------
+r58936
+- Updated Publisher GUI to look like the mockup - Added an ::onWake call to ProjectBuilderGui
+---------------------
+r58922
+- Added first iteration of the project builder, which will be used for publishing a user's game. - Deleted old scriptCompiler files.
+---------------------
+r58882
+- Fixed issue with level datablocks getting borked when saving from a template tool. There was a bug with the LDEonApply() function.
+---------------------
+r58856
+- Added script files for New Game Page
+---------------------
+r58853
+- Fixed issue with the stock level not loading up on first run - Fixed issue with camera switching to 480x320 for no reason
+---------------------
+r58848
+- Ported PUAP changes to new project files
+---------------------
+r58823
+- Added temporary preview images to the editor art
+---------------------
+r58821
+- Reimplemented Cell Width and Cell Height into the Sprite Sheet Tool
+---------------------
+r58806
+- Changed Start Page menu option to go to the new Main Start Page
+---------------------
+r58805
+- Updated commonFiles binary with latest source changes
+---------------------
+r58798
+- Got the back button to work for the New Project Page
+---------------------
+r58797
+- Got project creation with a template working - Got the preview image for new project creation showing up
+---------------------
+r58775
+- Hooked up new project creation in the Template Selector (still uses old GUI, but the creation works)
+---------------------
+r58774
+- Added the ability to open an existing project from the Template Selector's Games Manager Page.
+---------------------
+r58773
+- Made the new Template Selector the startup screen - Got project name displaying below the icon in the Games Manager Page
+---------------------
+r58772
+- Fixed mixed up buttons and labels for MainStartGui.
+---------------------
+r58743
+- Fixed issue with empty ^project folder being created in the editor directory - Increased precision of floats in TorqueScript to allow for values over 1,000,000
+---------------------
+r58735
+- Added a new XML field to it2dproj files: ProjectName. This should always contain the name of a game project. This is used in the Template Selector and will be used for setting the name of a window when created on a desktop. - Got the Main...
+---------------------
+r58724
+- Added temporary art for buttons in the Template Selector
+---------------------
+r58714
+- Resolved crash in the Asset Library based Melv's investigation - Updated CoreUnstable and trunk's binaries to contain the latest source changes (including no PUAP) - Added first set of files for the Template Selector (CoreUnstable only) -...
+---------------------
+r58704
+- Increased the texture handle limit.  Although most people won't hit this, I was in a stress test.
+---------------------
+r58690
+- Deleting the existing documentation folder and creating an external to trunk's Documentation folder.
+---------------------
+r58676
+- Merged over changes to editors from trunk - Removed all PUAP based code and undid all changes to the script/console system that was performed by PUAP
+---------------------
+r58672
+- Fixed issue with Asset Library not returning a value when the middle of the selection is clicked - Updated PUAP-free binary with some more safety checks. I'm finally able to actually locate and debug real crashes without stack corruption ...
+---------------------
+r58519
+- Enhanced GUIBitmapButtonCtrl to give a user more control over image selection for the button states.
+---------------------
+r58481
+- Got both VS2008 and VS2010 fix utility working for new project creation - Committing Xcode fix utility, but it needs testing
+---------------------
+r58470
+- Fixed a SimGroup shutdown problem (with correct name now).
+---------------------
+r58469
+- Fixed a SimGroup shutdown problem.
+---------------------
+r58464
+- Fixed the fatal assert when trying to go fullscreen on OS X. 
+---------------------
+r58424
+- Fixed intermediate output directory path for VS2008 zlib project.
+---------------------
+r58409
+- Modified GuiWindowCtrl to have the _ [] X buttons (in that order) displayed on the right of the window, instead of left.
+---------------------
+r58387
+- Added a very basic php script that will fix the paths of a newly created project to point back to the installation directories engine folder. This will allow compiling and debugging of projects that do not exist in the MyProjects director...
+---------------------
+r58358
+- Removed some hard-coded paths that somehow got saved in the GUI files
+---------------------
+r58357
+- Merged fixes to the editor from trunk - Moved over Animation Set system from trunk
+---------------------
+r58354
+- Updated Windows binary files to contain the latest source changes. This should fix the issue with new projects not finding objects/functions/methods/components. - Disabled all filter mode and filter pad references found in existing databl...
+---------------------
+r58351
+- Fixed filters and includes for compiler projects
+---------------------
+r58342
+- Committing latest binary
+---------------------
+r58338
+- Merged engine folder differences between CoreUnstable and trunk
+---------------------
+r58337
+- INTERNAL: Created externals to the content teams' templates. - INTERNAL: Re-added the empty template, which will contain modifications unique to the CoreUnstable branch. This is where we should experiment with unstable template changes.
+---------------------
+r58336
+- INTERNAL: Deleting old version of the empty template. Need to move the latest stuff over.
+---------------------
+r58335
+- Fixed Xcode compiler errors
+---------------------
+r58334
+- INTERNAL: Moved over fixes from trunk.
+---------------------
+r58333
+- INTERNAL: Created externals to the trunk MyProjects. This is going to make merging a lot easier.
+---------------------
+r58331
+- INTERNAL: Deleting old version of the FeatureDemo. Need to move the latest stuff over.
+---------------------
+r58330
+- INTERNAL: Deleting old version of the common. Need to move the latest stuff over.
+---------------------
+r58329
+- INTERNAL: Deleting old versions of the templates. Need to move the latest stuff over.
+---------------------
+r58328
+- INTERNAL: Deleting old versions of the template games. Need to move the latest stuff over.
+---------------------
+r58209
+- Got the icon images to work properly in the Sprite Tool and Animation Tool - Adjusted the TagDropdownList::refresh parameter list to use an exclude list. This helps exclude system wide tags that we do not want to show the end-user. Curren...
+---------------------
+r58181
+- Got font previewing into the Font Tool - Manged to get one font to persist at a time, still bugged though.
+---------------------
+r58168
+- Changed guiPopUpCtrlEx to actually use the mActive flag. It was being ignored previously. - Changed the NameTags::queryTags function to clear the return buffer before using it, as it was returning garbage if no objects had the specified t...
+---------------------
+r58139
+- INTERNAL: Added Font Tool. Currently it is not functional, but all the GUI elements and base script functions are there.
+---------------------
+r58128
+- INTERNAL: Got the frame arrows in the Asset Selector's sprite sheet tab, if the imageMap is in CELL mode.
+---------------------
+r58088
+- INTERNAL: Got all Asset Library items in a full container, including edit and delete buttons. - INTERNAL: Started functionality on deleting assets. - INTERNAL: Changed the "ImageMap" postfix for new image maps to "Sprite".
+---------------------
+r58036
+- INTERNAL: Got the Asset Selector to open the level that is double clicked.
+---------------------
+r58035
+- Took out the sound file extension stripping, it seems AudioProfile doesn't want that.
+---------------------
+r58033
+- INTERNAL: Fixed tag removal on the Audio Importer - INTERNAL: Hooked up launching the Sound Importer on an existing audio profile. To test, launch the Asset Selector, switch to the Sounds tab, then double click an Audio Profile icon.
+---------------------
+r58032
+- Fixed an issue where the name was not being changed correctly.
+---------------------
+r58023
+- Added tagging but it's odd that all tagging is coupled to the animation stuff.  It needs separating out.  The delete tag is not working and it's not obvious what needs doing to support it.
+---------------------
+r58020
+- Can now preview sound. - AudioProfile description can now be updated at any time.
+---------------------
+r58019
+- Sound importer now leaves no trace if cancelled or fails in error as all transient modifications to a profile (or new profile) are done in a proxy.
+---------------------
+r58003
+- INTERNAL: Modified the FeatureDemo to make it easier to test new systems
+---------------------
+r57998
+- INTERNAL: Modified the FeatureDemo to make it easier to test new systems - INTERNAL: Switched the class used for previewing assets in the Asset Selector.
+---------------------
+r57976
+- INTERNAL: Got tag filtering working in the Asset Selector. So cool to see this coming together.
+---------------------
+r57973
+- INTERNAL: Added tags to the FeatureDemo and tagged a few datablocks.
+---------------------
+r57964
+- INTERNAL: First pass at getting contents to show up in the Asset Selector. Still needs a decent amount of coding.
+---------------------
+r57959
+- Sound importer now copies the selected sound file if it is not located in the correct directory. - The file/path is also collapsed to the correct format.
+---------------------
+r57956
+- AudioProfile now uses the name of the "AudioDescription" so that it persists the name and not the Id of it. - Included a named object for "audioDataBlockSet". 
+---------------------
+r57954
+- INTERNAL: Changed the path for the exec() calls on audioDescriptions.cs and audioProfiles.cs
+---------------------
+r57948
+- Sound importer complete apart from sound-preview.
+---------------------
+r57946
+- Sound importer WIP.
+---------------------
+r57944
+- Sound importer WIP.
+---------------------
+r57943
+- Load audio-descriptions and audio-profiles as part of project load.
+---------------------
+r57942
+- Not sure if this is how to change the template but these are the pre-requisites for audio.
+---------------------
+r57939
+MMGDCORE-48 - Sound importer WIP.  Waiting on some answers to move forward.
+---------------------
+r57935
+- INTERNAL: Got tags dropdown working in Asset Selector. Got buttons calling actual functions. - INTERNAL: Added a parameter to TagDropdownList::refresh. If the parameter is true, an entry called "Any" will be added to the list. If the para...
+---------------------
+r57932
+- INTERNAL: Added basic shell UI for Asset Selector
+---------------------
+r57929
+- INTERNAL: Hooked up the Asset Selector to the rest of the editor.
+---------------------
+r57927
+- INTERNAL: Added shell of Asset Selector.
+---------------------
+r57925
+- INTERNAL: Added updateDependentObjects function to editor scripts. This gets called whenever you change the name of an imageMap or animation datablock. It is responsible updating references of all managed datablocks and scene objects (in ...
+---------------------
+r57895
+- INTERNAL: Moved over updated bitmap font object - INTERNAL: Added dirty flag for animation tool. This causes a prompt to pop up if the user is switching sprite sheets after making any changes to the animation.
+---------------------
+r57892
+- INTERNAL: Got Animation Editor to clear when switching sprite sheets.
+---------------------
+r57887
+- INTERNAL: Fixed Xcode build errors for the editor - INTERNAL: Adjusted the tag persistence format (no more code write comments in tags.cs)
+---------------------
+r57879
+- Modifications to image-map datablock editor.
+---------------------
+r57878
+- Modifications to image-map datablock editor.
+---------------------
+r57877
+- INTERNAL: Rearranged elements of the Sprite Sheet Tool (currently known as the Image Editor) to make room for the vertical tag list. - INTERNAL: Hooked up the tagging system to the Sprite Sheet Tool. - INTERNAL: Deleted some GUI elements ...
+---------------------
+r57866
+- INTERNAL: Tagging system is finished for the Animation Builder. Time to move that functionality over to the Spritesheet Builder.
+---------------------
+r57854
+- INTERNAL: Removed old TS code for tagging and replaced it with new system created by Melv.
+---------------------
+r57846
+- Added more functionality to NameTags:
+---------------------
+r57818
+- INTERNAL: Deleting files that are no longer present in trunk.
+---------------------
+r57817
+- INTERNAL: Moved over trunk's template tools. 
+---------------------
+r57816
+- INTERNAL: Merged trunk's engine changes
+---------------------
+r57814
+- INTERNAL: Merged over changes from trunk's MyProjects.
+---------------------
+r57811
+- INTERNAL: Made the switch from the old animation builder to the new MMGD version. Still kind of ugly, but it works. - INTERNAL: Deleted unnecessary Empty project
+---------------------
+r57803
+- INTERNAL: Animation tagging is now complete.
+---------------------
+r57789
+- INTERNAL: MMGDAnimationBuilder can now create and persist new animations properly.
+---------------------
+r57776
+Just auto-calculate the cell width/height and fix the other options until I know what's going on here.
+---------------------
+r57738
+Added an operator= overload for StringBuffer.
+---------------------
+r57736
+- INTERNAL: Removing old blackjack files that are no longer present in trunk.
+---------------------
+r57723
+- INTERNAL: Managed to get a GuiPopUpMenuCtrl to populate with a project's tags. The easiest way to test right now is to give a control the "TagDropdownList" class, then call refresh. An example of this can be found in tgb/tools/mmgdAnimati...
+---------------------
+r57718
+- INTERNAL: Moved latest changes and fixes from trunk into CoreUnstable
+---------------------
+r57680
+- Finished first-pass on TagNames including persistence. - Added "NameTagsTests" as an example of its use.
+---------------------
+r57679
+- "Tags" system prototype WIP. 
+---------------------
+r57669
+- INTERNAL: Added very rough first pass of the MMGD Animation Builder. Lots of copy/pasted code, but this is a WIP while I work out the interface.
+---------------------
+r57646
+- Renamed "Tags" to "NameTags".
+---------------------
+r57645
+- "Tags" system prototype WIP.
+---------------------
+r57644
+- "Tags" system prototype WIP.
+---------------------
+r57643
+- Static sprite builder WIP.
+---------------------
+r57642
+- First attempt for a while at touching the GUI system.  Painful.  Here's the first-pass on rearranging the static-sprite builder otherwise known as the image-builder.
+---------------------
+r57572
+- INTERNAL: Merged template and game changes from trunk
+---------------------
+r57571
+- INTERNAL: Moved over Dave's changes to call method / call on behaviors from trunk
+---------------------
+r57570
+- INTERNAL: Committing persistence change that will automatically load the object when a new level is created.
+---------------------
+r57426
+- INTERNAL: Fixed bad character in new project Xcode_iOS file.
+---------------------
+r57421
+- INTERNAL: Fixed hard-coded paths in Xcode_iOS projects.
+---------------------
+r57410
+- INTERNAL: Got base persistent object support back in the engine. This replicates the system found in Torque 2D, with small changes to accommodate for iT2D specific code. (MMGDCORE-38)
+---------------------
+r57343
+- INTERNAL: Fixing the static lib path errors.
+---------------------
+r57339
+- INTERNAL: Adding new Xcode iOS related project files
+---------------------
+r57315
+- INTERNAL: Removing Mac executables
+---------------------
+r57314
+- INTERNAL: Adding new Xcode iOS related projects to existing demos
+---------------------
+r57311
+- INTERNAL: Removing old Xcode_iPhone project files from existing demos
+---------------------
+r57303
+- INTERNAL: Merged trunk changes into CoreUnstable branch. This is a precursor to replacing the old Xcode_iPhone projects
+---------------------
+r57286
+- INTERNAL: Deleted user data files
+---------------------
+r57284
+- INTERNAL: Added new Xcode_iPhone project, which contains full source.
+---------------------
+r57282
+- INTERNAL: Deleting old Xcode_iPhone project files. These will be replaced shortly.
+---------------------
+r57185
+- INTERNAL: Copied over current versions of the template projects - INTERNAL: Deleted prototype static lib files
+---------------------
+r57182
+- INTERNAL: Merged changes over from trunk
+---------------------
+r57174
+- INTERNAL: Started moving the new XCode_iOS to the project creator system.
+---------------------
+r57173
+- INTERNAL: No longer needed. The lib now resides in lib/it2d. All projects will reference that location.
+---------------------
+r57172
+- INTERNAL: No longer needed. This file resides in the lib/it2d directory now.
+---------------------
+r57171
+- INTERNAL: Updated settings for new iOS Xcode project
+---------------------
+r57170
+- INTERNAL: Removed old iOS project (Xcode_iPhone) - INTERNAL: Added prebuilt static libs for iT2D. New projects will reference these files - INTERNAL: Modified Xcode project used for building static libs to create a simulator version and d...
+---------------------
+r57082
+- INTERNAL: Adding build for simulator lib, which allow this empty project to run on its own.
+---------------------
+r57081
+- INTERNAL: Added a working iOS Xcode project for a binary build. Next step is hooking it up to the project creator, giving us the ability to create new iOS projects without source code.
+---------------------
+r57060
+- INTERNAL: Adding a bare bones project, which will be the basis for the new iOS Xcode projects (MMGDCORE-26)
+---------------------
+r57023
+- INTERNAL: Not needed
+---------------------
+r57022
+- INTERNAL: Adding first working iT2D static lib (MMGDCORE-26)
+---------------------
+r57020
+- INTERNAL: The editor should now auto-populate the level datablocks file whenever you save or play the game from the editor. It will add missing imageMap and animation datablocks.
+---------------------
+r56989
+- INTERNAL: Toggled the ability to select and edit invisible objects in the editor. 
+---------------------
+r56938
+- INTERNAL: Moved a fix from trunk which makes sure a new project has its template name saved
+---------------------
+r56921
+- INTERNAL: Deleted placeholder templates. The content teams will create their own.
+---------------------
+r56903
+- INTERNAL: Set the existing iT2D project template to be "empty", which will cause the editor to open in sandbox mode.
+---------------------
+r56855
+- INTERNAL: Removed empty template main.cs. It will not be used
+---------------------
+r56847
+- INTERNAL: Changed the editor to load into sandbox mode if $LoadedTemplate.Name is "empty" or ""
+---------------------
+r56835
+- INTERNAL: Got specific template UI loading based on created project (MMGDCORE-8) - INTERNAL: The editor can now switch between template UI and standard UI without losing information. (MMGDCORE-6)
+---------------------
+r56790
+- INTERNAL: Working on automation of template UI loading (MMGDCORE-8)
+---------------------
+r56773
+- INTERNAL: Got the main template panel loading (MMGDCORE-8) - INTERNAL: Added an example template UI (MMGDCORE-9) - INTERNAL: Note that the current system can only load a single template UI. More work needs to be done.
+---------------------
+r56704
+- INTERNAL: Added more functionality for template loading - INTERNAL: Added global variable for locating the headers file for the engine. This is currently only utilized in the test lib project
+---------------------
+r56681
+- INTERNAL: Added the test project used to generate the static lib. This is not a finished project and will need to live somewhere else eventually.
+---------------------
+r56680
+- INTERNAL: Added first ever iOS project using a static iT2D lib. This is just for reference and experimentation and is not considered a final solution.
+---------------------
+r56498
+- INTERNAL: Finalized first iteration of template game creation. This just focuses on finding templates and copying the example game. Next step is loading template specific GUIs.
+---------------------
+r56484
+- INTERNAL: Got template game loading working using the new structure and .template file - INTERNAL: Added Immunize to the Tower Defense template, primarily for testing purposes. 
+---------------------
+r56472
+- INTERNAL: Added example template - INTERNAL: Changed file format for template files - INTERNAL: Started adding functionality to editor for template loading - INTERNAL: Moved XCode_iPhone from individual templates to commonFiles (MMGDCORE-...
+---------------------
+r56443
+- INTERNAL: Started overhaul of template system (MMGDCORE-8). The current structure for each template is a WIP.
+---------------------
+r56437
+- INTERNAL: Finished combining iphoneProject and ipadProject templates. (MMGDCORE-5)
+---------------------
+r56417
+- INTERNAL: Changed editor scripts to only reference the "empty" template for now. (MMGDCORE-5)
+---------------------
+r56416
+- Combined iphoneProject and ipadProject templates. This will serve as the "empty" template, primarily used for advanced mode.
+---------------------
+r56080
+- Added svn:ignore property for the following: *.dso *.log *.exports *.cs.dso _ReSharper.* *.suo *.user Debug obj *.opensdf *.sdf 
+---------------------
+r56064
+- Creating a branch for Core work. Use this branch for adding MMGD specific features, improving the editors, unifying platforms, and general testing before merging into trunk.
+---------------------

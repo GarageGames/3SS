@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="LockedLevelImageImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#LockedLevelImage.png" />

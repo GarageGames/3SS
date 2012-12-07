@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Crate_Damage_2_AnimImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Crate_Damage_2_Anim.png"
+    CellCountX="5"
+    CellCountY="5"
+    CellWidth="195"
+    CellHeight="193" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="creditsImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#credits.png" />

@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{UtilityGui}"
+	VersionId="1"
+	Description="Utility GUI"
+	Group="baseTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	ScopeSet="UtilityGuiSet"
+	CreateFunction="initializeUtilityGui"
+	DestroyFunction="destroyUtilityGui"
+	DeclaredAssetManifest="^{UtilityGui}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^UtilityGui/ReferencedAssets.manifest.taml"	/>	
+

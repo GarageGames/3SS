@@ -1,0 +1,791 @@
+<SimSet
+    setType="Persistent">
+    <sprite
+        Name="Projectile0"
+        animationName="PL_DefaultProjectileRed1Anim"
+        Enabled="0"
+        internalName="DefaultProjectile1"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-2.000000 -2.000000"
+        Active="0"
+        Bullet="1"
+        DefaultDensity="2"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.300000012"
+        AngularDamping="2.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        CollisionShape0="circle 2.000000 0.750000 0.300000 0 0.250000 0.000000 0.000000 "
+        Icon="^PhysicsLauncherTemplate/gui/images/Projectile1Icon">
+		<sprite.Behaviors>
+			<ProjectileBehavior
+				Id="1" />
+			<ImageTrailBehavior
+				Id="2"
+				trailAnim="PL_DefaultPathAnim"
+				dropTimer="0.100000001"
+				imageSize="0.25" />
+			<ImpactImageBehavior
+				Id="3"
+				impactAnim="PL_DefaultDustAnim"
+				imageSize="0.75" />
+			<onRestBehavior
+				Id="4" />
+			<SoundEffectBehavior
+				Id="5"
+				instanceName="InAir"
+				sound="PL_Launch" />
+			<SoundEffectBehavior
+				Id="6"
+				instanceName="Hit"
+				sound="PL_Hit" />
+			<SoundEffectBehavior
+				Id="7"
+				instanceName="Vanish"
+				sound="PL_Vanish" />
+			<SoundEffectBehavior
+				Id="8"
+				instanceName="IdleInLauncher"
+				sound="PL_StretchSound" />
+			<AnimationEffectBehavior
+				Id="9"
+				instanceName="Idle"
+				animation="PL_DefaultProjectileAnim" />
+			<AnimationEffectBehavior
+				Id="10"
+				instanceName="IdleInLauncher"
+				animation="PL_DefaultProjectileGreen1Anim" />
+			<AnimationEffectBehavior
+				Id="11"
+				instanceName="InAir"
+				animation="PL_DefaultProjectileBlue1Anim" />
+			<AnimationEffectBehavior
+				Id="12"
+				instanceName="Hit"
+				animation="PL_DefaultProjectileYellow1Anim" />
+			<LoadableBehavior
+				Id="13" />
+			<LaunchableBehavior
+				Id="14" />
+			<VanishBehavior
+				Id="15"
+				vanishTime="3"
+				vanishAnim="PL_DefaultDustAnim" />
+			<DamageModifierBehavior
+				Id="16"
+				damageModifierGroups="1"
+				damageMultiplier="1"
+				destroyOnDamage="true" />
+			<TemplateBehavior
+				Id="17" />
+			<AdjustGMValueBehavior
+				Id="18"
+				adjustableValueField="Projectile0Count"
+				adjustment="-1" />
+		</sprite.Behaviors>
+		<sprite.BehaviorConnections>
+			<Connection
+				loaded="13"
+				Play="10" />
+			<Connection
+				loaded="13"
+				PlaySound="8" />
+			<Connection
+				launched="14"
+				Play="11" />
+			<Connection
+				launched="14"
+				PlaySound="5" />
+			<Connection
+				Vanishing="15"
+				PlaySound="7" />
+			<Connection
+				Hit="1"
+				Impact="3" />
+			<Connection
+				Hit="1"
+				Play="12" />
+			<Connection
+				Hit="1"
+				PlaySound="6" />
+			<Connection
+				EndMove="1"
+				End="2" />
+			<Connection
+				StartMove="1"
+				Start="2" />
+			<Connection
+				Resting="4"
+				Vanish="15" />
+		</sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="Projectile1"
+        animationName="PL_DefaultProjectileRed2Anim"
+        Enabled="0"
+        internalName="DefaultProjectile2"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-2.000000 -2.000000"
+        Active="0"
+        Bullet="1"
+        DefaultDensity="0.300000012"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.600000024"
+        AngularDamping="1.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        CollisionShape0="circle 0.300000 0.750000 0.700000 0 0.250000 0.000000 0.000000 "
+        Icon="^PhysicsLauncherTemplate/gui/images/Projectile2Icon">
+		<sprite.Behaviors>
+			<ProjectileBehavior
+				Id="1" />
+			<ImageTrailBehavior
+				Id="2"
+				trailAnim="PL_DefaultPathAnim"
+				dropTimer="0.100000001"
+				imageSize="0.25" />
+			<ImpactImageBehavior
+				Id="3"
+				impactAnim="PL_DefaultDustAnim"
+				imageSize="0.75" />
+			<onRestBehavior
+				Id="4" />
+			<SoundEffectBehavior
+				Id="5"
+				instanceName="InAir"
+				sound="PL_Launch" />
+			<SoundEffectBehavior
+				Id="6"
+				instanceName="Hit"
+				sound="PL_Hit" />
+			<SoundEffectBehavior
+				Id="7"
+				instanceName="Vanish"
+				sound="PL_Vanish" />
+			<SoundEffectBehavior
+				Id="8"
+				instanceName="IdleInLauncher"
+				sound="PL_StretchSound" />
+			<AnimationEffectBehavior
+				Id="9"
+				instanceName="Idle"
+				animation="PL_DefaultProjectileAnim" />
+			<AnimationEffectBehavior
+				Id="10"
+				instanceName="IdleInLauncher"
+				animation="PL_DefaultProjectileGreen1Anim" />
+			<AnimationEffectBehavior
+				Id="11"
+				instanceName="InAir"
+				animation="PL_DefaultProjectileBlue1Anim" />
+			<AnimationEffectBehavior
+				Id="12"
+				instanceName="Hit"
+				animation="PL_DefaultProjectileYellow1Anim" />
+			<LoadableBehavior
+				Id="13" />
+			<LaunchableBehavior
+				Id="14" />
+			<VanishBehavior
+				Id="15"
+				vanishTime="3"
+				vanishAnim="PL_DefaultDustAnim" />
+			<DamageModifierBehavior
+				Id="16"
+				damageModifierGroups="1"
+				damageMultiplier="1"
+				destroyOnDamage="true" />
+			<TemplateBehavior
+				Id="17" />
+			<AdjustGMValueBehavior
+				Id="18"
+				adjustableValueField="Projectile0Count"
+				adjustment="-1" />
+		</sprite.Behaviors>
+		<sprite.BehaviorConnections>
+			<Connection
+				loaded="13"
+				Play="10" />
+			<Connection
+				loaded="13"
+				PlaySound="8" />
+			<Connection
+				launched="14"
+				Play="11" />
+			<Connection
+				launched="14"
+				PlaySound="5" />
+			<Connection
+				Vanishing="15"
+				PlaySound="7" />
+			<Connection
+				Hit="1"
+				Impact="3" />
+			<Connection
+				Hit="1"
+				Play="12" />
+			<Connection
+				Hit="1"
+				PlaySound="6" />
+			<Connection
+				EndMove="1"
+				End="2" />
+			<Connection
+				StartMove="1"
+				Start="2" />
+			<Connection
+				Resting="4"
+				Vanish="15" />
+		</sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="Projectile2"
+        animationName="PL_DefaultProjectileRed3Anim"
+        Enabled="0"
+        internalName="DefaultProjectile3"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-2.000000 -2.000000"
+        Active="0"
+        Bullet="1"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.5"
+        AngularDamping="1.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        CollisionShape0="circle 1.000000 0.750000 0.700000 0 0.250000 0.000000 0.000000 "
+        Icon="^PhysicsLauncherTemplate/gui/images/Projectile3Icon">
+		<sprite.Behaviors>
+			<ProjectileBehavior
+				Id="1" />
+			<ImageTrailBehavior
+				Id="2"
+				trailAnim="PL_DefaultPathAnim"
+				dropTimer="0.100000001"
+				imageSize="0.25" />
+			<ImpactImageBehavior
+				Id="3"
+				impactAnim="PL_DefaultDustAnim"
+				imageSize="0.75" />
+			<onRestBehavior
+				Id="4" />
+			<SoundEffectBehavior
+				Id="5"
+				instanceName="InAir"
+				sound="PL_Launch" />
+			<SoundEffectBehavior
+				Id="6"
+				instanceName="Hit"
+				sound="PL_Hit" />
+			<SoundEffectBehavior
+				Id="7"
+				instanceName="Vanish"
+				sound="PL_Vanish" />
+			<SoundEffectBehavior
+				Id="8"
+				instanceName="IdleInLauncher"
+				sound="PL_StretchSound" />
+			<AnimationEffectBehavior
+				Id="9"
+				instanceName="Idle"
+				animation="PL_DefaultProjectileAnim" />
+			<AnimationEffectBehavior
+				Id="10"
+				instanceName="IdleInLauncher"
+				animation="PL_DefaultProjectileGreen1Anim" />
+			<AnimationEffectBehavior
+				Id="11"
+				instanceName="InAir"
+				animation="PL_DefaultProjectileBlue1Anim" />
+			<AnimationEffectBehavior
+				Id="12"
+				instanceName="Hit"
+				animation="PL_DefaultProjectileYellow1Anim" />
+			<LoadableBehavior
+				Id="13" />
+			<LaunchableBehavior
+				Id="14" />
+			<VanishBehavior
+				Id="15"
+				vanishTime="3"
+				vanishAnim="PL_DefaultDustAnim" />
+			<DamageModifierBehavior
+				Id="16"
+				damageModifierGroups="1"
+				damageMultiplier="1"
+				destroyOnDamage="true" />
+			<TemplateBehavior
+				Id="17" />
+			<AdjustGMValueBehavior
+				Id="18"
+				adjustableValueField="Projectile0Count"
+				adjustment="-1" />
+		</sprite.Behaviors>
+		<sprite.BehaviorConnections>
+			<Connection
+				loaded="13"
+				Play="10" />
+			<Connection
+				loaded="13"
+				PlaySound="8" />
+			<Connection
+				launched="14"
+				Play="11" />
+			<Connection
+				launched="14"
+				PlaySound="5" />
+			<Connection
+				Vanishing="15"
+				PlaySound="7" />
+			<Connection
+				Hit="1"
+				Impact="3" />
+			<Connection
+				Hit="1"
+				Play="12" />
+			<Connection
+				Hit="1"
+				PlaySound="6" />
+			<Connection
+				EndMove="1"
+				End="2" />
+			<Connection
+				StartMove="1"
+				Start="2" />
+			<Connection
+				Resting="4"
+				Vanish="15" />
+		</sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="Projectile3"
+        animationName="PL_DefaultProjectileRed4Anim"
+        Enabled="0"
+        internalName="DefaultProjectile4"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-2.000000 -2.000000"
+        Active="0"
+        Bullet="1"
+        DefaultDensity="1.5"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.800000012"
+        AngularDamping="1.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        CollisionShape0="circle 1.500000 0.750000 0.700000 0 0.250000 0.000000 0.000000 "
+        Icon="^PhysicsLauncherTemplate/gui/images/Projectile4Icon">
+		<sprite.Behaviors>
+			<ProjectileBehavior
+				Id="1" />
+			<ImageTrailBehavior
+				Id="2"
+				trailAnim="PL_DefaultPathAnim"
+				dropTimer="0.100000001"
+				imageSize="0.25" />
+			<ImpactImageBehavior
+				Id="3"
+				impactAnim="PL_DefaultDustAnim"
+				imageSize="0.75" />
+			<onRestBehavior
+				Id="4" />
+			<SoundEffectBehavior
+				Id="5"
+				instanceName="InAir"
+				sound="PL_Launch" />
+			<SoundEffectBehavior
+				Id="6"
+				instanceName="Hit"
+				sound="PL_Hit" />
+			<SoundEffectBehavior
+				Id="7"
+				instanceName="Vanish"
+				sound="PL_Vanish" />
+			<SoundEffectBehavior
+				Id="8"
+				instanceName="IdleInLauncher"
+				sound="PL_StretchSound" />
+			<AnimationEffectBehavior
+				Id="9"
+				instanceName="Idle"
+				animation="PL_DefaultProjectileAnim" />
+			<AnimationEffectBehavior
+				Id="10"
+				instanceName="IdleInLauncher"
+				animation="PL_DefaultProjectileGreen1Anim" />
+			<AnimationEffectBehavior
+				Id="11"
+				instanceName="InAir"
+				animation="PL_DefaultProjectileBlue1Anim" />
+			<AnimationEffectBehavior
+				Id="12"
+				instanceName="Hit"
+				animation="PL_DefaultProjectileYellow1Anim" />
+			<LoadableBehavior
+				Id="13" />
+			<LaunchableBehavior
+				Id="14" />
+			<VanishBehavior
+				Id="15"
+				vanishTime="3"
+				vanishAnim="PL_DefaultDustAnim" />
+			<DamageModifierBehavior
+				Id="16"
+				damageModifierGroups="1"
+				damageMultiplier="1"
+				destroyOnDamage="true" />
+			<TemplateBehavior
+				Id="17" />
+			<AdjustGMValueBehavior
+				Id="18"
+				adjustableValueField="Projectile0Count"
+				adjustment="-1" />
+		</sprite.Behaviors>
+		<sprite.BehaviorConnections>
+			<Connection
+				loaded="13"
+				Play="10" />
+			<Connection
+				loaded="13"
+				PlaySound="8" />
+			<Connection
+				launched="14"
+				Play="11" />
+			<Connection
+				launched="14"
+				PlaySound="5" />
+			<Connection
+				Vanishing="15"
+				PlaySound="7" />
+			<Connection
+				Hit="1"
+				Impact="3" />
+			<Connection
+				Hit="1"
+				Play="12" />
+			<Connection
+				Hit="1"
+				PlaySound="6" />
+			<Connection
+				EndMove="1"
+				End="2" />
+			<Connection
+				StartMove="1"
+				Start="2" />
+			<Connection
+				Resting="4"
+				Vanish="15" />
+		</sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="Projectile4"
+        animationName="PL_DefaultProjectileRed5Anim"
+        Enabled="0"
+        internalName="DefaultProjectile5"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-2.000000 -2.000000"
+        Active="0"
+        Bullet="1"
+        DefaultDensity="4"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.699999988"
+        AngularDamping="1.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        CollisionShape0="circle 4.000000 0.750000 0.700000 0 0.250000 0.000000 0.000000 "
+        Icon="^PhysicsLauncherTemplate/gui/images/Projectile5Icon">
+		<sprite.Behaviors>
+			<ProjectileBehavior
+				Id="1" />
+			<ImageTrailBehavior
+				Id="2"
+				trailAnim="PL_DefaultPathAnim"
+				dropTimer="0.100000001"
+				imageSize="0.25" />
+			<ImpactImageBehavior
+				Id="3"
+				impactAnim="PL_DefaultDustAnim"
+				imageSize="0.75" />
+			<onRestBehavior
+				Id="4" />
+			<SoundEffectBehavior
+				Id="5"
+				instanceName="InAir"
+				sound="PL_Launch" />
+			<SoundEffectBehavior
+				Id="6"
+				instanceName="Hit"
+				sound="PL_Hit" />
+			<SoundEffectBehavior
+				Id="7"
+				instanceName="Vanish"
+				sound="PL_Vanish" />
+			<SoundEffectBehavior
+				Id="8"
+				instanceName="IdleInLauncher"
+				sound="PL_StretchSound" />
+			<AnimationEffectBehavior
+				Id="9"
+				instanceName="Idle"
+				animation="PL_DefaultProjectileAnim" />
+			<AnimationEffectBehavior
+				Id="10"
+				instanceName="IdleInLauncher"
+				animation="PL_DefaultProjectileGreen1Anim" />
+			<AnimationEffectBehavior
+				Id="11"
+				instanceName="InAir"
+				animation="PL_DefaultProjectileBlue1Anim" />
+			<AnimationEffectBehavior
+				Id="12"
+				instanceName="Hit"
+				animation="PL_DefaultProjectileYellow1Anim" />
+			<LoadableBehavior
+				Id="13" />
+			<LaunchableBehavior
+				Id="14" />
+			<VanishBehavior
+				Id="15"
+				vanishTime="3"
+				vanishAnim="PL_DefaultDustAnim" />
+			<DamageModifierBehavior
+				Id="16"
+				damageModifierGroups="1"
+				damageMultiplier="1"
+				destroyOnDamage="true" />
+			<TemplateBehavior
+				Id="17" />
+			<AdjustGMValueBehavior
+				Id="18"
+				adjustableValueField="Projectile0Count"
+				adjustment="-1" />
+		</sprite.Behaviors>
+		<sprite.BehaviorConnections>
+			<Connection
+				loaded="13"
+				Play="10" />
+			<Connection
+				loaded="13"
+				PlaySound="8" />
+			<Connection
+				launched="14"
+				Play="11" />
+			<Connection
+				launched="14"
+				PlaySound="5" />
+			<Connection
+				Vanishing="15"
+				PlaySound="7" />
+			<Connection
+				Hit="1"
+				Impact="3" />
+			<Connection
+				Hit="1"
+				Play="12" />
+			<Connection
+				Hit="1"
+				PlaySound="6" />
+			<Connection
+				EndMove="1"
+				End="2" />
+			<Connection
+				StartMove="1"
+				Start="2" />
+			<Connection
+				Resting="4"
+				Vanish="15" />
+		</sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="Box1"
+        animationName="PL_DefaultWorldObjectAnim0"
+        Enabled="0"
+        internalName="DefaultBox"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-4.000000 -3.500000"
+        Active="0"
+        DefaultDensity="1.5"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        CollisionShape0="polygon 0.800000 0.200000 0.000000 0 4 0.225000 -0.225000 0.225000 0.225000 -0.225000 0.225000 -0.225000 -0.225000 ">
+        <sprite.Behaviors>
+            <WorldObjectBehavior
+                Id="1"
+                worldObjectName="DefaultName" />
+            <DamageableBehavior
+                Id="2"
+                startingHealth="25"
+                minDamageThreshold="1"
+                minSpeedThreshold="0"
+                damageStates="0.0 0.3 0.6 1.0"
+                canSkipDamageStates="1"
+                damageModifierGroups="" />
+            <AnimationEffectBehavior
+                Id="3"
+                animation="PL_DefaultWorldObjectAnim1"
+                Name="" />
+            <AnimationEffectBehavior
+                Id="4"
+                animation="PL_DefaultWorldObjectAnim2"
+                Name="" />
+            <AnimationEffectBehavior
+                Id="5"
+                animation="PL_DefaultWorldObjectAnim3"
+                Name="" />
+            <VanishBehavior
+                Id="6"
+                vanishTime="0"
+                vanishAnim="PL_DefaultDustAnim" />
+            <AdjustGMValueBehavior
+                Id="7"
+                adjustableValueField="Score"
+                adjustment="100" />
+            <TemplateBehavior
+                Id="8" />
+        </sprite.Behaviors>
+        <sprite.BehaviorConnections>
+            <Connection
+                OnDamageState0="2"
+                Play="3" />
+            <Connection
+                OnDamageState3="2"
+                Vanish="6"
+                adjustGMValue="7" />
+            <Connection
+                OnDamageState2="2"
+                Play="5" />
+            <Connection
+                OnDamageState1="2"
+                Play="4" />
+        </sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="BonusBananas"
+        animationName="PL_BananaBunchAnim"
+        Enabled="0"
+        internalName="DefaultBonus"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="20.000000 20.000000"
+        Active="0"
+        DefaultDensity="1.5"
+        LinearDamping="5"
+        AngularDamping="5"
+        GravityScale="0"
+        CollisionCallback="1"
+        CollisionShape0="polygon 1.500000 0.200000 0.000000 0 4 0.225000 -0.225000 0.225000 0.225000 -0.225000 0.225000 -0.225000 -0.225000 ">
+        <sprite.Behaviors>
+            <DamageableBehavior
+                Id="1"
+                startingHealth="5"
+                minDamageThreshold="1"
+                minSpeedThreshold="0"
+                damageStates="0.0 0.3 0.6 1.0"
+                canSkipDamageStates="1"
+                damageModifierGroups="" />
+            <WinObjectiveBehavior
+                Id="2" />
+            <AdjustGMValueBehavior
+                Id="3"
+                adjustableValueField="WinObjectiveCount"
+                adjustment="1" />
+            <AdjustGMValueBehavior
+                Id="4"
+                adjustableValueField="WinObjectiveCount"
+                adjustment="-1" />
+            <TemplateBehavior
+                Id="5" />
+        </sprite.Behaviors>
+        <sprite.BehaviorConnections>
+            <Connection
+                onCreatedOutput="2"
+                adjustGMValue="3" />
+            <Connection
+                onDestroyedOutput="2"
+                adjustGMValue="4" />
+        </sprite.BehaviorConnections>
+    </sprite>
+    <sprite
+        Name="EnemyBanana1"
+        animationName="PL_DefaultEnemyAnim0"
+        Enabled="0"
+        internalName="DefaultEnemy"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Position="-4.000000 -3.000000"
+        Active="0"
+        DefaultDensity="0.800000012"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        CollisionShape0="polygon 0.800000 0.200000 0.000000 0 4 0.225000 -0.225000 0.225000 0.225000 -0.225000 0.225000 -0.225000 -0.225000 ">
+        <sprite.Behaviors>
+            <WorldObjectBehavior
+                Id="1"
+                worldObjectName="DefaultName" />
+            <DamageableBehavior
+                Id="2"
+                startingHealth="15"
+                minDamageThreshold="1"
+                minSpeedThreshold="0"
+                damageStates="0.0 1.0"
+                canSkipDamageStates="1"
+                damageModifierGroups="1" />
+            <AnimationEffectBehavior
+                Id="3"
+                animation="PL_DefaultEnemyAnim1"
+                Name="" />
+            <VanishBehavior
+                Id="4"
+                vanishTime="0"
+                vanishAnim="PL_DefaultDustAnim" />
+            <AdjustGMValueBehavior
+                Id="5"
+                adjustableValueField="Score"
+                adjustment="1000" />
+            <WinObjectiveBehavior
+                Id="6" />
+            <AdjustGMValueBehavior
+                Id="7"
+                adjustableValueField="WinObjectiveCount"
+                adjustment="1" />
+            <AdjustGMValueBehavior
+                Id="8"
+                adjustableValueField="WinObjectiveCount"
+                adjustment="-1" />
+            <TemplateBehavior
+                Id="9" />
+        </sprite.Behaviors>
+        <sprite.BehaviorConnections>
+            <Connection
+                onCreatedOutput="6"
+                adjustGMValue="7" />
+            <Connection
+                onDestroyedOutput="6"
+                adjustGMValue="8" />
+            <Connection
+                OnDamageState0="2"
+                Play="3" />
+            <Connection
+                OnDamageState1="2"
+                Vanish="4"
+                adjustGMValue="5" />
+            <Connection
+                vanishedOutput="4"
+                onDestroyInput="6" />
+        </sprite.BehaviorConnections>
+    </sprite>
+</SimSet>

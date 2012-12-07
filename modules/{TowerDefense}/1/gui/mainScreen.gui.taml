@@ -1,0 +1,33 @@
+<GuiControl
+    Name="mainScreenGui"
+    canSaveDynamicFields="0"
+    isContainer="1"
+    Profile="GuiDefaultProfile"
+    HorizSizing="width"
+    VertSizing="height"
+    Position="0 0"
+    Extent="1024 768"
+    MinExtent="480 320"
+    canSave="1"
+    Visible="1"
+    Active="0"
+    hovertime="1000">
+    <SceneWindow
+        Name="sceneWindow2D"
+        canSaveDynamicFields="0"
+        isContainer="0"
+        Profile="GuiDefaultProfile"
+        HorizSizing="width"
+        VertSizing="height"
+        Position="0 0"
+        Extent="1024 768"
+        MinExtent="480 320"
+        canSave="1"
+        Visible="1"
+        Active="0"
+        tooltipprofile="GuiDefaultProfile"
+        hovertime="1000"
+        lockMouse="0"
+        UseWindowInputEvents="1"
+        UseObjectInputEvents="1" />
+</GuiControl>

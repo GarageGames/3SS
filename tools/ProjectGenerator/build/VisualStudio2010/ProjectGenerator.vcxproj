@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD1E40B5-6ED5-4F22-9590-92BB9A7DE4A6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>MyProjectGenerator</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_DEBUG</TargetName>
+    <OutDir>..\..\ProjectGenerator\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\ProjectGenerator\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>TIXML_USE_STL;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>TIXML_USE_STL;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\application\Application.cpp" />
+    <ClCompile Include="..\..\source\platformWin32\winFileIO.cpp" />
+    <ClCompile Include="..\..\source\platformWin32\winMain.cpp" />
+    <ClCompile Include="..\..\source\platformWin32\winStrings.cpp" />
+    <ClCompile Include="..\..\source\platform\fileIO.cpp" />
+    <ClCompile Include="..\..\source\platform\unicode.cpp" />
+    <ClCompile Include="..\..\source\tinyXML\tinystr.cpp" />
+    <ClCompile Include="..\..\source\tinyXML\tinyxml.cpp" />
+    <ClCompile Include="..\..\source\tinyXML\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\source\tinyXML\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\ElementReference.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\FileTypeDatabase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXAggregateTarget.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBaseBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBuildFile.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXContainerItemProxy .cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXCopyFilesBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXFileReference .cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXFrameworksBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXGroup.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXHeadersBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXNativeTarget.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXProject.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXResourcesBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXRezBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXSourcesBuildPhase.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXTargetDependency.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXVariantGroup.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\XCBuildConfiguration.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\XCConfigurationList.cpp" />
+    <ClCompile Include="..\..\source\xcodeTemplate\XcodeProject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\application\Application.h" />
+    <ClInclude Include="..\..\source\platformWin32\platformWin32.h" />
+    <ClInclude Include="..\..\source\platform\fileIO.h" />
+    <ClInclude Include="..\..\source\platform\stringFunctions.h" />
+    <ClInclude Include="..\..\source\platform\types.gcc.h" />
+    <ClInclude Include="..\..\source\platform\types.h" />
+    <ClInclude Include="..\..\source\platform\types.visualc.h" />
+    <ClInclude Include="..\..\source\platform\types.win32.h" />
+    <ClInclude Include="..\..\source\platform\unicode.h" />
+    <ClInclude Include="..\..\source\tinyXML\tinystr.h" />
+    <ClInclude Include="..\..\source\tinyXML\tinyxml.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\ElementReference.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\FileTypeDatabase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXAggregateTarget.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBaseBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBuildFile.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXContainerItemProxy.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXCopyFilesBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXFileReference.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXFrameworksBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXGroup.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXHeadersBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXNativeTarget.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXProject.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXResourcesBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXRezBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXSourcesBuildPhase.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXTargetDependency.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXVariantGroup.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\XCBuildConfiguration.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\XCConfigurationList.h" />
+    <ClInclude Include="..\..\source\xcodeTemplate\XcodeProject.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

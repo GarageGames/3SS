@@ -1,0 +1,72 @@
+<mockup version="1.0" skin="sketch" measuredW="634" measuredH="163" mockupW="596" mockupH="126">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="38" y="38" w="275" h="125" measuredW="275" measuredH="125" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="275" h="125" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>false</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>Continue</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="64" y="82" w="-1" h="-1" measuredW="73" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Continue</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="145" y="82" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="11" y="35" w="252" h="44" measuredW="442" measuredH="21" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <align>center</align>
+            <text>You%20are%20about%20to%20lose%20any%20unsaved%20work.%20Are%20you%20sure%20you%20want%20to%20continue%3F</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="359" y="37" w="275" h="125" measuredW="275" measuredH="125" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="275" h="125" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>false</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>Continue</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="11" y="35" w="252" h="44" measuredW="442" measuredH="21" zOrder="3" locked="false" isInGroup="1">
+          <controlProperties>
+            <align>center</align>
+            <text>You%20are%20about%20to%20lose%20any%20unsaved%20work.%20Are%20you%20sure%20you%20want%20to%20continue%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::CallOut" x="43" y="65" w="-1" h="-1" measuredW="37" measuredH="39" zOrder="4" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::CallOut" x="125" y="61" w="-1" h="-1" measuredW="39" measuredH="40" zOrder="5" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>2</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="64" y="82" w="-1" h="-1" measuredW="73" measuredH="27" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>Continue</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="145" y="82" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

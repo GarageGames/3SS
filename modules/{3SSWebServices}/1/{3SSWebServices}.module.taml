@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{3SSWebServices}"
+	VersionId="1"
+	Description="3SS Web Services"
+	Group="baseTools"
+	Dependencies="{EditorCore}=1,{QtManager}=1"
+	ScriptFile="main.cs"
+	ScopeSet="3SSWebServicesSet"
+	CreateFunction="initialize3SSWebServices"
+	DestroyFunction="destroy3SSWebServices"
+	/>

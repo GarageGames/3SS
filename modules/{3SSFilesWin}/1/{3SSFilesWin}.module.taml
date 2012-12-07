@@ -1,0 +1,12 @@
+<ModuleDefinition
+	Description="3SS Files (Windows)"
+	ModuleId="{3SSFilesWin}"
+	VersionId="1"
+	Group=""
+	Dependencies=""
+	CriticalMerge = true;
+	ScriptFile="main.cs"
+	CreateFunction="initialize3SSFilesWin"
+	DestroyFunction=""
+	OS="Windows"
+	/>

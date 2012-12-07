@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="DocsButtonNormal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DocsButtonNormal.png" />

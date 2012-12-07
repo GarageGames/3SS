@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="SkyImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Sky.png" />

@@ -1,0 +1,22 @@
+<ModuleDefinition
+	Enabled="0"
+	ModuleId="{BlackJack}"
+	VersionId="1"
+	Description="Blackjack"
+	Purchased="1"
+	Synchronized="1"
+	Group=""
+	Dependencies="{GameCore}=1,{GameBoot}=1,{BlackjackAssets}=1,{UserAssets}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeBlackJack"
+	DestroyFunction="destroyBlackJack"
+	Type="Template"
+	Genre="Card"
+    BaseGui="BlackJackTemplate"
+    StartLevel="^BlackjackTemplate/data/levels/startLevel.scene.taml"
+    Icon="BlackJackIcon"
+	Creator="GarageGames"
+    ReferencedAssetManifest="^BlackjackTemplate/ReferencedAssets.Manifest.taml"
+	AssetTagsManifest="^BlackjackTemplate/Tags.Manifest.taml"
+	/>
+

@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="PL_DefaultPathImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Trail_Leaf_temp"
+    CellCountX="2"
+    CellCountY="1"
+    CellWidth="32"
+    CellHeight="32" />

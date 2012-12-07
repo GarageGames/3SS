@@ -1,0 +1,12 @@
+<SimSet
+    Name="InterfaceToolPauseHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Some game developers want all of their background screens to be consistent among the Win, Lose, and Pause screens. Other game developers want each screen to be different for variety. What will you choose?" />
+    <ScriptObject
+        Name="Tip1"
+        Text="To add any text to your Pause Screen use an image editor to put that text directly onto the background image." />
+    <ScriptObject
+        Name="Tip2"
+        Text="Players will see the screen whenever they pause your game so make sure that it looks good." />
+</SimSet>

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="DeleteButton_normal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DeleteButton_normal"
+    AutoUnload="0" />

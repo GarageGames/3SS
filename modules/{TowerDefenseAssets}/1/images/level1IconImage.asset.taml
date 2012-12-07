@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="level1IconImage"
+    imageFile="@assetFile=#level1Icon.png"
+	AssetCategory="gui" />

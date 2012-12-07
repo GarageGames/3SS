@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="mainMenuButtonDownImage"
+    imageFile="@assetFile=#mainMenuButtonDown.png"
+	AssetCategory="gui" />

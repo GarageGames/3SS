@@ -1,0 +1,4 @@
+<AudioAsset
+    AssetName="Gorilla_Hit_01Sound"
+    AudioFile="@assetFile=#Gorilla_Hit_01.wav"
+    AutoUnload="0" />

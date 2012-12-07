@@ -1,0 +1,7 @@
+<ModuleDefinition
+	ModuleId="{WiXTool}"
+	VersionId="1"
+	Description="WiX Windows Installer"
+	Group="projectTools"
+	/>
+

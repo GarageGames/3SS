@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{GameCore}"
+	VersionId="1"
+	Description="Core Game Module"
+	Synchronized="1"
+	Group="gameBase"
+	ScriptFile="main.cs"
+	CreateFunction="initializeGameCore"
+	DestroyFunction="destroyGameCore"
+	DeclaredAssetManifest="^{GameCore}/DeclaredAssets.Manifest.taml"
+	/>
+

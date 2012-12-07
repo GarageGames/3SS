@@ -1,0 +1,213 @@
+<mockup version="1.0" skin="sketch" measuredW="1026" measuredH="430" mockupW="1000" mockupH="405">
+  <controls>
+    <control controlID="153" controlTypeID="__group__" x="26" y="25" w="1000" h="405" measuredW="1000" measuredH="405" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="1000" h="405" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="153">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <dragger>false</dragger>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09Enemy%20Tool</text>
+            <topheight>26</topheight>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::HelpButton" x="976" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="4" locked="false" isInGroup="153"/>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="620" y="108" w="-1" h="-1" measuredW="77" measuredH="42" zOrder="5" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>%28%20%29%20Static%0A%28o%29%20Animated</text>
+          </controlProperties>
+        </control>
+        <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="936" y="371" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="6" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::ComboBox" x="141" y="60" w="151" h="-1" measuredW="77" measuredH="23" zOrder="7" locked="false" isInGroup="153">
+          <controlProperties>
+            <italic>true</italic>
+            <state>closed</state>
+            <text>Enemy1</text>
+          </controlProperties>
+        </control>
+        <control controlID="61" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="48" w="355" h="48" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="62" controlTypeID="com.balsamiq.mockups::Label" x="13" y="60" w="-1" h="-1" measuredW="124" measuredH="24" zOrder="21" locked="false" isInGroup="153">
+          <controlProperties>
+            <bold>true</bold>
+            <size>16</size>
+            <text>Selected%20Enemy</text>
+          </controlProperties>
+        </control>
+        <control controlID="64" controlTypeID="com.balsamiq.mockups::Canvas" x="607" y="96" w="381" h="190" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="69" controlTypeID="com.balsamiq.mockups::CheckBox" x="656" y="210" w="-1" h="-1" measuredW="94" measuredH="22" zOrder="22" locked="false" isInGroup="153">
+          <controlProperties>
+            <state>disabled</state>
+            <text>Auto%20Rotate</text>
+          </controlProperties>
+        </control>
+        <control controlID="72" controlTypeID="com.balsamiq.mockups::Button" x="880" y="165" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="23" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Select</text>
+          </controlProperties>
+        </control>
+        <control controlID="75" controlTypeID="com.balsamiq.mockups::TextInput" x="654" y="164" w="224" h="-1" measuredW="97" measuredH="27" zOrder="24" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Orc_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="77" controlTypeID="com.balsamiq.mockups::Button" x="787" y="207" w="29" h="27" measuredW="31" measuredH="27" zOrder="25" locked="false" isInGroup="153">
+          <controlProperties>
+            <size>10</size>
+            <state>disabled</state>
+            <text>%3C</text>
+          </controlProperties>
+        </control>
+        <control controlID="81" controlTypeID="com.balsamiq.mockups::Icon" x="300" y="59" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="26" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>PlusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="82" controlTypeID="com.balsamiq.mockups::Icon" x="324" y="59" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="27" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>MinusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="84" controlTypeID="com.balsamiq.mockups::Image" x="654" y="165" w="221" h="22" measuredW="128" measuredH="128" zOrder="28" locked="false" isInGroup="153">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="85" controlTypeID="com.balsamiq.mockups::Button" x="853" y="207" w="29" h="27" measuredW="31" measuredH="27" zOrder="29" locked="false" isInGroup="153">
+          <controlProperties>
+            <size>10</size>
+            <state>disabled</state>
+            <text>%3E</text>
+          </controlProperties>
+        </control>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::TextInput" x="820" y="207" w="30" h="-1" measuredW="20" measuredH="27" zOrder="30" locked="false" isInGroup="153">
+          <controlProperties>
+            <align>center</align>
+            <state>disabled</state>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="87" controlTypeID="com.balsamiq.mockups::Image" x="102" y="353" w="127" h="22" measuredW="128" measuredH="128" zOrder="31" locked="false" isInGroup="153">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="88" controlTypeID="com.balsamiq.mockups::Image" x="361" y="96" w="241" h="247" measuredW="160" measuredH="160" zOrder="8" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <src>./assets/blank.png</src>
+            <text>Orc%20Animation</text>
+          </controlProperties>
+        </control>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::ComboBox" x="440" y="347" w="140" h="-1" measuredW="62" measuredH="23" zOrder="9" locked="false" isInGroup="153">
+          <controlProperties>
+            <state>closed</state>
+            <text>North%0A%09East%0A%09South%0A%09West%0ADeath%20animation%0A%09North%0A%09East%0A%09South%0A%09West</text>
+          </controlProperties>
+        </control>
+        <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="382" y="347" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="10" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Preview</text>
+          </controlProperties>
+        </control>
+        <control controlID="91" controlTypeID="com.balsamiq.mockups::Icon" x="300" y="353" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="32" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RightTriangleIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="92" controlTypeID="com.balsamiq.mockups::Icon" x="326" y="353" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="33" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>StopIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="15" y="104" w="-1" h="-1" measuredW="78" measuredH="273" zOrder="11" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Name%0A%20%0ASpeed%0A%20%0AHealth%0A%20%0ADamage%0A%20%0AScore%0A%20%0AFunds%0A%20%0ADeath%20Sound</text>
+          </controlProperties>
+        </control>
+        <control controlID="94" controlTypeID="com.balsamiq.mockups::TextInput" x="102" y="106" w="193" h="-1" measuredW="82" measuredH="27" zOrder="12" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Jim%20the%20Orc</text>
+          </controlProperties>
+        </control>
+        <control controlID="95" controlTypeID="com.balsamiq.mockups::ComboBox" x="102" y="148" w="193" h="-1" measuredW="77" measuredH="23" zOrder="13" locked="false" isInGroup="153">
+          <controlProperties>
+            <state>closed</state>
+            <text>Slowest%0ASlow%0AAverage%0AFast%0AFastest</text>
+          </controlProperties>
+        </control>
+        <control controlID="96" controlTypeID="com.balsamiq.mockups::Icon" x="273" y="111" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="14" locked="false" isInGroup="153">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="97" controlTypeID="com.balsamiq.mockups::NumericStepper" x="102" y="191" w="193" h="-1" measuredW="50" measuredH="24" zOrder="15" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>20</text>
+          </controlProperties>
+        </control>
+        <control controlID="98" controlTypeID="com.balsamiq.mockups::NumericStepper" x="102" y="234" w="193" h="-1" measuredW="39" measuredH="24" zOrder="16" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="99" controlTypeID="com.balsamiq.mockups::NumericStepper" x="102" y="277" w="193" h="-1" measuredW="55" measuredH="24" zOrder="17" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>100</text>
+          </controlProperties>
+        </control>
+        <control controlID="100" controlTypeID="com.balsamiq.mockups::NumericStepper" x="102" y="315" w="193" h="-1" measuredW="49" measuredH="24" zOrder="18" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>50</text>
+          </controlProperties>
+        </control>
+        <control controlID="101" controlTypeID="com.balsamiq.mockups::Button" x="234" y="352" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="19" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>Select</text>
+          </controlProperties>
+        </control>
+        <control controlID="102" controlTypeID="com.balsamiq.mockups::TextInput" x="102" y="351" w="132" h="-1" measuredW="101" measuredH="27" zOrder="20" locked="false" isInGroup="153">
+          <controlProperties>
+            <text>orcDeathSound</text>
+          </controlProperties>
+        </control>
+        <control controlID="103" controlTypeID="com.balsamiq.mockups::HRule" x="320" y="49" w="674" h="-1" measuredW="100" measuredH="5" zOrder="34" locked="false" isInGroup="153"/>
+        <control controlID="104" controlTypeID="com.balsamiq.mockups::Icon" x="8" y="29" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="35" locked="false" isInGroup="153">
+          <controlProperties>
+            <icon>SaveIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="105" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="96" w="349" h="300" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="106" controlTypeID="com.balsamiq.mockups::Icon" x="571" y="315" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="36" locked="false" isInGroup="153">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>SearchIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

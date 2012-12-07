@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="avatarEmptyImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/betBox" />

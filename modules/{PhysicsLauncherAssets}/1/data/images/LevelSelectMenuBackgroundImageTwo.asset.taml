@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="LevelSelectMenuBackgroundImageTwoImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#LevelSelectMenuBackgroundImageTwo.png" />

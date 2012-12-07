@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="DeleteButtonNormalImage"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DeleteButton_normal.png" />

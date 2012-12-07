@@ -1,0 +1,5 @@
+<AudioAsset
+    AssetName="Score_Counting_Up_013_Rev1Sound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#Score_Counting_Up_013_Rev1.wav"
+    AutoUnload="0" />

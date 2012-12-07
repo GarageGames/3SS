@@ -1,0 +1,12 @@
+<SimSet
+    Name="InterfaceToolWorldHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Remember that you need to create and set images for when a World is locked and players can’t access it in the game." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Next Page and Previous Page buttons are only necessary if your game has more Worlds than will fit on a single page." />
+    <ScriptObject
+        Name="Tip2"
+        Text="As you make changes to your Icon and Container images take the time to launch a test game to see how they appear in game." />
+</SimSet>

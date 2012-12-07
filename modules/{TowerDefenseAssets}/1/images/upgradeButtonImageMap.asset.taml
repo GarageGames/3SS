@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="upgradeButtonImageMap"
+    imageFile="@assetFile=#upgradeButton.png"
+    AssetCategory="gui" />

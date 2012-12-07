@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="DimImageMap"
+    AssetCategory="gui"
+    AssetInternal="1"
+    imageFile="@assetFile=#dim" />

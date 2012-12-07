@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="Carpet_BackdropImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Carpet_Backdrop" />

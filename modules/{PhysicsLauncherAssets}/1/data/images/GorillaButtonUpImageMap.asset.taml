@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="GorillaButtonUpImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#ProjectileBtnUp" />

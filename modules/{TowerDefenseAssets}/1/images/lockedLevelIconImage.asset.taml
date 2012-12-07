@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="lockedLevelIconImage"
+    imageFile="@assetFile=#lockedLevelIcon.png"
+	AssetCategory="gui" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="soundTabHover"
+    AssetInternal="1"
+    ImageFile="@assetFile=#soundTabHover.png" />

@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{AssetPicker}"
+	VersionId="1"
+	Description="Asset Picker"
+	Group="assetTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	ScopeSet="AssetPickerSet"
+	CreateFunction="initializeAssetPicker"
+	DestroyFunction="destroyAssetPicker"
+	DeclaredAssetManifest="^{AssetPicker}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^AssetPicker/ReferencedAssets.manifest.taml"	/>
+

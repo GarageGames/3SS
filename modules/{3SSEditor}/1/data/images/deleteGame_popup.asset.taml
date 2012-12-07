@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="deleteGamePopupContainer"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#deleteGame_popup.png" />

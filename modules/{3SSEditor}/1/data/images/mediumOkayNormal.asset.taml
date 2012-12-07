@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="mediumOkayNormal"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#mediumOkayNormal.png" />

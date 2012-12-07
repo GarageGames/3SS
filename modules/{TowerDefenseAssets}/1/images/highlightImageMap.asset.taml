@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="highlightImageMap"
+    imageFile="@assetFile=#highlight.png"
+    AssetCategory="gui" />

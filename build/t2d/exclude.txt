@@ -1,0 +1,16 @@
+Link
+.svn
+CVS
+prefs.cs
+config.cs
+commonPrefs.cs
+.ncb
+.user
+.dso
+.edso
+.ml
+.obj
+.ilk
+_DEBUG.
+_debug.
+console.log

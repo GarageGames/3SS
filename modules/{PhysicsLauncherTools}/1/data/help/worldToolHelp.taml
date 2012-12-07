@@ -1,0 +1,18 @@
+<SimSet
+    Name="WorldToolHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="A level can be assigned to a World or left Unused to be assigned later." />
+    <ScriptObject
+        Name="Tip1"
+        Text="You cannot assign a Level to more than one World. But you can make a copy of any Level and give it a new name." />
+    <ScriptObject
+        Name="Tip2"
+        Text="Make sure that your Level 3 Reward Value is difficult to reach - but not impossible." />
+    <ScriptObject
+        Name="Tip3"
+        Text="You must have at least 1 Projectile for each Level and you may add up to 5 Projectiles." />
+    <ScriptObject
+        Name="Tip4"
+        Text="Music can really add to the game experience, but it can also ruin the experience. Make sure to check volume level and the length of the audio so it doesn’t repeat too often." />
+</SimSet>

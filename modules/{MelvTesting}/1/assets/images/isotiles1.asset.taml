@@ -1,0 +1,9 @@
+<ImageAsset
+    AssetName="isotiles1"
+    ImageFile="@assetFile=#isotiles1.png"
+    CellOffsetY="5"
+    CellStrideY="24"
+    CellCountX="13"
+    CellCountY="9"
+    CellWidth="30"
+    CellHeight="19" />

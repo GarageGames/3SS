@@ -1,0 +1,196 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(ProjectiFeaturePanel) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiTransparentProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "190 295";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiControl() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "20 0";
+      Extent = "177 301";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      tooltipprofile = "GuiDefaultProfile";
+      hovertime = "1000";
+
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         isContainer = "1";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "5 33";
+         Extent = "164 165";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+
+         new GuiPopUpMenuCtrl(ProjectiFeaturePanelStatusBarType) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiPopUpMenuProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            Position = "6 100";
+            Extent = "150 18";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            maxLength = "1024";
+            maxPopupHeight = "200";
+            sbUsesNAColor = "0";
+            reverseTextList = "0";
+            bitmapBounds = "16 16";
+         };
+         new GuiTextCtrl() {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiTextProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            Position = "7 80";
+            Extent = "87 14";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            text = "Status Bar Type";
+            maxLength = "1024";
+         };
+         new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableMusic) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiCheckBoxProfile";
+            HorizSizing = "center";
+            VertSizing = "bottom";
+            Position = "9 3";
+            Extent = "145 23";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            tooltipprofile = "GuiDefaultProfile";
+            ToolTip = "Enables playback of music from the user's iPod library";
+            hovertime = "1000";
+            text = "iPod Music Support";
+            groupNum = "-1";
+            buttonType = "ToggleButton";
+            useMouseEvents = "0";
+            useInactiveState = "0";
+         };
+         new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableMoviePlayer) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiCheckBoxProfile";
+            HorizSizing = "center";
+            VertSizing = "bottom";
+            Position = "9 25";
+            Extent = "145 23";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            tooltipprofile = "GuiDefaultProfile";
+            ToolTip = "Enables use of the Movie Player controls for playing movies on top of your game.";
+            hovertime = "1000";
+            text = "Movie Player Support";
+            groupNum = "-1";
+            buttonType = "ToggleButton";
+            useMouseEvents = "0";
+            useInactiveState = "0";
+         };
+         new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableGameCenter) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiCheckBoxProfile";
+            HorizSizing = "center";
+            VertSizing = "bottom";
+            Position = "9 47";
+            Extent = "145 23";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            tooltipprofile = "GuiDefaultProfile";
+            ToolTip = "This enables Game Center support for leaderboards, achievements and player IDs";
+            hovertime = "1000";
+            text = "Enable Game Center";
+            groupNum = "-1";
+            buttonType = "ToggleButton";
+            useMouseEvents = "0";
+            useInactiveState = "0";
+         };
+         //new GuiCheckBoxCtrl(ProjectiFeaturePanelEnableNetwork) {
+            //canSaveDynamicFields = "0";
+            //isContainer = "0";
+            //Profile = "GuiCheckBoxProfile";
+            //HorizSizing = "center";
+            //VertSizing = "bottom";
+            //Position = "9 69";
+            //Extent = "145 23";
+            //MinExtent = "8 2";
+            //canSave = "1";
+            //Visible = "1";
+            //tooltipprofile = "GuiDefaultProfile";
+            //ToolTip = "At times networking can be disabled to increase performance.";
+            //hovertime = "1000";
+            //text = "Enable Network Support";
+            //groupNum = "-1";
+            //buttonType = "ToggleButton";
+            //useMouseEvents = "0";
+            //useInactiveState = "0";
+         //};
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "11 15";
+         Extent = "104 17";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "OS Feature Settings";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "111 165";
+         Extent = "58 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "ProjectiFeatureSettings::setiFeatureOptions();";
+         hovertime = "1000";
+         text = "Apply";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

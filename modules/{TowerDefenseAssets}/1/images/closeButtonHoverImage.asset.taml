@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="closeButtonHoverImage"
+    imageFile="@assetFile=#closeButtonHover.png"
+	AssetCategory="gui" />

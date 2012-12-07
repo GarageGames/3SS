@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="SelectionTool_inactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#SelectionTool_inactive.png"
+    AutoUnload="0" />

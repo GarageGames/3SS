@@ -1,0 +1,6 @@
+<ModuleDefinition
+	ModuleId="{PackageMaker}"
+	VersionId="1"
+	Description="OS X Package Maker"
+	Group="projectTools"
+	/>

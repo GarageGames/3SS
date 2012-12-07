@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="WinImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Win" />

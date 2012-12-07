@@ -1,0 +1,18 @@
+<SimSet
+    Name="CollisionToolHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="For the best game performance keep your collision shapes as small as possible." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Often using 2 (or more) smaller collision shapes is more accurate than one large shape." />
+    <ScriptObject
+        Name="Tip2"
+        Text="You can use up to 8 different collision shapes on each object or projectile." />
+    <ScriptObject
+        Name="Tip3"
+        Text="Test your object and projectile collisions in game over and over as you make updates to make your collisions as accurate and as realistic as possible." />
+    <ScriptObject
+        Name="Tip4"
+        Text="Use combinations of squares, triangles, and circles to create more accurate collision shapes around your projectiles and objects." />
+</SimSet>

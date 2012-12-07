@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PublishButtonImageMap"
+    AssetInternal="1"
+    ImageFile="@assetFile=#publishButton.png" />

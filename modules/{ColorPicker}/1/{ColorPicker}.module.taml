@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{ColorPicker}"
+	VersionId="1"
+	Description="Color Picker"
+	Group="assetTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	ScopeSet="ColorPickerSet"
+	CreateFunction="initializeColorPicker"
+	DestroyFunction="destroyColorPicker"
+    DeclaredAssetManifest="^{ColorPicker}/DeclaredAssets.manifest.taml"
+	/>
+

@@ -1,0 +1,14 @@
+<ModuleDefinition
+	ModuleId="{PhysicsLauncherTools}"
+	VersionId="1"
+	Description="Physics Launcher Tools"
+	Purchased="1"
+	Synchronized="0"
+	Group="PhysicsLauncherToolsGroup"
+	Dependencies="{3SSCollisionEditor}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializePhysicsLauncherTools"
+	DestroyFunction="destroyPhysicsLauncherTools"
+	Type="TemplateTools"
+	DeclaredAssetManifest="^{PhysicsLauncherTools}/DeclaredAssets.manifest.taml"	
+	ReferencedAssetManifest="^PhysicsLauncherTools/ReferencedAssets.Manifest.taml"	/>

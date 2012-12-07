@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="mediumTabBoxImage"
+    AssetCategory="gui"
+	AssetInternal="1"
+    imageFile="@assetFile=#mediumTabBox.png" />

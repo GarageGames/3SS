@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="GravityNone_inactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#GravityNone_inactive"
+    AutoUnload="0" />

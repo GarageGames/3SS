@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TD_GoldSprite"
+    imageFile="@assetFile=#TD_Gold.png"
+    AssetCategory="sprites" />

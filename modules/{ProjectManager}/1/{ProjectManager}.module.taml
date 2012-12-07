@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{ProjectManager}"
+	VersionId="1"
+	Description="Game Project Manager"
+	Group="projectTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	ScopeSet="ProjectManagerSet"
+	CreateFunction="initializeProjectManager"
+	DestroyFunction="destroyProjectManager"
+	/>

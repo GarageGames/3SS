@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{WebStore}"
+	VersionId="1"
+	Description="Web Store"
+	Group="projectTools"
+	Dependencies="{EditorCore}=1,{QtManager}=1"
+	ScriptFile="main.cs"
+	ScopeSet="WebStoreSet"
+	CreateFunction="initializeWebStore"
+	DestroyFunction="destroyWebStore"
+	/>
+

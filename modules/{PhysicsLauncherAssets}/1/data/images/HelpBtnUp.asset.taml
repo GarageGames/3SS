@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="HelpBtnUpImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#HelpBtnUp.png" />

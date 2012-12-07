@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{EditorShell}"
+	VersionId="1"
+	Description="3 Step Studio Shell"
+	Group="baseTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	ScopeSet="EditorShellSet"
+	CreateFunction="initializeEditorShell"
+	DestroyFunction="destroyEditorShell"
+	DeclaredAssetManifest="^{EditorShell}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^EditorShell/ReferencedAssets.manifest.taml"	/>
+

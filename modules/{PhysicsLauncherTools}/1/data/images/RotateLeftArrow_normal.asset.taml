@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="RotateLeftArrow_normal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#RotateLeftArrow_normal"
+    AutoUnload="0" />

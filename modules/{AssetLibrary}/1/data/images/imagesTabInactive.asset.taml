@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="imagesTabInactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#imagesTabInactive.png" />

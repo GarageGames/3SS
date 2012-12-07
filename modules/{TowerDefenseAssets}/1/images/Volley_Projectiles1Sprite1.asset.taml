@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Volley_Projectiles1Sprite1"
+    imageFile="@assetFile=#Volley_Projectiles1.png"
+    cellCountX="4"
+    cellCountY="4"
+    cellWidth="64"
+    cellHeight="64"
+	AssetCategory="sprites" />

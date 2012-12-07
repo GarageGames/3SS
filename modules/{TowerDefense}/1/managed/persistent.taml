@@ -1,0 +1,2476 @@
+<SimSet
+    setType="Persistent">
+    <TextObject
+        Name="GlobalBehaviorObject"
+        size="1.0 1.0"
+        Position="-0.648828 17.429609"
+        BodyType="static"
+        text="Global Behavior Object"
+        font="Arial"
+        wordWrap="0"
+        hideOverflow="0"
+        textAlign="Left"
+        lineHeight="43.969799"
+        aspectRatio="1"
+        lineSpacing="0"
+        characterSpacing="0"
+        autoSize="1"
+        fontSizes="10"
+        textColor="1 1 1 1"
+        filter="0"
+        integerPrecision="0"
+        noUnicode="0"
+        hideOverlap="0">
+        <TextObject.Behaviors>
+            <ScorekeeperBehavior
+                Id="1"
+                damageSound="BaseAttackedSound"
+                deathSound="None"
+                winSound="None" />
+        </TextObject.Behaviors>
+    </TextObject>
+    <Sprite
+        Name="rangeCircle"
+		imageMap="@asset={TowerDefenseAssets}:rangeCircleImageMap"
+        SceneLayer="5"
+        size="3.000 3.000"
+        Position="-16.116907 -5.149422"
+        Visible="0"
+         />
+    <Sprite
+        Name="PauseShot"
+		imageMap="@asset={TowerDefenseAssets}:pauseButtonImageMap"
+        Position="-6.369515 15.803532"
+        CollisionCallback="1"
+        collisionActiveSend="1"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <AppliesSlowEffectBehavior
+                Id="1"
+                speedModifier="50"
+                slowDuration="3" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="HighlightObject"
+		imageMap="@asset={TowerDefenseAssets}:highlightImageMap"
+        SceneLayer="10"
+        Position="-23.384546 6.160453"
+        BodyType="static"
+        CollisionGroups="0" />
+    <Sprite
+        Name="BarImage"
+		imageMap="@asset={TowerDefenseAssets}:healthBarImageMap"
+        size="1.000 0.094"
+        Position="-22.253485 6.337187"
+        BodyType="static"
+        CollisionGroups="0"
+        CollisionLayers="0"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0" />
+    <Sprite
+        Name="BarFrame"
+		imageMap="@asset={TowerDefenseAssets}:healthBarFrameImageMap"
+        size="1.000 0.094"
+        Position="-21.140078 6.337187"
+        BodyType="static"
+        CollisionGroups="0"
+        CollisionLayers="0"
+        FlipX="1"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0" />
+    <Sprite
+        Name="upgradeButton"
+		imageMap="@asset={TowerDefenseAssets}:upgradeButtonImageMap"
+        size="0.656 0.719"
+        Position="-27.219515 7.188406"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="sellButton"
+		imageMap="@asset={TowerDefenseAssets}:sellButtonImageMap"
+        size="0.656 0.672"
+        Position="-25.369421 7.135094"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="confirmButton"
+		imageMap="@asset={TowerDefenseAssets}:confirmButtonImageMap"
+        size="0.672 0.703"
+        Position="-27.134422 5.200156"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="towerCancelButton"
+		imageMap="@asset={TowerDefenseAssets}:cancelButtonImageMap"
+        size="0.656 0.656"
+        Position="-25.293484 5.342625"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="TowerSlot1Icon"
+		imageMap="@asset={TowerDefenseAssets}:FireballTowerIcon"
+        class="TowerButton"
+        SceneLayer="1"
+        Position="-6.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="TowerSlot2Icon"
+		imageMap="@asset={TowerDefenseAssets}:IceTowerIcon"
+        class="TowerButton"
+        SceneLayer="1"
+        Position="-4.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="TowerSlot3Icon"
+		imageMap="@asset={TowerDefenseAssets}:CannonTowerIcon"
+        class="TowerButton"
+        SceneLayer="1"
+        Position="-2.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="TowerSlot4Icon"
+		imageMap="@asset={TowerDefenseAssets}:PoisonTowerIcon"
+        class="TowerButton"
+        SceneLayer="1"
+        Position="-0.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="TowerSlot5Icon"
+		imageMap="@asset={TowerDefenseAssets}:VolleyTowerIcon"
+        class="TowerButton"
+        SceneLayer="1"
+        Position="1.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="cancelTower"
+		imageMap="@asset={TowerDefenseAssets}:cancelTowerImageMap"
+        Position="3.500000 -5.000000"
+        BodyType="static"
+        Visible="0"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="startNextWaveButton"
+		imageMap="@asset={TowerDefenseAssets}:startNextWaveButtonImageMap"
+        SceneLayer="1"
+        size="0.781 0.922"
+        Position="5.500000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1"
+        Available="0"
+        IsFlashing="0">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="pauseButton"
+		imageMap="@asset={TowerDefenseAssets}:pauseButtonImageMap"
+        SceneLayer="1"
+        size="0.781 0.922"
+        Position="7.000000 -5.000000"
+        BodyType="static"
+        UseInputEvents="1">
+        <Sprite.Behaviors>
+            <GenericButtonBehavior
+                Id="1"
+                clickImage="None"
+                clickFrame="0"
+                buttonDown="onButtonDown"
+                buttonUp="onButtonUp" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="DefaultEnemy"
+        SceneLayer="4"
+        Position="18.000000 2.220531"
+        CollisionGroups="1"
+        CollisionLayers="11"
+        CollisionSuppress="1"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        AIMovementComponent="1339"
+        alive="1"
+        collisionActiveReceive="1"
+        collisionActiveSend="0"
+        CollisionPhysicsSend="0"
+        CollisionPolyList="0.010 -0.162 0.403 0.304 0.349 0.958 -0.358 0.953 -0.432 0.314"
+        LinkPoints="0.000 1.000"
+        MaxLinearVelocity="50"
+        moveSpeed="40"
+        yOffset="0.000000 0.000000">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <TakesDamageBehavior
+                Id="2"
+                health="100"
+                lives="0"
+                tintRedForDamage="0"
+                respawnTime="2"
+                invincibleTime="1"
+                respawnEffect=""
+                ignoreDamageFrom=""
+                changeStateWithDamage="0"
+                damageState1Threshold="0.800000012"
+                damageState1Image=""
+                damageState1Music=""
+                damageState2Threshold="0.5"
+                damageState2Image=""
+                damageState2Music=""
+                damageState3Threshold="0.200000003"
+                damageState3Image=""
+                damageState3Music=""
+                damageSound="None" />
+            <DisplayHealthBar
+                Id="3"
+                HealthBarObj="BarImage"
+                BarFrameObj="BarFrame"
+                FrameOnTop="0"
+                BarToLeft="1"
+                ChangeColor="1"
+                ColorGood="0.0 1.0 0.0 1.0"
+                DamageState1="0.66"
+                ColorHurt="1.0 1.0 0.0 1.0"
+                DamageState2="0.33"
+                ColorDying="1.0 0.0 0.0 1.0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="1"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <DirectionalAnimationBehavior
+                Id="5" />
+            <TowerTargetBehavior
+                Id="6" />
+            <KillableActorBehavior
+                Id="7"
+                DeathAnimation=""
+                explodeEffect=""
+                deathSound="" />
+            <ScoreActorBehavior
+                Id="8"
+                PointValue="50"
+                CurrencyValue="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <PathFollowingBehavior
+                Id="9"
+                destination="EnemyPathGrid01"
+                moveSpeed="40"
+                maxForce="1000"
+                forceMultiplier="1"
+                pathGrid="EnemyPathGrid01"
+                wayPointDistance="0.0500000007"
+                pathOffsetRangeX="0.375"
+                pathOffsetRangeY="0.375" />
+            <EnemySafeZoneBehavior
+                Id="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Enemy0"
+		animationName="@asset={TowerDefenseAssets}:TD_DwarfWalkSouth"
+        internalName="Dwarf"
+        SceneLayer="4"
+        Position="20.000000 2.220531"
+        CollisionGroups="1"
+        CollisionLayers="11"
+        CollisionSuppress="1"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        AIMovementComponent="1352"
+        alive="1"
+        animationName="@asset={TowerDefenseAssets}:TD_DwarfWalkSouth"
+        AnimationSet="DwarfAnimSet"
+        collisionActiveReceive="1"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.25"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0"
+        CollisionPolyList="0.010 -0.162 0.403 0.304 0.349 0.958 -0.358 0.953 -0.432 0.314"
+        damping="0.800000012"
+        LinkPoints="0.000 1.000"
+        MaxLinearVelocity="50"
+        moveSpeed="40"
+        Type="Enemy"
+        UsesPhysics="1"
+        yOffset="0.000000 0.000000">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <TakesDamageBehavior
+                Id="2"
+                health="100"
+                lives="0"
+                tintRedForDamage="0"
+                respawnTime="2"
+                invincibleTime="1"
+                respawnEffect=""
+                ignoreDamageFrom=""
+                changeStateWithDamage="0"
+                damageState1Threshold="0.800000012"
+                damageState1Image=""
+                damageState1Music=""
+                damageState2Threshold="0.5"
+                damageState2Image=""
+                damageState2Music=""
+                damageState3Threshold="0.200000003"
+                damageState3Image=""
+                damageState3Music=""
+                damageSound="None" />
+            <DisplayHealthBar
+                Id="3"
+                HealthBarObj="BarImage"
+                BarFrameObj="BarFrame"
+                FrameOnTop="0"
+                BarToLeft="1"
+                ChangeColor="1"
+                ColorGood="0.0 1.0 0.0 1.0"
+                DamageState1="0.66"
+                ColorHurt="1.0 1.0 0.0 1.0"
+                DamageState2="0.33"
+                ColorDying="1.0 0.0 0.0 1.0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="1"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim="Bullet3Animation"
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <DirectionalAnimationBehavior
+                Id="5" />
+            <TowerTargetBehavior
+                Id="6" />
+            <KillableActorBehavior
+                Id="7"
+                DeathAnimation="TD_DwarfDeath"
+                explodeEffect=""
+                deathSound="DwarfDeathSound" />
+            <ScoreActorBehavior
+                Id="8"
+                PointValue="50"
+                CurrencyValue="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <PathFollowingBehavior
+                Id="9"
+                destination="EnemyPathGrid01"
+                moveSpeed="40"
+                maxForce="1000"
+                forceMultiplier="1"
+                pathGrid="EnemyPathGrid01"
+                wayPointDistance="0.0500000007"
+                pathOffsetRangeX="0.375"
+                pathOffsetRangeY="0.375" />
+            <EnemySafeZoneBehavior
+                Id="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="enemy1"
+		animationName="@asset={TowerDefenseAssets}:TD_Knight_MoveSouth"
+        internalName="Knight"
+        SceneLayer="4"
+        Position="19.875000 3.548656"
+        CollisionGroups="1"
+        CollisionLayers="11"
+        CollisionSuppress="1"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        AIMovementComponent="1365"
+        alive="1"
+        animationName="@asset={TowerDefenseAssets}:TD_Knight_MoveSouth"
+        AnimationSet="FighterAnimSet"
+        collisionActiveReceive="1"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.25"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0"
+        CollisionPolyList="-0.545 -0.388 0.000 -0.692 0.604 -0.334 0.516 0.987 -0.496 0.992"
+        LinkPoints="0.000 1.000"
+        MaxLinearVelocity="30"
+        moveSpeed="40"
+        Type="Enemy"
+        UsesPhysics="1"
+        yOffset="0.000000 0.000000">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <TakesDamageBehavior
+                Id="2"
+                health="250"
+                lives="0"
+                tintRedForDamage="0"
+                respawnTime="2"
+                invincibleTime="1"
+                respawnEffect=""
+                ignoreDamageFrom=""
+                changeStateWithDamage="0"
+                damageState1Threshold="0.800000012"
+                damageState1Image=""
+                damageState1Music=""
+                damageState2Threshold="0.5"
+                damageState2Image=""
+                damageState2Music=""
+                damageState3Threshold="0.200000003"
+                damageState3Image=""
+                damageState3Music=""
+                damageSound="None" />
+            <DisplayHealthBar
+                Id="3"
+                HealthBarObj="BarImage"
+                BarFrameObj="BarFrame"
+                FrameOnTop="0"
+                BarToLeft="1"
+                ChangeColor="1"
+                ColorGood="0.0 1.0 0.0 1.0"
+                DamageState1="0.66"
+                ColorHurt="1.0 1.0 0.0 1.0"
+                DamageState2="0.33"
+                ColorDying="1.0 0.0 0.0 1.0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="2"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim="Bullet3Animation"
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <DirectionalAnimationBehavior
+                Id="5" />
+            <TowerTargetBehavior
+                Id="6" />
+            <KillableActorBehavior
+                Id="7"
+                DeathAnimation="fluVirusDeathAnim"
+                explodeEffect=""
+                deathSound="KnightDeathSound" />
+            <ScoreActorBehavior
+                Id="8"
+                PointValue="100"
+                CurrencyValue="100"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <PathFollowingBehavior
+                Id="9"
+                destination="EnemyPathGrid01"
+                moveSpeed="40"
+                maxForce="1000"
+                forceMultiplier="1"
+                pathGrid="EnemyPathGrid01"
+                wayPointDistance="0.0500000007"
+                pathOffsetRangeX="0.375"
+                pathOffsetRangeY="0.375" />
+            <EnemySafeZoneBehavior
+                Id="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="enemy2"
+		animationName="@asset={TowerDefenseAssets}:TD_Barbarian_WalkSouth"
+        internalName="Barbarian"
+        SceneLayer="4"
+        size="1.500 1.500"
+        Position="20.090548 0.579906"
+        CollisionGroups="1"
+        CollisionLayers="11"
+        CollisionSuppress="1"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        AIMovementComponent="1378"
+        alive="1"
+        animationName="@asset={TowerDefenseAssets}:TD_Barbarian_WalkSouth"
+        AnimationSet="BarbarianAnimSet"
+        collisionActiveReceive="1"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0"
+        CollisionPolyList="0.010 -0.162 0.403 0.304 0.349 0.958 -0.358 0.953 -0.432 0.314"
+        LinkPoints="0.000 1.000"
+        MaxLinearVelocity="50"
+        moveSpeed="30"
+        Type="Enemy"
+        UsesPhysics="1"
+        yOffset="0.000000 0.000000">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <TakesDamageBehavior
+                Id="2"
+                health="2500"
+                lives="0"
+                tintRedForDamage="0"
+                respawnTime="2"
+                invincibleTime="1"
+                respawnEffect=""
+                ignoreDamageFrom=""
+                changeStateWithDamage="0"
+                damageState1Threshold="0.800000012"
+                damageState1Image=""
+                damageState1Music=""
+                damageState2Threshold="0.5"
+                damageState2Image=""
+                damageState2Music=""
+                damageState3Threshold="0.200000003"
+                damageState3Image=""
+                damageState3Music=""
+                damageSound="None" />
+            <DisplayHealthBar
+                Id="3"
+                HealthBarObj="BarImage"
+                BarFrameObj="BarFrame"
+                FrameOnTop="0"
+                BarToLeft="1"
+                ChangeColor="1"
+                ColorGood="0.0 1.0 0.0 1.0"
+                DamageState1="0.66"
+                ColorHurt="1.0 1.0 0.0 1.0"
+                DamageState2="0.33"
+                ColorDying="1.0 0.0 0.0 1.0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="10"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <DirectionalAnimationBehavior
+                Id="5" />
+            <TowerTargetBehavior
+                Id="6" />
+            <KillableActorBehavior
+                Id="7"
+                DeathAnimation=""
+                explodeEffect=""
+                deathSound="BarbarianDeathSound" />
+            <ScoreActorBehavior
+                Id="8"
+                PointValue="500"
+                CurrencyValue="500"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <PathFollowingBehavior
+                Id="9"
+                destination="EnemyPathGrid01"
+                moveSpeed="30"
+                maxForce="1000"
+                forceMultiplier="1"
+                pathGrid="EnemyPathGrid01"
+                wayPointDistance="0.0500000007"
+                pathOffsetRangeX="0.375"
+                pathOffsetRangeY="0.375" />
+            <EnemySafeZoneBehavior
+                Id="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="enemy3"
+		animationName="@asset={TowerDefenseAssets}:TD_Wizard_WalkSouth"
+        internalName="Wizard"
+        SceneLayer="4"
+        Position="20.000000 2.220531"
+        CollisionGroups="1"
+        CollisionLayers="11"
+        CollisionSuppress="1"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        AIMovementComponent="1391"
+        alive="1"
+        animationName="@asset={TowerDefenseAssets}:TD_Wizard_WalkSouth"
+        AnimationSet="WizardAnimSet"
+        collisionActiveReceive="1"
+        collisionActiveSend="0"
+        CollisionPhysicsSend="0"
+        CollisionPolyList="0.010 -0.162 0.403 0.304 0.349 0.958 -0.358 0.953 -0.432 0.314"
+        LinkPoints="0.000 1.000"
+        MaxLinearVelocity="50"
+        moveSpeed="50"
+        Type="Enemy"
+        yOffset="0.000000 0.000000">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <TakesDamageBehavior
+                Id="2"
+                health="800"
+                lives="0"
+                tintRedForDamage="0"
+                respawnTime="2"
+                invincibleTime="1"
+                respawnEffect=""
+                ignoreDamageFrom=""
+                changeStateWithDamage="0"
+                damageState1Threshold="0.800000012"
+                damageState1Image=""
+                damageState1Music=""
+                damageState2Threshold="0.5"
+                damageState2Image=""
+                damageState2Music=""
+                damageState3Threshold="0.200000003"
+                damageState3Image=""
+                damageState3Music=""
+                damageSound="None" />
+            <DisplayHealthBar
+                Id="3"
+                HealthBarObj="BarImage"
+                BarFrameObj="BarFrame"
+                FrameOnTop="0"
+                BarToLeft="1"
+                ChangeColor="1"
+                ColorGood="0.0 1.0 0.0 1.0"
+                DamageState1="0.66"
+                ColorHurt="1.0 1.0 0.0 1.0"
+                DamageState2="0.33"
+                ColorDying="1.0 0.0 0.0 1.0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="5"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <DirectionalAnimationBehavior
+                Id="5" />
+            <TowerTargetBehavior
+                Id="6" />
+            <KillableActorBehavior
+                Id="7"
+                DeathAnimation=""
+                explodeEffect=""
+                deathSound="WizardDeathSound" />
+            <ScoreActorBehavior
+                Id="8"
+                PointValue="250"
+                CurrencyValue="250"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <PathFollowingBehavior
+                Id="9"
+                destination="EnemyPathGrid01"
+                moveSpeed="50"
+                maxForce="1000"
+                forceMultiplier="1"
+                pathGrid="EnemyPathGrid01"
+                wayPointDistance="0.0500000007"
+                pathOffsetRangeX="0.375"
+                pathOffsetRangeY="0.375" />
+            <EnemySafeZoneBehavior
+                Id="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="livesContainer"
+		imageMap="@asset={TowerDefenseAssets}:topHudContainerImageMap"
+        size="3.391 1.094"
+        Position="5.968781 5.338766"
+        BodyType="static" />
+    <Sprite
+        Name="scoreContainer"
+		imageMap="@asset={TowerDefenseAssets}:topHudContainerImageMap"
+        size="3.391 1.094"
+        Position="2.031250 5.328125"
+        BodyType="static" />
+    <Sprite
+        Name="fundsContainer"
+		imageMap="@asset={TowerDefenseAssets}:topHudContainerImageMap"
+        size="3.391 1.094"
+        Position="-2.125000 5.328125"
+        BodyType="static" />
+    <Sprite
+        Name="waveInfoContainer"
+		imageMap="@asset={TowerDefenseAssets}:waveInfoContainerSprite"
+        size="3.172 1.234"
+        Position="-6.109375 5.250000"
+        BodyType="static" />
+    <BitmapFontObject
+        Name="waveCountdownBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="2.250 0.563"
+        Position="-5.168828 5.306250"
+        BodyType="static"
+        text="0:00"
+        textAlignment="Right"
+        Frame="0" />
+    <BitmapFontObject
+        Name="waveTotalBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="1.125 0.563"
+        Position="-5.074203 5.640000"
+        BodyType="static"
+        text="10"
+        textAlignment="Right"
+        Frame="0" />
+    <BitmapFontObject
+        Name="waveCountSlashBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="0.563 0.563"
+        Position="-5.924594 5.640000"
+        BodyType="static"
+        text="/"
+        textAlignment="Left"
+        Frame="0" />
+    <BitmapFontObject
+        Name="currentWaveBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="1.125 0.563"
+        Position="-5.933485 5.640000"
+        BodyType="static"
+        text="00"
+        textAlignment="Right"
+        Frame="0" />
+    <BitmapFontObject
+        Name="scoreBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="2.250 0.563"
+        Position="3.394797 5.600000"
+        BodyType="static"
+        text="0000"
+        textAlignment="Right"
+        Frame="0" />
+    <BitmapFontObject
+        Name="livesBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="1.125 0.563"
+        Position="7.365391 5.600000"
+        BodyType="static"
+        text="00"
+        textAlignment="Right"
+        Frame="0" />
+    <BitmapFontObject
+        Name="fundsBitmapFont"
+		imageMap="@asset={TowerDefenseAssets}:font_75Sprite"
+        size="2.250 0.563"
+        Position="-0.756750 5.600000"
+        BodyType="static"
+        text="0000"
+        textAlignment="Right"
+        Frame="0" />
+    <Sprite
+        Name="livesIcon"
+		imageMap="@asset={TowerDefenseAssets}:livesIconImageMap"
+        size="0.516 0.438"
+        Position="5.072047 5.451031"
+        BodyType="static" />
+    <Sprite
+        Name="scoreIcon"
+		imageMap="@asset={TowerDefenseAssets}:scoreIconImageMap"
+        size="0.578 0.422"
+        Position="1.286828 5.457812"
+        BodyType="static" />
+    <Sprite
+        Name="fundsIcon"
+		imageMap="@asset={TowerDefenseAssets}:fundsIconImageMap"
+        size="0.703 0.406"
+        Position="-2.875000 5.468750"
+        BodyType="static" />
+    <Sprite
+        Name="waveInfoIcon"
+		imageMap="@asset={TowerDefenseAssets}:waveInfoIconImageMap"
+        size="0.391 0.297"
+        Position="-6.859375 5.328125"
+        BodyType="static" />
+    <Sprite
+        Name="DefaultProjectile"
+        size="0.500 0.500"
+        Position="21.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="10"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower1"
+        internalName="Flame Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-23.968500 -5.155906"
+        BodyType="static"
+        CollisionGroups="0"
+        BlendColor="0.8 0.8 0.8 0.65"
+        SortPoint="0.000 0.979"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Fire_Tower_Base_Idle_Anim"
+        AnimationSet="FireballTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerDragBehavior
+                Id="1"
+                DragInX="1"
+                DragInY="1"
+                NotifyPathChange="0"
+                RangeObj="rangeCircle"
+                PlacementSound="TowerPlacementSound" />
+            <TowerShootsBehavior
+                Id="2"
+                projectile="Projectile0"
+                range="3"
+                rateOfFire="5"
+                fireStartDelay="0.25"
+                fireSound="FireTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim="FireTower_Base_FireAnim"
+                NEastAnim="FireTower_Base_FireAnim"
+                EastAnim="FireTower_Base_FireAnim"
+                SEastAnim="FireTower_Base_FireAnim"
+                SouthAnim="FireTower_Base_FireAnim"
+                SWestAnim="FireTower_Base_FireAnim"
+                WestAnim="FireTower_Base_FireAnim"
+                NWestAnim="FireTower_Base_FireAnim" />
+            <TemplateBehavior
+                Id="3" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="4"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="5"
+                Cost="100"
+                value="30"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="6"
+                upgrade="Tower1Upgrade1"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower1Upgrade1"
+        internalName="Blasting Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-24.054546 -3.250000"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Fire_Tower_Upgrade1_Idle_Anim"
+        AnimationSet="BlastingTowerAnimSet"
+        canFire="0"
+        CollisionPhysicsReceive="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile5"
+                range="4"
+                rateOfFire="7"
+                fireStartDelay="0.25"
+                fireSound="FireTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim="FireTower_Base_FireAnim"
+                NEastAnim="FireTower_Base_FireAnim"
+                EastAnim="FireTower_Base_FireAnim"
+                SEastAnim="FireTower_Base_FireAnim"
+                SouthAnim="FireTower_Base_FireAnim"
+                SWestAnim="FireTower_Base_FireAnim"
+                WestAnim="FireTower_Base_FireAnim"
+                NWestAnim="FireTower_Base_FireAnim" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="200"
+                value="40"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower1Upgrade2"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower1Upgrade2"
+        internalName="Flamethrower Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-23.983265 -1.250000"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Fire_Tower_Upgrade2_Idle_Anim"
+        AnimationSet="MeteorTowerAnimSet"
+        canFire="0"
+        CollisionPhysicsReceive="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile10"
+                range="4"
+                rateOfFire="10"
+                fireStartDelay="0.25"
+                fireSound="FireTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim="FireTower_Base_FireAnim"
+                NEastAnim="FireTower_Base_FireAnim"
+                EastAnim="FireTower_Base_FireAnim"
+                SEastAnim="FireTower_Base_FireAnim"
+                SouthAnim="FireTower_Base_FireAnim"
+                SWestAnim="FireTower_Base_FireAnim"
+                WestAnim="FireTower_Base_FireAnim"
+                NWestAnim="FireTower_Base_FireAnim" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="500"
+                value="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower2"
+        internalName="Ice Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-21.246750 -5.086375"
+        BodyType="static"
+        CollisionGroups="0"
+        BlendColor="0.8 0.8 0.8 0.65"
+        SortPoint="-0.029 0.979"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Tower_Base_IdleAnimation"
+        AnimationSet="IceTowerAnimSet"
+        canFire="0"
+        Cost="50"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="38"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerDragBehavior
+                Id="1"
+                DragInX="1"
+                DragInY="1"
+                NotifyPathChange="0"
+                RangeObj="rangeCircle"
+                PlacementSound="TowerPlacementSound" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <TowerUpgradeBehavior
+                Id="4"
+                upgrade="Tower2Upgrade1"
+                upgradeSound="" />
+            <PurchaseableBehavior
+                Id="5"
+                Cost="200"
+                value="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerShootsBehavior
+                Id="6"
+                projectile="Projectile1"
+                range="2"
+                rateOfFire="5"
+                fireStartDelay="0.5"
+                fireSound="IceTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower2Upgrade1"
+        internalName="Hail Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-21.240704 -3.290047"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="-0.004 0.985"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Tower_Upgrade1_IdleAnimation"
+        AnimationSet="HailTowerAnimSet"
+        canFire="0"
+        Cost="50"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="38"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile6"
+                range="3"
+                rateOfFire="3"
+                fireStartDelay="0.5"
+                fireSound="IceTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="400"
+                value="60"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower2Upgrade2"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower2Upgrade2"
+        internalName="Blizzard Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-21.274548 -1.289750"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Tower_Upgrade2_IdleAnimation"
+        AnimationSet="IcebergTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile11"
+                range="4"
+                rateOfFire="1"
+                fireStartDelay="0.25"
+                fireSound="IceTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="600"
+                value="70"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower3"
+        internalName="Cannon Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-18.598938 -5.196344"
+        BodyType="static"
+        CollisionGroups="0"
+        BlendColor="0.8 0.8 0.8 0.65"
+        SortPoint="-0.016 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Cannon_Tower_Base_IdleAnimation"
+        AnimationSet="CannonTowerAnimSet"
+        canFire="0"
+        Cost="100"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="75"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerDragBehavior
+                Id="1"
+                DragInX="1"
+                DragInY="1"
+                NotifyPathChange="0"
+                RangeObj="rangeCircle"
+                PlacementSound="TowerPlacementSound" />
+            <TowerShootsBehavior
+                Id="2"
+                projectile="Projectile2"
+                range="2"
+                rateOfFire="5"
+                fireStartDelay="0.5"
+                fireSound="CannonTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="3" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="4"
+                RangeObj="rangeCircle" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower3Upgrade1"
+                upgradeSound="" />
+            <PurchaseableBehavior
+                Id="6"
+                Cost="250"
+                value="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower3Upgrade1"
+        internalName="Culverin Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-18.607798 -3.367812"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="-0.034 0.983"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Cannon_Tower_Upgrade1_IdleAnimation"
+        AnimationSet="CulverinTowerAnimSet"
+        canFire="0"
+        Cost="100"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="75"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile7"
+                range="3"
+                rateOfFire="5"
+                fireStartDelay="0.5"
+                fireSound="CannonTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="500"
+                value="60"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower3Upgrade2"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower3Upgrade2"
+        internalName="Basilisk Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-18.708391 -1.218469"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Cannon_Tower_Upgrade2_IdleAnimation"
+        AnimationSet="BasiliskTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile12"
+                range="4"
+                rateOfFire="3"
+                fireStartDelay="0.25"
+                fireSound="CannonTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="750"
+                value="70"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower4"
+        internalName="Poison Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-16.116907 -5.149422"
+        BodyType="static"
+        CollisionGroups="0"
+        BlendColor="0.8 0.8 0.8 0.65"
+        SortPoint="-0.062 0.974"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Tower_Base_IdleAnimation"
+        AnimationSet="PoisonTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerDragBehavior
+                Id="1"
+                DragInX="1"
+                DragInY="1"
+                NotifyPathChange="0"
+                RangeObj="rangeCircle"
+                PlacementSound="TowerPlacementSound" />
+            <TowerShootsBehavior
+                Id="2"
+                projectile="Projectile3"
+                range="4"
+                rateOfFire="3"
+                fireStartDelay="0.25"
+                fireSound="PoisonTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="3" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="4"
+                RangeObj="rangeCircle" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower4Upgrade1"
+                upgradeSound="" />
+            <PurchaseableBehavior
+                Id="6"
+                Cost="400"
+                value="40"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower4Upgrade1"
+        internalName="Acid Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-16.204765 -3.383047"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Tower_Upgrade1_IdleAnimation"
+        AnimationSet="AcidTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile8"
+                range="4"
+                rateOfFire="3"
+                fireStartDelay="0.25"
+                fireSound="PoisonTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="700"
+                value="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower4Upgrade2"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower4Upgrade2"
+        internalName="Sludge Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-16.249157 -1.182812"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Tower_Upgrade2_IdleAnimation"
+        AnimationSet="SludgeTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile13"
+                range="5"
+                rateOfFire="1"
+                fireStartDelay="0.25"
+                fireSound="PoisonTowerFireSound"
+                retargetAfterShot="1"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="1000"
+                value="60"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower5"
+        internalName="Volley Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-14.000000 -5.109375"
+        BodyType="static"
+        CollisionGroups="0"
+        BlendColor="0.8 0.8 0.8 0.65"
+        SortPoint="-0.062 0.974"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Tower_Base_IdleAnimation"
+        AnimationSet="VolleyTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerDragBehavior
+                Id="1"
+                DragInX="1"
+                DragInY="1"
+                NotifyPathChange="0"
+                RangeObj="rangeCircle"
+                PlacementSound="TowerPlacementSound" />
+            <TowerShootsBehavior
+                Id="2"
+                projectile="Projectile4"
+                range="4"
+                rateOfFire="7"
+                fireStartDelay="0.25"
+                fireSound="VolleyTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="3" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="4"
+                RangeObj="rangeCircle" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower5Upgrade1"
+                upgradeSound="" />
+            <PurchaseableBehavior
+                Id="6"
+                Cost="400"
+                value="40"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower5Upgrade1"
+        internalName="Torrent Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-13.809922 -3.416312"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Tower_Upgrade1_IdleAnimation"
+        AnimationSet="TorrentTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile9"
+                range="5"
+                rateOfFire="7"
+                fireStartDelay="0.25"
+                fireSound="VolleyTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="700"
+                value="50"
+                ScorekeeperObject="GlobalBehaviorObject" />
+            <TowerUpgradeBehavior
+                Id="5"
+                upgrade="Tower5Upgrade2"
+                upgradeSound="" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Tower5Upgrade2"
+        internalName="Stream of Abuse Tower"
+        SceneLayer="4"
+        size="1.000 1.500"
+        Position="-13.861218 -1.325391"
+        BodyType="static"
+        CollisionGroups="0"
+        SortPoint="0.004 0.981"
+        UseInputEvents="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Tower_Upgrade2_IdleAnimation"
+        AnimationSet="StreamOfAbuseTowerAnimSet"
+        canFire="0"
+        Cost="25"
+        fireOnStartAnim="1"
+        includeInGame="1"
+        LinkPoints="0.007 -0.658 0.339 -0.594 0.501 -0.349 0.339 -0.113 0.000 -0.029 -0.354 -0.103 -0.501 -0.334 -0.331 -0.579"
+        sellValue="19"
+        Type="Tower"
+        upgradeEnabled="1">
+        <Sprite.Behaviors>
+            <TowerShootsBehavior
+                Id="1"
+                projectile="Projectile14"
+                range="6"
+                rateOfFire="10"
+                fireStartDelay="0.25"
+                fireSound="VolleyTowerFireSound"
+                retargetAfterShot="0"
+                ScaleTime="1"
+                NorthAnim=""
+                NEastAnim=""
+                EastAnim=""
+                SEastAnim=""
+                SouthAnim=""
+                SWestAnim=""
+                WestAnim=""
+                NWestAnim="" />
+            <TemplateBehavior
+                Id="2" />
+            <toggleShowRangeOnTouchDownBehavior
+                Id="3"
+                RangeObj="rangeCircle" />
+            <PurchaseableBehavior
+                Id="4"
+                Cost="1000"
+                value="60"
+                ScorekeeperObject="GlobalBehaviorObject" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile0"
+        internalName="Fireball"
+        size="0.500 0.500"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Projectile_FireballAnim"
+        AnimationSet="FireballAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="10"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile1"
+        internalName="Ice Pellets"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Projectile_1Animation"
+        AnimationSet="IcePelletsAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="5"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSlowEffectBehavior
+                Id="5"
+                speedModifier="90"
+                slowDuration="5" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile2"
+        internalName="Cannon"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Cannonball_projectile_1Animation"
+        AnimationSet="CannonAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="15"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSplashEffectBehavior
+                Id="5"
+                splashRadius="1"
+                splashDamage="5" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile3"
+        internalName="Poison Ball"
+        Position="23.997343 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Projectile1Animation"
+        AnimationSet="PoisonBallAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="8"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesPoisonEffectBehavior
+                Id="5"
+                poisonDuration="3"
+                damagePerSecond="8" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile4"
+        internalName="Blunt Shots"
+        Position="23.997343 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Projectiles1Animation"
+        AnimationSet="BluntShotsAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1"
+        WorldLimitCallback="1"
+        WorldLimitMax="600.000 600.000"
+        WorldLimitMin="-600.000 -600.000"
+        WorldLimitMode="NULL">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="0"
+                continueWithoutTarget="1" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="10"
+                deleteOnHit="0"
+                deleteOnDealDamage="0"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="1" />
+            <AppliesPiercingEffectBehavior
+                Id="5"
+                damageFalloff="80" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile5"
+        internalName="Galvanic Blast"
+        size="0.500 0.500"
+        Position="17.434813 3.734375"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Projectile_Galvanic_BlastAnimation"
+        AnimationSet="GalvanicBlastAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="18"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile6"
+        internalName="Hail"
+        Position="23.997343 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Projectile_2Animation"
+        AnimationSet="HailAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="15"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSlowEffectBehavior
+                Id="5"
+                speedModifier="70"
+                slowDuration="20" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile7"
+        internalName="Culverin"
+        Position="17.434813 3.734375"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Cannonball_Projectile_2Animation"
+        AnimationSet="CulverinAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="30"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSplashEffectBehavior
+                Id="5"
+                splashRadius="2"
+                splashDamage="15" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile8"
+        internalName="Acid Ball"
+        Position="17.434813 3.734375"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Projectile2Animation"
+        AnimationSet="AcidBallAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="10"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesPoisonEffectBehavior
+                Id="5"
+                poisonDuration="8"
+                damagePerSecond="10" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile9"
+        internalName="Broadhead Shots"
+        Position="23.997343 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Projectiles2Animation"
+        AnimationSet="BroadheadShotsAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1"
+        WorldLimitCallback="1"
+        WorldLimitMax="600.000 600.000"
+        WorldLimitMin="-600.000 -600.000"
+        WorldLimitMode="NULL">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="0"
+                continueWithoutTarget="1" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="15"
+                deleteOnHit="0"
+                deleteOnDealDamage="0"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="1" />
+            <AppliesPiercingEffectBehavior
+                Id="5"
+                damageFalloff="70" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile10"
+        internalName="Flame"
+        size="1.000 1.500"
+        Position="23.997343 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Projectile_Meteor_StrikeAnimation"
+        AnimationSet="MeteorAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionCircleSuperscribed="0"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="15"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile11"
+        internalName="Iceberg"
+        Position="17.434813 3.734375"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Ice_Projectile_3Animation"
+        AnimationSet="IcebergAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="50"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSlowEffectBehavior
+                Id="5"
+                speedModifier="30"
+                slowDuration="50" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile12"
+        internalName="Basilisk"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Cannonball_Projectile_3Animation"
+        AnimationSet="BasiliskAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1"
+        WorldLimitCallback="1"
+        WorldLimitMax="600.000 600.000"
+        WorldLimitMin="-600.000 -600.000"
+        WorldLimitMode="NULL">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="45"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesSplashEffectBehavior
+                Id="5"
+                splashRadius="3"
+                splashDamage="25" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile13"
+        internalName="Sludge Bomb"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Poison_Projectile3Animation"
+        AnimationSet="SludgeBombAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="1"
+                continueWithoutTarget="0" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="15"
+                deleteOnHit="0"
+                deleteOnDealDamage="1"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="0" />
+            <AppliesPoisonEffectBehavior
+                Id="5"
+                poisonDuration="10"
+                damagePerSecond="15" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="Projectile14"
+        internalName="Piercing Shots"
+        Position="23.997313 2.236156"
+        CollisionGroups="1"
+        CollisionLayers="16"
+        CollisionSuppress="1"
+        animationName="@asset={TowerDefenseAssets}:Volley_Projectiles3Animation"
+        AnimationSet="PiercingShotsAnimSet"
+        collisionActiveSend="0"
+        CollisionCircleScale="0.5"
+        CollisionDetectionMode="CIRCLE"
+        CollisionPolyList="-0.500 -0.500 0.500 -0.500 0.500 0.500 -0.500 0.500"
+        MoveProjectileBehaviorPreUpdate="1"
+        preFire="1"
+        Type="Projectile"
+        UsesPhysics="1"
+        WorldLimitCallback="1"
+        WorldLimitMax="600.000 600.000"
+        WorldLimitMin="-600.000 -600.000"
+        WorldLimitMode="NULL">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <MoveProjectileBehavior
+                Id="2"
+                travelAnim=""
+                cycleAnim="1"
+                trackTarget="1"
+                limitRange="0"
+                continueWithoutTarget="1" />
+            <FaceObjectBehavior
+                Id="3"
+                object=""
+                turnSpeed="0"
+                rotationOffset="0" />
+            <DealsDamageBehavior
+                Id="4"
+                strength="20"
+                deleteOnHit="0"
+                deleteOnDealDamage="0"
+                attackAnim=""
+                explodeEffect=""
+                hitAllTowerEnemies="1" />
+            <AppliesPiercingEffectBehavior
+                Id="5"
+                damageFalloff="60" />
+        </Sprite.Behaviors>
+    </Sprite>
+    <Sprite
+        Name="ProjectileHitAnim"
+        Position="-4.500000 -5.000000"
+        BodyType="static"
+        CollisionGroups="0"
+        CollisionLayers="0"
+        CollisionPhysicsReceive="0"
+        CollisionPhysicsSend="0"
+        Type="ProjectileHitAnimSprite">
+        <Sprite.Behaviors>
+            <TemplateBehavior
+                Id="1" />
+            <ProjectileHitAnimBehavior
+                Id="2" />
+        </Sprite.Behaviors>
+    </Sprite>
+</SimSet>

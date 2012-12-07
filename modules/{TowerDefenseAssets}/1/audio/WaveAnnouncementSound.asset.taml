@@ -1,0 +1,4 @@
+<AudioAsset
+    AssetName="WaveAnnouncementSound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#TD_WaveAnnounce.wav" />

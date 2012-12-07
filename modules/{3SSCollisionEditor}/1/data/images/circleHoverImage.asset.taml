@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="circleHoverImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#circleHover.png" />

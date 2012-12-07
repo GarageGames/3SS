@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="tileLayerIconImageMap"
+    AssetInternal="1"
+    ImageFile="@assetFile=#tileMap"
+    filterPad="false" />

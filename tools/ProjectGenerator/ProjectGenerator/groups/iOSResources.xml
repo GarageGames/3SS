@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <NamedGroup name="Resources">
+    <Folder name="game" path="../game" source="RelativeToGroup" buildPhase="Resources" />
+    <Folder name="modules" path="../modules" source="RelativeToGroup" buildPhase="Resources" />
+    <File name="main.cs" path="../main.cs" source="RelativeToGroup" />
+    <File name="Default.png" path="../Default.png" source="RelativeToGroup" />
+  </NamedGroup>
+</Group>

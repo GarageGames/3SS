@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="MarketplaceButtonNormalImage"
+    AssetInternal="1"
+    ImageFile="@assetFile=#MarketplaceButton_normal.png" />

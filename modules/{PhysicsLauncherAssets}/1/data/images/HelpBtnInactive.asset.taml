@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="HelpBtnInactiveImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#HelpBtnInactive.png" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="closeButtonImage"    
+    imageFile="@assetFile=#closeButton.png"
+	AssetCategory="gui" />

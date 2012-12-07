@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location		
+			Path="^{ImageEditor}/data/images"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

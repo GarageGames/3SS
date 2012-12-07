@@ -1,0 +1,201 @@
+<SimSet
+    Name="PrefabTemplateObjectSet">
+    <Sprite
+        internalName="DefaultProjectile"
+        SceneLayer="15"
+        size="0.500 0.500"
+        Active="0"
+        DefaultDensity="2"
+        DefaultFriction="0.75"
+        DefaultRestitution="0.300000012"
+        AngularDamping="2.25"
+        UseInputEvents="1"
+        CollisionCallback="1"
+        SleepingCallback="1"
+        activated="0"
+        animationName="PL_DefaultProjectileAnim"
+        IconNormal="{PhysicsLauncherAssets}:GorillaButtonUpImageMap"
+        IconDepressed="{PhysicsLauncherAssets}:GorillaButtonDownImageMap"
+        IconHover="{PhysicsLauncherAssets}:GorillaButtonHoverImageMap"
+        IconInactive="{PhysicsLauncherAssets}:GorillaButtonInactiveImageMap"
+        Name="DefaultProjectile"
+        PointValue="10000">
+        <Sprite.Behaviors>
+            <ProjectileBehavior
+                Id="1" />
+            <ImageTrailBehavior
+                Id="2"
+                asset="PL_DefaultPathAnim"
+                dropTimer="0.100000001"
+                imageSize="0.5" />
+            <ImpactImageBehavior
+                Id="3"
+                asset="PL_DefaultDustAnim"
+                imageSize="0.75" />
+            <onRestBehavior
+                Id="4"
+                instanceName="" />
+            <SoundEffectBehavior
+                Id="5"
+                sound="PL_DefaultSound"
+                instanceName="InAir" />
+            <SoundEffectBehavior
+                Id="6"
+                sound="PL_DefaultSound"
+                instanceName="Hit" />
+            <SoundEffectBehavior
+                Id="7"
+                sound="PL_DefaultSound"
+                instanceName="Vanish" />
+            <SoundEffectBehavior
+                Id="8"
+                sound="PL_DefaultSound"
+                instanceName="IdleInLauncher" />
+            <AnimationEffectBehavior
+                Id="9"
+                asset="PL_DefaultProjectileAnim"
+                Frame="0"
+                instanceName="Idle" />
+            <AnimationEffectBehavior
+                Id="10"
+                asset="PL_GorillaIdleProjectileAnim"
+                Frame="0"
+                instanceName="IdleInLauncher" />
+            <AnimationEffectBehavior
+                Id="11"
+                asset="PL_GorillaFlightProjectileAnim"
+                Frame="0"
+                instanceName="InAir" />
+            <AnimationEffectBehavior
+                Id="12"
+                asset="PL_GorillaTumbleProjectileAnim"
+                Frame="0"
+                instanceName="Hit" />
+            <AnimationEffectBehavior
+                Id="13"
+                asset="PL_DefaultDustAnim"
+                Frame="0"
+                instanceName="VanishAnim" />
+            <LaunchableBehavior
+                Id="14" />
+            <LoadableBehavior
+                Id="15" />
+            <VanishBehavior
+                Id="16"
+                instanceName=""
+                vanishTime="3"
+                vanishDuration="1" />
+            <DamageModifierBehavior
+                Id="17"
+                instanceName=""
+                damageModifierGroups=""
+                damageMultiplier="1"
+                destroyOnDamage="0" />
+            <AdjustGMValueBehavior
+                Id="18"
+                adjustableValueField=""
+                adjustment="0" />
+            <TemplateBehavior
+                Id="19" />
+        </Sprite.Behaviors>
+        <Sprite.BehaviorConnections>
+            <Connection
+                Hit="1"
+                Impact="3" />
+            <Connection
+                Hit="1"
+                Play="12" />
+            <Connection
+                Hit="1"
+                PlaySound="6" />
+            <Connection
+                EndMove="1"
+                End="2" />
+            <Connection
+                StartMove="1"
+                start="2" />
+            <Connection
+                StartMove="1"
+                Activate="4" />
+            <Connection
+                Resting="4"
+                Vanish="16" />
+            <Connection
+                launched="14"
+                Play="11" />
+            <Connection
+                launched="14"
+                PlaySound="5" />
+            <Connection
+                loaded="15"
+                Play="10" />
+            <Connection
+                loaded="15"
+                PlaySound="8" />
+            <Connection
+                Vanishing="16"
+                PlaySound="7" />
+            <Connection
+                Vanishing="16"
+                Play="13" />
+        </Sprite.BehaviorConnections>
+        <Sprite.CollisionShapes>
+            <Circle
+                Radius="0.250000" />
+        </Sprite.CollisionShapes>
+    </Sprite>
+    <sprite
+	name="DefaultWorldObject"
+	internalName="DefaultWorldObject"
+    animationName="PL_DefaultWorldObjectAnim0"
+    SceneLayer="15"
+    DefaultDensity="0.800000012"
+    CollisionCallback="1"
+    CollisionShape0="polygon 0.800000 0.200000 0.000000 0 4 -0.475000 -0.475000 0.475000 -0.475000 0.475000 0.475000 -0.475000 0.475000 ">
+    <sprite.Behaviors>
+        <WorldObjectBehavior
+            Id="1"
+            worldObjectName="DefaultName" />
+        <DamageableBehavior
+            Id="2"
+            startingHealth="20"
+            minDamageThreshold="1"
+            minSpeedThreshold="0"
+            damageStates="0.0 0.3 0.6 1.0"
+            canSkipDamageStates="1"
+            damageModifierGroups="" />
+        <AnimationEffectBehavior
+            Id="3"
+            animation="PL_DefaultWorldObjectAnim1" />
+        <AnimationEffectBehavior
+            Id="4"
+            animation="PL_DefaultWorldObjectAnim2" />
+        <AnimationEffectBehavior
+            Id="5"
+            animation="PL_DefaultWorldObjectAnim3" />
+        <VanishBehavior
+            Id="6"
+            vanishTime="0"
+            vanishAnim="PL_DefaultDustAnim" />
+        <AdjustGMValueBehavior
+            Id="7"
+            adjustableValueField="Score"
+            adjustment="100" />
+    </sprite.Behaviors>
+    <sprite.BehaviorConnections>
+        <Connection
+            OnDamageState0="2"
+            Play="3" />
+        <Connection
+            OnDamageState3="2"
+            Vanish="6"
+            adjustGMValue="7" />
+        <Connection
+            OnDamageState2="2"
+            Play="5" />
+        <Connection
+            OnDamageState1="2"
+            Play="4" />
+    </sprite.BehaviorConnections>
+</sprite>
+</SimSet>

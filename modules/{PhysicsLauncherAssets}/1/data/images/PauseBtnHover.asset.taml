@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PauseBtnHoverImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#PauseBtnHover.png" />

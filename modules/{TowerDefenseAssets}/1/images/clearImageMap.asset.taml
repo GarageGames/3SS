@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="clearImageMap"
+    imageFile="@assetFile=#clear.png"
+    AssetCategory="sprites" />

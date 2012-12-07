@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Rocks_SpriteSetImageMap"
+    imageFile="@assetFile=#Rocks_SpriteSet.png"
+    cellCountX="-1"
+    cellCountY="-1"
+    cellWidth="64"
+    cellHeight="64"
+	AssetCategory="sprites" />

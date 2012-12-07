@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="ShufflingImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Shuffling" />

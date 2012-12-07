@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Gorilla_Sprite_SheetImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Gorilla_Sprite_Sheet.png"
+    CellCountX="10"
+    CellCountY="10"
+    CellWidth="96"
+    CellHeight="96" />

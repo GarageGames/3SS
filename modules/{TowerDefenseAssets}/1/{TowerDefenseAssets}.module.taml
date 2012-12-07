@@ -1,0 +1,10 @@
+<ModuleDefinition
+	ModuleId="{TowerDefenseAssets}"
+	VersionId="1"
+	Purchased="1"
+	Dependencies=""
+	Description="Tower Defense Asset Pack"
+	Synchronized = "1"
+	DeclaredAssetManifest="^{TowerDefenseAssets}/DeclaredAssets.Manifest.taml"
+	/>
+

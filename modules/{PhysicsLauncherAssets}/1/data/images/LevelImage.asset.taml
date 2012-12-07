@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="LevelImageImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#LevelImage.png" />

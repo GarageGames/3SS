@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TargetAll>
+  <BuildConfigs default="Release" defaultConfigurationIsVisible="0">
+    <BuildConfig name="Release">
+      <BuildSettings>
+        <CONFIGURATION_BUILD_DIR>../../..</CONFIGURATION_BUILD_DIR>
+        <PRODUCT_NAME>All</PRODUCT_NAME>
+      </BuildSettings>
+    </BuildConfig>
+    <BuildConfig name="Debug">
+      <BuildSettings>
+        <CONFIGURATION_BUILD_DIR>../../..</CONFIGURATION_BUILD_DIR>
+        <PRODUCT_NAME>All</PRODUCT_NAME>
+      </BuildSettings>
+    </BuildConfig>
+  </BuildConfigs>
+</TargetAll>

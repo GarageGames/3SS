@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="largeBoxImage"
+    AssetCategory="gui"
+	AssetInternal="1"
+    imageFile="@assetFile=#largeBox.png" />

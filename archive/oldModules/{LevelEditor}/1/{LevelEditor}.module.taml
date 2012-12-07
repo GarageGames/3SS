@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{LevelEditor}"
+	VersionId="1"
+	Description="Level Editor"
+	Group="advancedTools"
+	Dependencies="{EditorCore}=1,{TileLayerEditor}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeLevelEditor"
+	DestroyFunction="destroyLevelEditor"
+	/>
+

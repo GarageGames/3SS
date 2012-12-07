@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="box2D">
+    <EngineSourceDirectory name="Collision" includeChildren="1"/>
+    <EngineSourceDirectory name="Common" includeChildren="1"/>
+    <EngineSourceDirectory name="Dynamics" includeChildren="1"/>
+    <EngineSourceDirectory name="Rope" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

@@ -1,0 +1,4 @@
+<AudioAsset
+    AssetName="PL_HitSound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#PL_Hit.wav" />

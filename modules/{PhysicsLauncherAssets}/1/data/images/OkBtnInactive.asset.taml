@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="OkBtnInactiveImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#OkBtnInactive.png" />

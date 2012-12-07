@@ -1,0 +1,69 @@
+<mockup version="1.0" skin="sketch" measuredW="1293" measuredH="777" mockupW="1280" mockupH="768">
+  <controls>
+    <control controlID="17" controlTypeID="__group__" x="13" y="9" w="1280" h="768" measuredW="1280" measuredH="768" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1280" h="768" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Bonsai%20Gaming%0Ahttp%3A//www.bonsaigaming.com</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::MultilineButton" x="371" y="169" w="524" h="300" measuredW="33" measuredH="35" zOrder="1" locked="false" isInGroup="17">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="611" y="420" w="209" h="-1" measuredW="79" measuredH="27" zOrder="2" locked="false" isInGroup="17">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="395" y="422" w="-1" h="-1" measuredW="216" measuredH="21" zOrder="3" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Enter%20your%20e-mail%20address%20to%20sign%20up%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="820" y="421" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="4" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Submit</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="347" y="478" w="-1" h="-1" measuredW="586" measuredH="21" zOrder="5" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Copyright%20%A9%20GarageGames.com%202000%20-%202012%20All%20Rights%20Reserved.%20Terms%20of%20Service%20-%20Privacy%20Policy</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="745" y="142" w="-1" h="-1" measuredW="73" measuredH="27" zOrder="6" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Username</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="818" y="141" w="-1" h="-1" measuredW="68" measuredH="27" zOrder="7" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Password</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="701" y="144" w="44" h="21" measuredW="44" measuredH="21" zOrder="8" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Log%20in%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Title" x="377" y="184" w="274" h="-1" measuredW="263" measuredH="50" zOrder="9" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>Bonsai%20Gaming</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="386" y="228" w="216" h="51" measuredW="362" measuredH="21" zOrder="10" locked="false" isInGroup="17">
+          <controlProperties>
+            <text>A%20place%20for%20designers%20to%20collaborate%20and%20build%20games%20together.</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Image" x="594" y="169" w="-1" h="-1" measuredW="280" measuredH="250" zOrder="11" locked="false" isInGroup="17">
+          <controlProperties>
+            <src>./assets/treegamesLogo.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

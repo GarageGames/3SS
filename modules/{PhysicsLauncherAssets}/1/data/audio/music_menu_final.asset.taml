@@ -1,0 +1,6 @@
+<AudioAsset
+    AssetName="music_menu_finalSound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#music_menu_final.wav"
+    VolumeChannel="1"
+    Looping="1" />

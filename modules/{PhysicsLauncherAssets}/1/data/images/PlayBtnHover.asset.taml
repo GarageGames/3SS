@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PlayBtnHoverImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#PlayBtnHover.png" />

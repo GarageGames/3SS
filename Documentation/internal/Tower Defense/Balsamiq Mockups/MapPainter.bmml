@@ -1,0 +1,984 @@
+<mockup version="1.0" skin="sketch" measuredW="2369" measuredH="560" mockupW="2340" mockupH="520">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="29" y="40" w="449" h="520" measuredW="449" measuredH="520" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="449" h="520" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%20%20Terrain%20Tool</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="278" w="449" h="210" measuredW="256" measuredH="100" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <selectedIndex>0</selectedIndex>
+            <text>Graphics%2C%20Paths%2C%20Towers</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="386" y="489" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="23" y="322" w="58" h="58" measuredW="58" measuredH="58" zOrder="7" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/cornerTile.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Image" x="105" y="322" w="58" h="58" measuredW="58" measuredH="58" zOrder="8" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/cornerTile2.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::Image" x="187" y="322" w="58" h="58" measuredW="58" measuredH="58" zOrder="9" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/cornerTile3.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::Image" x="269" y="322" w="58" h="58" measuredW="58" measuredH="58" zOrder="10" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/LavaCornerTile.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="15" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="12" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_paintBrush.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::HelpButton" x="425" y="29" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="11" locked="false" isInGroup="0"/>
+        <control controlID="24" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="13" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_Eraser-icon.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="1" y="274" w="447" h="-1" measuredW="100" measuredH="5" zOrder="14" locked="false" isInGroup="0"/>
+        <control controlID="28" controlTypeID="com.balsamiq.mockups::Icon" x="401" y="278" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="15" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>PlusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="29" controlTypeID="com.balsamiq.mockups::Icon" x="423" y="278" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="16" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>MinusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="30" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="430" y="303" w="-1" h="185" measuredW="16" measuredH="100" zOrder="17" locked="false" isInGroup="0"/>
+        <control controlID="31" controlTypeID="com.balsamiq.mockups::Image" x="351" y="322" w="58" h="58" measuredW="160" measuredH="160" zOrder="18" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <src>./assets/blank.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::TextArea" x="194" y="56" w="244" h="173" measuredW="200" measuredH="140" zOrder="19" locked="false" isInGroup="0">
+          <controlProperties>
+            <state>up</state>
+            <text>Detailed%20information%20on%20how%20the%20graphics%20tab%20works</text>
+          </controlProperties>
+        </control>
+        <control controlID="37" controlTypeID="com.balsamiq.mockups::Image" x="23" y="405" w="58" h="58" measuredW="160" measuredH="160" zOrder="20" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <src>./assets/blank.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="38" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="447" h="-1" measuredW="100" measuredH="5" zOrder="21" locked="false" isInGroup="0"/>
+        <control controlID="39" controlTypeID="com.balsamiq.mockups::Image" x="15" y="53" w="172" h="176" measuredW="77" measuredH="79" zOrder="4" locked="false" isInGroup="0">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="40" controlTypeID="com.balsamiq.mockups::Icon" x="154" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RedoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="41" controlTypeID="com.balsamiq.mockups::Icon" x="121" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="6" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>UndoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="42" controlTypeID="com.balsamiq.mockups::Icon" x="47" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="22" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_pb2.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="43" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="230" w="194" h="40" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="44" controlTypeID="com.balsamiq.mockups::VRule" x="113" y="234" w="-1" h="34" measuredW="5" measuredH="100" zOrder="23" locked="false" isInGroup="0"/>
+        <control controlID="53" controlTypeID="__group__" x="290" y="230" w="149" h="40" measuredW="149" measuredH="40" zOrder="24" locked="false" isInGroup="0">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="149" h="40" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="53">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="9" w="-1" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="53">
+              <controlProperties>
+                <text>Show</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="51" y="4" w="38" h="33" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="53">
+              <controlProperties>
+                <text>Path</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="89" y="4" w="43" h="33" measuredW="47" measuredH="27" zOrder="3" locked="false" isInGroup="53">
+              <controlProperties>
+                <text>Twr</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="1920" y="40" w="449" h="520" measuredW="449" measuredH="520" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="449" h="520" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%20%20Terrain%20Tool</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="276" w="449" h="210" measuredW="256" measuredH="100" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <selectedIndex>3</selectedIndex>
+            <text>Graphics%2C%20Paths%2C%20Towers</text>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::HelpButton" x="425" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="2" locked="false" isInGroup="1"/>
+        <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="1" y="272" w="447" h="-1" measuredW="100" measuredH="5" zOrder="3" locked="false" isInGroup="1"/>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::TextArea" x="192" y="57" w="244" h="171" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="1">
+          <controlProperties>
+            <state>up</state>
+            <text>Detailed%20information%20on%20how%20the%20tower%20tab%20works</text>
+          </controlProperties>
+        </control>
+        <control controlID="39" controlTypeID="com.balsamiq.mockups::Image" x="20" y="308" w="64" h="64" measuredW="128" measuredH="128" zOrder="5" locked="false" isInGroup="1">
+          <controlProperties>
+            <src>./assets/towerPlacement.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="386" y="489" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="6" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="48" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="447" h="-1" measuredW="100" measuredH="5" zOrder="7" locked="false" isInGroup="1"/>
+        <control controlID="54" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="230" w="194" h="40" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="55" controlTypeID="com.balsamiq.mockups::Image" x="15" y="53" w="172" h="176" measuredW="77" measuredH="79" zOrder="9" locked="false" isInGroup="1">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="56" controlTypeID="com.balsamiq.mockups::Icon" x="154" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="10" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RedoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="57" controlTypeID="com.balsamiq.mockups::Icon" x="121" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="11" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>UndoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="58" controlTypeID="com.balsamiq.mockups::Icon" x="15" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="12" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_paintBrush.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="59" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="13" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_Eraser-icon.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="60" controlTypeID="com.balsamiq.mockups::Icon" x="47" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="14" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_pb2.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="61" controlTypeID="com.balsamiq.mockups::VRule" x="113" y="234" w="-1" h="34" measuredW="5" measuredH="100" zOrder="15" locked="false" isInGroup="1"/>
+        <control controlID="62" controlTypeID="__group__" x="290" y="230" w="149" h="40" measuredW="149" measuredH="40" zOrder="16" locked="false" isInGroup="1">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="149" h="40" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="62">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="9" w="-1" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="62">
+              <controlProperties>
+                <text>Show</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="51" y="4" w="38" h="33" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="62">
+              <controlProperties>
+                <text>Path</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="89" y="4" w="43" h="33" measuredW="47" measuredH="27" zOrder="3" locked="false" isInGroup="62">
+              <controlProperties>
+                <state>disabled</state>
+                <text>Twr</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="499" y="40" w="449" h="520" measuredW="449" measuredH="520" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="449" h="520" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%20%20Terrain%20Tool</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="276" w="449" h="210" measuredW="256" measuredH="100" zOrder="1" locked="false" isInGroup="2">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Graphics%2C%20Paths%2C%20Towers</text>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::HelpButton" x="425" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="2" locked="false" isInGroup="2"/>
+        <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="1" y="272" w="447" h="-1" measuredW="100" measuredH="5" zOrder="3" locked="false" isInGroup="2"/>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::TextArea" x="196" y="56" w="244" h="171" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="2">
+          <controlProperties>
+            <state>up</state>
+            <text>Detailed%20information%20on%20how%20the%20path%20tab%20works</text>
+          </controlProperties>
+        </control>
+        <control controlID="49" controlTypeID="__group__" x="0" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="5" locked="false" isInGroup="2">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="49"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="1" locked="false" isInGroup="49">
+              <controlProperties>
+                <italic>false</italic>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="59" w="68" h="27" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="49">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="31" w="54" h="70" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="49">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="30" w="134" h="-1" measuredW="61" measuredH="27" zOrder="4" locked="false" isInGroup="49">
+              <controlProperties>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="37" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="49">
+              <controlProperties>
+                <icon>CircledXIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="52" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="482" w="449" h="38" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="2"/>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="430" y="301" w="-1" h="185" measuredW="16" measuredH="100" zOrder="9" locked="false" isInGroup="2"/>
+        <control controlID="57" controlTypeID="__group__" x="215" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="10" locked="false" isInGroup="2">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="57"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="57">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%202</text>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="64" y="59" w="68" h="27" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="57">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="9" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="31" w="54" h="55" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="57">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="10" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="30" w="134" h="-1" measuredW="61" measuredH="27" zOrder="4" locked="false" isInGroup="57">
+              <controlProperties>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="37" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="57">
+              <controlProperties>
+                <icon>CircledXIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="58" controlTypeID="__group__" x="0" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="6" locked="false" isInGroup="2">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="58"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="58">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="58">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="58">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="74" measuredH="27" zOrder="4" locked="false" isInGroup="58">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="59" controlTypeID="__group__" x="215" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="7" locked="false" isInGroup="2">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="59"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="1" locked="false" isInGroup="59">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="59">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="59">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="75" measuredH="27" zOrder="4" locked="false" isInGroup="59">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="66" controlTypeID="com.balsamiq.mockups::Button" x="386" y="489" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="11" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="71" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="447" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="2"/>
+        <control controlID="77" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="230" w="194" h="40" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="78" controlTypeID="com.balsamiq.mockups::Image" x="15" y="53" w="172" h="176" measuredW="77" measuredH="79" zOrder="14" locked="false" isInGroup="2">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="79" controlTypeID="com.balsamiq.mockups::Icon" x="154" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RedoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="80" controlTypeID="com.balsamiq.mockups::Icon" x="121" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>UndoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="81" controlTypeID="com.balsamiq.mockups::Icon" x="15" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="17" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_paintBrush.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="82" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="18" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_Eraser-icon.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="83" controlTypeID="com.balsamiq.mockups::Icon" x="47" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="19" locked="false" isInGroup="2">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <color>10066329</color>
+            <icon>./assets/icon_pb2.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="84" controlTypeID="com.balsamiq.mockups::VRule" x="113" y="234" w="-1" h="34" measuredW="5" measuredH="100" zOrder="20" locked="false" isInGroup="2"/>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="21" locked="false" isInGroup="2">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="88" controlTypeID="com.balsamiq.mockups::Icon" x="386" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="22" locked="false" isInGroup="2">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="90" controlTypeID="__group__" x="290" y="230" w="149" h="40" measuredW="149" measuredH="40" zOrder="23" locked="false" isInGroup="2">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="149" h="40" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="90">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="9" w="-1" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="90">
+              <controlProperties>
+                <text>Show</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="51" y="4" w="38" h="33" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="90">
+              <controlProperties>
+                <state>disabled</state>
+                <text>Path</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="89" y="4" w="43" h="33" measuredW="47" measuredH="27" zOrder="3" locked="false" isInGroup="90">
+              <controlProperties>
+                <text>Twr</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="3" controlTypeID="__group__" x="973" y="40" w="449" h="520" measuredW="449" measuredH="520" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="449" h="520" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="3">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%20%20Terrain%20Tool</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="276" w="449" h="210" measuredW="256" measuredH="100" zOrder="1" locked="false" isInGroup="3">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Graphics%2C%20Paths%2C%20Towers</text>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::HelpButton" x="425" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="2" locked="false" isInGroup="3"/>
+        <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="1" y="272" w="447" h="-1" measuredW="100" measuredH="5" zOrder="3" locked="false" isInGroup="3"/>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::TextArea" x="192" y="55" w="244" h="175" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="3">
+          <controlProperties>
+            <state>up</state>
+            <text>Detailed%20information%20on%20how%20the%20path%20tab%20works</text>
+          </controlProperties>
+        </control>
+        <control controlID="49" controlTypeID="__group__" x="0" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="5" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="49"/>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="76" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="1" locked="false" isInGroup="49">
+              <controlProperties>
+                <src>./assets/creepPath.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="8" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="2" locked="false" isInGroup="49">
+              <controlProperties>
+                <src>./assets/spawnPt.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="144" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="3" locked="false" isInGroup="49">
+              <controlProperties>
+                <src>./assets/endPt.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="4" locked="false" isInGroup="49">
+              <controlProperties>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="156" y="84" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="5" locked="false" isInGroup="49">
+              <controlProperties>
+                <size>13</size>
+                <text>Save</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="94" y="84" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="6" locked="false" isInGroup="49">
+              <controlProperties>
+                <size>13</size>
+                <text>Canel</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="52" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="482" w="449" h="38" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="3"/>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="430" y="301" w="-1" h="185" measuredW="16" measuredH="100" zOrder="9" locked="false" isInGroup="3"/>
+        <control controlID="60" controlTypeID="__group__" x="0" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="6" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="60"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="60">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="60">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="60">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="74" measuredH="27" zOrder="4" locked="false" isInGroup="60">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="61" controlTypeID="__group__" x="215" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="7" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="61"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="1" locked="false" isInGroup="61">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="61">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="61">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="75" measuredH="27" zOrder="4" locked="false" isInGroup="61">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="63" controlTypeID="com.balsamiq.mockups::Image" x="215" y="297" w="219" h="189" measuredW="128" measuredH="128" zOrder="24" locked="false" isInGroup="3">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="64" controlTypeID="com.balsamiq.mockups::Image" x="0" y="411" w="219" h="75" measuredW="128" measuredH="128" zOrder="10" locked="false" isInGroup="3">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="71" controlTypeID="com.balsamiq.mockups::Button" x="386" y="489" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="11" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="76" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="447" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="3"/>
+        <control controlID="82" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="230" w="194" h="40" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="83" controlTypeID="com.balsamiq.mockups::Image" x="15" y="53" w="172" h="176" measuredW="77" measuredH="79" zOrder="14" locked="false" isInGroup="3">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="84" controlTypeID="com.balsamiq.mockups::Icon" x="154" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RedoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="85" controlTypeID="com.balsamiq.mockups::Icon" x="121" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>UndoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::Icon" x="15" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="17" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_paintBrush.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="87" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="18" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_Eraser-icon.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="88" controlTypeID="com.balsamiq.mockups::Icon" x="47" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="19" locked="false" isInGroup="3">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <color>10066329</color>
+            <icon>./assets/icon_pb2.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::VRule" x="113" y="234" w="-1" h="34" measuredW="5" measuredH="100" zOrder="20" locked="false" isInGroup="3"/>
+        <control controlID="91" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="21" locked="false" isInGroup="3">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::Icon" x="386" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="22" locked="false" isInGroup="3">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="95" controlTypeID="__group__" x="215" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="23" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="95"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="95">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%202</text>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="64" y="59" w="68" h="27" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="95">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="9" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="31" w="54" h="55" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="95">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="10" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="30" w="134" h="-1" measuredW="61" measuredH="27" zOrder="4" locked="false" isInGroup="95">
+              <controlProperties>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="37" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="95">
+              <controlProperties>
+                <icon>CircledXIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="97" controlTypeID="__group__" x="290" y="230" w="149" h="40" measuredW="149" measuredH="40" zOrder="25" locked="false" isInGroup="3">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="149" h="40" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="97">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="9" w="-1" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="97">
+              <controlProperties>
+                <text>Show</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="51" y="4" w="38" h="33" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="97">
+              <controlProperties>
+                <state>disabled</state>
+                <text>Path</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="89" y="4" w="43" h="33" measuredW="47" measuredH="27" zOrder="3" locked="false" isInGroup="97">
+              <controlProperties>
+                <text>Twr</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="4" controlTypeID="__group__" x="1443" y="40" w="449" h="520" measuredW="449" measuredH="520" zOrder="4" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="449" h="520" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="4">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%20%20Terrain%20Tool</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="276" w="449" h="210" measuredW="256" measuredH="100" zOrder="1" locked="false" isInGroup="4">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Graphics%2C%20Paths%2C%20Towers</text>
+          </controlProperties>
+        </control>
+        <control controlID="23" controlTypeID="com.balsamiq.mockups::HelpButton" x="425" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="2" locked="false" isInGroup="4"/>
+        <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="1" y="272" w="447" h="-1" measuredW="100" measuredH="5" zOrder="3" locked="false" isInGroup="4"/>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::TextArea" x="192" y="57" w="244" h="169" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="4">
+          <controlProperties>
+            <state>up</state>
+            <text>Detailed%20information%20on%20how%20the%20path%20tab%20works</text>
+          </controlProperties>
+        </control>
+        <control controlID="52" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="482" w="449" h="38" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="4"/>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="430" y="301" w="-1" h="185" measuredW="16" measuredH="100" zOrder="8" locked="false" isInGroup="4"/>
+        <control controlID="60" controlTypeID="__group__" x="0" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="5" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="60"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="60">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="60">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="60">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="74" measuredH="27" zOrder="4" locked="false" isInGroup="60">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%203</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="61" controlTypeID="__group__" x="215" y="408" w="219" h="111" measuredW="219" measuredH="111" zOrder="6" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="111" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="61"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="1" locked="false" isInGroup="61">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="61" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="61">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="33" w="54" h="59" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="61">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="32" w="134" h="-1" measuredW="75" measuredH="27" zOrder="4" locked="false" isInGroup="61">
+              <controlProperties>
+                <italic>true</italic>
+                <text>Pathway%204</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="63" controlTypeID="com.balsamiq.mockups::Image" x="0" y="299" w="219" h="188" measuredW="128" measuredH="128" zOrder="24" locked="false" isInGroup="4">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="64" controlTypeID="com.balsamiq.mockups::Image" x="214" y="411" w="219" h="75" measuredW="128" measuredH="128" zOrder="9" locked="false" isInGroup="4">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="66" controlTypeID="__group__" x="215" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="10" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="66"/>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="8" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="1" locked="false" isInGroup="66">
+              <controlProperties>
+                <src>./assets/spawnPt2.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="144" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="2" locked="false" isInGroup="66">
+              <controlProperties>
+                <src>./assets/endPt2.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="77" y="1" w="-1" h="-1" measuredW="65" measuredH="21" zOrder="3" locked="false" isInGroup="66">
+              <controlProperties>
+                <text>GoblinPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="156" y="84" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="4" locked="false" isInGroup="66">
+              <controlProperties>
+                <size>13</size>
+                <text>Save</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="94" y="84" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="5" locked="false" isInGroup="66">
+              <controlProperties>
+                <size>13</size>
+                <text>Canel</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::Image" x="75" y="18" w="64" h="64" measuredW="128" measuredH="128" zOrder="6" locked="false" isInGroup="66">
+              <controlProperties>
+                <src>./assets/creepPath2.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="73" controlTypeID="com.balsamiq.mockups::Button" x="386" y="489" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="11" locked="false" isInGroup="4">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="78" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="447" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="4"/>
+        <control controlID="84" controlTypeID="com.balsamiq.mockups::Canvas" x="6" y="230" w="194" h="40" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="85" controlTypeID="com.balsamiq.mockups::Image" x="15" y="53" w="172" h="176" measuredW="77" measuredH="79" zOrder="14" locked="false" isInGroup="4">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::Icon" x="154" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>RedoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="87" controlTypeID="com.balsamiq.mockups::Icon" x="121" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>UndoIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="88" controlTypeID="com.balsamiq.mockups::Icon" x="15" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="17" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_paintBrush.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::Icon" x="79" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="18" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>./assets/icon_Eraser-icon.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="90" controlTypeID="com.balsamiq.mockups::Icon" x="47" y="234" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="19" locked="false" isInGroup="4">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <color>10066329</color>
+            <icon>./assets/icon_pb2.png%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="91" controlTypeID="com.balsamiq.mockups::VRule" x="113" y="234" w="-1" h="34" measuredW="5" measuredH="100" zOrder="20" locked="false" isInGroup="4"/>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="21" locked="false" isInGroup="4">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="94" controlTypeID="com.balsamiq.mockups::Icon" x="386" y="446" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="22" locked="false" isInGroup="4">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="96" controlTypeID="__group__" x="0" y="297" w="219" h="116" measuredW="219" measuredH="116" zOrder="23" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="219" h="116" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="96"/>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="79" y="1" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="1" locked="false" isInGroup="96">
+              <controlProperties>
+                <italic>false</italic>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="64" y="59" w="68" h="27" measuredW="45" measuredH="27" zOrder="2" locked="false" isInGroup="96">
+              <controlProperties>
+                <text>Edit</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Paragraph" x="15" y="31" w="54" h="70" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="96">
+              <controlProperties>
+                <text>Name%0A%20%0ALayout</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="61" y="30" w="134" h="-1" measuredW="61" measuredH="27" zOrder="4" locked="false" isInGroup="96">
+              <controlProperties>
+                <text>OrcPath</text>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Icon" x="171" y="37" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="5" locked="false" isInGroup="96">
+              <controlProperties>
+                <icon>CircledXIcon%7Cxsmall</icon>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="97" controlTypeID="__group__" x="290" y="230" w="149" h="40" measuredW="149" measuredH="40" zOrder="25" locked="false" isInGroup="4">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="149" h="40" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="97">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="9" w="-1" h="-1" measuredW="37" measuredH="21" zOrder="1" locked="false" isInGroup="97">
+              <controlProperties>
+                <text>Show</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="51" y="4" w="38" h="33" measuredW="50" measuredH="27" zOrder="2" locked="false" isInGroup="97">
+              <controlProperties>
+                <state>disabled</state>
+                <text>Path</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="89" y="4" w="43" h="33" measuredW="47" measuredH="27" zOrder="3" locked="false" isInGroup="97">
+              <controlProperties>
+                <text>Twr</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

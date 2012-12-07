@@ -1,0 +1,15 @@
+<SimSet
+    Name="GameScreenTips">
+    <ScriptObject
+        Name="Tip0"
+        Text="Be sure to check out the store for additional art packs, sound effects and other assets you can purchase to edit your game templates." />
+    <ScriptObject
+        Name="Tip1"
+        Text="This page displays all of your current game projects.  You can sort and filter your view using the controls at the top of the game list pane." />
+    <ScriptObject
+        Name="Tip2"
+        Text="Do you have an idea for a new template you would like to see in a future 3 Step Studio update?  Post it on the 3StepStudio.com Forums!" />
+    <ScriptObject
+        Name="Tip3"
+        Text="Not sure where to start? Click Help to launch the documentation and tutorials." />
+</SimSet>

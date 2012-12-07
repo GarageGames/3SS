@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{AssetLibrary}"
+	VersionId="1"
+	Description="Asset Library"
+	Group="assetTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	ScopeSet="AssetLibrarySet"
+	CreateFunction="initializeAssetLibrary"
+	DestroyFunction="destroyAssetLibrary"
+	DeclaredAssetManifest="^{AssetLibrary}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^AssetLibrary/ReferencedAssets.manifest.taml"	/>
+

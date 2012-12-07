@@ -1,0 +1,183 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(ProjectManPanel) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiTransparentProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "212 250";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiControl() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "0 0";
+      Extent = "210 250";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      tooltipprofile = "GuiDefaultProfile";
+      hovertime = "1000";
+
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 9";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "reloadProject();";
+         hovertime = "1000";
+         text = "Reload Project";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 47";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "openProjectFolder();";
+         tooltipprofile = "GuiDefaultProfile";
+         hovertime = "1000";
+         text = "Open Project Folder";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiSeparatorCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiSeparatorProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "1 69";
+         Extent = "211 35";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Type = "Horizontal";
+         BorderMargin = "2";
+         Invisible = "0";
+         LeftMargin = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 96";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "openiOSCodeProject();";
+         tooltipprofile = "GuiDefaultProfile";
+         hovertime = "1000";
+         text = "Open iOS Project";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 134";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "openXCodeProject();";
+         tooltipprofile = "GuiDefaultProfile";
+         hovertime = "1000";
+         text = "Open Mac Project";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 182";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "openVS2010Project();";
+         tooltipprofile = "GuiDefaultProfile";
+         hovertime = "1000";
+         text = "Open VS2010 Project";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 218";
+         Extent = "201 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "openVS2008Project();";
+         tooltipprofile = "GuiDefaultProfile";
+         hovertime = "1000";
+         text = "Open VS2008 Project";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiSeparatorCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiSeparatorProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "1 156";
+         Extent = "211 35";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Type = "Horizontal";
+         BorderMargin = "2";
+         Invisible = "0";
+         LeftMargin = "0";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

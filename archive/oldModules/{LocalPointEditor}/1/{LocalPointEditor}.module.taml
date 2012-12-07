@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{LocalPointEditor}"
+	VersionId="1"
+	Description="Local Point Editor"
+	Group="advancedTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeLocalPointEditor"
+	DestroyFunction="destroyLocalPointEditor"
+	/>
+

@@ -1,0 +1,12 @@
+<SimSet
+    Name="InterfaceToolHUDHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Use a container image behind your Score and High Score display to make it easy for the Player to see the scores." />
+    <ScriptObject
+        Name="Tip1"
+        Text="By default the game displays the Score and High Score but you can turn off the Score display if it makes sense for your game." />
+    <ScriptObject
+        Name="Tip2"
+        Text="Game Hud elements are the images that display on the screen during the actual game play.  Be sure to launch test games to see how each of your images look in the actual game." />
+</SimSet>

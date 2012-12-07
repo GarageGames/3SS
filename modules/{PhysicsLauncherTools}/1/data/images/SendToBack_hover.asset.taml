@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="SendToBack_hover"
+    AssetInternal="1"
+    ImageFile="@assetFile=#SendToBack_hover"
+    AutoUnload="0" />

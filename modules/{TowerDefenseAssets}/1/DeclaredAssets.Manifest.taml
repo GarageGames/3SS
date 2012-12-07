@@ -1,0 +1,13 @@
+<AssetManifest>
+  <AssetManifest.Search>
+    <Location
+			Path="^{TowerDefenseAssets}/images"
+			Extension="asset.taml"/>
+    <Location
+			Path="^{TowerDefenseAssets}/animations"
+			Extension="asset.taml"/>
+    <Location
+			Path="^{TowerDefenseAssets}/audio"
+			Extension="asset.taml"/>
+  </AssetManifest.Search>
+</AssetManifest>

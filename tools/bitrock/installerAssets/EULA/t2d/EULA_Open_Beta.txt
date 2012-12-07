@@ -1,0 +1,121 @@
+End User License Agreement (EULA)
+
+Torque Game Builder Engine (TGB) Closed Beta End User License Agreement (EULA)
+
+NOTICE TO THE USER: PLEASE READ THIS CONTRACT CAREFULLY. BY USING ALL OR ANY PORTION OF GARAGEGAMES’S SOFTWARE ("TGB Closed Beta") YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT, INCLUDING, IN PARTICULAR THE LIMITATIONS ON: RIGHT TO LICENSE IN SECTION 2 AND 3; LIMITATIONS AND RESTRICTIONS IN SECTION 4; AND WARRANTY IN SECTION 7. YOU AGREE THAT THIS AGREEMENT IS ENFORCEABLE LIKE ANY WRITTEN NEGOTIATED AGREEMENT SIGNED BY YOU. THIS AGREEMENT IS ENFORCEABLE AGAINST YOU AND ANY LEGAL ENTITY THAT OBTAINED THE SOFTWARE AND ON WHOSE BEHALF IT IS USED. IF YOU DO NOT AGREE, DO NOT USE THIS SOFTWARE. GarageGames and its suppliers own all intellectual property in the Software. GarageGames permits you to Use the Software only in accordance with the terms of this Agreement. The TGB Closed Beta License is intended to be used for testing purposes only, by individually selected individuals. Any other use is strictly prohibited.
+
+The use of the Garagegames.com Torque Game Builder ("Engine") is governed by this license agreement ("Agreement"). You must read and agree to this Agreement terms BEFORE downloading or installing the Engine to your hard drive or using the Engine in any way. If you do not agree to the license terms, do not download, install or use the Engine. It is important that you print out a copy of this Agreement on your date of acquisition as a record of the governing terms and conditions. Please make copies for all  those in your organization who need to be familiar with the license terms.
+
+BY CLICKING THE ACCEPTANCE BUTTON OR INSTALLING OR USING THE ENGINE, THE INDIVIDUAL ACCESSING THE ENGINE ("LICENSEE") IS CONSENTING TO BE BOUND BY AND BECOME A PARTY TO THIS AGREEMENT. THE EFFECTIVE DATE OF THIS CONTRACT IS ACTIVATED UPON YOUR AGREEMENT AND ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS CLOSED BETA LICENSE AGREEMENT.
+
+1.	DEFINITIONS
+
+1.1	"Confidential Information" means any confidential, proprietary or trade secret information of GarageGames including but not limited to the TGB Closed Beta, whether of a technical, business or other nature (including, without limitation, information relating to GarageGames’ technology, software, products, services, designs, methodologies, business plans, finances, marketing plans, customers, prospects or other affairs), that is disclosed to the Licensee during the Term and that the Licensee knows or has reason to know is confidential, proprietary or trade secret information of GarageGames.  Confidential Information does not include any information that:  (a) was acquired by the Licensee prior to the beginning of the Term without any restriction as to use or disclosure; (b) is independently acquired by the Licensee after the beginning of the Term without any restriction as to use or disclosure and without reliance upon or use of any of GarageGames’ Confidential Information; or (c) is or becomes part of the public domain through no fault or action of the Licensee.  
+
+1.2	"Confidential Materials" means any document, downloads, diskette, tape, writing or other tangible item physical or digital that contains any Confidential Information relevant to but limited to the TGB Engine and the TGB Closed Beta, whether in printed, handwritten, coded, magnetic or other form delivered by GarageGames or it’s partners and affiliates to the Licensee.
+
+1.3	"GarageGames" means GarageGames.Com, Inc., and Oregon Corporation doing business at 245 West 5th Street, Eugene, OR, 97401, that discloses any of its Confidential Information, Confidential Materials, Rights to Beta Software, or Licenses to the other party under this Agreement.
+
+1.4	"Licensor" alternatively means GarageGames.Com, Inc., and is as the same as section 1.3.
+
+1.5	"Licensee" means a party that receives any Confidential Information, Confidential Materials, Licenses or Rights to Beta Software from GarageGames under this Agreement.
+
+1.6	"Term" means the period of time beginning with the date of this Agreement and ending ten days after GarageGames gives the Licensee written notice of termination.
+
+2. LICENSE AGREEMENT
+
+2.1	This sets forth the entire agreement between Garagegames.com, Inc. ("Licensor") and the Licensee relating to the use of the Engine source code shipped on hard media or downloadable from the Licensor website, www.garagegames.com, or affiliates.
+
+3. LICENSE GRANT
+
+3.1	Licensor grants Licensee a single "seat" to an individual, a limited non-exclusive, non-transferable license to privately use the TGB Engine for the purposes of testing and reviewing the internal code, workings, and general nature of the engine.
+
+3.2	Licensee may not publicly sell, distribute, release, publish, transmit and/or exploit any Games created hereunder. 
+
+3.3	Licensee may not have any games derived or based on the TGB technology published in any channel by any publisher with or without royalties for the term of this agreement. 
+
+4. RESTRICTIONS
+
+The following restrictions apply to the use of this Engine:
+
+4.1	This license is granted to individuals only, and cannot be owned by corporate or business entities, except where otherwise granted explicitly by GarageGames in writing.
+
+4.2	Licensee may not: (i) create any derivative works of the Engine, including translations or localizations; (ii) reverse engineer, or otherwise attempt to derive the algorithms for the Engine (iii) redistribute, encumber, sell, rent, lease, sublicense, or otherwise transfer rights to the Engine; or (iv) remove or alter any trademark, logo, copyright or other proprietary notices, legends, symbols or labels in the Engine.
+
+4.3	Licensee may not distribute the source code, binaries, self-compiled binaries or documentation to the engine in any manner, with the sole exception of current owners of the Software/Engine in good standing.
+
+4.4	Licensee may not release Products intended for operation or publication using TGB on any platform including but not limited to Microsoft Windows, Apple OSX, Linux and Game Console Systems including the Microsoft XBox, Sony Playstation 2, Nintendo GameCube, or their successors using the TGB closed beta software.
+
+4.5	Licensee may not be a government contractor, government entity, large corporation, or small company performing subcontract work for any of these entities using the TGB closed beta software. Small companies cannot take royalty advances or development fees from large companies or corporate entities for Games using the Engine.
+
+4.6	The entire contents of this closed beta program and the TGB Closed Beta software is considered Confidential Information and Confidential Materials are made available to the Licensee solely for the purpose of privately testing the software.  Licensee will not use, disclose, disseminate or distribute any part of the TGB closed beta in part or whole or any Confidential Information or Confidential Materials of GarageGames for any other purpose without the prior written consent of GarageGames.  Without limitation of the foregoing, the Licensee will not use any Confidential Information or Confidential Materials of GarageGames or TGB Closed Beta to design, develop, provide or market any product or service that would compete with any product or service of GarageGames.
+
+4.7	Licensee will protect any Confidential Information and Confidential Materials of GarageGames from any unauthorized use, disclosure, copying, dissemination or distribution.  Without limitation of the foregoing, the Licensee will not: (a) make such Confidential Information and Confidential Materials available to those of its employees, agents and other representatives; (b) disclose such Confidential Information to any third party; (c) make or copy such Confidential Materials; (d) not deliver, distribute, display, demonstrate or otherwise make available such Confidential Materials to any third party; and (e) not reverse engineer, decompile or disassemble any computer program included in such Confidential Materials.
+
+4.8	Notwithstanding paragraph 4.7, the Licensee may disclose or produce any Confidential Information or Confidential Materials of GarageGames if and to the extent required by any court order or governmental action, provided that the Licensee gives GarageGames reasonable advance notice of the same (e.g., so as to afford GarageGames a reasonable opportunity to appear, object and obtain a protective order or other appropriate relief regarding such disclosure).  
+
+4.9	All Confidential Information and Confidential Materials are the property of GarageGames.  This Agreement will not be interpreted or construed as granting any license or other right under any patent, copyright, trademark, trade secret or other proprietary right.  The Licensee will hold all Confidential Materials in trust for GarageGames and will promptly destroy or deliver them to GarageGames upon the earlier of GarageGames’ request or when they are no longer needed for the purpose described in paragraph 4.6.
+
+4.10	The Licensee will comply with any and all applicable laws relating to the use, disclosure, copying, dissemination and distribution of any Confidential Information or Confidential Materials of GarageGames (including, but not limited to, any and all laws relating to GarageGames’ proprietary rights or the export of any technical data included in such Confidential Information).
+
+4.11	The Entirety of the TGB Engine, including but not limited to it’s source code, marketing, technology, software, products, services, designs, methodologies, business plans, finances, marketing plans, customers, prospects or other is considered Confidential Information any may not be disclosed, discussed or shown in any form publicly or privately.
+
+4. FEES
+
+4.1	Licensee acknowledges that participation in the TGB Closed Beta program is strictly voluntarily with the knowledge and consent that no reimbursement of any kind will be paid to Licensee for time and effort spent participating in the TGB Closed Beta.
+
+4.2 	GarageGames may use Licensee's name without compensation in connection with the TGB engine and in any customer reference list or in any press release issued by GarageGames regarding the licensing of the Engine.
+
+5. TERMINATION
+
+5.1	Without prejudice to any other rights, GarageGames may terminate this Agreement if Licensee breaches any of its terms and conditions. GarageGames reserves the right to terminate this agreement for convenience at GarageGames’ sole discretion. Upon termination, Licensee shall destroy all copies of the TGB Closed Beta software, Confidential Materials, and any Confidential Information. 
+
+5.2	Licensee will not interfere with GarageGames’ business in any manner, including without limitation by encouraging anyone to leave GarageGames’ employ or by encouraging any employee or independent contractor to sever that person's relationship with GarageGames.
+
+6. SURVIVAL PROVISIONS
+
+6.1	The provisions of Sections 1, 3.1, 3.2, 4, 5, 6, 7, 8, 9, 10, 11 and 12 will survive any termination or expiration of the term of this Agreement.
+
+6.2	If any provision of this Agreement is held to be invalid or unenforceable for any reason, the remaining provisions will continue in full force without being impaired or invalidated in any way.  GarageGames and Licensee agree to replace any invalid provision with a valid provision which most closely approximates the intent and economic effect of the invalid provision.  
+
+7. DISCLAIMER OF WARRANTY
+
+7.1	THE SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTY OR GUARANTEED UPDATES OF ANY KIND, INCLUDING WITHOUT LIMITATION THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS THE RESPONSIBILITY OF LICENSEE. SHOULD THE SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, LICENSEE AND NOT LICENSOR OR ITS SUPPLIERS OR RESELLERS ASSUMES THE ENTIRE COST OF ANY SERVICE AND REPAIR. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS AGREEMENT. NO USE OF THE SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
+
+8. LIMITATION OF LIABILITY
+
+8.1	TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR OR ITS SUPPLIERS OR RESELLERS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF, AND REGARDLESS OF THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED. IN ANY CASE, LICENSOR'S ENTIRE LIABILITY UNDER ANY PROVISION OF THIS AGREEMENT SHALL NOT EXCEED IN THE AGGREGATE THE SUM OF THE FEES LICENSEE PAID FOR THIS LICENSE (IF ANY). SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT BE APPLICABLE. LICENSOR IS NOT RESPONSIBLE FOR ANY LIABILITY ARISING OUT OF CONTENT PROVIDED BY LICENSEE OR A THIRD PARTY THAT IS INCORPORATED WITH THE SOFTWARE AND/OR ANY MATERIAL LINKED THROUGH SUCH CONTENT.
+
+9. LICENSEE'S REPRESENTATIONS, WARRANTIES & INDEMNIFICATION
+
+9.1	Licensee shall defend, indemnify and hold harmless GarageGames, its parent, subsidiaries, affiliated companies and partners and their respective officers, directors, employees and agents from and against any and all liabilities, damages, costs and fees (including reasonable attorney's fees) resulting from or relating to: (i) any third party claims or lawsuits related to the Games and assignment of intellectual property ownership hereunder; (ii) any third party claims or lawsuits related to any and all obligations Licensee has undertaken to perform hereunder; or (iii) a breach of any representations and warranties Licensee has made hereunder. Such indemnification obligation of Licensee is conditioned upon Licensor immediately notifying Licensee in a writing that sets forth with specificity the claim or action to which such indemnification obligation applies. Licensee will have the right to control the defense of each such claim and any lawsuit or proceeding arising there from. In no event will Licensee settle any such claim or lawsuit or proceeding arising there from without the prior written approval of GarageGames.
+
+10. MISCELLANEOUS
+
+10.1	This Agreement may be amended only by a writing signed by both parties. This Agreement shall be governed by the laws of the State of Oregon, U.S.A., excluding its conflict of law provisions. Unless otherwise agreed in writing, all disputes relating to this Agreement (excepting any dispute relating to intellectual property rights) shall be subject to final and binding arbitration in Lane County, Oregon, with the losing party paying all costs of arbitration. This Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods. If any provision in this Agreement should be held illegal or unenforceable by a court having jurisdiction, such provision shall be modified to the extent necessary to render it enforceable without losing its intent, or severed from this Agreement if no such modification is possible, and other provisions of this Agreement shall remain in full force and effect. A waiver by either party of any term or condition of this Agreement or any breach thereof, in any one instance, shall not waive such term or condition or any subsequent breach thereof. The provisions of this Agreement which require or contemplate performance after the expiration or termination of this Agreement shall be enforceable notwithstanding said expiration or termination. Licensee may not assign or otherwise transfer by operation of law or otherwise this Agreement or any rights or obligations herein. This Agreement shall be binding upon and shall inure to the benefit of the parties, their successors and permitted assigns. Neither party shall be in default or be liable for any delay, failure in performance (excepting the obligation to pay) or interruption of service resulting directly or indirectly from any cause beyond its reasonable control. The relationship between Licensor and Licensee is that of independent contractors and neither Licensee nor its agents shall have any authority to bind Licensor in any way. If any dispute arises under this Agreement, the prevailing party shall be reimbursed by the other party for any and all legal fees and costs associated therewith.
+
+10.2	GarageGames warrants that it has the right to make Confidential Information and Confidential Materials available to the Licensee as provided for in and subject to this Agreement.  GarageGames does not make any other representation or warranty, express or implied, with regard to any Confidential Information or Confidential Materials.  Without limitation of the foregoing, the Confidential Information and Confidential Materials are made available under this Agreement "AS IS", with all defects, errors, and deficiencies, and without any representation or warranty as to completeness or accuracy.
+
+10.3	The parties' respective obligations under this Agreement with respect to any Confidential Information that is disclosed during the Term will survive any termination of the Term.
+
+10.4	In the event of any breach of this Agreement, the GarageGames may suffer irreparable harm and have no adequate remedy at law.  In such event or the threat of any such event, GarageGames will be entitled (in addition  to any and all other remedies) to injunctive relief, specific performance and other equitable remedies without proof of monetary damages or the inadequacy of other remedies.  
+
+10.5	In the event of any legal action to enforce this Agreement or to recover damages or other relief on account of any breach of this Agreement, the prevailing party will be entitled (in addition to any and all other remedies) to recover any and all costs and expenses (including, without limitation, reasonable attorneys' fees) that it may incur in connection with such action.
+
+10.6	This Agreement may not be amended, except by a writing signed by GarageGames against who such amendment is to be enforced.  
+
+11. LICENSEE OUTSIDE THE U.S.
+
+11.1	If Licensee is located outside the U.S., then the provisions of this Section shall apply. Licensee is responsible for complying with any local laws in its jurisdiction which might impact its right to import, export or use the Software, and Licensee represents that it has complied with any regulations or registration procedures required by applicable law to make this license enforceable. The language of this Agreement is English.
+
+12. TERM
+
+12.1	This Agreement is effective as of the Effective Date and will continue until January 1st, 2010 unless terminated earlier in accordance with Section 5 above.  
+
+13. NOTICES
+
+13.1	All notices and other communications under this Agreement must be in writing, and must be given by registered or certified mail, postage prepaid, or delivered by hand to the party to whom the communication is to be given.
+
+14. SUCCESSOR AND ASSIGNS
+
+14.1	Neither this Agreement nor any of the rights or obligations of the Licensee arising under this Agreement may be assigned or delegated.  

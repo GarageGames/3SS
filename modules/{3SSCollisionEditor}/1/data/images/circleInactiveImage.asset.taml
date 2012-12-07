@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="circleInactiveImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#circleInactive.png" />

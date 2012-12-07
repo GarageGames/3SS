@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="RotateTool_normal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#RotateTool_normal"
+    AutoUnload="0" />

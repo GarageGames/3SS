@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="scoreIconImageMap"
+    imageFile="@assetFile=#scoreIcon.png"
+    AssetCategory="gui" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="DecrementFrameButtonNormalImage"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DecrementFrameButton_normal.png" />

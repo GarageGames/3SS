@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		869FF8BD1651518C002FE082 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869FF8BC1651518C002FE082 /* Cocoa.framework */; };
+		869FF8C71651518C002FE082 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 869FF8C51651518C002FE082 /* InfoPlist.strings */; };
+		869FF8C91651518C002FE082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 869FF8C81651518C002FE082 /* main.m */; };
+		869FF8CD1651518C002FE082 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 869FF8CB1651518C002FE082 /* Credits.rtf */; };
+		869FF8D01651518C002FE082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 869FF8CF1651518C002FE082 /* AppDelegate.m */; };
+		869FF8D31651518C002FE082 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 869FF8D11651518C002FE082 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		869FF8B81651518C002FE082 /* Torque2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torque2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		869FF8BC1651518C002FE082 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		869FF8BF1651518C002FE082 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		869FF8C01651518C002FE082 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		869FF8C11651518C002FE082 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		869FF8C41651518C002FE082 /* Torque2D-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Torque2D-Info.plist"; sourceTree = "<group>"; };
+		869FF8C61651518C002FE082 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		869FF8C81651518C002FE082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		869FF8CA1651518C002FE082 /* Torque2D-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Torque2D-Prefix.pch"; sourceTree = "<group>"; };
+		869FF8CC1651518C002FE082 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		869FF8CE1651518C002FE082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		869FF8CF1651518C002FE082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		869FF8D21651518C002FE082 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		869FF8B51651518C002FE082 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869FF8BD1651518C002FE082 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		869FF8AD1651518C002FE082 = {
+			isa = PBXGroup;
+			children = (
+				869FF8C21651518C002FE082 /* Torque2D */,
+				869FF8BB1651518C002FE082 /* Frameworks */,
+				869FF8B91651518C002FE082 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		869FF8B91651518C002FE082 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				869FF8B81651518C002FE082 /* Torque2D.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		869FF8BB1651518C002FE082 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				869FF8BC1651518C002FE082 /* Cocoa.framework */,
+				869FF8BE1651518C002FE082 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		869FF8BE1651518C002FE082 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				869FF8BF1651518C002FE082 /* AppKit.framework */,
+				869FF8C01651518C002FE082 /* CoreData.framework */,
+				869FF8C11651518C002FE082 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		869FF8C21651518C002FE082 /* Torque2D */ = {
+			isa = PBXGroup;
+			children = (
+				869FF8CE1651518C002FE082 /* AppDelegate.h */,
+				869FF8CF1651518C002FE082 /* AppDelegate.m */,
+				869FF8D11651518C002FE082 /* MainMenu.xib */,
+				869FF8C31651518C002FE082 /* Supporting Files */,
+			);
+			path = Torque2D;
+			sourceTree = "<group>";
+		};
+		869FF8C31651518C002FE082 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				869FF8C41651518C002FE082 /* Torque2D-Info.plist */,
+				869FF8C51651518C002FE082 /* InfoPlist.strings */,
+				869FF8C81651518C002FE082 /* main.m */,
+				869FF8CA1651518C002FE082 /* Torque2D-Prefix.pch */,
+				869FF8CB1651518C002FE082 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		869FF8B71651518C002FE082 /* Torque2D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 869FF8D61651518C002FE082 /* Build configuration list for PBXNativeTarget "Torque2D" */;
+			buildPhases = (
+				869FF8B41651518C002FE082 /* Sources */,
+				869FF8B51651518C002FE082 /* Frameworks */,
+				869FF8B61651518C002FE082 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Torque2D;
+			productName = Torque2D;
+			productReference = 869FF8B81651518C002FE082 /* Torque2D.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		869FF8AF1651518C002FE082 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Michael Perry";
+			};
+			buildConfigurationList = 869FF8B21651518C002FE082 /* Build configuration list for PBXProject "Torque2D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 869FF8AD1651518C002FE082;
+			productRefGroup = 869FF8B91651518C002FE082 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				869FF8B71651518C002FE082 /* Torque2D */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		869FF8B61651518C002FE082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869FF8C71651518C002FE082 /* InfoPlist.strings in Resources */,
+				869FF8CD1651518C002FE082 /* Credits.rtf in Resources */,
+				869FF8D31651518C002FE082 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		869FF8B41651518C002FE082 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869FF8C91651518C002FE082 /* main.m in Sources */,
+				869FF8D01651518C002FE082 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		869FF8C51651518C002FE082 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				869FF8C61651518C002FE082 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		869FF8CB1651518C002FE082 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				869FF8CC1651518C002FE082 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		869FF8D11651518C002FE082 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				869FF8D21651518C002FE082 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		869FF8D41651518C002FE082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		869FF8D51651518C002FE082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		869FF8D71651518C002FE082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Torque2D/Torque2D-Prefix.pch";
+				INFOPLIST_FILE = "Torque2D/Torque2D-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		869FF8D81651518C002FE082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Torque2D/Torque2D-Prefix.pch";
+				INFOPLIST_FILE = "Torque2D/Torque2D-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		869FF8B21651518C002FE082 /* Build configuration list for PBXProject "Torque2D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869FF8D41651518C002FE082 /* Debug */,
+				869FF8D51651518C002FE082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		869FF8D61651518C002FE082 /* Build configuration list for PBXNativeTarget "Torque2D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869FF8D71651518C002FE082 /* Debug */,
+				869FF8D81651518C002FE082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 869FF8AF1651518C002FE082 /* Project object */;
+}

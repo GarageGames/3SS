@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="newAvatarLargeImage"
+    AssetCategory="gui"
+	AssetInternal="1"
+    imageFile="@assetFile=#newavatarlarge.png" />

@@ -1,0 +1,10 @@
+<ModuleDefinition
+	ModuleId="{BlackjackAssets}"
+	VersionId="1"
+	Purchased="1"
+	Dependencies=""
+	Description="Blackjack Asset Pack"
+	Synchronized = "1"
+	DeclaredAssetManifest="^{BlackjackAssets}/DeclaredAssets.Manifest.taml"
+	/>
+

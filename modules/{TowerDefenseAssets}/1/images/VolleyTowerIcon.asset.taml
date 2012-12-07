@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="VolleyTowerIcon"
+    imageFile="@assetFile=#tower5.png"
+    AssetCategory="gui" />

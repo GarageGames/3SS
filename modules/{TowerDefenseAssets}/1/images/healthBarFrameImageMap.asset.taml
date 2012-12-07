@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="healthBarFrameImageMap"
+    imageFile="@assetFile=#healthBarFrame.png"
+    AssetCategory="gui" />

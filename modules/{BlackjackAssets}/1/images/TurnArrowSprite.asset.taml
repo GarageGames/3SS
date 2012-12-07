@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TurnArrowSprite"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/TurnArrow"
+    FilterMode="SMOOTH" />

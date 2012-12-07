@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^BlackjackTools/gui"
+			Extension="ed.gui.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

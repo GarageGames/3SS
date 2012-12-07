@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="DocsButtonInactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DocsButtonInactive.png" />

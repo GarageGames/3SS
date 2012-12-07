@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TD_Ribs_BSprite"
+    imageFile="@assetFile=#TD_Ribs_B.png"
+    AssetCategory="sprites" />

@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{T2DEditor}"
+	VersionId="1"
+	Description="Content specific to Torque 2D Editor"
+	Group="t2dTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeT2DEditor"
+	DestroyFunction="destroyT2DEditor"
+    DeclaredAssetManifest="^{T2DEditor}/DeclaredAssets.Manifest.taml"
+	/>
+

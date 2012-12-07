@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="howToPlayButtonDownImage"
+    imageFile="@assetFile=#howToPlayButtonDown.png"
+	AssetCategory="gui" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="winScreenImage"
+    imageFile="@assetFile=#winScreen.png"
+	AssetCategory="gui" />

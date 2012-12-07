@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{MelvTesting}"
+	VersionId="1"
+	Dependencies="{PhysicsLauncherAssets}=1"
+	Description="Testing module for Melv May"
+	ScriptFile="main.cs"
+	CreateFunction="startMelvTesting"
+	DeclaredAssetManifest="^{MelvTesting}/DeclaredAssets.Manifest.taml"
+	AssetTagsManifest="^{MelvTesting}/Tags.Manifest.taml"
+	Published="0"
+	/>
+

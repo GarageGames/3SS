@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="CannonTowerIcon"
+    imageFile="@assetFile=#tower4.png"
+    AssetCategory="sprites" />

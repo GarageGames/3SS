@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <NamedGroup name="3StepStudio">
+    <File name="AppDelegate.h" path="3StepStudioGame/AppDelegate.h" source="RelativeToGroup" />
+    <File name="AppDelegate.mm" path="3StepStudioGame/AppDelegate.mm" source="RelativeToGroup" />
+    <File name="ViewController.h" path="3StepStudioGame/ViewController.h" source="RelativeToGroup" />
+    <File name="ViewController.mm" path="3StepStudioGame/ViewController.mm" source="RelativeToGroup" />
+    <File name="ViewController_iPhone.xib" path="3StepStudioGame/en.lproj/ViewController_iPhone.xib" source="RelativeToGroup" local="en" />
+    <File name="ViewController_iPad.xib" path="3StepStudioGame/en.lproj/ViewController_iPad.xib" source="RelativeToGroup" local="en" />
+    <NamedGroup name="Supporting Files">
+      <File name="3StepStudio-Info.plist" path="3StepStudioGame/3StepStudio-Info.plist" source="RelativeToGroup" />
+      <File name="InfoPlist.strings" path="3StepStudioGame/en.lproj/InfoPlist.strings" source="RelativeToGroup" local="en" />
+      <File name="main.mm" path="3StepStudioGame/main.mm" source="RelativeToGroup" />
+      <File name="3StepStudio-Prefix.pch" path="3StepStudioGame/3StepStudio-Prefix.pch" source="RelativeToGroup" />
+      <File name="Config.xcconfig" path="3StepStudioGame/en.lproj/Config.xcconfig" source="RelativeToGroup" local="en" />
+    </NamedGroup>
+  </NamedGroup>
+</Group>

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="defaultImageImageMap"
+    AssetCategory="gui"
+    AssetInternal="1"
+    imageFile="@assetFile=#defaultImage.png" />

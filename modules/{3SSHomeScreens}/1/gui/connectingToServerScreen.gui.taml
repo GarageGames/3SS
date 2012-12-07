@@ -1,0 +1,34 @@
+<GuiSpriteCtrl
+    Name="ConnectingToServerScreenGui"
+    canSaveDynamicFields="0"
+    isContainer="1"
+    Profile="GuiSolidDefaultProfile"
+    HorizSizing="right"
+    VertSizing="bottom"
+    Position="0 0"
+    Extent="1024 768"
+    MinExtent="8 2"
+    canSave="1"
+    Visible="1"
+    hovertime="1000"
+    Image="@asset={EditorShell}:shellBackgroundImage"
+    wrap="0"
+    useSourceRect="0"
+    sourceRect="0 0 0 0">
+
+    <GuiTextCtrl
+        canSaveDynamicFields="0"
+        isContainer="0"
+        Profile="GuiBigTextProfile"
+        HorizSizing="center"
+        VertSizing="center"
+        Position="212 364"
+        Extent="600 40"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        hovertime="1000"
+        text="Connecting to the 3 Step Studio Server..."
+        maxLength="255" />
+    
+</GuiSpriteCtrl>

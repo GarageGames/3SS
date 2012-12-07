@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="soundTabInactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#soundTabInactive.png" />

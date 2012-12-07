@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="gui">
+    <EngineSourceDirectory name="buttons" includeChildren="1"/>
+    <EngineSourceDirectory name="containers" includeChildren="1"/>
+    <EngineSourceDirectory name="editor" includeChildren="1"/>
+    <EngineSourceDirectory name="language" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <NamedGroup name="Resources">
+    <File name="torque2d.icns" path="torque2d.icns" source="SOURCE_ROOT" />
+    <File name="t2dproj.icns" path="t2dproj.icns" source="SOURCE_ROOT" />
+    <File name="mainMenu.nib" path="mainMenu.nib" source="RelativeToGroup" />
+	<Folder name="game" path="../game" source="RelativeToGroup" buildPhase="Resources" />
+    <Folder name="modules" path="../modules" source="RelativeToGroup" buildPhase="Resources" />
+    <File name="main.cs" path="../main.cs" source="RelativeToGroup" />
+  </NamedGroup>
+</Group>

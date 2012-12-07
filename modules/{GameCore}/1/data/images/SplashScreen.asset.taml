@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="SplashScreen"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#SplashScreen.png" />

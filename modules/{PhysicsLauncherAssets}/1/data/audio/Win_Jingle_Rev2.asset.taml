@@ -1,0 +1,5 @@
+<AudioAsset
+    AssetName="Win_Jingle_Rev2Sound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#Win_Jingle_Rev2.wav"
+    AutoUnload="0" />

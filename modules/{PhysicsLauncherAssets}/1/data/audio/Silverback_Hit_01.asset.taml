@@ -1,0 +1,4 @@
+<AudioAsset
+    AssetName="Silverback_Hit_01Sound"
+    AudioFile="@assetFile=#Silverback_Hit_01.wav"
+    AutoUnload="0" />

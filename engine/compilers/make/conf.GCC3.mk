@@ -1,0 +1,1 @@
+include conf.GCC.mk

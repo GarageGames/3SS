@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PageIndicatorBtnHoverImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#PageIndicatorBtnHover.png" />

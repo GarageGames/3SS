@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="previousTip_normalImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#previousTip_normal.png" />

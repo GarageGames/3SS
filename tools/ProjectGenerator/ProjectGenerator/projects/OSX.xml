@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project type="Xcode" platform="OSX" name="Torque2D" engineSourceDirectory="../../../engine/source/" engineLibDirectory="../../../engine/lib/">
+  <Groups>
+    <Group type="files" file="groups/assets.xml" />
+    <Group type="files" file="groups/audio.xml" />
+    <Group type="files" file="groups/box2D.xml" />
+    <Group type="files" file="groups/component.xml" />
+    <Group type="files" file="groups/torquelibs.xml" />
+    <Group type="files" file="groups/frameworks.xml" />
+    <Group type="files" file="groups/resources.xml" />
+  </Groups>
+  <TopLevelFiles>
+    <File name="torqueConfig.h" path="../../source/core/torqueConfig.h" source="SOURCE_ROOT" />
+    <File name="info-3StepStudioGame.plist" path="info-3StepStudioGame.plist" source="RelativeToGroup" />
+  </TopLevelFiles>
+  <Targets>
+    <Target file="targets/3StepStudioGame.xml" />
+    <TargetAll file="targets/3StepStudioGameAll.xml" />
+  </Targets>
+  <BuildConfigs default="Release" defaultConfigurationIsVisible="0">
+    <BuildConfig name="Release">
+      <BuildSettings>
+        <ARCHS>"$(NATIVE_ARCH_ACTUAL)"</ARCHS>
+        <CONFIGURATION_BUILD_DIR>../../..</CONFIGURATION_BUILD_DIR>
+        <DEBUG_INFORMATION_FORMAT>dwarf</DEBUG_INFORMATION_FORMAT>
+        <GCC_ENABLE_SSE3_EXTENSIONS>YES</GCC_ENABLE_SSE3_EXTENSIONS>
+        <GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS>NO</GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS>
+        <GCC_WARN_CHECK_SWITCH_STATEMENTS>NO</GCC_WARN_CHECK_SWITCH_STATEMENTS>
+        <IPHONEOS_DEPLOYMENT_TARGET>4.3</IPHONEOS_DEPLOYMENT_TARGET>
+        <MACOSX_DEPLOYMENT_TARGET>10.6</MACOSX_DEPLOYMENT_TARGET>
+        <OTHER_LDFLAGS_i386>"-lz -framework Accelerate"</OTHER_LDFLAGS_i386>
+        <OTHER_LDFLAGS_ppc>"-lz -framework vecLib"</OTHER_LDFLAGS_ppc>
+        <SDKROOT>macosx</SDKROOT>
+        <SEPARATE_STRIP>YES</SEPARATE_STRIP>
+        <STRIPFLAGS>"-u -r"</STRIPFLAGS>
+        <STRIP_INSTALLED_PRODUCT>YES</STRIP_INSTALLED_PRODUCT>
+        <ZERO_LINK>NO</ZERO_LINK>
+      </BuildSettings>
+    </BuildConfig>
+    <BuildConfig name="Debug">
+      <BuildSettings>
+        <ARCHS>"$(NATIVE_ARCH_ACTUAL)"</ARCHS>
+        <CONFIGURATION_BUILD_DIR>../../..</CONFIGURATION_BUILD_DIR>
+        <DEBUG_INFORMATION_FORMAT>dwarf</DEBUG_INFORMATION_FORMAT>
+        <GCC_ENABLE_SSE3_EXTENSIONS>YES</GCC_ENABLE_SSE3_EXTENSIONS>
+        <GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS>NO</GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS>
+        <GCC_WARN_CHECK_SWITCH_STATEMENTS>NO</GCC_WARN_CHECK_SWITCH_STATEMENTS>
+        <IPHONEOS_DEPLOYMENT_TARGET>4.3</IPHONEOS_DEPLOYMENT_TARGET>
+        <MACOSX_DEPLOYMENT_TARGET>10.6</MACOSX_DEPLOYMENT_TARGET>
+        <OTHER_LDFLAGS_i386>"-lz -framework Accelerate"</OTHER_LDFLAGS_i386>
+        <OTHER_LDFLAGS_ppc>"-lz -framework vecLib"</OTHER_LDFLAGS_ppc>
+        <SDKROOT>macosx</SDKROOT>
+        <SEPARATE_STRIP>YES</SEPARATE_STRIP>
+        <STRIPFLAGS>"-u -r"</STRIPFLAGS>
+        <STRIP_INSTALLED_PRODUCT>YES</STRIP_INSTALLED_PRODUCT>
+        <ZERO_LINK>NO</ZERO_LINK>
+      </BuildSettings>
+    </BuildConfig>
+  </BuildConfigs>
+  <ExcludeDirectories>
+    <Directory name=".svn" />
+    <Directory name="CVS" />
+  </ExcludeDirectories>
+</Project>

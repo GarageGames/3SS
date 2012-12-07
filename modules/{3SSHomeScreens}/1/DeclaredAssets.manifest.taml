@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location		
+			Path="^{3SSHomeScreens}/data/images"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

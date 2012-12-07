@@ -1,0 +1,18 @@
+<ModuleDefinition
+	ModuleId="{TowerDefenseTools}"
+	VersionId="1"
+	Description="Tower Defense Template"
+	Purchased="1"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initializeTowerDefense"
+	DestroyFunction="destroyTowerDefense"
+	Type="TemplateTool"
+	Creator="GarageGames"
+	Genre="Strategy"
+    BaseGui="TowerDefenseTemplate"
+    StartLevel="data/levels/startLevel.t2d"
+    Icon="TowerDefenseIcon"
+	/>
+

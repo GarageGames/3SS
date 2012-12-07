@@ -1,0 +1,15 @@
+<SimSet
+    Name="AssetLibraryTips">
+    <ScriptObject
+        Name="Tip0"
+        Text="Adding tags to your assets can make them easier to find.  Be sure to organize your assets with tags as your library grows." />
+    <ScriptObject
+        Name="Tip1"
+        Text="You can not use any Image, Animation or Sound until it is uploaded to your Asset Library." />
+    <ScriptObject
+        Name="Tip2"
+        Text="If you delete any asset that is being used in your game all instances of that asset will be replaced with the default asset." />
+    <ScriptObject
+        Name="Tip3"
+        Text="If you delete a sprite sheet that has animations attached to it, the animations will be deleted as well." />
+</SimSet>

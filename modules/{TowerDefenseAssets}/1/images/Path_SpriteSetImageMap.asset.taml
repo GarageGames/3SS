@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Path_SpriteSetImageMap"
+    imageFile="@assetFile=#Path_SpriteSet.png"
+    cellCountX="4"
+    cellCountY="4"
+    cellWidth="64"
+    cellHeight="64"
+	AssetCategory="sprites" />

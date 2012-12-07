@@ -1,0 +1,35 @@
+<mockup version="1.0" skin="sketch" measuredW="357" measuredH="238" mockupW="300" mockupH="200">
+  <controls>
+    <control controlID="5" controlTypeID="__group__" x="57" y="38" w="300" h="200" measuredW="300" measuredH="200" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="300" h="200" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>Animation%20Set%20Selector</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="36" y="68" w="-1" h="-1" measuredW="79" measuredH="63" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>%28o%29%20Tower%0A%28%20%29%20Enemy%0A%28%20%29%20Projectile</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="14" y="39" w="-1" h="-1" measuredW="272" measuredH="21" zOrder="2" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Choose%20which%20type%20of%20Animation%20Set%20to%20create.</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="78" y="146" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="3" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Create</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="159" y="146" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="4" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

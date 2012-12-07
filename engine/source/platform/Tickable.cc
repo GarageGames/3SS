@@ -1,0 +1,121 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+#include "platform/Tickable.h"
+
+// The statics
+U32 Tickable::smLastTick = 0;
+U32 Tickable::smLastTime = 0;
+U32 Tickable::smLastDelta = 0;
+
+const U32 Tickable::smTickShift = 4;
+const U32 Tickable::smTickMs = ( 1 << smTickShift );
+const F32 Tickable::smTickSec = ( F32( Tickable::smTickMs ) / 1000.f );
+const U32 Tickable::smTickMask = ( smTickMs - 1 );
+
+//------------------------------------------------------------------------------
+
+Tickable::Tickable() :
+    mProcessTick( false )
+{
+    // We should always start with processing of ticks off!
+}
+
+//------------------------------------------------------------------------------
+
+Tickable::~Tickable()
+{
+    setProcessTicks( false );
+}
+
+//------------------------------------------------------------------------------
+
+Vector<Tickable *>& Tickable::getProcessList()
+{
+   // This helps to avoid the static initialization order fiasco
+   static Vector<Tickable *> smProcessList; ///< List of tick controls
+   return smProcessList;
+}
+
+//------------------------------------------------------------------------------
+
+void Tickable::setProcessTicks( bool tick /* = true  */ )
+{
+    // Ignore no change.
+    if ( tick == mProcessTick )
+        return;
+
+    // Update tick flag.
+    mProcessTick = tick;
+
+    // Are we processing ticks?
+    if ( mProcessTick )
+    {
+        // Yes, so add to process list.
+        getProcessList().push_back( this );
+        return;
+    }
+
+    // No, so remove from process list.
+    for( ProcessListIterator i = getProcessList().begin(); i != getProcessList().end(); i++ )
+    {
+        if( (*i) == this )
+        {
+            getProcessList().erase( i );
+            return;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+
+bool Tickable::advanceTime( U32 timeDelta )
+{
+   U32 targetTime = smLastTime + timeDelta;
+   U32 targetTick = ( targetTime + smTickMask ) & ~smTickMask;
+   U32 tickCount = ( targetTick - smLastTick ) >> smTickShift;
+
+   static Vector<Tickable*> safeProcessList;
+
+   // Process ticks.
+   if( tickCount )
+   {
+       // Fetch a copy of the process list.
+       safeProcessList = getProcessList();
+
+        for( ; smLastTick != targetTick; smLastTick += smTickMs )
+        {
+            for( ProcessListIterator i = safeProcessList.begin(); i != safeProcessList.end(); i++ )
+            {           
+                (*i)->processTick();
+            }
+        }
+   }
+    
+   smLastDelta = ( smTickMs - ( targetTime & smTickMask ) ) & smTickMask;
+   F32 dt = smLastDelta / F32( smTickMs );
+
+    // Fetch a copy of the process list.
+    safeProcessList = getProcessList();
+
+   // Interpolate tick.
+   for( ProcessListIterator i = safeProcessList.begin(); i != safeProcessList.end(); i++ )
+   {
+        (*i)->interpolateTick( dt );
+   }
+
+    // Fetch a copy of the process list.
+    safeProcessList = getProcessList();
+
+   dt = F32( timeDelta ) / 1000.f;	
+   for( ProcessListIterator i = safeProcessList.begin(); i != safeProcessList.end(); i++ )
+   {
+        (*i)->advanceTime( dt );
+   }
+
+   smLastTime = targetTime;
+
+   return tickCount != 0;
+}

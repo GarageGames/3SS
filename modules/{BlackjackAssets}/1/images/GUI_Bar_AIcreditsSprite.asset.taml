@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="GUI_Bar_AIcreditsSprite"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/GUI_Bar_AIcredits"
+    FilterMode="SMOOTH" />

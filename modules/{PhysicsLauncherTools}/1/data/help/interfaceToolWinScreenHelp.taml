@@ -1,0 +1,9 @@
+<SimSet
+    Name="InterfaceToolWinHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Use a different background image for your Win and your Lose screens to add flavor and the right theme for your Players." />
+    <ScriptObject
+        Name="Tip1"
+        Text="You can decide to disable reward levels. If you do, make sure that you disable the reward image display for your Win and Lose screens." />
+</SimSet>

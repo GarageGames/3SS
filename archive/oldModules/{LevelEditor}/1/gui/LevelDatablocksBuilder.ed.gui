@@ -1,0 +1,214 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(levelBuilderLevelDatablocksEditor) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "center";
+   VertSizing = "center";
+   Position = "0 0";
+   Extent = "800 600";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiWindowCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiWindowProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      Position = "119 117";
+      Extent = "562 366";
+      MinExtent = "562 366";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "Level Datablock Editor";
+      maxLength = "1024";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "0";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+
+      new GuiScrollCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "1";
+         Profile = "GuiScrollProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "5 49";
+         Extent = "248 259";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "dynamic";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+
+         new GuiListBoxCtrl(LDListAll) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiListBoxProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            Position = "2 2";
+            Extent = "244 32";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            AllowMultipleSelections = "1";
+            fitParentWidth = "1";
+         };
+      };
+      new GuiButtonCtrl(LDAdd) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "256 111";
+         Extent = "50 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "LDEonAddObject();";
+         hovertime = "1000";
+         text = ">>>";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl(LDRemove) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "256 149";
+         Extent = "50 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "LDEonRemoveObject();";
+         hovertime = "1000";
+         text = "<<<";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiScrollCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "1";
+         Profile = "GuiScrollProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "309 49";
+         Extent = "248 259";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "dynamic";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+
+         new GuiListBoxCtrl(LDListLevel) {
+            canSaveDynamicFields = "0";
+            isContainer = "0";
+            Profile = "GuiListBoxProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            Position = "2 2";
+            Extent = "244 32";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            AllowMultipleSelections = "1";
+            fitParentWidth = "1";
+         };
+      };
+      new GuiButtonCtrl(LDApply) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "469 322";
+         Extent = "77 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "LDEonApply();";
+         hovertime = "1000";
+         text = "Apply";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl(LDCancel) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "381 322";
+         Extent = "77 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "LDEonCancel();";
+         hovertime = "1000";
+         text = "Cancel";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "6 29";
+         Extent = "116 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Managed Datablocks";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(LDELevelNameText) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiTextProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "310 28";
+         Extent = "246 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Current Level Datablocks";
+         maxLength = "1024";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

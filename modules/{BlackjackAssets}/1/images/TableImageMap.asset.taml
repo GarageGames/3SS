@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="TableImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Table" />

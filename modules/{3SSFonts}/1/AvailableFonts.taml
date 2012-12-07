@@ -1,0 +1,53 @@
+<SimSet
+    Name="AvailableFonts">
+    <ScriptObject
+        Name="CaptureIt"
+		File="^{3SSFonts}/fonts/Capture_it.ttf"
+        Font="Capture it"
+        FontSize="16" />
+    <ScriptObject
+        Name="ChunkFive"
+		File="^{3SSFonts}/fonts/Chunkfive.otf"
+        Font="ChunkFive Roman"
+        FontSize="16" />
+    <ScriptObject
+        Name="Comfortaa"
+		File="^{3SSFonts}/fonts/Comfortaa_Regular.ttf"
+        Font="Comfortaa"
+        FontSize="16" />
+    <ScriptObject
+        Name="DeutschGothic"
+		File="^{3SSFonts}/fonts/Deutsch.ttf"
+        Font="Deutsch Gothic"
+        FontSize="16" />
+    <ScriptObject
+        Name="GandhiSerif"
+		File="^{3SSFonts}/fonts/GandhiSerif-Regular.otf"
+        Font="Gandhi Serif"
+        FontSize="16" />
+    <ScriptObject
+        Name="GondolaSD"
+		File="^{3SSFonts}/fonts/Gondola_SD.ttf"
+        Font="Gondola SD"
+        FontSize="16" />
+    <ScriptObject
+        Name="SFCartoonistHand"
+		File="^{3SSFonts}/fonts/SF_Cartoonist_Hand.ttf"
+        Font="SF Cartoonist Hand"
+        FontSize="16" />
+    <ScriptObject
+        Name="UnderwoodChampion"
+		File="^{3SSFonts}/fonts/underwood_champion.ttf"
+        Font="Underwood Champion"
+        FontSize="16" />
+    <ScriptObject
+        Name="SpicyRice"
+		File="^{3SSFonts}/fonts/SpicyRice-Regular.otf"
+        Font="Spicy Rice"
+        FontSize="16" />
+    <ScriptObject
+        Name="TitilliumText"
+		File="^{3SSFonts}/fonts/TitilliumText22L001.otf"
+        Font="TitilliumText22L Th"
+        FontSize="16" />
+</SimSet>

@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{3SSHomeScreens}"
+	VersionId="1"
+	Description="3 Step Studio Home Screens"
+	Group="baseTools"
+	Dependencies="{EditorCore}=1,{QTManager}=1"
+	ScriptFile="main.cs"
+	ScopeSet="3SSHomeScreensSet"
+	CreateFunction="initialize3SSHomeScreens"
+	DestroyFunction="destroy3SSHomeScreens"
+	DeclaredAssetManifest="^{3SSHomeScreens}/DeclaredAssets.manifest.taml"
+	ReferencedAssetManifest="^3SSHomeScreens/ReferencedAssets.manifest.taml" />
+

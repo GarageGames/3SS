@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="font_75Sprite"
+    imageFile="@assetFile=#font_75.png"
+    cellCountX="16"
+    cellCountY="6"
+    cellWidth="18"
+    cellHeight="18"
+	AssetCategory="gui" />

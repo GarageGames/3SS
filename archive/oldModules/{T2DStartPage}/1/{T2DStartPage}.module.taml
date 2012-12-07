@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{T2DStartPage}"
+	VersionId="1"
+	Description="Torque 2D Start Page"
+	Group="t2dTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initializeT2DStartPage"
+	DestroyFunction="destroyT2DStartPage"
+	/>
+

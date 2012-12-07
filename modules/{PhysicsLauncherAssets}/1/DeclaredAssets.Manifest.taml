@@ -1,0 +1,13 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^{PhysicsLauncherAssets}/data/animations"
+			Extension="asset.taml"/>
+		<Location		
+			Path="^{PhysicsLauncherAssets}/data/images"
+			Extension="asset.taml"/>
+        <Location
+			Path="^{PhysicsLauncherAssets}/data/audio"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

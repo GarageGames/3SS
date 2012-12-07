@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="IncrementFrameButtonDepressedImage"
+    AssetInternal="1"
+    ImageFile="@assetFile=#IncrementFrameButton_depressed.png" />

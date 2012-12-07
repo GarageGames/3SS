@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="logoutButton_down"
+    AssetInternal="1"
+    ImageFile="@assetFile=#logoutButton_down.png" />

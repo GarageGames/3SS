@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="IceTowerIcon"
+    imageFile="@assetFile=#tower2.png"
+    AssetCategory="gui" />

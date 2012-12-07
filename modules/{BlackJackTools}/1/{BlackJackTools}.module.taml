@@ -1,0 +1,18 @@
+<ModuleDefinition
+	ModuleId="{BlackJackTools}"
+	VersionId="1"
+	Description="Blackjack Template"
+	Purchased="1"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initializeBlackJack"
+	DestroyFunction="destroyBlackJack"
+	Type="TemplateTool"
+	Genre="Card"
+    BaseGui="BlackJackTemplate"
+    StartLevel="data/levels/startLevel.t2d"
+    Icon="BlackJackIcon"
+	Creator="GarageGames"
+	/>
+

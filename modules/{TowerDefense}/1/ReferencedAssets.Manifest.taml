@@ -1,0 +1,10 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^TowerDefenseTemplate/data/levels"
+			Extension="scene.taml"/>
+        <Location
+			Path="^TowerDefenseTemplate/managed"
+			Extension="taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

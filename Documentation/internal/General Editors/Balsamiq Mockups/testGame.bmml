@@ -1,0 +1,67 @@
+<mockup version="1.0" skin="sketch" measuredW="774" measuredH="229" mockupW="704" mockupH="166">
+  <controls>
+    <control controlID="5" controlTypeID="__group__" x="70" y="63" w="318" h="166" measuredW="318" measuredH="166" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="318" h="166" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%20%20Test%20Game</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="54" y="35" w="-1" h="-1" measuredW="210" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Which%20platform%20do%20you%20want%20to%20test%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="167" y="119" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="87" y="119" w="65" h="27" measuredW="48" measuredH="27" zOrder="3" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Play</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::ComboBox" x="105" y="69" w="107" h="-1" measuredW="67" measuredH="62" zOrder="4" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Mobile%0ATablet%0ADesktop</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="456" y="63" w="318" h="166" measuredW="318" measuredH="166" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="318" h="166" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%20%20Test%20Game</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="54" y="35" w="-1" h="-1" measuredW="210" measuredH="21" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Which%20platform%20do%20you%20want%20to%20test%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="167" y="119" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="87" y="119" w="65" h="27" measuredW="48" measuredH="27" zOrder="3" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Play</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::ComboBox" x="105" y="69" w="107" h="-1" measuredW="67" measuredH="23" zOrder="4" locked="false" isInGroup="6">
+          <controlProperties>
+            <state>closed</state>
+            <text>Mobile%0ATablet%0ADesktop</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="BlackjackImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Blackjack" />

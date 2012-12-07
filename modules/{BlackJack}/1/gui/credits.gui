@@ -1,0 +1,76 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(creditsGui) {
+   canSaveDynamicFields = "1";
+   PlatformTarget = "UNIVERSAL";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "width";
+   VertSizing = "height";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "480 320";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+      creditsTxtFile = "GUI/credits.txt";
+
+   new GuiBitmapCtrl(CreditsBackground) {
+      canSaveDynamicFields = "0";
+      PlatformTarget = "UNIVERSAL";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "0 0";
+      Extent = "1024 768";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gui/images/Credits_Background.png";
+      wrap = "0";
+      useSourceRect = "0";
+      sourceRect = "0 0 0 0";
+   };
+   new GuiBitmapCtrl(CreditsImage) {
+      canSaveDynamicFields = "0";
+      PlatformTarget = "UNIVERSAL";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "0 0";
+      Extent = "1024 768";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gui/images/Credits_Text.png";
+      wrap = "0";
+      useSourceRect = "0";
+      sourceRect = "0 0 0 0";
+   };
+   new GuiBitmapButtonCtrl(closeCreditsButton) {
+      canSaveDynamicFields = "0";
+      PlatformTarget = "UNIVERSAL";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "953 9";
+      Extent = "64 64";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      isLegacyVersion = "0";
+      bitmapNormal = "gui/images/Button_Exit.png";
+      bitmapHilight = "gui/images/Button_Exit_h.png";
+      bitmapDepressed = "gui/images/Button_Exit_p.png";
+      bitmapInactive = "gui/images/Button_Exit_p.png";
+   };
+};
+//--- OBJECT WRITE END ---

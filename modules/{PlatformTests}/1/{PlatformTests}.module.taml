@@ -1,0 +1,9 @@
+<ModuleDefinition
+	ModuleId="{PlatformTests}"
+	VersionId="1"
+	Description="Unit tests for the abstract platform layer"
+	ScriptFile="main.cs"
+	CreateFunction="startPlatformTests"
+	Published="0"
+	/>
+

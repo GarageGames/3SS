@@ -1,0 +1,85 @@
+<mockup version="1.0" skin="sketch" measuredW="531" measuredH="560" mockupW="450" mockupH="523">
+  <controls>
+    <control controlID="5" controlTypeID="__group__" x="81" y="37" w="450" h="159" measuredW="450" measuredH="159" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="159" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%20%20Replace%20File%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="282" y="125" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="180" y="125" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="2" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Create%20New</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="104" y="125" w="-1" h="-1" measuredW="71" measuredH="27" zOrder="3" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Replace</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="36" y="38" w="378" h="87" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="5">
+          <controlProperties>
+            <align>center</align>
+            <text>A%20file%20already%20exists%20with%20this%20name.%20%0A%20%0ADo%20you%20want%20to%20replace%20the%20existing%20file%20or%20create%20a%20new%20file%20with%20the%20name%20OrcAnimSet_2</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="81" y="227" w="296" h="125" measuredW="296" measuredH="125" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="296" h="125" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%20%20%20Error</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="107" y="74" w="81" h="27" measuredW="40" measuredH="27" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Ok</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="36" y="38" w="237" h="36" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <align>center</align>
+            <text>A%20file%20already%20exists%20with%20this%20name.%20</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="81" y="401" w="450" h="159" measuredW="450" measuredH="159" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="159" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%20%20Create%20New%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="244" y="125" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="142" y="125" w="-1" h="-1" measuredW="96" measuredH="27" zOrder="2" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Create%20New</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Paragraph" x="36" y="38" w="378" h="72" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="7">
+          <controlProperties>
+            <align>center</align>
+            <text>A%20file%20already%20exists%20with%20this%20name.%20%0A%20%0ADo%20you%20want%20to%20create%20a%20new%20file%20with%20the%20name%20OrcAnimSet_2</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

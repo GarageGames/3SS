@@ -1,0 +1,112 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiScriptNotifyCtrl(LevelBuilderBase) {
+   canSaveDynamicFields = "0";
+   internalName = "LevelBuilderBase";
+   Profile = "EditorPanelMedium";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   noFocusOnWake = "0";
+   hovertime = "1000";
+   onResize = true;
+   onLoseFirstResponder = true;
+   onGainFirstResponder = true;
+   /*new GuiControl() {
+      canSaveDynamicFields = "0";
+      Profile = "ToolbarProfile";
+      HorizSizing = "width";
+      VertSizing = "bottom";
+      Position = "0 0";
+      Extent = "800 27";
+      MinExtent = "8 25";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Profile = "GuiTransparentProfile";
+   
+      new GuiIconButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Profile = "EditorButtonToolbar";
+         HorizSizing = "left";
+         VertSizing = "bottom";
+         Position = "770 1";
+         Extent = "25 25";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         noFocusOnWake = "0";
+         Command = "toggleUIMode();";
+         tooltipprofile = "EditorToolTipProfile";
+         ToolTip = "View Version Information about Torque Game Builder";
+         hovertime = "100";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         buttonMargin = "4 4";
+         iconBitmap = "^{EditorAssets}/gui/iconInformation";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         textLocation = "Left";
+         textMargin = "4";
+      };
+   };*/      
+   new GuiFrameSetCtrl(levelBuilderContentFrame) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiSolidDefaultProfile";
+      HorizSizing = "width";
+      VertSizing = "height";
+      Position = "0 0";
+      Extent = "1024 768";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      noFocusOnWake = "0";
+      hovertime = "1000";
+      columns = "0 560";
+      rows = "0";
+      borderWidth = "4";
+      borderColor = "69 0 0 0";
+      borderEnable = "dynamic";
+      borderMovable = "dynamic";
+      autoBalance = "1";
+      fudgeFactor = "2";
+
+      new GuiControl(levelBuilderViewContainer) {
+         canSaveDynamicFields = "0";
+         internalName = "levelBuilderViewContainer";
+         Profile = "EditorPanelLight";
+         HorizSizing = "width";
+         VertSizing = "height";
+         Position = "0 0";
+         Extent = "556 573";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         noFocusOnWake = "0";
+         hovertime = "1000";
+      };
+      new GuiScriptNotifyCtrl(sideBarContentContainer) {
+         canSaveDynamicFields = "0";
+         Profile = "GuiFormProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "560 0";
+         Extent = "240 573";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         onResize = true;
+         onParentResized = true;
+         hovertime = "1000";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

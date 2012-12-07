@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{3SSFonts}"
+	VersionId="1"
+	Description="3SS Fonts"
+	Group="baseTools"
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initialize3SSFonts"
+	DestroyFunction="destroy3SSFonts"
+	/>
+

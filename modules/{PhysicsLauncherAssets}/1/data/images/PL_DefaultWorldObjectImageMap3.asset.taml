@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="PL_DefaultWorldObjectImageMap3"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Crate_Damage_2_static"
+    CellCountX="1"
+    CellCountY="1"
+    CellWidth="192"
+    CellHeight="192" />

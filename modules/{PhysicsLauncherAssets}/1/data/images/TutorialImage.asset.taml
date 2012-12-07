@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TutorialImageImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#TutorialImage.png" />

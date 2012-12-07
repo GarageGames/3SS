@@ -1,0 +1,381 @@
+%levelContent = new Scene(MainScene) {
+      cameraPosition = "0 0";
+      cameraSize = "8 6";
+      DebugRendering = "0";
+
+   new Sprite() {
+      imageMap = "TableImageMap";
+      SceneLayer = "21";
+      size = "8.000 6.000";
+      BodyType = "static";
+         SceneId = "1";
+         Behavior0 = "BlackjackTableBehavior=1,tableIndex=3,currentHandArrow=currentHandIcon,handNumericalDisplay=bitmapFontTemplate,winLabel=winIcon,loseLabel=loseIcon,pushLabel=pushIcon,bustLabel=bustIcon,blackjackLabel=blackjackIcon";
+         Behavior1 = "BetRulesBehavior=2,maxBet=100,payoutBlackjackNumerator=6,payoutBlackjackDenominator=5";
+         Behavior2 = "BackgroundMusicBehavior=3,songProfile=song2";
+   };
+   new Sprite(tableCards) {
+      imageMap = "GGDeckSprite";
+      size = "0.563 0.828";
+      Position = "-5.133344 0.686977";
+      Angle = "45";
+      UseInputEvents = "1";
+         SceneId = "2";
+         useMouseEvents = "1";
+         usesPhysics = "1";
+         Behavior0 = "TemplateBehavior=1";
+         Behavior1 = "PlayingCardsBehavior=2,dealingSpeed=600.000,discardPile=DiscardArea";
+   };
+   new Sprite(bankStack1) {
+      imageMap = "chip1dollarImageMap";
+      SceneLayer = "2";
+      size = "0.625 0.625";
+      Position = "-1.624547 -2.187500";
+      BodyType = "static";
+      UseInputEvents = "1";
+         SceneId = "3";
+         useMouseEvents = "1";
+         Behavior0 = "BankStackBehavior=1,playerBank=userAi,defaultBetArea=BetArea1";
+   };
+   new Sprite(bankStack2) {
+      imageMap = "chip5dollarImageMap";
+      SceneLayer = "2";
+      size = "0.625 0.625";
+      Position = "-2.331555 -1.970961";
+      BodyType = "static";
+      UseInputEvents = "1";
+         SceneId = "4";
+         useMouseEvents = "1";
+         Behavior0 = "BankStackBehavior=1,playerBank=userAi,denomination=5,defaultBetArea=BetArea1";
+   };
+   new Sprite(bankStack3) {
+      imageMap = "chip25dollarImageMap";
+      SceneLayer = "2";
+      size = "0.625 0.625";
+      Position = "-2.987773 -1.694391";
+      BodyType = "static";
+      UseInputEvents = "1";
+         SceneId = "5";
+         useMouseEvents = "1";
+         Behavior0 = "BankStackBehavior=1,playerBank=userAi,denomination=25,defaultBetArea=BetArea1";
+   };
+   new Sprite(BankStack4) {
+      imageMap = "chip100dollarImageMap";
+      Enabled = "0";
+      SceneLayer = "2";
+      size = "0.625 0.625";
+      Position = "-3.593750 -1.328125";
+      BodyType = "static";
+      Active = "0";
+      Visible = "0";
+      UseInputEvents = "1";
+         SceneId = "6";
+         useMouseEvents = "1";
+         Behavior0 = "BankStackBehavior=1,isEnabled=0,playerBank=userAi,denomination=100,defaultBetArea=BetArea1";
+   };
+   new SceneObject(DealerChipTarget) {
+      size = "1.375 0.599";
+      Position = "-0.093687 3.006422";
+      BodyType = "static";
+      Visible = "0";
+         SceneId = "7";
+   };
+   new SceneObject(PlayerChipTarget) {
+      size = "0.911 0.492";
+      Position = "-3.512687 -2.722656";
+      BodyType = "static";
+      Visible = "0";
+      FlipY = "1";
+         SceneId = "8";
+   };
+   new Sprite(penetrationCard) {
+      imageMap = "penetrationCardImageMap";
+      size = "0.563 0.828";
+      Position = "-5.231219 -0.788750";
+      Angle = "-45";
+      UseInputEvents = "1";
+         SceneId = "9";
+         useMouseEvents = "1";
+         usesPhysics = "1";
+         Behavior0 = "PlayingCardsBehavior=1,dealingSpeed=600.000,isPenetrationCard=1,discardPile=DiscardArea";
+   };
+   new Sprite(DealerChipRack) {
+      imageMap = "ChipTrayImageMap";
+      SceneLayer = "20";
+      size = "2.875 1.148";
+      Position = "0.101563 2.914063";
+      BodyType = "static";
+         SceneId = "10";
+   };
+   new Sprite() {
+      imageMap = "PlayerSpaceImageMap";
+      SceneLayer = "20";
+      size = "0.703 1.000";
+      Position = "0.000578 1.882813";
+      BodyType = "static";
+      Visible = "0";
+         SceneId = "11";
+         Behavior0 = "BlackjackAiDealerBehavior=1";
+   };
+   new Sprite(TableRulesImage) {
+      imageMap = "Rules_OverlaySprite";
+      SceneLayer = "20";
+      size = "3.688 1.039";
+      Position = "0.018344 1.247531";
+      BodyType = "static";
+         SceneId = "12";
+   };
+   new Sprite() {
+      imageMap = "CardHolderImageMap";
+      SceneLayer = "20";
+      size = "1.453 2.539";
+      Position = "2.768234 2.768234";
+      Angle = "-45";
+      BodyType = "static";
+         SceneId = "13";
+         Behavior0 = "CardShoeBehavior=1,deckCount=1,shoePenetrationPercent=80,playingCards=tableCards,penetrationCard=penetrationCard,shuffleLabel=shufflingIcon,shuffleTime=2";
+   };
+   new Sprite(DiscardArea) {
+      imageMap = "UsedCardsImageMap";
+      SceneLayer = "6";
+      size = "0.781 1.039";
+      Position = "-2.805922 2.465852";
+      BodyType = "static";
+         SceneId = "14";
+         Behavior0 = "DiscardPileBehavior=1";
+   };
+   new SceneObject(SplitBetArea0) {
+      size = "0.615 0.573";
+      Position = "1.224414 0.208508";
+      BodyType = "static";
+      Visible = "0";
+      UseInputEvents = "1";
+         SceneId = "15";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,userEditable=0,numericalDisplay=SplitBetAreaNumericalDisplay0BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new SceneObject(SplitBetArea2) {
+      size = "0.615 0.573";
+      Position = "-2.410914 1.041492";
+      BodyType = "static";
+      Visible = "0";
+      UseInputEvents = "1";
+         SceneId = "16";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,userEditable=0,numericalDisplay=SplitBetAreaNumericalDisplay2BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new SceneObject(SplitBetArea1) {
+      size = "0.615 0.573";
+      Position = "-0.647672 0.197742";
+      BodyType = "static";
+      UseInputEvents = "1";
+         SceneId = "17";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,userEditable=0,numericalDisplay=SplitBetAreaNumericalDisplay1BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new Sprite() {
+      imageMap = "PlayerSpaceImageMap";
+      SceneLayer = "20";
+      size = "0.703 1.000";
+      Position = "2.419055 -0.234375";
+      Angle = "34.5523";
+      BodyType = "static";
+      Visible = "0";
+         SceneId = "18";
+         useMouseEvents = "1";
+         Behavior0 = "TableSeatBehavior=1,seatIndex=0,emptyIcon=emptySeatIcon,mainBetArea=BetArea0,sideBetArea=SideBetArea0,insuranceBetArea=InsuranceBetArea0,aiBankDisplay=AIBankDisplay0BitmapFont";
+   };
+   new Sprite() {
+      imageMap = "PlayerSpaceImageMap";
+      SceneLayer = "20";
+      size = "0.703 1.000";
+      Position = "0.011867 -0.849648";
+      BodyType = "static";
+         SceneId = "19";
+         useMouseEvents = "1";
+         Behavior0 = "TableSeatBehavior=1,seatIndex=1,emptyIcon=emptySeatIcon,mainBetArea=BetArea1,sideBetArea=SideBetArea1,insuranceBetArea=InsuranceBetArea1,aiBankDisplay=AIBankDisplay1BitmapFont";
+   };
+   new Sprite() {
+      imageMap = "PlayerSpaceImageMap";
+      SceneLayer = "20";
+      size = "0.703 1.000";
+      Position = "-2.309336 -0.210938";
+      Angle = "-33.4779";
+      BodyType = "static";
+      Visible = "0";
+         SceneId = "20";
+         useMouseEvents = "1";
+         Behavior0 = "TableSeatBehavior=1,seatIndex=2,emptyIcon=emptySeatIcon,mainBetArea=BetArea2,sideBetArea=SideBetArea2,insuranceBetArea=InsuranceBetArea2,aiBankDisplay=AIBankDisplay2BitmapFont";
+   };
+   new Sprite(BetArea2) {
+      imageMap = "betBoxImageMap";
+      SceneLayer = "21";
+      size = "0.750 0.750";
+      Position = "-1.704391 0.619555";
+      BodyType = "static";
+      Visible = "0";
+      UseInputEvents = "1";
+         SceneId = "21";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,splitBetArea=SplitBetArea2,numericalDisplay=BetAreaNumericalDisplay2BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new Sprite(BetArea1) {
+      imageMap = "betBoxImageMap";
+      SceneLayer = "21";
+      size = "0.750 0.750";
+      Position = "0.007750 0.207367";
+      BodyType = "static";
+      UseInputEvents = "1";
+         SceneId = "22";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,splitBetArea=SplitBetArea1,numericalDisplay=BetAreaNumericalDisplay1BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new Sprite(BetArea0) {
+      imageMap = "betBoxImageMap";
+      SceneLayer = "21";
+      size = "0.750 0.750";
+      Position = "1.836938 0.629250";
+      BodyType = "static";
+      Visible = "0";
+      UseInputEvents = "1";
+         SceneId = "23";
+         useMouseEvents = "1";
+         Behavior0 = "betAreaBehavior=1,splitBetArea=SplitBetArea0,numericalDisplay=BetAreaNumericalDisplay0BitmapFont,playerTargetObject=PlayerChipTarget,dealerTargetObject=DealerChipTarget";
+   };
+   new BitmapFontObject(AIBankDisplay1BitmapFont) {
+      size = "0.000 0.125";
+      Position = "-0.076359 -1.531023";
+      BodyType = "static";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "24";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(AIBankDisplay0BitmapFont) {
+      size = "0.000 0.125";
+      Position = "3.380250 -0.216609";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "25";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(AIBankDisplay2BitmapFont) {
+      size = "0.000 0.125";
+      Position = "-3.401477 -0.474227";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "26";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(BetAreaNumericalDisplay1BitmapFont) {
+      size = "0.000 0.125";
+      Position = "0.020086 -0.115273";
+      BodyType = "static";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "27";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(SplitBetAreaNumericalDisplay1BitmapFont) {
+      size = "0.000 0.125";
+      Position = "-0.647742 -0.138617";
+      BodyType = "static";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "28";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(SplitBetAreaNumericalDisplay2BitmapFont) {
+      size = "0.000 0.125";
+      Position = "-2.417414 0.622992";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "29";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(BetAreaNumericalDisplay0BitmapFont) {
+      size = "0.000 0.125";
+      Position = "1.901789 0.301320";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "30";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(SplitBetAreaNumericalDisplay0BitmapFont) {
+      size = "0.000 0.125";
+      Position = "1.256016 -0.158258";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "31";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(BetAreaNumericalDisplay2BitmapFont) {
+      size = "0.000 0.125";
+      Position = "-1.680422 0.266172";
+      BodyType = "static";
+      Visible = "0";
+      imageMap = "fontImageMap";
+         frame = "0";
+         SceneId = "32";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(BottomBarAIBankDisplay0) {
+      size = "0.000 0.250";
+      Position = "3.620000 -2.730000";
+      BodyType = "static";
+      imageMap = "fontImageMap";
+      textAlignment = "Right";
+         frame = "0";
+         SceneId = "33";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new BitmapFontObject(BottomBarAIBankDisplay1) {
+      size = "0.000 0.250";
+      Position = "1.320000 -2.730000";
+      BodyType = "static";
+      imageMap = "fontImageMap";
+      textAlignment = "Right";
+         frame = "0";
+         SceneId = "34";
+         Behavior0 = "UpdateFontFromTemplateBehavior=1,bitmapFontTemplate=bitmapFontTemplate";
+   };
+   new Sprite(BottomBarAIAvatarImage0) {
+      imageMap = "BlackJack_PlayerImageMap";
+      size = "0.391 0.391";
+      Position = "1.966531 -2.773438";
+      BodyType = "static";
+         SceneId = "35";
+   };
+   new Sprite(BottomBarAIAvatarImage1) {
+      imageMap = "BlackJack_PlayerImageMap";
+      size = "0.391 0.391";
+      Position = "-0.341805 -2.773438";
+      BodyType = "static";
+         SceneId = "36";
+   };
+   new Sprite(BottomBarAIBackground1) {
+      imageMap = "GUI_Bar_AIcreditsSprite";
+      SceneLayer = "1";
+      size = "1.949 0.398";
+      Position = "0.670062 -2.788672";
+      BodyType = "static";
+         SceneId = "37";
+   };
+   new Sprite(BottomBarAIBackground0) {
+      imageMap = "GUI_Bar_AIcreditsSprite";
+      SceneLayer = "1";
+      size = "1.949 0.398";
+      Position = "2.973109 -2.792969";
+      BodyType = "static";
+         SceneId = "38";
+   };
+};

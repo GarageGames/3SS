@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="FireballTowerIcon"
+    imageFile="@assetFile=#tower1.png"
+    AssetCategory="gui" />

@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="PlayerSpaceImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/PlayerSpace" />

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="ImageBuilderBorderLineImageMap"
+    AssetInternal="1"
+    ImageFile="@assetFile=#borderLine"
+    filterPad="false" />

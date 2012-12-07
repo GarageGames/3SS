@@ -1,0 +1,5 @@
+<AudioAsset
+    AssetName="Lose_Jungle_01Sound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#Lose_Jungle_01.wav"
+    AutoUnload="0" />

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="BringToFront_hover"
+    AssetInternal="1"
+    ImageFile="@assetFile=#BringToFront_hover"
+    AutoUnload="0" />

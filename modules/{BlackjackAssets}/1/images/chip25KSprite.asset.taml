@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="chip25KSprite"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/chip25K" />

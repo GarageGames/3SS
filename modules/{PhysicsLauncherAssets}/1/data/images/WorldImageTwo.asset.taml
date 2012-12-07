@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="WorldImageTwoImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#WorldImageTwo.png" />

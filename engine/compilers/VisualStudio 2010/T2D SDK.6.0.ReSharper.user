@@ -1,0 +1,36 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:assetManager_ScriptBinding.h/l:..?..?source?assets?assetManager_ScriptBinding.h" caret="4832" fromTop="34" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:guiControl.cc/l:..?..?source?gui?guiControl.cc" caret="34347" fromTop="22" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:guiScrollCtrl.cc/l:..?..?source?gui?containers?guiScrollCtrl.cc" caret="13292" fromTop="20" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:fileSystemFunctions.cpp/l:..?..?source?io?fileSystemFunctions.cpp" caret="1780" fromTop="34" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:behaviorComponent.cpp/l:..?..?source?component?behaviors?behaviorComponent.cpp" caret="32310" fromTop="20" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:simObject.h/l:..?..?source?sim?simObject.h" caret="12412" fromTop="26" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:SceneObject.h/l:..?..?source?2d?sceneobject?SceneObject.h" caret="13516" fromTop="44" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:SceneObject.cc/l:..?..?source?2d?sceneobject?SceneObject.cc" caret="40440" fromTop="28" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:guiControl.cc/l:..?..?source?gui?guiControl.cc" caret="34063" fromTop="16" />
+      <File id="1564A07D-230E-4C90-AEE6-52AC9A58D6C8/f:guiControl.cc/l:..?..?source?gui?guiControl.cc" caret="34374" fromTop="25" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

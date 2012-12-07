@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="LevelSelectBtn128x128HoverImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#LevelSelectBtn128x128Hover.png" />

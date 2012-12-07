@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="smallestBoxImage"
+    AssetCategory="gui"
+	AssetInternal="1"
+    imageFile="@assetFile=#smallestBox.png" />

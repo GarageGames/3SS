@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Target name="3StepStudioGame" productName="Torque-MacCarb-Release" productType="com.apple.product-type.application" buildProxy="1">
+  <BuildPhases>
+    <BuildPhase type="Headers" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Resources" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Sources" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Frameworks" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Rez" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="CopyFiles" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" dstPath="" dstSubfolderSpec="10" />
+  </BuildPhases>
+  <BuildConfigs default="Release" defaultConfigurationIsVisible="0">
+    <BuildConfig name="Release">
+      <BuildSettings>
+        <ARCHS>"$(NATIVE_ARCH)"</ARCHS>
+        <CONFIGURATION_BUILD_DIR>../../../templates/PhysicsLauncher/game</CONFIGURATION_BUILD_DIR>
+        <DEBUG_INFORMATION_FORMAT>"dwarf-with-dsym"</DEBUG_INFORMATION_FORMAT>
+        <DEPLOYMENT_POSTPROCESSING>YES</DEPLOYMENT_POSTPROCESSING>
+        <FRAMEWORK_SEARCH_PATHS>"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)"</FRAMEWORK_SEARCH_PATHS>
+        <FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1>""</FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1>
+        <GCC_GENERATE_DEBUGGING_SYMBOLS>NO</GCC_GENERATE_DEBUGGING_SYMBOLS>
+        <GCC_OPTIMIZATION_LEVEL>1</GCC_OPTIMIZATION_LEVEL>
+        <GCC_PREPROCESSOR_DEFINITIONS settingType="List">
+          <Item>__MACOSX__</Item>
+		  <Item>TORQUE_PLAYER</Item>
+		  <Item>USE_COMPONENTS</Item>
+          <Item>TORQUE_DISABLE_MEMORY_MANAGER</Item>
+        </GCC_PREPROCESSOR_DEFINITIONS>
+        <GCC_VERSION>""</GCC_VERSION>
+        <HEADER_SEARCH_PATHS settingType="List">
+          <Item>"$(TSS_SOURCE_PATH)"</Item>
+          <Item>"$(TSS_LIB_PATH)"</Item>
+          <Item>"$(TSS_LIB_PATH)/vorbis/include"</Item>
+          <Item>"$(TSS_LIB_PATH)/lpng"</Item>
+          <Item>"$(TSS_LIB_PATH)/ljpeg"</Item>
+          <Item>"$(TSS_LIB_PATH)/lungif"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Versions/Current/Frameworks/CarbonCore.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Versions/Current/Frameworks/OT.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Versions/Current/Frameworks/HIToolbox.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/AGL.framework/Headers"</Item>
+          <Item>"$(SYSTEM_DEVELOPER_DIR)/Headers/FlatCarbon"</Item>
+        </HEADER_SEARCH_PATHS>
+        <INFOPLIST_FILE>"Info-3StepStudioGame.plist"</INFOPLIST_FILE>
+        <LD_GENERATE_MAP_FILE>YES</LD_GENERATE_MAP_FILE>
+        <LD_MAP_FILE_PATH>linkmap.txt</LD_MAP_FILE_PATH>
+        <MACOSX_DEPLOYMENT_TARGET>10.7</MACOSX_DEPLOYMENT_TARGET>
+        <OTHER_CFLAGS settingType="List">
+          <Item>"-force_cpusubtype_ALL"</Item>
+          <Item>"-falign-functions=16"</Item>
+          <Item>"-falign-loops=16"</Item>
+          <Item>"-falign-labels=16"</Item>
+          <Item>"-falign-jumps=16"</Item>
+          <Item>"-malign-natural"</Item>
+        </OTHER_CFLAGS>
+        <PRODUCT_NAME>3StepStudioGame</PRODUCT_NAME>
+        <WRAPPER_EXTENSION>app</WRAPPER_EXTENSION>
+      </BuildSettings>
+    </BuildConfig>
+    <BuildConfig name="Debug">
+      <BuildSettings>
+        <ARCHS>"$(NATIVE_ARCH)"</ARCHS>
+        <CONFIGURATION_BUILD_DIR>../../../templates/PhysicsLauncher/game</CONFIGURATION_BUILD_DIR>
+        <DEBUG_INFORMATION_FORMAT>"dwarf-with-dsym"</DEBUG_INFORMATION_FORMAT>
+        <DEPLOYMENT_POSTPROCESSING>YES</DEPLOYMENT_POSTPROCESSING>
+        <FRAMEWORK_SEARCH_PATHS>"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)"</FRAMEWORK_SEARCH_PATHS>
+        <FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1>""</FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1>
+        <GCC_GENERATE_DEBUGGING_SYMBOLS>YES</GCC_GENERATE_DEBUGGING_SYMBOLS>
+        <GCC_OPTIMIZATION_LEVEL>0</GCC_OPTIMIZATION_LEVEL>
+        <GCC_PREPROCESSOR_DEFINITIONS settingType="List">
+          <Item>__MACOSX__</Item>
+          <Item>TORQUE_DISABLE_MEMORY_MANAGER</Item>
+		  <Item>TORQUE_PLAYER</Item>
+		  <Item>USE_COMPONENTS</Item>
+          <Item>TORQUE_DEBUG_GUARD</Item>
+          <Item>TORQUE_DEBUG</Item>
+        </GCC_PREPROCESSOR_DEFINITIONS>
+        <GCC_VERSION>""</GCC_VERSION>
+        <HEADER_SEARCH_PATHS settingType="List">
+          <Item>"$(TSS_SOURCE_PATH)"</Item>
+          <Item>"$(TSS_LIB_PATH)"</Item>
+          <Item>"$(TSS_LIB_PATH)/vorbis/include"</Item>
+          <Item>"$(TSS_LIB_PATH)/lpng"</Item>
+          <Item>"$(TSS_LIB_PATH)/ljpeg"</Item>
+          <Item>"$(TSS_LIB_PATH)/lungif"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Versions/Current/Frameworks/CarbonCore.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/CoreServices.framework/Versions/Current/Frameworks/OT.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/Current/Frameworks/QD.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Versions/Current/Frameworks/HIToolbox.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/OpenGL.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers"</Item>
+          <Item>"$(SYSTEM_LIBRARY_DIR)/Frameworks/AGL.framework/Headers"</Item>
+          <Item>"$(SYSTEM_DEVELOPER_DIR)/Headers/FlatCarbon"</Item>
+        </HEADER_SEARCH_PATHS>
+        <INFOPLIST_FILE>"Info-3StepStudioGame_Debug.plist"</INFOPLIST_FILE>
+        <LD_GENERATE_MAP_FILE>YES</LD_GENERATE_MAP_FILE>
+        <LD_MAP_FILE_PATH>linkmap.txt</LD_MAP_FILE_PATH>
+        <MACOSX_DEPLOYMENT_TARGET>10.7</MACOSX_DEPLOYMENT_TARGET>
+        <OTHER_CFLAGS settingType="List">
+          <Item>"-force_cpusubtype_ALL"</Item>
+          <Item>"-falign-functions=16"</Item>
+          <Item>"-falign-loops=16"</Item>
+          <Item>"-falign-labels=16"</Item>
+          <Item>"-falign-jumps=16"</Item>
+          <Item>"-malign-natural"</Item>
+        </OTHER_CFLAGS>
+        <PRODUCT_NAME>3StepStudioGame_Debug</PRODUCT_NAME>
+        <WRAPPER_EXTENSION>app</WRAPPER_EXTENSION>
+      </BuildSettings>
+    </BuildConfig>
+  </BuildConfigs>
+  <ProductFile name="3StepStudioGame.app" path="3StepStudioGame.app" sourceTree="BUILT_PRODUCTS_DIR" />
+</Target>

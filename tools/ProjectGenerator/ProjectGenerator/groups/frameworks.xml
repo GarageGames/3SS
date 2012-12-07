@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <NamedGroup name="Frameworks">
+    <FrameworkDirectory name="System Frameworks">
+      <Framework name="Carbon.framework" path="/System/Library/Frameworks/Carbon.framework" source = "AbsolutePath" />
+      <Framework name="AGL.framework" path="/System/Library/Frameworks/AGL.framework" source = "AbsolutePath" />
+      <Framework name="CoreFoundation.framework" path="/System/Library/Frameworks/CoreFoundation.framework" source = "AbsolutePath" />
+      <Framework name="OpenGL.framework" path="/System/Library/Frameworks/OpenGL.framework" source = "AbsolutePath" />
+      <Framework name="DrawSprocket.framework" path="/System/Library/Frameworks/DrawSprocket.framework" source = "AbsolutePath" />
+      <Framework name="Cocoa.framework" path="/System/Library/Frameworks/Cocoa.framework" source = "AbsolutePath" />
+      <Framework name="OpenAL.framework" path="System/Library/Frameworks/OpenAL.framework" source = "RelativeToSDK" />
+    </FrameworkDirectory>
+  </NamedGroup>
+</Group>

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="upToDate"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#upToDate.png" />

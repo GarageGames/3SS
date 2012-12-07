@@ -1,0 +1,89 @@
+<mockup version="1.0" skin="sketch" measuredW="758" measuredH="191" mockupW="669" mockupH="150">
+  <controls>
+    <control controlID="6" controlTypeID="__group__" x="89" y="41" w="300" h="150" measuredW="300" measuredH="150" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="300" h="150" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <text>New%20Game</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="29" y="32" w="-1" h="-1" measuredW="242" measuredH="21" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Please%20enter%20a%20name%20for%20your%20new%20Game.</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="50" y="60" w="235" h="-1" measuredW="79" measuredH="27" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="9" y="62" w="-1" h="-1" measuredW="41" measuredH="21" zOrder="3" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="87" y="102" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="4" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="148" y="102" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="5" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="458" y="41" w="300" h="150" measuredW="300" measuredH="150" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="300" h="150" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <text>New%20Game</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="29" y="32" w="-1" h="-1" measuredW="242" measuredH="21" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Please%20enter%20a%20name%20for%20your%20new%20Game.</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="50" y="60" w="235" h="-1" measuredW="79" measuredH="27" zOrder="2" locked="false" isInGroup="7">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="9" y="62" w="-1" h="-1" measuredW="41" measuredH="21" zOrder="3" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="87" y="102" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="4" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="148" y="102" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="5" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::CallOut" x="30" y="43" w="-1" h="-1" measuredW="37" measuredH="39" zOrder="6" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::CallOut" x="60" y="96" w="-1" h="-1" measuredW="39" measuredH="43" zOrder="7" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>2</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::CallOut" x="136" y="84" w="-1" h="-1" measuredW="38" measuredH="39" zOrder="8" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>3</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

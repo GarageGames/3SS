@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{EditorAssets}"
+	VersionId="1"
+	Description="3 Step Studio Editor Assets"
+	Group="baseTools"
+	ScriptFile="main.cs"
+	CreateFunction="initializeEditorAssets"
+	DestroyFunction="destroyEditorAssets"
+	Synchronized = "1"
+	DeclaredAssetManifest="^{EditorAssets}/DeclaredAssets.manifest.taml"
+	/>
+

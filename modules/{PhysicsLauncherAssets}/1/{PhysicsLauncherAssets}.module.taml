@@ -1,0 +1,10 @@
+<ModuleDefinition
+	ModuleId="{PhysicsLauncherAssets}"
+	VersionId="1"
+	Purchased="1"
+	Dependencies=""
+	Description="Physics Launcher Asset Pack"
+	Synchronized = "1"
+	DeclaredAssetManifest="^{PhysicsLauncherAssets}/DeclaredAssets.Manifest.taml"
+	/>
+

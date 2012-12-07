@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="component">
+	<EngineSourceDirectory name="ai" includeChildren="1"/>
+	<EngineSourceDirectory name="behaviors" includeChildren="1"/>
+	<EngineSourceDirectory name="physics" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

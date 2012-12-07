@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Target name="Device" productName="3StepStudio" productType="com.apple.product-type.application" buildProxy="0">
+  <BuildPhases>
+    <BuildPhase type="Sources" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Frameworks" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+    <BuildPhase type="Resources" buildActionMask="2147483647" runOnlyForDeploymentPostprocessing="0" />
+  </BuildPhases>
+  <BuildConfigs default="Release" defaultConfigurationIsVisible="0" baseConfigurationReference="en.lproj/Config.xcconfig">
+    <BuildConfig name="Release">
+      <BuildSettings>
+        <GCC_PRECOMPILE_PREFIX_HEADER>YES</GCC_PRECOMPILE_PREFIX_HEADER>
+        <GCC_PREFIX_HEADER>"3StepStudio/3StepStudio-Prefix.pch"</GCC_PREFIX_HEADER>
+        <GCC_PREPROCESSOR_DEFINITIONS settingType="List">
+          <Item>"$(3SS_EDITOR_FLAGS)"</Item>
+          <Item>__IPHONE__</Item>
+          <Item>TORQUE_RELEASE</Item>
+          <Item>TORQUE_DISABLE_MEMORY_MANAGER</Item>
+          <Item>USE_COMPONENTS</Item>
+          <Item>TORQUE_OS_IPHONE</Item>
+        </GCC_PREPROCESSOR_DEFINITIONS>
+        <HEADER_SEARCH_PATHS>"$(3SS_SOURCE_PATH)"</HEADER_SEARCH_PATHS>
+        <INFOPLIST_FILE>"3StepStudio/3StepStudio-Info.plist"</INFOPLIST_FILE>
+        <IPHONEOS_DEPLOYMENT_TARGET>5.0</IPHONEOS_DEPLOYMENT_TARGET>
+        <LIBRARY_SEARCH_PATHS settingType="List">
+          <Item>"$(inherited)"</Item>
+          <Item>"\"./3StepStudio\""</Item>
+          <Item>"\"$(3SS_LIB_PATH)/it2d\""</Item>
+        </LIBRARY_SEARCH_PATHS>
+        <OTHER_LDFLAGS>"-all_load"</OTHER_LDFLAGS>
+        <PRODUCT_NAME>"ThreeStepStudio"</PRODUCT_NAME>
+        <SUPPORTED_PLATFORMS>iphoneos</SUPPORTED_PLATFORMS>
+        <WRAPPER_EXTENSION>app</WRAPPER_EXTENSION>
+      </BuildSettings>
+    </BuildConfig>
+    <BuildConfig name="Debug">
+      <BuildSettings>
+        <GCC_PRECOMPILE_PREFIX_HEADER>YES</GCC_PRECOMPILE_PREFIX_HEADER>
+        <GCC_PREFIX_HEADER>"3StepStudio/3StepStudio-Prefix.pch"</GCC_PREFIX_HEADER>
+        <GCC_PREPROCESSOR_DEFINITIONS settingType="List">
+          <Item>"$(3SS_EDITOR_FLAGS)"</Item>
+          <Item>__IPHONE__</Item>
+          <Item>TORQUE_DEBUG</Item>
+          <Item>TORQUE_DISABLE_MEMORY_MANAGER</Item>
+          <Item>USE_COMPONENTS</Item>
+          <Item>TORQUE_OS_IPHONE</Item>
+        </GCC_PREPROCESSOR_DEFINITIONS>
+        <HEADER_SEARCH_PATHS>"$(3SS_SOURCE_PATH)"</HEADER_SEARCH_PATHS>
+        <INFOPLIST_FILE>"3StepStudio/3StepStudio-Info.plist"</INFOPLIST_FILE>
+        <IPHONEOS_DEPLOYMENT_TARGET>5.0</IPHONEOS_DEPLOYMENT_TARGET>
+        <LIBRARY_SEARCH_PATHS settingType="List">
+          <Item>"$(inherited)"</Item>
+          <Item>"\"./3StepStudio\""</Item>
+          <Item>"\"$(3SS_LIB_PATH)/it2d\""</Item>
+        </LIBRARY_SEARCH_PATHS>
+        <OTHER_LDFLAGS>"-all_load"</OTHER_LDFLAGS>
+        <PRODUCT_NAME>"ThreeStepStudio"</PRODUCT_NAME>
+        <SUPPORTED_PLATFORMS>iphoneos</SUPPORTED_PLATFORMS>
+        <WRAPPER_EXTENSION>app</WRAPPER_EXTENSION>
+      </BuildSettings>
+    </BuildConfig>
+  </BuildConfigs>
+  <ProductFile name="ThreeStepStudio.app" path="ThreeStepStudio.app" sourceTree="BUILT_PRODUCTS_DIR" />
+</Target>

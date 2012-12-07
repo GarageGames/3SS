@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="largeSelectionDepressedImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#largeSelectionDepressed.png" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="creditsButtonDownImage"
+    imageFile="@assetFile=#creditsButtonDown.png"
+	AssetCategory="gui" />

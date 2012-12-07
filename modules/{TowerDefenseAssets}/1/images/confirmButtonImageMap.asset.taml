@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="confirmButtonImageMap"
+    imageFile="@assetFile=#confirmButton.png"
+    AssetCategory="gui" />

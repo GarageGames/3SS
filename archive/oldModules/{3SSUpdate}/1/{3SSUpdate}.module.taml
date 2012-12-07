@@ -1,0 +1,10 @@
+<ModuleDefinition
+	Description="3SS Updater"
+	ModuleId="{3SSUpdate}"
+	VersionId="1"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initialize3SSUpdate"
+	DestroyFunction="destroy3SSUpdate"
+	/>

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="largeSelectionInactiveImage"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#largeSelectionInactive.png" />

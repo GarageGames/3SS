@@ -1,0 +1,12 @@
+<ModuleDefinition
+	Description="3SS Files (OSX)"
+	ModuleId="{3SSFilesOSX}"
+	VersionId="1"
+	Group=""
+	Dependencies=""
+	CriticalMerge = true;
+	ScriptFile="main.cs"
+	CreateFunction="initialize3SSFilesOSX"
+	DestroyFunction=""
+	OS="OSX"
+	/>

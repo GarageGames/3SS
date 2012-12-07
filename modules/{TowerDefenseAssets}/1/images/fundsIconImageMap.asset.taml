@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="fundsIconImageMap"
+    imageFile="@assetFile=#fundsIcon.png"
+    AssetCategory="gui" />

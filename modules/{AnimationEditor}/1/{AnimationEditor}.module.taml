@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{AnimationEditor}"
+	VersionId="1"
+	Description="Animation Editor"
+	Group="assetTools"
+	Dependencies="{EditorCore}=1,{AssetLibrary}=1"
+	ScriptFile="main.cs"
+	ScopeSet="AnimationEditorSet"
+	CreateFunction="initializeAnimationEditor"
+	DestroyFunction="destroyAnimationEditor"
+	/>
+

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="rangeCircleImageMap"
+    imageFile="@assetFile=#rangeCircle.png"
+    AssetCategory="sprites" />

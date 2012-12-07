@@ -1,0 +1,555 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+%guiContent = new GuiControl(LocalPointEditorGui)
+{
+   class = LinkpointEditorMainGui;
+   canSaveDynamicFields = "0";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   
+   new GuiWindowCtrl(LocalPointEditorWindowGui) 
+   {
+      canSaveDynamicFields = "0";
+      //Profile = "EditorWindowProfile";
+      Profile = "LocalPointWindowProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "137 114";
+      Extent = "786 540";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "Local Point Editor";
+      maxLength = "1024";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+
+      new GuiControl() 
+      {
+         canSaveDynamicFields = "0";
+         Profile = "EditorPanelLight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 29";
+         Extent = "450 450";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+
+         new SceneWindow(LEBackgroundDisplay)
+         {
+            canSaveDynamicFields = "0";
+            Profile = "GuiWindowProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 1";
+            Extent = "448 448";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            lockMouse = "0";
+            UseWindowInputEvents = "1";
+            UseObjectInputEvents = "0";
+         };
+         
+         new SceneWindow(LEVisualEdit) 
+         {
+            canSaveDynamicFields = "0";
+            class = "LocalPointVisualEdit";
+            Profile = "GuiWindowProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 1";
+            Extent = "448 448";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            lockMouse = "0";
+            UseWindowInputEvents = "1";
+            UseObjectInputEvents = "0";
+         };         
+      };
+
+      new GuiTextCtrl(LPZoomLabel)
+      {
+         position = "12 480";
+         Extent = "30 30";
+         Visible = "1";
+         Profile = "GuiTextRightProfile";
+         HorizSizing = "right";
+         VertSizing = "center";
+         text = "Area:";
+      };
+
+      new GuiSliderCtrl(LPZoomSlider)
+      {
+         position = "42 480";
+         Extent = "366 38";
+         Visible = "1";
+         Profile = "GuiSliderProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         ticks = "87";
+         range = "1.0 9.9";
+         value = "1.1";
+      };
+
+      new GuiControl(LPPolygonControls)
+      {
+         position = "12 485";
+         Extent = "396 47";
+         Visible = "1";
+         Profile = "EditorPanelLight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+                  
+         new GuiCheckBoxCtrl(LPShowHull)
+         {
+            Position = "4 4";
+            Extent = "140 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            tooltip = "Show Convex Hull";
+            tooltipProfile = "EditorToolTipProfile";
+            groupNum = "-1";
+            text = "Show Convex Hull";
+            variable = "$LocalPointEditor::showHull";
+         };
+
+         new GuiCheckBoxCtrl(LPShowViolations)
+         {
+            Position = "4 24";
+            Extent = "140 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            tooltip = "Show Convex Violations";
+            tooltipProfile = "EditorToolTipProfile";
+            groupNum = "-1";
+            text = "Show Convex Violations";
+            variable = "$LocalPointEditor::showConvexViolations";
+         };
+
+         new GuiRadioCtrl(LPInsertBetween) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "GuiRadioProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "148 4";
+            Extent = "170 19";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            text = "New Points Between Neighbors";
+            groupNum = "2";
+            buttonType = "RadioButton";
+         };
+         
+         new GuiRadioCtrl(LPInsertAtEnd) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "GuiRadioProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "148 24";
+            Extent = "170 19";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            text = "New Points at End";
+            groupNum = "2";
+            buttonType = "RadioButton";
+         };
+
+         new GuiIconButtonCtrl(LPConvertToConvexButton) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "EditorButtonToolbar";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "328 9";
+            Extent = "53 28";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "200";
+            tooltip = "Replace Points with Convex Hull";
+            tooltipProfile = "EditorToolTipProfile";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            iconBitmap = "^{LevelEditor}/gui/images/concaveToConvex.png";
+            sizeIconToButton = "0";
+            textLocation = "Center";
+            textMargin = "4";
+            buttonMargin = "4 4";
+            accelerator = "escape";
+         };
+      };
+
+      new GuiControl(LPAspectRadioButtons)
+      {
+         position = "420 485";
+         extent = "140 47";
+         visible = "1";
+         Profile = "EditorPanelLight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+
+         new GuiRadioCtrl(LPRadioSquare) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "GuiRadioProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "4 4";
+            Extent = "138 19";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            text = "Square Aspect Ratio";
+            groupNum = "1";
+            buttonType = "RadioButton";
+         };
+         new GuiRadioCtrl(LPRadioPreserve) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "GuiRadioProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "4 24";
+            Extent = "138 19";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            text = "Scene Aspect Ratio";
+            groupNum = "1";
+            buttonType = "RadioButton";
+         };
+      };
+
+      new GuiControl() 
+      {
+         canSaveDynamicFields = "0";
+         Profile = "EditorPanelLight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "474 29";
+         Extent = "300 450";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         
+         new GuiScrollCtrl(LETextScroll) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "EditorScrollProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "8 8";
+            Extent = "284 394";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            willFirstRespond = "1";
+            hScrollBar = "alwaysOff";
+            vScrollBar = "alwaysOn";
+            constantThumbHeight = "0";
+            childMargin = "0 0";
+
+            new GuiStackControl(LETextEditor) 
+            {
+               class = LBQuickEditClass;
+               canSaveDynamicFields = "0";
+               Profile = "EditorPanelDark";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "15 15";
+               Extent = "264 390";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               hovertime = "1000";
+            };
+         };
+
+         new GuiControl(LPNewPointContainer) 
+         {
+            canSaveDynamicFields = "0";
+            Profile = "EditorPanelDark";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            Position = "8 410";
+            Extent = "284 32";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "100";
+
+            new GuiTextCtrl() 
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorTextHLBoldRight";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "8 8";
+               Extent = "36 18";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               text = "New:";
+               maxLength = "1024";
+            };
+
+            new GuiTextCtrl() 
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorTextHLBoldRight";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "52 8";
+               Extent = "18 18";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               text = "X";
+               maxLength = "1024";
+            };
+            
+            new GuiTextEditCtrl(NewLPX) 
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorTextEdit";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "78 5";
+               Extent = "64 22";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               hovertime = "100";
+               maxLength = "1024";
+               historySize = "0";
+               password = "0";
+               tabComplete = "0";
+               sinkAllKeyEvents = "0";
+               password = "0";
+               passwordMask = "*";
+               validate = "NewLPX.setText(mFloatLength(NewLPX.getText(), 3));";
+            };
+               
+            new GuiTextCtrl() 
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorTextHLBoldRight";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "150 8";
+               Extent = "18 18";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               text = "Y";
+               maxLength = "1024";
+            };
+            
+            new GuiTextEditCtrl(NewLPY)
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorTextEdit";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "176 5";
+               Extent = "64 22";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               hovertime = "100";
+               maxLength = "1024";
+               historySize = "0";
+               password = "0";
+               tabComplete = "0";
+               sinkAllKeyEvents = "0";
+               password = "0";
+               passwordMask = "*";
+               validate = "NewLPY.setText(mFloatLength(NewLPY.getText(), 3));";
+            };
+               
+            new GuiIconButtonCtrl(LPNewPointButton) 
+            {
+               canSaveDynamicFields = "0";
+               Profile = "EditorButtonToolbar";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "256 4";
+               Extent = "24 24";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               hovertime = "1000";
+               tooltip = "Create This Local Point";
+               tooltipProfile = "EditorToolTipProfile";
+               groupNum = "-1";
+               buttonType = "PushButton";
+               iconBitmap = "^{LevelEditor}/gui/images/iconAdd.png";
+               sizeIconToButton = "0";
+               textLocation = "Center";
+               textMargin = "4";
+               buttonMargin = "4 4";
+               accelerator = "escape";
+            };
+         };
+      };
+      
+      new GuiControl()
+      {
+         Profile = "EditorPanelLight";
+         Position = "566 485";
+         Extent = "210 20";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         MinExtent = "8 2";
+         canSave = "1";
+         visible = "1";
+         
+         new GuiCheckBoxCtrl(LPDisplayBackground)
+         {
+            Profile = "GuiCheckBoxProfile";
+            position = "4 2";
+            Extent = "202 16";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            MinExtent = "8 2";
+            canSave = "1";
+            visible = "1";
+            Command = "levelBuilderUndo(1);";
+            tooltipprofile = "GuiToolTipProfile";
+            ToolTip = "Show the background of the scene in the editor window";
+            hovertime = "100";
+            textLocation = "Left";
+            textMargin = "4";
+            groupNum = "19";
+            text = "Display Scene Background";
+         };
+      };
+      
+      new GuiIconButtonCtrl(LPUndo) 
+      {
+         Profile = "EditorButtonToolbar";
+         position = "566 509";
+         Extent = "24 24";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         MinExtent = "8 2";
+         canSave = "1";
+         visible = "1";
+         Command = "levelBuilderUndo(1);";
+         tooltipprofile = "GuiToolTipProfile";
+         ToolTip = "Undo Last Action";
+         hovertime = "100";
+         textLocation = "None";
+         textMargin = "4";
+         buttonMargin = "4 4";     
+         groupNum = "7";
+         buttonType = "Button";
+         iconBitmap = $LevelBuilder::GuiPath @ "/images/iconUndo";
+      };
+      
+      new GuiIconButtonCtrl(LPRedo) 
+      {
+         Profile = "EditorButtonToolbar";
+         position = "592 509";
+         Extent = "24 24";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         MinExtent = "8 2";
+         canSave = "1";
+         visible = "1";
+         Command = "levelBuilderRedo(1);";
+         tooltipprofile = "GuiToolTipProfile";
+         ToolTip = "Redo Last Action";
+         hovertime = "100";
+         textLocation = "None";
+         textMargin = "4";
+         buttonMargin = "4 4";     
+         groupNum = "7";
+         buttonType = "Button";
+         iconBitmap = $LevelBuilder::GuiPath @ "/images/iconRedo";
+      };
+      
+      new GuiIconButtonCtrl(LPESaveButton) 
+      {
+         canSaveDynamicFields = "0";
+         Profile = "EditorButtonRight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "700 509";
+         Extent = "76 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "return";
+         hovertime = "1000";
+         text = "Save";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         buttonMargin = "4 4";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         textLocation = "Center";
+         textMargin = "4";
+      };
+      
+      new GuiIconButtonCtrl(LPECancelButton) 
+      {
+         canSaveDynamicFields = "0";
+         Profile = "EditorButtonLeft";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "622 509";
+         Extent = "76 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "escape";
+         hovertime = "1000";
+         text = "Cancel";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         buttonMargin = "4 4";
+         iconLocation = "Left";
+         sizeIconToButton = "0";
+         textLocation = "Center";
+         textMargin = "4";
+      };
+   };
+};
+

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="RewardImage128x128ImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#RewardImage128x128.png" />

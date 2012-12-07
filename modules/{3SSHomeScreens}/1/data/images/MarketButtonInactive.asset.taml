@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="MarketButtonInactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#MarketButtonInactive.png" />

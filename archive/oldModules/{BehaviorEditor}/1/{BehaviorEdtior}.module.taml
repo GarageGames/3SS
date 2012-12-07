@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{BehaviorEditor}"
+	VersionId="1"
+	Description="Behavior Editor"
+	Group="advancedTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeBehaviorEditor"
+	DestroyFunction="destroyBehaviorEditor"
+	/>
+

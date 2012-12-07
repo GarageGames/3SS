@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="updateBadge"
+    AssetInternal="1"
+    ImageFile="@assetFile=#updateBadge.png" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="imagesTabNormal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#imagesTabNormal.png" />

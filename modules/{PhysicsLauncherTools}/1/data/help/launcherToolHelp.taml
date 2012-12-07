@@ -1,0 +1,15 @@
+<SimSet
+    Name="LauncherToolHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="If you place your Launcher too close to the edge of the Level your Players will not be able to completely pull back the sling." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Play with the Power of your Launcher to see how it affects the difficulty or challenge of your Levels." />
+    <ScriptObject
+        Name="Tip2"
+        Text="If your Launcher is larger than the size of the preview container it will be scaled down to fit in the Preview." />
+    <ScriptObject
+        Name="Tip3"
+        Text="Be sure to test any changes you make to your Launcher in game as well as in the editor." />
+</SimSet>

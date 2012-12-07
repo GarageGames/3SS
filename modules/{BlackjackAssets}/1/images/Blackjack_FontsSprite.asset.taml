@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Blackjack_FontsSprite"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/Blackjack_Fonts"
+    CellCountX="16"
+    CellCountY="6"
+    CellWidth="16"
+    CellHeight="16"
+    preload="0" />

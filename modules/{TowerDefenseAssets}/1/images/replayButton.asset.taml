@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="replayButtonImage"
+    AssetCategory="gui"
+    imageFile="@assetFile=#replayButton.png" />

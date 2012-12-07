@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Impact_ExplosionSprite"
+    imageFile="@assetFile=#Impact_Explosion.png"
+    cellCountX="4"
+    cellCountY="4"
+    cellWidth="128"
+    cellHeight="128"
+	AssetCategory="sprites" />

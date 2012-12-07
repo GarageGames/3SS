@@ -1,0 +1,142 @@
+<mockup version="1.0" skin="sketch" measuredW="782" measuredH="361" mockupW="749" mockupH="310">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="33" y="51" w="367" h="310" measuredW="367" measuredH="310" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="367" h="310" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09Animation%20Set%20Creator%20-%20Projectile</text>
+            <topheight>26</topheight>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="305" y="278" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="10" y="58" w="-1" h="-1" measuredW="123" measuredH="21" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Animation%20Set%20Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="54" w="216" h="-1" measuredW="109" measuredH="27" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>arrow_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Icon" x="330" y="60" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="0">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::HelpButton" x="344" y="27" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="5" locked="false" isInGroup="0"/>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::Image" x="85" y="121" w="196" h="114" measuredW="77" measuredH="79" zOrder="8" locked="false" isInGroup="0">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="92" controlTypeID="com.balsamiq.mockups::TextInput" x="87" y="239" w="133" h="-1" measuredW="109" measuredH="27" zOrder="9" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>arrowAnimSheet</text>
+          </controlProperties>
+        </control>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::Button" x="220" y="240" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="10" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Select</text>
+          </controlProperties>
+        </control>
+        <control controlID="100" controlTypeID="com.balsamiq.mockups::Image" x="86" y="239" w="132" h="27" measuredW="128" measuredH="128" zOrder="11" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="102" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="87" w="367" h="189" measuredW="171" measuredH="100" zOrder="6" locked="false" isInGroup="0">
+          <controlProperties>
+            <selectedIndex>0</selectedIndex>
+            <text>Travel%2C%20Hit</text>
+          </controlProperties>
+        </control>
+        <control controlID="103" controlTypeID="com.balsamiq.mockups::HRule" x="4" y="81" w="359" h="-1" measuredW="100" measuredH="5" zOrder="7" locked="false" isInGroup="0"/>
+        <control controlID="105" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="46" w="365" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="0"/>
+        <control controlID="106" controlTypeID="com.balsamiq.mockups::Icon" x="8" y="26" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="13" locked="false" isInGroup="0">
+          <controlProperties>
+            <icon>SaveIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="415" y="51" w="367" h="310" measuredW="367" measuredH="310" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="367" h="310" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09Animation%20Set%20Creator%20-%20Projectile</text>
+            <topheight>26</topheight>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="305" y="278" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="1" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="10" y="58" w="-1" h="-1" measuredW="123" measuredH="21" zOrder="2" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Animation%20Set%20Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="54" w="216" h="-1" measuredW="109" measuredH="27" zOrder="3" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>arrow_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Icon" x="330" y="60" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="2">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="86" controlTypeID="com.balsamiq.mockups::HelpButton" x="344" y="27" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="5" locked="false" isInGroup="2"/>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::Image" x="85" y="121" w="196" h="114" measuredW="77" measuredH="79" zOrder="8" locked="false" isInGroup="2">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="92" controlTypeID="com.balsamiq.mockups::TextInput" x="87" y="239" w="133" h="-1" measuredW="109" measuredH="27" zOrder="9" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>arrowAnimSheet</text>
+          </controlProperties>
+        </control>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::Button" x="220" y="240" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="10" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>Select</text>
+          </controlProperties>
+        </control>
+        <control controlID="100" controlTypeID="com.balsamiq.mockups::Image" x="86" y="239" w="132" h="27" measuredW="128" measuredH="128" zOrder="11" locked="false" isInGroup="2">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="102" controlTypeID="com.balsamiq.mockups::TabBar" x="0" y="87" w="367" h="189" measuredW="171" measuredH="100" zOrder="6" locked="false" isInGroup="2">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Travel%2C%20Hit</text>
+          </controlProperties>
+        </control>
+        <control controlID="103" controlTypeID="com.balsamiq.mockups::HRule" x="4" y="81" w="359" h="-1" measuredW="100" measuredH="5" zOrder="7" locked="false" isInGroup="2"/>
+        <control controlID="105" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="46" w="365" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="2"/>
+        <control controlID="106" controlTypeID="com.balsamiq.mockups::Icon" x="8" y="26" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="13" locked="false" isInGroup="2">
+          <controlProperties>
+            <icon>SaveIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

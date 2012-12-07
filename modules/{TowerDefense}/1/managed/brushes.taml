@@ -1,0 +1,167 @@
+<SimSet
+    setType="Brushes">
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="0"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="1"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="2"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="3"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="4"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="5"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="6"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="7"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="8"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="9"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="10"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="11"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="12"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="13"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="14"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Path_SpriteSetImageMap"
+        Frame="15"
+        Name="Path_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="0"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="1"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="2"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="3"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="4"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="5"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:Rocks_SpriteSetImageMap"
+        Frame="6"
+        Name="Rocks_SpriteSetImageMap" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Bones_01Sprite"
+        Frame="0"
+        Name="TD_Bones_01Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Bones_02Sprite"
+        Frame="0"
+        Name="TD_Bones_02Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Bones_03Sprite"
+        Frame="0"
+        Name="TD_Bones_03Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Bones_04Sprite"
+        Frame="0"
+        Name="TD_Bones_04Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Bones_05Sprite"
+        Frame="0"
+        Name="TD_Bones_05Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Crystal_blueSprite"
+        Frame="0"
+        Name="TD_Crystal_blueSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Crystal_greenSprite"
+        Frame="0"
+        Name="TD_Crystal_greenSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Crystal_purpleSprite"
+        Frame="0"
+        Name="TD_Crystal_purpleSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Crystal_redSprite"
+        Frame="0"
+        Name="TD_Crystal_redSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Crystal_yellowSprite"
+        Frame="0"
+        Name="TD_Crystal_yellowSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_GoldSprite"
+        Frame="0"
+        Name="TD_GoldSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Ribs_ASprite"
+        Frame="0"
+        Name="TD_Ribs_ASprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Ribs_BSprite"
+        Frame="0"
+        Name="TD_Ribs_BSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Stalagmite_01Sprite"
+        Frame="0"
+        Name="TD_Stalagmite_01Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Stalagmite_02Sprite"
+        Frame="0"
+        Name="TD_Stalagmite_02Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_Stalagmite_03Sprite"
+        Frame="0"
+        Name="TD_Stalagmite_03Sprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_TreasureChest_closedSprite"
+        Frame="0"
+        Name="TD_TreasureChest_closedSprite" />
+    <ScriptObject
+        asset="@asset={TowerDefenseAssets}:TD_TreasureChest_openSprite"
+        Frame="0"
+        Name="TD_TreasureChest_openSprite" />
+</SimSet>

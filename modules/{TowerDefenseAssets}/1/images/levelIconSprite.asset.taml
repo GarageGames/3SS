@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="levelIconSprite"
+    imageFile="@assetFile=#levelIcon.png"
+    AssetCategory="gui" />

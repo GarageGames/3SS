@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="ForegroundImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Foreground.png" />

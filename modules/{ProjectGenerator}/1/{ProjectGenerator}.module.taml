@@ -1,0 +1,10 @@
+<ModuleDefinition
+	Description="Project Generator"
+	ModuleId="{ProjectGenerator}"
+	VersionId="1"
+	Group="projectTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeProjectGenerator"
+	DestroyFunction="destroyProjectGenerator"
+	/>

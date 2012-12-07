@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="debug">
+    <EngineSourceDirectory name="remote" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

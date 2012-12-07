@@ -1,0 +1,10 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^PhysicsLauncherTemplate/data/levels"
+			Extension="scene.taml"/>
+        <Location
+			Path="^PhysicsLauncherTemplate/managed"
+			Extension="taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

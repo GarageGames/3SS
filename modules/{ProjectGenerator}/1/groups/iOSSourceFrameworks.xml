@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <FrameworkDirectory name="Frameworks">
+    <Framework name="Foundation.framework" path="System/Library/Frameworks/Foundation.framework" source = "SDKROOT" />
+    <Framework name="AudioToolbox.framework" path="System/Library/Frameworks/AudioToolbox.framework" source = "SDKROOT" />
+    <Framework name="CoreAudio.framework" path="System/Library/Frameworks/CoreAudio.framework" source = "SDKROOT" />
+    <Framework name="CoreGraphics.framework" path="System/Library/Frameworks/CoreGraphics.framework" source = "SDKROOT" />
+    <Framework name="CoreMotion.framework" path="System/Library/Frameworks/CoreMotion.framework" source = "SDKROOT" />
+    <Framework name="GameKit.framework" path="System/Library/Frameworks/GameKit.framework" source = "SDKROOT" />
+    <Framework name="iAd.framework" path="System/Library/Frameworks/iAd.framework" source = "SDKROOT" />
+    <Framework name="MediaPlayer.framework" path="System/Library/Frameworks/MediaPlayer.framework" source = "SDKROOT" />
+    <Framework name="OpenAL.framework" path="System/Library/Frameworks/OpenAL.framework" source = "SDKROOT" />
+    <Framework name="OpenGLES.framework" path="System/Library/Frameworks/OpenGLES.framework" source = "SDKROOT" />
+    <Framework name="QuartzCore.framework" path="System/Library/Frameworks/QuartzCore.framework" source = "SDKROOT" />
+    <Framework name="StoreKit.framework" path="System/Library/Frameworks/StoreKit.framework" source = "SDKROOT" />
+    <Framework name="UIKit.framework" path="System/Library/Frameworks/UIKit.framework" source = "SDKROOT" />
+    <Framework name="libz.dylib" path="usr/lib/libz.dylib" source = "SDKROOT" />
+  </FrameworkDirectory>
+</Group>

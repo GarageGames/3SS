@@ -1,0 +1,103 @@
+Compiling Qt WebKit for 3SS
+
+------ WIN32 ------
+
+OpenSSL 1.0.1b VS2010:
+- Follow the instructions in INSTALL.W32.  Configure without nasm support.
+- Create a static linked library using ms\nt.mak
+- Use 'install' to copy everything needed into the directory chosen when you ran configure.
+
+Qt 4.8.1 VS2010:
+- Install Qt to c:\Qt\4.8.1
+- Run configure as follows, substituting the OpenSSL directories for the ones chosen above:
+
+C:\Qt\4.8.1>configure -opensource -no-qt3support -no-opengl -no-multimedia -platform win32-msvc2010 -no-script -mp -no-libtiff -no-dbus -no-phonon -no-phonon-backend -nomake demos -nomake examples -openssl-linked -I "c:\Users\dwyand_2\Downloads\OpenSSL\build3\include" -L "c:\Users\dwyand_2\Downloads\OpenSSL\build3\lib" -I "c:\Users\dwyand_2\Downloads\Qt\qt-everywhere-opensource-src-4.8.1\src\corelib\"
+
+- Open the generated c:\Qt\4.8.1\project.sln in VS2010.
+- Edit the QtNetwork Linker Input properties to add crypt32.lib as an additional dependency.
+- Build only QtWebKit to save time.  This sould build a total of four libraries:
+-- QtCore4
+-- QtGui4
+-- QtNetwork4
+-- QtWebKit4
+
+- Copy the generated .lib's into engine/lib/Qt/lib/VS2010.
+- Copy the generated .dll's into the tgb directory as we only use them in the editor.
+
+
+------ OSX ------
+
+OpenSSL 1.0.1b for Xcode:
+- Go to the openssl directory
+- Config as follows with prefix pointing to the install location
+
+./config no-shared --prefix=/Users/dwyand/openSSL
+
+- Now do a 'make'
+- Do a 'make test'
+- Do a 'make install'
+
+Qt 4.8.1 for Xcode:
+- Download qt-everywhere-opensource-src-4.8.1 archive and expand it
+- Configure as follows to build as dylibs:
+
+./configure -opensource -no-qt3support -no-opengl -no-multimedia -no-script -no-libtiff -no-dbus -no-phonon -no-phonon-backend -nomake demos -nomake examples -openssl -I "/Users/dwyand/openSSL/include" -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk -L "/Users/dwyand/openSSL/lib" -I "/Users/dwyand/Documents/qt-everywhere-opensource-src-4.8.1/src/corelob/" --prefix=/Users/dwyand/Qt -arch x86 -no-framework
+
+- May need to modify qt's src/3rdparty/webkit/Source/WebKit/qt/QtWebKit.pro as Xcode 4.3 uses completely different SDK paths.  Change these lines:
+
+        equals(DARWIN_MAJOR_VERSION, "9") | contains(QMAKE_MAC_SDK, "/Developer/SDKs/MacOSX10.5.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceLeopard.a
+        } else: equals(DARWIN_MAJOR_VERSION, "10") | contains(QMAKE_MAC_SDK, "/Developer/SDKs/MacOSX10.6.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceSnowLeopard.a
+        } else: equals(DARWIN_MAJOR_VERSION, "11") | contains(QMAKE_MAC_SDK, "/Developer/SDKs/MacOSX10.7.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceLion.a
+        }
+
+to read as (removed the "/Developer/SDKs/"):
+
+        equals(DARWIN_MAJOR_VERSION, "9") | contains(QMAKE_MAC_SDK, ".*MacOSX10.5.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceLeopard.a
+        } else: equals(DARWIN_MAJOR_VERSION, "10") | contains(QMAKE_MAC_SDK, ".*MacOSX10.6.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceSnowLeopard.a
+        } else: equals(DARWIN_MAJOR_VERSION, "11") | contains(QMAKE_MAC_SDK, ".*MacOSX10.7.sdk") {
+            LIBS += $$SOURCE_DIR/../WebKitLibraries/libWebKitSystemInterfaceLion.a
+        }
+
+
+- Then do a 'make'
+- Copy libQtCore.4.8.1.dylib, libQtGui.4.8.1.dylib, libQtNetwork.4.8.1.dylib and libQtWebKit.4.9.0.dylib from the qt-everywhere-opensource-src-4.8.1/lib directory into engine/lib/Qt/Xcode/Dylibs.
+- Copy libqgif.dylib and libqjpeg.dylib from the qt-everywhere-opensource-src-4.8.1/plugins/imageformats directory into engine/lib/Qt/Xcode/Dylibs.
+- Copy the latest qt_menu.nib file to engine/lib/Qt/Xcode/Resources.  Please note that qt_menu.nib is a directory behind the scenes and needs special attention when using SVN.
+
+Set up Xcode for compiling Qt:
+- Added the libQt*.dylib files to the Frameworks folder in the project.  This should also add them to the project's Link Binary With Libraries build phase.
+- Add a Copy Files build phase with a destination of Frameworks.  Add the four libQt*.dylib files to this list.
+- Add a Copy Files build phase with a destination of PlugIns.  Set its subpath to "imageformats".  Add the libqgif.dylib and libqjpeg.dylib files to this list.
+- Add the qt_menu.nib file to the project's Resources folder.  Also add it to the project's Copy Bundle Resources build phase.
+- From the terminal go to engine/lib/Qt/Xcode/Dylibs.  We need to change how these libraries internally name themselves and how they call each other.  We use otool and install_name_tool.  Use otool like this to output the references for the QtWebKit library:
+
+otool -L libQtWebKit.4.9.0.dylib
+
+The first line is how to find the library, and the rest of the lines are the library's dependencies.  Use the install_name_tool to change how to find the library:
+
+install_name_tool -id @rpath/libQtWebKit.4.9.0.dylib libQtWebKit.4.9.0.dylib
+
+Now we need to change all of the other Qt library references for this library (substitute the first path with that shown using otool):
+
+install_name_tool -change /Users/dwyand/Qt/lib/libQtNetwork.4.dylib @rpath/libQtNetwork.4.8.1.dylib libQtWebKit.4.9.0.dylib
+install_name_tool -change /Users/dwyand/Qt/lib/libQtGui.4.dylib @rpath/libQtGui.4.8.1.dylib libQtWebKit.4.9.0.dylib
+install_name_tool -change /Users/dwyand/Qt/lib/libQtCore.4.dylib @rpath/libQtCore.4.8.1.dylib libQtWebKit.4.9.0.dylib
+
+Repeat this for all four libQt dylibs.
+
+- Also in the engine/lib/Qt/Xcode/Dylibs directory we need to change how the two image format plugin libraries look for the other Qt libraries.  For each image plugin library, do the following (GIF one is shown as an example):
+
+install_name_tool -change /Users/dwyand/Qt/lib/libQtGui.4.dylib @rpath/libQtGui.4.8.1.dylib libqgif.dylib
+install_name_tool -change /Users/dwyand/Qt/lib/libQtCore.4.dylib @rpath/libQtCore.4.8.1.dylib libqgif.dylib
+
+- Under the project's Build Settings, add the following to the Linking section's Runpath Search Paths property:
+
+@loader_path/../Frameworks
+
+This will allow the executable to find the Qt dynamic libraries within the bundle (and is what the @rpath above references).
+

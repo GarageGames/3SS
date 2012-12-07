@@ -1,0 +1,7 @@
+<AnimationAsset
+    AssetName="PL_GorillaTumbleProjectileAnim"
+    AssetCategory="sprites"
+    ImageMap="@asset={PhysicsLauncherAssets}:PL_GorillaProjectileImageMap"
+    AnimationFrames="81 82 83 84 85 86 87 88 89 90 91 92"
+    AnimationTime="1"
+    AnimationCycle="0" />

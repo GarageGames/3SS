@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <NamedGroup name="3StepStudio">
+    <File name="AppDelegate.h" path="AppDelegate.h" source="RelativeToGroup" />
+    <File name="AppDelegate.mm" path="AppDelegate.mm" source="RelativeToGroup" />
+    <File name="ViewController.h" path="ViewController.h" source="RelativeToGroup" />
+    <File name="ViewController.mm" path="ViewController.mm" source="RelativeToGroup" />
+    <File name="ViewController_iPhone.xib" path="en.lproj/ViewController_iPhone.xib" source="RelativeToGroup" local="en" />
+    <File name="ViewController_iPad.xib" path="en.lproj/ViewController_iPad.xib" source="RelativeToGroup" local="en" />
+    <NamedGroup name="Supporting Files">
+      <File name="3StepStudio-Info.plist" path="3StepStudio-Info.plist" source="RelativeToGroup" />
+      <File name="InfoPlist.strings" path="en.lproj/InfoPlist.strings" source="RelativeToGroup" local="en" />
+      <File name="main.mm" path="main.mm" source="RelativeToGroup" />
+      <File name="3StepStudio-Prefix.pch" path="3StepStudio-Prefix.pch" source="RelativeToGroup" />
+      <File name="Config.xcconfig" path="en.lproj/Config.xcconfig" source="RelativeToGroup" local="en" />
+    </NamedGroup>
+  </NamedGroup>
+</Group>

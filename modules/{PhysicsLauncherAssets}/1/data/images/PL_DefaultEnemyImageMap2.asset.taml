@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="PL_DefaultEnemyImageMap2"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Banana_Single"
+    CellCountX="4"
+    CellCountY="4"
+    CellWidth="64"
+    CellHeight="64" />

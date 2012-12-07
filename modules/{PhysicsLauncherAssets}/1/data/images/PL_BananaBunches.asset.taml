@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="PL_BananaBunchImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Banana_Bunches"
+    CellCountX="4"
+    CellCountY="4"
+    CellWidth="64"
+    CellHeight="64" />

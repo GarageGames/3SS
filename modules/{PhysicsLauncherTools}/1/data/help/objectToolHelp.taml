@@ -1,0 +1,18 @@
+<SimSet
+    Name="WorldObjectToolHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="An Object can be Indestructible, Immovable or both." />
+    <ScriptObject
+        Name="Tip1"
+        Text="You can give an Object hit points for if it collides with another Object and still mark it as Instantly Destroyed by colliding with a Projectile." />
+    <ScriptObject
+        Name="Tip2"
+        Text="If you have specific Objects the Player must destroy to win the Level, make sure that you mark every instance of that Object with Must Destroy to Win Level." />
+    <ScriptObject
+        Name="Tip3"
+        Text="Make an Object both Immovable and Indestructable to create puzzles within your Level that Players have to work around to destroy Win condition Objects." />
+    <ScriptObject
+        Name="Tip4"
+        Text="If you assign more than one Damage State to an Object, a Player will earn partial points from the set Maximum Points for Damaging the Object." />
+</SimSet>

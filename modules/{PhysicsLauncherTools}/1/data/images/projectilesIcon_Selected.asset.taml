@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="projectilesIcon_SelectedImageMap"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#projectilesIcon_Selected.png" />

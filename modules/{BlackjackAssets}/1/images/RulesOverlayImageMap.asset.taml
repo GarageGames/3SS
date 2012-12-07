@@ -1,0 +1,3 @@
+<ImageAsset
+    AssetName="RulesOverlayImageMap"
+    ImageFile="@assetFile=^{BlackjackAssets}/images/RulesOverlay" />

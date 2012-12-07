@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project type="Xcode" platform="OSX" name="iOSDevice" engineSourceDirectory="../../../engine/source/" engineLibDirectory="../../../engine/lib/">
+  <Groups>
+    <Group type="files" file="groups/iOS3StepStudio.xml" />
+    <Group type="files" file="groups/iOSResources.xml" />
+    <Group type="files" file="groups/iOSFrameworks.xml" />
+  </Groups>
+  <TopLevelFiles>
+  </TopLevelFiles>
+  <Targets>
+    <Target file="targets/iOSDeviceTarget.xml" />
+  </Targets>
+  <BuildConfigs default="Release" defaultConfigurationIsVisible="0">
+    <BuildConfig name="Release">
+      <BuildSettings>
+        <ALWAYS_SEARCH_USER_PATHS>NO</ALWAYS_SEARCH_USER_PATHS>
+        <ARCHS>"$(ARCHS_STANDARD_32_BIT)"</ARCHS>
+        <QuotedBuildSetting name="CODE_SIGN_IDENTITY[sdk=iphoneos*]">"iPhone Developer"</QuotedBuildSetting>
+        <COPY_PHASE_STRIP>YES</COPY_PHASE_STRIP>
+        <GCC_C_LANGUAGE_STANDARD>gnu99</GCC_C_LANGUAGE_STANDARD>
+        <GCC_VERSION>com.apple.compilers.llvm.clang.1_0</GCC_VERSION>
+        <GCC_WARN_ABOUT_MISSING_PROTOTYPES>YES</GCC_WARN_ABOUT_MISSING_PROTOTYPES>
+        <GCC_WARN_ABOUT_RETURN_TYPE>YES</GCC_WARN_ABOUT_RETURN_TYPE>
+        <GCC_WARN_UNUSED_VARIABLE>YES</GCC_WARN_UNUSED_VARIABLE>
+        <IPHONEOS_DEPLOYMENT_TARGET>5.0</IPHONEOS_DEPLOYMENT_TARGET>
+        <OTHER_CFLAGS>"-DNS_BLOCK_ASSERTIONS=1"</OTHER_CFLAGS>
+        <SDKROOT>iphoneos</SDKROOT>
+        <TARGETED_DEVICE_FAMILY>"1,2"</TARGETED_DEVICE_FAMILY>
+        <VALIDATE_PRODUCT>YES</VALIDATE_PRODUCT>
+      </BuildSettings>
+    </BuildConfig>
+    <BuildConfig name="Debug">
+      <BuildSettings>
+        <ALWAYS_SEARCH_USER_PATHS>NO</ALWAYS_SEARCH_USER_PATHS>
+        <ARCHS>"$(ARCHS_STANDARD_32_BIT)"</ARCHS>
+        <QuotedBuildSetting name="CODE_SIGN_IDENTITY[sdk=iphoneos*]">"iPhone Developer"</QuotedBuildSetting>
+        <COPY_PHASE_STRIP>NO</COPY_PHASE_STRIP>
+        <GCC_C_LANGUAGE_STANDARD>gnu99</GCC_C_LANGUAGE_STANDARD>
+        <GCC_DYNAMIC_NO_PIC>NO</GCC_DYNAMIC_NO_PIC>
+        <GCC_OPTIMIZATION_LEVEL>0</GCC_OPTIMIZATION_LEVEL>
+        <GCC_PREPROCESSOR_DEFINITIONS settingType="List">
+          <Item>"DEBUG=1"</Item>
+          <Item>"$(inherited)"</Item>
+        </GCC_PREPROCESSOR_DEFINITIONS>
+        <GCC_SYMBOLS_PRIVATE_EXTERN>NO</GCC_SYMBOLS_PRIVATE_EXTERN>
+        <GCC_VERSION>com.apple.compilers.llvm.clang.1_0</GCC_VERSION>
+        <GCC_WARN_ABOUT_MISSING_PROTOTYPES>YES</GCC_WARN_ABOUT_MISSING_PROTOTYPES>
+        <GCC_WARN_ABOUT_RETURN_TYPE>YES</GCC_WARN_ABOUT_RETURN_TYPE>
+        <GCC_WARN_UNUSED_VARIABLE>YES</GCC_WARN_UNUSED_VARIABLE>
+        <IPHONEOS_DEPLOYMENT_TARGET>5.0</IPHONEOS_DEPLOYMENT_TARGET>
+        <SDKROOT>iphoneos</SDKROOT>
+        <TARGETED_DEVICE_FAMILY>"1,2"</TARGETED_DEVICE_FAMILY>
+      </BuildSettings>
+    </BuildConfig>
+  </BuildConfigs>
+  <Attributes>
+    <LastUpgradeCheck>0420</LastUpgradeCheck>
+    <ORGANIZATIONNAME>GarageGames</ORGANIZATIONNAME>
+  </Attributes>
+  <Regions developmentRegion="English">
+    <Region name="en" />
+  </Regions>
+  <ExcludeDirectories>
+    <Directory name=".svn" />
+    <Directory name="CVS" />
+  </ExcludeDirectories>
+</Project>

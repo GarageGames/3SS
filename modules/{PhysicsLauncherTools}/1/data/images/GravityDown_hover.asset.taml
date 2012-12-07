@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="GravityDown_hover"
+    AssetInternal="1"
+    ImageFile="@assetFile=#GravityDown_hover"
+    AutoUnload="0" />

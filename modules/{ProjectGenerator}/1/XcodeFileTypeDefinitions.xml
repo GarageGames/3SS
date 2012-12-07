@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileTypes>
+  <FileType extension="cpp" type="sourcecode.cpp.cpp" buildPhase="Sources" />
+  <FileType extension="cc" type="sourcecode.cpp.cpp" buildPhase="Sources" />
+  <FileType extension="h" type="sourcecode.c.h" buildPhase="Headers" />
+  <FileType extension="c" type="sourcecode.c.c" buildPhase="Sources" />
+  <FileType extension="mm" type="sourcecode.cpp.objcpp" buildPhase="Sources" />
+  <FileType extension="framework" type="wrapper.framework" buildPhase="Frameworks" />
+  <FileType extension="dylib" type="compiled.mach-o.dylib" buildPhase="Frameworks" />
+  <FileType extension="nib" type="wrapper.nib" buildPhase="Resources" />
+  <FileType extension="icns" type="image.icns" buildPhase="Resources" />
+  <FileType extension="plist" type="text.plist.xml" buildPhase="NONE" />
+  <FileType extension="app" type="wrapper.application" buildPhase="NONE" explicit="1" />
+  <FileType extension="a" type="archive.ar" buildPhase="Frameworks" />
+  <FileType extension="y" type="sourcecode.yacc" buildPhase="NONE" />
+  <FileType extension="l" type="sourcecode.lex" buildPhase="NONE" />
+  <FileType extension="xib" type="file.xib" buildPhase="Resources" />
+  <FileType extension="strings" type="text.plist.strings" buildPhase="Resources" />
+  <FileType extension="pch" type="sourcecode.c.h" buildPhase="NONE" />
+  <FileType extension="a" type="archive.ar" buildPhase="Frameworks" />
+  <FileType extension="xcconfig" type="text.xcconfig" buildPhase="Resources" />
+  <FileType extension="cs" type="text" buildPhase="Resources" />
+  <FileType extension="png" type="image.png" buildPhase="Resources" />
+</FileTypes>

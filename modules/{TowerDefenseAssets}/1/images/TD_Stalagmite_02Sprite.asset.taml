@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TD_Stalagmite_02Sprite"
+    imageFile="@assetFile=#TD_Stalagmite_02.png"
+    AssetCategory="sprites" />

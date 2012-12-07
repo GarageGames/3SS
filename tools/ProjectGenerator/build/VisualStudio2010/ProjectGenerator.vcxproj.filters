@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SourceFiles">
+      <UniqueIdentifier>{b7bc05b4-1f37-464f-bbd9-904e095ac316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles\platformWin32">
+      <UniqueIdentifier>{b0eba5b3-aed1-4517-a562-59da9d6fa2ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles\tinyXML">
+      <UniqueIdentifier>{26f42b2c-b672-4049-bc2e-4779229540c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles\platform">
+      <UniqueIdentifier>{df81bf7d-67f2-4d9b-b670-bdf566273b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles\xcodeTemplate">
+      <UniqueIdentifier>{a958fd7e-3b55-49f0-9528-cff3f69ca93d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceFiles\application">
+      <UniqueIdentifier>{2b67d5ee-a368-4325-ba24-1f9470d688f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\platformWin32\winMain.cpp">
+      <Filter>SourceFiles\platformWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tinyXML\tinystr.cpp">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tinyXML\tinyxml.cpp">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tinyXML\tinyxmlerror.cpp">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\tinyXML\tinyxmlparser.cpp">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXFileReference .cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\FileTypeDatabase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\application\Application.cpp">
+      <Filter>SourceFiles\application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\XcodeProject.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXProject.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\ElementReference.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\XCConfigurationList.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\XCBuildConfiguration.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXTargetDependency.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXGroup.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platformWin32\winFileIO.cpp">
+      <Filter>SourceFiles\platformWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\fileIO.cpp">
+      <Filter>SourceFiles\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBuildFile.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXNativeTarget.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXBaseBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platformWin32\winStrings.cpp">
+      <Filter>SourceFiles\platformWin32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXHeadersBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXResourcesBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXSourcesBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXFrameworksBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXRezBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXCopyFilesBuildPhase.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXContainerItemProxy .cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXAggregateTarget.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\unicode.cpp">
+      <Filter>SourceFiles\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\xcodeTemplate\PBXVariantGroup.cpp">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\platform\types.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\types.gcc.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\types.visualc.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\types.win32.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tinyXML\tinystr.h">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\tinyXML\tinyxml.h">
+      <Filter>SourceFiles\tinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXFileReference.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\FileTypeDatabase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\application\Application.h">
+      <Filter>SourceFiles\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\XcodeProject.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXProject.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\ElementReference.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\XCConfigurationList.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\XCBuildConfiguration.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXTargetDependency.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXGroup.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\stringFunctions.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\fileIO.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platformWin32\platformWin32.h">
+      <Filter>SourceFiles\platformWin32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBuildFile.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXNativeTarget.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXBaseBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXHeadersBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXResourcesBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXSourcesBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXFrameworksBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXRezBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXCopyFilesBuildPhase.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXContainerItemProxy.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXAggregateTarget.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\unicode.h">
+      <Filter>SourceFiles\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\xcodeTemplate\PBXVariantGroup.h">
+      <Filter>SourceFiles\xcodeTemplate</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

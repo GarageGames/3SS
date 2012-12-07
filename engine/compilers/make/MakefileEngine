@@ -1,0 +1,32 @@
+
+#--------------------------------------
+# include and verify the users conf.mk
+
+-include conf.mk
+
+ifndef CONFIG_STATUS
+doConfigure: 
+	$(error Configuration file not defined.  Please run $(MAKE) -f configure.mk)
+	#@$(MAKE) --no-print-directory -f configure.mk
+else
+ifeq ($(CONFIG_STATUS),INVALID)
+doConfigure:
+	$(error Invalid Configuration file.  Please run $(MAKE) -f configure.mk)
+	#@$(MAKE) --no-print-directory -f configure.mk
+else
+	include conf.$(COMPILER).$(OS).mk
+	include conf.$(COMPILER).mk
+endif
+endif
+
+include targets.torque.mk
+SOURCE.DIR=../../source/
+include conf.common.mk
+
+
+#default:
+#	echo default.
+
+ifneq ($(MAKECMDGOALS),clean)
+-include $(addprefix $(DIR.OBJ)/, $(addsuffix $(EXT.DEP), $(basename $(filter %.cc %.c,$(SOURCE.ALL)))))
+endif

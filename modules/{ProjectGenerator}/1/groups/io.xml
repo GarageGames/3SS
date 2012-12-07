@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="io">
+	<EngineSourceDirectory name="resource" includeChildren="1"/>
+	<EngineSourceDirectory name="zip">
+		<EngineSourceDirectory name="unitTests" includeChildren="1"/>
+	</EngineSourceDirectory>
+  </EngineSourceDirectory>
+</Group>

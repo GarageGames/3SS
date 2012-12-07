@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="SelectionTool_down"
+    AssetInternal="1"
+    ImageFile="@assetFile=#SelectionTool_down"
+    AutoUnload="0" />

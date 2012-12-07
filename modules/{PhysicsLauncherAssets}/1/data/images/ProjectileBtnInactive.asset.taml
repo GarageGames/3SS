@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="ProjectileBtnInactiveImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#ProjectileBtnInactive.png" />

@@ -1,0 +1,139 @@
+<mockup version="1.0" skin="sketch" measuredW="1473" measuredH="1429" mockupW="1400" mockupH="1428">
+  <controls>
+    <control controlID="43" controlTypeID="__group__" x="73" y="1" w="1400" h="1428" measuredW="1400" measuredH="1428" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::ButtonBar" x="927" y="105" w="254" h="35" measuredW="205" measuredH="29" zOrder="5" locked="false" isInGroup="43">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Welcome%20Jon%20Williams%2C%20%5C/</text>
+          </controlProperties>
+        </control>
+        <control controlID="33" controlTypeID="com.balsamiq.mockups::List" x="1047" y="135" w="134" h="53" measuredW="100" measuredH="126" zOrder="6" locked="false" isInGroup="43">
+          <controlProperties>
+            <selectedIndex>0</selectedIndex>
+            <text>Profile%0ALogout</text>
+            <verticalScrollbar>false</verticalScrollbar>
+          </controlProperties>
+        </control>
+        <control controlID="34" controlTypeID="com.balsamiq.mockups::Image" x="234" y="357" w="300" h="300" measuredW="565" measuredH="565" zOrder="7" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <src>./assets/avatar.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="35" controlTypeID="com.balsamiq.mockups::Link" x="234" y="657" w="-1" h="-1" measuredW="69" measuredH="21" zOrder="8" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Edit%20Avatar</text>
+          </controlProperties>
+        </control>
+        <control controlID="36" controlTypeID="com.balsamiq.mockups::SubTitle" x="542" y="359" w="-1" h="-1" measuredW="118" measuredH="33" zOrder="9" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Edit%20Profile</text>
+          </controlProperties>
+        </control>
+        <control controlID="40" controlTypeID="com.balsamiq.mockups::Canvas" x="218" y="334" w="963" h="732" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="48" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="1400" measuredH="1200" zOrder="1" locked="false" isInGroup="43">
+          <controlProperties>
+            <src>./assets/mmgd_website_concept_v007_homepage.jpg</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="49" controlTypeID="com.balsamiq.mockups::Image" x="45" y="899" w="1308" h="249" measuredW="1308" measuredH="16" zOrder="2" locked="false" isInGroup="43">
+          <controlProperties>
+            <src>./assets/centerMockup.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="50" controlTypeID="com.balsamiq.mockups::Image" x="44" y="1148" w="-1" h="-1" measuredW="1310" measuredH="242" zOrder="3" locked="false" isInGroup="43">
+          <controlProperties>
+            <src>./assets/bottomMockup.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="51" controlTypeID="com.balsamiq.mockups::Image" x="0" y="1163" w="1400" h="265" measuredW="97" measuredH="97" zOrder="0" locked="false" isInGroup="43">
+          <controlProperties>
+            <src>./assets/greyBackground.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="52" controlTypeID="com.balsamiq.mockups::MultilineButton" x="955" y="987" w="182" h="55" measuredW="70" measuredH="55" zOrder="10" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::MultilineButton" x="758" y="987" w="182" h="55" measuredW="82" measuredH="55" zOrder="11" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="54" controlTypeID="com.balsamiq.mockups::Paragraph" x="573" y="427" w="193" h="322" measuredW="200" measuredH="140" zOrder="16" locked="false" isInGroup="43">
+          <controlProperties>
+            <bold>true</bold>
+            <size>16</size>
+            <text>Name%3A%0A%20%0ALocation%3A%0A%20%0A%20%0AOld%20Password%3A%0A%20%0ANew%20Password%3A%0A%20%0AVerifiy%20New%20Password%3A%0A%20%0A%20%0A%20%0AWebsite%3A%0A%20%0AInfo%3A</text>
+          </controlProperties>
+        </control>
+        <control controlID="55" controlTypeID="com.balsamiq.mockups::Canvas" x="542" y="391" w="614" h="579" measuredW="100" measuredH="70" zOrder="12" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="56" controlTypeID="com.balsamiq.mockups::Canvas" x="557" y="409" w="580" h="88" measuredW="100" measuredH="70" zOrder="13" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="57" controlTypeID="com.balsamiq.mockups::Canvas" x="557" y="506" w="580" h="137" measuredW="100" measuredH="70" zOrder="14" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="58" controlTypeID="com.balsamiq.mockups::Canvas" x="557" y="657" w="580" h="292" measuredW="100" measuredH="70" zOrder="15" locked="false" isInGroup="43">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="59" controlTypeID="com.balsamiq.mockups::TextInput" x="648" y="423" w="239" h="-1" measuredW="84" measuredH="27" zOrder="17" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Jon%20Williams</text>
+          </controlProperties>
+        </control>
+        <control controlID="60" controlTypeID="com.balsamiq.mockups::TextInput" x="747" y="517" w="239" h="-1" measuredW="56" measuredH="27" zOrder="18" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>*******</text>
+          </controlProperties>
+        </control>
+        <control controlID="61" controlTypeID="com.balsamiq.mockups::TextInput" x="747" y="556" w="239" h="-1" measuredW="80" measuredH="27" zOrder="19" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>***********</text>
+          </controlProperties>
+        </control>
+        <control controlID="62" controlTypeID="com.balsamiq.mockups::TextInput" x="747" y="594" w="239" h="-1" measuredW="80" measuredH="27" zOrder="20" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>***********</text>
+          </controlProperties>
+        </control>
+        <control controlID="63" controlTypeID="com.balsamiq.mockups::TextInput" x="648" y="672" w="239" h="-1" measuredW="163" measuredH="27" zOrder="21" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>www.redmasquerade.com</text>
+          </controlProperties>
+        </control>
+        <control controlID="64" controlTypeID="com.balsamiq.mockups::TextArea" x="616" y="711" w="503" h="223" measuredW="200" measuredH="140" zOrder="22" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Jr.%20UX%20Designer/Associate%20Producer%20over%20at%20GarageGames%20LLC.%20Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit.%20Phasellus%20id%20leo%20sit%20amet%20lectus%20iaculis%20condimentum.%20Phasellus%20viverra%20ligula%20ut%20eros%20dictum%20non%20dapibus%20ligula%20mollis.%20Pellentesque%20cursus%20faucibus%20mi%20et%20fringilla.</text>
+          </controlProperties>
+        </control>
+        <control controlID="65" controlTypeID="com.balsamiq.mockups::TextInput" x="648" y="461" w="239" h="-1" measuredW="86" measuredH="27" zOrder="23" locked="false" isInGroup="43">
+          <controlProperties>
+            <text>Vegas%20baby%21</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

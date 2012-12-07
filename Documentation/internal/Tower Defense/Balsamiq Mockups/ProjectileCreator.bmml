@@ -1,0 +1,203 @@
+<mockup version="1.0" skin="sketch" measuredW="1004" measuredH="433" mockupW="959" mockupH="401">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="45" y="32" w="959" h="401" measuredW="959" measuredH="401" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="959" h="401" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <dragger>false</dragger>
+            <maximizeRestore>false</maximizeRestore>
+            <minimize>false</minimize>
+            <text>%09%09%09%09%09%09%09%09%09%09%09%09%09%09%09Projectile%20Tool</text>
+            <topheight>26</topheight>
+          </controlProperties>
+        </control>
+        <control controlID="13" controlTypeID="com.balsamiq.mockups::HelpButton" x="934" y="28" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="6" locked="false" isInGroup="0"/>
+        <control controlID="44" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="17" y="114" w="-1" h="-1" measuredW="99" measuredH="147" zOrder="7" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Name%0A%20%0ADamage%0A%20%0A%20%0AEffect%20on%20Enemy%0A%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="45" controlTypeID="com.balsamiq.mockups::TextInput" x="113" y="116" w="193" h="-1" measuredW="89" measuredH="27" zOrder="8" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Basic%20Arrows</text>
+          </controlProperties>
+        </control>
+        <control controlID="47" controlTypeID="com.balsamiq.mockups::Icon" x="284" y="121" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="9" locked="false" isInGroup="0">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="53" controlTypeID="com.balsamiq.mockups::ComboBox" x="154" y="63" w="124" h="-1" measuredW="95" measuredH="23" zOrder="12" locked="false" isInGroup="0">
+          <controlProperties>
+            <italic>true</italic>
+            <state>closed</state>
+            <text>Projectile%201</text>
+          </controlProperties>
+        </control>
+        <control controlID="54" controlTypeID="com.balsamiq.mockups::ComboBox" x="115" y="218" w="193" h="-1" measuredW="164" measuredH="23" zOrder="22" locked="false" isInGroup="0">
+          <controlProperties>
+            <state>closed</state>
+            <text>Slow%20Enemy%20Movement%0APiercing%20Damage</text>
+          </controlProperties>
+        </control>
+        <control controlID="55" controlTypeID="com.balsamiq.mockups::NumericStepper" x="113" y="160" w="193" h="-1" measuredW="50" measuredH="24" zOrder="10" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>20</text>
+          </controlProperties>
+        </control>
+        <control controlID="68" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="48" w="339" h="55" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="0"/>
+        <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="9" y="62" w="-1" h="-1" measuredW="139" measuredH="26" zOrder="13" locked="false" isInGroup="0">
+          <controlProperties>
+            <bold>true</bold>
+            <size>18</size>
+            <text>Select%20Projectile</text>
+          </controlProperties>
+        </control>
+        <control controlID="88" controlTypeID="__group__" x="113" y="250" w="194" h="129" measuredW="194" measuredH="129" zOrder="14" locked="false" isInGroup="0">
+          <groupChildrenDescriptors>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::NumericStepper" x="84" y="38" w="-1" h="-1" measuredW="49" measuredH="24" zOrder="1" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>30</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::NumericStepper" x="84" y="90" w="-1" h="-1" measuredW="47" measuredH="24" zOrder="2" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>10</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="141" y="39" w="-1" h="-1" measuredW="19" measuredH="21" zOrder="3" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>%25</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="139" y="91" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="4" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>seconds</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="15" y="8" w="-1" h="-1" measuredW="108" measuredH="21" zOrder="5" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>Slow%20Enemy%20Down</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="15" y="66" w="-1" h="-1" measuredW="89" measuredH="21" zOrder="6" locked="false" isInGroup="88">
+              <controlProperties>
+                <text>Effect%20Duration</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="194" h="129" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="88">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="89" controlTypeID="com.balsamiq.mockups::Canvas" x="567" y="62" w="381" h="190" measuredW="100" measuredH="70" zOrder="15" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="90" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="580" y="74" w="-1" h="-1" measuredW="77" measuredH="42" zOrder="16" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>%28%20%29%20Static%0A%28o%29%20Animated</text>
+          </controlProperties>
+        </control>
+        <control controlID="92" controlTypeID="com.balsamiq.mockups::Button" x="840" y="131" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="17" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Select</text>
+          </controlProperties>
+        </control>
+        <control controlID="93" controlTypeID="com.balsamiq.mockups::TextInput" x="614" y="130" w="224" h="-1" measuredW="109" measuredH="27" zOrder="18" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>arrow_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="96" controlTypeID="com.balsamiq.mockups::Button" x="896" y="367" w="-1" h="-1" measuredW="53" measuredH="27" zOrder="19" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Done</text>
+          </controlProperties>
+        </control>
+        <control controlID="99" controlTypeID="com.balsamiq.mockups::Icon" x="282" y="63" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="20" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>PlusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="100" controlTypeID="com.balsamiq.mockups::Icon" x="307" y="63" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="21" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>MinusIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="734" y="172" w="29" h="27" measuredW="31" measuredH="27" zOrder="23" locked="false" isInGroup="0">
+          <controlProperties>
+            <size>10</size>
+            <state>disabled</state>
+            <text>%3C</text>
+          </controlProperties>
+        </control>
+        <control controlID="103" controlTypeID="com.balsamiq.mockups::Button" x="800" y="172" w="29" h="27" measuredW="31" measuredH="27" zOrder="24" locked="false" isInGroup="0">
+          <controlProperties>
+            <size>10</size>
+            <state>disabled</state>
+            <text>%3E</text>
+          </controlProperties>
+        </control>
+        <control controlID="104" controlTypeID="com.balsamiq.mockups::TextInput" x="767" y="172" w="30" h="-1" measuredW="20" measuredH="27" zOrder="25" locked="false" isInGroup="0">
+          <controlProperties>
+            <align>center</align>
+            <state>disabled</state>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="105" controlTypeID="com.balsamiq.mockups::Image" x="614" y="132" w="221" h="22" measuredW="128" measuredH="128" zOrder="26" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/greyedOut.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="106" controlTypeID="com.balsamiq.mockups::HRule" x="333" y="49" w="624" h="-1" measuredW="100" measuredH="5" zOrder="27" locked="false" isInGroup="0"/>
+        <control controlID="107" controlTypeID="com.balsamiq.mockups::Icon" x="9" y="29" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="28" locked="false" isInGroup="0">
+          <controlProperties>
+            <icon>SaveIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="108" controlTypeID="com.balsamiq.mockups::Canvas" x="9" y="199" w="324" h="193" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="109" controlTypeID="com.balsamiq.mockups::Canvas" x="9" y="103" w="324" h="96" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="110" controlTypeID="com.balsamiq.mockups::Image" x="344" y="62" w="215" h="220" measuredW="160" measuredH="160" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <src>./assets/blank.png</src>
+            <text>Arrow%20Animation</text>
+          </controlProperties>
+        </control>
+        <control controlID="111" controlTypeID="com.balsamiq.mockups::ComboBox" x="411" y="288" w="140" h="-1" measuredW="65" measuredH="62" zOrder="4" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Static%0ATravel%20animation%0AHit%20animation</text>
+          </controlProperties>
+        </control>
+        <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="353" y="288" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="5" locked="false" isInGroup="0">
+          <controlProperties>
+            <text>Preview</text>
+          </controlProperties>
+        </control>
+        <control controlID="113" controlTypeID="com.balsamiq.mockups::Icon" x="529" y="254" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="29" locked="false" isInGroup="0">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <icon>SearchIcon%7Csmall</icon>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

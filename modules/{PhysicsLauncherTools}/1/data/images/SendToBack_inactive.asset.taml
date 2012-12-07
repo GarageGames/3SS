@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="SendToBack_inactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#SendToBack_inactive"
+    AutoUnload="0" />

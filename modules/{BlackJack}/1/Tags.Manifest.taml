@@ -1,0 +1,15 @@
+<AssetTagsManifest>
+    <AssetTagsManifest.Tags>
+        <Tag Name="Deck" />
+        <Tag Name="Table" />
+        <Tag Name="Carpet" />
+        <Tag Name="Chips" />
+        <Tag Name="Shoe" />
+        <Tag Name="HUD" />
+        <Tag Name="Font" />
+        <Tag Name="Avatar" />
+    </AssetTagsManifest.Tags>
+    <AssetTagsManifest.Assets>
+
+    </AssetTagsManifest.Assets>
+</AssetTagsManifest>

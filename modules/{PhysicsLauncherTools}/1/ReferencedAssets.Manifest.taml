@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^PhysicsLauncherTools/gui"
+			Extension="gui.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

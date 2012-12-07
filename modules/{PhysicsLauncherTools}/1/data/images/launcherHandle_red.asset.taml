@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="launcherHandle_redImageMap"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#launcherHandle_red.png" />

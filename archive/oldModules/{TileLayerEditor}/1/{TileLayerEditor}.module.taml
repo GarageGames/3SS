@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{TileLayerEditor}"
+	VersionId="1"
+	Description="Tile Layer Editor"
+	Group="advancedTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeTileLayerEditor"
+	DestroyFunction="destroyTileLayerEditor"
+	/>
+

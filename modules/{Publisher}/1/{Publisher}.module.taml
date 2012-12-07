@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{Publisher}"
+	VersionId="1"
+	Description="Game Publisher"
+	Group="projectTools"
+	Dependencies="{EditorCore}=1,{WiXTool}=1"
+	ScriptFile="main.cs"
+	ScopeSet="PublisherSet"
+	CreateFunction="initializePublisher"
+	DestroyFunction="destroyPublisher"
+	/>
+

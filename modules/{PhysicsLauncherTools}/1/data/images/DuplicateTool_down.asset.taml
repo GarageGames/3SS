@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="DuplicateTool_down"
+    AssetInternal="1"
+    ImageFile="@assetFile=#DuplicateTool_down"
+    AutoUnload="0" />

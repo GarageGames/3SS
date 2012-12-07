@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="BringToFront_normal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#BringToFront_normal"
+    AutoUnload="0" />

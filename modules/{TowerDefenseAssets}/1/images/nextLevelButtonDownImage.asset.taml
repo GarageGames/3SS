@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="nextLevelButtonDownImage"
+    imageFile="@assetFile=#nextLevelButtonDown.png"
+	AssetCategory="gui" />

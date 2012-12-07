@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Poison_Tower_Upgrade2_IdleSprite"
+    imageFile="@assetFile=#Poison_Tower_Upgrade2_Idle.png"
+    cellCountX="8"
+    cellCountY="2"
+    cellWidth="64"
+    cellHeight="96"
+	AssetCategory="sprites" />

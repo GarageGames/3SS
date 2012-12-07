@@ -1,0 +1,13 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location		
+			Path="^{MelvTesting}/assets/images"
+			Extension="asset.taml"/>
+		<Location
+			Path="^{MelvTesting}/assets/animations"
+			Extension="asset.taml"/>
+        <Location
+			Path="^{MelvTesting}/assets/audio"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

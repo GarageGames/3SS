@@ -1,0 +1,13 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^{BlackjackAssets}/animations"
+			Extension="asset.taml"/>
+		<Location		
+			Path="^{BlackjackAssets}/images"
+			Extension="asset.taml"/>
+        <Location
+			Path="^{BlackjackAssets}/audio"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

@@ -1,0 +1,208 @@
+<project>
+   <shortName></shortName>
+   <fullName></fullName>
+   <version></version>
+   <installerFilename></installerFilename>
+   <licenseFile></licenseFile>
+   <wrapLicenseFileText>1</wrapLicenseFileText>
+   <leftImage>../../installerAssets/tgbSideBar.png</leftImage>
+   <logoImage>../../installerAssets/tgbInstallerIcon.png</logoImage>
+   <splashImage>../../installerAssets/tgbSplash.png</splashImage>
+   <brandText>Installer by Bitrock</brandText>
+   <checkForUpdates></checkForUpdates>
+   <updateInformationURL>http://demos.garagegames.com/tgb/tgbUpdate.xml</updateInformationURL>
+   <defaultInstallationMode></defaultInstallationMode>
+   <defaultUnixDirectoryPermissions>775</defaultUnixDirectoryPermissions>
+   <defaultUnixFilePermissions>664</defaultUnixFilePermissions>
+   <description>Torque Game Builder</description>
+   <outputDirectory>${installbuilder_install_root}/output</outputDirectory>
+   <projectSchemaVersion>1.2</projectSchemaVersion>
+   <saveRelativePaths>1</saveRelativePaths>
+   <singleInstanceCheck>1</singleInstanceCheck>
+   <slideShowLoop>1</slideShowLoop>
+   <slideShowTiming>5</slideShowTiming>
+   <startMenuGroupName>Torque Game Builder</startMenuGroupName>
+   <style>standard</style>
+   <summary>Torque Game Builder</summary>
+   <uninstallerDirectory>${installdir}/</uninstallerDirectory>
+   <uninstallerName></uninstallerName>
+   <validatorProgram></validatorProgram>
+   <vendor>GarageGames, Inc.</vendor>
+   <versionId></versionId>
+   <defaultLanguage>en</defaultLanguage>
+   <allowLanguageSelection>0</allowLanguageSelection>
+   <allowedLanguages></allowedLanguages>
+   <customLanguageFileList>
+      <language>
+         <code>en</code>
+         <encoding>iso8859-1</encoding>
+         <file></file>
+      </language>
+   </customLanguageFileList>
+   <componentList>
+      <component>
+         <name>default</name>
+         <description>Default Component</description>
+         <canBeEdited>1</canBeEdited>
+         <detailedDescription></detailedDescription>
+         <selected>1</selected>
+         <show>1</show>
+         <desktopShortcutList>
+            <shortcut>
+               <comment>Run Torque Game Builder</comment>
+               <name>Torque Game Builder</name>
+               <platforms>all</platforms>
+               <windowsExec>${installdir}/tgb/TorqueGameBuilder.exe</windowsExec>
+               <windowsPath>${installdir}/tgb/</windowsPath>
+            </shortcut>
+         </desktopShortcutList>
+         <folderList>
+            <folder>
+               <description>Program Files</description>
+               <destination>${installdir}</destination>
+               <name>programfiles</name>
+               <platforms>all</platforms>
+               <distributionFileList>
+               </distributionFileList>
+            </folder>
+         </folderList>
+         <startMenuShortcutList>
+            <startMenuShortcut>
+               <comment>Launch Torque Game Builder</comment>
+               <name>Launch Torque Game Builder</name>
+               <windowsExec>${installdir}/tgb/TorqueGameBuilder.exe</windowsExec>
+               <windowsExecArgs></windowsExecArgs>
+               <windowsIcon></windowsIcon>
+               <windowsPath>${installdir}/tgb/</windowsPath>
+            </startMenuShortcut>
+            <startMenuShortcut>
+               <comment></comment>
+               <name>Documentation Overview</name>
+               <windowsExec>${installdir}\documentation\Documentation Overview.html</windowsExec>
+               <windowsExecArgs></windowsExecArgs>
+               <windowsIcon></windowsIcon>
+               <windowsPath></windowsPath>
+            </startMenuShortcut>
+            <startMenuShortcut>
+               <comment>Uninstall ${product_fullname}</comment>
+               <name>Uninstall ${product_fullname}</name>
+               <windowsExec>${installdir}/uninstall.exe</windowsExec>
+               <windowsExecArgs></windowsExecArgs>
+               <windowsIcon></windowsIcon>
+               <windowsPath>${installdir}/</windowsPath>
+            </startMenuShortcut>
+         </startMenuShortcutList>
+      </component>
+   </componentList>
+   <finalPageActionList>
+      <launchBrowser>
+         <url>http://www.garagegames.com/developer/torque/t2d/?utm_campaign%26TgbDemoInstall%3Dutm_source%26tgbdemo%3Dutm_medium%26install</url>
+         <progressText>Launch TGB Community Page</progressText>
+      </launchBrowser>
+      <runProgram>
+         <program>${installdir}/tgb/TorqueGameBuilder.exe</program>
+         <progressText>Launch Torque Game Builder</progressText>
+         <workingDirectory>${installdir}/tgb</workingDirectory>
+         <ruleList>
+            <compareText>
+               <logic>equals</logic>
+               <nocase>0</nocase>
+               <text>${platform_name}</text>
+               <value>windows</value>
+            </compareText>
+         </ruleList>
+      </runProgram>
+      <runProgram>
+         <program>${installdir}/tgb/Torque Game Builder.app/Contents/MacOS/Torque Game Builder</program>
+         <progressText>Launch Torque Game Builder</progressText>
+         <workingDirectory>${installdir}/tgb</workingDirectory>
+         <ruleList>
+            <compareText>
+               <logic>equals</logic>
+               <nocase>0</nocase>
+               <text>${platform_name}</text>
+               <value>osx</value>
+            </compareText>
+         </ruleList>
+      </runProgram>
+   </finalPageActionList>
+   <parameterList>
+      <directoryParameter>
+         <name>installdir</name>
+         <title></title>
+         <description>Installer.Parameter.installdir.description</description>
+         <explanation>Installer.Parameter.installdir.explanation</explanation>
+         <value>${platform_install_prefix}/GarageGames/${product_shortname}-${product_version}</value>
+         <default>${platform_install_prefix}/GarageGames/${product_shortname}-${product_version}</default>
+         <allowEmptyValue>0</allowEmptyValue>
+         <ask>yes</ask>
+         <cliOptionName>prefix</cliOptionName>
+         <leftImage></leftImage>
+         <mustBeWritable>yes</mustBeWritable>
+         <mustExist>0</mustExist>
+         <width>40</width>
+      </directoryParameter>
+   </parameterList>
+   <preUninstallationActionList>
+      <showQuestion>
+         <variable>closeInstances</variable>
+         <text>The uninstaller will close all running instances of Torque Game Builder, you might lose some unsaved data. Do you wish to continue?</text>
+      </showQuestion>
+      <exit>
+         <ruleList>
+            <compareText text="${closeInstances}" value="no" logic="equals" />
+         </ruleList>
+      </exit>
+      <runProgram>
+         <abortOnError>0</abortOnError>
+         <program>tskill.exe</program>
+         <programArguments>TorqueGameBuilder</programArguments>
+         <ruleList>
+            <compareText text="${platform_name}" value="windows" logic="equals" />
+            <compareText text="${closeInstances}" value="yes" logic="equals" />
+         </ruleList>
+         <showMessageOnError>0</showMessageOnError>
+      </runProgram>
+      <deleteFile path="${installdir}/tgb" />
+      <runProgram>
+         <abortOnError>0</abortOnError>
+         <program>${installdir}/tgb/TorqueGameBuilder.exe</program>
+         <programArguments>${installdir}/tgb/main.cs -remove</programArguments>
+         <ruleList>
+            <compareText text="${platform_name}" value="windows" logic="equals" />
+         </ruleList>
+      </runProgram>
+   </preUninstallationActionList>
+   <preInstallationActionList>
+      <httpGet filename="/tmp/getresult.html">
+      <url>http://www.garagegames.com/pingback/${product_shortname}/${product_fullname}/started/${product_version}/index.php</url>
+         <show>0</show>
+         <abortOnError>0</abortOnError>
+         <showMessageOnError>0</showMessageOnError>
+      </httpGet>
+   </preInstallationActionList>
+   <postInstallationActionList>
+      <httpGet filename="/tmp/getresult.html">
+      <url>http://www.garagegames.com/pingback/${product_shortname}/${product_fullname}/success/${product_version}/index.php</url>
+         <show>0</show>
+         <abortOnError>0</abortOnError>
+         <showMessageOnError>0</showMessageOnError>
+      </httpGet>
+   </postInstallationActionList>
+   <installationAbortedActionList>
+      <httpGet filename="/tmp/getresult.html">
+      <url>http://www.garagegames.com/pingback/${product_shortname}/${product_fullname}/aborted/${product_version}/index.php</url>
+         <show>0</show>
+         <abortOnError>0</abortOnError>
+         <showMessageOnError>0</showMessageOnError>
+      </httpGet>
+   </installationAbortedActionList>
+   <postUninstallationActionList>
+      <httpGet filename="/tmp/getresult.html">
+      <url>http://www.garagegames.com/pingback/${product_shortname}/${product_fullname}/uninstalled/${product_version}/index.php</url>
+         <show>0</show>
+         <abortOnError>0</abortOnError>
+         <showMessageOnError>0</showMessageOnError>
+      </httpGet>
+   </postUninstallationActionList>
+</project>

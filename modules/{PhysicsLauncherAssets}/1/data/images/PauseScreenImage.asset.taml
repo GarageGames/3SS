@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PauseScreenImageImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#PauseScreenImage.png" />

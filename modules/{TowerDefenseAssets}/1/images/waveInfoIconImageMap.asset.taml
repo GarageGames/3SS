@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="waveInfoIconImageMap"
+    imageFile="@assetFile=#waveInfoIcon.png"
+    AssetCategory="gui" />

@@ -1,0 +1,9 @@
+<SimSet
+    Name="InterfaceToolLevelHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="You can select a new background image for each page of Levels. Instead of creating an entirely new image, try changing the contrast or colors of the same image for a different look on each page." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Remember that each of your Icon images have different states that you will want to use a different image with." />
+</SimSet>

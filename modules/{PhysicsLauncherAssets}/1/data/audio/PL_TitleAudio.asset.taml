@@ -1,0 +1,5 @@
+<AudioAsset
+    AssetName="PL_TitleSound"
+    AssetAutoUnload="0"
+    AudioFile="@assetFile=#PL_TitleAudio.wav"
+    Looping="1" />

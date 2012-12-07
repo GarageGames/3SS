@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="colorPickerGrabber_hImageMap"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#colorPickerGrabber_h.png" />

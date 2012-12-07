@@ -1,0 +1,18 @@
+<SimSet
+    Name="ProjectileToolHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="You can use either a static Image file or an Animation file for your Projectile." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Test different values for your Projectile Friction and Bounce Levels and Mass to see how it affects your game play." />
+    <ScriptObject
+        Name="Tip2"
+        Text="A fun challenge is to include a Projectile with a large Mass that can make the Level easy to defeat but gives your Player a big bonus if not used." />
+    <ScriptObject
+        Name="Tip3"
+        Text="Use a Tutorial Image to explain any special abilities or characteristics a new Projectile has when it is introduced to the game." />
+    <ScriptObject
+        Name="Tip4"
+        Text="Enhance the game experience by using fun Audio files for when your Projectiles are Launched." />
+</SimSet>

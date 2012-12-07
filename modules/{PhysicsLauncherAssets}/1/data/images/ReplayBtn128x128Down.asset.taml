@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="ReplayBtn128x128DownImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#ReplayBtn128x128Down.png" />

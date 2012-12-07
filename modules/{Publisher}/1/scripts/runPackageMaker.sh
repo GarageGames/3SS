@@ -1,0 +1,2 @@
+#!/bin/sh -x# parameters# $0 = This script pathname# $1 = Path to PackageMaker executable# $2 = Name of project# $3 = UUID# $4 = Staging path# $5 = Install path# $6 = .pkg output path#echo "Opening $0"
+echo "PackageMaker Path $1"echo "Project Name $2"echo "UUID $3"echo "Staging Path $4"echo "Install Path $5"echo "Output Path $6"

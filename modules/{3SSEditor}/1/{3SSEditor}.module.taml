@@ -1,0 +1,13 @@
+<ModuleDefinition
+	ModuleId="{3SSEditor}"
+	VersionId="1"
+	Description="Content specific to 3 Step Studio"
+	Group="baseTools"
+	Dependencies="{EditorCore}=*"
+	ScriptFile="main.cs"
+	ScopeSet="3SSEditorSet"
+	CreateFunction="initialize3SSEditor"
+	DestroyFunction="destroy3SSEditor"
+	DeclaredAssetManifest="^{3SSEditor}/DeclaredAssets.manifest.taml"
+	/>
+

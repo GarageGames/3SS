@@ -1,0 +1,334 @@
+<mockup version="1.0" skin="sketch" measuredW="1904" measuredH="440" mockupW="1872" mockupH="390">
+  <controls>
+    <control controlID="57" controlTypeID="__group__" x="509" y="50" w="450" h="390" measuredW="450" measuredH="390" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="390" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="57">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%09Publisher</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="24" y="81" w="402" h="161" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="57">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="36" y="63" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="2" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Publish%20to</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="96" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="3" locked="false" isInGroup="57">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="143" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="57">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="190" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="57">
+          <controlProperties>
+            <icon>CellPhoneIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="95" w="-1" h="-1" measuredW="38" measuredH="33" zOrder="6" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>PC</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="144" w="-1" h="-1" measuredW="50" measuredH="33" zOrder="7" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Mac</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="193" w="-1" h="-1" measuredW="44" measuredH="33" zOrder="8" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>iOS</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="25" y="139" w="399" h="39" measuredW="100" measuredH="100" zOrder="9" locked="false" isInGroup="57">
+          <controlProperties>
+            <src>./assets/selectedOverlay.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::CheckBox" x="50" y="259" w="-1" h="-1" measuredW="89" measuredH="22" zOrder="10" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Full%20Screen</text>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="304" y="355" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="11" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Publish</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="371" y="355" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="12" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="50" y="303" w="-1" h="-1" measuredW="108" measuredH="21" zOrder="13" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Destination%20Folder</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::TextInput" x="159" y="301" w="207" h="-1" measuredW="61" measuredH="27" zOrder="14" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Desktop</text>
+          </controlProperties>
+        </control>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::Button" x="368" y="301" w="-1" h="-1" measuredW="67" measuredH="27" zOrder="15" locked="false" isInGroup="57">
+          <controlProperties>
+            <text>Browse</text>
+          </controlProperties>
+        </control>
+        <control controlID="19" controlTypeID="com.balsamiq.mockups::HelpButton" x="426" y="30" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="16" locked="false" isInGroup="57"/>
+        <control controlID="20" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="448" h="-1" measuredW="100" measuredH="5" zOrder="17" locked="false" isInGroup="57"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="58" controlTypeID="__group__" x="32" y="50" w="450" h="390" measuredW="450" measuredH="390" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="390" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="58">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%09Publisher</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::HelpButton" x="426" y="30" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="1" locked="false" isInGroup="58"/>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="24" y="81" w="402" h="161" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="58">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="36" y="63" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="3" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Publish%20to</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="96" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="58">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="143" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="58">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="190" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="6" locked="false" isInGroup="58">
+          <controlProperties>
+            <icon>CellPhoneIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="95" w="-1" h="-1" measuredW="38" measuredH="33" zOrder="7" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>PC</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="144" w="-1" h="-1" measuredW="50" measuredH="33" zOrder="8" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Mac</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="193" w="-1" h="-1" measuredW="44" measuredH="33" zOrder="9" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>iOS</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="25" y="93" w="399" h="39" measuredW="100" measuredH="100" zOrder="10" locked="false" isInGroup="58">
+          <controlProperties>
+            <src>./assets/selectedOverlay.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::CheckBox" x="50" y="259" w="-1" h="-1" measuredW="89" measuredH="22" zOrder="11" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Full%20Screen</text>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="304" y="355" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="12" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Publish</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="371" y="355" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="13" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="50" y="303" w="-1" h="-1" measuredW="108" measuredH="21" zOrder="14" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Destination%20Folder</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::TextInput" x="159" y="301" w="207" h="-1" measuredW="123" measuredH="27" zOrder="15" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>C%3A//Users/Desktop</text>
+          </controlProperties>
+        </control>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::Button" x="368" y="301" w="-1" h="-1" measuredW="67" measuredH="27" zOrder="16" locked="false" isInGroup="58">
+          <controlProperties>
+            <text>Browse</text>
+          </controlProperties>
+        </control>
+        <control controlID="19" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="448" h="-1" measuredW="100" measuredH="5" zOrder="17" locked="false" isInGroup="58"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="59" controlTypeID="__group__" x="981" y="50" w="450" h="390" measuredW="450" measuredH="390" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="390" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="59">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%09Publisher</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="24" y="81" w="402" h="161" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="59">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="36" y="63" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="2" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>Publish%20to</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="96" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="3" locked="false" isInGroup="59">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="143" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="59">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="190" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="59">
+          <controlProperties>
+            <icon>CellPhoneIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="95" w="-1" h="-1" measuredW="38" measuredH="33" zOrder="6" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>PC</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="144" w="-1" h="-1" measuredW="50" measuredH="33" zOrder="7" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>Mac</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="193" w="-1" h="-1" measuredW="44" measuredH="33" zOrder="8" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>iOS</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="25" y="188" w="399" h="39" measuredW="100" measuredH="100" zOrder="9" locked="false" isInGroup="59">
+          <controlProperties>
+            <src>./assets/selectedOverlay.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="304" y="355" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="10" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>Publish</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="371" y="355" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="11" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="57" y="254" w="-1" h="-1" measuredW="336" measuredH="21" zOrder="12" locked="false" isInGroup="59">
+          <controlProperties>
+            <text>Clicking%20on%20Publish%20will%20open%20Xcode%20to%20finish%20Publishing%20to%20iOS</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::HelpButton" x="426" y="30" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="13" locked="false" isInGroup="59"/>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="448" h="-1" measuredW="100" measuredH="5" zOrder="14" locked="false" isInGroup="59"/>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="60" controlTypeID="__group__" x="1454" y="50" w="450" h="390" measuredW="450" measuredH="390" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="390" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="60">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <close>true</close>
+            <text>%09%09%09%09%09%09%09Publisher</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Canvas" x="24" y="81" w="402" h="161" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="60">
+          <controlProperties>
+            <borderStyle>roundedSolid</borderStyle>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="36" y="63" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="2" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>Publish%20to</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="96" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="3" locked="false" isInGroup="60">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="143" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="60">
+          <controlProperties>
+            <icon>ScreenIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="50" y="190" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="60">
+          <controlProperties>
+            <color>10066329</color>
+            <icon>CellPhoneIcon%7Cmedium</icon>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="95" w="-1" h="-1" measuredW="38" measuredH="33" zOrder="6" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>PC</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="144" w="-1" h="-1" measuredW="50" measuredH="33" zOrder="7" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>Mac</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="89" y="193" w="-1" h="-1" measuredW="44" measuredH="33" zOrder="8" locked="false" isInGroup="60">
+          <controlProperties>
+            <color>10066329</color>
+            <text>iOS</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Image" x="25" y="92" w="399" h="39" measuredW="100" measuredH="100" zOrder="14" locked="false" isInGroup="60">
+          <controlProperties>
+            <src>./assets/selectedOverlay.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="304" y="355" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="9" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>Publish</text>
+          </controlProperties>
+        </control>
+        <control controlID="15" controlTypeID="com.balsamiq.mockups::Button" x="371" y="355" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="10" locked="false" isInGroup="60">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="139" y="197" w="-1" h="-1" measuredW="265" measuredH="21" zOrder="11" locked="false" isInGroup="60">
+          <controlProperties>
+            <color>10066329</color>
+            <italic>true</italic>
+            <text>%28Must%20have%20Xcode%20Installed%20to%20Publish%20to%20iOS%29</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::HelpButton" x="426" y="30" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="12" locked="false" isInGroup="60"/>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="48" w="448" h="-1" measuredW="100" measuredH="5" zOrder="13" locked="false" isInGroup="60"/>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

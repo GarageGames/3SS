@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^AssetLibrary/gui"
+			Extension="taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

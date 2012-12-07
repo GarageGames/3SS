@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{GameBoot}"
+	VersionId="1"
+	Description="Game Boot Module"
+	Synchronized="1"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initializeGameBoot"
+	DestroyFunction="destroyGameBoot"
+	/>
+

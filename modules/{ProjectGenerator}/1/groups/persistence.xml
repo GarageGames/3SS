@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Group>
+  <EngineSourceDirectory name="persistence">
+	<EngineSourceDirectory name="taml" includeChildren="1"/>
+	<EngineSourceDirectory name="tinyXML" includeChildren="1"/>
+  </EngineSourceDirectory>
+</Group>

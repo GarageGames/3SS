@@ -1,0 +1,174 @@
+//-----------------------------------------------------------------------------
+// Torque
+// Copyright GarageGames, LLC 2011
+//-----------------------------------------------------------------------------
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(TGBInsiderDlg) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "640 480";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiWindowCtrl() {
+      canSaveDynamicFields = "0";
+         isContainer = "1";
+      Profile = "EditorWindowProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      Position = "18 4";
+      Extent = "604 472";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "3 Step Studio Credits";
+      maxLength = "1024";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      closeCommand = "TGBInsiderDlg.closeDialog();";
+
+      new GuiIconButtonCtrl() {
+         canSaveDynamicFields = "0";
+               isContainer = "0";
+         Profile = "EditorButtonMiddle";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "238 430";
+         Extent = "128 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "TGBInsiderDlg.closeDialog();";
+         hovertime = "1000";
+         text = "Close";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         buttonMargin = "4 4";
+         iconLocation = "None";
+         sizeIconToButton = "0";
+         textLocation = "Center";
+         textMargin = "4";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+               isContainer = "1";
+         Profile = "EditorPanelLight";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "8 28";
+         Extent = "588 390";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+
+         new GuiTabBookCtrl() {
+            canSaveDynamicFields = "0";
+            internalName = "insiderTabBook";
+                     isContainer = "1";
+            Profile = "EditorTabBook";
+            HorizSizing = "width";
+            VertSizing = "height";
+            Position = "4 4";
+            Extent = "580 380";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            TabPosition = "Top";
+            TabHeight = "24";
+            TabMargin = "7";
+            MinTabWidth = "128";
+
+            new GuiTabPageCtrl() {
+               canSaveDynamicFields = "0";
+                           isContainer = "1";
+               Profile = "GuiTabPageProfile";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               Position = "0 24";
+               Extent = "580 356";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               tooltipprofile = "GuiDefaultProfile";
+               hovertime = "1000";
+               text = "About";
+               maxLength = "1024";
+
+               new GuiBitmapCtrl() {
+                  canSaveDynamicFields = "0";
+                                 isContainer = "0";
+                  Profile = "GuiTransparentProfile";
+                  HorizSizing = "right";
+                  VertSizing = "bottom";
+                  Position = "1 0";
+                  Extent = "560 351";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  tooltipprofile = "GuiDefaultProfile";
+                  hovertime = "1000";
+                  bitmap = "^{3SSBoot}/gui/images/3StepStudioCredits.png";
+                  wrap = "0";
+                  useSourceRect = "0";
+                  sourceRect = "0 0 0 0";
+
+                  new GuiAutoScrollCtrl() {
+                     canSaveDynamicFields = "0";
+                                       isContainer = "1";
+                     Profile = "GuiTransparentProfile";
+                     HorizSizing = "right";
+                     VertSizing = "bottom";
+                     Position = "272 10";
+                     Extent = "288 330";
+                     MinExtent = "8 2";
+                     canSave = "1";
+                     Visible = "1";
+                     hovertime = "1000";
+                     startDelay = "3";
+                     resetDelay = "2";
+                     childBorder = "10";
+                     scrollSpeed = "26";
+                     tickCallback = "0";
+
+                     new GuiMLTextCtrl(CreditsMLText) {
+                        canSaveDynamicFields = "0";
+                        internalName = "CreditsMLText";
+                                             isContainer = "0";
+                        Profile = "GuiMLTextProfile";
+                        HorizSizing = "right";
+                        VertSizing = "bottom";
+                        Position = "10 10";
+                        Extent = "268 4259";
+                        MinExtent = "8 2";
+                        canSave = "1";
+                        Visible = "1";
+                        hovertime = "1000";
+                        lineSpacing = "2";
+                        allowColorChars = "0";
+                        maxChars = "-1";
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+};
+//--- OBJECT WRITE END ---
+

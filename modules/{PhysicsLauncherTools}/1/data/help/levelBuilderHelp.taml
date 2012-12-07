@@ -1,0 +1,30 @@
+<SimSet
+    Name="LevelBuilderHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Using different Gravity Strength or Direction can add to the fun and challenge of a Level." />
+    <ScriptObject
+        Name="Tip1"
+        Text="Your Foreground, Sky and Background images have no effect on the Level score or play, they are only images and not objects." />
+    <ScriptObject
+        Name="Tip2"
+        Text="The default Parallax speed is Camera which means the image will move at the same speed as the Camera when the Projectile is followed." />
+    <ScriptObject
+        Name="Tip3"
+        Text="Negative X Parallax speeds will cause your Foreground, Background or Sky images to move slower than the Camera and therefore appear to be further away." />
+    <ScriptObject
+        Name="Tip4"
+        Text="Positive X Parallax speeds will cause your Foreground, Background or Sky images to move faster than the Camera and therefore appear to be closer." />
+    <ScriptObject
+        Name="Tip5"
+        Text="Try combining a different Level Size and Gravity direction to create an entirely new Level experience." />
+    <ScriptObject
+        Name="Tip6"
+        Text="Be sure to use the Preview Physics option a lot to make sure your Objects won’t fall or float away when a Player opens your Level." />
+    <ScriptObject
+        Name="Tip7"
+        Text="Place Objects to guard the Win Condition Objects to increase the difficulty and challenge of your Level." />
+    <ScriptObject
+        Name="Tip8"
+        Text="Use Indestructible Objects to force your Players to use their Projectiles differently to defeat your Level." />
+</SimSet>

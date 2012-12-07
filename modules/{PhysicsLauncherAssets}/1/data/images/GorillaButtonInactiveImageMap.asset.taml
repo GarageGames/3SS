@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="GorillaButtonInactiveImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#ProjectileBtnInactive" />

@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{EditorBoot}"
+	VersionId="1"
+	Description="Editor Boot"
+	Group=""
+	Dependencies=""
+	ScriptFile="main.cs"
+	CreateFunction="initializeEditorBoot"
+	DestroyFunction="destroyEditorBoot"
+	/>
+

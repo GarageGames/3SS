@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="SmallImageIconImage"
+    AssetInternal="1"
+    ImageFile="@assetFile=#SmallImageIcon.png" />

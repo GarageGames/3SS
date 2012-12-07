@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location		
+			Path="^{GameCore}/data/images"
+			Extension="asset.taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

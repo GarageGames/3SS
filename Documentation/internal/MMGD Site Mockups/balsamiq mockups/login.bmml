@@ -1,0 +1,98 @@
+<mockup version="1.0" skin="sketch" measuredW="1459" measuredH="1223" mockupW="1400" mockupH="1200">
+  <controls>
+    <control controlID="59" controlTypeID="__group__" x="59" y="23" w="1400" h="1200" measuredW="1400" measuredH="1200" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="1400" measuredH="1200" zOrder="0" locked="false" isInGroup="59">
+          <controlProperties>
+            <src>./assets/mmgd_website_concept_v007_homepage.jpg</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="1400" h="1200" measuredW="128" measuredH="128" zOrder="1" locked="false" isInGroup="59">
+          <controlProperties>
+            <src>./assets/dimmedScreen.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="__group__" x="464" y="254" w="441" h="268" measuredW="441" measuredH="268" zOrder="2" locked="false" isInGroup="59">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="6" w="435" h="262" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="11">
+              <controlProperties>
+                <borderStyle>roundedSolid</borderStyle>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="77" y="12" w="280" h="-1" measuredW="263" measuredH="50" zOrder="1" locked="false" isInGroup="11">
+              <controlProperties>
+                <text>Bonsai%20Gaming</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="86" y="56" w="216" h="51" measuredW="362" measuredH="21" zOrder="2" locked="false" isInGroup="11">
+              <controlProperties>
+                <text>A%20place%20for%20designers%20to%20collaborate%20and%20build%20games%20together.</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="0" y="12" w="91" h="81" measuredW="280" measuredH="250" zOrder="3" locked="false" isInGroup="11">
+              <controlProperties>
+                <src>./assets/treegamesLogo.png</src>
+                <text/>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="__group__" x="417" y="0" w="24" h="24" measuredW="24" measuredH="24" zOrder="4" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="24" h="24" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <borderStyle>roundedSolid</borderStyle>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="0" y="0" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="1" locked="false" isInGroup="4">
+                  <controlProperties>
+                    <borderStyle>none</borderStyle>
+                    <icon>CircledXIcon%7Csmall</icon>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="167" y="215" w="117" h="27" measuredW="53" measuredH="27" zOrder="5" locked="false" isInGroup="11">
+              <controlProperties>
+                <text>Login</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="__group__" x="39" y="149" w="357" h="58" measuredW="357" measuredH="58" zOrder="6" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="117" y="0" w="240" h="-1" measuredW="158" measuredH="27" zOrder="0" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <text>jonw@garagegames.com</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="117" y="31" w="240" h="-1" measuredW="98" measuredH="27" zOrder="1" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <text>**************</text>
+                  </controlProperties>
+                </control>
+                <control controlID="2" controlTypeID="com.balsamiq.mockups::Paragraph" x="0" y="4" w="117" h="54" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="6">
+                  <controlProperties>
+                    <text>Email%0A%20%0APassword</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="7" controlTypeID="__group__" x="139" y="103" w="152" h="38" measuredW="152" measuredH="38" zOrder="7" locked="false" isInGroup="11">
+              <groupChildrenDescriptors>
+                <control controlID="0" controlTypeID="com.balsamiq.mockups::Link" x="0" y="17" w="-1" h="-1" measuredW="152" measuredH="21" zOrder="0" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <text>Click%20here%20to%20create%20one%21</text>
+                  </controlProperties>
+                </control>
+                <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="7" y="0" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="1" locked="false" isInGroup="7">
+                  <controlProperties>
+                    <text>Don%27t%20have%20an%20account%3F</text>
+                  </controlProperties>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

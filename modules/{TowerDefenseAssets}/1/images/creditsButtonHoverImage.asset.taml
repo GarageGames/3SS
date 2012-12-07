@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="creditsButtonHoverImage"
+    imageFile="@assetFile=#creditsButtonHover.png"
+	AssetCategory="gui" />

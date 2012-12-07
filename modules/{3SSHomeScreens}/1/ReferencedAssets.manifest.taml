@@ -1,0 +1,7 @@
+<AssetManifest>
+	<AssetManifest.Search>
+		<Location
+			Path="^3SSHomeScreens/gui"
+			Extension="taml"/>
+	</AssetManifest.Search>
+</AssetManifest>

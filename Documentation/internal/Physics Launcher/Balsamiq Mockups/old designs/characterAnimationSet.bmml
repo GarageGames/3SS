@@ -1,0 +1,604 @@
+<mockup version="1.0" skin="sketch" measuredW="1314" measuredH="838" mockupW="1238" mockupH="812">
+  <controls>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Canvas" x="76" y="26" w="400" h="400" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Icon" x="85" y="56" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::HRule" x="76" y="73" w="398" h="-1" measuredW="100" measuredH="5" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::HelpButton" x="450" y="55" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Image" x="188" y="160" w="175" h="175" measuredW="128" measuredH="128" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/IDLE.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="308" y="343" w="55" h="27" measuredW="61" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::TextInput" x="188" y="342" w="120" h="-1" measuredW="105" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>waitingAnimation</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Image" x="188" y="345" w="118" h="22" measuredW="128" measuredH="128" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::TabBar" x="78" y="115" w="396" h="36" measuredW="469" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Canvas" x="173" y="151" w="205" h="227" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="__group__" x="146" y="79" w="244" h="27" measuredW="244" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="30">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="30">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="30">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::HRule" x="76" y="49" w="398" h="-1" measuredW="100" measuredH="5" zOrder="12" locked="false" isInGroup="-1"/>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Icon" x="452" y="32" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Label" x="230" y="29" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Canvas" x="78" y="140" w="396" h="70" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Icon" x="312" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Icon" x="334" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::MultilineButton" x="390" y="378" w="78" h="40" measuredW="70" measuredH="55" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::Canvas" x="495" y="26" w="400" h="400" measuredW="100" measuredH="70" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::TabBar" x="497" y="115" w="396" h="36" measuredW="469" measuredH="100" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Canvas" x="497" y="140" w="396" h="70" measuredW="100" measuredH="70" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Canvas" x="592" y="151" w="205" h="227" measuredW="100" measuredH="70" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Icon" x="504" y="56" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::HRule" x="495" y="73" w="398" h="-1" measuredW="100" measuredH="5" zOrder="23" locked="false" isInGroup="-1"/>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::HelpButton" x="869" y="55" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="24" locked="false" isInGroup="-1"/>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::Image" x="607" y="160" w="175" h="175" measuredW="400" measuredH="400" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/AngryRedBird.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::Button" x="727" y="343" w="55" h="27" measuredW="61" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::TextInput" x="607" y="342" w="120" h="-1" measuredW="90" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>redBirdAngry</text>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::Image" x="607" y="345" w="118" h="22" measuredW="128" measuredH="128" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="__group__" x="565" y="79" w="244" h="27" measuredW="244" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="137">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="137">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="137">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::HRule" x="495" y="49" w="398" h="-1" measuredW="100" measuredH="5" zOrder="30" locked="false" isInGroup="-1"/>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Icon" x="871" y="32" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Label" x="649" y="29" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="141" controlTypeID="com.balsamiq.mockups::Icon" x="731" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="142" controlTypeID="com.balsamiq.mockups::Icon" x="753" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="143" controlTypeID="com.balsamiq.mockups::MultilineButton" x="809" y="378" w="78" h="40" measuredW="70" measuredH="55" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="144" controlTypeID="com.balsamiq.mockups::Canvas" x="914" y="26" w="400" h="400" measuredW="100" measuredH="70" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="145" controlTypeID="com.balsamiq.mockups::TabBar" x="916" y="115" w="396" h="36" measuredW="469" measuredH="100" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="146" controlTypeID="com.balsamiq.mockups::Canvas" x="916" y="140" w="396" h="70" measuredW="100" measuredH="70" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="147" controlTypeID="com.balsamiq.mockups::Canvas" x="1011" y="151" w="205" h="227" measuredW="100" measuredH="70" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="148" controlTypeID="com.balsamiq.mockups::Icon" x="923" y="56" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="149" controlTypeID="com.balsamiq.mockups::HRule" x="914" y="73" w="398" h="-1" measuredW="100" measuredH="5" zOrder="41" locked="false" isInGroup="-1"/>
+    <control controlID="150" controlTypeID="com.balsamiq.mockups::HelpButton" x="1288" y="55" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="42" locked="false" isInGroup="-1"/>
+    <control controlID="151" controlTypeID="com.balsamiq.mockups::Image" x="1026" y="160" w="175" h="175" measuredW="128" measuredH="128" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/damaged.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="152" controlTypeID="com.balsamiq.mockups::Button" x="1146" y="343" w="55" h="27" measuredW="61" measuredH="27" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="153" controlTypeID="com.balsamiq.mockups::TextInput" x="1026" y="342" w="120" h="-1" measuredW="114" measuredH="27" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>damagedRedBird</text>
+      </controlProperties>
+    </control>
+    <control controlID="154" controlTypeID="com.balsamiq.mockups::Image" x="1026" y="345" w="118" h="22" measuredW="128" measuredH="128" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="155" controlTypeID="__group__" x="984" y="79" w="244" h="27" measuredW="244" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="155">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="155">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="155">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="156" controlTypeID="com.balsamiq.mockups::HRule" x="914" y="49" w="398" h="-1" measuredW="100" measuredH="5" zOrder="48" locked="false" isInGroup="-1"/>
+    <control controlID="157" controlTypeID="com.balsamiq.mockups::Icon" x="1290" y="32" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="158" controlTypeID="com.balsamiq.mockups::Label" x="1068" y="29" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::Icon" x="1150" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::Icon" x="1172" y="309" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::MultilineButton" x="1228" y="378" w="78" h="40" measuredW="70" measuredH="55" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::Canvas" x="76" y="438" w="400" h="400" measuredW="100" measuredH="70" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::TabBar" x="78" y="527" w="396" h="36" measuredW="469" measuredH="100" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="164" controlTypeID="com.balsamiq.mockups::Canvas" x="78" y="552" w="396" h="70" measuredW="100" measuredH="70" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::Canvas" x="173" y="563" w="205" h="227" measuredW="100" measuredH="70" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Icon" x="85" y="468" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::HRule" x="76" y="485" w="398" h="-1" measuredW="100" measuredH="5" zOrder="59" locked="false" isInGroup="-1"/>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::HelpButton" x="450" y="467" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="60" locked="false" isInGroup="-1"/>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::Image" x="188" y="572" w="175" h="175" measuredW="17" measuredH="17" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/poof.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::Button" x="308" y="755" w="55" h="27" measuredW="61" measuredH="27" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="171" controlTypeID="com.balsamiq.mockups::TextInput" x="188" y="754" w="120" h="-1" measuredW="40" measuredH="27" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>poof</text>
+      </controlProperties>
+    </control>
+    <control controlID="172" controlTypeID="com.balsamiq.mockups::Image" x="188" y="757" w="118" h="22" measuredW="128" measuredH="128" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="173" controlTypeID="__group__" x="146" y="491" w="244" h="27" measuredW="244" measuredH="27" zOrder="65" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="173">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="173">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="173">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="174" controlTypeID="com.balsamiq.mockups::HRule" x="76" y="461" w="398" h="-1" measuredW="100" measuredH="5" zOrder="66" locked="false" isInGroup="-1"/>
+    <control controlID="175" controlTypeID="com.balsamiq.mockups::Icon" x="452" y="444" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="176" controlTypeID="com.balsamiq.mockups::Label" x="230" y="441" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="177" controlTypeID="com.balsamiq.mockups::Icon" x="312" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="178" controlTypeID="com.balsamiq.mockups::Icon" x="334" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="179" controlTypeID="com.balsamiq.mockups::MultilineButton" x="390" y="790" w="78" h="40" measuredW="70" measuredH="55" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="180" controlTypeID="com.balsamiq.mockups::Canvas" x="495" y="438" w="400" h="400" measuredW="100" measuredH="70" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="181" controlTypeID="com.balsamiq.mockups::TabBar" x="497" y="527" w="396" h="36" measuredW="469" measuredH="100" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="182" controlTypeID="com.balsamiq.mockups::Canvas" x="497" y="552" w="396" h="70" measuredW="100" measuredH="70" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="183" controlTypeID="com.balsamiq.mockups::Canvas" x="592" y="563" w="205" h="227" measuredW="100" measuredH="70" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="184" controlTypeID="com.balsamiq.mockups::Icon" x="504" y="468" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="185" controlTypeID="com.balsamiq.mockups::HRule" x="495" y="485" w="398" h="-1" measuredW="100" measuredH="5" zOrder="77" locked="false" isInGroup="-1"/>
+    <control controlID="186" controlTypeID="com.balsamiq.mockups::HelpButton" x="869" y="467" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="78" locked="false" isInGroup="-1"/>
+    <control controlID="187" controlTypeID="com.balsamiq.mockups::Image" x="607" y="572" w="175" h="175" measuredW="400" measuredH="400" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/AngryRedBird.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="188" controlTypeID="com.balsamiq.mockups::Button" x="727" y="755" w="55" h="27" measuredW="61" measuredH="27" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="189" controlTypeID="com.balsamiq.mockups::TextInput" x="607" y="754" w="120" h="-1" measuredW="90" measuredH="27" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>redBirdAngry</text>
+      </controlProperties>
+    </control>
+    <control controlID="190" controlTypeID="com.balsamiq.mockups::Image" x="607" y="757" w="118" h="22" measuredW="128" measuredH="128" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="191" controlTypeID="__group__" x="565" y="491" w="244" h="27" measuredW="244" measuredH="27" zOrder="83" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="191">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="191">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="191">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="192" controlTypeID="com.balsamiq.mockups::HRule" x="495" y="461" w="398" h="-1" measuredW="100" measuredH="5" zOrder="84" locked="false" isInGroup="-1"/>
+    <control controlID="193" controlTypeID="com.balsamiq.mockups::Icon" x="871" y="444" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="194" controlTypeID="com.balsamiq.mockups::Label" x="649" y="441" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="195" controlTypeID="com.balsamiq.mockups::Icon" x="731" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="196" controlTypeID="com.balsamiq.mockups::Icon" x="753" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="197" controlTypeID="com.balsamiq.mockups::MultilineButton" x="809" y="790" w="78" h="40" measuredW="70" measuredH="55" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::Canvas" x="914" y="438" w="400" h="400" measuredW="100" measuredH="70" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="199" controlTypeID="com.balsamiq.mockups::TabBar" x="916" y="527" w="396" h="36" measuredW="469" measuredH="100" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>5</selectedIndex>
+        <tabHPosition>center</tabHPosition>
+        <text>Idle%2C%20In-Air%2C%20Damaged%2C%20Disappear%2C%20Special%20Effect%2C%20In-Air%20Trail</text>
+      </controlProperties>
+    </control>
+    <control controlID="200" controlTypeID="com.balsamiq.mockups::Canvas" x="916" y="552" w="396" h="70" measuredW="100" measuredH="70" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="201" controlTypeID="com.balsamiq.mockups::Canvas" x="1011" y="563" w="205" h="227" measuredW="100" measuredH="70" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="202" controlTypeID="com.balsamiq.mockups::Icon" x="923" y="468" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>SaveIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="203" controlTypeID="com.balsamiq.mockups::HRule" x="914" y="485" w="398" h="-1" measuredW="100" measuredH="5" zOrder="95" locked="false" isInGroup="-1"/>
+    <control controlID="204" controlTypeID="com.balsamiq.mockups::HelpButton" x="1288" y="467" w="-1" h="-1" measuredW="18" measuredH="18" zOrder="96" locked="false" isInGroup="-1"/>
+    <control controlID="205" controlTypeID="com.balsamiq.mockups::Image" x="1037" y="593" w="154" h="154" measuredW="17" measuredH="17" zOrder="97" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>./assets/poof.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="206" controlTypeID="com.balsamiq.mockups::Button" x="1146" y="755" w="55" h="27" measuredW="61" measuredH="27" zOrder="98" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select</text>
+      </controlProperties>
+    </control>
+    <control controlID="207" controlTypeID="com.balsamiq.mockups::TextInput" x="1026" y="754" w="120" h="-1" measuredW="73" measuredH="27" zOrder="99" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>smallCloud</text>
+      </controlProperties>
+    </control>
+    <control controlID="208" controlTypeID="com.balsamiq.mockups::Image" x="1026" y="757" w="118" h="22" measuredW="128" measuredH="128" zOrder="100" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../Tower%2520Defense/Balsamiq%2520Mockups/assets/greyedOut.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="209" controlTypeID="__group__" x="984" y="491" w="244" h="27" measuredW="244" measuredH="27" zOrder="101" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TextInput" x="51" y="0" w="193" h="-1" measuredW="119" measuredH="27" zOrder="0" locked="false" isInGroup="209">
+          <controlProperties>
+            <text>redBird_anim_set</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Icon" x="222" y="5" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="1" locked="false" isInGroup="209">
+          <controlProperties>
+            <icon>CircledXIcon%7Cxsmall</icon>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RadioButtonGroup" x="0" y="2" w="-1" h="-1" measuredW="39" measuredH="21" zOrder="2" locked="false" isInGroup="209">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="210" controlTypeID="com.balsamiq.mockups::HRule" x="914" y="461" w="398" h="-1" measuredW="100" measuredH="5" zOrder="102" locked="false" isInGroup="-1"/>
+    <control controlID="211" controlTypeID="com.balsamiq.mockups::Icon" x="1290" y="444" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="103" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CircledXIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="212" controlTypeID="com.balsamiq.mockups::Label" x="1068" y="441" w="-1" h="-1" measuredW="92" measuredH="21" zOrder="104" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Character%20Tool</text>
+      </controlProperties>
+    </control>
+    <control controlID="213" controlTypeID="com.balsamiq.mockups::Icon" x="1140" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="105" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>SearchIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="214" controlTypeID="com.balsamiq.mockups::Icon" x="1162" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="106" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <icon>PauseIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="215" controlTypeID="com.balsamiq.mockups::MultilineButton" x="1228" y="790" w="78" h="40" measuredW="70" measuredH="55" zOrder="107" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Done</text>
+      </controlProperties>
+    </control>
+    <control controlID="216" controlTypeID="com.balsamiq.mockups::CheckBox" x="1037" y="568" w="-1" h="-1" measuredW="65" measuredH="22" zOrder="108" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Enable</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

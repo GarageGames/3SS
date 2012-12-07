@@ -1,0 +1,22 @@
+<ModuleDefinition
+	Enabled="0"
+	ModuleId="{TowerDefense}"
+	VersionId="1"
+	Description="Tower Defense"
+	Purchased="1"
+	Synchronized="1"
+	Group=""
+	Dependencies="{GameCore}=1,{GameBoot}=1,{TowerDefenseAssets}=1,{UserAssets}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeTowerDefense"
+	DestroyFunction="destroyTowerDefense"
+	Type="Template"
+	Genre="Strategy"
+    BaseGui="TowerDefenseTemplate"
+    StartLevel="data/levels/startLevel.t2d"
+    Icon="TowerDefenseIcon"
+	Creator="GarageGames"
+	ReferencedAssetManifest="^TowerDefenseTemplate/ReferencedAssets.Manifest.taml"
+	AssetTagsManifest="^TowerDefenseTemplate/Tags.manifest.taml"
+	/>
+

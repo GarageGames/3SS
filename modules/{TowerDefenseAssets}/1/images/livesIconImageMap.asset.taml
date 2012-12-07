@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="livesIconImageMap"
+    imageFile="@assetFile=#livesIcon.png"
+    AssetCategory="gui" />

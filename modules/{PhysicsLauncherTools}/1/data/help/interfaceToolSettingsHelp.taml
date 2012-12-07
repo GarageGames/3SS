@@ -1,0 +1,15 @@
+<SimSet
+    Name="InterfaceToolSettingsHelp">
+    <ScriptObject
+        Name="Tip0"
+        Text="Background music and sound effects add a great deal to games. Be sure to spend some time to add sound files to your game." />
+    <ScriptObject
+        Name="Tip1"
+        Text="You will want to edit the volume of your sound files in a separate audio file editor before putting them into your game.  Be sure to test the audio files in your games to see if they are loud enough." />
+    <ScriptObject
+        Name="Tip2"
+        Text="If you don’t want background music or a sound effect for a specific area of your game the best option is to create a silent audio file to place in that area. That is a better option than leaving the area blank with no file." />
+    <ScriptObject
+        Name="Tip3"
+        Text="You can preview your audio files in the editor but it is always a good idea to test the files in game and on different machines to see how they sound." />
+</SimSet>

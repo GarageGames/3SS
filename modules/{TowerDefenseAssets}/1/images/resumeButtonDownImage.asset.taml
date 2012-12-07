@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="resumeButtonDownImage"
+    AssetCategory="gui"
+    imageFile="@assetFile=#resumeButtonDown.png" />

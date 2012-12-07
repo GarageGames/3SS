@@ -1,0 +1,79 @@
+<mockup version="1.0" skin="sketch" measuredW="700" measuredH="157" mockupW="639" mockupH="126">
+  <controls>
+    <control controlID="5" controlTypeID="__group__" x="61" y="32" w="300" h="125" measuredW="300" measuredH="125" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="300" h="125" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <text>New%20Tag</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="14" y="45" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Tag%20Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextArea" x="82" y="40" w="200" h="33" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>discord</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="95" y="79" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="3" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="157" y="80" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="4" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="400" y="31" w="300" h="125" measuredW="300" measuredH="125" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="300" h="125" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <bottomheight>0</bottomheight>
+            <text>New%20Tag</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="14" y="45" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="3" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Tag%20Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextArea" x="82" y="40" w="200" h="33" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>discord</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::CallOut" x="57" y="33" w="-1" h="-1" measuredW="37" measuredH="40" zOrder="5" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>1</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::CallOut" x="62" y="80" w="-1" h="-1" measuredW="39" measuredH="37" zOrder="6" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>2</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::CallOut" x="139" y="80" w="-1" h="-1" measuredW="38" measuredH="39" zOrder="7" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>3</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="95" y="79" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Save</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="157" y="80" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

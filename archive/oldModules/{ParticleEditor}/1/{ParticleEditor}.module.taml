@@ -1,0 +1,11 @@
+<ModuleDefinition
+	ModuleId="{ParticleEditor}"
+	VersionId="1"
+	Description="Particle Editor"
+	Group="advancedTools"
+	Dependencies="{EditorCore}=1"
+	ScriptFile="main.cs"
+	CreateFunction="initializeParticleEditor"
+	DestroyFunction="destroyParticleEditor"
+	/>
+
