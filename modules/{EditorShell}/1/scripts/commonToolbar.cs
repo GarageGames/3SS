@@ -43,7 +43,6 @@ function Ct_PublishButton::onClick(%this)
 function Ct_ExitButton::onClick(%this)
 {
     Projects::GetEventManager().schedule(0, postEvent, "_ProjectClose");
-    ModuleDatabase.unloadGroup(projectTools);
     ResetCommonToolButtons();
     %this.setStateOn(true);
     Hs_HomeButton.onClick();

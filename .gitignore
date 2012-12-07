@@ -44,3 +44,11 @@ Thumbs.db
 *.edso
 \Link
 *.ilk
+moc_QtCookieJar.cc
+moc_QtFileDownloader.cc
+moc_QtHttpRequestHandler.cc
+moc_QtNetworkManager.cc
+moc_WebRender.cc
+3StepStudio.torsion.exports
+3StepStudio.torsion.opt
+\_ReSharper.*
