@@ -1,0 +1,35 @@
+# Dev Files #
+###################
+*.xcworkspace
+*.xcuserdatad
+/tmp/*
+*.user
+*.sdf
+*.suo
+*.dir
+*.opensdf
+*.idea
+
+# Compiled source #
+###################
+*.com
+*.class
+*.exe
+*.o
+*.so
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
