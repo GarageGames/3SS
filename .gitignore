@@ -36,4 +36,4 @@ Thumbs.db
 
 # Compiled Script    #
 ######################
-.dso
+*.dso
