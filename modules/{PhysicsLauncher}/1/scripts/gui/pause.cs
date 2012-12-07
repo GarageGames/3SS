@@ -75,13 +75,13 @@ function pauseResumeButton::onClick(%this)
 /// </summary>
 function pauseSoundButton::onClick(%this)
 {
-    %bitmap = strreplace(pauseSoundButton.NormalImage, "On", "");
-    if (%bitmap !$= pauseSoundButton.NormalImage)
+    if ($soundOn == true || $soundOn $= "")
     {
-        for (%channel = 1; %channel <= 3; %channel++)
+        $soundOn = false;
+        for (%channel = 0; %channel < 32; %channel++)
         {
-            alxSetChannelVolume(%channel, 0);
-            $pref::Audio::channelVolume[%channel] = 0;
+            alxSetChannelVolume(%channel, 0.0);
+            $pref::Audio::channelVolume[%channel] = 0.0;
         }
         pauseSoundButton.setNormalImage(pauseGui.soundBtnOff);
         pauseSoundButton.setHoverImage(pauseGui.soundBtnOff);
@@ -91,9 +91,10 @@ function pauseSoundButton::onClick(%this)
     }
     else
     {
-        for (%channel = 1; %channel <= 3; %channel++)
+        $soundOn = true;
+        for (%channel = 0; %channel < 32; %channel++)
         {
-            alxSetChannelVolume(%channel, 1);
+            alxSetChannelVolume(%channel, 1.0);
             $pref::Audio::channelVolume[%channel] = 1;
         }
         pauseSoundButton.setNormalImage(pauseGui.soundBtnOn);

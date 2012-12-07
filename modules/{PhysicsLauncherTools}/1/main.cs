@@ -10,7 +10,6 @@ function initializePhysicsLauncherTools()
 {
     // Load Asset Tools Group
     ModuleDatabase.loadGroup(assetTools);
-    
     //-----------------------------------------------------------------------------
     // Load profiles
     //-----------------------------------------------------------------------------
@@ -85,7 +84,8 @@ function initializePhysicsLauncherTools()
     $CurrentTemplatePackage = "PhysicsLauncherPackage";
 
     activatePackage($CurrentTemplatePackage);
-    
+    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/worldList.taml";
+
     // Open World Tool on start-up
     Tt_WorldToolButton.setStateOn(true);
     Tt_WorldToolButton.onClick();

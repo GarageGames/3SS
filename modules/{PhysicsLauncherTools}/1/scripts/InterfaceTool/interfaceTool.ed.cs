@@ -311,7 +311,7 @@ function InterfaceTool::initLevelSelectTab(%this)
     for(%i = 1; %i < %this.worldData.getCount(); %i++)
     {
         %obj = %this.worldData.getObject(%i);
-        It_LevelListWorldSelectDropdown.add(%obj.WorldName, %i);
+        It_LevelListWorldSelectDropdown.add(%obj.getInternalName(), %i);
         %this.levelTabSelectedWorld = %obj;
     }
     It_LevelListWorldSelectDropdown.setFirstSelected();
@@ -708,8 +708,8 @@ function InterfaceTool::initPauseTab(%this)
     initializeButtonStateDropdown(It_PauseHelpBtnStateDropdown);
 
     It_PauseSoundBtnStateDropdown.clear();
-    It_PauseSoundBtnStateDropdown.add("Off", 0);
-    It_PauseSoundBtnStateDropdown.add("On", 1);
+    It_PauseSoundBtnStateDropdown.add("On", 0);
+    It_PauseSoundBtnStateDropdown.add("Off", 1);
     It_PauseSoundBtnStateDropdown.setSelected(0);
 
     It_PauseBackgroundSelectEdit.stateControl = "pauseBackground";
@@ -791,15 +791,11 @@ function InterfaceTool::initPauseTab(%this)
     AssetDatabase.releaseAsset(It_PauseHelpBtnSelectEdit.stateAsset[0]);
     It_PauseHelpBtnSelectEdit.type = "gui";
 
-    It_PauseSoundBtnSelectEdit.stateControl = "pauseSoundButton";
-    It_PauseSoundBtnSelectEdit.stateAsset[0] = pauseSoundButton.NormalImage;
-    It_PauseSoundBtnSelectEdit.stateField[0] = "NormalImage";
-    It_PauseSoundBtnSelectEdit.stateAsset[1] = pauseSoundButton.HoverImage;
-    It_PauseSoundBtnSelectEdit.stateField[1] = "HoverImage";
-    It_PauseSoundBtnSelectEdit.stateAsset[2] = pauseSoundButton.DownImage;
-    It_PauseSoundBtnSelectEdit.stateField[2] = "DownImage";
-    It_PauseSoundBtnSelectEdit.stateAsset[3] = pauseSoundButton.InactiveImage;
-    It_PauseSoundBtnSelectEdit.stateField[3] = "InactiveImage";
+    It_PauseSoundBtnSelectEdit.stateControl = "pauseGui";
+    It_PauseSoundBtnSelectEdit.stateAsset[0] = pauseGui.soundBtnOn;
+    It_PauseSoundBtnSelectEdit.stateField[0] = "soundBtnOn";
+    It_PauseSoundBtnSelectEdit.stateAsset[1] = pauseGui.soundBtnOff;
+    It_PauseSoundBtnSelectEdit.stateField[1] = "soundBtnOff";
     It_PauseSoundBtnSelectEdit.assetSize = pauseSoundButton.extent;
     It_PauseSoundBtnSelectEdit.preview = "pauseSoundButtonPreview";
     It_PauseSoundBtnSelectEdit.preview.NormalImage = It_PauseSoundBtnSelectEdit.stateAsset[0];
@@ -1339,7 +1335,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Visible="1";
         Active="1";
         hovertime="1000";
-        text=%worldData.WorldName;
+        text=%worldData.getInternalName();
         maxLength="1024";
         truncate="1";
     };
@@ -1752,7 +1748,6 @@ function InterfaceTool::displayRewardImages(%this, %currentButton)
 
 function InterfaceTool::getWorldData(%this)
 {
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
     if (isFile($PhysicsLauncher::WorldListFile))
         %this.worldData = TamlRead($PhysicsLauncher::WorldListFile);
     else
@@ -1763,7 +1758,6 @@ function InterfaceTool::saveData(%this)
 {
     if ($InterfaceToolInitialized)
     {
-        $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
         if (isObject(%this.worldData))
         {
             TamlWrite(%this.worldData, "^PhysicsLauncherTemplate/managed/worldList.taml");
@@ -2033,11 +2027,11 @@ function It_WinLoseBackgroundStateDropdown::onSelect(%this)
             It_WinLoseReplayBtnSelectEdit.stateAsset[0] = loseRestartButton.NormalImage;
             It_WinLoseReplayBtnSelectEdit.stateField[0] = "NormalImage";
             It_WinLoseReplayBtnSelectEdit.stateAsset[1] = loseRestartButton.HoverImage;
-            It_WinLoseReplayBtnSelectEdit.stateField[0] = "HoverImage";
+            It_WinLoseReplayBtnSelectEdit.stateField[1] = "HoverImage";
             It_WinLoseReplayBtnSelectEdit.stateAsset[2] = loseRestartButton.DownImage;
-            It_WinLoseReplayBtnSelectEdit.stateField[0] = "DownImage";
+            It_WinLoseReplayBtnSelectEdit.stateField[2] = "DownImage";
             It_WinLoseReplayBtnSelectEdit.stateAsset[3] = loseRestartButton.InactiveImage;
-            It_WinLoseReplayBtnSelectEdit.stateField[0] = "InactiveImage";
+            It_WinLoseReplayBtnSelectEdit.stateField[3] = "InactiveImage";
             It_WinLoseReplayBtnSelectEdit.assetSize = loseRestartButton.extent;
             It_WinLoseReplayBtnSelectEdit.preview = loseRestartButtonPreview;
             %temp = AssetDatabase.acquireAsset(It_WinLoseReplayBtnSelectEdit.stateAsset[0]);
@@ -2049,11 +2043,11 @@ function It_WinLoseBackgroundStateDropdown::onSelect(%this)
             It_WinLoseLevelBtnSelectEdit.stateAsset[0] = loseLevelSelectButton.NormalImage;
             It_WinLoseLevelBtnSelectEdit.stateField[0] = "NormalImage";
             It_WinLoseLevelBtnSelectEdit.stateAsset[1] = loseLevelSelectButton.HoverImage;
-            It_WinLoseLevelBtnSelectEdit.stateField[0] = "HoverImage";
+            It_WinLoseLevelBtnSelectEdit.stateField[1] = "HoverImage";
             It_WinLoseLevelBtnSelectEdit.stateAsset[2] = loseLevelSelectButton.DownImage;
-            It_WinLoseLevelBtnSelectEdit.stateField[0] = "DownImage";
+            It_WinLoseLevelBtnSelectEdit.stateField[2] = "DownImage";
             It_WinLoseLevelBtnSelectEdit.stateAsset[3] = loseLevelSelectButton.InactiveImage;
-            It_WinLoseLevelBtnSelectEdit.stateField[0] = "InactiveImage";
+            It_WinLoseLevelBtnSelectEdit.stateField[3] = "InactiveImage";
             It_WinLoseLevelBtnSelectEdit.assetSize = loseLevelSelectButton.extent;
             It_WinLoseLevelBtnSelectEdit.preview = loseLevelSelectButtonPreview;
             %temp = AssetDatabase.acquireAsset(It_WinLoseLevelBtnSelectEdit.stateAsset[0]);

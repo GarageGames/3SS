@@ -83,12 +83,15 @@ function ProjectOptionsGui::showDeletePrompt(%this)
 function ProjectOptionsGui::deleteProject(%this)
 {
     %fileLocation = findProjectFileByName(%this.originalName);
+    %module = %this.project.sourceModule;
     
     if (%fileLocation !$= "")
     {
+        %localDataDirectory = getUserHomeDirectory() @ "/My Games/" @ $Game::CompanyName @ "/" @ %module @ "/" @ %this.originalName;
         %directory = filePath(%fileLocation);
         
         directoryDelete(%directory);
+        directoryDelete(%localDataDirectory);
         
         if (isObject(%this.invokingGui) && %this.invokingGui.isMethod("refresh"))
             %this.invokingGui.refresh();

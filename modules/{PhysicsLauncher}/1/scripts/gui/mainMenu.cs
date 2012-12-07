@@ -103,13 +103,13 @@ function menuCreditsButton::onClick(%this)
 /// </summary>
 function menuSoundButton::onClick(%this)
 {
-    %bitmap = strreplace(menuSoundButton.NormalImage, "On", "");
-    if (%bitmap !$= menuSoundButton.NormalImage)
+    if ($soundOn == true || $soundOn $= "")
     {
-        for (%channel = 1; %channel <= 3; %channel++)
+        $soundOn = false;
+        for (%channel = 0; %channel < 32; %channel++)
         {
-            alxSetChannelVolume(%channel, 0);
-            $pref::Audio::channelVolume[%channel] = 0;
+            alxSetChannelVolume(%channel, 0.0);
+            $pref::Audio::channelVolume[%channel] = 0.0;
         }
         menuSoundButton.setNormalImage(mainMenuGui.soundBtnOff);
         menuSoundButton.setHoverImage(mainMenuGui.soundBtnOff);
@@ -124,10 +124,11 @@ function menuSoundButton::onClick(%this)
     }
     else
     {
-        for (%channel = 1; %channel <= 3; %channel++)
+        $soundOn = true;
+        for (%channel = 0; %channel < 32; %channel++)
         {
-            alxSetChannelVolume(%channel, 1);
-            $pref::Audio::channelVolume[%channel] = 1;
+            alxSetChannelVolume(%channel, 1.0);
+            $pref::Audio::channelVolume[%channel] = 1.0;
         }
         menuSoundButton.setNormalImage(mainMenuGui.soundBtnOn);
         menuSoundButton.setHoverImage(mainMenuGui.soundBtnOn);

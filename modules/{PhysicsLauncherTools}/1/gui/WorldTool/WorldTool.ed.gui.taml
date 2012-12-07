@@ -491,7 +491,6 @@
                 maxPopupHeight="200"
                 sbUsesNAColor="0"
                 reverseTextList="0"
-                bitmap="^project//"
                 bitmapBounds="16 16" />
             <GuiTextCtrl
                 canSaveDynamicFields="0"

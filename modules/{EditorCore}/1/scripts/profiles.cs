@@ -883,14 +883,21 @@ if (!isObject(GuiPopupMenuItemBorder)) new GuiControlProfile (GuiPopupMenuItemBo
     fillColorHL = "251 170 0 255";
     borderColor = "51 51 53 200";
     borderColorHL = "51 51 53 200";
+
+    fontType = "Open Sans";
+    fontSize = 16;
+
+    fontColor = "27 59 95 255";
+    fontColorHL = "232 240 248 255";
+    fontColorNA = "0 0 0 52";
+    fontColorSEL= "10 10 10 255";
 };
 
 if (!isObject(GuiPopUpMenuDefault)) new GuiControlProfile (GuiPopUpMenuDefault)
 {
     tab = false;
     canKeyFocus = false;
-    hasBitmapArray = false;
-    mouseOverSelected = false;
+    hasBitmapArray = true;
 
     // fill color
     opaque = false;
@@ -915,8 +922,6 @@ if (!isObject(GuiPopUpMenuDefault)) new GuiControlProfile (GuiPopUpMenuDefault)
 
     // bitmap information
     bitmap = "^{EditorAssets}/data/images/dropDown";
-    bitmapBase = "";
-    textOffset = "0 0";
 
     // used by guiTextControl
     modal = true;
@@ -927,7 +932,7 @@ if (!isObject(GuiPopUpMenuDefault)) new GuiControlProfile (GuiPopUpMenuDefault)
     numbersOnly = false;
     cursorColor = "0 0 0 255";
 
-    profileForChildren = GuiPopupMenuItemBorder;
+    profileForChildren = "GuiPopupMenuItemBorder";
     // sounds
     soundButtonDown = "";
     soundButtonOver = "";
@@ -936,12 +941,15 @@ if (!isObject(GuiPopUpMenuDefault)) new GuiControlProfile (GuiPopUpMenuDefault)
 if (!isObject(GuiPopUpMenuProfile)) new GuiControlProfile (GuiPopUpMenuProfile : GuiPopUpMenuDefault)
 {
     textOffset = "6 3";
+    fontType = "Open Sans";
     justify = "center";
-    bitmap = "^{EditorAssets}/data/images/dropDown";
-    hasBitmapArray = true;
-    border = -3;
-    profileForChildren = GuiPopUpMenuDefault;
-    opaque = false;
+};
+
+if (!isObject(GuiPopUpMenuEmptyProfile)) new GuiControlProfile (GuiPopUpMenuEmptyProfile : GuiPopUpMenuDefault)
+{
+    textOffset = "6 3";
+    fontType = "Open Sans Italic";
+    justify = "center";
 };
 
 // ----------------------------------------------------------------------------

@@ -30,7 +30,6 @@ function WorldTool::onWake(%this)
 /// </summary>
 function WorldTool::getWorldData(%this)
 {
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
     if (isFile($PhysicsLauncher::WorldListFile))
         %this.currentWorldData = TamlRead($PhysicsLauncher::WorldListFile);
     else
@@ -119,11 +118,8 @@ function WorldTool::load(%this)
     $Wt_LauncherDropdownLoading = false;
 
     // prep the current world and level dataset, then display everything.
-    %this.getWorldData();
     %this.worldIndex = %worldIndex;
-    %this.getWorldLevels(%this.worldIndex);
     %this.refresh();
-    %this.WorldListContainer.setSelected(%this.worldIndex);
 
     // If the Unmapped Levels "world" is empty, select the next world.
     while ( %this.LevelListContainer.getCount() < 2 )
@@ -164,7 +160,6 @@ function WorldTool::saveData(%this)
     if ( $RefreshInProgress || !$Wt_ToolInitialized )
         return;
 
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
     if (isObject(%this.currentWorldData))
     {
         %worldCount = %this.currentWorldData.getCount();
@@ -338,7 +333,6 @@ function WorldTool::selectLevel(%this, %data)
     if (%levelName $= "")
         return;
 
-    %this.clearLevelData();
     %this.updateLevelData(%levelName);
     %this.SetSelectedLevelButton(%data);
 }
@@ -389,7 +383,6 @@ function WorldTool::clearLevelData(%this)
             %rewardDownBtn.setActive(false);
         }
     }
-    %this.refreshProjectilePane();
 
     // populate launcher drop down from prefab launcherSet
     Wt_LauncherDropdown.clear();
@@ -406,6 +399,8 @@ function WorldTool::clearLevelData(%this)
 
     Wt_LevelMusicEdit.setText("");
     Wt_LevelMusicEdit.setActive(false);
+
+    %this.refreshProjectilePane();
 }
 
 /// <summary>
@@ -445,75 +440,9 @@ function WorldTool::updateLevelData(%this, %level)
     %sceneCameraSize = MainScene.cameraSize;
     Wt_WorldBackgroundImagePreview.setCurrentCameraPosition(0, -2, %sceneCameraSize.x, %sceneCameraSize.y);
 
-    %firstEmpty = 0;
-    for (%i = 1; %i < 6; %i++)
-    {
-        %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
-        %projectileEdit = "Wt_Projectile" @ %i @ "CountEdit";
-        %rewardEdit = "Wt_Reward" @ %i @ "ValueEdit";
-        %rewardUpBtn = "Wt_Reward" @ %i @ "UpBtn";
-        %rewardDownBtn = "Wt_Reward" @ %i @ "DownBtn";
+    %this.populateProjectilePane();
+    %this.refreshProjectilePane();
 
-        %dropdown.clear();
-        %dropdown.add("Empty", 0);
-        for (%j = 0; %j < %this.projectileSet.getCount(); %j++)
-        {
-            %projectile = %this.projectileSet.getObject(%j);
-            if (%projectile !$= "")
-            {
-                %projectileName = %projectile.getInternalName();
-                %dropdown.add(%projectileName, %j + 1);
-            }
-        }
-        %currentProjectile = %this.loadedLevel.AvailProjectile[%i - 1];
-        %duplicate = false;
-        for(%k = 0; %k < 5; %k++)
-        {
-            if (%k == (%i - 1))
-                continue;
-            if (%this.loadedLevel.AvailProjectile[%k] $= %currentProjectile)
-                %duplicate = true;
-        }
-        if (%this.loadedLevel.AvailProjectile[%i - 1] !$= "")
-        {
-            if (!isObject(%this.loadedLevel.AvailProjectile[%i - 1]) || %duplicate)
-            {
-                if ( !%firstEmpty )
-                    %firstEmpty = %i;
-                %dropdown.firstEmpty = %firstEmpty;
-                %dropdown.setFirstSelected();
-                %this.loadedLevel.AvailProjectile[%i - 1] = "";
-                %this.loadedLevel.NumAvailable[%i - 1] = "0";
-                %projectileEdit.setText("");
-            }
-            else
-            {
-                %name = %this.loadedLevel.AvailProjectile[%i - 1].getInternalName();
-                %index = %dropdown.findText(%name);
-                %dropdown.setSelected(%index);
-                %projectileEdit.setText(%this.loadedLevel.NumAvailable[%i - 1]);
-            }
-        }
-        else
-        {
-            if ( !%firstEmpty )
-                %firstEmpty = %i;
-            %dropdown.firstEmpty = %firstEmpty;
-            %dropdown.setFirstSelected();
-            %this.loadedLevel.AvailProjectile[%i - 1] = "";
-            %this.loadedLevel.NumAvailable[%i - 1] = "0";
-            %projectileEdit.setText("");
-        }
-
-        %projectileEdit.setActive(true);
-        if (%i < 4)
-        {
-            %rewardEdit.setActive(true);
-            %rewardEdit.setText(%this.loadedLevel.RewardScore[%i - 1]);
-            %rewardUpBtn.setActive(true);
-            %rewardDownBtn.setActive(true);
-        }
-    }
     // get the scene launcher group
     Wt_LauncherDropdown.setActive(true);
     %this.launcherName = LauncherSceneGroup.getInternalName();
@@ -2895,6 +2824,106 @@ function WorldTool::CreateMidWorldHighlightButton(%this, %position, %worldName)
     %this.worldSelectBtnCtrl.addGuiControl(%base);
 }
 
+function WorldTool::populateProjectilePane(%this)
+{
+    if ( !isObject(%this.projectileSet) || !isObject(%this.loadedLevel) )
+        return;
+
+    for (%i = 1; %i < 6; %i++)
+    {
+        %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
+        %projectileEdit = "Wt_Projectile" @ %i @ "CountEdit";
+        %rewardEdit = "Wt_Reward" @ %i @ "ValueEdit";
+        %rewardUpBtn = "Wt_Reward" @ %i @ "UpBtn";
+        %rewardDownBtn = "Wt_Reward" @ %i @ "DownBtn";
+
+        %dropdown.initialize();
+        %currentProjectile = %this.loadedLevel.AvailProjectile[%i - 1];
+        %duplicate = false;
+        for(%k = 0; %k < 5; %k++)
+        {
+            if (%k == (%i - 1))
+                continue;
+            if (%this.loadedLevel.AvailProjectile[%k] $= %currentProjectile)
+                %duplicate = true;
+        }
+        if (%this.loadedLevel.AvailProjectile[%i - 1] !$= "")
+        {
+            if (!isObject(%this.loadedLevel.AvailProjectile[%i - 1]) || %duplicate)
+            {
+                %dropdown.setFirstSelected();
+                %this.loadedLevel.AvailProjectile[%i - 1] = "";
+                %this.loadedLevel.NumAvailable[%i - 1] = "0";
+                %projectileEdit.setText("");
+            }
+            else
+            {
+                %name = %this.loadedLevel.AvailProjectile[%i - 1].getInternalName();
+                %index = %dropdown.findText(%name);
+                %dropdown.setSelected(%index);
+                %projectileEdit.setText(%this.loadedLevel.NumAvailable[%i - 1]);
+            }
+        }
+        else
+        {
+            %dropdown.setFirstSelected();
+            %this.loadedLevel.AvailProjectile[%i - 1] = "";
+            %this.loadedLevel.NumAvailable[%i - 1] = "0";
+            %projectileEdit.setText("");
+        }
+
+        %projectileEdit.setActive(true);
+        if (%i < 4)
+        {
+            %rewardEdit.setActive(true);
+            %rewardEdit.setText(%this.loadedLevel.RewardScore[%i - 1]);
+            %rewardUpBtn.setActive(true);
+            %rewardDownBtn.setActive(true);
+        }
+    }
+}
+
+function WorldTool::refreshProjectilePane(%this)
+{
+    %firstEmpty = false;
+    for (%index = 1; %index < 6; %index++)
+    {
+        %dropdown = "Wt_Projectile" @ %index @ "Dropdown";
+        %edit = "Wt_Projectile" @ %index @ "CountEdit";
+        %pane = %dropdown.getParent();
+
+        %edit.setActive(true);
+        %projectileName = %dropdown.getText();
+        if (%projectileName $= "Empty")
+        {
+            %projectileName = "";
+            %edit.setText("");
+            if (!%firstEmpty)
+            {
+                // set projectile pane to firstEmpty state and set firstEmpty true
+                %firstEmpty = true;
+                Wt_SetProjectilePaneState(%pane, "firstEmpty");
+            }
+            else
+            {
+                Wt_SetProjectilePaneState(%pane, "empty");
+            }
+        }
+        else
+        {
+            Wt_SetProjectilePaneState(%pane, "normal");
+            if (%edit.getText() $= "")
+                %edit.setText("1");
+        }
+
+        %projectile = WorldTool.projectileSet.findObjectByInternalName(%projectileName);
+        if ( isObject( %projectile ) )
+        {
+            WorldTool.loadedLevel.AvailProjectile[%index - 1] = %projectile.getName();
+        }
+    }
+}
+
 //-----------------------------------------------------------------------------
 // World Tool text object callback handlers
 //-----------------------------------------------------------------------------
@@ -3171,75 +3200,39 @@ function Wt_LauncherDropdown::onSelect(%this)
 /// </summary>
 function Wt_ProjectileDropdown::onSelect(%this)
 {
-    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized)
+    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized || $RefreshInProgress)
         return;
-    if (%this.reentering)
+
+    for ( %i = 1; %i < 6; %i++ )
     {
-        %this.reentering = false;
-        return;
+        %dropdown = "Wt_Projectile" @ %index @ "Dropdown";
+        if ( %dropdown.getName() $= %this.getName() )
+            continue;
+        %selected = %this.getSelected();
+        if ( %selected == %dropdown.getSelected() && %selected > 0 )
+            %this.setSelected(0);
     }
 
-    if (!$RefreshInProgress)
-    {
-        %text = %this.getText();
-        %currentDropdown = %this.getName();
-        for (%i = 1; %i < 6; %i++)
-        {
-            %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
-            if (%dropdown $= %currentDropdown)
-                continue;
-            if (%dropdown.getText() $= %text)
-            {
-                %this.reentering = true;
-                %this.setSelected(0);
-            }
-        }
-    }
+    if ( %this.getSelected() > 1 )
+        %this.setProfile("GuiPopUpMenuProfile");
+    else
+        %this.setProfile("GuiPopUpMenuEmptyProfile");
+
     WorldTool.refreshProjectilePane();
 }
 
-function WorldTool::refreshProjectilePane(%this)
+function Wt_ProjectileDropdown::initialize(%this)
 {
-    %this.firstEmpty = false;
-    for (%index = 1; %index < 6; %index++)
+    %this.clear();
+    %this.setProfile("GuiPopUpMenuProfile");
+    %this.add("Empty", 0);
+    for (%j = 0; %j < WorldTool.projectileSet.getCount(); %j++)
     {
-        %dropdown = "Wt_Projectile" @ %index @ "Dropdown";
-        %edit = "Wt_Projectile" @ %index @ "CountEdit";
-        
-        %edit.setActive(true);
-        %projectileName = %dropdown.getText();
-        if (%projectileName $= "Empty")
+        %projectile = WorldTool.projectileSet.getObject(%j);
+        if (%projectile !$= "")
         {
-            %projectileName = "";
-            %edit.setText("");
-            if (!%this.firstEmpty)
-            {
-                %this.firstEmpty = true;
-                // set projectile pane to firstEmpty state and set firstEmpty true
-                %pane = %dropdown.getParent();
-                Wt_SetProjectilePaneState(%pane, "firstEmpty");
-                if (%this.lastLevelName $= "")
-                    %dropdown.setActive(false);
-            }
-            else
-            {
-                // set projectile pane to firstEmpty state and set firstEmpty true
-                %pane = %dropdown.getParent();
-                Wt_SetProjectilePaneState(%pane, "empty");
-            }
-        }
-        else
-        {
-            %pane = %dropdown.getParent();
-            Wt_SetProjectilePaneState(%pane, "normal");
-            if (%edit.getText() $= "")
-                %edit.setText("1");
-        }
-
-        %projectile = WorldTool.projectileSet.findObjectByInternalName(%projectileName);
-        if ( isObject( %projectile ) )
-        {
-            WorldTool.loadedLevel.AvailProjectile[%index - 1] = %projectile.getName();
+            %projectileName = %projectile.getInternalName();
+            %this.add(%projectileName, %j + 1);
         }
     }
 }
@@ -3442,6 +3435,11 @@ function Wt_SetProjectilePaneState(%pane, %state)
             {
                 %obj = %pane.getObject(%i);
                 %obj.setActive(true);
+                if (%obj.getClassName() $= "GuiPopUpMenuCtrl")
+                {
+                    %obj.setActive(true);
+                    %obj.setProfile("GuiPopUpMenuProfile");
+                }
                 if (%obj.Profile $= "GuiInactiveSpinnerProfile")
                     %obj.Profile = "GuiSpinnerProfile";
                 if (%obj.getClassName() $= "GuiTextCtrl")
@@ -3453,14 +3451,19 @@ function Wt_SetProjectilePaneState(%pane, %state)
             for (%i = 0; %i < %count; %i++)
             {
                 %obj = %pane.getObject(%i);
+                %obj.setActive(false);
                 if (%obj.getClassName() $= "GuiPopUpMenuCtrl")
+                {
+                    %obj.setProfile("GuiPopUpMenuEmptyProfile");
+                    %obj.setText("Empty");
                     %obj.setActive(true);
-                else
-                    %obj.setActive(false);
+                }
                 if (%obj.Profile $= "GuiSpinnerProfile")
                     %obj.Profile = "GuiInactiveSpinnerProfile";
                 if (%obj.getClassName() $= "GuiTextCtrl" && %obj.text $= "Amount")
                     %obj.Profile = "GuiModelessInactiveTextProfile";
+                if (%obj.getClassName() $= "GuiTextCtrl" && %obj.text !$= "Amount")
+                    %obj.Profile = "GuiModelessTextProfile";
             }
 
         case "empty":
@@ -3469,6 +3472,8 @@ function Wt_SetProjectilePaneState(%pane, %state)
             {
                 %obj = %pane.getObject(%i);
                 %obj.setActive(false);
+                if (%obj.getClassName() $= "GuiPopUpMenuCtrl")
+                    %obj.setProfile("GuiPopUpMenuProfile");
                 if (%obj.Profile $= "GuiSpinnerProfile")
                     %obj.Profile = "GuiInactiveSpinnerProfile";
                 if (%obj.getClassName() $= "GuiTextCtrl")

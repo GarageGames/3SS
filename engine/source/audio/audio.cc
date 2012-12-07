@@ -954,6 +954,14 @@ bool alxPause( AUDIOHANDLE handle )
     alSourcePause( mSource[index] );
 	alxCheckError("alxPause()", "alSourcePause");
 
+	ALint state;
+	alGetSourcei(mSource[index], AL_SOURCE_STATE, &state);
+	if ( state == AL_PAUSED )
+	{
+		mResumePosition[index] = -1;
+		return true;
+	}
+
 	// Corrects a known OpenAL issue on some hardware that causes play() to resume playback
 	// from the beginning of the buffer.
 	alGetSourcei( mSource[index], AL_SAMPLE_OFFSET, &mResumePosition[index] );

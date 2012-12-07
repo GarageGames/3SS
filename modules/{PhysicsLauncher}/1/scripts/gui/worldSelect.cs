@@ -37,7 +37,6 @@ function worldSelectGui::onWake(%this)
 /// </summary>
 function worldSelectGui::getWorldList(%this)
 {
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
     if (!isObject($WorldListData) || $WorldDataChanged)
     {
         if (isFile($PhysicsLauncher::WorldListFile))

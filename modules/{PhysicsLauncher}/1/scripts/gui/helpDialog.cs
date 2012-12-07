@@ -61,8 +61,6 @@ function helpGui::loadHelpData(%this, %scene)
     if (isObject($TutorialDataSet))
         $TutorialDataSet.delete();
 
-    $PhysicsLauncher::TutorialDataFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/tutorialData.taml";
-
     if (isFile($PhysicsLauncher::TutorialDataFile))
         $TutorialDataSet = TamlRead($PhysicsLauncher::TutorialDataFile);
 

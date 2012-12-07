@@ -72,7 +72,7 @@ function PhysicsLauncher::initializeProject()
     //---------------------------------------------------------------
     // World lists
     //---------------------------------------------------------------
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/worldList.taml";
+    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/worldList.taml";
     addResPath($PhysicsLauncher::WorldListFile); 
 
     if (!isObject($WorldListData) || $WorldDataChanged)
@@ -94,7 +94,7 @@ function PhysicsLauncher::initializeProject()
     //---------------------------------------------------------------
     // Tutorials
     //---------------------------------------------------------------
-    $PhysicsLauncher::TutorialDataFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/" @ $Game::ProductName @ "/tutorialData.taml";
+    $PhysicsLauncher::TutorialDataFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/tutorialData.taml";
     addResPath($PhysicsLauncher::TutorialDataFile); 
 
     if (isFile($PhysicsLauncher::TutorialDataFile))
