@@ -51,3 +51,4 @@ moc_QtNetworkManager.cc
 moc_WebRender.cc
 3StepStudio.torsion.exports
 3StepStudio.torsion.opt
+\_ReSharper.*
