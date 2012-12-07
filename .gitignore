@@ -43,3 +43,4 @@ Thumbs.db
 *.dso
 *.edso
 \Link
+*.ilk
