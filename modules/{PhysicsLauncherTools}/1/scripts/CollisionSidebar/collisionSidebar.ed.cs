@@ -376,5 +376,5 @@ function CEObjectDropdown::onSelect(%this)
     %selectionText = %this.getValue();
 
     CollisionSidebar.populateObjectList(%selectionText);
-    //CollisionSidebar.select(0);
+    CollisionSidebar.select(0);
 }
