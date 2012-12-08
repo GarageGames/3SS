@@ -392,6 +392,7 @@ function SoundEditor::getValidSoundName(%this, %nameBase)
     AssetDatabase.findAssetName(%query, %tempName);
     while ( %query.getCount() > 0 )
     {
+        %query.clear();
         %tempName = %nameBase @ %number++;
         AssetDatabase.findAssetName(%query, %tempName);
     }
