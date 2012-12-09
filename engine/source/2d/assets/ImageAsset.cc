@@ -537,7 +537,7 @@ void ImageAsset::calculateImageMap( void )
 
     // Fetch global filter mode.
     TextureFilterMode filterMode = getFilterModeEnum( pGlobalFilter );
-    
+
     // If global filter mode is invalid then use local filter mode.
     if ( filterMode == FILTER_INVALID )
         filterMode = mLocalFilterMode;
@@ -554,21 +554,16 @@ void ImageAsset::calculateImageMap( void )
         setTextureFilter( FILTER_NEAREST );
     }
 
-    // Get image dimensions.
+    // Fetch the texture object.
+    TextureObject* pTextureObject = ((TextureObject*)mImageTextureHandle);
+
+    // Calculate texel scales.
+    const F32 texelWidthScale = 1.0f / (F32)pTextureObject->getTextureWidth();
+    const F32 texelHeightScale = 1.0f / (F32)pTextureObject->getTextureHeight();
+
+    // Fetch the original image dimensions.
     const S32 imageWidth = getImageWidth();
     const S32 imageHeight = getImageHeight();
-
-    // Are the dimensions valid?
-    if ( imageWidth < 1 || imageHeight < 1 )
-    {
-        // No, so warn.
-        Con::warnf( "ImageMap '%s' has invalid image dimension of Width='%d', Height='%d'.", getAssetId(), imageWidth, imageHeight );
-        return;
-    }
-    
-    // Calculate texel scales.
-    const F32 texelWidthScale = 1.0f / (F32)imageWidth;
-    const F32 texelHeightScale = 1.0f / (F32)imageHeight;
 
     // Set full-frame as default.
     FrameArea frameArea( 0, 0, imageWidth, imageHeight, texelWidthScale, texelHeightScale );
@@ -610,7 +605,6 @@ void ImageAsset::calculateImageMap( void )
         return;
     }
 
-
     // Are we using Cell-StrideX?
     S32 cellStepX;
     if ( mCellStrideX != 0 )
@@ -646,7 +640,7 @@ void ImageAsset::calculateImageMap( void )
         Con::warnf("ImageAsset::calculateImageMap() - Invalid Cell OffsetX(%d)/Width(%d)/CountX(%d); off image left-hand-side.", mCellOffsetX, mCellWidth, mCellCountX );
         return;
     }
-    // Off Right?
+            // Off Right?
     else if ( cellFinalPositionX > imageWidth )
     {
         // Warn.
@@ -663,7 +657,7 @@ void ImageAsset::calculateImageMap( void )
         Con::warnf("ImageAsset::calculateImageMap() - Invalid Cell OffsetY(%d)/Height(%d)/CountY(%d); off image top-side.", mCellOffsetY, mCellHeight, mCellCountY );
         return;
     }
-    // Off Bottom?
+            // Off Bottom?
     else if ( cellFinalPositionY > imageHeight )
     {
         // Warn.
