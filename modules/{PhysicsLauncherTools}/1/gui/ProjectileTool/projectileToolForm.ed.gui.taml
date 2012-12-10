@@ -358,6 +358,7 @@
             passwordMask="*"
             truncate="1" />
         <GuiMouseEventCtrl
+            name="Pt_PreviewSoundFileEvent"
             class="It_AssetBrowseEditClick"
             isContainer="0"
             Profile="GuiTransparentProfile"
@@ -519,7 +520,10 @@
             groupNum="-1"
             buttonType="PushButton"
             useMouseEvents="0"
-            NormalImage="@asset={EditorAssets}:smallStopImageMap" />
+            NormalImage="@asset={EditorAssets}:smallStopImageMap" 
+            HoverImage="@asset={EditorAssets}:smallStop_hImageMap"
+            DownImage="@asset={EditorAssets}:smallStop_dImageMap"
+            InactiveImage="@asset={EditorAssets}:smallStop_iImageMap" />
     </GuiControl>
     <GuiControl
         canSaveDynamicFields="0"
