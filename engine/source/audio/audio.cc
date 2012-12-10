@@ -2569,7 +2569,6 @@ void OpenALShutdown()
 		   alSourceUnqueueBuffers( mSource[i], 1, &buffer );
 		   alxCheckError("OpenALShutdown()", "alSourceUnqueueBuffers");
 	   }
-	   alxCheckError("OpenALShutdown()", "alGetSourcei");
    }
 
    alDeleteSources(mNumSources, mSource);
