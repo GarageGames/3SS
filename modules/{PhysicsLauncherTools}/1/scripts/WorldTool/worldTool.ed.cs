@@ -2936,8 +2936,6 @@ function WorldTool::moveProjectileEntries(%this, %index)
 {
     // There is an empty projectile slot in the middle of the list, clear it and move
     // everything up a spot in the list.
-    //%projectileList = "";
-    //%countList = "";
     %index--;
     %k = 0;
     for ( %i = 0; %i < 5; %i++ )
@@ -3425,6 +3423,9 @@ function Wt_LevelMusicStopBtn::onClick(%this)
     PhysicsLauncherTools::audioButtonPairStop(Wt_LevelMusicPlayBtn);
 }
 
+/// <summary>
+/// This launches the Level Builder Tool to edit the currently selected level.
+/// </summary>
 function WorldIconEditBtn::onClick(%this)
 {
     Tt_InterfaceButton.setStateOn(true);
@@ -3432,21 +3433,41 @@ function WorldIconEditBtn::onClick(%this)
     InterfaceToolTabBook.selectPage(1);
 }
 
+/// <summary>
+/// This handles the attached button's appearance state and lets the mouse
+/// event control make it appear that the covered edit box control is an 
+/// extension of the attached button.
+/// </summary>
 function Wt_LevelMusicEditEvent::onMouseEnter(%this)
 {
     Wt_LevelMusicSelectBtn.setNormalImage(Wt_LevelMusicSelectBtn.HoverImage);
 }
 
+/// <summary>
+/// This handles the attached button's appearance state and lets the mouse
+/// event control make it appear that the covered edit box control is an 
+/// extension of the attached button.
+/// </summary>
 function Wt_LevelMusicEditEvent::onMouseLeave(%this)
 {
     Wt_LevelMusicSelectBtn.setNormalImage(Wt_LevelMusicSelectBtn.NormalImageCache);
 }
 
+/// <summary>
+/// This handles the attached button's appearance state and lets the mouse
+/// event control make it appear that the covered edit box control is an 
+/// extension of the attached button.
+/// </summary>
 function Wt_LevelMusicEditEvent::onMouseDown(%this)
 {
     Wt_LevelMusicSelectBtn.setNormalImage(Wt_LevelMusicSelectBtn.DownImage);
 }
 
+/// <summary>
+/// This handles the attached button's appearance state and lets the mouse
+/// event control make it appear that the covered edit box control is an 
+/// extension of the attached button.
+/// </summary>
 function Wt_LevelMusicEditEvent::onMouseUp(%this)
 {
     AssetLibrary.open(%this, $SoundsPage);
