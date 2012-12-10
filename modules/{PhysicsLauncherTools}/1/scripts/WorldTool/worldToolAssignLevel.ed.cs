@@ -11,7 +11,7 @@ function Wt_AssignLevelToWorldGui::display(%this, %levelName)
     Wt_AssignLevelWorldList.clear();
     for (%i = 0; %i < WorldTool.worldCount; %i++)
     {
-        %worldName = WorldTool.currentWorlds[%i].WorldName;
+        %worldName = WorldTool.currentWorlds[%i].getInternalName();
         if (%i != WorldTool.selectedWorld)
             Wt_AssignLevelWorldList.add(%worldName, %i);
     }

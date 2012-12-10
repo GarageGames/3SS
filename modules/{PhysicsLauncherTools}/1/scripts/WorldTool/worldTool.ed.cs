@@ -2953,7 +2953,7 @@ function WorldTool::moveProjectileEntries(%this, %index)
     %countList[%k] = 0;
     for ( %i = 0; %i < 5; %i++ )
     {
-        echo(" @@@ list[" @ %i @ "] = " @ %projectileList[%i]);
+        //echo(" @@@ list[" @ %i @ "] = " @ %projectileList[%i]);
         %this.loadedLevel.AvailProjectile[%i] = %projectileList[%i];
         %this.loadedLevel.NumAvailable[%i] = %countList[%i];
         %dropdown = "Wt_Projectile" @ %i + 1 @ "Dropdown";
