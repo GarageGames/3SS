@@ -6648,7 +6648,7 @@
                     Visible="1"
                     Active="1"
                     hovertime="1000"
-                    text="Small Font Sheet"
+                    text="Small Font"
                     maxLength="1024" />
                 <GuiPopUpMenuCtrl
                     Name="It_SettingsSmFontSelectDropdown"
