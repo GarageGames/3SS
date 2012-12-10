@@ -2563,7 +2563,7 @@ void OpenALShutdown()
    {
 	   ALint tempBuff = 0;
 	   alGetSourcei( mSource[i], AL_BUFFER, &tempBuff );
-	   if (alIsBuffer(tempBuff))
+	   if (alIsBuffer(tempBuff) && tempBuff != 0)
 	   {
 		   ALuint buffer = tempBuff;
 		   alSourceUnqueueBuffers( mSource[i], 1, &buffer );
