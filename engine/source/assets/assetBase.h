@@ -79,6 +79,7 @@ public:
     StringTableEntry        expandAssetFilePath( const char* pAssetFilePath ) const;
     StringTableEntry        collapseAssetFilePath( const char* pAssetFilePath ) const;
 
+    void                    reloadAsset( void );
     void                    refreshAsset( void );
 
     /// Declare Console Object.

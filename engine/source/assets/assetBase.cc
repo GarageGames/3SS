@@ -237,6 +237,18 @@ StringTableEntry AssetBase::collapseAssetFilePath( const char* pAssetFilePath ) 
 
 //-----------------------------------------------------------------------------
 
+void AssetBase::reloadAsset( void )
+{
+    // Finish if asset is not owned or is not initialized.
+    if ( mpOwningAssetManager == NULL || !mAssetInitialized )
+        return;
+
+    // Yes, so reload the asset via the asset manager.
+    mpOwningAssetManager->reloadAsset( getAssetId() );
+}
+
+//-----------------------------------------------------------------------------
+
 void AssetBase::refreshAsset( void )
 {
     // Finish if asset is not owned or is not initialized.

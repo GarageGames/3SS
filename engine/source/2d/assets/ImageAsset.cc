@@ -469,7 +469,7 @@ void ImageAsset::onAssetReload( void )
         return;
 
     // Call parent.
-    Parent::onAssetRefresh();
+    Parent::onAssetReload();
     
     if( !mImageTextureHandle.IsNull() )
 	{
