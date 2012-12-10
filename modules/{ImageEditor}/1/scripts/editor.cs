@@ -471,13 +471,14 @@ function ImageEditor::imageFileBrowser(%this)
         if ( %targetFilename !$= %this.selectedImage.ImageFile )
         {
             // No, so copy.
-            if ( !pathCopy( %fileName, %targetFilename, true ) )
+            if ( !pathCopy( %fileName, %targetFilename, false ) )
             {
                 warn( " @@@ Target file '" @ %targetFilename @ " already exists.  File not copied." );
             }
         }
 
         %this.selectedImage.setImageFile(%targetFilename);
+        %this.selectedImage.reloadAsset();
         ImageEditorAutoApply();
     }
     
