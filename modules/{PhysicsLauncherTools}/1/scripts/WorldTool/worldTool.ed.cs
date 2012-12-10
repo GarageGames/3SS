@@ -2894,6 +2894,7 @@ function WorldTool::refreshProjectilePane(%this)
 
         %edit.setActive(true);
         %projectileName = %dropdown.getText();
+
         if (%projectileName $= "Empty")
         {
             %projectileName = "";
@@ -2909,6 +2910,13 @@ function WorldTool::refreshProjectilePane(%this)
                 Wt_SetProjectilePaneState(%pane, "empty");
             }
         }
+        else if ( %projectileName !$= "" && %firstEmpty )
+        {
+            %projectileName = "";
+            %edit.setText("");
+            %this.moveProjectileEntries(%index - 1);
+            break;
+        }
         else
         {
             Wt_SetProjectilePaneState(%pane, "normal");
@@ -2919,9 +2927,46 @@ function WorldTool::refreshProjectilePane(%this)
         %projectile = WorldTool.projectileSet.findObjectByInternalName(%projectileName);
         if ( isObject( %projectile ) )
         {
-            WorldTool.loadedLevel.AvailProjectile[%index - 1] = %projectile.getName();
+            %this.loadedLevel.AvailProjectile[%index - 1] = %projectile.getName();
         }
     }
+}
+
+function WorldTool::moveProjectileEntries(%this, %index)
+{
+    // There is an empty projectile slot in the middle of the list, clear it and move
+    // everything up a spot in the list.
+    //%projectileList = "";
+    //%countList = "";
+    %index--;
+    %k = 0;
+    for ( %i = 0; %i < 5; %i++ )
+    {
+        if ( %i != %index )
+        {
+            %projectileList[%k] = %this.loadedLevel.AvailProjectile[%i];
+            %countList[%k] = %this.loadedLevel.NumAvailable[%i];
+            %k++;
+        }
+    }
+    %projectileList[%k] = "";
+    %countList[%k] = 0;
+    for ( %i = 0; %i < 5; %i++ )
+    {
+        //echo(" @@@ list[" @ %i @ "] = " @ %projectileList[%i]);
+        %this.loadedLevel.AvailProjectile[%i] = %projectileList[%i];
+        %this.loadedLevel.NumAvailable[%i] = %countList[%i];
+        %dropdown = "Wt_Projectile" @ %i + 1 @ "Dropdown";
+        if ( %this.loadedLevel.AvailProjectile[%i] !$= "" )
+        {
+            %this.loadedLevel.NumAvailable[%i] = "1";
+            %dropdown.select(%this.loadedLevel.AvailProjectile[%i].getInternalName());
+        }
+        else
+            %dropdown.select("Empty");
+    }
+    
+    %this.populateProjectilePane();
 }
 
 //-----------------------------------------------------------------------------
@@ -3200,20 +3245,24 @@ function Wt_LauncherDropdown::onSelect(%this)
 /// </summary>
 function Wt_ProjectileDropdown::onSelect(%this)
 {
-    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized || $RefreshInProgress)
+    if (WorldTool.lastLevelName $= "" || !$Wt_ToolInitialized || $RefreshInProgress || %this.ignoreSelection)
         return;
 
     for ( %i = 1; %i < 6; %i++ )
     {
-        %dropdown = "Wt_Projectile" @ %index @ "Dropdown";
+        %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
         if ( %dropdown.getName() $= %this.getName() )
             continue;
         %selected = %this.getSelected();
         if ( %selected == %dropdown.getSelected() && %selected > 0 )
+        {
+            %this.ignoreSelection = true;
             %this.setSelected(0);
+            %this.ignoreSelection = false;
+        }
     }
 
-    if ( %this.getSelected() > 1 )
+    if ( %this.getSelected() > 0 )
         %this.setProfile("GuiPopUpMenuProfile");
     else
         %this.setProfile("GuiPopUpMenuEmptyProfile");
@@ -3235,6 +3284,14 @@ function Wt_ProjectileDropdown::initialize(%this)
             %this.add(%projectileName, %j + 1);
         }
     }
+}
+
+function Wt_ProjectileDropdown::select(%this, %text)
+{
+    %index = %this.findText(%text);
+    %this.ignoreSelection = true;
+    %this.setSelected(%index);
+    %this.ignoreSelection = false;
 }
 
 /// <summary>
@@ -3439,6 +3496,8 @@ function Wt_SetProjectilePaneState(%pane, %state)
                 {
                     %obj.setActive(true);
                     %obj.setProfile("GuiPopUpMenuProfile");
+                    %text = %obj.getText();
+                    %obj.setText(%text);
                 }
                 if (%obj.Profile $= "GuiInactiveSpinnerProfile")
                     %obj.Profile = "GuiSpinnerProfile";
@@ -3454,9 +3513,9 @@ function Wt_SetProjectilePaneState(%pane, %state)
                 %obj.setActive(false);
                 if (%obj.getClassName() $= "GuiPopUpMenuCtrl")
                 {
+                    %obj.setActive(true);
                     %obj.setProfile("GuiPopUpMenuEmptyProfile");
                     %obj.setText("Empty");
-                    %obj.setActive(true);
                 }
                 if (%obj.Profile $= "GuiSpinnerProfile")
                     %obj.Profile = "GuiInactiveSpinnerProfile";
