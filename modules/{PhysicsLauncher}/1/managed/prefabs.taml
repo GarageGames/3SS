@@ -326,7 +326,7 @@
                     <PullbackLauncherBehavior
                         Id="2"
                         maxSpeed="15"
-                        maxDistance="2.8"
+                        maxDistance="2.5"
                         collisionObject=""
                         stretchThreshold="0.5" />
                     <InputTargetBehavior
