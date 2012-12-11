@@ -1088,8 +1088,7 @@ function LevelBuilderToolPresenter::onRightViewSelectedObjectEditSelected(%this)
     if (%acquiredObject.getSceneLayer() == $PhysicsLauncherTools::LauncherCollisionObjectSceneLayer)
     {
         Tt_LauncherToolButton.setStateOn(true);
-        LauncherTool.load();
-        LauncherTool.selectLauncherObject(LauncherSet.findObjectByInternalName(LauncherSceneGroup.getInternalName()));
+        LauncherTool.load(LauncherSet.findObjectByInternalName(LauncherSceneGroup.getInternalName()));
     }
     else
     {

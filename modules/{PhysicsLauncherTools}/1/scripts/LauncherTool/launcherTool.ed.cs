@@ -28,7 +28,7 @@ function LauncherToolGui::onWake()
     LauncherTool.schedule(50, refresh); 
 }
 
-function LauncherTool::load(%this)
+function LauncherTool::load(%this, %object)
 {
     %this.launcherSimSet = "";
     %this.helpManager = createHelpMarqueeObject("LauncherToolTips", 10000, "{PhysicsLauncherTools}");
@@ -61,7 +61,10 @@ function LauncherTool::load(%this)
     Lt_PullbackEffectPopup.add("Stretch & Shrink", 1);
 
     // Select the first object in the list
-    $LauncherToolObjectScrollView.setSelected(0);
+    if (%object !$= "")
+        %this.selectLauncherObject(%object);
+    else
+        $LauncherToolObjectScrollView.setSelected(0);
 
     // Initialize sound buttons
     PhysicsLauncherTools::audioButtonInitialize(Lt_PullbackSoundButtonPlay);
@@ -216,8 +219,28 @@ function LauncherTool::selectLauncherObject(%this, %data)
     if (isObject(%this.currentObject))
         SlingshotLauncherBuilder::updateLauncherPrefabInAllLevels(%this.currentObject); 
 
-    %index = getWord(%data, 0);
-    %object = getWord(%data, 1);
+    %words = getWordCount(%data);
+    if (%words > 1)
+    {
+        %index = getWord(%data, 0);
+        %object = getWord(%data, 1);
+    }
+    else
+    {
+        %launcherGroup = $PrefabSet.findObjectByInternalName("LauncherSet");
+        %objCount = %launcherGroup.getCount();
+        for (%i = 0; %i < %objCount; %i++)
+        {
+            %obj = %launcherGroup.getObject(%i);
+            if (%obj == %data)
+            {
+                %id = %i;
+                break;
+            }
+        }
+        %index = %id;
+        %object = %data;
+    }
 
     %this.selectedIndex = %index;
     %this.currentObject = %object;   
