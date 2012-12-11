@@ -1,6 +1,6 @@
 <AnimationAsset
     AssetName="PL_DefaultPathAnim"
     AssetCategory="sprites"
-    ImageMap="@asset={PhysicsLauncherAssets}:PL_DefaultPathImageMap"
+    ImageMap="@asset={PhysicsLauncherAssets}:Trail_LeafImageMap"
     AnimationFrames="0"
     AnimationTime="1" />

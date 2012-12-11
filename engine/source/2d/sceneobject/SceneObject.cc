@@ -874,9 +874,10 @@ void SceneObject::setEnabled( const bool enabled )
 bool SceneObject::synchronizePrefab( void )
 {
     // Snapshot the current objects state that we don't want to change.
-    const Vector2 position   = getPosition();
-    const Vector2 size       = getSize();
-    const F32 angle          = getAngle();
+    const Vector2 position    = getPosition();
+    const Vector2 size        = getSize();
+    const F32 angle           = getAngle();
+    const F32 sceneLayerDepth = getSceneLayerDepth();
 
     // Call parent.
     if ( !Parent::synchronizePrefab() )
@@ -885,6 +886,7 @@ bool SceneObject::synchronizePrefab( void )
     // Restore the state we don't want to change.
     setPosition( position );
     setAngle( angle );
+    setSceneLayerDepth( sceneLayerDepth );  // MM: This is not recommended for T2DCore.
 
     // Set size if not auto-sizing.
     if ( !getAutoSizing() )
