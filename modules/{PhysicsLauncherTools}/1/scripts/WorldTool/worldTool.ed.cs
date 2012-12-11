@@ -9,6 +9,7 @@
 function WorldTool::onSleep(%this)
 {
     %this.saveData();
+    %this.clearLevelData();
     alxStopAll();
     if ( isObject(%this.helpManager) )
     {
@@ -333,6 +334,16 @@ function WorldTool::selectLevel(%this, %data)
     if (%levelName $= "")
         return;
 
+    %scene = Wt_WorldBackgroundImagePreview.getScene();
+    if ( isObject( %scene ) )
+        %scene.delete();
+
+    if ( isObject( %this.loadedLevel ) )
+    {
+        PhysicsLauncherTools::deleteSceneContents(%this.loadedLevel);
+        %this.loadedLevel.delete();
+    }
+
     %this.updateLevelData(%levelName);
     %this.SetSelectedLevelButton(%data);
 }
@@ -425,15 +436,6 @@ function WorldTool::updateLevelData(%this, %level)
     %this.lastLevelName = %level;
     %levelName = expandPath("^PhysicsLauncherTemplate/data/levels/" @ %level @ ".scene.taml");
 
-    %scene = Wt_WorldBackgroundImagePreview.getScene();
-    if ( isObject( %scene ) )
-        %scene.delete();
-
-    if ( isObject( %this.loadedLevel ) )
-    {
-        PhysicsLauncherTools::deleteSceneContents(%this.loadedLevel);
-        %this.loadedLevel.delete();
-    }
     %this.loadedLevel = TamlRead(%levelName);
     MainScene.setIsEditorScene(true);
     Wt_WorldBackgroundImagePreview.setScene(%this.loadedLevel);
