@@ -642,7 +642,8 @@
             Name="WorldObjectPrefab1"
             internalName="DefaultBox"
             SceneLayer="15"
-            size="3 3"
+            size="1.5 1.5"
+
             DefaultDensity="0.123114809"
             CollisionCallback="1">
             <Sprite.Behaviors>

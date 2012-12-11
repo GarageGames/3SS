@@ -153,7 +153,8 @@
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="3.000 3.000"
+        size="1.5 1.5"
+
         Position="-4.246174 -4.480449"
         Angle="-0.00409119"
         currentSound="19"
@@ -161,7 +162,8 @@
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="3.000 3.000"
+        size="1.5 1.5"
+
         Position="-4.263707 -5.651582"
         Angle="-0.00300663"
         currentSound="20"
@@ -169,7 +171,8 @@
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="3.000 3.000"
+        size="1.5 1.5"
+
         Position="-4.280509 -6.822610"
         Angle="-0.000682935"
         currentSound="21"
