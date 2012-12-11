@@ -95,6 +95,12 @@ WindowPtr MacCarbCreateOpenGLWindow( CGDirectDisplayID hDevice, U32 width, U32 h
    }
    
    err = CreateNewWindow(windClass, windAttr, &rect, &w);
+   HISize maxSize;
+   maxSize.width = 1024;
+   maxSize.height = 768;
+   
+   SetWindowResizeLimits(w, &maxSize, &maxSize);
+   
    PlatStateMac::get().windowRef2NSWindow(w);
    
    AssertISV( err == noErr && w != NULL, "Failed to create a new window.");
