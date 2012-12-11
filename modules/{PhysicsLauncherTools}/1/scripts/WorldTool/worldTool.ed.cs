@@ -3115,8 +3115,9 @@ function Wt_LevelSelectButton::onMouseUp(%this)
 /// </summary>
 function Wt_LevelEditToolBtn::onClick(%this)
 {
+    %level = WorldTool.lastLevelName;
     LevelBuilderToolPresenter.load();
-    LevelBuilderToolPresenter.loadLevel(WorldTool.currentWorldData.getObject(WorldTool.worldIndex).getInternalName(), WorldTool.lastLevelName);
+    LevelBuilderToolPresenter.loadLevel(WorldTool.currentWorldData.getObject(WorldTool.worldIndex).getInternalName(), %level);
     Tt_LevelBuilderToolButton.setStateOn(true);
 }
 
