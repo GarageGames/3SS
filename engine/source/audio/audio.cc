@@ -2557,16 +2557,18 @@ void OpenALShutdown()
       mLoopingFreeList.pop_back();
    }
 
+   // clear error buffer
+   alGetError();
    for(U32 i = 0; i < MAX_AUDIOSOURCES; i++)
    {
 	   ALint tempBuff = 0;
 	   alGetSourcei( mSource[i], AL_BUFFER, &tempBuff );
-	   if (static_cast<bool>(tempBuff))
+	   if (alIsBuffer(tempBuff) && tempBuff != 0)
 	   {
 		   ALuint buffer = tempBuff;
 		   alSourceUnqueueBuffers( mSource[i], 1, &buffer );
+		   alxCheckError("OpenALShutdown()", "alSourceUnqueueBuffers");
 	   }
-	   alxCheckError("OpenALShutdown()", "alSourceUnqueueBuffers");
    }
 
    alDeleteSources(mNumSources, mSource);

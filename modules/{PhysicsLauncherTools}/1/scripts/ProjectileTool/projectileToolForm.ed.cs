@@ -537,6 +537,23 @@ function Pt_PreviewSelectDropdown::onSelect(%this)
     %tempSnd = AssetDatabase.acquireAsset(ProjectileToolForm.soundName);
     Pt_PreviewSoundFileEdit.setText(%tempSnd.AssetName);
     AssetDatabase.releaseAsset(ProjectileToolForm.soundName);
+
+    if (%index == 4)
+    {
+        Pt_PreviewSoundFileEdit.setActive(false);
+        Pt_PreviewSoundFileEvent.setActive(false);
+        Pt_PreviewSoundSelectBtn.setActive(false);
+        Pt_PreviewSoundStopBtn.setActive(false);
+        Pt_PreviewSoundPlayBtn.setActive(false);
+    }
+    else
+    {
+        Pt_PreviewSoundFileEdit.setActive(true);
+        Pt_PreviewSoundFileEvent.setActive(true);
+        Pt_PreviewSoundSelectBtn.setActive(true);
+        Pt_PreviewSoundStopBtn.setActive(true);
+        Pt_PreviewSoundPlayBtn.setActive(true);
+    }
 }
 
 /// <summary>
