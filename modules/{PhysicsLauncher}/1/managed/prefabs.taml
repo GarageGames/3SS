@@ -474,27 +474,27 @@
                     damageModifierGroups="1" />
                 <AnimationEffectBehavior
                     Id="3"
-                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultEnemyAnim1"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
                     Frame="0"
                     instanceName="IdleAnimationEffectBehavior" />
                 <AnimationEffectBehavior
                     Id="4"
-                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultEnemyAnim1"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
                     Frame="0"
                     instanceName="DamageAnimationEffectBehavior0" />
                 <AnimationEffectBehavior
                     Id="5"
-                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultEnemyAnim1"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
                     Frame="0"
                     instanceName="DamageAnimationEffectBehavior1" />
                 <AnimationEffectBehavior
                     Id="6"
-                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultEnemyAnim1"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
                     Frame="0"
                     instanceName="DamageAnimationEffectBehavior2" />
                 <AnimationEffectBehavior
                     Id="7"
-                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultEnemyAnim1"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
                     Frame="0"
                     instanceName="DamageAnimationEffectBehavior3" />
                 <VanishBehavior
