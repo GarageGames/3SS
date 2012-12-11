@@ -260,27 +260,27 @@ function generateUniqueFileName(%fileLocation)
 
 function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
 {
-    pathCopy(%fileToCopy, %newFileLocation);
-    
     if (%isNewImageMap)
     {
         %fileOnlyName = fileName(%newFileLocation);
         %extension = fileExt(%newFileLocation);
         %fileOnlyName = strreplace(%fileOnlyName, %extension, "");
         
-        %imageMap = new ImageAsset();
-        
         %pathNoExtension = strreplace(%newFileLocation, %extension, "");
-        
         %name = %fileOnlyName @ "ImageMap";
-        %imageMap.assetName = %name;
-        %imageMap.AssetCategory = "gui";
-        %imageMap.imageFile = %pathNoExtension;
-        %imageMap.filterMode = "NONE";
-        %imageMap.linkProperties = "1";
+        
+        %imageMap = new ImageAsset()
+        {
+            assetName = %name;
+            AssetCategory = "gui";
+            imageFile = %pathNoExtension;
+            filterMode = "NONE";
+            linkProperties = "1";
+        };
         
         TamlWrite(%imageMap, %pathNoExtension @ ".asset.taml");
-        
+        pathCopy(%fileToCopy, %newFileLocation, false);
+
         %imageMap.delete();
         
         %moduleDefinition = ModuleDatabase.getDefinitionFromId("{UserAssets}");
