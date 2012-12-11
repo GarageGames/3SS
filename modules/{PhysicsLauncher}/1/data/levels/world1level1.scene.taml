@@ -145,8 +145,7 @@
 	<Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="-7 -6.68508"
         Angle="0"
         currentSound="19" />
@@ -165,48 +164,42 @@
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="-4 -5.68508"
         Angle="0"
         currentSound="19" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="-4 -6.48923"
         Angle="0"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="-4 -7.29261"
         Angle="0"
         currentSound="21" />
 	<Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="-0 -5.68508"
         Angle="0"
         currentSound="19" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="0 -6.48923"
         Angle="0"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
-        size="1.5 1.5"
-
+        size="3 3"
         Position="0 -7.29261"
         Angle="0"
         currentSound="21" />
