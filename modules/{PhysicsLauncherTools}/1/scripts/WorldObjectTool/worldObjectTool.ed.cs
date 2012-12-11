@@ -14,6 +14,7 @@ new ScriptObject(WorldObjectTool)
 function WorldObjectToolGui::onSleep()
 {
     // Write prefabs to file
+    WorldObjectTool.save();
     PhysicsLauncherTools::writePrefabs(); 
     WorldObjectTool.helpManager.stop();
     WorldObjectTool.helpManager.delete();
