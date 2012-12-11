@@ -618,7 +618,7 @@ protected:
     static bool             setSceneLayer(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setSceneLayer(dAtoi(data)); return false; }
     static bool             writeSceneLayer( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return pCastObject->getSceneLayer() > 0 ; }
     static bool             setSceneLayerDepth(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setSceneLayerDepth(dAtof(data)); return false; }
-    static bool             writeSceneLayerDepth( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return mNotZero(pCastObject->getSceneLayerDepth()); }
+    static bool             writeSceneLayerDepth( void* obj, StringTableEntry pFieldName ) { return mNotZero(static_cast<SceneObject*>(obj)->getSceneLayerDepth()); } // MM: This is not recommended for T2DCore.
 
     /// Scene groups.
     static bool             setSceneGroup(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setSceneGroup(dAtoi(data)); return false; }
