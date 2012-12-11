@@ -26,6 +26,10 @@ function OpenConnectingToServerScreen()
 // the error to the user as well.
 function OpenLogInScreen(%errorMessage)
 {
+    /**********************************************************Temporary Hack to Skip Login for Usability Testing*********************************************************/
+    EditorEventManager.schedule(0, postEvent, "_UserProfileAcquired");
+    
+    
     // Set up the log in screen
     if (isFile($WebServices::ProfileImagePath) && $WebServices::RememberUserName)
     {

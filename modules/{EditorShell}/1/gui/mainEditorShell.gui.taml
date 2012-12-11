@@ -58,6 +58,7 @@
         Visible="1"
         Active="0"
         hovertime="1000" />
+<!-- ***************Temporarily removing ability to show User Pop-up for Usability Testing. Restore this control and remove version below when done.**********************************************************************
     <GuiImageButtonCtrl
 		Name="ESShowAvatarButton"
         canSaveDynamicFields="0"
@@ -99,6 +100,49 @@
 			DownImage="@asset={3SSHomeScreens}:updateBadge"
 			InactiveImage="@asset={3SSHomeScreens}:updateBadge" />
 	</GuiImageButtonCtrl>
+-->   
+<!-- ************************************************************************************Remove this duplicate when done********************************************************************** -->
+    <GuiImageButtonCtrl
+		Name="ESShowAvatarButton"
+        canSaveDynamicFields="0"
+        isContainer="0"
+        Profile="GuiDefaultProfile"
+        HorizSizing="right"
+        VertSizing="bottom"
+        Position="947 691"
+        Extent="63 63"
+        MinExtent="8 2"
+        canSave="1"
+        Visible="1"
+        Active="1"
+        hovertime="1000"
+		useMouseEvents="1"
+		NormalImage="@asset={3SSHomeScreens}:newAvatarLargeImage"
+		HoverImage="@asset={3SSHomeScreens}:newAvatarLargeImage"
+		DownImage="@asset={3SSHomeScreens}:newAvatarLargeImage"
+		InactiveImage="@asset={3SSHomeScreens}:newAvatarLargeImage">
+		<GuiImageButtonCtrl
+			InternalName="BadgeImage"
+			canSaveDynamicFields="0"
+			isContainer="0"
+			Profile="GuiDefaultProfile"
+			HorizSizing="right"
+			VertSizing="bottom"
+			Position="43 0"
+			Extent="20 21"
+			MinExtent="8 2"
+			canSave="1"
+			Visible="0"
+			Active="1"
+			hovertime="1000"
+			useMouseEvents="1"
+			command="showUserPopUp();"
+			NormalImage="@asset={3SSHomeScreens}:updateBadge"
+			HoverImage="@asset={3SSHomeScreens}:updateBadge"
+			DownImage="@asset={3SSHomeScreens}:updateBadge"
+			InactiveImage="@asset={3SSHomeScreens}:updateBadge" />
+	</GuiImageButtonCtrl>
+<!-- ************************************************************************************Remove this duplicate when done********************************************************************** -->
     <GuiImageButtonCtrl
         Name="ESPreviousTipButton"
         canSaveDynamicFields="0"
