@@ -1,4 +1,8 @@
 <ImageAsset
     AssetName="Banana_SingleImageMap"
     AssetCategory="sprites"
-    ImageFile="@assetFile=#Banana_Single.png" />
+    ImageFile="@assetFile=#Banana_Single.png"
+    CellCountX="4"
+    CellCountY="4"
+    CellWidth="64"
+    CellHeight="64" />
