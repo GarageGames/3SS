@@ -317,7 +317,7 @@ function VerticalScrollCtrl::addButton(%this, %guiControl, %object, %handler, %d
     %this.buttonWidth = %guiControl.Extent.x;
     %this.buttonHeight = %guiControl.Extent.y;
 
-    if ( %this.buttonProfile $= "" && %guiControl.Profile !$= "GuiTransparentProfile" )
+    if ( %this.buttonProfile $= "" && %guiControl.Profile !$= "GuiDefaultProfile" )
     {
         %this.buttonProfile = %guiControl.Profile;
         %this.useProfile = true;
@@ -329,6 +329,8 @@ function VerticalScrollCtrl::addButton(%this, %guiControl, %object, %handler, %d
         %this.buttonProfile = "GuiTransparentProfile";
 
     %baseProfile = (%this.useProfile == true ? %this.buttonProfile : %guiControl.Profile);
+    if ( %baseProfile $= "" )
+        %baseProfile = "GuiTransparentProfile";
 
     %extent = %guiControl.Extent;
 	%button = new GuiControl()
@@ -346,6 +348,9 @@ function VerticalScrollCtrl::addButton(%this, %guiControl, %object, %handler, %d
 		hovertime="1000";
             index = %this.contentPane.getCount();
     };
+    
+    %toolTipProfile = (%guiControl.tooltipProfile !$= "" ? %guiControl.tooltipProfile : "GuiToolTipProfile");
+
 	%clickEvent = new GuiMouseEventCtrl()
 	{
 	    class="VsDynamicButton";
@@ -360,7 +365,7 @@ function VerticalScrollCtrl::addButton(%this, %guiControl, %object, %handler, %d
 		canSave="1";
 		Visible="1";
 		hovertime="1000";
-        toolTipProfile=%guiControl.toolTipProfile;
+        toolTipProfile=%toolTipProfile;
         toolTip=%guiControl.toolTip;
 		groupNum="-1";
             index = %this.contentPane.getCount();
@@ -796,11 +801,15 @@ function createVerticalScrollContainer(%profile)
         hovertime="1000";
     };
 
+    %containerProfile = (%profile !$= "" ? %profile : "GuiSunkenContainerProfile");
+    if ( %containerProfile $= "" )
+        %containerProfile = "GuiTransparentProfile";
+
     %scrollContainer = new GuiControl()
     {
         canSaveDynamicFields="0";
         isContainer="1";
-        Profile=(%profile !$= "" ? %profile : "GuiSunkenContainerProfile");
+        Profile=%containerProfile;
 		HorizSizing="left";
 		VertSizing="top";
         Position="0 0";
@@ -817,7 +826,7 @@ function createVerticalScrollContainer(%profile)
 	{
 		canSaveDynamicFields="0";
 		isContainer="0";
-		Profile="GuiDefaultProfile";
+		Profile="GuiTransparentProfile";
 		HorizSizing="left";
 		VertSizing="top";
 		Position="0 0";
@@ -863,7 +872,7 @@ function createVerticalScrollContainer(%profile)
 	{
 		canSaveDynamicFields="0";
 		isContainer="0";
-		Profile="GuiDefaultProfile";
+		Profile="GuiTransparentProfile";
 		HorizSizing="left";
 		VertSizing="top";
 		Position="0 505";
