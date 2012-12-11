@@ -10,7 +10,7 @@ function WorldTool::onSleep(%this)
 {
     %this.saveData();
     %this.clearLevelData(true);
-    alxStopAll();
+    Wt_LevelMusicStopBtn.onClick();
     if ( isObject(%this.helpManager) )
     {
         %this.helpManager.stop();
@@ -323,7 +323,7 @@ function WorldTool::selectWorld(%this, %data)
 /// <param name="data">This is passed back from the level list container button</param>
 function WorldTool::selectLevel(%this, %data)
 {
-    alxStopAll();
+    Wt_LevelMusicStopBtn.onClick();
 
     if (%this.lastLevelName !$= "")
     {
