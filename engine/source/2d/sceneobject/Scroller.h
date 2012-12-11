@@ -21,8 +21,8 @@ class Scroller : public SpriteBase
     typedef SpriteBase      Parent;
 
 private:
-    S32                     mRepeatX;
-    S32                     mRepeatY;
+    F32                     mRepeatX;
+    F32                     mRepeatY;
     F32                     mScrollX;
     F32                     mScrollY;
 
@@ -74,9 +74,9 @@ public:
 
     static void initPersistFields();
 
-    inline void setRepeatX( const S32 repeatX ) { setRepeat(repeatX, getRepeatY()); };
-    inline void setRepeatY( const S32 repeatY ) { setRepeat(getRepeatX(), repeatY); };
-    void setRepeat( const S32 repeatX, const S32 repeatY );
+    inline void setRepeatX( const F32 repeatX ) { setRepeat(repeatX, getRepeatY()); };
+    inline void setRepeatY( const F32 repeatY ) { setRepeat(getRepeatX(), repeatY); };
+    void setRepeat( const F32 repeatX, const F32 repeatY );
     void setScrollX(F32 x) { setScroll(x, getScrollY()); };
     void setScrollY(F32 y) { setScroll(getScrollX(), y); };
     void setScroll( F32 scrollX = 0.0f, F32 scrollY = 0.0f );
@@ -84,8 +84,8 @@ public:
     inline void setScrollPositionY( F32 scrollY ) { setScrollPosition(getScrollPositionX(), scrollY); };
     void setScrollPosition( F32 scrollX, F32 scrollY );
 
-    inline S32 getRepeatX() { return mRepeatX; };
-    inline S32 getRepeatY() { return mRepeatY; };
+    inline F32 getRepeatX() { return mRepeatX; };
+    inline F32 getRepeatY() { return mRepeatY; };
     inline F32 getScrollX() { return mScrollX; };
     inline F32 getScrollY() { return mScrollY; };
     inline F32 getScrollPositionX() { return mTextureOffsetX; };
@@ -119,8 +119,10 @@ private:
     void renderRegionNoSplit( BatchRender* pBatchRenderer, TextureHandle& texture, const ScrollSplitRegion& splitRegion );
 
 protected:
-    static bool writeRepeatX( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return pCastObject->mRepeatX != 1; }
-    static bool writeRepeatY( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return pCastObject->mRepeatY != 1; }
+    static bool setRepeatX(void* obj, const char* data)                { PREFAB_WRITE_CHECK(Scroller); pCastObject->setRepeatX( dAtof(data) ); return false; }
+    static bool writeRepeatX( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return mNotEqual( pCastObject->mRepeatX, 1.0f); }
+    static bool setRepeatY(void* obj, const char* data)                { PREFAB_WRITE_CHECK(Scroller); pCastObject->setRepeatY( dAtof(data) ); return false; }
+    static bool writeRepeatY( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return mNotEqual( pCastObject->mRepeatY, 1.0f); }
     static bool writeScrollX( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return mNotZero(pCastObject->mScrollX); }
     static bool writeScrollY( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return mNotZero(pCastObject->mScrollY); }
     static bool writeScrollPositionX( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(Scroller); return mNotZero(pCastObject->mTextureOffsetX); }

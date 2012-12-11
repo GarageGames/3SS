@@ -33,8 +33,8 @@ IMPLEMENT_CONOBJECT(Scroller);
 //------------------------------------------------------------------------------
 
 Scroller::Scroller() :
-    mRepeatX(1),
-    mRepeatY(1),
+    mRepeatX(1.0f),
+    mRepeatY(1.0f),
     mScrollX(0.0f),
     mScrollY(0.0f),
     mTextureOffsetX(0.0f),
@@ -60,8 +60,8 @@ void Scroller::initPersistFields()
     // Call parent.
     Parent::initPersistFields();
 
-    addField("repeatX", TypeS32, Offset(mRepeatX, Scroller), &writeRepeatX, "");
-    addField("repeatY", TypeS32, Offset(mRepeatY, Scroller), &writeRepeatY, "");
+    addProtectedField("repeatX", TypeF32, Offset(mRepeatX, Scroller), &setRepeatX, &defaultProtectedGetFn, &writeRepeatX, "");
+    addProtectedField("repeatY", TypeF32, Offset(mRepeatY, Scroller), &setRepeatY, &defaultProtectedGetFn, &writeRepeatY, "");
     addField("scrollX", TypeF32, Offset(mScrollX, Scroller), &writeScrollX, "");
     addField("scrollY", TypeF32, Offset(mScrollY, Scroller), &writeScrollY, "");
     addField("scrollPositionX", TypeF32, Offset(mTextureOffsetX, Scroller), &writeScrollPositionX, "");
@@ -278,7 +278,7 @@ void Scroller::sceneRender( const SceneRenderState* pSceneRenderState, const Sce
 
     // Clamp Texture Offsets.
     const F32 textureOffsetX = frameTexelArea.mTexelWidth * renderOffsetX;
-    const F32 textureOffsetY =frameTexelArea.mTexelHeight * renderOffsetY;
+    const F32 textureOffsetY = frameTexelArea.mTexelHeight * renderOffsetY;
 
     // Fetch lower/upper texture coordinates.
     const Vector2& texLower = frameTexelArea.mTexelLower;
@@ -288,24 +288,22 @@ void Scroller::sceneRender( const SceneRenderState* pSceneRenderState, const Sce
 
     // Calculate split texel regions.
     baseSplitRegion.mTexSplitLowerX1 = texLower.x + textureOffsetX;
-    baseSplitRegion.mTexSplitLowerX2 = texUpper.x;
-    baseSplitRegion.mTexSplitUpperX1 = texLower.x;
-    baseSplitRegion.mTexSplitUpperX2 = baseSplitRegion.mTexSplitLowerX1;
-    // NOTE: Y texels are inverted in as compared to X texels.
     baseSplitRegion.mTexSplitLowerY1 = texUpper.y - textureOffsetY;
+    baseSplitRegion.mTexSplitLowerX2 = texUpper.x;
     baseSplitRegion.mTexSplitLowerY2 = texLower.y;
+    baseSplitRegion.mTexSplitUpperX1 = texLower.x;
     baseSplitRegion.mTexSplitUpperY1 = texUpper.y;
+    baseSplitRegion.mTexSplitUpperX2 = baseSplitRegion.mTexSplitLowerX1;
     baseSplitRegion.mTexSplitUpperY2 = baseSplitRegion.mTexSplitLowerY1;
 
     // Fetch render area.
     const Vector2& renderOOBB0 = mRenderOOBB[0];
     const Vector2& renderOOBB1 = mRenderOOBB[1];
-    //const Vector2& renderOOBB2 = mRenderOOBB[2];
     const Vector2& renderOOBB3 = mRenderOOBB[3];
 
     // Calculate region dimensions.
-    const F32 regionWidth = (renderOOBB1.x - renderOOBB0.x) / (F32)mRepeatX;
-    const F32 regionHeight = (renderOOBB3.y - renderOOBB0.y) / (F32)mRepeatY;
+    const F32 regionWidth = (renderOOBB1.x - renderOOBB0.x) / mRepeatX;
+    const F32 regionHeight = (renderOOBB3.y - renderOOBB0.y) / mRepeatY;
 
     // Calculate split region dimensions.
     const F32 splitRegionWidth = regionWidth * (1.0f-renderOffsetX);
@@ -321,8 +319,29 @@ void Scroller::sceneRender( const SceneRenderState* pSceneRenderState, const Sce
     baseSplitRegion.mVertSplitUpperY1 = baseSplitRegion.mVertSplitLowerY2;
     baseSplitRegion.mVertSplitUpperY2 = renderOOBB0.y + regionHeight;
 
+    // Fetch the whole regions.
+    const S32 wholeRegionX = (S32)mCeil( mRepeatX );
+    const S32 wholeRegionY = (S32)mCeil( mRepeatY );
+
+    // Flush any existing batches.
+    pBatchRenderer->flush();
+
+    // Set-up a set of clip-planes against the OOBB.
+    GLdouble left[4] = {1, 0, 0, -renderOOBB0.x};
+    GLdouble right[4] = {-1, 0, 0, renderOOBB1.x};
+    GLdouble top[4] = {0, 1, 0, renderOOBB3.y};
+    GLdouble bottom[4] = {0, -1, 0, -renderOOBB0.y};
+    glClipPlane(GL_CLIP_PLANE0, left);
+    glClipPlane(GL_CLIP_PLANE1, right);
+    glClipPlane(GL_CLIP_PLANE2, top);
+    glClipPlane(GL_CLIP_PLANE3, bottom);
+    glEnable(GL_CLIP_PLANE0);
+    glEnable(GL_CLIP_PLANE1);
+    glEnable(GL_CLIP_PLANE2);
+    glEnable(GL_CLIP_PLANE3);
+
     // Render repeat Y.
-    for ( S32 repeatIndexY = 0; repeatIndexY < mRepeatY; ++repeatIndexY )
+    for ( S32 repeatIndexY = 0; repeatIndexY < wholeRegionY; ++repeatIndexY )
     {
         // Set base split region.
         ScrollSplitRegion splitRegion = baseSplitRegion;
@@ -332,7 +351,7 @@ void Scroller::sceneRender( const SceneRenderState* pSceneRenderState, const Sce
             splitRegion.addVertexOffset( 0.0f, regionHeight * repeatIndexY );
 
         // Render repeat X.
-        for ( S32 repeatIndexX = 0; repeatIndexX < mRepeatX; ++repeatIndexX )
+        for ( S32 repeatIndexX = 0; repeatIndexX < wholeRegionX; ++repeatIndexX )
         {
             // Split in X only?
             if ( isSplitRenderFrameX && !isSplitRenderFrameY )
@@ -359,6 +378,15 @@ void Scroller::sceneRender( const SceneRenderState* pSceneRenderState, const Sce
             splitRegion.addVertexOffset( regionWidth, 0.0f );
         }
     }
+
+    // Flush the scroller batches.
+    pBatchRenderer->flush();
+
+    // Disable the OOBB clip-planes.
+    glDisable(GL_CLIP_PLANE0);
+    glDisable(GL_CLIP_PLANE1);
+    glDisable(GL_CLIP_PLANE2);
+    glDisable(GL_CLIP_PLANE3);
 }
 
 //------------------------------------------------------------------------------
@@ -492,10 +520,10 @@ void Scroller::renderRegionNoSplit( BatchRender* pBatchRenderer, TextureHandle& 
 
 //------------------------------------------------------------------------------
 
-void Scroller::setRepeat( const S32 repeatX, const S32 repeatY )
+void Scroller::setRepeat( const F32 repeatX, const F32 repeatY )
 {
     // Warn.
-    if ( repeatX <= 0 || repeatY <= 0 )
+    if ( repeatX <= 0.0f || repeatY <= 0.0f )
     {
         Con::warnf("Scroller::setRepeat() - Repeats must be greater than zero!");
         return;

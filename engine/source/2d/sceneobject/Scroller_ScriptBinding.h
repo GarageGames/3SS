@@ -6,7 +6,7 @@
 ConsoleMethod(Scroller, setRepeatX, void, 3, 3, "(repeatX) Sets the number of times to repeat the texture over x direction\n"
               "@return No return value.")
 {
-   object->setRepeatX( dAtoi(argv[2]) );
+   object->setRepeatX( dAtof(argv[2]) );
 }
 
 //------------------------------------------------------------------------------
@@ -14,19 +14,19 @@ ConsoleMethod(Scroller, setRepeatX, void, 3, 3, "(repeatX) Sets the number of ti
 ConsoleMethod(Scroller, setRepeatY, void, 3, 3, "(repeatY) Sets the number of times to repeat the texture in y direction.\n"
               "@return No return value.")
 {
-   object->setRepeatY( dAtoi(argv[2]) );
+   object->setRepeatY( dAtof(argv[2]) );
 }
 
 //------------------------------------------------------------------------------
 
-ConsoleMethod(Scroller, getRepeatX, S32, 2, 2, "() \n @return Returns repeat X value")
+ConsoleMethod(Scroller, getRepeatX, F32, 2, 2, "() \n @return Returns repeat X value")
 {
    return object->getRepeatX();
 }
 
 //------------------------------------------------------------------------------
 
-ConsoleMethod(Scroller, getRepeatY, S32, 2, 2, "() \n @return Returns repeat Y value")
+ConsoleMethod(Scroller, getRepeatY, F32, 2, 2, "() \n @return Returns repeat Y value")
 {
    return object->getRepeatY();
 }
@@ -93,29 +93,29 @@ ConsoleMethod(Scroller, getScrollPositionY, F32, 2, 2, "() \nReturns texture's p
 
 //------------------------------------------------------------------------------
 
-ConsoleMethod(Scroller, setRepeat, void, 3, 4, "(int repeatX / int repeatY) Sets the Repeat X/Y repetition in each direction.\n"
+ConsoleMethod(Scroller, setRepeat, void, 3, 4, "(float repeatX / float repeatY) Sets the Repeat X/Y repetition in each direction.\n"
                                                   "@param repeatX/Y The number of times to repeat in each direction as either (\"x y\") or (x, y)\n"
                                                   "@return No return value.")
 {
    // The new position.
-   S32 repeatX;
-   S32 repeatY;
+   F32 repeatX;
+   F32 repeatY;
 
    // Elements in the first argument.
-   U32 elementCount =Utility::mGetStringElementCount(argv[2]);
+   U32 elementCount = Utility::mGetStringElementCount(argv[2]);
 
    // ("repeatX repeatY")
    if ((elementCount == 2) && (argc == 3))
    {
-      repeatX = dAtoi(Utility::mGetStringElement(argv[2], 0));
-      repeatY = dAtoi(Utility::mGetStringElement(argv[2], 1));
+      repeatX = dAtof(Utility::mGetStringElement(argv[2], 0));
+      repeatY = dAtof(Utility::mGetStringElement(argv[2], 1));
    }
 
    // (repeatX, repeatY)
    else if ((elementCount == 1) && (argc == 4))
    {
-      repeatX = dAtoi(argv[2]);
-      repeatY = dAtoi(argv[3]);
+      repeatX = dAtof(argv[2]);
+      repeatY = dAtof(argv[3]);
    }
 
    // Invalid
