@@ -304,6 +304,10 @@ function SoundEditor::soundFileBrowser( %this )
 
         %proxyProfile.filename = %fileName;
 
+        %targetPath = expandPath("^{UserAssets}/audio/");
+        if ( !isFile(%targetPath) )
+            createPath(%targetPath);
+
         // Calculate target filename.
         %targetFilename = expandPath("^{UserAssets}/audio/" @ fileName(%proxyProfile.filename) );
 
