@@ -996,3 +996,39 @@ F32 TextureManager::getResidentFraction()
 
     return (F32(resident) / F32(total));
 }
+
+ConsoleFunction ( isValidImageSize, bool, 2, 2, "(imageFileName) Use to determine if the file is too large to import")
+{
+    char fileNameBuffer[1024];
+#ifdef TORQUE_TOOLS
+    Platform::makeFullPathName( argv[1], fileNameBuffer, 1024 );
+#else
+    dStrcpy(fileNameBuffer, pTextureKey);
+#endif
+    GBitmap *bmp = NULL;
+
+    // Loop through the supported extensions to find the file.
+    U32 len = dStrlen(fileNameBuffer);
+    for (U32 i = 0; i < EXT_ARRAY_SIZE && bmp == NULL; i++)
+    {
+#if defined(TORQUE_OS_IOS)
+        // check to see if requested no-compression...
+        if (nocompression && (dStrncmp( extArray[i], ".pvr", 4 ) == 0)) {
+            continue;
+        }
+#endif
+        dStrcpy(fileNameBuffer + len, extArray[i]);
+
+        bmp = (GBitmap*)ResourceManager->loadInstance(fileNameBuffer);
+
+        if ( bmp != NULL && (bmp->getWidth() > MaximumProductSupportedTextureWidth || bmp->getHeight() > MaximumProductSupportedTextureHeight) )
+        {
+            Con::warnf( "TextureManager::loadBitmap() - Cannot load bitmap '%s' as its dimensions exceed the maximum product-supported texture dimension.", fileNameBuffer );
+            delete bmp;
+			return false;
+        }
+    }
+
+	delete bmp;
+    return true;
+}

@@ -62,12 +62,29 @@ function LauncherTool::load(%this, %object)
 
     // Select the first object in the list
     if (%object !$= "")
-        %this.selectLauncherObject(%object);
+        $LauncherToolObjectScrollView.setSelected(%this.getLauncherIndex(%object));
     else
         $LauncherToolObjectScrollView.setSelected(0);
 
     // Initialize sound buttons
     PhysicsLauncherTools::audioButtonInitialize(Lt_PullbackSoundButtonPlay);
+}
+
+function LauncherTool::getLauncherIndex(%this, %data)
+{
+    %launcherGroup = $PrefabSet.findObjectByInternalName("LauncherSet");
+    %objCount = %launcherGroup.getCount();
+    %id = 0;
+    for (%i = 0; %i < %objCount; %i++)
+    {
+        %obj = %launcherGroup.getObject(%i);
+        if (%obj == %data)
+        {
+            %id = %i;
+            break;
+        }
+    }
+    return %id;
 }
 
 function LauncherTool::save(%this)

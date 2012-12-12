@@ -9,8 +9,8 @@
 function WorldTool::onSleep(%this)
 {
     %this.saveData();
-    %this.clearLevelData();
-    alxStopAll();
+    %this.clearLevelData(true);
+    Wt_LevelMusicStopBtn.onClick();
     if ( isObject(%this.helpManager) )
     {
         %this.helpManager.stop();
@@ -60,8 +60,8 @@ function WorldTool::load(%this)
     else
         %levelIndex = 0;
 
-    if (%this.worldIndex !$= "")
-        %worldIndex = %this.worldIndex;
+    if (%this.selectedWorld !$= "")
+        %worldIndex = %this.selectedWorld;
     else
         %worldIndex = 0;
 
@@ -122,11 +122,14 @@ function WorldTool::load(%this)
     %this.worldIndex = %worldIndex;
     %this.refresh();
 
-    // If the Unmapped Levels "world" is empty, select the next world.
-    while ( %this.LevelListContainer.getCount() < 2 )
+    // If the selected world is empty, select the next world.
+    while ( %this.currentWorlds[%this.worldIndex].WorldLevelCount < 1 )
     {
-        %this.WorldListContainer.setSelected(%this.worldIndex++);
+        %this.worldIndex++;
+        if ( %this.worldIndex > %this.currentWorldData.getCount() )
+            break;
     }
+    %this.WorldListContainer.setSelected(%this.worldIndex);
     $Wt_ToolInitialized = true;
     %this.LevelListContainer.setSelected(%levelIndex);
     %this.LevelListContainer.scrollToButton(%levelIndex);
@@ -320,7 +323,7 @@ function WorldTool::selectWorld(%this, %data)
 /// <param name="data">This is passed back from the level list container button</param>
 function WorldTool::selectLevel(%this, %data)
 {
-    alxStopAll();
+    Wt_LevelMusicStopBtn.onClick();
 
     if (%this.lastLevelName !$= "")
     {
@@ -352,66 +355,72 @@ function WorldTool::selectLevel(%this, %data)
 /// This clears and locks the World Tool display when there is no level selected, 
 /// such as when selecting a world with no levels in it.
 /// </summary>
-function WorldTool::clearLevelData(%this)
+function WorldTool::clearLevelData(%this, %sleeping)
 {
-    Wt_LevelNameEdit.setText("");
-    Wt_LevelNameEdit.setActive(false);
-
-    %this.lastLevelName = %level;
-    if (isObject(%this.loadedLevel))
+    if ( %sleeping )
     {
-        PhysicsLauncherTools::deleteSceneContents(%this.loadedLevel);
-        %this.loadedLevel.delete();
-    }
-    for (%i = 1; %i < 6; %i++)
-    {
-        %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
-        %projectileEdit = "Wt_Projectile" @ %i @ "CountEdit";
-        %projectileUpBtn = "Wt_Projectile" @ %i @ "CountUpBtn";
-        %projectileDownBtn = "Wt_Projectile" @ %i @ "CountDownBtn";
-        %rewardEdit = "Wt_Reward" @ %i @ "ValueEdit";
-        %rewardUpBtn = "Wt_Reward" @ %i @ "UpBtn";
-        %rewardDownBtn = "Wt_Reward" @ %i @ "DownBtn";
-
-        %dropdown.clear();
-        %dropdown.add("Empty", 0);
-        for (%j = 0; %j < %this.projectileSet.getCount(); %j++)
+        %this.lastLevelName = %level;
+        if (isObject(%this.loadedLevel))
         {
-            %projectile = %this.projectileSet.getObject(%j);
-            if (%projectile !$= "")
+            PhysicsLauncherTools::deleteSceneContents(%this.loadedLevel);
+            %this.loadedLevel.delete();
+        }
+    }
+    else
+    {
+        Wt_LevelNameEdit.setText("");
+        Wt_LevelNameEdit.setActive(false);
+
+        for (%i = 1; %i < 6; %i++)
+        {
+            %dropdown = "Wt_Projectile" @ %i @ "Dropdown";
+            %projectileEdit = "Wt_Projectile" @ %i @ "CountEdit";
+            %projectileUpBtn = "Wt_Projectile" @ %i @ "CountUpBtn";
+            %projectileDownBtn = "Wt_Projectile" @ %i @ "CountDownBtn";
+            %rewardEdit = "Wt_Reward" @ %i @ "ValueEdit";
+            %rewardUpBtn = "Wt_Reward" @ %i @ "UpBtn";
+            %rewardDownBtn = "Wt_Reward" @ %i @ "DownBtn";
+
+            %dropdown.clear();
+            %dropdown.add("Empty", 0);
+            for (%j = 0; %j < %this.projectileSet.getCount(); %j++)
             {
-                %projectileName = %projectile.getInternalName();
-                %dropdown.add(%projectileName, %j + 1);
+                %projectile = %this.projectileSet.getObject(%j);
+                if (%projectile !$= "")
+                {
+                    %projectileName = %projectile.getInternalName();
+                    %dropdown.add(%projectileName, %j + 1);
+                }
+            }
+            %dropdown.setSelected(0);
+            %projectileEdit.setText("");
+            if (%i < 4)
+            {
+                %rewardEdit.setText("0");
+                %rewardEdit.setActive(false);
+                %rewardUpBtn.setActive(false);
+                %rewardDownBtn.setActive(false);
             }
         }
-        %dropdown.setSelected(0);
-        %projectileEdit.setText("");
-        if (%i < 4)
+
+        // populate launcher drop down from prefab launcherSet
+        Wt_LauncherDropdown.clear();
+        %launcherIndex = 0;
+        for (%i = 0; %i < %this.launcherSet.getCount(); %i++)
         {
-            %rewardEdit.setText("0");
-            %rewardEdit.setActive(false);
-            %rewardUpBtn.setActive(false);
-            %rewardDownBtn.setActive(false);
+            %name = SlingshotLauncherBuilder::getName(%this.launcherSet.getObject(%i));
+            Wt_LauncherDropdown.add(%name, %i+1);
         }
+        Wt_LauncherDropdown.setSelected(%launcherIndex);
+        Wt_LauncherDropdown.setActive(false);
+        
+        Wt_LevelEditToolBtn.setActive(false);
+
+        Wt_LevelMusicEdit.setText("");
+        Wt_LevelMusicEdit.setActive(false);
+
+        %this.refreshProjectilePane();
     }
-
-    // populate launcher drop down from prefab launcherSet
-    Wt_LauncherDropdown.clear();
-    %launcherIndex = 0;
-    for (%i = 0; %i < %this.launcherSet.getCount(); %i++)
-    {
-        %name = SlingshotLauncherBuilder::getName(%this.launcherSet.getObject(%i));
-        Wt_LauncherDropdown.add(%name, %i+1);
-    }
-    Wt_LauncherDropdown.setSelected(%launcherIndex);
-    Wt_LauncherDropdown.setActive(false);
-    
-    Wt_LevelEditToolBtn.setActive(false);
-
-    Wt_LevelMusicEdit.setText("");
-    Wt_LevelMusicEdit.setActive(false);
-
-    %this.refreshProjectilePane();
 }
 
 /// <summary>
@@ -3115,8 +3124,9 @@ function Wt_LevelSelectButton::onMouseUp(%this)
 /// </summary>
 function Wt_LevelEditToolBtn::onClick(%this)
 {
+    %level = WorldTool.lastLevelName;
     LevelBuilderToolPresenter.load();
-    LevelBuilderToolPresenter.loadLevel(WorldTool.currentWorldData.getObject(WorldTool.worldIndex).getInternalName(), WorldTool.lastLevelName);
+    LevelBuilderToolPresenter.loadLevel(WorldTool.currentWorldData.getObject(WorldTool.worldIndex).getInternalName(), %level);
     Tt_LevelBuilderToolButton.setStateOn(true);
 }
 
