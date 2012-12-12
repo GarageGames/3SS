@@ -195,7 +195,6 @@ function ImageEditor::saveImage(%this)
         %newAssetId = %this.createImageAsset(%imageDBName);
         %newAsset = AssetDatabase.acquireAsset(%newAssetId);
         %newAsset.copy(%imageMap);
-        %this.copyTags(%imageMap, %newAssetId);
         
         %pathNoExtension = expandPath("^{UserAssets}/images/") @ fileBase(%imageDBName);
 
@@ -213,6 +212,7 @@ function ImageEditor::saveImage(%this)
         }
         // Update image filename.
         %newAsset.ImageFile = %this.stripExtension( %targetFilename );
+        %this.copyTags(%imageMap, %newAssetId);
 
         AssetDatabase.releaseAsset(%imageMap);
         removeResPath(filePath(%newFileLocation));
@@ -463,6 +463,10 @@ function ImageEditor::imageFileBrowser(%this)
             fileDelete(expandPath(%this.selectedImage.ImageFile));
             %this.selectedImage.ImageFile = "";
         }
+
+        %targetPath = expandPath("^{UserAssets}/images/");
+        if ( !isFile(%targetPath) )
+            createPath(%targetPath);
 
         // Calculate target filename.
         %targetFilename = expandPath("^{UserAssets}/images/" @ fileName(%fileName) );
