@@ -455,6 +455,13 @@ function ImageEditor::imageFileBrowser(%this)
             MessageBoxOK("Warning", "'"@%fileOnlyName@"' is not a valid image file.", "");
             return;
         }
+        
+        // Check valid image size
+        if (!isValidImageSize(%fileName))
+        {
+            NoticeGui.display("The image you have chosen is too large and cannot be loaded.");
+            return;
+        }
 
         // If we're editing an asset, remove the old image file.
         if ( %this.selectedImage.ImageFile !$= "" )
