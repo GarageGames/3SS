@@ -368,9 +368,11 @@ function ProjectileBuilder::setIdleInLauncherAnim(%projectile, %anim, %frame)
         if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
         {
             if (%tempBeh.instanceName $= "IdleInLauncher")
+            {
                 %tempBeh.setAsset(%anim);
                 if (%frame !$= "")
                     %tempBeh.setFrame(%frame);
+            }
         }
     }
 }
@@ -409,9 +411,11 @@ function ProjectileBuilder::setInAirAnim(%projectile, %anim, %frame)
         if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
         {
             if (%tempBeh.instanceName $= "InAir")
+            {
                 %tempBeh.setAsset(%anim);
                 if (%frame !$= "")
                     %tempBeh.setFrame(%frame);
+            }
         }
     }
 }
@@ -448,9 +452,11 @@ function ProjectileBuilder::setHitAnim(%projectile, %anim, %frame)
         if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
         {
             if (%tempBeh.instanceName $= "Hit")
+            {
                 %tempBeh.setAsset(%anim);
                 if (%frame !$= "")
                     %tempBeh.setFrame(%frame);
+            }
         }
     }
 }
@@ -486,9 +492,11 @@ function ProjectileBuilder::setVanishAnim(%projectile, %anim, %frame)
         if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
         {
             if (%tempBeh.instanceName $= "VanishAnim")
+            {
                 %tempBeh.setAsset(%anim);
                 if (%frame !$= "")
                     %tempBeh.setFrame(%frame);
+            }
         }
     }
 }

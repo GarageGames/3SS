@@ -57,17 +57,19 @@ function ProjectileToolForm::displayPreview(%this, %index)
     if (%isStaticImage)
     {
         Pt_PreviewWindow.setImage(%this.previewName);
-        switch(Pt_PreviewSelectDropdown.getSelected)
+        %frame = 0;
+        switch(Pt_PreviewSelectDropdown.getSelected())
         {
             case 0:
-                Pt_PreviewWindow.setImageFrame(ProjectileBuilder::getIdleInLauncherAnimFrame(%this.projectile));
+                %frame = ProjectileBuilder::getIdleInLauncherAnimFrame(%this.projectile);
             case 1:
-                Pt_PreviewWindow.setImageFrame(ProjectileBuilder::getInAirAnimFrame(%this.projectile));
+                %frame = ProjectileBuilder::getInAirAnimFrame(%this.projectile);
             case 2:
-                Pt_PreviewWindow.setImageFrame(ProjectileBuilder::getHitAnimFrame(%this.projectile));
+                %frame = ProjectileBuilder::getHitAnimFrame(%this.projectile);
             case 3:
-                Pt_PreviewWindow.setImageFrame(ProjectileBuilder::getVanishAnimFrame(%this.projectile));
+                %frame = ProjectileBuilder::getVanishAnimFrame(%this.projectile);
         }
+        Pt_PreviewWindow.setImageFrame(%frame);
     }
     else
         Pt_PreviewWindow.Animation = %this.previewName;
