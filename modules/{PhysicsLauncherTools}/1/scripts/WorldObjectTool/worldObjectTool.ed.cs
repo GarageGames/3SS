@@ -18,6 +18,7 @@ function WorldObjectToolGui::onSleep()
     PhysicsLauncherTools::writePrefabs(); 
     WorldObjectTool.helpManager.stop();
     WorldObjectTool.helpManager.delete();
+    $WorldObjectToolObjectScrollView.delete();
 }
 
 function WorldObjectTool::load(%this)
@@ -268,7 +269,7 @@ function WorldObjectTool::removeObject(%this, %object)
     %object.safeDelete();
     
     WorldObjectTool.refreshObjectView();
-    WorldObjectTool.selectObject(%worldObjectSet.getObject(0));
+    $WorldObjectToolObjectScrollView.setSelected(0);
 }
 
 function WorldObjectTool::refreshObjectView(%this)
