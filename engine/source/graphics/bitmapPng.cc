@@ -259,24 +259,15 @@ bool GBitmap::readPNG(Stream& io_rStream)
 
    // Set up the row pointers...
    //AssertISV(height <= csgMaxRowPointers, "Error, cannot load pngs taller than 2048 pixels!");
-
+   // Emit console warnings if image is too large, but read if possible anyway to allow 
+   // isValidImageSize() console function to work correctly.
    if ( height > csgMaxRowPointers )
    {
-	   Con::errorf("Image height exceeds 2048 pixels.  Cannot load image");
-	   png_read_end(png_ptr, NULL);
-	   png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
-
-	   sg_pStream = NULL;
-	   return false;
+	   Con::warnf("Image height exceeds 2048 pixels.  Cannot load image");
    }
    if ( width > csgMaxRowPointers )
    {
-	   Con::errorf("Image width exceeds 2048 pixels.  Cannot load image");
-	   png_read_end(png_ptr, NULL);
-	   png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
-
-	   sg_pStream = NULL;
-	   return false;
+	   Con::warnf("Image width exceeds 2048 pixels.  Cannot load image");
    }
 
    png_bytep* rowPointers = sRowPointers;
