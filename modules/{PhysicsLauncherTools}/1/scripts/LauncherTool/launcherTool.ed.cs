@@ -21,6 +21,7 @@ function LauncherToolGui::onSleep()
 
     LauncherTool.helpManager.stop();
     LauncherTool.helpManager.delete();
+    $LauncherToolObjectScrollView.delete();
 }
 
 function LauncherToolGui::onWake()
@@ -659,13 +660,19 @@ function Lt_NameField::onReturn(%this)
 
 function Lt_NameField::onValidate(%this)
 {
+    %launcherSet = LauncherTool.launcherSimSet;
+    %index = LauncherTool.selectedIndex;
     %name = %this.getText();
-    SlingshotLauncherBuilder::setName(LauncherTool.currentObject, %name);    
+    if (!isObject(%launcherSet.findObjectByInternalName(%name)))
+    {
+        SlingshotLauncherBuilder::setName(LauncherTool.currentObject, %name);    
 
-    LauncherTool.save();
-    LauncherTool.selectedLauncherBtn.nameField.text = %name;
-    // Refresh the scroll view
-    LauncherTool.refreshObjectView();
+        LauncherTool.save();
+        LauncherTool.selectedLauncherBtn.nameField.text = %name;
+        // Refresh the scroll view
+        LauncherTool.refreshObjectView();
+        $LauncherToolObjectScrollView.setSelected(%index);
+    }
 }
 
 //------------------------------------------------------------------------------

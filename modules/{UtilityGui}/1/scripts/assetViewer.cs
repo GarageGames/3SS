@@ -63,7 +63,7 @@ function AssetViewer::destroy(%this)
 
 function AssetViewer::setSearchString(%this, %text)
 {
-    ASScrollCtrl.scrollToTop();
+    %this.getParent().scrollToTop();
     %this.searchString = %text;
     %this.assetCount = 0;
     %this.updateQuery();
