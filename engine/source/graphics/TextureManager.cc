@@ -797,7 +797,7 @@ TextureObject* TextureManager::registerTexture(const char* pTextureKey, GBitmap*
         pTextureObject->mpBitmap = NULL;
     }
 
-    AssertFatal( glGetError() == 0, "A GL error has occurred." );
+    //AssertFatal( glGetError() == 0, "A GL error has occurred." );
 
     return pTextureObject;
 }

@@ -222,6 +222,8 @@ function AG_GamesList::Refresh(%this)
 {
     %this.ClearList();
     
+    %projectFile = "/project.tssproj";
+    
     sortProjectList(%this.sortType);
     
     for(%i = 0; %i < CreatedProjectSet.getCount(); %i++)
@@ -237,6 +239,9 @@ function AG_GamesList::Refresh(%this)
         
         if (%templateModule.description !$= %this.filter && %this.filter !$= "All Games")
             continue;
+            
+        %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects" @ "/" @ %gameProject.sourceModule;
+        %project = %projectLocation @ "/" @ %projectName @ %projectFile;
             
         // Get the icon for this template
         %icon = %templateModule.Icon;
