@@ -546,7 +546,7 @@ function WorldObjectTool::CreateObjectHighlightButton(%this, %i)
 
     // Get the image from the idle state of the projectile
     %asset = getWord(WorldObjectBuilder::getAnimationList(%object), 1);
-    //%frame = WorldObjectBuilder::getIdleInLauncherAnimFrame(%object);     
+    %frame = WorldObjectBuilder::getImageFrameForState(%object, 0);     
     
     %control = new GuiControl(){
         canSaveDynamicFields="0";

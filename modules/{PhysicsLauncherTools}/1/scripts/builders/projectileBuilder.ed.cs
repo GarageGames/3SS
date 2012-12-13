@@ -359,7 +359,7 @@ function ProjectileBuilder::getTutorialImage(%projectile)
 /// </summary>
 /// <param name="projectile">The projectile to set.</param>
 /// <param name="anim">The asset ID of the animation to use.</param>
-function ProjectileBuilder::setIdleInLauncherAnim(%projectile, %anim)
+function ProjectileBuilder::setIdleInLauncherAnim(%projectile, %anim, %frame)
 {
     // loop through behaviors and look for the Idle In Launcher animation behavior
     for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
@@ -369,6 +369,8 @@ function ProjectileBuilder::setIdleInLauncherAnim(%projectile, %anim)
         {
             if (%tempBeh.instanceName $= "IdleInLauncher")
                 %tempBeh.setAsset(%anim);
+                if (%frame !$= "")
+                    %tempBeh.setFrame(%frame);
         }
     }
 }
@@ -398,7 +400,7 @@ function ProjectileBuilder::getIdleInLauncherAnim(%projectile)
 /// </summary>
 /// <param name="projectile">The projectile to set.</param>
 /// <param name="anim">The asset ID of the animation to use.</param>
-function ProjectileBuilder::setInAirAnim(%projectile, %anim)
+function ProjectileBuilder::setInAirAnim(%projectile, %anim, %frame)
 {
     // loop through behaviors and look for the In Air animation behavior
     for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
@@ -408,6 +410,8 @@ function ProjectileBuilder::setInAirAnim(%projectile, %anim)
         {
             if (%tempBeh.instanceName $= "InAir")
                 %tempBeh.setAsset(%anim);
+                if (%frame !$= "")
+                    %tempBeh.setFrame(%frame);
         }
     }
 }
@@ -436,7 +440,7 @@ function ProjectileBuilder::getInAirAnim(%projectile)
 /// </summary>
 /// <param name="projectile">The projectile to set.</param>
 /// <param name="anim">The asset ID of the animation to assign.</param>
-function ProjectileBuilder::setHitAnim(%projectile, %anim)
+function ProjectileBuilder::setHitAnim(%projectile, %anim, %frame)
 {
     for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
     {
@@ -445,6 +449,8 @@ function ProjectileBuilder::setHitAnim(%projectile, %anim)
         {
             if (%tempBeh.instanceName $= "Hit")
                 %tempBeh.setAsset(%anim);
+                if (%frame !$= "")
+                    %tempBeh.setFrame(%frame);
         }
     }
 }
@@ -472,7 +478,7 @@ function ProjectileBuilder::getHitAnim(%projectile)
 /// </summary>
 /// <param name="projectile">The projectile to set.</param>
 /// <param name="anim">The asset ID of the animation to assign.</param>
-function ProjectileBuilder::setVanishAnim(%projectile, %anim)
+function ProjectileBuilder::setVanishAnim(%projectile, %anim, %frame)
 {
     for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
     {
@@ -481,6 +487,8 @@ function ProjectileBuilder::setVanishAnim(%projectile, %anim)
         {
             if (%tempBeh.instanceName $= "VanishAnim")
                 %tempBeh.setAsset(%anim);
+                if (%frame !$= "")
+                    %tempBeh.setFrame(%frame);
         }
     }
 }
@@ -511,7 +519,16 @@ function ProjectileBuilder::getVanishAnim(%projectile)
 /// <param name="frame">The desired frame of the assigned image.</param>
 function ProjectileBuilder::setIdleInLauncherAnimFrame(%projectile, %frame)
 {
-    //TODO   
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "IdleInLauncher")
+                %tempBeh.setFrame(%frame);
+        }
+    }
 }
 
 /// <summary>
@@ -522,8 +539,17 @@ function ProjectileBuilder::setIdleInLauncherAnimFrame(%projectile, %frame)
 /// <return>Returns the frame of the assigned sprite to display.</return>
 function ProjectileBuilder::getIdleInLauncherAnimFrame(%projectile)
 {
-    //TODO 
-    return 0;  
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "IdleInLauncher")
+                return %tempBeh.getFrame();
+        }
+    }
+    return 0;
 }
 
 /// <summary>
@@ -534,7 +560,16 @@ function ProjectileBuilder::getIdleInLauncherAnimFrame(%projectile)
 /// <param name="frame">The desired frame of the assigned image.</param>
 function ProjectileBuilder::setInAirAnimFrame(%projectile, %frame)
 {
-    //TODO
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "InAir")
+                %tempBeh.setFrame(%frame);
+        }
+    }
 }
 
 /// <summary>
@@ -545,8 +580,16 @@ function ProjectileBuilder::setInAirAnimFrame(%projectile, %frame)
 /// <return>Returns the frame of the assigned sprite to display.</return>
 function ProjectileBuilder::getInAirAnimFrame(%projectile)
 {
-    //TODO
-    
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "InAir")
+                return %tempBeh.getFrame();
+        }
+    }
     return 0;
 }
 
@@ -558,7 +601,16 @@ function ProjectileBuilder::getInAirAnimFrame(%projectile)
 /// <param name="frame">The desired frame of the assigned image.</param>
 function ProjectileBuilder::setHitAnimFrame(%projectile, %frame)
 {
-    //TODO
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "Hit")
+                %tempBeh.setFrame(%frame);
+        }
+    }
 }
 
 /// <summary>
@@ -569,7 +621,16 @@ function ProjectileBuilder::setHitAnimFrame(%projectile, %frame)
 /// <return>Returns the frame of the assigned sprite to display.</return>
 function ProjectileBuilder::getHitAnimFrame(%projectile)
 {
-    //TODO
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "Hit")
+                return %tempBeh.getFrame();
+        }
+    }
     return 0;
 }
 
@@ -581,7 +642,16 @@ function ProjectileBuilder::getHitAnimFrame(%projectile)
 /// <param name="frame">The desired frame of the assigned image.</param>
 function ProjectileBuilder::setVanishAnimFrame(%projectile, %frame)
 {
-    //TODO
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "VanishAnim")
+                %tempBeh.setFrame(%frame);
+        }
+    }
 }
 
 /// <summary>
@@ -592,7 +662,16 @@ function ProjectileBuilder::setVanishAnimFrame(%projectile, %frame)
 /// <return>Returns the frame of the assigned sprite to display.</return>
 function ProjectileBuilder::getVanishAnimFrame(%projectile)
 {
-    //TODO
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "AnimationEffectBehavior")
+        {
+            if (%tempBeh.instanceName $= "VanishAnim")
+                return %tempBeh.getFrame();
+        }
+    }
     return 0;
 }
 
