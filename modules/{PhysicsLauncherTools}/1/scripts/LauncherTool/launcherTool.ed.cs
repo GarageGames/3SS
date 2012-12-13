@@ -860,6 +860,7 @@ function Lt_SlingFileButton::setSelectedAsset(%this, %asset)
 //------------------------------------------------------------------------------
 function Lt_EditCollisionButton::onClick(%this)
 {
+    Tt_CollisionButton.setStateOn(true);
     SlingshotLauncherBuilder::openCollisionEditor(LauncherTool.currentObject, %this);
 }
 
