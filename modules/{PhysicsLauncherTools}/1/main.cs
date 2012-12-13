@@ -140,10 +140,18 @@ package PhysicsLauncherPackage
             // Check file validity
             if (!isValidImageFile(%fileName))
             {
-                MessageBoxOK("Warning", "'" @ %fileOnlyName @ "' is not a valid image file.", "");
+                //MessageBoxOK("Warning", "'" @ %fileOnlyName @ "' is not a valid image file.", "");
+				NoticeGui.display("The image you have chosen is not a valid image file.");
                 return;
             }
             
+			// Check valid image size
+			if (!isValidImageSize(%fileName))
+			{
+				NoticeGui.display("The image you have chosen is too large and cannot be loaded.");
+				return;
+			}
+
             generateGuiImageMapFromFile(%fileName);
         }
 
