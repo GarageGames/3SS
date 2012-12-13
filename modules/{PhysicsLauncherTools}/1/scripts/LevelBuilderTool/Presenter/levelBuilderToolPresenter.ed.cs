@@ -1175,6 +1175,11 @@ function LevelBuilderToolPresenter::onRightViewLevelSizeSelect(%this)
         default:
     }
     
+    WorldBoundary.setSize(%this.Scene.levelSize);
+    WorldBoundary.clearCollisionShapes();
+    WorldBoundary.createPolygonBoxCollisionShape(WorldBoundary.getSize().x, WorldBoundary.getSize().y);
+    WorldBoundary.setCollisionShapeIsSensor(0, true);
+    
     if ($LevelBuilderTool::LevelSize !$= "")
     {
         %levelSizeChangeXRatio = %this.Scene.levelSize.x / %oldLevelSize.x;

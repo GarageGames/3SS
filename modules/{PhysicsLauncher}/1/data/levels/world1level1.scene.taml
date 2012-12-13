@@ -204,19 +204,19 @@
         Angle="0"
         currentSound="21" />
     <Trigger
-        Name="WorldBoundary1"
+        Name="WorldBoundary"
         class="WorldTrigger"
-        size="40 18"
+        size="32 16"
         BodyType="static"
         GatherContacts="1"
         CollisionCallback="1">
         <Trigger.CollisionShapes>
             <Polygon
                 Sensor="1"
-                Point0="20 -9"
-                Point1="20 9"
-                Point2="-20 9"
-                Point3="-20 -9" />
+                Point0="-16 -8"
+                Point1="16 -8"
+                Point2="16 8"
+                Point3="-16 8" />
         </Trigger.CollisionShapes>
     </Trigger>
     <SceneObject

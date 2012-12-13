@@ -20,24 +20,24 @@
 /// <param name="info">The collision details from the collision.</param>
 function Scene::OnCollision(%this, %sceneObjectA, %sceneObjectB, %collisionDetails)
 {
-    if (%sceneObjectA.getName() $= "WorldBoundary")
-    {
-        //echo(" @@@ " @ %sceneObjectB @ " : " @ %sceneObjectB.getClassName() @ " collided with world bounds");
-        if (isObject(GameEventManager))
-            GameEventManager.postEvent("_Cleanup", %sceneObjectB);
-        else
-            PhysicsLauncherToolsEventManager.postEvent("_Cleanup", %sceneObjectB);
-        return;
-    }
-    if (%sceneObjectB.getName() $= "WorldBoundary")
-    {
-        //echo(" @@@ " @ %sceneObjectA @ " : " @ %sceneObjectA.getClassName() @ " collided with world bounds");
-        if (isObject(GameEventManager))
-            GameEventManager.postEvent("_Cleanup", %sceneObjectA);
-        else
-            PhysicsLauncherToolsEventManager.postEvent("_Cleanup", %sceneObjectA);
-        return;
-    }
+    //if (%sceneObjectA.getName() $= "WorldBoundary")
+    //{
+        ////echo(" @@@ " @ %sceneObjectB @ " : " @ %sceneObjectB.getClassName() @ " collided with world bounds");
+        //if (isObject(GameEventManager))
+            //GameEventManager.postEvent("_Cleanup", %sceneObjectB);
+        //else
+            //PhysicsLauncherToolsEventManager.postEvent("_Cleanup", %sceneObjectB);
+        //return;
+    //}
+    //if (%sceneObjectB.getName() $= "WorldBoundary")
+    //{
+        ////echo(" @@@ " @ %sceneObjectA @ " : " @ %sceneObjectA.getClassName() @ " collided with world bounds");
+        //if (isObject(GameEventManager))
+            //GameEventManager.postEvent("_Cleanup", %sceneObjectA);
+        //else
+            //PhysicsLauncherToolsEventManager.postEvent("_Cleanup", %sceneObjectA);
+        //return;
+    //}
 
     if (%sceneObjectA.isMethod(handleCollision))
         %sceneObjectA.handleCollision(%sceneObjectB, "A", %collisionDetails);
