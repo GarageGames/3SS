@@ -166,7 +166,7 @@
               VertSizing="bottom"
               Position="2 2"
               Extent="803 166"
-              MinExtent="803 5000"
+              MinExtent="803 500"
               canSave="1"
               Visible="1"
               Active="0"
