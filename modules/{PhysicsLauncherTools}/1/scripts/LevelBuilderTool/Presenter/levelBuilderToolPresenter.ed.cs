@@ -11,7 +11,7 @@
 $LevelBuilderTool::CurrentWorld = "";
 $LevelBuilderTool::CurrentLevel = "";
 
-$CollisionShapesDebugId = 5;
+$CollisionShapesDebugId = "DEBUG_COLLISION_SHAPES";
 $LevelBuilderTool::LastLauncherCollisionObjectPosition = "";
 
 $LevelBuilderTool::RotationScheduleId = -1;

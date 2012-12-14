@@ -49,6 +49,6 @@ moc_QtFileDownloader.cc
 moc_QtHttpRequestHandler.cc
 moc_QtNetworkManager.cc
 moc_WebRender.cc
-*.torsion.exports
-*.torsion.opt
+3StepStudio.torsion.exports
+3StepStudio.torsion.opt
 \_ReSharper.*

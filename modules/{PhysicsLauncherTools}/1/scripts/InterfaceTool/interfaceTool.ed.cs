@@ -2650,7 +2650,7 @@ function It_AssetSelectButton::onClick(%this)
     }
 }
 
-function It_AssetSelectButton::setSelectedAsset(%this, %assetID)
+function It_AssetSelectButton::setSelectedAsset(%this, %assetID, %frame)
 {
     %nameTag = strreplace(%this.getName(), "SelectBtn", "");
     %dropdown = %nameTag @ "StateDropdown";

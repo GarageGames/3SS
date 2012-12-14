@@ -765,7 +765,20 @@ function WorldObjectTool::refreshPreview(%this, %asset, %frame)
 
     // Set the asset    
     Wot_PreviewWindow.previewSprite.setAsset(%asset);
-    
+    %tempAsset = AssetDatabase.acquireAsset(%asset);
+    %type = %tempAsset.getClassName();
+    AssetDatabase.releaseAsset(%asset);
+    switch$(%type)
+    {
+        case "ImageAsset":
+            Wot_PreviewPlayButton.setActive(false);
+            Wot_PreviewStopButton.setActive(false);
+
+        case "AnimationAsset":
+            Wot_PreviewPlayButton.setActive(true);
+            Wot_PreviewStopButton.setActive(true);
+    }
+
     // Size the sprite to the asset
     Wot_PreviewWindow.previewSprite.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     
@@ -1044,11 +1057,25 @@ function Wot_ImageFileButton::onClick(%this)
     AssetPicker.open("AnimationAsset ImageAsset", "", "", %this);
 }
 
-function Wot_ImageFileButton::setSelectedAsset(%this, %asset)
+function Wot_ImageFileButton::setSelectedAsset(%this, %assetID, %frame)
 {
     %currentObject = WorldObjectTool.currentObject;
     %selectedState = Wot_AppearanceStatePopup.getSelected();
-    WorldObjectBuilder::setImageForState(%currentObject, %selectedState, %asset);
+    WorldObjectBuilder::setImageForState(%currentObject, %selectedState, %assetID);
+    WorldObjectBuilder::setImageFrameForState(%currentObject, %selectedState, %frame);
+    %tempAsset = AssetDatabase.acquireAsset(%assetID);
+    %type = %tempAsset.getClassName();
+    AssetDatabase.releaseAsset(%assetID);
+    switch$(%type)
+    {
+        case "ImageAsset":
+            Wot_PreviewPlayButton.setActive(false);
+            Wot_PreviewStopButton.setActive(false);
+
+        case "AnimationAsset":
+            Wot_PreviewPlayButton.setActive(true);
+            Wot_PreviewStopButton.setActive(true);
+    }
     
     // Refresh the Appearance state
     WorldObjectTool.refreshAppearanceState(%currentObject, %selectedState);

@@ -332,7 +332,7 @@ function Lt_PreviewWindow::refreshCollisionShapes(%this, %launcherSceneObjectGro
     %shape = %this.collisionObject.createPolygonBoxCollisionShape(%this.collisionObject.getWidth(), %this.collisionObject.getHeight());
     %this.collisionObject.setCollisionShapeIsSensor(%shape, true);
     
-    %this.collisionObject.setDebugOn(5); 
+    %this.collisionObject.setDebugOn("DEBUG_COLLISION_SHAPES"); 
     
     %this.scene.add(%this.collisionObject);  
 }
