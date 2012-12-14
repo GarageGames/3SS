@@ -238,7 +238,7 @@ function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level)
 
 function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
 {
-    %path = expandPath("^gameTemplate/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels"); 
     %fileSpec = "/*.scene.taml";   
     %pattern = %path @ %fileSpec;
 

@@ -84,3 +84,10 @@ function Plt_DeleteCancelBtn::onClick(%this)
 {
     Canvas.popDialog(Plt_ConfirmDeleteGui);
 }
+
+function Plt_ConfirmDeleteGui::onDialogPop(%this)
+{
+    Plt_ConfirmDeleteGui.object = "";
+    Plt_ConfirmDeleteGui.handler = "";
+    Plt_ConfirmDeleteGui.data = "";
+}

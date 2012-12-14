@@ -942,27 +942,33 @@ function ProjectileBuilder::setCollisionShapesFromProxy(%projectile, %proxyObjec
 
 function ProjectileBuilder::findProjectileInLevel(%projectile, %level)
 {
+    %found = false;
+    //%baseTime = getRealTime();
     for (%i = 0; %i < 5; %i++)
     {
         if (%level.AvailProjectile[%i] $= %projectile)
-            return true;
+            %found = true;
     }
-    return false;
+    //echo(" @@@ checked for " @ %projectile.getInternalName() @ " in " @ (getRealTime() - %baseTime) / 1000 @ " seconds");
+    return %found;
 }
 
 function ProjectileBuilder::findProjectileInAllLevels(%projectile)
 {
-    %path = expandPath("^gameTemplate/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels"); 
     %fileSpec = "/*.scene.taml";   
     %pattern = %path @ %fileSpec;
 
     %file = findFirstFile(%pattern);
 
     %dependencies = "";
-
+    %i = 0;
+    %time = "";
     while(%file !$= "")
     {
+        %baseTime = getRealTime();
         %level = TamlRead(%file);
+        %time[%i++] = getRealTime() - %baseTime;
         if ( ProjectileBuilder::findProjectileInLevel(%projectile, %level) )
         {
             %levelName = fileBase(%file);
@@ -973,6 +979,14 @@ function ProjectileBuilder::findProjectileInAllLevels(%projectile)
         %level.delete();
         %file = findNextFile(%pattern);
     }
+    %totalTime = 0;
+    for (%inc = 0; %inc < %i; %inc++)
+    {
+        %totalTime += %time[%inc];
+    }
+    %avgTime = %totalTime / %i;
+    echo(" @@@ total time searching for projectiles in levels : " @ %totalTime / 1000);
+    echo(" @@@ average time for each level : " @ %avgTime / 1000);
     return %dependencies;
 }
 

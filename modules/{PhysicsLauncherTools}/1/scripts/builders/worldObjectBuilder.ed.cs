@@ -249,7 +249,7 @@ function WorldObjectBuilder::findObjectInLevel(%worldObject, %level)
 
 function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
 {
-    %path = expandPath("^gameTemplate/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels"); 
     %fileSpec = "/*.scene.taml";   
     %pattern = %path @ %fileSpec;
 
