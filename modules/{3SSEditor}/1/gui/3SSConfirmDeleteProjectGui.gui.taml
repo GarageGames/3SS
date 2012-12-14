@@ -11,6 +11,7 @@
     canSave="1"
     Visible="1"
     Active="0"
+    tooltipWidth="250"
     hovertime="1000">
     <GuiSpriteCtrl
         canSaveDynamicFields="0"
@@ -24,6 +25,7 @@
         canSave="1"
         Visible="1"
         Active="1"
+        tooltipWidth="250"
         hovertime="1000"
         Image="@asset={EditorAssets}:PopupOverlayImageMap" />
     <GuiSpriteCtrl
@@ -38,6 +40,7 @@
         canSave="1"
         Visible="1"
         Active="0"
+        tooltipWidth="250"
         hovertime="1000"
         Image="@asset={3SSEditor}:deleteGamePopupContainer">
         <GuiTextCtrl
@@ -52,6 +55,7 @@
             canSave="1"
             Visible="1"
             Active="0"
+            tooltipWidth="250"
             hovertime="1000"
             text="Delete"
             maxLength="1024"
@@ -68,6 +72,7 @@
             canSave="1"
             Visible="1"
             Active="0"
+            tooltipWidth="250"
             hovertime="1000"
             text="Cancel"
             maxLength="1024"
@@ -85,6 +90,7 @@
             canSave="1"
             Visible="1"
             Active="1"
+            tooltipWidth="250"
             hovertime="1000"
             groupNum="-1"
             buttonType="PushButton"
@@ -106,6 +112,7 @@
             canSave="1"
             Visible="1"
             Active="1"
+            tooltipWidth="250"
             hovertime="1000"
             groupNum="-1"
             buttonType="PushButton"
@@ -114,59 +121,23 @@
             HoverImage="@asset={EditorAssets}:mediumCancel_hImageMap"
             DownImage="@asset={EditorAssets}:mediumCancel_dImageMap"
             InactiveImage="@asset={EditorAssets}:mediumCancel_iImageMap" />
-        <GuiTextCtrl
-            canSaveDynamicFields="0"
-            isContainer="0"
-            Profile="GuiTextProfile"
-            HorizSizing="right"
-            VertSizing="bottom"
-            Position="18 18"
-            Extent="220 16"
-            MinExtent="8 2"
-            canSave="1"
-            Visible="1"
-            Active="1"
-            hovertime="1000"
-            text="Are you sure you want to delete"
-            maxLength="1024"
-            truncate="0" />
-        <GuiTextEditCtrl
+        <GuiMLTextCtrl
             Name="TSSDeleteProjectMsg"
             canSaveDynamicFields="0"
             isContainer="0"
             Profile="GuiObjectEditBoxProfile"
             HorizSizing="right"
             VertSizing="bottom"
-            Position="238 14"
-            Extent="100 25"
+            Position="18 18"
+            Extent="486 16"
             MinExtent="8 2"
             canSave="1"
             Visible="1"
             Active="1"
+            tooltipWidth="250"
             hovertime="1000"
-            text="[TestProjectName]"
-            maxLength="1024"
-            truncate="1"
-            historySize="0"
-            password="0"
-            tabComplete="0"
-            sinkAllKeyEvents="0"
-            passwordMask="*" />
-        <GuiTextCtrl
-            canSaveDynamicFields="0"
-            isContainer="0"
-            Profile="GuiTextProfile"
-            HorizSizing="right"
-            VertSizing="bottom"
-            Position="312 18"
-            Extent="192 16"
-            MinExtent="8 2"
-            canSave="1"
-            Visible="1"
-            Active="0"
-            hovertime="1000"
-            text="and all assets associated with it?"
-            maxLength="1024"
-            truncate="0" />
+            lineSpacing="2"
+            allowColorChars="0"
+            maxChars="-1" />
     </GuiSpriteCtrl>
 </GuiControl>

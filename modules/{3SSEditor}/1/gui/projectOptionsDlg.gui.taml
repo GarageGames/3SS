@@ -11,6 +11,7 @@
     canSave="1"
     Visible="1"
     Active="0"
+    tooltipWidth="250"
     hovertime="1000">
     <GuiSpriteCtrl
         canSaveDynamicFields="0"
@@ -24,6 +25,7 @@
         canSave="1"
         Visible="1"
         Active="1"
+        tooltipWidth="250"
         hovertime="1000"
         Image="@asset={EditorAssets}:PopupOverlayImageMap" />
     <GuiSpriteCtrl
@@ -39,6 +41,7 @@
         canSave="1"
         Visible="1"
         Active="0"
+        tooltipWidth="250"
         hovertime="1000"
         Image="@asset={3SSEditor}:newProjectContainer">
         <GuiTextCtrl
@@ -54,13 +57,15 @@
             canSave="1"
             Visible="1"
             Active="0"
+            tooltipWidth="250"
             hovertime="1000"
             text="Rename"
-            maxLength="1024" />
+            maxLength="1024"
+            truncate="0" />
         <GuiTextEditCtrl
             Name="PONameEdit"
-      			class="AssetTextEdit"
             canSaveDynamicFields="0"
+            class="AssetTextEdit"
             isContainer="0"
             Profile="GuiTextEditProfile"
             HorizSizing="right"
@@ -70,20 +75,21 @@
             MinExtent="8 2"
             canSave="1"
             Visible="1"
+            Command="PONameEdit.validateName($ThisControl.getText());"
             Active="1"
+            tooltipprofile="GuiToolTipProfile"
+            ToolTip="Input a new name for your game."
+            tooltipWidth="250"
             hovertime="1000"
-            toolTipProfile="GuiToolTipProfile"
-            toolTip="Input a new name for your game."
-            text="Enter a name..."
+            text="Enter a game name"
             maxLength="1024"
+            truncate="1"
             historySize="0"
             password="0"
             tabComplete="0"
             sinkAllKeyEvents="0"
-            passwordMask="*"
-            truncate="1"
-            command="PONameEdit.validateName($ThisControl.getText());" />
-		<GuiButtonCtrl
+            passwordMask="*" />
+        <GuiButtonCtrl
             Name="PODuplicateButton"
             canSaveDynamicFields="0"
             isContainer="0"
@@ -95,14 +101,15 @@
             MinExtent="8 2"
             canSave="1"
             Visible="1"
+            Command="ProjectOptionsGui.duplicateProject();"
             Active="1"
+            tooltipprofile="GuiToolTipProfile"
+            ToolTip="Create a copy of this project.  This cannot be canceled."
+            tooltipWidth="250"
             hovertime="1000"
-            toolTipProfile="GuiToolTipProfile"
-            toolTip="Create a copy of this project.  This cannot be canceled."
             text="Duplicate Project"
             groupNum="-1"
             buttonType="PushButton"
-            Command="ProjectOptionsGui.duplicateProject();"
             useMouseEvents="0" />
         <GuiButtonCtrl
             Name="PODeleteButton"
@@ -116,14 +123,15 @@
             MinExtent="8 2"
             canSave="1"
             Visible="1"
+            Command="ProjectOptionsGui.showDeletePrompt();"
             Active="1"
+            tooltipprofile="GuiToolTipProfile"
+            ToolTip="Delete this project.  This will remove the project and all of its files from your computer.  This cannot be canceled or undone."
+            tooltipWidth="250"
             hovertime="1000"
-            toolTipProfile="GuiToolTipProfile"
-            toolTip="Delete this project.  This will remove the project and all of its files from your computer.  This cannot be canceled or undone."
             text="Delete Project"
             groupNum="-1"
             buttonType="PushButton"
-            Command="ProjectOptionsGui.showDeletePrompt();"
             useMouseEvents="0" />
         <GuiTextCtrl
             Name="PODoneLabel"
@@ -132,31 +140,35 @@
             Profile="GuiTextCenterProfile"
             HorizSizing="right"
             VertSizing="bottom"
-            Position="26 156"
+            Position="25 156"
             Extent="40 18"
             MinExtent="8 2"
             canSave="1"
             Visible="1"
             Active="0"
+            tooltipWidth="250"
             hovertime="1000"
             text="Done"
-            maxLength="1024" />
+            maxLength="1024"
+            truncate="0" />
         <GuiTextCtrl
             Name="POCancelLabel"
             canSaveDynamicFields="0"
             isContainer="0"
-            Profile="BlueTextCenteredProfile"
+            Profile="GuiTextProfile"
             HorizSizing="right"
             VertSizing="bottom"
-            Position="121 156"
+            Position="120 156"
             Extent="44 17"
             MinExtent="8 2"
             canSave="1"
             Visible="1"
             Active="0"
+            tooltipWidth="250"
             hovertime="1000"
             text="Cancel"
-            maxLength="1024" />
+            maxLength="1024"
+            truncate="0" />
         <GuiImageButtonCtrl
             Name="POOkButton"
             canSaveDynamicFields="0"
@@ -170,10 +182,11 @@
             canSave="1"
             Visible="1"
             Command="ProjectOptionsGui.updateProject();"
-            Active="1"
+            Active="0"
+            tooltipprofile="GuiToolTipProfile"
+            ToolTip="Save all changes and return to the previous screen."
+            tooltipWidth="250"
             hovertime="1000"
-            toolTipProfile="GuiToolTipProfile"
-            toolTip="Save all changes and return to the previous screen."
             groupNum="-1"
             buttonType="PushButton"
             useMouseEvents="0"
@@ -195,15 +208,16 @@
             Visible="1"
             Command="Canvas.popDialog(ProjectOptionsGui);"
             Active="1"
+            tooltipprofile="GuiToolTipProfile"
+            ToolTip="Cancel changes and return to the previous screen.  This does not cancel Delete Project or Duplicate Project operations."
+            tooltipWidth="250"
             hovertime="1000"
-            toolTipProfile="GuiToolTipProfile"
-            toolTip="Cancel changes and return to the previous screen.  This does not cancel Delete Project or Duplicate Project operations."
             groupNum="-1"
             buttonType="PushButton"
             useMouseEvents="0"
             NormalImage="@asset={3SSEditor}:mediumCancelNormal"
             HoverImage="@asset={3SSEditor}:mediumCancelHover"
             DownImage="@asset={3SSEditor}:mediumCancelDepressed"
-            InactiveImage="@asset={3SSEditor}:mediumCancelInactive" />        
+            InactiveImage="@asset={3SSEditor}:mediumCancelInactive" />
     </GuiSpriteCtrl>
 </GuiControl>

@@ -76,7 +76,8 @@ function ProjectOptionsGui::duplicateProject(%this)
 
 function ProjectOptionsGui::showDeletePrompt(%this)
 {
-    TSSConfirmDeleteProjectGui.display(%this.originalName, "ProjectOptionsGui", "deleteProject", "");
+    %msg = "Are you sure you want to delete " @ %this.originalName @ " and all assets associated with it?";
+    TSSConfirmDeleteProjectGui.display(%msg , "ProjectOptionsGui", "deleteProject", "");
     //%this.deleteProject();
 }
 
