@@ -234,6 +234,45 @@ function WorldObjectBuilder::createWorldObjectTemplate()
     return %worldObject;
 }
 
+function WorldObjectBuilder::findObjectInLevel(%worldObject, %level)
+{
+    %count = %level.getSceneObjectCount();
+    %name = %worldObject.getInternalName();
+    for (%i = 0; %i < %count; %i++)
+    {
+        %obj = %level.getSceneObject(%i);
+        if ( %obj.getInternalName() $= %name)
+            return true;
+    }
+    return false;
+}
+
+function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
+{
+    %path = expandPath("^gameTemplate/data/levels"); 
+    %fileSpec = "/*.scene.taml";   
+    %pattern = %path @ %fileSpec;
+
+    %file = findFirstFile(%pattern);
+
+    %dependencies = "";
+
+    while(%file !$= "")
+    {
+        %level = TamlRead(%file);
+        if ( WorldObjectBuilder::findObjectInLevel(%worldObject, %level) )
+        {
+            %levelName = fileBase(%file);
+            %name = strreplace(%levelName, ".scene", "");
+            %temp = %name @ " " @ %dependencies;
+            %dependencies = %temp;
+        }
+        %level.delete();
+        %file = findNextFile(%pattern);
+    }
+    return %dependencies;
+}
+
 function WorldObjectBuilder::setName(%object, %name)
 {
     %object.setInternalName(%name);

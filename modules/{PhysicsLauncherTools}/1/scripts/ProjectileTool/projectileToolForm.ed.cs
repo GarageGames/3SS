@@ -692,7 +692,7 @@ function Pt_ProjectileRemove::onClick(%this)
     %obj = %projectileSet.getObject(%this.index);
     %index = %this.index;
     %data = %index @ " " @ %obj.getName() @ " " @ ProjectileBuilder::findProjectileInAllLevels(%obj.getName());
-    Pt_ConfirmDeleteGui.display("", "ProjectileTool", "removeProjectile", %data);
+    Plt_ConfirmDeleteGui.display("", "ProjectileTool", "removeProjectile", %data);
 }
 
 /// <summary>

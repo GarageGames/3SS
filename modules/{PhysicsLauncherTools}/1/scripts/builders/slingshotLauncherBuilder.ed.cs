@@ -223,6 +223,45 @@ function SlingshotLauncherBuilder::getBuilderObject(%launcherSceneObjectGroup)
     return %object;
 }
 
+function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level)
+{
+    %count = %level.getSceneObjectCount();
+    %name = %launcherGroup.getInternalName();
+    for (%i = 0; %i < %count; %i++)
+    {
+        %obj = %level.getSceneObject(%i);
+        if ( %obj.getInternalName() $= %name)
+            return true;
+    }
+    return false;
+}
+
+function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
+{
+    %path = expandPath("^gameTemplate/data/levels"); 
+    %fileSpec = "/*.scene.taml";   
+    %pattern = %path @ %fileSpec;
+
+    %file = findFirstFile(%pattern);
+
+    %dependencies = "";
+
+    while(%file !$= "")
+    {
+        %level = TamlRead(%file);
+        if ( SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level) )
+        {
+            %levelName = fileBase(%file);
+            %name = strreplace(%levelName, ".scene", "");
+            %temp = %name @ " " @ %dependencies;
+            %dependencies = %temp;
+        }
+        %level.delete();
+        %file = findNextFile(%pattern);
+    }
+    return %dependencies;
+}
+
 function SlingshotLauncherBuilder::setName(%launcherSceneObjectGroup, %name)
 {
     %launcherSceneObjectGroup.setInternalName(%name);
