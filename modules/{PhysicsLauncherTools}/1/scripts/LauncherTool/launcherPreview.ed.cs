@@ -123,6 +123,7 @@ function refreshLauncherPreviewFork(%sceneWindow, %launcherSceneObjectGroup)
         %sceneWindow.forkForeground = new Sprite();
     %sceneWindow.forkForeground.scale = %forkScale;
     %sceneWindow.forkForeground.setAsset(%foregroundObject.getAsset());
+    %sceneWindow.forkForeground.setFrame(SlingshotLauncherBuilder::getForkForegroundImageFrame(%launcherSceneObjectGroup));
     %sceneWindow.forkForeground.setSize(%foregroundObject.getWidth() * %forkScale, %foregroundObject.getHeight() * %forkScale);
     %sceneWindow.forkForeground.setPosition(%forkCenterX, %forkCenterY);
     %sceneWindow.forkForeground.setSceneLayer($SlingshotLauncherBuilder::ForkForegroundObjectLayer);
@@ -132,6 +133,7 @@ function refreshLauncherPreviewFork(%sceneWindow, %launcherSceneObjectGroup)
         %sceneWindow.forkBackground = new Sprite();
     %sceneWindow.forkBackground.scale = %forkScale;
     %sceneWindow.forkBackground.setAsset(%backgroundObject.getAsset());
+    %sceneWindow.forkBackground.setFrame(SlingshotLauncherBuilder::getForkBackgroundImageFrame(%launcherSceneObjectGroup));
     %sceneWindow.forkBackground.setSize(%backgroundObject.getWidth() * %forkScale, %backgroundObject.getHeight() * %forkScale);
     %sceneWindow.forkBackground.setPosition(%forkCenterX, %forkCenterY);
     %sceneWindow.forkBackground.setSceneLayer($SlingshotLauncherBuilder::ForkBackgroundObjectLayer);    
@@ -209,6 +211,7 @@ function refreshLauncherPreviewSeat(%sceneWindow, %launcherSceneObjectGroup)
         %sceneWindow.seat = new Sprite();
     %sceneWindow.seat.scale = %seatScale;
     %sceneWindow.seat.setAsset(%seatObject.getAsset());
+    %sceneWindow.seat.setFrame(SlingshotLauncherBuilder::getSeatImageFrame(%launcherSceneObjectGroup));
     %sceneWindow.seat.setSize(%seatObject.getWidth() * %seatScale, %seatObject.getHeight() * %seatScale);
     %sceneWindow.seat.setPosition(%seatCenterX, %seatCenterY);
     %sceneWindow.seat.setSceneLayer($SlingshotLauncherBuilder::SeatObjectLayer);
@@ -243,6 +246,7 @@ function refreshLauncherPreviewRubberbands(%sceneWindow, %launcherSceneObjectGro
     if (!isObject(%sceneWindow.band0))
         %sceneWindow.band0 = new Sprite();
     %sceneWindow.band0.setAsset(%bandObject0.getAsset());
+    %sceneWindow.band0.setFrame(SlingshotLauncherBuilder::getBandImageFrame(%launcherSceneObjectGroup, 0));
     %sceneWindow.band0.setSize(%bandObject0.getWidth() * %launcherScale, %bandObject0.getHeight() * %launcherScale);
     %sceneWindow.band0.setPosition(0, 0);
     %sceneWindow.band0.setSceneLayer($SlingshotLauncherBuilder::Band0ObjectLayer);
@@ -257,6 +261,7 @@ function refreshLauncherPreviewRubberbands(%sceneWindow, %launcherSceneObjectGro
     if (!isObject(%sceneWindow.band1))
         %sceneWindow.band1 = new Sprite();
     %sceneWindow.band1.setAsset(%bandObject1.getAsset());
+    %sceneWindow.band1.setFrame(SlingshotLauncherBuilder::getBandImageFrame(%launcherSceneObjectGroup, 1));
     %sceneWindow.band1.setSize(%bandObject1.getWidth() * %launcherScale, %bandObject1.getHeight() * %launcherScale);
     %sceneWindow.band1.setPosition(0, 0);
     %sceneWindow.band1.setSceneLayer($SlingshotLauncherBuilder::Band1ObjectLayer);
