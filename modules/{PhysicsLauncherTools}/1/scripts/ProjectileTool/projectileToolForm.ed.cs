@@ -55,7 +55,22 @@ function ProjectileToolForm::displayPreview(%this, %index)
     Pt_PreviewStopBtn.setVisible(!%isStaticImage);
 
     if (%isStaticImage)
+    {
         Pt_PreviewWindow.setImage(%this.previewName);
+        %frame = 0;
+        switch(Pt_PreviewSelectDropdown.getSelected())
+        {
+            case 0:
+                %frame = ProjectileBuilder::getIdleInLauncherAnimFrame(%this.projectile);
+            case 1:
+                %frame = ProjectileBuilder::getInAirAnimFrame(%this.projectile);
+            case 2:
+                %frame = ProjectileBuilder::getHitAnimFrame(%this.projectile);
+            case 3:
+                %frame = ProjectileBuilder::getVanishAnimFrame(%this.projectile);
+        }
+        Pt_PreviewWindow.setImageFrame(%frame);
+    }
     else
         Pt_PreviewWindow.Animation = %this.previewName;
 }
@@ -256,7 +271,7 @@ function ProjectileToolForm::selectPreview(%this)
 /// </summary>
 /// <param name="asset">The asset to assign to the projectile.</param>
 /// <param name="type">The type of asset received.</param>
-function ProjectileToolForm::setAssetSlot(%this, %asset, %type)
+function ProjectileToolForm::setAssetSlot(%this, %asset, %type, %frame)
 {
     %slot = Pt_PreviewSelectDropdown.getSelected();
     switch(%slot)
@@ -264,26 +279,34 @@ function ProjectileToolForm::setAssetSlot(%this, %asset, %type)
         case 0:
             if (%type $= "sound")
                 ProjectileBuilder::setIdleInLauncherSound(%this.projectile, %asset);
-            else
+            if (%type $= "AnimationAsset")
                 ProjectileBuilder::setIdleInLauncherAnim(%this.projectile, %asset);
+            if (%type $= "ImageAsset")
+                ProjectileBuilder::setIdleInLauncherAnim(%this.projectile, %asset, %frame);
 
         case 1:
             if (%type $= "sound")
                 ProjectileBuilder::setInAirSound(%this.projectile, %asset);
-            else
+            if (%type $= "AnimationAsset")
                 ProjectileBuilder::setInAirAnim(%this.projectile, %asset);
+            if (%type $= "ImageAsset")
+                ProjectileBuilder::setInAirAnim(%this.projectile, %asset, %frame);
 
         case 2:
             if (%type $= "sound")
                 ProjectileBuilder::setHitObjectSound(%this.projectile, %asset);
-            else
+            if (%type $= "AnimationAsset")
                 ProjectileBuilder::setHitAnim(%this.projectile, %asset);
+            if (%type $= "ImageAsset")
+                ProjectileBuilder::setHitAnim(%this.projectile, %asset, %frame);
 
         case 3:
             if (%type $= "sound")
                 ProjectileBuilder::setDisappearSound(%this.projectile, %asset);
-            else
+            if (%type $= "AnimationAsset")
                 ProjectileBuilder::setVanishAnim(%this.projectile, %asset);
+            if (%type $= "ImageAsset")
+                ProjectileBuilder::setVanishAnim(%this.projectile, %asset, %frame);
 
         case 4:
             if (%type $= "sound")
@@ -570,13 +593,13 @@ function Pt_PreviewFileSelectBtn::onClick(%this)
 /// This function sets the asset to the selected projectile's current state.
 /// </summary>
 /// <param name="assetID">The asset ID returned from the asset library.</param>
-function Pt_PreviewFileSelectBtn::setSelectedAsset(%this, %assetID)
+function Pt_PreviewFileSelectBtn::setSelectedAsset(%this, %assetID, %frame)
 {
     %temp = AssetDatabase.acquireAsset(%assetID);
     %type = %temp.getClassName();
     Pt_PreviewFileEdit.setText(%temp.AssetName);
     AssetDatabase.releaseAsset(%assetID);
-    ProjectileToolForm.setAssetSlot(%assetID, %type);
+    ProjectileToolForm.setAssetSlot(%assetID, %type, %frame);
     ProjectileTool.refreshProjectileView();
     ProjectileTool.selectProjectile(ProjectileTool.selectedIndex);
     Pt_PreviewSelectDropdown.setSelected(%this.selectedState);
@@ -669,7 +692,7 @@ function Pt_ProjectileRemove::onClick(%this)
     %obj = %projectileSet.getObject(%this.index);
     %index = %this.index;
     %data = %index @ " " @ %obj.getName() @ " " @ ProjectileBuilder::findProjectileInAllLevels(%obj.getName());
-    Pt_ConfirmDeleteGui.display("", "ProjectileTool", "removeProjectile", %data);
+    Plt_ConfirmDeleteGui.display("", "ProjectileTool", "removeProjectile", %data);
 }
 
 /// <summary>

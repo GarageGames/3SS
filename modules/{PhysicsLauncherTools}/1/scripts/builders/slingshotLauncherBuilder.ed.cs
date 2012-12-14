@@ -223,6 +223,45 @@ function SlingshotLauncherBuilder::getBuilderObject(%launcherSceneObjectGroup)
     return %object;
 }
 
+function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level)
+{
+    %count = %level.getSceneObjectCount();
+    %name = %launcherGroup.getInternalName();
+    for (%i = 0; %i < %count; %i++)
+    {
+        %obj = %level.getSceneObject(%i);
+        if ( %obj.getInternalName() $= %name)
+            return true;
+    }
+    return false;
+}
+
+function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
+{
+    %path = expandPath("^gameTemplate/data/levels"); 
+    %fileSpec = "/*.scene.taml";   
+    %pattern = %path @ %fileSpec;
+
+    %file = findFirstFile(%pattern);
+
+    %dependencies = "";
+
+    while(%file !$= "")
+    {
+        %level = TamlRead(%file);
+        if ( SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level) )
+        {
+            %levelName = fileBase(%file);
+            %name = strreplace(%levelName, ".scene", "");
+            %temp = %name @ " " @ %dependencies;
+            %dependencies = %temp;
+        }
+        %level.delete();
+        %file = findNextFile(%pattern);
+    }
+    return %dependencies;
+}
+
 function SlingshotLauncherBuilder::setName(%launcherSceneObjectGroup, %name)
 {
     %launcherSceneObjectGroup.setInternalName(%name);
@@ -393,7 +432,7 @@ function SlingshotLauncherBuilder::getPullbackSound(%launcherSceneObjectGroup)
     return %soundEffectBehavior.sound;
 }
 
-function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGroup, %asset)
+function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGroup, %asset, %frame)
 {
     %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkForegroundObjectInternalName);    
     
@@ -405,7 +444,9 @@ function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGr
     
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
-    
+    if ( %frame !$= "" && %object.isStaticMode() )
+        %object.setFrame(%frame);
+
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
 }
@@ -423,7 +464,35 @@ function SlingshotLauncherBuilder::getForkForegroundAsset(%launcherSceneObjectGr
     return %object.getAsset();
 }
 
-function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGroup, %asset)
+function SlingshotLauncherBuilder::getForkForegroundImageFrame(%launcherSceneObjectGroup)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkForegroundObjectInternalName);
+     
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::getForkForegroundImageFrame -- could not find " @ $SlingshotLauncherBuilder::ForkForegroundObjectInternalName);
+        return "";   
+    }
+    if ( %object.isStaticMode() )
+        %frame = %object.getFrame();
+    return (%frame !$= "" ? %frame : 0);
+}
+
+function SlingshotLauncherBuilder::setForkForegroundImageFrame(%launcherSceneObjectGroup, %frame)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkForegroundObjectInternalName);    
+
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::setForkForegroundImageFrame -- could not find " @ $SlingshotLauncherBuilder::ForkForegroundObjectInternalName);
+        return;   
+    }
+
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
+}
+
+function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGroup, %asset, %frame)
 {
     %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);    
     
@@ -435,9 +504,25 @@ function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGr
     
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
-    
+    if ( %frame !$= "" && %object.isStaticMode() )
+        %object.setFrame(%frame);
+
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
+}
+
+function SlingshotLauncherBuilder::setForkBackgroundImageFrame(%launcherSceneObjectGroup, %frame)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);    
+
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::setForkBackgroundAsset -- could not find " @ $SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);
+        return;   
+    }
+
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
 }
 
 function SlingshotLauncherBuilder::getForkBackgroundAsset(%launcherSceneObjectGroup)
@@ -453,7 +538,21 @@ function SlingshotLauncherBuilder::getForkBackgroundAsset(%launcherSceneObjectGr
     return %object.getAsset();
 }
 
-function SlingshotLauncherBuilder::setBandAsset(%launcherSceneObjectGroup, %bandIndex, %asset)
+function SlingshotLauncherBuilder::getForkBackgroundImageFrame(%launcherSceneObjectGroup)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);
+     
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::getForkBackgroundImageFrame -- could not find " @ $SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);
+        return "";   
+    }
+    if ( %object.isStaticMode() )
+        %frame = %object.getFrame();
+    return (%frame !$= "" ? %frame : 0);
+}
+
+function SlingshotLauncherBuilder::setBandAsset(%launcherSceneObjectGroup, %bandIndex, %asset, %frame)
 {
     %object = %launcherSceneObjectGroup.findObjectByInternalName("BandObject" @ %bandIndex);
     
@@ -465,6 +564,22 @@ function SlingshotLauncherBuilder::setBandAsset(%launcherSceneObjectGroup, %band
     
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
+}
+
+function SlingshotLauncherBuilder::setBandImageFrame(%launcherSceneObjectGroup, %bandIndex, %frame)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName("BandObject" @ %bandIndex);
+    
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::setBandAsset -- could not find BandObject" @ %bandIndex);
+        return;   
+    }    
+    
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
 }
 
 function SlingshotLauncherBuilder::getBandAsset(%launcherSceneObjectGroup, %bandIndex)
@@ -478,6 +593,21 @@ function SlingshotLauncherBuilder::getBandAsset(%launcherSceneObjectGroup, %band
     }
     
     return %object.getAsset();
+}
+
+function SlingshotLauncherBuilder::getBandImageFrame(%launcherSceneObjectGroup, %bandIndex)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName("BandObject" @ %bandIndex);
+     
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::getForkBackgroundAsset -- could not find BandObject" @ %bandIndex);
+        return "";   
+    }
+    
+    if ( %object.isStaticMode() )
+        %frame = %object.getFrame();
+    return (%frame !$= "" ? %frame : 0);
 }
 
 function SlingshotLauncherBuilder::setBandAttachmentPoints(%launcherSceneObjectGroup, %bandIndex, %start, %end)
@@ -586,7 +716,7 @@ function SlingshotLauncherBuilder::getBandAttachmentEndPoint(%launcherSceneObjec
     return %end;
 }
 
-function SlingshotLauncherBuilder::setSeatAsset(%launcherSceneObjectGroup, %asset)
+function SlingshotLauncherBuilder::setSeatAsset(%launcherSceneObjectGroup, %asset, %frame)
 {
     %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::SeatInternalName);    
     
@@ -598,6 +728,22 @@ function SlingshotLauncherBuilder::setSeatAsset(%launcherSceneObjectGroup, %asse
     
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
+}
+
+function SlingshotLauncherBuilder::setSeatImageFrame(%launcherSceneObjectGroup, %frame)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::SeatInternalName);    
+    
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::setSeatAsset -- could not find SeatObject");
+        return;   
+    }
+    
+    if ( %object.isStaticMode() )
+        %object.setFrame(%frame);
 }
 
 function SlingshotLauncherBuilder::getSeatAsset(%launcherSceneObjectGroup)
@@ -611,6 +757,21 @@ function SlingshotLauncherBuilder::getSeatAsset(%launcherSceneObjectGroup)
     }
     
     return %object.getAsset();  
+}
+
+function SlingshotLauncherBuilder::getSeatImageFrame(%launcherSceneObjectGroup)
+{
+    %object = %launcherSceneObjectGroup.findObjectByInternalName($SlingshotLauncherBuilder::SeatInternalName);
+     
+    if (!isObject(%object)) 
+    {
+        warn("SlingshotLauncherBuilder::getSeatAsset -- could not find SeatObject");
+        return "";   
+    }
+    
+    if ( %object.isStaticMode() )
+        %frame = %object.getFrame();
+    return (%frame !$= "" ? %frame : 0);
 }
 
 // Calculates and sets the size of the collision object based so that it encloses

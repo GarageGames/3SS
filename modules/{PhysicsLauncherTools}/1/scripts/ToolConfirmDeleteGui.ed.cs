@@ -22,16 +22,37 @@ function Plt_ConfirmDeleteGui::display(%this, %message, %caller, %callback, %dat
 
 function Plt_ConfirmDeleteGui::onDialogPush(%this)
 {
-    %obj = %this.data;
-    Plt_ConfirmDeleteMsgCtrl.text = "Are you sure you want to delete";
-    Plt_ConfirmDeleteMsgCtrl.visible = true;
-    Plt_ConfirmDeleteObjCtrl.setText(%obj.getInternalName());
+    %type = "Level";
     %arg = getWord(%this.data, 0);
     if (%arg !$= "")
     {
         Plt_DeletePromptDependencyList.clear();
 
-        %depCount = 0; // need to use a TAML visitor to find occurences of this object in level files.
+        switch$(%this.object)
+        {
+            case "ProjectileTool":
+                %obj = getWord(%this.data, 1);
+                Plt_ConfirmDeleteMsgCtrl.text = "Are you sure you want to delete";
+                Plt_ConfirmDeleteMsgCtrl.visible = true;
+                Plt_ConfirmDeleteObjCtrl.setText(%obj.getInternalName());
+                %listCount = getWordCount(%this.data);
+                for (%i = 2; %i < %listCount; %i++)
+                {
+                    %depItem = Plt_DeletePromptDependencyList.createDependencyItem(getWord(%this.data, %i), %type);
+                    Plt_DeletePromptDependencyList.add(%depItem);
+                }
+            case "WorldObjectTool":
+                Plt_ConfirmDeleteMsgCtrl.text = "Are you sure you want to delete";
+                Plt_ConfirmDeleteMsgCtrl.visible = true;
+                Plt_ConfirmDeleteObjCtrl.setText(%this.data.getInternalName());
+                %depList = WorldObjectBuilder::findObjectInAllLevels(%this.data);
+                %listCount = getWordCount(%depList);
+                for (%i = 0; %i < %listCount; %i++)
+                {
+                    %depItem = Plt_DeletePromptDependencyList.createDependencyItem(getWord(%depList, %i), %type);
+                    Plt_DeletePromptDependencyList.add(%depItem);
+                }
+        }
         if (%depCount > 0)
         {
             for (%i = 0; %i < %depCount; %i++)

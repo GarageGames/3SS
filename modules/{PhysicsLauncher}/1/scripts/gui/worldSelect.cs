@@ -20,6 +20,8 @@ function worldSelectGui::onWake(%this)
    {
       WorldSelectBackBtn.Visible = false;
       WorldSelectNextBtn.Visible = false;
+      WorldSelectButtonNext.Visible = false;
+      WorldSelectButtonPrev.Visible = false;
    }
    else 
    {

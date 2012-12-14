@@ -103,7 +103,7 @@ function DependencyListContainer::createDependencyItem(%this, %name, %type)
         HorizSizing="right";
         VertSizing="bottom";
         Position="3 3";
-        Extent="100 16";
+        Extent="166 16";
         MinExtent="8 2";
         canSave="1";
         Visible="1";
@@ -121,8 +121,8 @@ function DependencyListContainer::createDependencyItem(%this, %name, %type)
         Profile="GuiTextProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="120 3";
-        Extent="126 16";
+        Position="166 3";
+        Extent="100 16";
         MinExtent="8 2";
         canSave="1";
         Visible="1";

@@ -2,7 +2,7 @@
     Name="LauncherToolGui"
     canSaveDynamicFields="0"
     isContainer="1"
-    Profile="GuiDefaultProfile"
+    Profile="GuiTransparentProfile"
     HorizSizing="right"
     VertSizing="bottom"
     Position="0 0"

@@ -778,10 +778,10 @@ function Lt_ForkForegroundFileButton::onClick(%this)
     AssetPicker.open("ImageAsset", "", "", %this);
 }
 
-function Lt_ForkForegroundFileButton::setSelectedAsset(%this, %asset)
+function Lt_ForkForegroundFileButton::setSelectedAsset(%this, %asset, %frame)
 {
     %currentObject = LauncherTool.currentObject;
-    SlingshotLauncherBuilder::setForkForegroundAsset(%currentObject, %asset);
+    SlingshotLauncherBuilder::setForkForegroundAsset(%currentObject, %asset, %frame);
     
     LauncherTool.refresh();
     $LauncherToolObjectScrollView.setSelected(LauncherTool.selectedIndex);
@@ -795,11 +795,11 @@ function Lt_ForkBackgroundFileButton::onClick(%this)
     AssetPicker.open("ImageAsset", "", "", %this);
 }
 
-function Lt_ForkBackgroundFileButton::setSelectedAsset(%this, %asset)
+function Lt_ForkBackgroundFileButton::setSelectedAsset(%this, %asset, %frame)
 {
     %currentObject = LauncherTool.currentObject;
-    SlingshotLauncherBuilder::setForkBackgroundAsset(%currentObject, %asset);
-    
+    SlingshotLauncherBuilder::setForkBackgroundAsset(%currentObject, %asset, %frame);
+
     LauncherTool.refresh();
     $LauncherToolObjectScrollView.setSelected(LauncherTool.selectedIndex);
 }
@@ -812,11 +812,11 @@ function Lt_BandForegroundFileButton::onClick(%this)
     AssetPicker.open("ImageAsset", "", "", %this);
 }
 
-function Lt_BandForegroundFileButton::setSelectedAsset(%this, %asset)
+function Lt_BandForegroundFileButton::setSelectedAsset(%this, %asset, %frame)
 {
     %currentObject = LauncherTool.currentObject;
-    SlingshotLauncherBuilder::setBandAsset(%currentObject, 0, %asset);
-    
+    SlingshotLauncherBuilder::setBandAsset(%currentObject, 0, %asset, %frame);
+
     LauncherTool.refresh();
     $LauncherToolObjectScrollView.setSelected(LauncherTool.selectedIndex);
 }
@@ -829,11 +829,11 @@ function Lt_BandBackgroundFileButton::onClick(%this)
     AssetPicker.open("ImageAsset", "", "", %this);
 }
 
-function Lt_BandBackgroundFileButton::setSelectedAsset(%this, %asset)
+function Lt_BandBackgroundFileButton::setSelectedAsset(%this, %asset, %frame)
 {
     %currentObject = LauncherTool.currentObject;
-    SlingshotLauncherBuilder::setBandAsset(%currentObject, 1, %asset);
-    
+    SlingshotLauncherBuilder::setBandAsset(%currentObject, 1, %asset, %frame);
+
     LauncherTool.refresh();
     $LauncherToolObjectScrollView.setSelected(LauncherTool.selectedIndex);
 }
@@ -849,8 +849,8 @@ function Lt_SlingFileButton::onClick(%this)
 function Lt_SlingFileButton::setSelectedAsset(%this, %asset)
 {
     %currentObject = LauncherTool.currentObject;
-    SlingshotLauncherBuilder::setSeatAsset(%currentObject, %asset);
-    
+    SlingshotLauncherBuilder::setSeatAsset(%currentObject, %asset, %frame);
+
     LauncherTool.refresh();
     $LauncherToolObjectScrollView.setSelected(LauncherTool.selectedIndex);
 }
@@ -860,6 +860,7 @@ function Lt_SlingFileButton::setSelectedAsset(%this, %asset)
 //------------------------------------------------------------------------------
 function Lt_EditCollisionButton::onClick(%this)
 {
+    Tt_CollisionButton.setStateOn(true);
     SlingshotLauncherBuilder::openCollisionEditor(LauncherTool.currentObject, %this);
 }
 
