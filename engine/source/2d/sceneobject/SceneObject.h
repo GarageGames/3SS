@@ -229,6 +229,9 @@ private:
     // Field Names.
     StringTableEntry        SCENEOBJECT_COLLISIONSHAPE_FIELDNAME;
 
+
+    void                    ScaleFixtureDef( b2FixtureDef* pFixtureDef, const Vector2& size );
+
 protected:
     static S32 QSORT_CALLBACK sceneObjectLayerDepthSort(const void* a, const void* b);
 
