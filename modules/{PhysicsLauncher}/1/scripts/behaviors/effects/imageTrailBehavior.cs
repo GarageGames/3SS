@@ -17,7 +17,7 @@ if (!isObject(ImageTrailBehavior))
     // If we want to support multiple animated or static images for this effect this 
     // should be an animation set.
     %template.addBehaviorField(asset, "The effect's assigned asset", Default, "");
-    //%template.addBehaviorField(trailAnim, "The object's trail object animation.", object, "PL_DefaultPathAnim", AnimationAsset);
+    %template.addBehaviorField(imageFrame, "The frame number for the imageMap if this is not an animation.", int, 0);
     %template.addBehaviorField(dropTimer, "The number of seconds between each image drop.", float, 0.1);
     %template.addBehaviorField(imageSize, "The size of the image in meters.", float, 0.5);
     
@@ -79,12 +79,13 @@ function ImageTrailBehavior::makeTrail(%this)
         return;
 
     %position = %this.owner.getPosition();
-    %anim = strchr(%this.asset, "{");
     %size = %this.imageSize SPC %this.imageSize;
+    %temp = AssetDatabase.acquireAsset(%this.asset);
+    %type = %temp.getClassName();
+    AssetDatabase.releaseAsset(%this.asset);
 
     %obj = new Sprite()
     {
-        animation = %anim;
         position = %position;
         SceneLayer = %this.layer;
         size = %size;
@@ -93,10 +94,18 @@ function ImageTrailBehavior::makeTrail(%this)
         CollisionSuppress = "1";
         Visible = "1";
     };
+
     MainScene.addToScene(%obj);
     $TrailSet.add(%obj);
-    
-    %obj.playAnimation(%anim);
+
+    switch$(%type)
+    {
+        case "AnimationAsset":
+            %obj.Animation = %this.asset;
+        case "ImageAsset":
+            %obj.ImageMap = %this.asset;
+            %obj.Frame = %this.imageFrame;
+    }
 
     %this.nextTrailMarkerEvent = ScheduleManager.scheduleEvent((%this.dropTimer * 1000), %this, "makeTrail", %this);
 }
@@ -108,4 +117,21 @@ function ImageTrailBehavior::makeTrail(%this)
 function ImageTrailBehavior::setAnim(%this, %anim)
 {
     %this.asset = %anim;
+}
+
+/// <summary>
+/// This function sets the trail image frame.
+/// </summary>
+/// <param name="anim">The frame to display as the trail image.</param>
+function ImageTrailBehavior::setFrame(%this, %frame)
+{
+    %this.imageFrame = %frame;
+}
+
+/// <summary>
+/// This function gets the trail frame.
+/// </summary>
+function ImageTrailBehavior::getFrame(%this)
+{
+    return %this.imageFrame;
 }

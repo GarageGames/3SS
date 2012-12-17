@@ -688,14 +688,34 @@ function ProjectileBuilder::getVanishAnimFrame(%projectile)
 /// </summary>
 /// <param name="projectile">The projectile to set.</param>
 /// <param name="anim">The asset ID of the animation to assign.</param>
-function ProjectileBuilder::setImageTrailAnim(%projectile, %anim)
+function ProjectileBuilder::setImageTrailAnim(%projectile, %anim, %frame)
 {
     // loop through behaviors and look for the Idle In Launcher animation behavior
     for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
     {
         %tempBeh = %projectile.getBehaviorByIndex(%i);
         if (%tempBeh.template.getName() $= "ImageTrailBehavior")
+        {
             %tempBeh.asset = %anim;
+            if (%frame !$= "")
+                %tempBeh.setFrame(%frame);
+        }
+    }
+}
+
+/// <summary>
+/// This function sets the animation for the projectile's trail image.
+/// </summary>
+/// <param name="projectile">The projectile to set.</param>
+/// <param name="anim">The asset ID of the animation to assign.</param>
+function ProjectileBuilder::setImageTrailFrame(%projectile, %frame)
+{
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "ImageTrailBehavior")
+            %tempBeh.setFrame(%frame);
     }
 }
 
@@ -712,6 +732,22 @@ function ProjectileBuilder::getImageTrailAnim(%projectile)
         %tempBeh = %projectile.getBehaviorByIndex(%i);
         if (%tempBeh.template.getName() $= "ImageTrailBehavior")
             return %tempBeh.asset;
+    }
+}
+
+/// <summary>
+/// This function gets the animation assigned to the projectile's trail image.
+/// </summary>
+/// <param name="projectile">The projectile to query.</param>
+/// <return>Returns the frame of the assigned sprite to display.</return>
+function ProjectileBuilder::getImageTrailFrame(%projectile)
+{
+    // loop through behaviors and look for the Idle In Launcher animation behavior
+    for(%i = 0; %i < %projectile.getBehaviorCount(); %i++)
+    {
+        %tempBeh = %projectile.getBehaviorByIndex(%i);
+        if (%tempBeh.template.getName() $= "ImageTrailBehavior")
+            return %tempBeh.getFrame();
     }
 }
 

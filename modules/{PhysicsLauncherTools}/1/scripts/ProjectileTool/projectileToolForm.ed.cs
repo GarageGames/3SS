@@ -68,6 +68,8 @@ function ProjectileToolForm::displayPreview(%this, %index)
                 %frame = ProjectileBuilder::getHitAnimFrame(%this.projectile);
             case 3:
                 %frame = ProjectileBuilder::getVanishAnimFrame(%this.projectile);
+            case 4:
+                %frame = ProjectileBuilder::getImageTrailFrame(%this.projectile);
         }
         Pt_PreviewWindow.setImageFrame(%frame);
     }
@@ -312,7 +314,7 @@ function ProjectileToolForm::setAssetSlot(%this, %asset, %type, %frame)
             if (%type $= "sound")
                 return;
 
-            ProjectileBuilder::setImageTrailAnim(%this.projectile, %asset);
+            ProjectileBuilder::setImageTrailAnim(%this.projectile, %asset, %frame);
     }
 }
 
