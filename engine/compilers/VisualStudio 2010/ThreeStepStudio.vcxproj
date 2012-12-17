@@ -476,6 +476,7 @@
     <ClCompile Include="..\..\source\persistence\taml\tamlBinaryWriter.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlCollection.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlWriteNode.cc" />
+    <ClCompile Include="..\..\source\persistence\taml\tamlXmlFileVisitor.cpp" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlParser.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlReader.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlWriter.cc" />
@@ -947,6 +948,8 @@
     <ClInclude Include="..\..\source\persistence\taml\tamlCallbacks.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlCollection.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlWriteNode.h" />
+    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor.h" />
+    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor_ScriptBinding.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlParser.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlReader.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlVisitor.h" />

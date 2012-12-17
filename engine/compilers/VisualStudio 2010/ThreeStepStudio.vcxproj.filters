@@ -1431,6 +1431,9 @@
     <ClCompile Include="..\..\source\platform\platformString.cc">
       <Filter>Source Files\platform</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\persistence\taml\tamlXmlFileVisitor.cpp">
+      <Filter>Source Files\persistence\taml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\audio\audio.h">
@@ -2866,6 +2869,12 @@
     </ClInclude>
     <ClInclude Include="..\..\source\platform\platformTimeManager.h">
       <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor.h">
+      <Filter>Source Files\persistence\taml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor_ScriptBinding.h">
+      <Filter>Source Files\persistence\taml</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
