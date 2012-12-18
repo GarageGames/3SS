@@ -29,6 +29,10 @@ class TamlXmlFileVisitor : public TamlXmlVisitor , public SimObject
 protected:
     virtual bool visit( TiXmlElement* pXmlElement, TamlXmlParser& xmlParser )
     {
+		//// Notify Script.
+		//if( isMethod("onVisitElement") )
+		//	Con::executef(this, 1, "onVisitElement");
+
 		StringTableEntry pName = StringTable->insert( StringTable->EmptyString );
 		// Iterate attributes.
 		for ( TiXmlAttribute* pAttribute = pXmlElement->FirstAttribute(); pAttribute; pAttribute = pAttribute->Next() )
@@ -55,6 +59,10 @@ protected:
     {
         // Sanity!
         AssertFatal( pAttribute != NULL, "Cannot search NULL attributes." );
+
+		//// Notify Script.
+		//if( isMethod("onVisitAttribute") )
+		//	Con::executef(this, 1, "onVisitAttribute");
 
 		StringTableEntry attributeName = StringTable->insert( pAttribute->Name() );
 		StringTableEntry attributeValue = StringTable->insert( pAttribute->Value() );
