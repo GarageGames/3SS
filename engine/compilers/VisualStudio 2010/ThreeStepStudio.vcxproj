@@ -268,6 +268,7 @@
     <ClCompile Include="..\..\source\2d\scene\WorldQuery.cc" />
     <ClCompile Include="..\..\source\3ss\3ssVersion.cc" />
     <ClCompile Include="..\..\source\3ss\Grid.cc" />
+    <ClCompile Include="..\..\source\3ss\tamlXmlFileVisitor.cpp" />
     <ClCompile Include="..\..\source\algorithm\crc.cc" />
     <ClCompile Include="..\..\source\algorithm\hashFunction.cc" />
     <ClCompile Include="..\..\source\assets\assetBase.cc" />
@@ -476,7 +477,6 @@
     <ClCompile Include="..\..\source\persistence\taml\tamlBinaryWriter.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlCollection.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlWriteNode.cc" />
-    <ClCompile Include="..\..\source\persistence\taml\tamlXmlFileVisitor.cpp" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlParser.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlReader.cc" />
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlWriter.cc" />
@@ -711,6 +711,8 @@
     <ClInclude Include="..\..\source\3ss\3ssVersion.h" />
     <ClInclude Include="..\..\source\3ss\Grid.h" />
     <ClInclude Include="..\..\source\3ss\Grid_ScriptBinding.h" />
+    <ClInclude Include="..\..\source\3ss\tamlXmlFileVisitor.h" />
+    <ClInclude Include="..\..\source\3ss\tamlXmlFileVisitor_ScriptBinding.h" />
     <ClInclude Include="..\..\source\algorithm\crc.h" />
     <ClInclude Include="..\..\source\algorithm\crctab.h" />
     <ClInclude Include="..\..\source\algorithm\hashFunction.h" />
@@ -948,8 +950,6 @@
     <ClInclude Include="..\..\source\persistence\taml\tamlCallbacks.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlCollection.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlWriteNode.h" />
-    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor.h" />
-    <ClInclude Include="..\..\source\persistence\taml\tamlXmlFileVisitor_ScriptBinding.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlParser.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlReader.h" />
     <ClInclude Include="..\..\source\persistence\taml\tamlXmlVisitor.h" />
