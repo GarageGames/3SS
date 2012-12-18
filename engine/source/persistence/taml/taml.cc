@@ -21,10 +21,6 @@
 #include "tamlBinaryReader.h"
 #endif
 
-#ifndef _TAML_XML_FILE_VISITOR_H_
-#include "tamlXmlFileVisitor.h"
-#endif
-
 #ifndef _FRAMEALLOCATOR_H_
 #include "memory/frameAllocator.h"
 #endif
