@@ -1,25 +1,56 @@
-# From T2DCore #
-#########################################################
-
 # Dev Files #
 ###################
 *.xcworkspace
 *.xcuserdatad
 /tmp/*
+*.dso
+*.edso
 *.user
 *.sdf
 *.suo
 *.dir
 *.opensdf
 *.idea
-
+*.dSYM
+*.res
+*.cache
+*.exports
+*.opt
+moc_QtNetworkManager.cc
+moc_WebRender.cc
+moc_QtCookieJar.cc
+moc_QtFileDownloader.cc
+moc_QtHttpRequestHandler.cc
+Torque2D.app
+Torque2D_DEBUG.app
+Torque2D.exe
+Torque2D_DEBUG.exe
+3StepStudio.app
+3StepStudio_Debug.app
+3StepStudio.exe
+3StepStudio_Debug.exe
+3StepStudioGame.app
+3StepStudioGame_Debug.app
+3StepStudioGame.exe
+3StepStudioGame_Debug.exe
+linkmap.txt
+    
 # Compiled source #
 ###################
 *.com
 *.class
-*.exe
 *.o
 *.so
+*.obj
+*.lib
+*.idb
+*.pdb
+*.ilk
+*.ipch
+*.lastbuildstate
+*.unsuccessfulbuild
+*.manifest
+*.tlog
 
 # Logs and databases #
 ######################
@@ -36,19 +67,3 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-
-
-# Other #
-##########################################################
-*.dso
-*.edso
-\Link
-*.ilk
-moc_QtCookieJar.cc
-moc_QtFileDownloader.cc
-moc_QtHttpRequestHandler.cc
-moc_QtNetworkManager.cc
-moc_WebRender.cc
-3StepStudio.torsion.exports
-3StepStudio.torsion.opt
-\_ReSharper.*
