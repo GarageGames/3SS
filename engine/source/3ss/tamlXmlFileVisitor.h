@@ -11,7 +11,7 @@
 #endif
 
 #ifndef _TAML_XMLPARSER_H_
-#include "persistence//taml/tamlXmlParser.h"
+#include "persistence/taml/tamlXmlParser.h"
 #endif
 
 //-----------------------------------------------------------------------------
