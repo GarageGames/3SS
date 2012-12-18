@@ -234,11 +234,21 @@ function WorldObjectBuilder::createWorldObjectTemplate()
     return %worldObject;
 }
 
+/// <summary>
+/// This function looks for an object in a level file
+/// </summary>
+/// <param name="%worldObject">The object to find.</param>
+/// <param name="%level">The file name of the level to search.</param>
+/// <param name="%visitor">A TAML visitor object that will actually perform the search.</param>
 function WorldObjectBuilder::findObjectInLevel(%worldObject, %level, %visitor)
 {
     return %visitor.containsValue(%level, "internalName", %worldObject.getInternalName());
 }
 
+/// <summary>
+/// This function searches all level files in a project for an object
+/// </summary>
+/// <param name="%worldObject">The object to find.</param>
 function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
 {
     %path = expandPath("^{UserGame}/data/levels"); 

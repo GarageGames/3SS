@@ -976,6 +976,12 @@ function ProjectileBuilder::setCollisionShapesFromProxy(%projectile, %proxyObjec
     PhysicsLauncherTools::copyCollisionShapes(%proxyObject, %projectile);
 }
 
+/// <summary>
+/// This function looks for a projectile in a level file
+/// </summary>
+/// <param name="projectile">The projectile to find.</param>
+/// <param name="%level">The file name of the level to search.</param>
+/// <param name="%visitor">A TAML visitor object that will actually perform the search.</param>
 function ProjectileBuilder::findProjectileInLevel(%projectile, %level, %visitor)
 {
     %found = false;
@@ -987,6 +993,10 @@ function ProjectileBuilder::findProjectileInLevel(%projectile, %level, %visitor)
     return %found;
 }
 
+/// <summary>
+/// This function searches all level files in a project for a projectile
+/// </summary>
+/// <param name="projectile">The projectile to find.</param>
 function ProjectileBuilder::findProjectileInAllLevels(%projectile)
 {
     %path = expandPath("^{UserGame}/data/levels"); 
@@ -995,6 +1005,8 @@ function ProjectileBuilder::findProjectileInAllLevels(%projectile)
 
     %file = findFirstFile(%pattern);
 
+    // create the visitor here to prevent needing to create and destroy this
+    // object dozens or hundreds of times.
     %visitor = new TamlXmlFileVisitor();
 
     %dependencies = "";

@@ -223,11 +223,21 @@ function SlingshotLauncherBuilder::getBuilderObject(%launcherSceneObjectGroup)
     return %object;
 }
 
+/// <summary>
+/// This function looks for a launcher in a level file
+/// </summary>
+/// <param name="%launcherGroup">The launcher to find.</param>
+/// <param name="%level">The file name of the level to search.</param>
+/// <param name="%visitor">A TAML visitor object that will actually perform the search.</param>
 function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level, %visitor)
 {
     return %visitor.containsValue(%level, "internalName", %launcherGroup.getInternalName());
 }
 
+/// <summary>
+/// This function searches all level files in a project for a launcher
+/// </summary>
+/// <param name="%launcherGroup">The launcher to find.</param>
 function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
 {
     %path = expandPath("^{UserGame}/data/levels"); 
