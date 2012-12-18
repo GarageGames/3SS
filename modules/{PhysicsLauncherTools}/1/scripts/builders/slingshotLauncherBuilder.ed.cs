@@ -223,9 +223,9 @@ function SlingshotLauncherBuilder::getBuilderObject(%launcherSceneObjectGroup)
     return %object;
 }
 
-function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level)
+function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level, %visitor)
 {
-    return TamlVisitorContainsValue(%level, "internalName", %launcherGroup.getInternalName());
+    return %visitor.containsValue(%level, "internalName", %launcherGroup.getInternalName());
 }
 
 function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
@@ -236,11 +236,12 @@ function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
 
     %file = findFirstFile(%pattern);
 
+    %visitor = new TamlXmlFileVisitor();
     %dependencies = "";
 
     while(%file !$= "")
     {
-        if ( SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %file) )
+        if ( SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %file, %visitor) )
         {
             %levelName = fileBase(%file);
             %name = strreplace(%levelName, ".scene", "");

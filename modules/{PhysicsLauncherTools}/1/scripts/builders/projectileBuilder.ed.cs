@@ -976,12 +976,12 @@ function ProjectileBuilder::setCollisionShapesFromProxy(%projectile, %proxyObjec
     PhysicsLauncherTools::copyCollisionShapes(%proxyObject, %projectile);
 }
 
-function ProjectileBuilder::findProjectileInLevel(%projectile, %level)
+function ProjectileBuilder::findProjectileInLevel(%projectile, %level, %visitor)
 {
     %found = false;
     for (%i = 0; %i < 5; %i++)
     {
-        if ( TamlVisitorContainsValue(%level, "AvailProjectile"@%i, %projectile) )
+        if ( %visitor.containsValue(%level, "AvailProjectile"@%i, %projectile) )
             %found = true;
     }
     return %found;
@@ -995,10 +995,12 @@ function ProjectileBuilder::findProjectileInAllLevels(%projectile)
 
     %file = findFirstFile(%pattern);
 
+    %visitor = new TamlXmlFileVisitor();
+
     %dependencies = "";
     while(%file !$= "")
     {
-        if ( ProjectileBuilder::findProjectileInLevel(%projectile, %file) )
+        if ( ProjectileBuilder::findProjectileInLevel(%projectile, %file, %visitor) )
         {
             %levelName = fileBase(%file);
             %name = strreplace(%levelName, ".scene", "");

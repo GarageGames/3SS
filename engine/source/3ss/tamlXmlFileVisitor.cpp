@@ -3,6 +3,10 @@
 // Copyright GarageGames, LLC 2011
 //-----------------------------------------------------------------------------
 
+#ifndef _CONSOLETYPES_H_
+#include "console/consoleTypes.h"
+#endif
+
 #include "tamlXmlFileVisitor.h"
 #include "tamlXmlFileVisitor_ScriptBinding.h"
 
@@ -24,9 +28,7 @@ bool TamlXmlFileVisitor::findElementByAttribValue( const char* pFileName, const 
 	return mFound;
 }
 
-ConsoleMethod(TamlXmlFileVisitor, parse, bool, 3, 3,   "(fileName) - parses the selected file.\n"
-                                                    "@return true if successful, false if not.")
+void TamlXmlFileVisitor::clearFound(void)
 {
-    // Fetch format mode.
-    return object->parse( argv[1] );
+	mFound = false;
 }

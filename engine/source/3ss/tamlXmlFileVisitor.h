@@ -6,26 +6,27 @@
 #ifndef _TAML_XML_FILE_VISITOR_H_
 #define _TAML_XML_FILE_VISITOR_H_
 
+#ifndef _SIMBASE_H_
+#include "sim/simBase.h"
+#endif
+
 #ifndef _TAML_XMLPARSER_H_
 #include "persistence//taml/tamlXmlParser.h"
 #endif
 
-#ifndef _ASSET_FIELD_TYPES_H
-#include "assets/assetFieldTypes.h"
-#endif
-
-#ifndef _ASSET_DEFINITION_H
-#include "assets/assetDefinition.h"
-#endif
-
-#ifndef _ASSET_BASE_H
-#include "assets/assetBase.h"
-#endif
-
 //-----------------------------------------------------------------------------
 
-class TamlXmlFileVisitor : public TamlXmlVisitor , public SimObject
+class TamlXmlFileVisitor : public SimObject, public TamlXmlVisitor
 {
+private:
+    typedef SimObject Parent;
+
+protected:
+	StringTableEntry mElementName;
+	StringTableEntry mAttribName;
+	StringTableEntry mAttribValue;
+	bool mFound;
+
 protected:
     virtual bool visit( TiXmlElement* pXmlElement, TamlXmlParser& xmlParser )
     {
@@ -37,7 +38,7 @@ protected:
 		// Iterate attributes.
 		for ( TiXmlAttribute* pAttribute = pXmlElement->FirstAttribute(); pAttribute; pAttribute = pAttribute->Next() )
 		{
-			if ( pAttribute->Name() == "Name" || pAttribute->Name() == "name" )
+			if ( dStrcmp(pAttribute->Name(), "Name") || dStrcmp(pAttribute->Name(), "name") )
 				pName = StringTable->insert(pAttribute->Value());
 			// Insert attribute name.
 			StringTableEntry attributeName = StringTable->insert( pAttribute->Name() );
@@ -84,21 +85,14 @@ public:
     }
 
 	bool findElementByAttribValue( const char*, const char*, const char* );
+	void clearFound(void);
 
     virtual bool onAdd() { if ( !Parent::onAdd() ) return false; return true; }
     virtual void onRemove() { Parent::onRemove(); }
     static void initPersistFields();
-    /// Declare Console Object.
+
+	/// Declare Console Object.
     DECLARE_CONOBJECT( TamlXmlFileVisitor );
-
-protected:
-	StringTableEntry mElementName;
-	StringTableEntry mAttribName;
-	StringTableEntry mAttribValue;
-	bool mFound;
-
-private:
-    typedef SimObject Parent;
 };
 
 #endif // _TAML_XML_FILE_VISITOR_H_
