@@ -236,15 +236,7 @@ function WorldObjectBuilder::createWorldObjectTemplate()
 
 function WorldObjectBuilder::findObjectInLevel(%worldObject, %level)
 {
-    %count = %level.getSceneObjectCount();
-    %name = %worldObject.getInternalName();
-    for (%i = 0; %i < %count; %i++)
-    {
-        %obj = %level.getSceneObject(%i);
-        if ( %obj.getInternalName() $= %name)
-            return true;
-    }
-    return false;
+    return TamlVisitorContainsValue(%level, "internalName", %worldObject.getInternalName());
 }
 
 function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
@@ -259,15 +251,13 @@ function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
 
     while(%file !$= "")
     {
-        %level = TamlRead(%file);
-        if ( WorldObjectBuilder::findObjectInLevel(%worldObject, %level) )
+        if ( WorldObjectBuilder::findObjectInLevel(%worldObject, %file) )
         {
             %levelName = fileBase(%file);
             %name = strreplace(%levelName, ".scene", "");
             %temp = %name @ " " @ %dependencies;
             %dependencies = %temp;
         }
-        %level.delete();
         %file = findNextFile(%pattern);
     }
     return %dependencies;
