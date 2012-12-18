@@ -2889,6 +2889,12 @@
 		7DF58FB41056FC1600BE8C07 /* dynamicConsoleMethodComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF58F911056FC1600BE8C07 /* dynamicConsoleMethodComponent.h */; };
 		7DF58FB91056FC1600BE8C07 /* simComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF58F971056FC1600BE8C07 /* simComponent.cpp */; };
 		7DF58FBA1056FC1600BE8C07 /* simComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF58F981056FC1600BE8C07 /* simComponent.h */; };
+		A38B6373D5E96B7A7B0075C3 /* tamlXmlFileVisitor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A38B69591F85914D261F8F9F /* tamlXmlFileVisitor.h */; };
+		A38B676DEF7AB045F38EDE4C /* tamlXmlFileVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38B67E953524A1B37B3A02B /* tamlXmlFileVisitor.cpp */; };
+		A38B6A8956C432DE843D822D /* tamlXmlFileVisitor_ScriptBinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A38B6EAB98E0911DC9C4FC20 /* tamlXmlFileVisitor_ScriptBinding.h */; };
+		A38B6AABCF684FB4249BFB5B /* tamlXmlFileVisitor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A38B69591F85914D261F8F9F /* tamlXmlFileVisitor.h */; };
+		A38B6C5774816DD4E7F60136 /* tamlXmlFileVisitor_ScriptBinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A38B6EAB98E0911DC9C4FC20 /* tamlXmlFileVisitor_ScriptBinding.h */; };
+		A38B6CE7DB6F54699CFB4D84 /* tamlXmlFileVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38B67E953524A1B37B3A02B /* tamlXmlFileVisitor.cpp */; };
 		D202538D0BB0DA470094256E /* jmemansi.c in Sources */ = {isa = PBXBuildFile; fileRef = D202538B0BB0DA470094256E /* jmemansi.c */; };
 		D203E8530BB887E200E53A94 /* popupMenu.cc in Sources */ = {isa = PBXBuildFile; fileRef = D203E4F40BB847B200E53A94 /* popupMenu.cc */; };
 		D2073D910BB07F8200FE267B /* platformNetAsync.unix.cc in Sources */ = {isa = PBXBuildFile; fileRef = D2073D8D0BB07F8200FE267B /* platformNetAsync.unix.cc */; };
@@ -3094,6 +3100,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A38B6A8956C432DE843D822D /* tamlXmlFileVisitor_ScriptBinding.h in CopyFiles */,
+				A38B6373D5E96B7A7B0075C3 /* tamlXmlFileVisitor.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3118,6 +3126,8 @@
 				77832C5C15EBE2E500325C39 /* libQtGui.4.8.2.dylib in CopyFiles */,
 				77832C5D15EBE2E500325C39 /* libQtNetwork.4.8.2.dylib in CopyFiles */,
 				77832C5E15EBE2E500325C39 /* libQtWebKit.4.9.2.dylib in CopyFiles */,
+				A38B6C5774816DD4E7F60136 /* tamlXmlFileVisitor_ScriptBinding.h in CopyFiles */,
+				A38B6AABCF684FB4249BFB5B /* tamlXmlFileVisitor.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4020,6 +4030,9 @@
 		7DF58F911056FC1600BE8C07 /* dynamicConsoleMethodComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamicConsoleMethodComponent.h; sourceTree = "<group>"; };
 		7DF58F971056FC1600BE8C07 /* simComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simComponent.cpp; sourceTree = "<group>"; };
 		7DF58F981056FC1600BE8C07 /* simComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simComponent.h; sourceTree = "<group>"; };
+		A38B67E953524A1B37B3A02B /* tamlXmlFileVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tamlXmlFileVisitor.cpp; path = ../platformMacCarb/tamlXmlFileVisitor.cpp; sourceTree = "<group>"; };
+		A38B69591F85914D261F8F9F /* tamlXmlFileVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tamlXmlFileVisitor.h; path = ../platformMacCarb/tamlXmlFileVisitor.h; sourceTree = "<group>"; };
+		A38B6EAB98E0911DC9C4FC20 /* tamlXmlFileVisitor_ScriptBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tamlXmlFileVisitor_ScriptBinding.h; path = ../platformMacCarb/tamlXmlFileVisitor_ScriptBinding.h; sourceTree = "<group>"; };
 		D202538B0BB0DA470094256E /* jmemansi.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = jmemansi.c; path = ../../lib/ljpeg/jmemansi.c; sourceTree = SOURCE_ROOT; };
 		D203E4F40BB847B200E53A94 /* popupMenu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = popupMenu.cc; sourceTree = "<group>"; };
 		D2073D8D0BB07F8200FE267B /* platformNetAsync.unix.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = platformNetAsync.unix.cc; path = ../../source/platform/platformNetAsync.unix.cc; sourceTree = SOURCE_ROOT; };
@@ -4805,6 +4818,9 @@
 				2A1D1A82157D1786007D80B8 /* tamlXmlReader.h */,
 				2A1D1A83157D1786007D80B8 /* tamlXmlWriter.cc */,
 				2A1D1A84157D1786007D80B8 /* tamlXmlWriter.h */,
+				A38B67E953524A1B37B3A02B /* tamlXmlFileVisitor.cpp */,
+				A38B69591F85914D261F8F9F /* tamlXmlFileVisitor.h */,
+				A38B6EAB98E0911DC9C4FC20 /* tamlXmlFileVisitor_ScriptBinding.h */,
 			);
 			name = taml;
 			sourceTree = "<group>";
@@ -7734,6 +7750,7 @@
 				2ABE57CD1629B7E6008A7586 /* RemoteDebuggerBridge.cc in Sources */,
 				2ACC2D351635966600374D8A /* gFont.cc in Sources */,
 				2ABEFE72164CF98700C218A0 /* platformFont.cc in Sources */,
+				A38B6CE7DB6F54699CFB4D84 /* tamlXmlFileVisitor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9089,6 +9106,7 @@
 				2ABE57CC1629B7E6008A7586 /* RemoteDebuggerBridge.cc in Sources */,
 				2ACC2D341635966600374D8A /* gFont.cc in Sources */,
 				2ABEFE71164CF98700C218A0 /* platformFont.cc in Sources */,
+				A38B676DEF7AB045F38EDE4C /* tamlXmlFileVisitor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
