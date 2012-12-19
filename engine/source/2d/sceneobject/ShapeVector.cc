@@ -502,7 +502,7 @@ const char* ShapeVector::getWorldPoly( void )
     //const Vector2* pPoly = (getPolyVertexCount() > 0) ? getPolyBasis() : NULL;
 
     // Set the max buffer size
-    const U32 maxBufferSize = getPolyVertexCount() * 18 + 1;
+    const U32 maxBufferSize = getPolyVertexCount() * 26 + 1;
 
     // Get the return buffer.
     char* pReturnBuffer = Con::getReturnBuffer( maxBufferSize );
