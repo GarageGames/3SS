@@ -818,10 +818,10 @@
             <Sprite.CollisionShapes>
                 <Polygon
                     Density="1"
-                    Point0="0.18466 -0.0732"
-                    Point1="0.18466 0.31996"
-                    Point2="-0.2085 0.31996"
-                    Point3="-0.2085 -0.0732" />
+                    Point0="0.54903 -0.22584"
+                    Point1="0.54903 0.95278"
+                    Point2="-0.62959 0.95278"
+                    Point3="-0.62959 -0.22584" />
             </Sprite.CollisionShapes>
         </Sprite>
         <Sprite

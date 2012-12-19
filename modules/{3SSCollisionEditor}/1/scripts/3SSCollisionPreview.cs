@@ -151,7 +151,6 @@ function CollisionShapePreview::createSquareShape(%this)
 {
     %squareShape = new ShapeVector()
     {
-        size = %this.previewObject.Size;
         GravityScale = 0;
         UpdateCallback = 0;
         SceneLayer = 0;
@@ -171,7 +170,6 @@ function CollisionShapePreview::createTriangleShape(%this)
 {
     %triangleShape = new ShapeVector()
     {
-        size = %this.previewObject.Size;
         GravityScale = 0;
         UpdateCallback = 0;
         SceneLayer = 0;
@@ -266,13 +264,10 @@ function CollisionShapePreview::addPreviewObject(%this, %object)
     
     %this.scene.add(%this.previewObject);
     %this.previewObject.setPosition(0, 0);
+  
+    %half = mGetMax(%this.previewObject.getWidth(), %this.previewObject.getHeight());
     
-    %newMinX = %this.previewObject.getPositionX() - (%this.previewObject.getWidth() / 2);
-    %newMinY = %this.previewObject.getPositionY() - (%this.previewObject.getHeight() / 2);
-    %newMaxX = %this.previewObject.getPositionX() + (%this.previewObject.getWidth() / 2);
-    %newMaxY = %this.previewObject.getPositionY() + (%this.previewObject.getHeight() / 2);
-    
-    %this.setCurrentCameraArea(%newMinX*2, %newMinY*2, %newMaxX*2, %newMaxY*2);
+    %this.setCurrentCameraArea(-%half, -%half, %half, %half);
     %this.setCurrentCameraZoom(1);
     %this.startCameraMove(0.5);
     
