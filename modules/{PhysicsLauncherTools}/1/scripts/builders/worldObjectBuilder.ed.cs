@@ -251,17 +251,19 @@ function WorldObjectBuilder::findObjectInLevel(%worldObject, %level, %visitor)
 /// <param name="%worldObject">The object to find.</param>
 function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
 {
-    %path = expandPath("^{UserGame}/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels/"); 
     %fileSpec = "/*.scene.taml";   
-    %pattern = %path @ %fileSpec;
 
-    %file = findFirstFile(%pattern);
+    %blankFile = %path @ %fileSpec;
+    %levelList = PhysicsLauncherTools::getLevelFileList();
 
     %visitor = new TamlXmlFileVisitor();
     %dependencies = "";
 
-    while(%file !$= "")
+    %count = getFieldCount(%levelList);
+    for (%i = 0; %i < %count; %i++)
     {
+        %file = %path @ getField(%levelList, %i) @ ".scene.taml";
         if ( WorldObjectBuilder::findObjectInLevel(%worldObject.getName(), %file, %visitor) )
         {
             %levelName = fileBase(%file);
@@ -269,7 +271,6 @@ function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
             %temp = %name @ " " @ %dependencies;
             %dependencies = %temp;
         }
-        %file = findNextFile(%pattern);
     }
     %visitor.delete();
     return %dependencies;

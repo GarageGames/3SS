@@ -13,7 +13,7 @@ $PhysicsLauncherTools::LauncherCollisionObjectSceneLayer = 16;
 function PhysicsLauncherTools::writePrefabs()
 {
     // Write out templateObjectSet to taml
-    %prefabFile = expandPath("^PhysicsLauncherTemplate/managed/prefabs.taml");
+    %prefabFile = expandPath("^{UserGame}/managed/prefabs.taml");
 
     if (isFile(%prefabFile))
         TamlWrite($PrefabSet, %prefabFile);
@@ -533,7 +533,7 @@ function PhysicsLauncherTools::renameCurrentLevelFile(%oldFileName, %newFileName
     {
         // Delete the old file
         echo("Removing file: " @ %oldFileName);
-        %levelFile = expandPath("^PhysicsLauncherTemplate/data/levels/" @ %oldFileName @ ".scene.taml");
+        %levelFile = expandPath("^{UserGame}/data/levels/" @ %oldFileName @ ".scene.taml");
         %success = fileDelete(%levelFile);
         if (%success)
             echo("File " @ %oldFileName @ " removed");
@@ -543,7 +543,7 @@ function PhysicsLauncherTools::renameCurrentLevelFile(%oldFileName, %newFileName
             return false;
         }
 
-        %newFile = "^PhysicsLauncherTemplate/data/levels/" @ %newFileName @ ".scene.taml";
+        %newFile = "^{UserGame}/data/levels/" @ %newFileName @ ".scene.taml";
         %success = TamlWrite(%level, %newFile);
         if (!%success)
         {
@@ -557,4 +557,35 @@ function PhysicsLauncherTools::renameCurrentLevelFile(%oldFileName, %newFileName
     {
         return false;
     }
+}
+
+function PhysicsLauncherTools::getWorldData()
+{
+    if (isFile($PhysicsLauncher::WorldListFile))
+        $PhysicsLauncherTools::currentWorldData = TamlRead($PhysicsLauncher::WorldListFile);
+    else
+        $PhysicsLauncherTools::currentWorldData = TamlRead("^{UserGame}/managed/worldList.taml");
+
+    $PhysicsLauncherTools::worldCount = $PhysicsLauncherTools::currentWorldData.getCount();
+    
+    for (%i = 0; %i < $PhysicsLauncherTools::worldCount; %i++)
+    {
+        $PhysicsLauncherTools::currentWorlds[%i] = $PhysicsLauncherTools::currentWorldData.getObject(%i);
+    }
+}
+
+function PhysicsLauncherTools::getLevelFileList()
+{
+    if ( !isObject($PhysicsLauncherTools::currentWorldData) )
+        PhysicsLauncherTools::getWorldData();
+    %levelList = "";
+    for ( %j = 0; %j < $PhysicsLauncherTools::worldCount; %j++ )
+    {
+        %world = $PhysicsLauncherTools::currentWorldData.getObject(%j);
+        for ( %k = 0; %k < %world.worldLevelCount; %k++ )
+        {
+            %levelList = %levelList TAB %world.LevelList[%k];
+        }
+    }
+    return trim(%levelList);
 }

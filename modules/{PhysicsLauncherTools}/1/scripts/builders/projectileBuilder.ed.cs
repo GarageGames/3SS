@@ -999,19 +999,21 @@ function ProjectileBuilder::findProjectileInLevel(%projectile, %level, %visitor)
 /// <param name="projectile">The projectile to find.</param>
 function ProjectileBuilder::findProjectileInAllLevels(%projectile)
 {
-    %path = expandPath("^{UserGame}/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels/"); 
     %fileSpec = "/*.scene.taml";   
-    %pattern = %path @ %fileSpec;
 
-    %file = findFirstFile(%pattern);
+    %blankFile = %path @ %fileSpec;
+    %levelList = PhysicsLauncherTools::getLevelFileList();
 
     // create the visitor here to prevent needing to create and destroy this
     // object dozens or hundreds of times.
     %visitor = new TamlXmlFileVisitor();
 
     %dependencies = "";
-    while(%file !$= "")
+    %count = getFieldCount(%levelList);
+    for (%i = 0; %i < %count; %i++)
     {
+        %file = %path @ getField(%levelList, %i) @ ".scene.taml";
         if ( ProjectileBuilder::findProjectileInLevel(%projectile, %file, %visitor) )
         {
             %levelName = fileBase(%file);
@@ -1019,7 +1021,6 @@ function ProjectileBuilder::findProjectileInAllLevels(%projectile)
             %temp = %name @ " " @ %dependencies;
             %dependencies = %temp;
         }
-        %file = findNextFile(%pattern);
     }
     %visitor.delete();
     return %dependencies;

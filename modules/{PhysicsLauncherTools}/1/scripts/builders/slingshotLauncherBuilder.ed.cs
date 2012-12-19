@@ -240,17 +240,21 @@ function SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %level, %
 /// <param name="%launcherGroup">The launcher to find.</param>
 function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
 {
-    %path = expandPath("^{UserGame}/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels/"); 
     %fileSpec = "/*.scene.taml";   
-    %pattern = %path @ %fileSpec;
 
-    %file = findFirstFile(%pattern);
+    %blankFile = %path @ %fileSpec;
+    %levelList = PhysicsLauncherTools::getLevelFileList();
 
+    // create the visitor here to prevent needing to create and destroy this
+    // object dozens or hundreds of times.
     %visitor = new TamlXmlFileVisitor();
-    %dependencies = "";
 
-    while(%file !$= "")
+    %dependencies = "";
+    %count = getFieldCount(%levelList);
+    for (%i = 0; %i < %count; %i++)
     {
+        %file = %path @ getField(%levelList, %i) @ ".scene.taml";
         if ( SlingshotLauncherBuilder::findLauncherInLevel(%launcherGroup, %file, %visitor) )
         {
             %levelName = fileBase(%file);
@@ -258,7 +262,6 @@ function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
             %temp = %name @ " " @ %dependencies;
             %dependencies = %temp;
         }
-        %file = findNextFile(%pattern);
     }
     %visitor.delete();
     return %dependencies;
@@ -443,7 +446,8 @@ function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGr
         warn("SlingshotLauncherBuilder::setForkForegroundAsset -- could not find " @ $SlingshotLauncherBuilder::ForkForegroundObjectInternalName);
         return;   
     }
-    
+
+    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %frame !$= "" && %object.isStaticMode() )
@@ -451,6 +455,7 @@ function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGr
 
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
+    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::getForkForegroundAsset(%launcherSceneObjectGroup)
@@ -503,7 +508,8 @@ function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGr
         warn("SlingshotLauncherBuilder::setForkBackgroundAsset -- could not find " @ $SlingshotLauncherBuilder::ForkBackgroundObjectInternalName);
         return;   
     }
-    
+
+    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %frame !$= "" && %object.isStaticMode() )
@@ -511,6 +517,7 @@ function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGr
 
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
+    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setForkBackgroundImageFrame(%launcherSceneObjectGroup, %frame)
@@ -562,12 +569,14 @@ function SlingshotLauncherBuilder::setBandAsset(%launcherSceneObjectGroup, %band
     {
         warn("SlingshotLauncherBuilder::setBandAsset -- could not find BandObject" @ %bandIndex);
         return;   
-    }    
-    
+    }
+
+    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %object.isStaticMode() )
         %object.setFrame(%frame);
+    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setBandImageFrame(%launcherSceneObjectGroup, %bandIndex, %frame)
@@ -727,11 +736,13 @@ function SlingshotLauncherBuilder::setSeatAsset(%launcherSceneObjectGroup, %asse
         warn("SlingshotLauncherBuilder::setSeatAsset -- could not find SeatObject");
         return;   
     }
-    
+
+    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %object.isStaticMode() )
         %object.setFrame(%frame);
+    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setSeatImageFrame(%launcherSceneObjectGroup, %frame)
@@ -869,7 +880,7 @@ function SlingshotLauncherBuilder::setCollisionShapesFromProxy(%launcherSceneObj
 
 function SlingshotLauncherBuilder::updateLauncherPrefabInAllLevels(%launcherPrefab)
 {
-    %path = expandPath("^gameTemplate/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels"); 
     %fileSpec = "/*.scene.taml";   
     %pattern = %path @ %fileSpec;
     
@@ -889,7 +900,31 @@ function SlingshotLauncherBuilder::updateLauncherPrefabInAllLevels(%launcherPref
         {
             SlingshotLauncherBuilder::setLevelLauncher(%launcherPrefab);
         }
-        
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::LauncherObjectInternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::LauncherObjectInternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::CollisionObjectName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::CollisionObjectName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkForegroundObjectInternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::ForkForegroundObjectInternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::ForkBackgroundObjectInternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::ForkBackgroundObjectInternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::CollisionObjectInternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::CollisionObjectInternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::Band0InternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::Band0InternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::Band1InternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::Band1InternalName));
+
+        if ( !isObject(LauncherSceneGroup.findObjectByInternalName($SlingshotLauncherBuilder::SeatInternalName)) )
+            LauncherSceneGroup.add(%scene.findObjectByInternalName($SlingshotLauncherBuilder::SeatInternalName));
+
         // Write level
         TamlWrite(%scene, %file);
         

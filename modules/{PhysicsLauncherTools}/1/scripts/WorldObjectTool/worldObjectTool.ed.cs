@@ -745,7 +745,7 @@ function WorldObjectTool::refreshPreview(%this, %asset, %frame)
         %windowExtents = Wot_PreviewWindow.getWindowExtents();
         %windowWidth = getWord(%windowExtents, 2);
         %windowHeight = getWord(%windowExtents, 3);
-        
+
         %newMinX = (-1 * %windowWidth * $PhysicsLauncherTools::MetersPerPixel) / 2; 
         %newMaxX = (%windowWidth * $PhysicsLauncherTools::MetersPerPixel) / 2; 
         %newMinY = (-1 * %windowHeight * $PhysicsLauncherTools::MetersPerPixel) / 2;
@@ -754,14 +754,13 @@ function WorldObjectTool::refreshPreview(%this, %asset, %frame)
         Wot_PreviewWindow.setCurrentCameraArea(%newMinX, %newMinY, %newMaxX, %newMaxY);  
     }
     Wot_PreviewWindow.setScene(Wot_PreviewWindow.previewScene);
-    
+
     // Set the sprite
     if (!isObject(Wot_PreviewWindow.previewSprite))
     {
         Wot_PreviewWindow.previewSprite = new Sprite();
     }
     Wot_PreviewWindow.previewScene.add(Wot_PreviewWindow.previewSprite);
-    
 
     // Set the asset    
     Wot_PreviewWindow.previewSprite.setAsset(%asset);
@@ -781,7 +780,7 @@ function WorldObjectTool::refreshPreview(%this, %asset, %frame)
 
     // Size the sprite to the asset
     Wot_PreviewWindow.previewSprite.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
-    
+
     // Scale the asset if it doesn't fit in the window
     %windowWidth = Wot_PreviewWindow.extent.x * $PhysicsLauncherTools::MetersPerPixel;
     %windowHeight = Wot_PreviewWindow.extent.y * $PhysicsLauncherTools::MetersPerPixel;
@@ -790,7 +789,7 @@ function WorldObjectTool::refreshPreview(%this, %asset, %frame)
     %scale = mGetMin(%scale, %windowHeight / Wot_PreviewWindow.previewSprite.getHeight());
 
     Wot_PreviewWindow.previewSprite.setSize(Vector2Scale(Wot_PreviewWindow.previewSprite.getSize(), %scale));
-    
+
     // Set the frame if the asset is an ImageAsset
     // Unpause the animation if the asset is an animation    
     if (AssetDatabase.getAssetType(%asset) $= "ImageAsset")
