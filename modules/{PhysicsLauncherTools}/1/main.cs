@@ -85,7 +85,9 @@ function initializePhysicsLauncherTools()
 
     activatePackage($CurrentTemplatePackage);
     $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/worldList.taml";
-
+    if ( isObject($PhysicsLauncherTools::currentWorldData) )
+        $PhysicsLauncherTools::currentWorldData = "";
+        
     // Open World Tool on start-up
     Tt_WorldToolButton.setStateOn(true);
     Tt_WorldToolButton.onClick();
