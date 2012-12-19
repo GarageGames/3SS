@@ -39,22 +39,30 @@ function PhysicsLauncherTools::deleteSceneContents(%scene)
 
 function PhysicsLauncherTools::purgePrefabFromAllLevels(%prefabName)
 {
-    %path = expandPath("^PhysicsLauncherTemplate/data/levels"); 
+    %path = expandPath("^{UserGame}/data/levels"); 
     %fileSpec = "/*.scene.taml";   
     %pattern = %path @ %fileSpec;
     
     %file = findFirstFile(%pattern);
 
+    %visitor = new TamlXmlFileVisitor();
+
     while(%file !$= "")
     {
-        PhysicsLauncherTools::purgePrefab(%file, %prefabName);
+        PhysicsLauncherTools::purgePrefab(%file, %prefabName, %visitor);
 
         %file = findNextFile(%pattern);
     }
+    %visitor.delete();
 }
 
-function PhysicsLauncherTools::purgePrefab(%levelFile, %prefabName)
+function PhysicsLauncherTools::purgePrefab(%levelFile, %prefabName, %visitor)
 {
+    // bail if this prefab isn't used in this file so we don't waste time
+    // creating the level.
+    if ( !%visitor.containsValue(%levelFile, "prefab", %prefabName) )
+        return;
+
     // Read level file
     %scene = TamlRead(%levelFile);
     

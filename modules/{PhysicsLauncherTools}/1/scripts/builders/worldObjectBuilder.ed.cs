@@ -242,7 +242,7 @@ function WorldObjectBuilder::createWorldObjectTemplate()
 /// <param name="%visitor">A TAML visitor object that will actually perform the search.</param>
 function WorldObjectBuilder::findObjectInLevel(%worldObject, %level, %visitor)
 {
-    return %visitor.containsValue(%level, "internalName", %worldObject.getInternalName());
+    return %visitor.containsValue(%level, "prefab", %worldObject);
 }
 
 /// <summary>
@@ -262,7 +262,7 @@ function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
 
     while(%file !$= "")
     {
-        if ( WorldObjectBuilder::findObjectInLevel(%worldObject, %file, %visitor) )
+        if ( WorldObjectBuilder::findObjectInLevel(%worldObject.getName(), %file, %visitor) )
         {
             %levelName = fileBase(%file);
             %name = strreplace(%levelName, ".scene", "");
