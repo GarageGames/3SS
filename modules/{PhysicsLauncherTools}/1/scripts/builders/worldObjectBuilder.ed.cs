@@ -947,23 +947,22 @@ function WorldObjectBuilder::openCollisionEditor(%object, %invokingGui)
 function WorldObjectBuilder::constructCollisionShapeProxy(%object)
 {
     %proxyObject = new Sprite();
-    %proxyObject.setSize(%object.getSize());
     %proxyObject.setPosition(%object.getPosition());
     %proxyObject.objectName = %object.getInternalName();
+    
+    %stateAssetID = WorldObjectBuilder::getImageForState(%object, 0);
+    %stateAsset = AssetDatabase.acquireAsset(%stateAssetID);
+    %type = %stateAsset.getClassName();
+    AssetDatabase.releaseAsset(%stateAssetID);
 
-    if (%object.Image !$= "")
+    switch$(%type)
     {
-        %static = true;
-        %preview = %object.Image;
+        case "ImageAsset":
+            %proxyObject.Image=%stateAssetID;
+        case "AnimationAsset":
+            %proxyObject.Animation=%stateAssetID;
     }
-    else
-    {
-        %static = false;
-        %preview = %object.Animation;
-    }
-
-    %proxyObject.Animation=(%static == true ? "" : %preview);
-    %proxyObject.Image=(%static == true ? %preview : "");
+    %proxyObject.setSizeFromAsset(%stateAssetID, $PhysicsLauncherTools::MetersPerPixel);
 
     PhysicsLauncherTools::copyCollisionShapes(%object, %proxyObject);
     
