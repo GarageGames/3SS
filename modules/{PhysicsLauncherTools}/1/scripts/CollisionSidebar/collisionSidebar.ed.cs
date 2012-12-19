@@ -366,7 +366,6 @@ function CollisionSidebar::onCollisionEditSave(%this, %object)
         %collisionObject = %this.lastObject.findObjectByInternalName($SlingshotLauncherBuilder::CollisionObjectInternalName);
     else
         %collisionObject = %this.lastObject;
-    echo( "CollisionSidebar::onCollisionEditSave - Saving: ", %object, "->", %this.lastObject, ":", %collisionObject); 
     PhysicsLauncherTools::copyCollisionShapes(%object, %collisionObject);
     PhysicsLauncherTools::writePrefabs();
 }

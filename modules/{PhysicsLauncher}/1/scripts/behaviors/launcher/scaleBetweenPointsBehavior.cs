@@ -115,6 +115,7 @@ function ScaleBetweenPointsBehavior::getAttachmentEndPoint(%this)
 /// <param name="attachmentEnd">The local attachment point of the second object.</param>
 function ScaleBetweenPointsBehavior::attach(%this, %objectStart, %objectEnd)
 {
+    
     if(!isObject(%objectStart) || !isObject(%objectEnd))
     {
         error("ScaleBetweenPointsBehavior::attach - An object we are attempting to attach to does not exist");  
@@ -161,7 +162,6 @@ function ScaleBetweenPointsBehavior::update(%this, %thicknessScale)
         warn("ScaleBetweenPointsBehavior::update - An attached object no longer exists.");  
         return; 
     }
-    
     // Normalize the local points by the objects' sizes
     %attachmentStartX = %this.attachmentStart.x * %this.attachmentObjectStart.getSizeX() / 2;
     %attachmentStartY = %this.attachmentStart.y * %this.attachmentObjectStart.getSizeY() / 2;

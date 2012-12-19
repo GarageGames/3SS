@@ -943,23 +943,23 @@ function ProjectileBuilder::openCollisionEditor(%projectile, %invokingGui)
 function ProjectileBuilder::constructCollisionShapeProxy(%projectile)
 {
     %proxyObject = new Sprite();
-    %proxyObject.setSize(%projectile.getSize());
     %proxyObject.setPosition(%projectile.getPosition());
     %proxyObject.objectName = %projectile.getInternalName();
+    
+    %stateAssetID = ProjectileBuilder::getIdleInLauncherAnim(%projectile);
+    %stateAsset = AssetDatabase.acquireAsset(%stateAssetID);
+    %type = %stateAsset.getClassName();
+    AssetDatabase.releaseAsset(%stateAssetID);
 
-    if (%projectile.Image !$= "")
+    switch$(%type)
     {
-        %static = true;
-        %preview = %projectile.Image;
-    }
-    else
-    {
-        %static = false;
-        %preview = %projectile.Animation;
+        case "AnimationAsset":
+            %proxyObject.Animation=%stateAssetID;
+        case "ImageAsset":
+            %proxyObject.Image=%stateAssetID;
     }
 
-    %proxyObject.Animation=(%static == true ? "" : %preview);
-    %proxyObject.Image=(%static == true ? %preview : "");
+    %proxyObject.setSizeFromAsset(%stateAssetID, $PhysicsLauncherTools::MetersPerPixel);
 
     PhysicsLauncherTools::copyCollisionShapes(%projectile, %proxyObject);
     

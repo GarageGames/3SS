@@ -90,7 +90,6 @@ function SlingshotLauncherBuilder::createSlingshotLauncherTemplate()
     %builderObject.setCollisionGroups(1);
     %builderObject.setSceneLayer($SlingshotLauncherBuilder::LauncherObjectLayer);
     %builderObject.setUseInputEvents(true);
-    %builderObject.setVisible(true);
     
     %slingshotLauncherBuilderBehavior = SlingshotLauncherBuilderBehavior.createInstance(); 
     %builderObject.addBehavior(%slingshotLauncherBuilderBehavior);
@@ -135,7 +134,7 @@ function SlingshotLauncherBuilder::createSlingshotLauncherTemplate()
     %builderObject.Connect(%inputTargetBehavior, %pullbackBehavior, inputUp, launch);
     %builderObject.Connect(%inputTargetBehavior, %pullbackBehavior, inputDrag, setTargetPosition);
     
-    %builderObject.Connect(%pullbackBehavior, %slingshotLauncherBuilderBehavior, onLoad, onLoad);
+    %builderObject.Connect(%pullbackBehavior, %slingshotLauncherBuilderBehavior, onLoaded, onLoaded);
     
     %builderObject.Connect(%inputTargetBehavior, %slingshotLauncherBuilderBehavior, inputDown, onMove);
     %builderObject.Connect(%inputTargetBehavior, %slingshotLauncherBuilderBehavior, inputDrag, onMove);
@@ -170,7 +169,6 @@ function SlingshotLauncherBuilder::createSlingshotLauncherTemplate()
     %seat = new Sprite($SlingshotLauncherBuilder::SeatObjectName @ %launcherPrefabCount);
     %seat.setInternalName($SlingshotLauncherBuilder::SeatInternalName);
     %launcherSimSet.add(%seat);
-    %seat.setVisible(false);
     %seat.setBodyType("static");
     %seat.setSceneLayer($SlingshotLauncherBuilder::SeatObjectLayer);
     SlingshotLauncherBuilder::setSeatAsset(%launcherSimSet, "{PhysicsLauncherAssets}:SlingshotSeatImageMap");
@@ -182,7 +180,6 @@ function SlingshotLauncherBuilder::createSlingshotLauncherTemplate()
     %band0.setInternalName($SlingshotLauncherBuilder::Band0InternalName);
     %launcherSimSet.add(%band0);
     %band0.setBodyType("static"); 
-    %band0.setVisible(false);
     %band0.setSceneLayer($SlingshotLauncherBuilder::Band0ObjectLayer);
     SlingshotLauncherBuilder::setBandAsset(%launcherSimSet, 0, "{PhysicsLauncherAssets}:RubberbandImageMap");
     
@@ -194,7 +191,6 @@ function SlingshotLauncherBuilder::createSlingshotLauncherTemplate()
     %band1.setInternalName($SlingshotLauncherBuilder::Band1InternalName);
     %launcherSimSet.add(%band1);
     %band1.setBodyType("static"); 
-    %band1.setVisible(false);
     %band1.setSceneLayer($SlingshotLauncherBuilder::Band1ObjectLayer);
     SlingshotLauncherBuilder::setBandAsset(%launcherSimSet, 1, "{PhysicsLauncherAssets}:RubberbandImageMap"); 
     
@@ -571,12 +567,10 @@ function SlingshotLauncherBuilder::setBandAsset(%launcherSceneObjectGroup, %band
         return;   
     }
 
-    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %object.isStaticMode() )
         %object.setFrame(%frame);
-    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setBandImageFrame(%launcherSceneObjectGroup, %bandIndex, %frame)
@@ -737,12 +731,10 @@ function SlingshotLauncherBuilder::setSeatAsset(%launcherSceneObjectGroup, %asse
         return;   
     }
 
-    LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %object.isStaticMode() )
         %object.setFrame(%frame);
-    LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setSeatImageFrame(%launcherSceneObjectGroup, %frame)

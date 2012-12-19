@@ -401,7 +401,6 @@
                 SceneLayer="13"
                 size="1.5 1.5"
                 BodyType="static"
-                Visible="0"
                 ImageMap="@asset={PhysicsLauncherAssets}:SlingshotSeatImageMap"
                 Frame="0" />
             <Sprite
@@ -410,7 +409,6 @@
                 SceneLayer="14"
                 size="0.5 0.5"
                 BodyType="static"
-                Visible="0"
                 ImageMap="@asset={PhysicsLauncherAssets}:RubberbandImageMap"
                 Frame="0">
                 <Sprite.Behaviors>
@@ -431,7 +429,6 @@
                 SceneLayer="17"
                 size="0.5 0.5"
                 BodyType="static"
-                Visible="0"
                 ImageMap="@asset={PhysicsLauncherAssets}:RubberbandImageMap"
                 Frame="0">
                 <Sprite.Behaviors>
