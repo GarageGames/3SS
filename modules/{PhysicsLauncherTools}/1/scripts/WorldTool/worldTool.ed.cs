@@ -861,6 +861,7 @@ function WorldTool::addWorld(%this, %index)
         WorldSelectBackground="{PhysicsLauncherAssets}:WorldSelectMenuBackgroundImageImageMap";
     };
     PhysicsLauncherToolsEventManager.postEvent("_AddWorldButtonRequest", %index SPC %newWorld);
+    PhysicsLauncherTools::getWorldData();
 }
 
 function WorldTool::finalizeWorldAdd(%this, %data)
@@ -1030,6 +1031,7 @@ function WorldTool::addLevel(%this)
     %this.selectLevel(%levelCount);
     %this.LevelListContainer.scrollToButton(%this.LevelListContainer.contentPane.getCount());
     %this.SetSelectedLevelButton(%levelCount);
+    PhysicsLauncherTools::getWorldData();
 }
 
 /// <summary>
@@ -1398,6 +1400,7 @@ function WorldTool::deleteLevel(%this, %index)
         %this.LevelListContainer.setSelected(0);
         %this.LevelListContainer.scrollToButton(0);
     }
+    PhysicsLauncherTools::getWorldData();
 }
 
 /// <summary>
@@ -1433,6 +1436,7 @@ function WorldTool::removeWorld(%this, %index)
     %this.refreshWorldList();
     %this.refresh();
     %this.WorldListContainer.setSelected(0);
+    PhysicsLauncherTools::getWorldData();
 }
 
 /// <summary>
