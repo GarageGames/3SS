@@ -425,26 +425,6 @@ void SceneObject::onDestroyNotify( SceneObject* pSceneObject )
 {
 }
 
-//-----------------------------------------------------------------------------
-void SceneObject::ScaleFixtureDef( b2FixtureDef* pFixtureDef, const Vector2& size )
-{
-    if( pFixtureDef->shape != NULL )
-    {
-        // I only know how to scale polygons for now, need to assess other shape types
-        if( pFixtureDef->shape->GetType() == b2Shape::e_polygon )
-        {
-            b2PolygonShape* pPoly = (b2PolygonShape*)(pFixtureDef->shape);
-            if( pPoly )
-            {
-                for( int i = 0; i < pPoly->m_count; i++ )
-                {
-                    pPoly->m_vertices[i].x *= size.x;
-                    pPoly->m_vertices[i].y *= size.y;
-                }
-            }
-        }
-    }
-}
 
 //-----------------------------------------------------------------------------
 
@@ -471,9 +451,6 @@ void SceneObject::OnRegisterScene( Scene* pScene )
     {
         // Fetch fixture definition.
         b2FixtureDef* pFixtureDef = (*itr);
-
-        // Scale the fixture by the size
-        ScaleFixtureDef(pFixtureDef, mSize);
 
         // Create fixture.
         b2Fixture* pFixture = mpBody->CreateFixture( pFixtureDef );
@@ -513,10 +490,6 @@ void SceneObject::OnUnregisterScene( Scene* pScene )
 
     // Notify components.
     notifyComponentsRemoveFromScene();
-
-    Vector2 invScale;
-    invScale.x = 1.0f / mSize.x;
-    invScale.y = 1.0f / mSize.y;
 
     // Copy fixtures to fixture definitions.
     for( typeCollisionFixtureVector::iterator itr = mCollisionFixtures.begin(); itr != mCollisionFixtures.end(); itr++ )
@@ -566,8 +539,6 @@ void SceneObject::OnUnregisterScene( Scene* pScene )
                 break;
         }        
         
-        ScaleFixtureDef(pFixtureDef, invScale);
-
         // Push fixture definition.
         mCollisionFixtureDefs.push_back( pFixtureDef );
     }
@@ -1283,13 +1254,6 @@ void SceneObject::setSize( const Vector2& size )
     if( mSize == size )
         return;
 
-    Scene* theScene = mpScene;
-    if ( theScene )
-    {
-        // Remove this object from the scene so physics can be changed  
-        theScene->removeFromScene(this);
-    }
-
     mSize = size;
 
     // Calculate half size.
@@ -1302,11 +1266,8 @@ void SceneObject::setSize( const Vector2& size )
     mLocalSizeVertices[2].Set( +halfWidth, +halfHeight );
     mLocalSizeVertices[3].Set( -halfWidth, +halfHeight );
 
-    if ( theScene )
+    if ( mpScene )
     {
-        // Re-Add this object to the scene
-        theScene->addToScene(this);
-
         // Reset tick spatials.
         resetTickSpatials( true );
     }
