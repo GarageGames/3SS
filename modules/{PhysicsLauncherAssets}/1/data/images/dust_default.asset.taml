@@ -1,4 +1,0 @@
-<ImageAsset
-    AssetName="dust_defaultImageMap"
-    AssetCategory="sprites"
-    ImageFile="@assetFile=#dust_default.png" />
