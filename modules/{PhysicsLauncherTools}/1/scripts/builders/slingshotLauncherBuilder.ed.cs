@@ -260,6 +260,7 @@ function SlingshotLauncherBuilder::findLauncherInAllLevels(%launcherGroup)
         }
         %file = findNextFile(%pattern);
     }
+    %visitor.delete();
     return %dependencies;
 }
 

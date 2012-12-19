@@ -271,6 +271,7 @@ function WorldObjectBuilder::findObjectInAllLevels(%worldObject)
         }
         %file = findNextFile(%pattern);
     }
+    %visitor.delete();
     return %dependencies;
 }
 

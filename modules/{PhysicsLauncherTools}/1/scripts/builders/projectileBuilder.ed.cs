@@ -1021,6 +1021,7 @@ function ProjectileBuilder::findProjectileInAllLevels(%projectile)
         }
         %file = findNextFile(%pattern);
     }
+    %visitor.delete();
     return %dependencies;
 }
 
