@@ -5474,8 +5474,8 @@ g_HandleSystemReboot();
 --<CodeSignDescription>3 Step Studio</CodeSignDescription>
 --<CodeSignDescriptionURL>%CompanyUrl%</CodeSignDescriptionURL>
 --<CodeSignSetups>1</CodeSignSetups>
---<CodeSigningTool>0</CodeSigningTool></Script>
-<Arguments>/p Uj7Ik8Ol9</Arguments>
+--<CodeSigningTool>0</CodeSigningTool>
+--<Arguments>/p Uj7Ik8Ol9</Arguments></Script>
 <UseCustomIcon>0</UseCustomIcon>
 <CustomIconFile/>
 <ResourceFileVersion>9.0.3.0</ResourceFileVersion>
