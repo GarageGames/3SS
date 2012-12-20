@@ -5465,14 +5465,16 @@ g_HandleSystemReboot();
 <CustomSegSizeMode>0</CustomSegSizeMode>
 <Platform>0</Platform>
 <CollectLaunchUserInfo>1</CollectLaunchUserInfo>
-<CodeSignLocation>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\signtool.exe</CodeSignLocation>
-<CodeSignCertificateFile>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\garagegames.pfx</CodeSignCertificateFile>
-<CodeSignPVKFile/>
-<CodeSignTimeStampURL>http://timestamp.digicert.com</CodeSignTimeStampURL>
-<CodeSignDescription>3 Step Studio</CodeSignDescription>
-<CodeSignDescriptionURL>%CompanyUrl%</CodeSignDescriptionURL>
-<CodeSignSetups>1</CodeSignSetups>
-<CodeSigningTool>0</CodeSigningTool>
+<Script>-- This script can be removed when sign tool is replaced.  Simply remove the comment marks
+-- and the script tags to restore signing.
+--<CodeSignLocation>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\signtool.exe</CodeSignLocation>
+--<CodeSignCertificateFile>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\garagegames.pfx</CodeSignCertificateFile>
+--<CodeSignPVKFile/>
+--<CodeSignTimeStampURL>http://timestamp.digicert.com</CodeSignTimeStampURL>
+--<CodeSignDescription>3 Step Studio</CodeSignDescription>
+--<CodeSignDescriptionURL>%CompanyUrl%</CodeSignDescriptionURL>
+--<CodeSignSetups>1</CodeSignSetups>
+--<CodeSigningTool>0</CodeSigningTool></Script>
 <Arguments>/p Uj7Ik8Ol9</Arguments>
 <UseCustomIcon>0</UseCustomIcon>
 <CustomIconFile/>
