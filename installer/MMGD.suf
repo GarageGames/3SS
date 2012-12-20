@@ -5465,7 +5465,7 @@ g_HandleSystemReboot();
 <CustomSegSizeMode>0</CustomSegSizeMode>
 <Platform>0</Platform>
 <CollectLaunchUserInfo>1</CollectLaunchUserInfo>
-<Script>-- This script can be removed when sign tool is replaced.  Simply remove the comment marks
+<Script>-- This script can be removed when sign tool is replaced.  Simply remove the comment marks 
 -- and the script tags to restore signing.
 --<CodeSignLocation>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\signtool.exe</CodeSignLocation>
 --<CodeSignCertificateFile>C:\TeamCityData\MMGD\Release\Continuous Core PC\signtool\garagegames.pfx</CodeSignCertificateFile>
