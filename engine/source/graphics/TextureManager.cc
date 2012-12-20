@@ -1011,12 +1011,6 @@ ConsoleFunction ( isValidImageSize, bool, 2, 2, "(imageFileName) Use to determin
     U32 len = dStrlen(fileNameBuffer);
     for (U32 i = 0; i < EXT_ARRAY_SIZE && bmp == NULL; i++)
     {
-#if defined(TORQUE_OS_IOS)
-        // check to see if requested no-compression...
-        if (nocompression && (dStrncmp( extArray[i], ".pvr", 4 ) == 0)) {
-            continue;
-        }
-#endif
         dStrcpy(fileNameBuffer + len, extArray[i]);
 
         bmp = (GBitmap*)ResourceManager->loadInstance(fileNameBuffer);
