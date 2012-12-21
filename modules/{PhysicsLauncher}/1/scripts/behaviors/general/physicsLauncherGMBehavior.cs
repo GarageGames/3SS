@@ -185,6 +185,10 @@ function PhysicsLauncherGMBehavior::loadProjectileIntoLauncher(%this, %launcher,
 {
     // get a current count of all available projectiles.
     %this.getProjectileCount();
+    
+    // Set some tolerances to override box2d's rest detection
+    %projectile.AngularVelocityTolerance = 0.02;
+    %projectile.LinearVelocityTolerance = 0.01;
 
     //echo(" @@@ loading " @ %projectile @ " : " @ %projectile.getClassName());
 
