@@ -219,7 +219,7 @@ function generateGuiImageMapFromFile(%filePath)
     if (isFile(%targetFileName))
     {
         %uniqueFileName = generateUniqueFileName(%targetFileName);
-        %message = "A file called" SPC %baseFileName SPC "already exists. Would you like to replace it or create a new file called" SPC fileName(%uniqueFileName) @ "?";
+        %message = "A file called" SPC %baseFileName SPC "already exists. Would you like to replace it or create a copy of the file called" SPC fileName(%uniqueFileName) @ "?";
         %replaceCommand = "saveImageAsSpriteAsset";
         %replaceData = "\"" @ %filePath @ "\"" TAB "\"" @ %targetFileName @ "\"" TAB false;
         %createNewCommand = "saveImageAsSpriteAsset";
