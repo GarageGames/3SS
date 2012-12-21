@@ -1092,6 +1092,9 @@ void SceneWindow::onMouseMove( const GuiEvent& event )
 
 void SceneWindow::onMouseDragged( const GuiEvent& event )
 {
+    if(mLockMouse)
+        mouseLock();
+
     // Dispatch input event.
     dispatchInputEvent(mInputEventDraggedName, event);
 }
