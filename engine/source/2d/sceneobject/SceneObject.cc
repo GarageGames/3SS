@@ -136,6 +136,8 @@ SceneObject::SceneObject() :
     /// Body.
     mpBody(NULL),
     mWorldQueryKey(0),
+    mAngularVelocityTolerance(0),
+    mLinearVelocityTolerance(0),
 
     /// Collision control.
     mCollisionLayerMask(MASK_ALL),
@@ -334,6 +336,8 @@ void SceneObject::initPersistFields()
     addProtectedField("CollisionGroups", TypeS32, Offset(mCollisionGroupMask, SceneObject), &setCollisionGroups, &defaultProtectedGetFn, &writeCollisionGroups, "");
     addProtectedField("CollisionLayers", TypeS32, Offset(mCollisionLayerMask, SceneObject), &setCollisionLayers, &defaultProtectedGetFn, &writeCollisionLayers, "");
     addField("CollisionSuppress", TypeBool, Offset(mCollisionSuppress, SceneObject), &writeCollisionSuppress, "");
+    addField("AngularVelocityTolerance", TypeF32, Offset(mAngularVelocityTolerance, SceneObject), &writeAngularVelocityTolerance, "");
+    addField("LinearVelocityTolerance", TypeF32, Offset(mLinearVelocityTolerance, SceneObject), &writeLinearVelocityTolerance, "");
     addProtectedField("GatherContacts", TypeBool, NULL, &setGatherContacts, &defaultProtectedGetFn, &writeGatherContacts, "");
     addProtectedField("DefaultDensity", TypeF32, Offset( mDefaultFixture.density, SceneObject), &setDefaultDensity, &defaultProtectedGetFn, &writeDefaultDensity, "");
     addProtectedField("DefaultFriction", TypeF32, Offset( mDefaultFixture.friction, SceneObject), &setDefaultFriction, &defaultProtectedGetFn, &writeDefaultFriction, "");
@@ -738,6 +742,23 @@ void SceneObject::postIntegrate(const F32 totalTime, const F32 elapsedTime, Debu
                     Con::executef(this, 1, "onWake");
                 else
                     Con::executef(this, 1, "onSleep");
+            }
+            else if( currentAwakeState )
+            {
+                // Object is awake, check here if it is traveling slower than our limits and sleep if necessary.
+                float32 angularVelocity = mpBody->GetAngularVelocity();
+                bool angularRest = ( mAngularVelocityTolerance != 0 ) && ((angularVelocity * angularVelocity) < (mAngularVelocityTolerance * mAngularVelocityTolerance));
+                b2Vec2 linearVelocity = mpBody->GetLinearVelocity();
+                linearVelocity.x *= linearVelocity.x;
+                linearVelocity.y *= linearVelocity.y;
+                float32 linearToleranceSquared = mLinearVelocityTolerance * mLinearVelocityTolerance;
+                bool linearRest = ( mLinearVelocityTolerance != 0 ) && (linearVelocity.x < linearToleranceSquared && linearVelocity.y < linearToleranceSquared);
+                if( angularRest && linearRest )
+                {
+                    mpBody->SetAwake(false);
+                    mLastAwakeState = false;
+                    Con::executef(this, 1, "onSleep");                    
+                }
             }
         }
 

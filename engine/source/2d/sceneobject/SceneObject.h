@@ -152,6 +152,8 @@ protected:
     b2Body*                 mpBody;
     b2BodyDef               mBodyDefinition;
     U32                     mWorldQueryKey;
+    F32                     mAngularVelocityTolerance;
+    F32                     mLinearVelocityTolerance;
 
     /// Collision control.
     U32                     mCollisionLayerMask;
@@ -384,6 +386,10 @@ public:
     inline F32              getDefaultFriction( void ) const            { return mDefaultFixture.friction; }
     void                    setDefaultRestitution( const F32 restitution, const bool updateShapes = true );
     inline F32              getDefaultRestitution( void ) const         { return mDefaultFixture.restitution; }
+    inline void             setAngularVelocityTolerance( const F32 tolerance ) { mAngularVelocityTolerance = tolerance; }
+    inline F32              getAngularVelocityTolerance( void ) const   { return mAngularVelocityTolerance; }
+    inline void             setLinearVelocityTolerance( const F32 tolerance )  { mLinearVelocityTolerance = tolerance; }
+    inline F32              getLinearVelocityTolerance( void ) const    { return mLinearVelocityTolerance; }
     inline void             setCollisionSuppress( const bool status )   { mCollisionSuppress = status; }
     inline bool             getCollisionSuppress(void) const            { return mCollisionSuppress; }
     inline const typeContactVector* getCurrentContacts( void ) const    { return mpCurrentContacts; }
@@ -695,6 +701,10 @@ protected:
     static bool             writeCollisionSuppress( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return pCastObject->getCollisionSuppress() == true; }
     static bool             setGatherContacts(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setGatherContacts(dAtoi(data)); return false; }
     static bool             writeGatherContacts( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return pCastObject->getGatherContacts() == true; }
+    static bool             setAngularVelocityTolerance(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setAngularVelocityTolerance(dAtof(data)); return false; }
+    static bool             writeAngularVelocityTolerance( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return mNotEqual(pCastObject->getAngularVelocityTolerance(), 0.0f); }
+    static bool             setLinearVelocityTolerance(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setLinearVelocityTolerance(dAtof(data)); return false; }
+    static bool             writeLinearVelocityTolerance( void* obj, StringTableEntry pFieldName ) { PREFAB_WRITE_CHECK(SceneObject); return mNotEqual(pCastObject->getLinearVelocityTolerance(), 0.0f); }
 
     /// Velocities.
     static bool             setLinearVelocity(void* obj, const char* data)  { static_cast<SceneObject*>(obj)->setLinearVelocity(Utility::mGetStringElementVector(data)); return false; }
