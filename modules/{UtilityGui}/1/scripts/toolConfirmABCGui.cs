@@ -5,12 +5,14 @@
 
 /// <summary>
 /// This function displays a full-screen confirmation dialog with custom message and 
-/// callback functionality.
+/// callback functionality.  Used for Replace, Copy, Cancel option situations.
 /// </summary>
 /// <param name="message">The message to display to the user.</param>
-/// <param name="object">The object that contains a method to be called.</param>
-/// <param name="handler">The method on %object to call to handle the OK button click.</param>
-/// <param name="data">Additional information that needs to be passed on to %handler.  Takes up to 8 space-separated items.</param>
+/// <param name="object">The object that contains a method to be called.  Use "" if your handlers are not object methods.</param>
+/// <param name="replaceCallback">The method on %object to call to handle the Replace button click.</param>
+/// <param name="copyCallback">The method on %object to call to handle the Copy button click.</param>
+/// <param name="replaceData">Additional information that needs to be passed on to replaceCallback.  Takes tab or new-line delimited parameter lists.</param>
+/// <param name="copyData">Additional information that needs to be passed on to copyCallback.  Takes tab or new-line delimited parameter lists.</param>
 function ConfirmABCGui::display(%this, %message, %caller, %replaceCallback, %copyCallback, %replaceData, %copyData)
 {
     %this.object = %caller;
