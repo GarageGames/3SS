@@ -21,6 +21,7 @@ function initializeUtilityGui(%scopeSet)
     exec("./scripts/toolNoticeDialogGui.cs");
     exec("./scripts/toolConfirmDeleteGui.cs");
     exec("./scripts/toolConfirmOverwriteGui.cs");
+    exec("./scripts/toolConfirmABCGui.cs");
     exec("./scripts/testGameWindow.cs");
     exec("./scripts/tagDropdownList.cs");
     exec("./scripts/tagListContainer.cs");
@@ -42,6 +43,7 @@ function initializeUtilityGui(%scopeSet)
     %scopeSet.add( TamlRead("./gui/warningDialog.gui.taml") );
     %scopeSet.add( TamlRead("./gui/toolNoticeDialogGui.gui.taml") );
     %scopeSet.add( TamlRead("./gui/toolConfirmDeleteGui.gui.taml") );
+    %scopeSet.add( TamlRead("./gui/toolConfirmABCGui.gui.taml") );
     %scopeSet.add( TamlRead("./gui/toolConfirmOverwriteGui.gui.taml") );
     %scopeSet.add( TamlRead("./gui/testGameWindow.gui.taml") );
     %scopeSet.add( TamlRead("./gui/toolConfirmActionGui.gui.taml") );

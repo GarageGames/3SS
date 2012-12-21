@@ -220,12 +220,11 @@ function generateGuiImageMapFromFile(%filePath)
     {
         %uniqueFileName = generateUniqueFileName(%newFileLocation);
         %message = "A file called" SPC %baseFileName SPC "already exists. Would you like to replace it or create a new file called" SPC fileName(%uniqueFileName) @ "?";
-        
-        %replaceCommand = "saveImageAsSpriteAsset(\"" @ %filePath @ "\", \"" @ %newFileLocation @ "\", false);";
-        %createNewCommand = "saveImageAsSpriteAsset(\"" @ %filePath @ "\", \"" @ %uniqueFileName @ "\", true);";
-        %cancelCommand = "cancelNewSpriteAsset();";
-        
-        WarningDialog.setupAndShow(Canvas.getGlobalCenter(), "", %message, "Replace the Existing File", %replaceCommand, "Create a new file", %createNewCommand, "Cancel", %cancelCommand);
+        %replaceCommand = "saveImageAsSpriteAsset";
+        %replaceData = "\"" @ %filePath @ "\"" @ TAB @ "\"" @ %newFileLocation @ "\"" @ TAB false;
+        %createNewCommand = "saveImageAsSpriteAsset";
+        %copyData = "\"" @ %filePath @ "\"" @ TAB @ "\"" @ %uniqueFileName @ "\"" @ TAB true;
+        ConfirmABCGui.display(%message, "", %replaceCommand, %createNewCommand, %replaceData, %copyData);
     }
     else
     {
@@ -288,6 +287,8 @@ function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
     }
     else
     {
+        pathCopy(%fileToCopy, %newFileLocation);
+
         %assetQuery = new AssetQuery();
         
         AssetDatabase.findAssetType(%assetQuery, "ImageAsset");
