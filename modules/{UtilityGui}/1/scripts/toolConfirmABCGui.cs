@@ -16,8 +16,8 @@ function ConfirmABCGui::display(%this, %message, %caller, %replaceCallback, %cop
     %this.object = %caller;
     %this.replaceHandler = %replaceCallback;
     %this.copyHandler = %copyCallback;
-    %this.replaceData = %copyData;
-    %this.copyData = %data;
+    %this.replaceData = %replaceData;
+    %this.copyData = %copyData;
     ConfirmABCMsgCtrl.setText(%message);
     Canvas.pushDialog(%this);
 }
@@ -31,9 +31,9 @@ function ReplaceAssetBtn::onClick(%this)
         for (%i = 0; %i < %argCount; %i++)
         {
             if (%i == 0)
-                %argList = "\"" @ getField(ConfirmABCGui.replaceData, %i) @ "\"";
+                %argList = getField(ConfirmABCGui.replaceData, %i);
             else
-                %argList = %argList @ ", " @ "\"" @ getField(ConfirmABCGui.replaceData, %i) @ "\"";
+                %argList = %argList @ ", " @ getField(ConfirmABCGui.replaceData, %i);
         }
         %handler = ConfirmABCGui.replaceHandler;
         eval(%object @ "." @ %handler @ "(" @ %argList @ ");");
@@ -44,9 +44,9 @@ function ReplaceAssetBtn::onClick(%this)
         for (%i = 0; %i < %argCount; %i++)
         {
             if (%i == 0)
-                %argList = "\"" @ getField(ConfirmABCGui.replaceData, %i) @ "\"";
+                %argList = getField(ConfirmABCGui.replaceData, %i);
             else
-                %argList = %argList @ ", " @ "\"" @ getField(ConfirmABCGui.replaceData, %i) @ "\"";
+                %argList = %argList @ ", " @ getField(ConfirmABCGui.replaceData, %i);
         }
         %handler = ConfirmABCGui.replaceHandler;
         eval(%handler @ "(" @ %argList @ ");");
@@ -68,9 +68,9 @@ function CopyAssetBtn::onClick(%this)
         for (%i = 0; %i < %argCount; %i++)
         {
             if (%i == 0)
-                %argList = "\"" @ getField(ConfirmABCGui.copyData, %i) @ "\"";
+                %argList = getField(ConfirmABCGui.copyData, %i);
             else
-                %argList = %argList @ ", " @ "\"" @ getField(ConfirmABCGui.copyData, %i) @ "\"";
+                %argList = %argList @ ", " @ getField(ConfirmABCGui.copyData, %i);
         }
         %handler = ConfirmABCGui.copyHandler;
         eval(%object @ "." @ %handler @ "(" @ %argList @ ");");
@@ -81,9 +81,9 @@ function CopyAssetBtn::onClick(%this)
         for (%i = 0; %i < %argCount; %i++)
         {
             if (%i == 0)
-                %argList = "\"" @ getField(ConfirmABCGui.copyData, %i) @ "\"";
+                %argList = getField(ConfirmABCGui.copyData, %i);
             else
-                %argList = %argList @ ", " @ "\"" @ getField(ConfirmABCGui.copyData, %i) @ "\"";
+                %argList = %argList @ ", " @ getField(ConfirmABCGui.copyData, %i);
         }
         %handler = ConfirmABCGui.copyHandler;
         eval(%handler @ "(" @ %argList @ ");");

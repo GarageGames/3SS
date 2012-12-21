@@ -212,28 +212,26 @@ function loadImageMapCellSettings(%imageMap)
 function generateGuiImageMapFromFile(%filePath)
 {
     %baseFileName = fileName(%filePath);
-    %newFileLocation = expandPath("^{UserAssets}/images/" @ %baseFileName); 
+    %targetFileName = expandPath("^{UserAssets}/images/" @ %baseFileName); 
     
-    addResPath(filePath(%newFileLocation));
+    addResPath(filePath(%targetFileName));
        
-    if (isFile(%newFileLocation))
+    if (isFile(%targetFileName))
     {
-        %uniqueFileName = generateUniqueFileName(%newFileLocation);
+        %uniqueFileName = generateUniqueFileName(%targetFileName);
         %message = "A file called" SPC %baseFileName SPC "already exists. Would you like to replace it or create a new file called" SPC fileName(%uniqueFileName) @ "?";
         %replaceCommand = "saveImageAsSpriteAsset";
-        %replaceData = "\"" @ %filePath @ "\"" @ TAB @ "\"" @ %newFileLocation @ "\"" @ TAB false;
+        %replaceData = "\"" @ %filePath @ "\"" TAB "\"" @ %targetFileName @ "\"" TAB false;
         %createNewCommand = "saveImageAsSpriteAsset";
-        %copyData = "\"" @ %filePath @ "\"" @ TAB @ "\"" @ %uniqueFileName @ "\"" @ TAB true;
+        %copyData = "\"" @ %filePath @ "\"" TAB "\"" @ %uniqueFileName @ "\"" TAB true;
         ConfirmABCGui.display(%message, "", %replaceCommand, %createNewCommand, %replaceData, %copyData);
     }
     else
     {
-        saveImageAsSpriteAsset(%filePath, %newFileLocation, true);
+        saveImageAsSpriteAsset(%filePath, %targetFileName, true);
     }
     
-    removeResPath(%newFileLocation);
-    
-    AssetLibrary.schedule(100, "updateGui");
+    removeResPath(%targetFileName);
 }
 
 function generateUniqueFileName(%fileLocation)
@@ -257,15 +255,15 @@ function generateUniqueFileName(%fileLocation)
     return %newFileLocation;
 }
 
-function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
+function saveImageAsSpriteAsset(%fileToCopy, %targetLocation, %isNewImageMap)
 {
     if (%isNewImageMap)
     {
-        %fileOnlyName = fileName(%newFileLocation);
-        %extension = fileExt(%newFileLocation);
+        %fileOnlyName = fileName(%targetLocation);
+        %extension = fileExt(%targetLocation);
         %fileOnlyName = strreplace(%fileOnlyName, %extension, "");
         
-        %pathNoExtension = strreplace(%newFileLocation, %extension, "");
+        %pathNoExtension = strreplace(%targetLocation, %extension, "");
         %name = %fileOnlyName @ "ImageMap";
         
         %imageMap = new ImageAsset()
@@ -278,7 +276,7 @@ function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
         };
         
         TamlWrite(%imageMap, %pathNoExtension @ ".asset.taml");
-        pathCopy(%fileToCopy, %newFileLocation, false);
+        pathCopy(%fileToCopy, %targetLocation);
 
         %imageMap.delete();
         
@@ -287,7 +285,9 @@ function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
     }
     else
     {
-        pathCopy(%fileToCopy, %newFileLocation);
+        %success = pathCopy(%fileToCopy, %targetLocation, false);
+        if ( !%success )
+            echo(" @@@ File copy in saveImageAsSpriteAsset failed to overwrite old file.");
 
         %assetQuery = new AssetQuery();
         
@@ -301,14 +301,19 @@ function saveImageAsSpriteAsset(%fileToCopy, %newFileLocation, %isNewImageMap)
             
             %imageMap = AssetDatabase.acquireAsset(%assetId);
             
-            if (expandPath(%imageMap.imageFile) $= %newFileLocation)
+            if (expandPath(%imageMap.imageFile) $= %targetLocation)
+            {
                 %imageMap.compile();
+                AssetDatabase.reloadAsset(%assetId);
+            }
                 
             AssetDatabase.releaseAsset(%assetId);
         }
         
         %assetQuery.delete();
     }
+    
+    AssetLibrary.schedule(100, "updateGui");
 }
 
 function populateTemporaryAsset(%originalDatablock, %newName)
