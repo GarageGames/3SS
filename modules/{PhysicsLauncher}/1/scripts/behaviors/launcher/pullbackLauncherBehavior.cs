@@ -234,6 +234,11 @@ function PullbackLauncherBehavior::setTargetPosition(%this, %fromBehavior, %from
     %viewRight = getWord(%camera, 2);
     %viewTop = getWord(%camera, 3);
     %viewBottom = getWord(%camera, 1);
+    %margin = 0.14;
+    %viewLeft += %margin;
+    %viewRight -= %margin;
+    %viewTop -= %margin;
+    %viewBottom += %margin;
     if( %targetPosition.x < %viewLeft || 
         %targetPosition.x > %viewRight ||
         %targetPosition.y < %viewBottom ||
