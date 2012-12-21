@@ -9,7 +9,7 @@ if(!isObject(SlingshotLauncherBuilderBehavior))
 {
     %template = new BehaviorTemplate(SlingshotLauncherBuilderBehavior);
 
-    %template.addBehaviorInput(onLoad, "On Load", "Trigger load functionality");
+    %template.addBehaviorInput(onLoaded, "On Loaded", "Trigger load functionality");
     %template.addBehaviorInput(onMove, "On Move", "Trigger move functionality");
     %template.addBehaviorInput(onLaunch, "On Launch", "Triggers launch functionality");
 }
@@ -35,21 +35,15 @@ function SlingshotLauncherBuilderBehavior::onAddToScene(%this, %scene)
 /// </summary>
 function SlingshotLauncherBuilderBehavior::onLevelLoaded(%this)
 {
-    // Get the SimGroup container the owner of this behavior
-    %launcherSimGroup = LauncherSceneGroup;
-    
     // Set lauchher
     %this.launcher = %this.owner;
     
-    // Set Collision Object 
-    %collisionObject = %launcherSimGroup.findObjectByInternalName("CollisionObject");
-    
-    if (isObject(%collisionObject))
-        %this.launcher.callOnBehaviors("setLauncherCollisionObject", %collisionObject);
-    
+    // Get the SimGroup container the owner of this behavior
+    %launcherSimGroup = LauncherSceneGroup;
+
     // Set Seat
-    %this.seatObject = %launcherSimGroup.findObjectByInternalName("SeatObject");
-    
+    %this.seatObject = %launcherSimGroup.findObjectByInternalName("seatObject");
+
     // Get the rubberband objects
     for (%i = 0; %i < %launcherSimGroup.getCount(); %i++)
     {
@@ -57,11 +51,29 @@ function SlingshotLauncherBuilderBehavior::onLevelLoaded(%this)
         
         %internalName = %object.getInternalName();
         
-        if (stripChars(%internalName, "0123456789") $= "BandObject")
+        if ( %internalName $= "BandObject0" )
         {
             %this.addRubberbandObject(%object);
         }
     }
+
+    for (%i = 0; %i < %launcherSimGroup.getCount(); %i++)
+    {
+        %object = %launcherSimGroup.getObject(%i);
+        
+        %internalName = %object.getInternalName();
+        
+        if ( %internalName $= "BandObject1" )
+        {
+            %this.addRubberbandObject(%object);
+        }
+    }
+
+    // Set Collision Object 
+    %collisionObject = %launcherSimGroup.findObjectByInternalName("collisionObject");
+    
+    if (isObject(%collisionObject))
+        %this.launcher.callOnBehaviors("setLauncherCollisionObject", %collisionObject);
 }
 
 /// <summary>
@@ -204,13 +216,13 @@ function SlingshotLauncherBuilderBehavior::updateRubberbands(%this)
 /// </summary>
 /// <param name="fromBehavior">The output behavior that triggered this input.</param>
 /// <param name="fromOutput">The output method that triggered this input.</param>
-function SlingshotLauncherBuilderBehavior::onLoad(%this, %fromBehavior, %fromOutput)
+function SlingshotLauncherBuilderBehavior::onLoaded(%this, %fromBehavior, %fromOutput)
 {
     %this.currentLoadedObject = %this.launcher.callOnBehaviors("getLoadedObject");
     
     if (!isObject(%this.currentLoadedObject))
     {
-        error("SlingshotLauncherBuilderBehavior::onLoad - failed to get loaded object.");
+        error("SlingshotLauncherBuilderBehavior::onLoaded - failed to get loaded object.");
         return;
     }
     

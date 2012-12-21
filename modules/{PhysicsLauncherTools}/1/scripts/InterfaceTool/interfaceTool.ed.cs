@@ -3224,3 +3224,37 @@ function It_LevelScreenSelectButton::onMouseLeave(%this)
     if (%parent.selected == false)
         %parent.setProfile(%parent.normalProfile);
 }
+
+function It_LevelSmallRewardBtnSelectBtn::onClick(%this)
+{
+    if (!%this.active)
+        return;
+    InterfaceTool.propertyPaneSelect(%this);
+    // need to find a way to store or determine asset type before reaching this
+    AssetPicker.open("ImageAsset", "", "gui", %this);
+}
+
+function It_LevelSmallRewardBtnSelectBtn::setSelectedAsset(%this, %assetID, %frame)
+{
+    %nameTag = strreplace(%this.getName(), "SelectBtn", "");
+    %dropdown = %nameTag @ "StateDropdown";
+
+    if (isObject(%dropdown))
+        %index = %dropdown.getSelected();
+
+    %edit = %nameTag @ "SelectEdit";
+
+    eval(%edit.stateControl  @ "." @ %edit.stateField[%index] @ " = \"" @ %assetID @ "\";");
+    if ( %index > 0 )
+    {
+        // only set the world select screen reward image to the "earned" image
+        // state.
+        StarDisplay.setImage(%assetID);
+        StarDisplay.setImageFrame(%frame);
+    }
+    InterfaceTool.saveAllGuiObjects();
+    if ( InterfaceTool.selectedPage == 1 )
+        InterfaceTool.populateWorldPane();
+    if ( InterfaceTool.selectedPage == 2 )
+        InterfaceTool.populateLevelPane(It_LevelListWorldSelectDropdown.getSelected());
+}

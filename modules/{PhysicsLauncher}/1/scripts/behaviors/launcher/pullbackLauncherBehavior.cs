@@ -28,7 +28,7 @@ if(!isObject(PullbackLauncherBehavior))
     %template.addBehaviorInput(launch, "Launch Object", "Triggers the launching of the loaded object");
     
     // Outputs
-    %template.addBehaviorOutput(onLoad, "On Load", "Output raised when the behavior has finished loading");
+    %template.addBehaviorOutput(onLoaded, "On Loaded", "Output raised when the behavior has finished loading");
     %template.addBehaviorOutput(onUnload, "On Unload", "Output raised when the behavior has finished unloading");
     %template.addBehaviorOutput(onSetTarget, "On Set Target", "Output raised when the behavior has finished setting the target position");
     %template.addBehaviorOutput(onLaunch, "On Launch", "Output raised when the behavior has finished launching");
@@ -94,7 +94,7 @@ function PullbackLauncherBehavior::load(%this, %object)
     %this.loadedObject.setActive(false);
     %this.loadedObject.setAwake(false);
 
-    %this.owner.Raise(%this, onLoad);
+    %this.owner.Raise(%this, onLoaded);
 }
 
 /// <summary>
