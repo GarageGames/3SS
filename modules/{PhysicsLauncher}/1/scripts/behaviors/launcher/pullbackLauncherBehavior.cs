@@ -105,6 +105,9 @@ function PullbackLauncherBehavior::load(%this, %object)
 /// <param name="fromOutput">The output method that triggered this input.</param>
 function PullbackLauncherBehavior::setTargetPosition(%this, %fromBehavior, %fromOutput)
 {
+	// Lock the mouse so that we still get drag notifications when the user drags outside the window
+    sceneWindow2D.lockMouse = true;
+    
     if (!isObject(%this.loadedObject))  
         return;    
         
@@ -223,6 +226,38 @@ function PullbackLauncherBehavior::setTargetPosition(%this, %fromBehavior, %from
     if ((%distance > %thresholdDistance) && (%this.lastStretchDistance < %thresholdDistance))
         %this.owner.Raise(%this, stretchOutput);
     %this.lastStretchDistance = %distance;
+    
+    // Try to make the target point visibile
+    %windowPosition = sceneWindow2D.getWindowPoint(%targetPosition);
+    %camera = sceneWindow2D.getCurrentCameraArea();
+    %viewLeft = getWord(%camera, 0);
+    %viewRight = getWord(%camera, 2);
+    %viewTop = getWord(%camera, 3);
+    %viewBottom = getWord(%camera, 1);
+    if( %targetPosition.x < %viewLeft || 
+        %targetPosition.x > %viewRight ||
+        %targetPosition.y < %viewBottom ||
+        %targetPosition.y > %viewTop )
+    {
+        %viewWidth = %viewRight - %viewLeft;
+        %viewHeight = %viewTop - %viewBottom;
+        %centerX = %viewLeft + (%viewWidth * 0.5);
+        %centerY = %viewBottom + (%viewHeight * 0.5);
+        echo("Camera: " @ %centerX SPC %centerY SPC %viewLeft SPC %viewRight SPC %targetPosition.x);
+        if( %targetPosition.x < %viewLeft  ||
+            %targetPosition.x > %viewRight )
+        {
+            %centerX -= (%viewLeft - %targetPosition.x);
+        }
+        if( %targetPosition.y < %viewBottom ||
+            %targetPosition.y > %viewTop )
+        {
+            %centerY -= (%viewBottom - %targetPosition.y);
+        }
+        echo("New Camera: " @ %centerX SPC %centerY);
+        sceneWindow2D.setCurrentCameraPosition(%centerX, %centerY);
+        sceneWindow2D.clampCurrentCameraViewLimit();
+    }
 }
 
 /// <summary>
@@ -273,6 +308,7 @@ function PullbackLauncherBehavior::getLoadedObject(%this)
 /// <param name="fromOutput">The output method that triggered this input.</param>
 function PullbackLauncherBehavior::launch(%this, %fromBehavior, %fromOutput)
 {
+    sceneWindow2D.lockMouse = false;
     if (!isObject(%this.loadedObject))  
         return;      
 
