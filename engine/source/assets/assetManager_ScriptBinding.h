@@ -773,6 +773,42 @@ ConsoleMethod( AssetManager, findTaggedAssets, S32, 4, 5,       "(assetQuery, as
 
 //-----------------------------------------------------------------------------
 
+ConsoleMethod( AssetManager, findAssetLooseFile, S32, 4, 5, "(assetQuery, assetLooseFile, [assetQueryAsSource?]) - Performs an asset query searching for the specified loose file.\n"
+        "@param assetQuery The asset query object that will be populated with the results.\n"
+        "@param assetLooseFile The loose-file used by the asset to search for."
+        "@param assetQueryAsSource Whether to use the asset query as the data-source rather than the asset managers database or not.  Doing this effectively filters the asset query.  Optional: Defaults to false.\n"
+        "@return The number of asset Ids found or (-1) if an error occurred.")
+{
+    // Fetch asset query.
+    AssetQuery* pAssetQuery = Sim::findObject<AssetQuery>( argv[2] );
+
+    // Did we find the asset query?
+    if ( pAssetQuery == NULL )
+    {
+        // No, so warn.
+        Con::warnf( "AssetManager::findAssetLooseFile() - Could not find the asset query object '%s'.", argv[2] );
+        return -1;
+    }
+
+    // Fetch asset loose file.
+    const char* pAssetLooseFile = argv[3];
+
+    // Any more arguments?
+    if ( argc == 4 )
+    {
+        // No, so perform query.
+        return object->findAssetLooseFile( pAssetQuery, pAssetLooseFile );
+    }
+
+    // Fetch asset-query-as-source flag.
+    const bool assetQueryAsSource = dAtob(argv[4]);
+
+    // Perform query.
+    return object->findAssetLooseFile( pAssetQuery, pAssetLooseFile, assetQueryAsSource );
+}
+
+//-----------------------------------------------------------------------------
+
 ConsoleMethod( AssetManager, getDeclaredAssetCount, bool, 2, 2,     "() - Gets the number of declared assets.\n"
                                                                     "@return Returns the number of declared assets.")
 {
