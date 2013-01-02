@@ -132,7 +132,7 @@ function PublisherBuildButton::onClick(%this)
     if (isFile(%outputPath) || isDirectory(%outputPath))
     {
         // Yes, so confirm overwrite.
-        ConfirmOverwriteGui.display("The output directory already exists. Overwrite?", PublisherGui, publish, %outputPath SPC %gameName );
+        ConfirmOverwriteGui.display("The output directory already exists. Overwrite?", PublisherGui, publish, "\""@%outputPath@"\"" TAB "\""@%gameName@"\"" );
         return;
     }
     
