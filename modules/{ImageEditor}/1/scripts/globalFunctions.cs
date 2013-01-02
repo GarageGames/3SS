@@ -293,19 +293,16 @@ function saveImageAsSpriteAsset(%fileToCopy, %targetLocation, %isNewImageMap)
         
         AssetDatabase.findAssetType(%assetQuery, "ImageAsset");
         AssetDatabase.findAssetCategory(%assetQuery, "gui", true);
+        AssetDatabase.findAssetLooseFile(%assetQuery, %targetLocation, true);
 
         %assetCount = %assetQuery.Count;
         for(%index = 0; %index < %assetCount; %index++)
         {
             %assetId = %assetQuery.getAsset(%index);
             %imageMap = AssetDatabase.acquireAsset(%assetId);
-            if (expandPath(%imageMap.imageFile) $= %targetLocation)
-            {
-                AssetDatabase.reloadAsset(%assetId);
-                AssetDatabase.releaseAsset(%assetId);
-                break;
-            }
+            AssetDatabase.reloadAsset(%assetId);
             AssetDatabase.releaseAsset(%assetId);
+            echo(" @@@ replaced image for "@ %assetId);
         }
         %assetQuery.delete();
     }
