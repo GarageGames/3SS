@@ -312,6 +312,7 @@ public:
     S32 findAssetIsDependedOn( AssetQuery* pAssetQuery, const char* pAssetId );
     S32 findInvalidAssetReferences( AssetQuery* pAssetQuery );
     S32 findTaggedAssets( AssetQuery* pAssetQuery, const char* pAssetTagNames, const bool assetQueryAsSource = false );
+    S32 findAssetLooseFile( AssetQuery* pAssetQuery, const char* pLooseFile, const bool assetQueryAsSource = false );
 
     /// Declare Console Object.
     DECLARE_CONOBJECT( AssetManager );

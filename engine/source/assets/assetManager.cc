@@ -2296,6 +2296,98 @@ S32 AssetManager::findTaggedAssets( AssetQuery* pAssetQuery, const char* pAssetT
 
 //-----------------------------------------------------------------------------
 
+S32 AssetManager::findAssetLooseFile( AssetQuery* pAssetQuery, const char* pLooseFile, const bool assetQueryAsSource )
+{
+    // Sanity!
+    AssertFatal( pAssetQuery != NULL, "Cannot use NULL asset query." );
+    AssertFatal( pLooseFile != NULL, "Cannot use NULL loose file." );
+
+    // Expand loose file.
+    char looseFileBuffer[1024];
+    Con::expandPath(looseFileBuffer, sizeof(looseFileBuffer), pLooseFile, false );
+
+    // Fetch asset loose file.
+    StringTableEntry looseFile = StringTable->insert( looseFileBuffer );
+
+    // Reset result count.
+    S32 resultCount = 0;
+
+    // Use asset-query as the source?
+    if ( assetQueryAsSource )
+    {
+        AssetQuery filteredAssets;
+
+        // Yes, so iterate asset query.
+        for( Vector<StringTableEntry>::iterator assetItr = pAssetQuery->begin(); assetItr != pAssetQuery->end(); ++assetItr )
+        {
+            // Fetch asset definition.
+            AssetDefinition* pAssetDefinition = findAsset( *assetItr );
+
+            // Fetch loose files.
+            Vector<StringTableEntry>& assetLooseFiles = pAssetDefinition->mAssetLooseFiles;
+
+            // Skip if this asset has no loose files.
+            if ( assetLooseFiles.size() == 0 )
+                continue;
+
+            // Search the assets loose files.
+            for( Vector<StringTableEntry>::iterator looseFileItr = assetLooseFiles.begin(); looseFileItr != assetLooseFiles.end(); ++looseFileItr )
+            {
+                // Is this the loose file we are searching for?
+                if ( *looseFileItr != looseFile )
+                    continue;
+
+                // Store as result.
+                filteredAssets.push_back( pAssetDefinition->mAssetId );
+
+                // Increase result count.
+                resultCount++;
+
+                break;
+            }
+        }
+
+        // Set asset query.
+        pAssetQuery->set( filteredAssets );
+    }
+    else
+    {
+        // No, so iterate declared assets.
+        for( typeDeclaredAssetsHash::iterator assetItr = mDeclaredAssets.begin(); assetItr != mDeclaredAssets.end(); ++assetItr )
+        {
+            // Fetch asset definition.
+            AssetDefinition* pAssetDefinition = assetItr->value;
+
+            // Fetch loose files.
+            Vector<StringTableEntry>& assetLooseFiles = pAssetDefinition->mAssetLooseFiles;
+
+            // Skip if this asset has no loose files.
+            if ( assetLooseFiles.size() == 0 )
+                continue;
+
+            // Search the assets loose files.
+            for( Vector<StringTableEntry>::iterator looseFileItr = assetLooseFiles.begin(); looseFileItr != assetLooseFiles.end(); ++looseFileItr )
+            {
+                // Is this the loose file we are searching for?
+                if ( *looseFileItr != looseFile )
+                    continue;
+
+                // Store as result.
+                pAssetQuery->push_back( pAssetDefinition->mAssetId );
+
+                // Increase result count.
+                resultCount++;
+
+                break;
+            }
+        }
+    }
+
+    return resultCount;
+}
+
+//-----------------------------------------------------------------------------
+
 bool AssetManager::scanDeclaredAssets( const char* pPath, const char* pExtension, const bool recurse, ModuleDefinition* pModuleDefinition )
 {
     // Sanity!
