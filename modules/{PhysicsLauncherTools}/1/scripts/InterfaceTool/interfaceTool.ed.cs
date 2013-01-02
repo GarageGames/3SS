@@ -510,6 +510,9 @@ function InterfaceTool::initHUDTab(%this)
 
     %help = duplicateControl(helpGui, "Preview", "It_GuiPreviewDuplicateButton");
     resizeControl(%help, %help.Extent, It_HUDPreviewContainer.Extent);
+    %projectileSet = $PrefabSet.findObjectByInternalName("ProjectileSet");
+    %projectileName = %projectileSet.getObject(0).getName();
+    helpScreenDisplayPreview.Image = TutorialDataBuilder::getTutorial(%projectileName@"Tutorial").Image[0];
     It_HUDPreviewContainer.addGuiControl(%help);
 
     helpBackgroundPreview.setProfile(GuiModelessDialogProfile);
