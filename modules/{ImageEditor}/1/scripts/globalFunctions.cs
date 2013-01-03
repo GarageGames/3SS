@@ -302,7 +302,6 @@ function saveImageAsSpriteAsset(%fileToCopy, %targetLocation, %isNewImageMap)
             %imageMap = AssetDatabase.acquireAsset(%assetId);
             AssetDatabase.reloadAsset(%assetId);
             AssetDatabase.releaseAsset(%assetId);
-            echo(" @@@ replaced image for "@ %assetId);
         }
         %assetQuery.delete();
     }
