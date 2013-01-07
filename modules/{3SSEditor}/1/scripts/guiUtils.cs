@@ -48,6 +48,18 @@ function GuiUtils::duplicateGuiObject(%control, %data, %class)
     return %newControl;
 }
 
+/// <summary>
+/// !!! DO NOT CALL DIRECTLY !!!
+/// This function duplicates a gui child control.  Simply pass in 
+/// the control to duplicate (mainMenuGui for example) and it will make a full copy
+/// of the original - minus dynamic fields.
+/// Passing the %data parameter causes the function to copy the names of the original 
+/// controls and append the contents of %data to the name to allow manipulation of the 
+/// copy's members.
+/// </summary>
+/// <param name="control">The control to duplicate.</param>
+/// <param name="data">Used to mutate names from the original gui - optional.</param>
+/// <param name="class">Assigns a script class to all controls in the object to be duplicated - optional.</param>
 function GuiUtils::duplicateChildGuiObject(%control, %data, %class)
 {
     %type = %control.getClassName();
@@ -131,6 +143,15 @@ function GuiUtils::resizeGuiObject(%control, %originalSize, %newSize)
     }
 }
 
+/// <summary>
+/// !!! DO NOT CALL DIRECTLY !!!
+/// This function resizes a gui control.
+/// Simply pass in the control to resize (mainMenuGui for example) and it will resize the control
+/// and all children, maintaining relative positioning and aspect.
+/// </summary>
+/// <param name="control">The control to resize.</param>
+/// <param name="originalSize">The gui's original Extent.</param>
+/// <param name="newSize">The desired Extent of the gui.</param>
 function GuiUtils::resizeChildGuiObject(%control, %xRatio, %yRatio)
 {
     %fontScale = 1.0 * %yRatio;
@@ -154,6 +175,12 @@ function GuiUtils::resizeChildGuiObject(%control, %xRatio, %yRatio)
     }
 }
 
+/// <summary>
+/// This function resizes a gui text profile.
+/// Simply pass in the profile to resize (GuiTextProfile for example) and it will resize the profile.
+/// </summary>
+/// <param name="profile">The profile to resize.</param>
+/// <param name="size">The desired point size of the text profile.</param>
 function GuiUtils::createScaledTextProfile(%profile, %size)
 {
     %name = %profile.getName();

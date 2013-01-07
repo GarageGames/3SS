@@ -296,7 +296,7 @@ function InterfaceTool::initLevelSelectTab(%this)
     %this.getWorldData();
 
     if (!isObject(levelSelectGui))
-        TamlRead("^gameProject/gui/levelSelect.gui.taml");
+        TamlRead("^PhysicsLauncherTemplate/gui/levelSelect.gui.taml");
 
     initializeButtonStateDropdown(It_LevelNextPageBtnStateDropdown);
     initializeButtonStateDropdown(It_LevelPrevPageBtnStateDropdown);
