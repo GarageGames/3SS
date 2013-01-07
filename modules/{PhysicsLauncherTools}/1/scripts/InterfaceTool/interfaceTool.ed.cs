@@ -83,10 +83,10 @@ function InterfaceTool::initMenuTab(%this)
         It_MenuPreviewContainer.getObject(0).delete();
     }
 
-    %mainMenu = duplicateControl(mainMenuGui, "Preview", "It_GuiPreviewDuplicateButton");
+    %mainMenu = GuiUtils::duplicateGuiObject(mainMenuGui, "Preview", "It_GuiPreviewDuplicateButton");
     if ( It_MenuPreviewContainer.getCount() )
         It_MenuPreviewContainer.getObject(0).delete();
-    resizeControl(%mainMenu, %mainMenu.Extent, It_MenuPreviewContainer.Extent);
+    GuiUtils::resizeGuiObject(%mainMenu, %mainMenu.Extent, It_MenuPreviewContainer.Extent);
     It_MenuPreviewContainer.addGuiControl(%mainMenu);
 
     It_CreditsToggleCheckbox.setStateOn(mainMenuGui.showCreditsButton);
@@ -486,8 +486,8 @@ function InterfaceTool::initHUDTab(%this)
     }
     It_HUDPreviewContainer.add(%sceneWindow);
 
-    %hud = duplicateControl(HudGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%hud, %hud.Extent, It_HUDPreviewContainer.Extent);
+    %hud = GuiUtils::duplicateGuiObject(HudGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%hud, %hud.Extent, It_HUDPreviewContainer.Extent);
     It_HUDPreviewContainer.addGuiControl(%hud);
 
     %event = new GuiMouseEventCtrl()
@@ -508,8 +508,8 @@ function InterfaceTool::initHUDTab(%this)
     %event.setPosition(HudScoreContainerPreview.Position.x, HudScoreContainerPreview.Position.y);
     %hud.add(%event);
 
-    %help = duplicateControl(helpGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%help, %help.Extent, It_HUDPreviewContainer.Extent);
+    %help = GuiUtils::duplicateGuiObject(helpGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%help, %help.Extent, It_HUDPreviewContainer.Extent);
     %projectileSet = $PrefabSet.findObjectByInternalName("ProjectileSet");
     %projectileName = %projectileSet.getObject(0).getName();
     helpScreenDisplayPreview.Image = TutorialDataBuilder::getTutorial(%projectileName@"Tutorial").Image[0];
@@ -619,16 +619,16 @@ function InterfaceTool::initWinTab(%this)
 
     if (isObject(%this.tempWinGui))
         %this.tempWinGui.delete();
-    %this.tempWinGui = duplicateControl(winGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%this.tempWinGui, %this.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
+    %this.tempWinGui = GuiUtils::duplicateGuiObject(winGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%this.tempWinGui, %this.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
 
     if (!isObject(loseGui))
         TamlRead("^PhysicsLauncherTemplate/gui/lose.gui.taml");
 
     if (isObject(%this.tempLoseGui))
         %this.tempLoseGui.delete();
-    %this.tempLoseGui = duplicateControl(loseGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%this.tempLoseGui, %this.tempLoseGui.Extent, It_WinLosePreviewContainer.Extent);
+    %this.tempLoseGui = GuiUtils::duplicateGuiObject(loseGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%this.tempLoseGui, %this.tempLoseGui.Extent, It_WinLosePreviewContainer.Extent);
 
     It_WinLoseRewardsToggleCheckbox.setValue(winGui.showRewards);
 
@@ -701,8 +701,8 @@ function InterfaceTool::initPauseTab(%this)
         It_PausePreviewContainer.getObject(0).delete();
     }
 
-    %this.tempPauseGui = duplicateControl(pauseGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%this.tempPauseGui, %this.tempPauseGui.Extent, It_PausePreviewContainer.Extent);
+    %this.tempPauseGui = GuiUtils::duplicateGuiObject(pauseGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%this.tempPauseGui, %this.tempPauseGui.Extent, It_PausePreviewContainer.Extent);
     It_PausePreviewContainer.addGuiControl(%this.tempPauseGui);
 
     initializeButtonStateDropdown(It_PauseResumeBtnStateDropdown);
@@ -817,8 +817,8 @@ function InterfaceTool::initCreditsTab(%this)
     if (!isObject(creditsGui))
         TamlRead("^PhysicsLauncherTemplate/gui/credits.gui.taml");
 
-    %this.tempCreditsGui = duplicateControl(creditsGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(%this.tempCreditsGui, %this.tempCreditsGui.Extent, It_CreditsPreviewContainer.Extent);
+    %this.tempCreditsGui = GuiUtils::duplicateGuiObject(creditsGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(%this.tempCreditsGui, %this.tempCreditsGui.Extent, It_CreditsPreviewContainer.Extent);
     if (It_CreditsPreviewContainer.getCount())
         It_CreditsPreviewContainer.getObject(0).delete();
     It_CreditsPreviewContainer.addGuiControl(%this.tempCreditsGui);
@@ -1010,8 +1010,8 @@ function InterfaceTool::populateWorldPane(%this)
         %world = %this.worldData.getObject(%i);
         WorldSelectBackground.Image = %world.WorldSelectBackground;
         WorldSelectButton.NormalImage = %world.WorldImage;
-        %control = duplicateControl(worldSelectGui, %i);
-        resizeControl(%control, %worldSelectGuiSize, %previewSize);
+        %control = GuiUtils::duplicateGuiObject(worldSelectGui, %i);
+        GuiUtils::resizeGuiObject(%control, %worldSelectGuiSize, %previewSize);
         %worldPane = %this.createWorldPane(%i, %world, %control);
         It_WorldListContentPane.add(%worldPane);
     }
@@ -1362,7 +1362,7 @@ function InterfaceTool::populateLevelPane(%this, %index)
     for(%i = 0; %i < %count; %i++)
     {
         %pageName = "Page " @ %i + 1;
-        %pageControl = duplicateControl(levelSelectGui, %i);
+        %pageControl = GuiUtils::duplicateGuiObject(levelSelectGui, %i);
         %background = "LevelSelectBackground" @ %i;
         %background.Image = %world.WorldBackground[%i];
         for(%j = 1; %j < 16; %j++)
@@ -1373,7 +1373,7 @@ function InterfaceTool::populateLevelPane(%this, %index)
             else
                 %levelButton.NormalImage = %this.worldData.LevelLockedImage;
         }
-        resizeControl(%pageControl, %levelSelectSize, %previewSize);
+        GuiUtils::resizeGuiObject(%pageControl, %levelSelectSize, %previewSize);
         %levelPane = %this.createLevelPane(%i, %pageName, %pageControl, %world.WorldBackground[%i], (%count > 1 ? true : false));
         It_LevelListContentPane.add(%levelPane);
     }
@@ -1941,8 +1941,8 @@ function It_WinLoseBackgroundStateDropdown::onSelect(%this)
         case 0:
             if (isObject(InterfaceTool.tempWinGui))
                 InterfaceTool.tempWinGui.delete();
-            InterfaceTool.tempWinGui = duplicateControl(winGui, "Preview", "It_GuiPreviewDuplicateButton");
-            resizeControl(InterfaceTool.tempWinGui, InterfaceTool.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
+            InterfaceTool.tempWinGui = GuiUtils::duplicateGuiObject(winGui, "Preview", "It_GuiPreviewDuplicateButton");
+            GuiUtils::resizeGuiObject(InterfaceTool.tempWinGui, InterfaceTool.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
 
             It_WinLoseBackgroundSelectEdit.preview = "winBackgroundPreview";
             It_WinLoseBackgroundSelectEdit.preview.setImage(It_WinLoseBackgroundSelectEdit.stateAsset[0]);
@@ -2019,8 +2019,8 @@ function It_WinLoseBackgroundStateDropdown::onSelect(%this)
         case 1:
             if (isObject(InterfaceTool.tempLoseGui))
                 InterfaceTool.tempLoseGui.delete();
-            InterfaceTool.tempLoseGui = duplicateControl(loseGui, "Preview", "It_GuiPreviewDuplicateButton");
-            resizeControl(InterfaceTool.tempLoseGui, InterfaceTool.tempLoseGui.Extent, It_WinLosePreviewContainer.Extent);
+            InterfaceTool.tempLoseGui = GuiUtils::duplicateGuiObject(loseGui, "Preview", "It_GuiPreviewDuplicateButton");
+            GuiUtils::resizeGuiObject(InterfaceTool.tempLoseGui, InterfaceTool.tempLoseGui.Extent, It_WinLosePreviewContainer.Extent);
 
             It_WinLoseBackgroundSelectEdit.preview = "loseBackgroundPreview";
             It_WinLoseBackgroundSelectEdit.preview.setImage(It_WinLoseBackgroundSelectEdit.stateAsset[1]);
@@ -2793,8 +2793,8 @@ function It_LargeRewardSelectButton::setSelectedAsset(%this, %assetID)
 
     if (isObject(InterfaceTool.tempWinGui))
         InterfaceTool.tempWinGui.delete();
-    InterfaceTool.tempWinGui = duplicateControl(winGui, "Preview", "It_GuiPreviewDuplicateButton");
-    resizeControl(InterfaceTool.tempWinGui, InterfaceTool.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
+    InterfaceTool.tempWinGui = GuiUtils::duplicateGuiObject(winGui, "Preview", "It_GuiPreviewDuplicateButton");
+    GuiUtils::resizeGuiObject(InterfaceTool.tempWinGui, InterfaceTool.tempWinGui.Extent, It_WinLosePreviewContainer.Extent);
 
     if (It_WinLosePreviewContainer.getCount())
         It_WinLosePreviewContainer.remove(It_WinLosePreviewContainer.getObject(0));

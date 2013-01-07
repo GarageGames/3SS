@@ -136,6 +136,84 @@ function duplicateControl(%control, %data, %class)
 }
 
 /// <summary>
+/// This function duplicates a gui control.  Simply pass in 
+/// the control to duplicate (mainMenuGui for example) and it will make a full copy
+/// of the original - minus dynamic fields.
+/// Passing the %data parameter causes the function to copy the names of the original 
+/// controls and append the contents of %data to the name to allow manipulation of the 
+/// copy's members.
+/// </summary>
+/// <param name="control">The control to duplicate.</param>
+/// <param name="data">Used to mutate names from the original gui - optional.</param>
+/// <param name="class">Assigns a script class to all controls in the object to be duplicated - optional.</param>
+function GuiUtils::duplicateGuiObject(%control, %data, %class)
+{
+    %type = %control.getClassName();
+    %filter = strreplace(%type, "Button", "");
+    if (%filter $= %type)
+        eval("%newControl = new "@%type@"();");
+    else
+        eval("%newControl = new "@%type@"(){class = \""@%class@"\";};");
+
+    if (%data !$= "")
+        %newControl.setName(%control.getName() @ %data);
+
+    %newControl.Extent = %control.Extent;
+    %newControl.MinExtent = "2 2";
+    %newControl.Position = %control.Position;
+    %newControl.setProfile(%control.Profile);
+    %newControl.canSave = "0";
+    %newControl.Visible = %control.Visible;
+    %newControl.Text = %control.Text;
+    copyAssets(%control, %newControl);
+    %newControl.data = %data;
+
+    %numChildren = %control.getCount();
+    %index = 0;
+    while (%index < %numChildren)
+    {
+        %obj = %control.getObject(%index);
+        %newControl.add(GuiUtils::duplicateChildGuiObject(%obj, %data, %class));
+        %index++;
+    }
+
+    return %newControl;
+}
+
+function GuiUtils::duplicateChildGuiObject(%control, %data, %class)
+{
+    %type = %control.getClassName();
+    %filter = strreplace(%type, "Button", "");
+    if (%filter $= %type)
+        eval("%newControl = new "@%type@"();");
+    else
+        eval("%newControl = new "@%type@"(){class = \""@%class@"\";};");
+
+    if (%data !$= "")
+        %newControl.setName(%control.getName() @ %data);
+
+    %newControl.Extent = %control.Extent;
+    %newControl.MinExtent = "2 2";
+    %newControl.Position = %control.Position;
+    %newControl.setProfile(%control.Profile);
+    %newControl.canSave = "0";
+    %newControl.Visible = %control.Visible;
+    %newControl.Text = %control.Text;
+    copyAssets(%control, %newControl);
+    %newControl.data = %data;
+
+    %numChildren = %control.getCount();
+    %index = 0;
+    while (%index < %numChildren)
+    {
+        %obj = %control.getObject(%index);
+        %newControl.add(GuiUtils::duplicateChildGuiObject(%obj, %data, %class));
+        %index++;
+    }
+    return %newControl;
+}
+
+/// <summary>
 /// This function copys the asset fields from one control to another of the same 
 /// type.
 /// </summary>
@@ -221,6 +299,57 @@ function resizeControl(%control, %originalSize, %newSize)
                 }
             }
         }
+    }
+}
+
+/// <summary>
+/// This function resizes a gui control.
+/// Simply pass in the control to resize (mainMenuGui for example) and it will resize the control
+/// and all children, maintaining relative positioning and aspect.
+/// </summary>
+/// <param name="control">The control to resize.</param>
+/// <param name="originalSize">The gui's original Extent.</param>
+/// <param name="newSize">The desired Extent of the gui.</param>
+function GuiUtils::resizeGuiObject(%control, %originalSize, %newSize)
+{
+    %xRatio = %newSize.x / %originalSize.x;
+    %yRatio = %newSize.y / %originalSize.y;
+    %fontScale = 1.0 * %yRatio;
+    %control.resize(0, 0, %newSize.x, %newSize.y);
+    %type = %control.getClassName();
+    if (%type $= "GuiTextCtrl" || %type $= "GuiTextEditCtrl")
+        %control.setProfile( createScaledTextProfile(%control.Profile, (%control.Profile.FontSize * %fontScale)) );
+
+    %numChildren = %control.getCount();
+    %index = 0;
+    while (%index < %numChildren)
+    {
+        %obj = %control.getObject(%index);
+        GuiUtils::resizeChildGuiObject(%obj, %xRatio, %yRatio);
+        %index++;
+    }
+}
+
+function GuiUtils::resizeChildGuiObject(%control, %xRatio, %yRatio)
+{
+    %fontScale = 1.0 * %yRatio;
+    %type = %control.getClassName();
+    %objXPos = %control.position.x * %xRatio;
+    %objYPos = %control.position.y * %yRatio;
+    %objXSize = %control.extent.x * %xRatio;
+    %objYSize = %control.extent.y * %yRatio;
+    %control.resize(%objXPos, %objYPos, %objXSize, %objYSize);
+    %type = %control.getClassName();
+    if (%type $= "GuiTextCtrl" || %type $= "GuiTextEditCtrl")
+        %control.setProfile( createScaledTextProfile(%control.Profile, (%control.Profile.FontSize * %fontScale)) );
+
+    %numChildren = %control.getCount();
+    %index = 0;
+    while (%index < %numChildren)
+    {
+        %obj = %control.getObject(%index);
+        GuiUtils::resizeChildGuiObject(%obj, %xRatio, %yRatio);
+        %index++;
     }
 }
 
