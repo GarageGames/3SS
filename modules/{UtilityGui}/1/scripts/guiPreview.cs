@@ -5,8 +5,8 @@
 
 function GuiPreviewGui::display(%this, %gui)
 {
-    %guiCopy = duplicateControl(%gui);
-    resizeControl(%guiCopy, %gui.extent, %this.Extent);
+    %guiCopy = GuiUtils::duplicateGuiObject(%gui);
+    GuiUtils::resizeGuiObject(%guiCopy, %gui.extent, %this.Extent);
     Gp_GuiPreview.add(%guiCopy);
     Canvas.pushDialog(%this);
 }

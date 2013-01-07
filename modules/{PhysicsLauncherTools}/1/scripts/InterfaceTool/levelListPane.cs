@@ -115,7 +115,7 @@ function LevelListPane::createFirstLevelHighlightBtn(%this, %sourcePane)
         sourceRect="0 0 0 0";
     };
     %pane.addGuiControl(%previewImage);
-    %paneCtrl = duplicateControl(%this.selectedPane.previewCtrl, "Pane");
+    %paneCtrl = GuiUtils::duplicateGuiObject(%this.selectedPane.previewCtrl, "Pane");
     %previewImage.addGuiControl(%paneCtrl);
 
     %previewSelectBtn = new GuiImageButtonCtrl()
@@ -347,7 +347,7 @@ function LevelListPane::createMidLevelHighlightBtn(%this, %sourcePane)
         sourceRect="0 0 0 0";
     };
     %pane.addGuiControl(%previewImage);
-    %paneCtrl = duplicateControl(%this.selectedPane.previewCtrl, "Pane");
+    %paneCtrl = GuiUtils::duplicateGuiObject(%this.selectedPane.previewCtrl, "Pane");
     %previewImage.addGuiControl(%paneCtrl);
 
     %previewSelectBtn = new GuiImageButtonCtrl()
@@ -612,7 +612,7 @@ function LevelListPane::createLastLevelHighlightBtn(%this, %sourcePane)
         sourceRect="0 0 0 0";
     };
     %pane.addGuiControl(%previewImage);
-    %paneCtrl = duplicateControl(%this.selectedPane.previewCtrl, "Pane");
+    %paneCtrl = GuiUtils::duplicateGuiObject(%this.selectedPane.previewCtrl, "Pane");
     %previewImage.addGuiControl(%paneCtrl);
 
     %previewSelectBtn = new GuiImageButtonCtrl()
