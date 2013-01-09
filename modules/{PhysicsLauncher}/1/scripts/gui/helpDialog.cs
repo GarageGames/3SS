@@ -15,9 +15,6 @@ function helpGui::setup(%this)
 {
     // position the help button so it displays with a "cool overhang" look.
     %helpDisplayPos = helpScreenDisplay.getPosition();
-    %okBtnX = getWord(%helpDisplayPos, 0) + 400;
-    %okBtnY = getWord(%helpDisplayPos, 1) + 160;
-    helpOKButton.setPosition(%okBtnX, %okBtnY);
 
     // Need to get a list of help images from the level file so we can display 
     // them sequentially at the user's request.
