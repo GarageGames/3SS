@@ -169,14 +169,6 @@ if (!isObject(GuiRadioProfile)) new GuiControlProfile (GuiRadioProfile : GuiDefa
     hasBitmapArray = true;
 };
 
-if (!isObject(AnnouncementsRadioProfile)) new GuiControlProfile (AnnouncementsRadioProfile)
-{
-    fillColor = "232 232 232 255";
-    fixedExtent = true;
-    bitmap = "^{EditorAssets}/data/images/newsPageIndicator";
-    hasBitmapArray = true;
-};
-
 // ----------------------------------------------------------------------------
 // Container/Panel Profiles
 // ----------------------------------------------------------------------------

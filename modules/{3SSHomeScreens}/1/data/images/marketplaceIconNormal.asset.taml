@@ -1,5 +1,0 @@
-<ImageAsset
-    AssetName="marketplaceIconNormal"
-    AssetCategory="gui"
-    AssetInternal="1"
-    ImageFile="@assetFile=#marketplaceIconNormal.png" />

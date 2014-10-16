@@ -1,7 +1,0 @@
-<ImageAsset
-    AssetName="GGDeckSprite"
-    ImageFile="@assetFile=^{BlackjackAssets}/images/GGDeck"
-    CellCountX="13"
-    CellCountY="5"
-    CellWidth="144"
-    CellHeight="210" />

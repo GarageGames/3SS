@@ -1,4 +1,0 @@
-<ImageAsset
-    AssetName="BankruptSprite"
-    ImageFile="@assetFile=^{BlackjackAssets}/images/Bankrupt"
-    FilterMode="SMOOTH" />

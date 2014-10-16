@@ -3,7 +3,7 @@
 	VersionId="1"
 	Description="3 Step Studio Home Screens"
 	Group="baseTools"
-	Dependencies="{EditorCore}=1,{QTManager}=1"
+	Dependencies="{EditorCore}=1"
 	ScriptFile="main.cs"
 	ScopeSet="3SSHomeScreensSet"
 	CreateFunction="initialize3SSHomeScreens"

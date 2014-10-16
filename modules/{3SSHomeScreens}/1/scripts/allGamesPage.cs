@@ -13,7 +13,6 @@ function showAllGames()
     
     // Push the template selector view
     EditorShellGui.addView(AllGamesGui, "");
-    EditorShellGui.addView(AnnouncementsGui, "");
     
     if($templateCount <= 0)
         parseTemplates();
@@ -179,7 +178,6 @@ function AG_BackButton::onClick(%this)
 {
     EditorShellGui.clearViews();
     EditorShellGui.addView(TemplateListGui, "");
-    EditorShellGui.addView(AnnouncementsGui, "");
     if ( isObject(AG_GamesList.helpManager) )
     {
         AG_GamesList.helpManager.stop();

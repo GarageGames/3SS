@@ -1,5 +1,0 @@
-<AudioAsset
-    AssetName="Song1"
-    AssetAutoUnload="0"
-    AudioFile="@assetFile=^{BlackjackAssets}/audio/BlackJack_Under21.wav"
-    Looping="1" />

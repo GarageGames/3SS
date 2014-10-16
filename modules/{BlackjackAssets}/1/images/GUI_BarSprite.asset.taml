@@ -1,4 +1,0 @@
-<ImageAsset
-    AssetName="GUI_BarSprite"
-    ImageFile="@assetFile=^{BlackjackAssets}/images/GUI_Bar"
-    FilterMode="SMOOTH" />

@@ -37,7 +37,6 @@ function openGamesManager(%templateType, %templateIcon)
     
     // Push the template selector view
     EditorShellGui.addView(GameManagerGui, "");
-    EditorShellGui.addView(AnnouncementsGui, "");
 }
 
 function GMBackButton::onClick(%this)
