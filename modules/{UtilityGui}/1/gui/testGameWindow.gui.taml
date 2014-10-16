@@ -72,6 +72,7 @@
             BorderMargin="0"
             Invisible="0"
             LeftMargin="0" />
+<!-- DISABLING FOR GAME DEV CURRICULUM
         <GuiRadioCtrl
             Name="TestGameRadioButtoniPad"
             canSaveDynamicFields="0"
@@ -144,6 +145,7 @@
             hovertime="1000"
             text="iPhone"
             maxLength="1024" />
+-->
         <GuiRadioCtrl
             Name="TestGameRadioButtonPCMac"
             canSaveDynamicFields="0"
@@ -151,7 +153,7 @@
             Profile="GuiRadioProfile"
             HorizSizing="right"
             VertSizing="bottom"
-            Position="73 111"
+            Position="73 83"
             Extent="18 18"
             MinExtent="8 2"
             canSave="1"
@@ -171,7 +173,7 @@
             Profile="GuiDefaultProfile"
             HorizSizing="right"
             VertSizing="bottom"
-            Position="110 111"
+            Position="110 83"
             Extent="96 18"
             MinExtent="8 2"
             canSave="1"
