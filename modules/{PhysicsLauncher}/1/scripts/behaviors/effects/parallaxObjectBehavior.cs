@@ -47,20 +47,33 @@ function ParallaxObjectBehavior::onUpdate(%this)
 	%this.oldPositionY = %this.currentPositionY;
 	
 	// Calculate the scroll rate based on the delta and behavior specified speed
-	%horizontalScrollRate = %deltaX * %this.horizontalScrollSpeed;
-	%verticalScrollRate = %deltaY * %this.verticalScrollSpeed;
+	// %horizontalScrollRate = %deltaX * %this.horizontalScrollSpeed;
+	// %verticalScrollRate = %deltaY * %this.verticalScrollSpeed;
+	
+	// Calculate the additional scroll amount based on the delta and behavior specified speed.  In order for the values and editor labels to make sense, we need to go in the reverse direction than expected.
+	if (%this.horizontalScrollSpeed != 0)
+	{
+	   %horizontalScrollRate = %deltaX * (-(%this.horizontalScrollSpeed - 1));
+	}
+	if (%this.verticalScrollSpeed != 0)
+	{
+	   %verticalScrollRate = %deltaY * (-%this.verticalScrollSpeed);
+	}
+	
+	// set the position intead of the scroll amount. this is easier to calculate.
+	%this.owner.setPosition(getWord(%this.owner.position, 0) + %horizontalScrollRate, getword(%this.owner.position, 1) + %verticalScrollRate);
 	
 	// Don't bother unless the delta is below the threshold of 0.1
-	if (mAbs(%deltaX) < 0.1)
-        %this.owner.setScrollX(0);
-	else
-	    %this.owner.setScrollX(%horizontalScrollRate);
-	
-	// Don't bother unless the delta is below the threshold of 0.1    
-	if (mAbs(%deltaY) < 0.1)
-        %this.owner.setScrollY(0);
-    else
-        %this.owner.setScrollY(%verticalScrollRate);
+	//if (mAbs(%deltaX) < 0.1)
+        //%this.owner.setScrollX(0);
+	//else
+	    //%this.owner.setScrollX(%horizontalScrollRate);
+	//
+	//// Don't bother unless the delta is below the threshold of 0.1    
+	//if (mAbs(%deltaY) < 0.1)
+        //%this.owner.setScrollY(0);
+    //else
+        //%this.owner.setScrollY(%verticalScrollRate);
 }
 
 function ParallaxObjectBehavior::getHorizontalScrollSpeed(%this)

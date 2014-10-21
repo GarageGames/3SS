@@ -29,11 +29,11 @@ $LevelBuilderTool::GravityMultiplierLowest = 0.2;
 
 $LevelBuilderTool::LevelSize = "";
 
-$LevelBuilderTool::ParallaxSpeedFastest = 20; 
-$LevelBuilderTool::ParallaxSpeedFast = 10;
-$LevelBuilderTool::ParallaxSpeedMedium = 5;
-$LevelBuilderTool::ParallaxSpeedSlow = 2.5;
-$LevelBuilderTool::ParallaxSpeedSlowest = 1.25;
+$LevelBuilderTool::ParallaxSpeedFastest = 1.25; 
+$LevelBuilderTool::ParallaxSpeedFast = 1.1;
+$LevelBuilderTool::ParallaxSpeedMedium = 0.9;
+$LevelBuilderTool::ParallaxSpeedSlow = 0.75;
+$LevelBuilderTool::ParallaxSpeedSlowest = 0.5;
 $LevelBuilderTool::ParallaxSpeedNone = 0;
 
 $LevelBuilderTool::ForegroundParallaxSpeed = "";
@@ -1265,8 +1265,15 @@ function LevelBuilderToolPresenter::onRightViewForegroundParallaxSpeedSelect(%th
         
         if (!%this.RightView.getBackgroundFormatIsTile())
         {
-            %repeatX = 1 / (((Foreground.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
-            Foreground.setRepeatX(%repeatX);
+            %repeatX = %this.getRepeatX(%this.Scene.levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, %parallaxSpeed);
+            // 1 / (((Foreground.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
+            // Foreground.setRepeatX(%repeatX);
+            // let's change the size of the object.
+            Foreground.setSizeX(%this.Scene.levelSize.x * (1/%repeatX));
+        }
+        else
+        {
+           Foreground.setSizeX(%this.Scene.levelSize.x);
         }
     }
         
@@ -1311,8 +1318,15 @@ function LevelBuilderToolPresenter::onRightViewBackground1ParallaxSpeedSelect(%t
         
         if (!%this.RightView.getBackgroundFormatIsTile())
         {
-            %repeatX = 1 / (((Background1.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
-            Background1.setRepeatX(%repeatX);
+            %repeatX = %this.getRepeatX(%this.Scene.levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, %parallaxSpeed);
+            // 1 / (((Background1.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
+            // Background1.setRepeatX(%repeatX);
+            // let's change the size of the object.
+            Background1.setSizeX(%this.Scene.levelSize.x * (1/%repeatX));
+        }
+        else
+        {
+           Background1.setSizeX(%this.Scene.levelSize.x);
         }
     }
         
@@ -1357,8 +1371,15 @@ function LevelBuilderToolPresenter::onRightViewBackground2ParallaxSpeedSelect(%t
         
         if (!%this.RightView.getBackgroundFormatIsTile())
         {
-            %repeatX = 1 / (((Background2.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
-            Background2.setRepeatX(%repeatX);
+            %repeatX = %this.getRepeatX(%this.Scene.levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, %parallaxSpeed);
+            // 1 / (((Background2.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
+            // Background2.setRepeatX(%repeatX);
+            // let's change the size of the object.
+            Background2.setSizeX(%this.Scene.levelSize.x * (1/%repeatX));
+        }
+        else
+        {
+           Background2.setSizeX(%this.Scene.levelSize.x);
         }
     }
         
@@ -1403,8 +1424,15 @@ function LevelBuilderToolPresenter::onRightViewSkyParallaxSpeedSelect(%this)
         
         if (!%this.RightView.getBackgroundFormatIsTile())
         {
-            %repeatX = 1 / (((Sky.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
-            Sky.setRepeatX(%repeatX);
+            %repeatX = %this.getRepeatX(%this.Scene.levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, %parallaxSpeed);
+            // 1 / (((Sky.getSizeX() - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * %parallaxSpeed);
+            // Sky.setRepeatX(%repeatX);
+            // let's change the size of the object.
+            Sky.setSizeX(%this.Scene.levelSize.x * (1/%repeatX));
+        }
+        else
+        {
+           Sky.setSizeX(%this.Scene.levelSize.x);
         }
     }
         
@@ -1588,28 +1616,44 @@ function LevelBuilderToolPresenter::applyBackgroundFormat(%this)
     Background1.callOnBehaviors(setTileable, %backgroundsFormatTileable);
     Foreground.callOnBehaviors(setTileable, %backgroundsFormatTileable);
     
-    %levelSize = Sky.getSize();
+    %levelSize = %this.Scene.levelSize.x;
     
     if (!%backgroundsFormatTileable)
     {
-        %foregroundRepeatX = 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Foreground.callOnBehaviors(getHorizontalScrollSpeed));
-        Foreground.setRepeatX(%foregroundRepeatX);
+        %foregroundRepeatX = %this.getRepeatX(%levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, Foreground.callOnBehaviors(getHorizontalScrollSpeed));
+        // 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Foreground.callOnBehaviors(getHorizontalScrollSpeed));
+        // Foreground.setRepeatX(%foregroundRepeatX);
+        // let's change the size of the object.
+        Foreground.setSizeX(%levelSize * (1/%foregroundRepeatX));
         
-        %background1RepeatX = 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Background1.callOnBehaviors(getHorizontalScrollSpeed));
-        Background1.setRepeatX(%background1RepeatX);
+        %background1RepeatX = %this.getRepeatX(%levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, Background1.callOnBehaviors(getHorizontalScrollSpeed));
+        // 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Background1.callOnBehaviors(getHorizontalScrollSpeed));
+        // Background1.setRepeatX(%background1RepeatX);
+        // let's change the size of the object.
+        Background1.setSizeX(%levelSize * (1/%background1RepeatX));
         
-        %background2RepeatX = 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Background2.callOnBehaviors(getHorizontalScrollSpeed));
-        Background2.setRepeatX(%background2RepeatX);
+        %background2RepeatX = %this.getRepeatX(%levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, Background2.callOnBehaviors(getHorizontalScrollSpeed));
+        // 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Background2.callOnBehaviors(getHorizontalScrollSpeed));
+        // Background2.setRepeatX(%background2RepeatX);
+        // let's change the size of the object.
+        Background2.setSizeX(%levelSize * (1/%background2RepeatX));
         
-        %skyRepeatX = 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Sky.callOnBehaviors(getHorizontalScrollSpeed));
-        Sky.setRepeatX(%skyRepeatX);
+        %skyRepeatX = %this.getRepeatX(%levelSize.x, $PhysicsLauncherTools::CameraWidthInMeters, Sky.callOnBehaviors(getHorizontalScrollSpeed));
+        // 1 / (((%levelSize.x - $PhysicsLauncherTools::CameraWidthInMeters) / 2) * Sky.callOnBehaviors(getHorizontalScrollSpeed));
+        // Sky.setRepeatX(%skyRepeatX);
+        // let's change the size of the object.
+        Sky.setSizeX(%levelSize * (1/%skyRepeatX));
     }
     else
     {
         Foreground.setRepeatX(1);
+        Foreground.setSizeX(%levelSize);
         Background1.setRepeatX(1);
+        Background1.setSizeX(%levelSize);
         Background2.setRepeatX(1);
+        Background2.setSizeX(%levelSize);
         Sky.setRepeatX(1);
+        Sky.setSizeX(%levelSize);
     }
 }
 
@@ -1857,4 +1901,20 @@ function LevelBuilderToolPresenter::setSelectedObjectManipulationActive(%this, %
     %this.RightView.setSendToBackActive(%active);
     %this.RightView.setDeleteActive(%active);
     %this.RightView.setSelectedObjectEditActive(%active);
+}
+
+function LevelBuilderToolPresenter::getRepeatX(%this, %size, %camerawidth, %parallaxamount)
+{
+   // if the size of the background is smaller or the same size as the camera, then no scrolling can occur.
+   if (%size <= %camerawidth || %parallaxamount == 0)
+   {
+      return 1;
+   }
+   // Calculate the amount of parallax modification for the scrollable area.
+   %difference = ((%size - %camerawidth)/2) * (%parallaxamount-1);
+   // The size the background needs to be.
+   %newSize = %difference + %size;
+   // Calculate the repeat value to get the size needed.
+   %repeatX = %size/%newSize;
+   return %repeatX;
 }
