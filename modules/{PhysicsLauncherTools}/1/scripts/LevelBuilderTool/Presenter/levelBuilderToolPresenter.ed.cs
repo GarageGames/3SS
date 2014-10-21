@@ -1488,7 +1488,7 @@ function LevelBuilderToolPresenter::refreshGravityTab(%this)
 /// </summary>
 function LevelBuilderToolPresenter::refreshGravityStrength(%this)
 {
-    %gravityMultiplier = getWord(%this.Scene.getGravity(), 1) / $LevelBuilderTool::GravityConstant;
+    %gravityMultiplier = mAbs(mFloatLength(getWord(%this.Scene.getGravity(), 1) / $LevelBuilderTool::GravityConstant, 1));
     
     %strengthText = "";
     
