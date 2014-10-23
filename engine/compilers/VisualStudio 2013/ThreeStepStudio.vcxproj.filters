@@ -345,9 +345,6 @@
     <ClCompile Include="..\..\source\platform\platformMemory.cc">
       <Filter>Source Files\platform</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\platform\platformString.cc">
-      <Filter>Source Files\platform</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\source\platform\platformVideo.cc">
       <Filter>Source Files\platform</Filter>
     </ClCompile>
@@ -1430,6 +1427,12 @@
     </ClCompile>
     <ClCompile Include="..\..\source\platform\platformFont.cc">
       <Filter>Source Files\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\platform\platformString.cc">
+      <Filter>Source Files\platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\3ss\tamlXmlFileVisitor.cpp">
+      <Filter>Source Files\3ss</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2845,6 +2848,33 @@
     </ClInclude>
     <ClInclude Include="..\..\source\graphics\gFont.h">
       <Filter>Source Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformEndian.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformCPU.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformString.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformNetwork.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformMemory.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformMath.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformTimeManager.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\3ss\tamlXmlFileVisitor.h">
+      <Filter>Source Files\3ss</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\3ss\tamlXmlFileVisitor_ScriptBinding.h">
+      <Filter>Source Files\3ss</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

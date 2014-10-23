@@ -2609,6 +2609,27 @@
     <ClInclude Include="..\..\source\graphics\gFont.h">
       <Filter>Source Files\graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformEndian.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformCPU.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformString.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformNetwork.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformMemory.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformMath.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\platform\platformTimeManager.h">
+      <Filter>Source Files\platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\source\math\mMath_ASM.asm">
