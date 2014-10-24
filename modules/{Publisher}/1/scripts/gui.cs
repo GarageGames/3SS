@@ -14,8 +14,10 @@ function PublisherGui::onWake(%this)
         PublisherRadioButtonPC.performClick();
         
         // Disable iOS publishing
+        /* DISABLING FOR GAME DEV CURRICULUM
         PublisherRadioButtoniOS.setActive(0);
         PublisherRadioButtoniOS.ToolTip="You cannot publish to iOS from Windows.";
+        */
     }
     else
     {
@@ -24,11 +26,13 @@ function PublisherGui::onWake(%this)
         
         // If we are on OS X, but there is no Xcode installed
         // Disable iOS publishing
+        /* DISABLING FOR GAME DEV CURRICULUM
         if (!isDirectory("/Developer/Applications/Xcode.app") && !isDirectory("/Applications/Xcode.app"))
         {
             echo("@@@ No Xcode");
             PublisherRadioButtoniOS.setActive(0);
         }
+        */
     }
 }
 

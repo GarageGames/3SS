@@ -643,12 +643,11 @@ function LauncherTool::validateLauncherSet(%this)
 }
 
 function LauncherTool::onLauncherRemove(%this, %data)
-{
-    %index = %data - 1;
+{    
     %this.refreshObjectView();
     %this.refresh();
-    $LauncherToolObjectScrollView.setSelected(%index);
-    $LauncherToolObjectScrollView.scrollToButton(%index);
+    $LauncherToolObjectScrollView.setSelected(%data);
+    $LauncherToolObjectScrollView.scrollToButton(%data);
 }
 //------------------------------------------------------------------------------
 // Name

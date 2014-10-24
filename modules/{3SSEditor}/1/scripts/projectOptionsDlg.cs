@@ -88,7 +88,7 @@ function ProjectOptionsGui::deleteProject(%this)
     
     if (%fileLocation !$= "")
     {
-        %localDataDirectory = getUserHomeDirectory() @ "/My Games/" @ $Game::CompanyName @ "/" @ %module @ "/" @ %this.originalName;
+        %localDataDirectory = $UserGamesLocation @ "/My Games/" @ $Game::CompanyName @ "/" @ %module @ "/" @ %this.originalName;
         %directory = filePath(%fileLocation);
         
         directoryDelete(%directory);

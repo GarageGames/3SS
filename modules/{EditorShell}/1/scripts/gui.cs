@@ -402,13 +402,3 @@ function ESNextTipButton::onClick(%this)
 function ESMoreHelpButton::onClick(%this)
 {
 }
-
-function toggleWebStore()
-{
-    Canvas.pushDialog(WebStoreDlg);
-}
-
-function EditorShellGui::displayUpdateBadge(%this, %visibility)
-{
-    %this-->BadgeImage.setVisible(%visibility);
-}

@@ -1,7 +1,0 @@
-<ImageAsset
-    AssetName="MiniTileMapImage"
-    ImageFile="@assetFile=#MiniTileMap.png"
-    CellCountX="4"
-    CellCountY="4"
-    CellWidth="128"
-    CellHeight="128" />

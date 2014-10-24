@@ -15,6 +15,7 @@ function initialize3SSEditor(%scopeSet)
     exec("./scripts/projectOptionsDlg.cs");
     exec("./scripts/3SSConfirmDeleteProject.cs");
     exec("./scripts/verticalScrollContainer.cs");
+    exec("./scripts/welcome.cs");
     
     //-----------------------------------------------------------------------------
     // Load GUIs
@@ -22,6 +23,7 @@ function initialize3SSEditor(%scopeSet)
     %scopeSet.add( TamlRead("./gui/newProjectDlg.gui.taml") );
     %scopeSet.add( TamlRead("./gui/projectOptionsDlg.gui.taml") );
     %scopeSet.add( TamlRead("./gui/3SSConfirmDeleteProjectGui.gui.taml") );
+    %scopeSet.add( TamlRead("./gui/welcome.gui.taml") );
 
     //-----------------------------------------------------------------------------
     // Register Collision Editor open and close events

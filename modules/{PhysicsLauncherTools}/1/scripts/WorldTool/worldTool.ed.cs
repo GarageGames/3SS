@@ -122,13 +122,7 @@ function WorldTool::load(%this)
     %this.worldIndex = %worldIndex;
     %this.refresh();
 
-    // If the selected world is empty, select the next world.
-    while ( %this.currentWorlds[%this.worldIndex].WorldLevelCount < 1 )
-    {
-        %this.worldIndex++;
-        if ( %this.worldIndex > %this.currentWorldData.getCount() )
-            break;
-    }
+    // Select the world and level
     %this.WorldListContainer.setSelected(%this.worldIndex);
     $Wt_ToolInitialized = true;
     %this.LevelListContainer.setSelected(%levelIndex);

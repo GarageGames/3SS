@@ -669,7 +669,7 @@
                         Visible="1"
                         Active="1"
                         hovertime="1000"
-                        text="Exit Button*"
+                        text="Exit Button"
                         maxLength="1024" />
                     <GuiPopUpMenuCtrl
                         Name="It_MenuExitBtnStateDropdown"
@@ -877,6 +877,7 @@
                     toolTip="Select image file from the Asset Picker for the Main Menu screen background."
                     lockMouse="0"
                     button="It_MenuBackgroundSelectBtn" />
+<!-- DISABLING FOR GAME DEV CURRICULUM
                 <GuiTextCtrl
                     canSaveDynamicFields="1"
                     isContainer="0"
@@ -892,6 +893,7 @@
                     hovertime="1000"
                     text="*Only appears in the PC/Mac builds."
                     maxLength="1024" />
+-->
                 <GuiTextCtrl
                     canSaveDynamicFields="1"
                     isContainer="0"

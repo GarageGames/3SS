@@ -120,6 +120,20 @@ function ProjectileBehavior::handleCollision(%this, %object, %order, %details)
     }
 }
 
+function ProjectileBehavior::onLeaveWorldLimits(%this)
+{
+    //echo("@@@ ProjectileBehavior::onLeaveWorldLimits() " @ %this.owner);
+    
+    if (%this.owner.activated)
+    {
+        sceneWindow2D.canMoveCamera = true;
+
+        %this.landed = true;
+        %this.owner.setSceneLayer(10);
+        %this.owner.Raise(%this, EndMove);
+    }
+}
+
 /// <summary>
 /// This function is used by the projectile cache to disable and clean up the 
 /// projectile before returning it to the cache.

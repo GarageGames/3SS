@@ -124,42 +124,39 @@ function TSTemplateList::Refresh(%this)
         %this.add(%buttonContainer);
     }
    
-    for(%i = 0; %i < 1; %i++)
+    %buttonContainer = new GuiControl()
     {
-        %buttonContainer = new GuiControl()
-        {
-            canSaveDynamicFields = "0";
-            isContainer = "1";
-            Profile = "GuiTransparentProfile";
-            HorizSizing = "right";
-            VertSizing = "bottom";
-            Position = "0 0";
-            Extent = "166 190";
-            MinExtent = "8 2";
-            canSave = "1";
-            Visible = "1";
-            hovertime = "1000";
-        };
-        
-        %comingSoonButton = new GuiImageButtonCtrl()
-        {
-            Profile = "GuiTransparentProfile";
-            Extent = "186 188";
-            MinExtent = "186 188";
-            buttonType = "PushButton";
-            isLegacyVersion = 0;
-            toolTipProfile="GuiToolTipProfile";
-            toolTip="More templates are under development and coming soon.";
-            NormalImage = "{3SSHomeScreens}:ComingSoonIconNormal";
-            HoverImage = "{3SSHomeScreens}:ComingSoonIconHilight";
-            InactiveImage = "{3SSHomeScreens}:ComingSoonIconInactive";
-            DownImage = "{3SSHomeScreens}:ComingSoonIconDepressed";
-        };
+        canSaveDynamicFields = "0";
+        isContainer = "1";
+        Profile = "GuiTransparentProfile";
+        HorizSizing = "right";
+        VertSizing = "bottom";
+        Position = "0 0";
+        Extent = "166 190";
+        MinExtent = "8 2";
+        canSave = "1";
+        Visible = "1";
+        hovertime = "1000";
+    };
+    
+    %comingSoonButton = new GuiImageButtonCtrl()
+    {
+        Profile = "GuiTransparentProfile";
+        Extent = "186 188";
+        MinExtent = "186 188";
+        buttonType = "PushButton";
+        isLegacyVersion = 0;
+        toolTipProfile="GuiToolTipProfile";
+        toolTip="More templates are under development and coming soon.";
+        NormalImage = "{3SSHomeScreens}:ComingSoonIconNormal";
+        HoverImage = "{3SSHomeScreens}:ComingSoonIconHilight";
+        InactiveImage = "{3SSHomeScreens}:ComingSoonIconInactive";
+        DownImage = "{3SSHomeScreens}:ComingSoonIconDepressed";
+    };
 
-        %buttonContainer.add(%comingSoonButton);
-        
-        %this.add(%buttonContainer);
+    %buttonContainer.add(%comingSoonButton);
+    
+    %this.add(%buttonContainer);
 
-        %comingSoonButton.setActive(0);
-    }
+    %comingSoonButton.setActive(0);
 }

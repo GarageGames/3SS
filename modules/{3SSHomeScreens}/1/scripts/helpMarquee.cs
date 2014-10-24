@@ -224,13 +224,29 @@ function HelpMarquee::getPrevTip(%this)
 /// <return>Returns a random tip from the set.</return>
 function HelpMarquee::getRandomTip(%this)
 {
-    %index = "";
-    while (%this.currentTip == %index)
+    if (%this.tipCount == 0)
     {
-        %index = getRandom(%this.tipCount - 1);
+        return -1;
     }
+    
+    %index = "";
+    
+    if (%this.tipCount == 1)
+    {
+        %index = 0;
+    }
+    else
+    {
+        while (%this.currentTip == %index)
+        {
+            %index = getRandom(%this.tipCount - 1);
+        }
+    }
+    
     %this.currentTip = %index;
     %tip = %this.helpSet.getObject(%index);
+    
+    
     return %tip;
 }
 

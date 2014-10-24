@@ -22,7 +22,7 @@ function initializePublisher( %scopeSet )
     //-----------------------------------------------------------------------------
     // Initialization
     //-----------------------------------------------------------------------------
-    PublisherTextBoxDestination.setText(getUserHomeDirectory());
+    PublisherTextBoxDestination.setText($UserGamesLocation);
 }
 
 function destroyPublisher( %scopeSet )

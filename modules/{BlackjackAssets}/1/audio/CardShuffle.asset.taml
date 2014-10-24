@@ -1,4 +1,0 @@
-<AudioAsset
-    AssetName="CardShuffle"
-    AssetAutoUnload="0"
-    AudioFile="@assetFile=^{BlackjackAssets}/audio/BlackJack_CardShuffle.wav" />

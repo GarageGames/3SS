@@ -13,7 +13,7 @@ function showAllGames()
     
     // Push the template selector view
     EditorShellGui.addView(AllGamesGui, "");
-    EditorShellGui.addView(AnnouncementsGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
     
     if($templateCount <= 0)
         parseTemplates();
@@ -51,7 +51,7 @@ function queryCreatedProjects()
         clearProjectSet(); //CreatedProjectSet.clear();
     
     // All projects should be created in this specific location (user app folder), so set the path
-    %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects";
+    %projectLocation = $UserGamesLocation;
 
     %projectFile = "/project.tssproj";
 
@@ -73,7 +73,7 @@ function findProjectFileByName(%name)
     %projectFound = false;
     
     // All projects should be created in this specific location (user app folder), so set the path
-    %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects";
+    %projectLocation = $UserGamesLocation;
 
     %projectFile = "/project.tssproj";
 
@@ -179,7 +179,7 @@ function AG_BackButton::onClick(%this)
 {
     EditorShellGui.clearViews();
     EditorShellGui.addView(TemplateListGui, "");
-    EditorShellGui.addView(AnnouncementsGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
     if ( isObject(AG_GamesList.helpManager) )
     {
         AG_GamesList.helpManager.stop();
@@ -240,7 +240,7 @@ function AG_GamesList::Refresh(%this)
         if (%templateModule.description !$= %this.filter && %this.filter !$= "All Games")
             continue;
             
-        %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects" @ "/" @ %gameProject.sourceModule;
+        %projectLocation = $UserGamesLocation @ "/" @ %gameProject.sourceModule;
         %project = %projectLocation @ "/" @ %projectName @ %projectFile;
             
         // Get the icon for this template

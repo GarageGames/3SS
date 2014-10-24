@@ -1,4 +1,0 @@
-<AudioAsset
-    AssetName="ChipClick"
-    AssetAutoUnload="0"
-    AudioFile="@assetFile=^{BlackjackAssets}/audio/BlackJack_ChipClicks.wav" />
