@@ -40,7 +40,7 @@ function PhysicsLauncher::initializeProject()
     if (isFunction("_loadGameConfigurationData"))
         _loadGameConfigurationData();
         
-    $PhysicsLauncher::UserHomeDirectory = getUserHomeDirectory();
+    $PhysicsLauncher::UserHomeDirectory = $UserGamesLocation;
     //---------------------------------------------------------------
     // Recursive behavior loading
     //---------------------------------------------------------------

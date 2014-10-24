@@ -20,7 +20,11 @@ function Editor::onProjectToolsLoaded(%this, %messageData)
     
     // Push the template selector view
     EditorShellGui.addView(TemplateListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
     EditorShellGui.setToolBar(HomeScreenToolbar);
+    
+    // Present the Welcome GUI
+    Canvas.pushDialog(WelcomeGui);
 }
 
 function Editor::onProjectLoaded(%this, %messageData)

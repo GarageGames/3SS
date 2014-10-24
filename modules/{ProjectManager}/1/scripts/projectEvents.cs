@@ -83,7 +83,7 @@ function createNewProject(%name, %template, %openImmediately)
 
     // The location of the new game project will be in the user's home directory
     // under the 3StepStudioProjects folder
-    %gameLocation = expandPath(getUserHomeDirectory() @ "/3StepStudioProjects/" @ %template @ "/" @ %directory @ "/");
+    %gameLocation = expandPath($UserGamesLocation @ "/" @ %template @ "/" @ %directory @ "/");
    
     if (isFile(%gameLocation @ "project.tssproj"))
     {

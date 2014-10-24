@@ -16,6 +16,7 @@ function Hs_HomeButton::onClick(%this)
     
     // Push the template selector view
     EditorShellGui.addView(TemplateListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
 }
 
 /// <summary>

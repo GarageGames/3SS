@@ -37,6 +37,7 @@ function openGamesManager(%templateType, %templateIcon)
     
     // Push the template selector view
     EditorShellGui.addView(GameManagerGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
 }
 
 function GMBackButton::onClick(%this)
@@ -68,17 +69,17 @@ function GMGamesList::Refresh(%this)
     %this.ClearList();
     
     // All projects should be created in this specific location (user app folder), so set the path
-    %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects" @ "/" @ GMGamesList.type;
+    %projectLocation = $UserGamesLocation;
 
     %projectFile = "/project.tssproj";
+    
+    %projectFileSpec = %projectLocation @ "/*.tssproj";
+    
+    addResPath(%projectLocation);
 
-    %projectDirectories = getDirectoryList(%projectLocation);
-
-    for(%i = 0; %i < getWordCount(%projectDirectories); %i++)
+    for (%file = findFirstFile(%projectFileSpec); %file !$= ""; %file = findNextFile(%projectFileSpec))
     {
-        %project = %projectLocation @ "/" @ getWord(%projectDirectories, %i) @ %projectFile;
-
-        %gameProject = TamlRead(%project);
+        %gameProject = TamlRead(%file);
         %projectName = %gameProject.projectName;
 
         // Get the template type
@@ -117,7 +118,7 @@ function GMGamesList::Refresh(%this)
                 toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
             };
 
-            %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %project @ "\");";
+            %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %file @ "\");";
          
             %gameName = new GuiTextCtrl()
             {
@@ -164,6 +165,8 @@ function GMGamesList::Refresh(%this)
             %this.add(%gameButton);
         }
     }
+    
+    removeResPath(%projectLocation);
 
     %buttonContainer = new GuiControl()
     {

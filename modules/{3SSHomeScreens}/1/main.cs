@@ -13,6 +13,7 @@ function initialize3SSHomeScreens(%scopeSet)
     exec("./scripts/gameManagerPage.cs");
     exec("./scripts/homeScreenToolbar.cs");
     exec("./scripts/allGamesPage.cs");
+    exec("./scripts/gamesLocation.cs");
     exec("./scripts/helpMarquee.cs");
 
     //-----------------------------------------------------------------------------
@@ -20,6 +21,7 @@ function initialize3SSHomeScreens(%scopeSet)
     //----------------------------------------------------------------------------- 
     %scopeSet.add( TamlRead("./gui/gameManagerGui.gui.taml" ) );
     %scopeSet.add( TamlRead("./gui/templateListGui.gui.taml") );
+    %scopeSet.add( TamlRead("./gui/gamesLocation.gui.taml") );
     %scopeSet.add( TamlRead("./gui/homeScreenToolbar.gui.taml") );
     %scopeSet.add( TamlRead("./gui/allGamesGui.gui.taml") );
 }

@@ -1,0 +1,5 @@
+<ImageAsset
+    AssetName="gamesLocationIcon"
+    AssetCategory="gui"
+    AssetInternal="1"
+    ImageFile="@assetFile=#gamesLocationIcon.png" />
