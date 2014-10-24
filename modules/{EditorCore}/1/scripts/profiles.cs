@@ -612,7 +612,7 @@ if (!isObject(GuiTextEditProfile)) new GuiControlProfile (GuiTextEditProfile)
     borderColor = "40 40 40 10";
     fontColor = "27 59 95 255";
     fontColorHL = "232 240 248 255";
-    fontColorNA = "0 0 0 52";
+    fontColorNA = "0 0 0 127";
     fontColorSEL = "0 0 0 255";
     textOffset = "7 2";
     autoSizeWidth = false;

@@ -72,7 +72,7 @@
             Visible="1"
             Active="0"
             hovertime="1000"
-            text="Please check your Games Location below and click 'Change Games Location' if you'd like to save/load your games at a different location."
+            text="Please check your Games Location below and click 'Change Games Location' if you'd like to save/load your games somewhere else."
             maxLength="1024"
             truncate="0" />
         <GuiTextEditCtrl
