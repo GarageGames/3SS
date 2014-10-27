@@ -298,6 +298,7 @@ function WorldTool::selectWorld(%this, %data)
     else
     {
         %this.clearLevelData();
+        %this.lastLevelName = "";
         if ( isObject( %this.selectedLevelBtn ) )
             %this.selectedLevelBtn.delete();
 
@@ -872,6 +873,7 @@ function WorldTool::finalizeWorldAdd(%this, %data)
     %this.refreshWorldList();
     %this.WorldListContainer.scrollToButton(%index);
     %this.selectWorld(%index);
+    %this.lastLevelName = "";
 }
 
 /// <summary>
