@@ -130,8 +130,8 @@ function LauncherTool::refresh(%this)
     Lt_PullbackEffectPopup.setSelected(%effectIndex);
     
     // Refresh Pullback Sound
-    %sound = SlingshotLauncherBuilder::getPullbackSound(%this.currentObject); 
-    Lt_PullbackSoundFileField.setText(%sound); 
+    %soundAsset = SlingshotLauncherBuilder::getPullbackSound(%this.currentObject); 
+    Lt_PullbackSoundFileField.setText(AssetDatabase.getAssetName(%soundAsset)); 
     
     // Refresh Fork Foreground
     %forkForeground = SlingshotLauncherBuilder::getForkForegroundAsset(%this.currentObject);
@@ -765,8 +765,8 @@ function Lt_PullbackSoundFileButton::setSelectedAsset(%this, %asset)
     SlingshotLauncherBuilder::setPullbackSound(LauncherTool.currentObject, %asset);   
     
     // Refresh field text
-    %sound = SlingshotLauncherBuilder::getPullbackSound(LauncherTool.currentObject); 
-    Lt_PullbackSoundFileField.setText(%sound);
+    %soundAsset = SlingshotLauncherBuilder::getPullbackSound(LauncherTool.currentObject); 
+    Lt_PullbackSoundFileField.setText(AssetDatabase.getAssetName(%soundAsset));
 }
 
 //------------------------------------------------------------------------------
