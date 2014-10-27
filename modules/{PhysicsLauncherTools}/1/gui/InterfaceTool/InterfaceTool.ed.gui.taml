@@ -131,7 +131,7 @@
                         Active="1"
                         hovertime="1000"
                         toolTipProfile="GuiToolTipProfile"
-                        toolTip="Select to enable or disable including a Credits page in the game."
+                        toolTip="Select to enable or disable including a Story page in the game."
                         text="Button"
                         groupNum="-1"
                         buttonType="ToggleButton"
@@ -167,7 +167,7 @@
                         Visible="1"
                         Active="1"
                         hovertime="1000"
-                        text="Include Credits"
+                        text="Include Story"
                         maxLength="1024" />
                 </GuiControl>
                 <GuiMouseEventCtrl
@@ -512,7 +512,7 @@
                         Visible="1"
                         Active="1"
                         hovertime="1000"
-                        text="Credits"
+                        text="Story"
                         maxLength="1024" />
                     <GuiPopUpMenuCtrl
                         Name="It_MenuCreditsBtnStateDropdown"
@@ -572,7 +572,7 @@
                         Active="1"
                         hovertime="1000"
                         toolTipProfile="GuiToolTipProfile"
-                        toolTip="If enabled select the image file from the Asset Picker for the button to open the Credits page and for the states Up, Over, Down, and Disabled."
+                        toolTip="If enabled select the image file from the Asset Picker for the button to open the Story page and for the states Up, Over, Down, and Disabled."
                         lockMouse="0"
                         button="It_MenuCreditsBtnSelectBtn" />
                     <GuiImageButtonCtrl
@@ -591,7 +591,7 @@
                         Active="1"
                         hovertime="1000"
                         toolTipProfile="GuiToolTipProfile"
-                        toolTip="If enabled select the image file from the Asset Picker for the button to open the Credits page and for the states Up, Over, Down, and Disabled."
+                        toolTip="If enabled select the image file from the Asset Picker for the button to open the Story page and for the states Up, Over, Down, and Disabled."
                         groupNum="-1"
                         buttonType="PushButton"
                         useMouseEvents="0"
@@ -5151,7 +5151,7 @@
             Visible="0"
             Active="1"
             hovertime="1000"
-            text="Credits  "
+            text="Story  "
             maxLength="1024">
             <GuiControl
                 name="It_CreditsPaneContainer"
@@ -5376,7 +5376,7 @@
                     Active="1"
                     hovertime="1000"
                     toolTipProfile="GuiToolTipProfile"
-                    toolTip="Select the image file from the Asset Picker for the Overlay of the Credits Screen."
+                    toolTip="Select the image file from the Asset Picker for the Overlay of the Story Screen."
                     lockMouse="0"
                     button="It_CreditsOverlaySelectBtn" />
                 <GuiImageButtonCtrl
@@ -5395,7 +5395,7 @@
                     Active="1"
                     hovertime="1000"
                     toolTipProfile="GuiToolTipProfile"
-                    toolTip="Select the image file from the Asset Picker for the Overlay of the Credits Screen."
+                    toolTip="Select the image file from the Asset Picker for the Overlay of the Story Screen."
                     groupNum="-1"
                     buttonType="PushButton"
                     useMouseEvents="0"
@@ -5455,7 +5455,7 @@
                     Active="1"
                     hovertime="1000"
                     toolTipProfile="GuiToolTipProfile"
-                    toolTip="Select the image file from the Asset Picker for the Background of the Credits Screen."
+                    toolTip="Select the image file from the Asset Picker for the Background of the Story Screen."
                     lockMouse="0"
                     button="It_CreditsBackgroundSelectBtn" />
                 <GuiImageButtonCtrl
@@ -5474,7 +5474,7 @@
                     Active="1"
                     hovertime="1000"
                     toolTipProfile="GuiToolTipProfile"
-                    toolTip="Select the image file from the Asset Picker for the Background of the Credits Screen."
+                    toolTip="Select the image file from the Asset Picker for the Background of the Story Screen."
                     groupNum="-1"
                     buttonType="PushButton"
                     useMouseEvents="0"
