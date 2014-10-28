@@ -122,7 +122,7 @@
             MinExtent="8 2"
             canSave="1"
             Visible="1"
-            Command="createNewProject( NewProjectNameText.getText(), templateListBox.getText(), true);"
+            Command="createNewProject(NewProjectNameText.getText(), $ProjectFilesLocation, templateListBox.getText(), false);"
             Accelerator="return"
             Active="1"
             hovertime="1000"

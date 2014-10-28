@@ -174,7 +174,7 @@
             MinExtent="8 2"
             canSave="1"
             Visible="1"
-            Command="createNewProject( NPNameEdit.getText(), $SelectedTemplate, true);"
+            Command="createNewProject(NPNameEdit.getText(), $ProjectFilesLocation, $SelectedTemplate, false);"
             Active="1"
             hovertime="1000"
             toolTipProfile="GuiToolTipProfile"

@@ -264,7 +264,7 @@ function AG_GamesList::Refresh(%this)
             InactiveImage = %inactiveIcon;
             DownImage = %downIcon;
             toolTipProfile="GuiToolTipProfile";
-                toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
+            toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
         };
 
         %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %gameProject.location @ "\");";
