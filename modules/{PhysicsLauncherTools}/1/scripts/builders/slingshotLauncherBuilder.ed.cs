@@ -446,7 +446,7 @@ function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGr
         return;   
     }
 
-    LauncherSceneGroup.remove(%object);
+    //LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %frame !$= "" && %object.isStaticMode() )
@@ -454,7 +454,7 @@ function SlingshotLauncherBuilder::setForkForegroundAsset(%launcherSceneObjectGr
 
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
-    LauncherSceneGroup.add(%object);
+    //LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::getForkForegroundAsset(%launcherSceneObjectGroup)
@@ -508,7 +508,7 @@ function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGr
         return;   
     }
 
-    LauncherSceneGroup.remove(%object);
+    //LauncherSceneGroup.remove(%object);
     %object.setAsset(%asset);
     %object.setSizeFromAsset(%asset, $PhysicsLauncherTools::MetersPerPixel);
     if ( %frame !$= "" && %object.isStaticMode() )
@@ -516,7 +516,7 @@ function SlingshotLauncherBuilder::setForkBackgroundAsset(%launcherSceneObjectGr
 
     // Update size of collision object to match graphics
     SlingshotLauncherBuilder::updateLauncherCollisionObjectSize(%launcherSceneObjectGroup);
-    LauncherSceneGroup.add(%object);
+    //LauncherSceneGroup.add(%object);
 }
 
 function SlingshotLauncherBuilder::setForkBackgroundImageFrame(%launcherSceneObjectGroup, %frame)
