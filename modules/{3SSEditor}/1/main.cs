@@ -10,6 +10,7 @@ function initialize3SSEditor(%scopeSet)
     //-----------------------------------------------------------------------------
     exec("./scripts/events.cs");
     exec("./scripts/newProjectDlg.cs");
+    exec("./scripts/newExerciseDlg.cs");
     exec("./scripts/assetTextEdit.cs");
     exec("./scripts/guiUtils.cs");
     exec("./scripts/projectOptionsDlg.cs");
@@ -21,6 +22,7 @@ function initialize3SSEditor(%scopeSet)
     // Load GUIs
     //-----------------------------------------------------------------------------
     %scopeSet.add( TamlRead("./gui/newProjectDlg.gui.taml") );
+    %scopeSet.add(TamlRead("./gui/newExerciseDlg.gui.taml"));
     %scopeSet.add( TamlRead("./gui/projectOptionsDlg.gui.taml") );
     %scopeSet.add( TamlRead("./gui/3SSConfirmDeleteProjectGui.gui.taml") );
     %scopeSet.add( TamlRead("./gui/welcome.gui.taml") );

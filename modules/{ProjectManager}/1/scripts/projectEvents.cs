@@ -37,6 +37,31 @@ function parseTemplates()
         $templateCount++;        
     }
 }
+
+function parseExercises()
+{
+    $exerciseCount = 0;
+    
+    // Scan for Exercises
+    
+    // All Exercises should be created in this specific location, so set the path
+    %exerciseLocation = $ExercisesLocation;
+
+    %exerciseFileSpec = %exerciseLocation @ "/*.exercise.taml";
+    
+    addResPath(%exerciseLocation);
+    
+    for (%file = findFirstFile(%exerciseFileSpec); %file !$= ""; %file = findNextFile(%exerciseFileSpec))
+    {
+        %exercise = TamlRead(%file);
+        $exerciseList[$exerciseCount] = %exercise;
+                    
+        $exerciseCount++;
+    }
+    
+    removeResPath(%exerciseLocation);
+}
+
 function synchronizeGame()
 {
     %gameLocation = expandPath("^project");
@@ -68,12 +93,24 @@ function synchronizeGame()
 function newProject(%name)
 {
     if ($templateCount <= 0)
+    {
         parseTemplates();
+    }
     
     showNewProjectDialog(%name);
 }
 
-function createNewProject(%name, %sourceFilesLocation, %template, %duplicate)
+function newExercise(%name)
+{
+    if ($exerciseCount <= 0)
+    {
+        parseExercises();
+    }
+    
+    showNewExerciseDialog(%name);
+}
+
+function createNewProject(%name, %sourceFilesLocation, %template, %duplicate, %openImmmediately, %type)
 {
     if (!isValidFileName(%name))
         return;
@@ -173,11 +210,20 @@ function createNewProject(%name, %sourceFilesLocation, %template, %duplicate)
     %strippedTime = stripChars(%time, ":");
     LBProjectObj.lastModified = %date @ "." @ %strippedTime;
     
+    if (%type !$= "")
+    {
+        LBProjectObj.type = %type;
+    }
+    else
+    {
+        LBProjectObj.type = "TSSProject";
+    }
+    
     // Post Create Project
     Projects::GetEventManager().postEvent("_ProjectCreate", %projectFile);   
     
     // Post Open Event
-    if (!LBProjectObj.isActive() && !%duplicate)
+    if (!LBProjectObj.isActive() && %openImmmediately)
     {
         Projects::GetEventManager().postEvent("_ProjectOpen", %projectFile);
         $Game::ProductName = %name;

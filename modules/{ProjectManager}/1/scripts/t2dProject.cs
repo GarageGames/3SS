@@ -187,7 +187,7 @@ function T2DProject::SaveProject(%this, %projectFile)
     
     %project = new ScriptObject()
     {
-        type = "TSSProject";
+        type = %this.Type;
         version = "1";
         creator = "3 Step Studio";
         lastLevel = %lastLevel;

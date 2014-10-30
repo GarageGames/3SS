@@ -1,0 +1,867 @@
+<SimSet
+    Name="PrefabSet">
+    <SimSet
+        Name="ProjectileSet"
+        internalName="ProjectileSet">
+        <Sprite
+            Name="NewProjectile1"
+            internalName="New Projectile"
+            SceneLayer="15"
+            Active="0"
+            DefaultDensity="2.04729056"
+            DefaultFriction="0.75"
+            DefaultRestitution="0.300000012"
+            AngularDamping="2.25"
+            UseInputEvents="1"
+            CollisionCallback="1"
+            SleepingCallback="1"
+            activated="0"
+            animationName="PL_DefaultProjectileAnim"
+            IconDepressed="{PhysicsLauncherAssets}:GorillaButtonDownImageMap"
+            IconHover="{PhysicsLauncherAssets}:GorillaButtonHoverImageMap"
+            IconInactive="{PhysicsLauncherAssets}:GorillaButtonInactiveImageMap"
+            IconNormal="{PhysicsLauncherAssets}:GorillaButtonUpImageMap"
+            PointValue="10000">
+            <Sprite.Behaviors>
+                <ProjectileBehavior
+                    Id="1" />
+                <ImageTrailBehavior
+                    Id="2"
+                    asset="{PhysicsLauncherAssets}:PL_DefaultPathAnim"
+                    imageFrame="0"
+                    dropTimer="0.100000001"
+                    imageSize="0.5" />
+                <ImpactImageBehavior
+                    Id="3"
+                    asset="{PhysicsLauncherAssets}:PL_DefaultDustAnim"
+                    imageSize="0.75" />
+                <onRestBehavior
+                    Id="4"
+                    instanceName="" />
+                <SoundEffectBehavior
+                    Id="5"
+                    sound="{PhysicsLauncherAssets}:Silverback_Launch_01Sound"
+                    instanceName="InAir" />
+                <SoundEffectBehavior
+                    Id="6"
+                    sound="{PhysicsLauncherAssets}:Silverback_Hit_01Sound"
+                    instanceName="Hit" />
+                <SoundEffectBehavior
+                    Id="7"
+                    sound="{PhysicsLauncherAssets}:Silverback_Rage_01Sound"
+                    instanceName="Vanish" />
+                <SoundEffectBehavior
+                    Id="8"
+                    sound="{PhysicsLauncherAssets}:Silverback_Idle_02Sound"
+                    instanceName="IdleInLauncher" />
+                <AnimationEffectBehavior
+                    Id="9"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultProjectileAnim"
+                    Frame="0"
+                    instanceName="Idle" />
+                <AnimationEffectBehavior
+                    Id="10"
+                    asset="@asset={PhysicsLauncherAssets}:PL_GorillaIdleProjectileAnim"
+                    Frame="0"
+                    instanceName="IdleInLauncher" />
+                <AnimationEffectBehavior
+                    Id="11"
+                    asset="@asset={PhysicsLauncherAssets}:PL_GorillaFlightProjectileAnim"
+                    Frame="0"
+                    instanceName="InAir" />
+                <AnimationEffectBehavior
+                    Id="12"
+                    asset="@asset={PhysicsLauncherAssets}:PL_GorillaTumbleProjectileAnim"
+                    Frame="0"
+                    instanceName="Hit" />
+                <AnimationEffectBehavior
+                    Id="13"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultDustAnim"
+                    Frame="0"
+                    instanceName="VanishAnim" />
+                <LaunchableBehavior
+                    Id="14"
+                    timeout="30" />
+                <LoadableBehavior
+                    Id="15" />
+                <VanishBehavior
+                    Id="16"
+                    instanceName=""
+                    vanishTime="3"
+                    vanishDuration="1" />
+                <DamageModifierBehavior
+                    Id="17"
+                    instanceName=""
+                    damageModifierGroups="1"
+                    damageMultiplier="1"
+                    destroyOnDamage="1" />
+                <AdjustGMValueBehavior
+                    Id="18"
+                    adjustableValueField=""
+                    adjustment="-1" />
+                <TemplateBehavior
+                    Id="19" />
+            </Sprite.Behaviors>
+            <Sprite.BehaviorConnections>
+                <Connection
+                    launched="14"
+                    Activate="4" />
+                <Connection
+                    launched="14"
+                    launchedInput="1" />
+                <Connection
+                    launched="14"
+                    play="11" />
+                <Connection
+                    launched="14"
+                    PlaySound="5" />
+                <Connection
+                    launched="14"
+                    adjustGMValue="18" />
+                <Connection
+                    loaded="15"
+                    play="10" />
+                <Connection
+                    loaded="15"
+                    PlaySound="8" />
+                <Connection
+                    Vanishing="16"
+                    PlaySound="7" />
+                <Connection
+                    Vanishing="16"
+                    play="13" />
+                <Connection
+                    Hit="1"
+                    Impact="3" />
+                <Connection
+                    Hit="1"
+                    PlaySound="6" />
+                <Connection
+                    EndMove="1"
+                    End="2" />
+                <Connection
+                    EndMove="1"
+                    play="12" />
+                <Connection
+                    StartMove="1"
+                    Start="2" />
+                <Connection
+                    Resting="4"
+                    Vanish="16" />
+            </Sprite.BehaviorConnections>
+            <Sprite.CollisionShapes>
+                <Circle
+                    Radius="0.44958"
+                    Offset="-0.035793 -0.003314" />
+            </Sprite.CollisionShapes>
+        </Sprite>
+    </SimSet>
+    <SimSet
+        Name="LauncherSet"
+        internalName="LauncherSet">
+        <SceneObjectGroup
+            Name="LauncherSceneObjectGroup0"
+            internalName="Default Launcher">
+            <SceneObject
+                Name="LauncherObjectPrefab0"
+                internalName="BuilderObject"
+                SceneLayer="4"
+                BodyType="static"
+                CollisionGroups="2"
+                CollisionLayers="32"
+                UseInputEvents="1">
+                <SceneObject.Behaviors>
+                    <SlingshotLauncherBuilderBehavior
+                        Id="1" />
+                    <PullbackLauncherBehavior
+                        Id="2"
+                        maxSpeed="15"
+                        maxDistance="2.5"
+                        collisionObject=""
+                        stretchThreshold="0.5" />
+                    <InputTargetBehavior
+                        Id="3" />
+                    <SoundEffectBehavior
+                        Id="4"
+                        sound="{PhysicsLauncherAssets}:Launcher_Stretch_05Sound"
+                        instanceName="StretchSoundBehavior" />
+                </SceneObject.Behaviors>
+                <SceneObject.BehaviorConnections>
+                    <Connection
+                        stretchOutput="2"
+                        PlaySoundNoInterrupt="4" />
+                    <Connection
+                        inputUp="3"
+                        launch="2" />
+                    <Connection
+                        inputUp="3"
+                        onLaunch="1" />
+                    <Connection
+                        inputDown="3"
+                        setTargetPosition="2" />
+                    <Connection
+                        inputDown="3"
+                        onMove="1" />
+                    <Connection
+                        inputDrag="3"
+                        setTargetPosition="2" />
+                    <Connection
+                        inputDrag="3"
+                        onMove="1" />
+                </SceneObject.BehaviorConnections>
+                <SceneObject.CollisionShapes>
+                    <Circle
+                        Sensor="1"
+                        Radius="2.5"
+                        Offset="-0.110937 1.14844" />
+                </SceneObject.CollisionShapes>
+            </SceneObject>
+            <SceneObject
+                Name="CollisionObjectPrefab0"
+                internalName="collisionObject"
+                SceneLayer="16"
+                size="4 4"
+                BodyType="static">
+                <SceneObject.CollisionShapes>
+                    <Polygon
+                        Point0="0.4 -1.5"
+                        Point1="0 -0.2"
+                        Point2="-0.4 -1.5" />
+                </SceneObject.CollisionShapes>
+            </SceneObject>
+            <Sprite
+                Name="ForkForgroundObjectPrefab0"
+                internalName="SlingshotForegroundObject"
+                SceneLayer="12"
+                size="4 4"
+                BodyType="static"
+                ImageMap="@asset={PhysicsLauncherAssets}:SlingshotForegroundImageMap"
+                Frame="0" />
+            <Sprite
+                Name="ForkBackgroundObjectPrefab0"
+                internalName="SlingshotBackgroundObject"
+                SceneLayer="18"
+                size="4 4"
+                BodyType="static"
+                ImageMap="@asset={PhysicsLauncherAssets}:SlingshotBackgroundImageMap"
+                Frame="0" />
+            <Sprite
+                Name="SeatObjectPrefab0"
+                internalName="seatObject"
+                SceneLayer="13"
+                size="1.5 1.5"
+                BodyType="static"
+                Visible="0"
+                ImageMap="@asset={PhysicsLauncherAssets}:SlingshotSeatImageMap"
+                Frame="0" />
+            <Sprite
+                Name="Band0ObjectPrefab0"
+                internalName="BandObject0"
+                SceneLayer="14"
+                size="0.5 0.5"
+                BodyType="static"
+                Visible="0"
+                ImageMap="@asset={PhysicsLauncherAssets}:RubberbandImageMap"
+                Frame="0">
+                <Sprite.Behaviors>
+                    <ScaleBetweenPointsBehavior
+                        Id="1"
+                        instanceName=""
+                        attachmentStart="-2 2"
+                        attachmentEnd="0.329166681 -0.208333328"
+                        scaleDirection="Left"
+                        minThicknessRatio="0.100000001"
+                        maxThicknessRatio="1"
+                        thicknessScalingRatio="1" />
+                </Sprite.Behaviors>
+            </Sprite>
+            <Sprite
+                Name="Band1ObjectPrefab0"
+                internalName="BandObject1"
+                SceneLayer="17"
+                size="0.5 0.5"
+                BodyType="static"
+                Visible="0"
+                ImageMap="@asset={PhysicsLauncherAssets}:RubberbandImageMap"
+                Frame="0">
+                <Sprite.Behaviors>
+                    <ScaleBetweenPointsBehavior
+                        Id="1"
+                        instanceName=""
+                        attachmentStart="1.55624998 2.59375"
+                        attachmentEnd="0.391666651 -0.229166672"
+                        scaleDirection="Left"
+                        minThicknessRatio="0.100000001"
+                        maxThicknessRatio="1"
+                        thicknessScalingRatio="1" />
+                </Sprite.Behaviors>
+            </Sprite>
+        </SceneObjectGroup>
+    </SimSet>
+    <SimSet
+        Name="WorldObjectSet"
+        internalName="WorldObjectSet">
+        <Sprite
+            Name="WorldObjectPrefab0"
+            internalName="DefaultEnemy"
+            SceneLayer="15"
+            DefaultDensity="0.138378382"
+            DefaultRestitution="0.300000012"
+            CollisionCallback="1">
+            <Sprite.Behaviors>
+                <WorldObjectBehavior
+                    Id="1"
+                    instanceName="" />
+                <DamageableBehavior
+                    Id="2"
+                    instanceName=""
+                    startingHealth="15"
+                    indestructableFlag="0"
+                    minDamageThreshold="1"
+                    minSpeedThreshold="0.05"
+                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStatesActiveMask="0 0 0 0 1"
+                    damageModifierGroups="1" />
+                <AnimationEffectBehavior
+                    Id="3"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
+                    Frame="0"
+                    instanceName="IdleAnimationEffectBehavior" />
+                <AnimationEffectBehavior
+                    Id="4"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior0" />
+                <AnimationEffectBehavior
+                    Id="5"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior1" />
+                <AnimationEffectBehavior
+                    Id="6"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior2" />
+                <AnimationEffectBehavior
+                    Id="7"
+                    asset="@asset={PhysicsLauncherAssets}:PL_BananaSingleAnim"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior3" />
+                <VanishBehavior
+                    Id="8"
+                    instanceName="VanishBehavior"
+                    vanishTime="0"
+                    vanishDuration="1" />
+                <AnimationEffectBehavior
+                    Id="9"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultDustAnim"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior4" />
+                <SoundEffectBehavior
+                    Id="10"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="IdleSoundEffectBehavior" />
+                <SoundEffectBehavior
+                    Id="11"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior0" />
+                <SoundEffectBehavior
+                    Id="12"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior1" />
+                <SoundEffectBehavior
+                    Id="13"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior2" />
+                <SoundEffectBehavior
+                    Id="14"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior3" />
+                <SoundEffectBehavior
+                    Id="15"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior4" />
+                <AdjustGMValueBehavior
+                    Id="16"
+                    adjustableValueField="Score"
+                    adjustment="250" />
+                <AdjustGMValueBehavior
+                    Id="17"
+                    adjustableValueField="Score"
+                    adjustment="166" />
+                <AdjustGMValueBehavior
+                    Id="18"
+                    adjustableValueField="Score"
+                    adjustment="125" />
+                <AdjustGMValueBehavior
+                    Id="19"
+                    adjustableValueField="Score"
+                    adjustment="100" />
+                <AdjustGMValueBehavior
+                    Id="20"
+                    adjustableValueField="Score"
+                    adjustment="100" />
+                <WinObjectiveBehavior
+                    Id="21"
+                    instanceName=""
+                    isActive="1" />
+                <AdjustGMValueBehavior
+                    Id="22"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="1" />
+                <AdjustGMValueBehavior
+                    Id="23"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="-1" />
+            </Sprite.Behaviors>
+            <Sprite.BehaviorConnections>
+                <Connection
+                    addedToSceneOutput="1"
+                    play="3" />
+                <Connection
+                    addedToSceneOutput="1"
+                    PlaySound="10" />
+                <Connection
+                    OnDamageState0="2"
+                    play="4" />
+                <Connection
+                    OnDamageState0="2"
+                    PlaySound="11" />
+                <Connection
+                    OnDamageStateNoSkip3="2"
+                    adjustGMValue="19" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    Vanish="8" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    adjustGMValue="20" />
+                <Connection
+                    OnDamageState4="2"
+                    PlaySound="15" />
+                <Connection
+                    OnDamageStateNoSkip1="2"
+                    adjustGMValue="17" />
+                <Connection
+                    OnDamageState3="2"
+                    play="7" />
+                <Connection
+                    OnDamageState3="2"
+                    PlaySound="14" />
+                <Connection
+                    OnDamageStateNoSkip2="2"
+                    adjustGMValue="18" />
+                <Connection
+                    OnDamageState2="2"
+                    play="6" />
+                <Connection
+                    OnDamageState2="2"
+                    PlaySound="13" />
+                <Connection
+                    OnDamageStateNoSkip0="2"
+                    adjustGMValue="16" />
+                <Connection
+                    OnDamageState1="2"
+                    play="5" />
+                <Connection
+                    OnDamageState1="2"
+                    PlaySound="12" />
+                <Connection
+                    vanishedOutput="8"
+                    onDestroyInput="21" />
+                <Connection
+                    Vanishing="8"
+                    play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
+            </Sprite.BehaviorConnections>
+            <Sprite.CollisionShapes>
+                <Polygon
+                    Density="0.138378"
+                    Point0="0.37266 -0.38525"
+                    Point1="0.37266 0.34937"
+                    Point2="-0.42152 0.34937"
+                    Point3="-0.42152 -0.38525" />
+            </Sprite.CollisionShapes>
+        </Sprite>
+        <Sprite
+            Name="WorldObjectPrefab1"
+            internalName="DefaultBox"
+            SceneLayer="15"
+            DefaultDensity="0.123114809"
+            CollisionCallback="1">
+            <Sprite.Behaviors>
+                <WorldObjectBehavior
+                    Id="1"
+                    instanceName="" />
+                <DamageableBehavior
+                    Id="2"
+                    instanceName=""
+                    startingHealth="25"
+                    indestructableFlag="0"
+                    minDamageThreshold="1"
+                    minSpeedThreshold="0.05"
+                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStatesActiveMask="1 1 0 0 1"
+                    damageModifierGroups="0" />
+                <AnimationEffectBehavior
+                    Id="3"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim0"
+                    Frame="0"
+                    instanceName="IdleAnimationEffectBehavior" />
+                <AnimationEffectBehavior
+                    Id="4"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim1"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior0" />
+                <AnimationEffectBehavior
+                    Id="5"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim2"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior1" />
+                <AnimationEffectBehavior
+                    Id="6"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim2"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior2" />
+                <AnimationEffectBehavior
+                    Id="7"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim2"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior3" />
+                <VanishBehavior
+                    Id="8"
+                    instanceName="VanishBehavior"
+                    vanishTime="0"
+                    vanishDuration="1" />
+                <AnimationEffectBehavior
+                    Id="9"
+                    asset="@asset={PhysicsLauncherAssets}:PL_DefaultBoxAnim3"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior4" />
+                <SoundEffectBehavior
+                    Id="10"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="IdleSoundEffectBehavior" />
+                <SoundEffectBehavior
+                    Id="11"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior0" />
+                <SoundEffectBehavior
+                    Id="12"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior1" />
+                <SoundEffectBehavior
+                    Id="13"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior2" />
+                <SoundEffectBehavior
+                    Id="14"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior3" />
+                <SoundEffectBehavior
+                    Id="15"
+                    sound="PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior4" />
+                <AdjustGMValueBehavior
+                    Id="16"
+                    adjustableValueField="Score"
+                    adjustment="166" />
+                <AdjustGMValueBehavior
+                    Id="17"
+                    adjustableValueField="Score"
+                    adjustment="166" />
+                <AdjustGMValueBehavior
+                    Id="18"
+                    adjustableValueField="Score"
+                    adjustment="125" />
+                <AdjustGMValueBehavior
+                    Id="19"
+                    adjustableValueField="Score"
+                    adjustment="100" />
+                <AdjustGMValueBehavior
+                    Id="20"
+                    adjustableValueField="Score"
+                    adjustment="168" />
+                <WinObjectiveBehavior
+                    Id="21"
+                    instanceName=""
+                    isActive="0" />
+                <AdjustGMValueBehavior
+                    Id="22"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="1" />
+                <AdjustGMValueBehavior
+                    Id="23"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="-1" />
+            </Sprite.Behaviors>
+            <Sprite.BehaviorConnections>
+                <Connection
+                    addedToSceneOutput="1"
+                    play="3" />
+                <Connection
+                    addedToSceneOutput="1"
+                    PlaySound="10" />
+                <Connection
+                    OnDamageState0="2"
+                    play="4" />
+                <Connection
+                    OnDamageState0="2"
+                    PlaySound="11" />
+                <Connection
+                    OnDamageStateNoSkip3="2"
+                    adjustGMValue="19" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    Vanish="8" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    adjustGMValue="20" />
+                <Connection
+                    OnDamageState4="2"
+                    PlaySound="15" />
+                <Connection
+                    OnDamageStateNoSkip1="2"
+                    adjustGMValue="17" />
+                <Connection
+                    OnDamageState3="2"
+                    play="7" />
+                <Connection
+                    OnDamageState3="2"
+                    PlaySound="14" />
+                <Connection
+                    OnDamageStateNoSkip2="2"
+                    adjustGMValue="18" />
+                <Connection
+                    OnDamageState2="2"
+                    play="6" />
+                <Connection
+                    OnDamageState2="2"
+                    PlaySound="13" />
+                <Connection
+                    OnDamageStateNoSkip0="2"
+                    adjustGMValue="16" />
+                <Connection
+                    OnDamageState1="2"
+                    play="5" />
+                <Connection
+                    OnDamageState1="2"
+                    PlaySound="12" />
+                <Connection
+                    vanishedOutput="8"
+                    onDestroyInput="21" />
+                <Connection
+                    Vanishing="8"
+                    play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
+            </Sprite.BehaviorConnections>
+            <Sprite.CollisionShapes>
+                <Polygon
+                    Density="1"
+                    Point0="0.54903 -0.22584"
+                    Point1="0.54903 0.95278"
+                    Point2="-0.62959 0.95278"
+                    Point3="-0.62959 -0.22584" />
+            </Sprite.CollisionShapes>
+        </Sprite>
+        <Sprite
+            Name="WorldObjectPrefab2"
+            internalName="Default Ground Object"
+            SceneLayer="15"
+            size="32 1"
+            BodyType="static"
+            DefaultDensity="0.0346260406"
+            DefaultFriction="0.5"
+            DefaultRestitution="0.100000001"
+            CollisionCallback="1">
+            <Sprite.Behaviors>
+                <WorldObjectBehavior
+                    Id="1"
+                    instanceName="" />
+                <DamageableBehavior
+                    Id="2"
+                    instanceName=""
+                    startingHealth="25"
+                    indestructableFlag="1"
+                    minDamageThreshold="1"
+                    minSpeedThreshold="0.05"
+                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStatesActiveMask="0 0 0 0 1"
+                    damageModifierGroups="0" />
+                <AnimationEffectBehavior
+                    Id="3"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="IdleAnimationEffectBehavior" />
+                <AnimationEffectBehavior
+                    Id="4"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior0" />
+                <AnimationEffectBehavior
+                    Id="5"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior1" />
+                <AnimationEffectBehavior
+                    Id="6"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior2" />
+                <AnimationEffectBehavior
+                    Id="7"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior3" />
+                <VanishBehavior
+                    Id="8"
+                    instanceName="VanishBehavior"
+                    vanishTime="0"
+                    vanishDuration="1" />
+                <AnimationEffectBehavior
+                    Id="9"
+                    asset="@asset={PhysicsLauncherAssets}:GroundImageMap"
+                    Frame="0"
+                    instanceName="DamageAnimationEffectBehavior4" />
+                <SoundEffectBehavior
+                    Id="10"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="IdleSoundEffectBehavior" />
+                <SoundEffectBehavior
+                    Id="11"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior0" />
+                <SoundEffectBehavior
+                    Id="12"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior1" />
+                <SoundEffectBehavior
+                    Id="13"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior2" />
+                <SoundEffectBehavior
+                    Id="14"
+                    sound="{PhysicsLauncherAssets}:PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior3" />
+                <SoundEffectBehavior
+                    Id="15"
+                    sound="PL_DefaultSound"
+                    instanceName="DamageSoundEffectBehavior4" />
+                <AdjustGMValueBehavior
+                    Id="16"
+                    adjustableValueField="Score"
+                    adjustment="250" />
+                <AdjustGMValueBehavior
+                    Id="17"
+                    adjustableValueField="Score"
+                    adjustment="166" />
+                <AdjustGMValueBehavior
+                    Id="18"
+                    adjustableValueField="Score"
+                    adjustment="125" />
+                <AdjustGMValueBehavior
+                    Id="19"
+                    adjustableValueField="Score"
+                    adjustment="100" />
+                <AdjustGMValueBehavior
+                    Id="20"
+                    adjustableValueField="Score"
+                    adjustment="0" />
+                <WinObjectiveBehavior
+                    Id="21"
+                    instanceName=""
+                    isActive="0" />
+                <AdjustGMValueBehavior
+                    Id="22"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="1" />
+                <AdjustGMValueBehavior
+                    Id="23"
+                    adjustableValueField="WinObjectiveCount"
+                    adjustment="-1" />
+            </Sprite.Behaviors>
+            <Sprite.BehaviorConnections>
+                <Connection
+                    addedToSceneOutput="1"
+                    play="3" />
+                <Connection
+                    addedToSceneOutput="1"
+                    PlaySound="10" />
+                <Connection
+                    OnDamageState0="2"
+                    play="4" />
+                <Connection
+                    OnDamageState0="2"
+                    PlaySound="11" />
+                <Connection
+                    OnDamageStateNoSkip3="2"
+                    adjustGMValue="19" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    Vanish="8" />
+                <Connection
+                    OnDamageStateNoSkip4="2"
+                    adjustGMValue="20" />
+                <Connection
+                    OnDamageState4="2"
+                    PlaySound="15" />
+                <Connection
+                    OnDamageStateNoSkip1="2"
+                    adjustGMValue="17" />
+                <Connection
+                    OnDamageState3="2"
+                    play="7" />
+                <Connection
+                    OnDamageState3="2"
+                    PlaySound="14" />
+                <Connection
+                    OnDamageStateNoSkip2="2"
+                    adjustGMValue="18" />
+                <Connection
+                    OnDamageState2="2"
+                    play="6" />
+                <Connection
+                    OnDamageState2="2"
+                    PlaySound="13" />
+                <Connection
+                    OnDamageStateNoSkip0="2"
+                    adjustGMValue="16" />
+                <Connection
+                    OnDamageState1="2"
+                    play="5" />
+                <Connection
+                    OnDamageState1="2"
+                    PlaySound="12" />
+                <Connection
+                    vanishedOutput="8"
+                    onDestroyInput="21" />
+                <Connection
+                    Vanishing="8"
+                    play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
+            </Sprite.BehaviorConnections>
+            <Sprite.CollisionShapes>
+                <Polygon
+                    Point0="15.2 -0.475"
+                    Point1="15.2 0.475"
+                    Point2="-15.2 0.475"
+                    Point3="-15.2 -0.475" />
+            </Sprite.CollisionShapes>
+        </Sprite>
+    </SimSet>
+</SimSet>

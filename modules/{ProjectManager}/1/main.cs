@@ -24,6 +24,7 @@ function initializeProjectManager(%scopeSet)
     // Initialization
     //-----------------------------------------------------------------------------
     $ProjectFilesLocation = expandPath("^tool/templates/projectFiles/");
+    $ExercisesLocation = expandPath("^tool/exercises/");
     $UserGamesLocation = getUserHomeDirectory() @ "/3StepStudio";
 }
 

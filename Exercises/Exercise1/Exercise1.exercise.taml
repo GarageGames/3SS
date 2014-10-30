@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{Exercise1}"
+	VersionId="1"
+	Description="Exercise 1"
+	Purchased="1"
+	Synchronized="1"
+	Dependencies="{PhysicsLauncher}=1"
+	Type="Exercise"
+	Genre="Physics"
+	Icon="Exercise1Icon"
+	Creator="GGInteractive"
+	/>

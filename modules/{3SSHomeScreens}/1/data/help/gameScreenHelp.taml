@@ -2,5 +2,5 @@
     Name="GameScreenTips">
     <ScriptObject
         Name="Tip0"
-        Text="This page displays all of your current game projects. You can sort and filter your view using the controls at the top of the game list pane." />
+        Text="This page displays all of your current game projects." />
 </SimSet>

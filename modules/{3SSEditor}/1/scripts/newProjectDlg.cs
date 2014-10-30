@@ -60,7 +60,7 @@ function NPNameEdit::onKeyPressed(%this)
 function NPNameEdit::onReturn(%this)
 {
     NPCreateButton.setStateOn(true);
-    createNewProject(NPNameEdit.getText(), $ProjectFilesLocation, $SelectedTemplate, false);
+    createNewProject(NPNameEdit.getText(), $ProjectFilesLocation, $SelectedTemplate, false, false);
 }
 
 function NPCreateButton::update(%this)

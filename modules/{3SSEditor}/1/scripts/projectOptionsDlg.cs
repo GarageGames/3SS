@@ -66,7 +66,7 @@ function ProjectOptionsGui::duplicateProject(%this)
         %fileLocation = findProjectFileByName(%duplicateName);
     }
     
-    createNewProject(%duplicateName, filePath(findProjectFileByName(%originalName)) @ "/", %sourceModuleName, true);
+    createNewProject(%duplicateName, filePath(findProjectFileByName(%originalName)) @ "/", %sourceModuleName, true, false, %this.project.Type);
 
     if (isObject(%this.invokingGui) && %this.invokingGui.isMethod("refresh"))
             %this.invokingGui.refresh();
