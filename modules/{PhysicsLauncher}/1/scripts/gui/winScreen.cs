@@ -28,7 +28,7 @@ function winGui::onWake(%this)
 
     %this.displayScore(%score);
 
-    if ($SelectedWorld < (worldSelectGui.worldCount - 1))
+    if (levelSelectGui.currentWorld.LevelList[$LevelIndex + 1] !$= "" || $SelectedWorld < (worldSelectGui.worldCount - 1))
         winNextLevelButton.Visible = true;
     else
         winNextLevelButton.Visible = false;
