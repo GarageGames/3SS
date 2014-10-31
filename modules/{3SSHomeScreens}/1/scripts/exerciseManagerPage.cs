@@ -44,7 +44,12 @@ function openExerciseManager(%exerciseType, %exerciseIcon)
 
 function EMG_BackButton::onClick(%this)
 {
-    Hs_HomeButton.onClick();
+    // Clear all the views from the shell
+    EditorShellGui.clearViews();
+    
+    // Push the template selector view
+    EditorShellGui.addView(ExerciseListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
 }
 
 function EMG_ExercisesList::onWake(%this)
