@@ -55,7 +55,7 @@ function NED_CreateButton::update(%this)
     %active = true;    
 
     // Don't allow saving if the name is blank
-    if (NPNameEdit.isEmpty())
+    if (NED_NameEdit.isEmpty())
     {
         %active = false;
     }
