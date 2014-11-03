@@ -58,15 +58,8 @@ function helpGui::loadHelpData(%this, %scene)
     if (isObject($TutorialDataSet))
         $TutorialDataSet.delete();
 
-    if (isFile($PhysicsLauncher::TutorialDataFile))
-        $TutorialDataSet = TamlRead($PhysicsLauncher::TutorialDataFile);
-
-    else
-    {
-        $TutorialDataSet = TamlRead("^PhysicsLauncherTemplate/managed/tutorialData.taml");
-        createPath($PhysicsLauncher::TutorialDataFile);
-        TamlWrite($TutorialDataSet, $PhysicsLauncher::TutorialDataFile);
-    }
+    $TutorialDataSet = TamlRead("^PhysicsLauncherTemplate/managed/tutorialData.taml");
+    loadTutorialData($TutorialDataSet);
     
     %this.levelSet = new SimSet();
     // check for this level's object tutorial list.
@@ -112,7 +105,10 @@ function helpGui::loadHelpData(%this, %scene)
             helpScreenDisplay.setImage(%this.image[0]);
         
         if (%updateTutorialFile)
-            TamlWrite($TutorialDataSet, $PhysicsLauncher::TutorialDataFile);
+        {
+            TamlWrite($TutorialDataSet, "^PhysicsLauncherTemplate/managed/tutorialData.taml");
+            saveTutorialData($TutorialDataSet);
+        }
 
         %this.imageCount = %this.levelSet.getCount();
         %this.currentImage = 0;

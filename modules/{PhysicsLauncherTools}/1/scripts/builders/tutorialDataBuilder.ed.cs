@@ -32,8 +32,7 @@ function TutorialDataBuilder::createTutorial(%name, %imageList)
     
     $TutorialDataSet.add(%tutorial);
     TamlWrite($TutorialDataSet, "^PhysicsLauncherTemplate/managed/tutorialData.taml");
-    if ( isFile( $PhysicsLauncher::TutorialDataFile ) )
-        TamlWrite($TutorialDataSet, $PhysicsLauncher::TutorialDataFile);
+    saveTutorialData($TutorialDataSet);
 }
 
 function TutorialDataBuilder::getTutorial(%name)

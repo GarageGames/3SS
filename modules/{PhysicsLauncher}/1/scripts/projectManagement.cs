@@ -22,6 +22,20 @@ function loadGameData(%dataDestination)
     PhysicsLauncher::loadGameData(%dataDestination);
 }
 
+// Save tutorial data to a file
+// %dataSource = The source of the saved tutorial data
+function saveTutorialData(%dataSource)
+{
+    PhysicsLauncher::saveTutorialData(%dataSource);
+}
+
+// Load game tutorial from the saved file.
+// %dataDestination = The destination of the saved tutorial data
+function loadTutorialData(%dataDestination)
+{
+    PhysicsLauncher::loadTutorialData(%dataDestination);
+}
+
 function PhysicsLauncher::persistProject()
 {
     //---------------------------------------------------------------
@@ -154,6 +168,70 @@ function PhysicsLauncher::loadGameData(%dataDestination)
     }
 }
 
+// Extract the tutorial data from the world data and save it
+function PhysicsLauncher::saveTutorialData(%dataSource)
+{
+    %tutorialData = new SimSet();
+    %tutorialData.version = 1;  // For future use so we know when the save format changes
+   
+    for(%i=0; %i<%dataSource.getCount(); %i++)
+    {
+        %tutorialObject = %dataSource.getObject(%i);
+      
+        %saveData = new ScriptObject();
+        %saveData.internalName = %tutorialObject.internalName;
+        %saveData.TutorialRead = %tutorialObject.TutorialRead;
+      
+        %tutorialData.add(%saveData);
+    }
+   
+    // Write out the tutorial data
+    echo("Saving tutorial data...");
+    TamlWrite(%tutorialData, $PhysicsLauncher::TutorialDataFile);
+}
+
+// Load in the game tutorial and merge with the world data
+function PhysicsLauncher::loadTutorialData(%dataDestination)
+{
+    // Check if the game data file exists.  If not, then we
+    // will just use the existing game data located in the world data.
+    if (!isFile($PhysicsLauncher::TutorialDataFile))
+    {
+        return;
+    }
+    
+    // Load in the tutorial data
+    echo("Loading tutorial data...");
+    %tutorialData = TamlRead($PhysicsLauncher::TutorialDataFile);
+    
+    // Check the save data version.  If it is higher than we support then we have
+    // no choice but to stop and just use the default tutorial data.
+    if(%tutorialData.version > 1)
+    {
+        warn("PhysicsLauncher::loadTutorialData(): Tutorial data version " @ %tutorialData.version @ " doesn't match game version 1. Using default data.");
+        return;
+    }
+    
+    // Set up tutorial data
+    for(%i=0; %i<%tutorialData.getCount(); %i++)
+    {
+        // Get the saved tutorial data
+        %saveData = %tutorialData.getObject(%i);
+        
+        // Find the saved tutorial in the game's defined tutorial list
+        %tutorialObject = %dataDestination.findObjectByInternalName(%saveData.internalName);
+        if(!isObject(%tutorialObject))
+        {
+            // Tutorial exists in game save data but is not part of the current game.
+            // We have no choice but to skip this save data.
+            continue;
+        }
+        
+        // Transfer tutorial data
+        %tutorialObject.WorldLocked = %saveData.TutorialRead;
+    }
+}
+
 function PhysicsLauncher::initializeProject()
 {
     if (isFunction("_loadGameConfigurationData"))
@@ -209,15 +287,8 @@ function PhysicsLauncher::initializeProject()
     $PhysicsLauncher::TutorialDataFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/tutorialData.taml";
     addResPath($PhysicsLauncher::TutorialDataFile); 
 
-    if (isFile($PhysicsLauncher::TutorialDataFile))
-        $TutorialDataSet = TamlRead($PhysicsLauncher::TutorialDataFile);
-
-    else
-    {
-        $TutorialDataSet = TamlRead("^PhysicsLauncherTemplate/managed/tutorialData.taml");
-        createPath($PhysicsLauncher::TutorialDataFile);
-        TamlWrite($TutorialDataSet, $PhysicsLauncher::TutorialDataFile);
-    }
+    $TutorialDataSet = TamlRead("^PhysicsLauncherTemplate/managed/tutorialData.taml");
+    loadTutorialData($TutorialDataSet);
         
     if (!isObject($TutorialDataSet) )   
         $TutorialDataSet = new SimSet();
