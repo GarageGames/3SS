@@ -41,15 +41,8 @@ function worldSelectGui::getWorldList(%this)
 {
     if (!isObject($WorldListData) || $WorldDataChanged)
     {
-        if (isFile($PhysicsLauncher::WorldListFile))
-            $WorldListData = TamlRead($PhysicsLauncher::WorldListFile);
-
-        else
-        {
-            $WorldListData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
-            createPath($PhysicsLauncher::WorldListFile);
-            TamlWrite($WorldListData, $PhysicsLauncher::WorldListFile);
-        }
+        $WorldListData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+        loadGameData($WorldListData);
 
         $WorldDataChanged = false;
     }
