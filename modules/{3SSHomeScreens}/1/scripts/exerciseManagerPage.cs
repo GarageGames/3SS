@@ -202,11 +202,11 @@ function EMG_ExercisesList::Refresh(%this)
         isLegacyVersion = 0;
         hovertime = "1000";
         toolTipProfile="GuiToolTipProfile";
-        toolTip="Select to open the New Game Pop Up Screen.";
-        NormalImage = "{3SSHomeScreens}:newGame_normal";
-        HoverImage = "{3SSHomeScreens}:newGame_hover";
-        InactiveImage = "{3SSHomeScreens}:newGame_inactive";
-        DownImage = "{3SSHomeScreens}:newGame_down";
+        toolTip="Select to open the New Exercise Pop Up Screen.";
+        NormalImage = "{3SSHomeScreens}:newExercise_normal";
+        HoverImage = "{3SSHomeScreens}:newExercise_hover";
+        InactiveImage = "{3SSHomeScreens}:newExercise_inactive";
+        DownImage = "{3SSHomeScreens}:newExercise_down";
     };
 
     %createNewButton.command = "newExercise(\"" @ EMG_ExercisesList.type @ "\");";
