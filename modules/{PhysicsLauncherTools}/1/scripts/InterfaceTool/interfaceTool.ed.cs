@@ -1865,10 +1865,8 @@ function InterfaceTool::displayRewardImages(%this, %currentButton)
 
 function InterfaceTool::getWorldData(%this)
 {
-    if (isFile($PhysicsLauncher::WorldListFile))
-        %this.worldData = TamlRead($PhysicsLauncher::WorldListFile);
-    else
-        %this.worldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    %this.worldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    loadGameData(%this.worldData);
 }
 
 function InterfaceTool::saveData(%this)
@@ -1878,9 +1876,7 @@ function InterfaceTool::saveData(%this)
         if (isObject(%this.worldData))
         {
             TamlWrite(%this.worldData, "^PhysicsLauncherTemplate/managed/worldList.taml");
-
-            if (isFile($PhysicsLauncher::WorldListFile))
-                TamlWrite(%this.worldData, $PhysicsLauncher::WorldListFile);
+            saveGameData(%this.worldData);
         }
 
         %this.saveFonts();

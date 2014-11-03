@@ -8,6 +8,20 @@ function persistProject()
     PhysicsLauncher::persistProject();
 }
 
+// Save game data to a file
+// %dataSource = The source of the saved game data
+function saveGameData(%dataSource)
+{
+    PhysicsLauncher::saveGameData(%dataSource);
+}
+
+// Load game data from the saved file.
+// %dataDestination = The destination of the saved game data
+function loadGameData(%dataDestination)
+{
+    PhysicsLauncher::loadGameData(%dataDestination);
+}
+
 function PhysicsLauncher::persistProject()
 {
     //---------------------------------------------------------------
@@ -23,8 +37,10 @@ function PhysicsLauncher::persistProject()
     //---------------------------------------------------------------
     %worldListFile = expandPath("^PhysicsLauncherTemplate/managed/worldList.taml");
     
-    if (isWriteableFileName($PhysicsLauncher::WorldListFile))
-        TamlWrite($WorldListData, $PhysicsLauncher::WorldListFile);
+    if (isWriteableFileName(%worldListFile))
+    {
+        TamlWrite($WorldListData, %worldListFile);
+    }
         
     //---------------------------------------------------------------
     // Tutorials
@@ -33,6 +49,109 @@ function PhysicsLauncher::persistProject()
     
     if (isWriteableFileName(%tutorialDataFile))
         TamlWrite($TutorialDataSet, %tutorialDataFile);
+}
+
+// Extract the game data from the world data and save it
+function PhysicsLauncher::saveGameData(%dataSource)
+{
+    %gameData = new SimSet();
+    %gameData.version = 1;  // For future use so we know when the save format changes
+    %gameData.rewardCount = %dataSource.rewardCount;
+   
+    for(%i=0; %i<%dataSource.getCount(); %i++)
+    {
+        %worldData = %dataSource.getObject(%i);
+        if(%worldData.internalName $= "Unused Levels")
+        {
+            // Skip the special Unused Levels world as it doesn't take
+            // part in the game, only the editor.
+            continue;
+        }
+      
+        %saveData = new ScriptObject();
+        %saveData.internalName = %worldData.internalName;
+        %saveData.WorldLevelCount = %worldData.WorldLevelCount;
+        %saveData.WorldLocked = %worldData.WorldLocked;
+        %saveData.WorldProgress = %worldData.WorldProgress;
+      
+        // Go through each level that belongs to this world
+        for(%j=0; %j<%worldData.WorldLevelCount; %j++)
+        {
+            %saveData.LevelHighScore[%j] = %worldData.LevelHighScore[%j];
+            %saveData.LevelList[%j] = %worldData.LevelList[%j];
+            %saveData.LevelLocked[%j] = %worldData.LevelLocked[%j];
+            %saveData.LevelStars[%j] = %worldData.LevelStars[%j];
+        }
+      
+        %gameData.add(%saveData);
+    }
+   
+    // Write out the game data
+    echo("Saving game data...");
+    TamlWrite(%gameData, $PhysicsLauncher::WorldListFile);
+}
+
+// Load in the game data and merge with the world data
+function PhysicsLauncher::loadGameData(%dataDestination)
+{
+    // Check if the game data file exists.  If not, then we
+    // will just use the existing game data located in the world data.
+    if (!isFile($PhysicsLauncher::WorldListFile))
+    {
+        return;
+    }
+    
+    // Load in the game data
+    echo("Loading game data...");
+    %gameData = TamlRead($PhysicsLauncher::WorldListFile);
+    
+    // Check the save data version.  If it is higher than we support then we have
+    // no choice but to stop and just use the default world data as the game data.
+    if(%gameData.version > 1)
+    {
+        warn("PhysicsLauncher::loadGameData(): Game data version " @ %gameData.version @ " doesn't match game version 1. Using default data.");
+        return;
+    }
+    
+    // Set game level variables
+    %dataDestination.rewardCount = %gameData.rewardCount;
+    
+    // Set up world game data
+    for(%i=0; %i<%gameData.getCount(); %i++)
+    {
+        // Get the world's saved game data
+        %saveData = %gameData.getObject(%i);
+        
+        // Find the saved world in the game's defined world list
+        %worldData = %dataDestination.findObjectByInternalName(%saveData.internalName);
+        if(!isObject(%worldData))
+        {
+            // World exists in game save data but is not part of the current game.
+            // We have no choice but to skip this save data.
+            continue;
+        }
+        
+        // Transfer world data
+        %worldData.WorldLocked = %saveData.WorldLocked;
+        %worldData.WorldProgress = (%saveData.WorldProgress > %worldData.WorldLevelCount) ? %worldData.WorldLevelCount : %saveData.WorldProgress;
+
+        // Transfer world level data
+        for(%j=0; %j<%worldData.WorldLevelCount; %j++)
+        {
+            // There could be more levels defined for this world than have
+            // been previously saved.  Skip trying to transfer over levels from
+            // the save data that doesn't exist.
+            if(%j >= %saveData.WorldLevelCount)
+            {
+                continue;
+            }
+            
+            %worldData.LevelHighScore[%j] = %saveData.LevelHighScore[%j];
+            %worldData.LevelList[%j] = %saveData.LevelList[%j];
+            %worldData.LevelLocked[%j] = %saveData.LevelLocked[%j];
+            %worldData.LevelStars[%j] = %saveData.LevelStars[%j];
+        }
+    }
 }
 
 function PhysicsLauncher::initializeProject()
@@ -77,15 +196,8 @@ function PhysicsLauncher::initializeProject()
 
     if (!isObject($WorldListData) || $WorldDataChanged)
     {
-        if (isFile($PhysicsLauncher::WorldListFile))
-            $WorldListData = TamlRead($PhysicsLauncher::WorldListFile);
-
-        else
-        {
-            $WorldListData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
-            createPath($PhysicsLauncher::WorldListFile);
-            TamlWrite($WorldListData, $PhysicsLauncher::WorldListFile);
-        }
+        $WorldListData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+        loadGameData($WorldListData);
     }
 
     if (!isObject($WorldListData))

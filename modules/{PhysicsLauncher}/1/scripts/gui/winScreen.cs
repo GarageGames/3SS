@@ -87,7 +87,9 @@ function winGui::unLockNextLevel(%this)
         if (%world.LevelLocked[0])
             %world.LevelLocked[0] = false;
     }
-    TamlWrite($WorldListData, $PhysicsLauncher::WorldListFile);
+    
+    // Save the game's state
+    saveGameData($WorldListData);
 }
 
 /// <summary>
