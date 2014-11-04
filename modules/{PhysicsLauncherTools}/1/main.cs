@@ -84,7 +84,7 @@ function initializePhysicsLauncherTools()
     $CurrentTemplatePackage = "PhysicsLauncherPackage";
 
     activatePackage($CurrentTemplatePackage);
-    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/My Games/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/worldList.taml";
+    $PhysicsLauncher::WorldListFile = $PhysicsLauncher::UserHomeDirectory @ "/Save Files/" @ $Game::CompanyName @ "/{PhysicsLauncher}/" @ $Game::ProductName @ "/worldList.taml";
     if ( isObject($PhysicsLauncherTools::currentWorldData) )
         $PhysicsLauncherTools::currentWorldData = "";
         
@@ -92,7 +92,7 @@ function initializePhysicsLauncherTools()
     Tt_WorldToolButton.setStateOn(true);
     Tt_WorldToolButton.onClick();
     //makeAssetFiles("^{PhysicsLauncherAssets}/audio/", "sound", "", false);   
-}
+} 
 
 function destroyPhysicsLauncherTools()
 {
