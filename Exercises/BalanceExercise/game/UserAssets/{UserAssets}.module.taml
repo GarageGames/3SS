@@ -1,0 +1,8 @@
+<ModuleDefinition
+	ModuleId="{UserAssets}"
+	VersionId="1"
+	Description="User generated assets module"
+	Synchronized = "0"
+	DeclaredAssetManifest="^{UserAssets}/DeclaredAssets.manifest.taml"
+	/>
+

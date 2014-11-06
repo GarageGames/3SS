@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="BalanceIcon_normal"
+    AssetInternal="1"
+    ImageFile="@assetFile=#BalanceIcon_normal.png" />
