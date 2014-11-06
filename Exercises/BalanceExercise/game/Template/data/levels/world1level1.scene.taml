@@ -38,14 +38,14 @@
     cameraSize="16 12"
     levelSize="32 16"
     music="{PhysicsLauncherAssets}:music_gameplay_finalSound"
-    NumAvailable0="2"
+    NumAvailable0="1"
     NumAvailable1="0"
     NumAvailable2="0"
     NumAvailable3="0"
     NumAvailable4="0"
-    RewardScore0="1600"
-    RewardScore1="1700"
-    RewardScore2="1800"
+    RewardScore0="1"
+    RewardScore1="1"
+    RewardScore2="1"
     RewardScore3="3300"
     RewardScore4="3400"
     Tutorial0="NewProjectile1Tutorial"
@@ -255,10 +255,10 @@
         <Sprite
             internalName="BandObject0"
             Prefab="Band0ObjectPrefab0"
-            size="1.5 0.5" />
+            size="0.5 0.5" />
         <Sprite
             internalName="BandObject1"
             Prefab="Band1ObjectPrefab0"
-            size="1.5 0.5" />
+            size="0.5 0.5" />
     </SceneObjectGroup>
 </Scene>

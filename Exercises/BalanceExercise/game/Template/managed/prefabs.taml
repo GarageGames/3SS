@@ -8,7 +8,7 @@
             internalName="Default Projectile"
             SceneLayer="15"
             Active="0"
-            DefaultDensity="5.65884256"
+            DefaultDensity="5.7276206"
             DefaultFriction="0.75"
             DefaultRestitution="0.300000012"
             AngularDamping="2.25"
@@ -21,13 +21,14 @@
             IconHover="{PhysicsLauncherAssets}:GorillaButtonHoverImageMap"
             IconInactive="{PhysicsLauncherAssets}:GorillaButtonInactiveImageMap"
             IconNormal="{PhysicsLauncherAssets}:GorillaButtonUpImageMap"
-            PointValue="10000">
+            PointValue="1">
             <Sprite.Behaviors>
                 <ProjectileBehavior
                     Id="1" />
                 <ImageTrailBehavior
                     Id="2"
                     asset="{PhysicsLauncherAssets}:PL_DefaultPathAnim"
+                    imageFrame="0"
                     dropTimer="0.100000001"
                     imageSize="0.5" />
                 <ImpactImageBehavior
@@ -103,12 +104,6 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
-                    Vanishing="16"
-                    PlaySound="7" />
-                <Connection
-                    Vanishing="16"
-                    play="13" />
-                <Connection
                     Hit="1"
                     Impact="3" />
                 <Connection
@@ -147,6 +142,12 @@
                 <Connection
                     loaded="15"
                     PlaySound="8" />
+                <Connection
+                    Vanishing="16"
+                    PlaySound="7" />
+                <Connection
+                    Vanishing="16"
+                    play="13" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Circle
@@ -159,7 +160,7 @@
             internalName="New Projectile"
             SceneLayer="15"
             Active="0"
-            DefaultDensity="1.98059487"
+            DefaultDensity="2.04729056"
             DefaultFriction="0.75"
             DefaultRestitution="0.300000012"
             AngularDamping="2.25"
@@ -172,13 +173,14 @@
             IconHover="{PhysicsLauncherAssets}:GorillaButtonHoverImageMap"
             IconInactive="{PhysicsLauncherAssets}:GorillaButtonInactiveImageMap"
             IconNormal="{PhysicsLauncherAssets}:GorillaButtonUpImageMap"
-            PointValue="10000">
+            PointValue="1">
             <Sprite.Behaviors>
                 <ProjectileBehavior
                     Id="1" />
                 <ImageTrailBehavior
                     Id="2"
                     asset="{PhysicsLauncherAssets}:PL_DefaultPathAnim"
+                    imageFrame="0"
                     dropTimer="0.100000001"
                     imageSize="0.5" />
                 <ImpactImageBehavior
@@ -455,7 +457,7 @@
             Name="WorldObjectPrefab0"
             internalName="DefaultEnemy"
             SceneLayer="15"
-            DefaultDensity="0.138378382"
+            DefaultDensity="0.171402961"
             DefaultRestitution="0.300000012"
             CollisionCallback="1">
             <Sprite.Behaviors>
@@ -469,7 +471,7 @@
                     indestructableFlag="0"
                     minDamageThreshold="1"
                     minSpeedThreshold="0.05"
-                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStates="0 0 0 0 1.0"
                     damageStatesActiveMask="0 0 0 0 1"
                     damageModifierGroups="1" />
                 <AnimationEffectBehavior
@@ -550,7 +552,7 @@
                 <AdjustGMValueBehavior
                     Id="20"
                     adjustableValueField="Score"
-                    adjustment="100" />
+                    adjustment="1" />
                 <WinObjectiveBehavior
                     Id="21"
                     instanceName=""
@@ -565,12 +567,6 @@
                     adjustment="-1" />
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
-                <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
                 <Connection
                     addedToSceneOutput="1"
                     play="3" />
@@ -628,10 +624,15 @@
                 <Connection
                     Vanishing="8"
                     play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
-                    Density="0.138378"
                     Point0="0.37266 -0.38525"
                     Point1="0.37266 0.34937"
                     Point2="-0.42152 0.34937"
@@ -642,7 +643,7 @@
             Name="WorldObjectPrefab1"
             internalName="DefaultBox"
             SceneLayer="15"
-            DefaultDensity="0.123114809"
+            DefaultDensity="0.143973455"
             CollisionCallback="1">
             <Sprite.Behaviors>
                 <WorldObjectBehavior
@@ -655,7 +656,7 @@
                     indestructableFlag="0"
                     minDamageThreshold="1"
                     minSpeedThreshold="0.05"
-                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStates="0.333333343 0.666666687 0 0 1.0"
                     damageStatesActiveMask="1 1 0 0 1"
                     damageModifierGroups="0" />
                 <AnimationEffectBehavior
@@ -720,11 +721,11 @@
                 <AdjustGMValueBehavior
                     Id="16"
                     adjustableValueField="Score"
-                    adjustment="166" />
+                    adjustment="0" />
                 <AdjustGMValueBehavior
                     Id="17"
                     adjustableValueField="Score"
-                    adjustment="166" />
+                    adjustment="0" />
                 <AdjustGMValueBehavior
                     Id="18"
                     adjustableValueField="Score"
@@ -736,7 +737,7 @@
                 <AdjustGMValueBehavior
                     Id="20"
                     adjustableValueField="Score"
-                    adjustment="168" />
+                    adjustment="1" />
                 <WinObjectiveBehavior
                     Id="21"
                     instanceName=""
@@ -817,7 +818,6 @@
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
-                    Density="1"
                     Point0="0.54903 -0.22584"
                     Point1="0.54903 0.95278"
                     Point2="-0.62959 0.95278"
@@ -845,7 +845,7 @@
                     indestructableFlag="1"
                     minDamageThreshold="1"
                     minSpeedThreshold="0.05"
-                    damageStates="0.1 0.3 0.6 0.9 1.0"
+                    damageStates="0 0 0 0 1.0"
                     damageStatesActiveMask="0 0 0 0 1"
                     damageModifierGroups="0" />
                 <AnimationEffectBehavior
@@ -942,12 +942,6 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
-                <Connection
                     addedToSceneOutput="1"
                     play="3" />
                 <Connection
@@ -1004,6 +998,12 @@
                 <Connection
                     Vanishing="8"
                     play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon

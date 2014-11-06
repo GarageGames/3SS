@@ -1,5 +1,5 @@
 <TorsionProject>
-<Name>iTorque2DGame</Name>
+<Name>BalanceExercise</Name>
 <WorkingDir/>
 <EntryScript>main.cs</EntryScript>
 <DebugHook>dbgSetParameters( #port#, "#password#", true );</DebugHook>
@@ -8,7 +8,7 @@
 <Configs>
 <Config>
 <Name>Release</Name>
-<Executable>3StepStudioGame.exe</Executable>
+<Executable>BalanceExercise.exe</Executable>
 <Arguments/>
 <HasExports>true</HasExports>
 <Precompile>true</Precompile>
