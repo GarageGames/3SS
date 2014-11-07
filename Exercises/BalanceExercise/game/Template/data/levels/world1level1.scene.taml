@@ -43,9 +43,9 @@
     NumAvailable2="0"
     NumAvailable3="0"
     NumAvailable4="0"
-    RewardScore0="1"
-    RewardScore1="1"
-    RewardScore2="1"
+    RewardScore0="3000"
+    RewardScore1="5000"
+    RewardScore2="6000"
     RewardScore3="3300"
     RewardScore4="3400"
     Tutorial0="NewProjectile1Tutorial"
@@ -130,67 +130,61 @@
         Name="ground"
         Prefab="WorldObjectPrefab2"
         size="32 1"
-        Position="0 -7.5"
+        Position="0.015625 -7.23438"
         currentSound="15" />
     <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="-6 -6.6"
+        Position="-3.95313 -2.77186"
         Angle="0.0271617"
         currentSound="17" />
     <Sprite
-        internalName="DefaultBox"
-        Prefab="WorldObjectPrefab1"
-        size="3 3"
-        Position="-7 -6.68508"
-        currentSound="19" />
-    <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="2 -6.6"
+        Position="-5.57813 -6.31875"
         Angle="0.0271617"
         currentSound="18" />
     <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="-2.16156 -6.6"
+        Position="0.104065 -2.74062"
         Angle="-90.1877"
         currentSound="16" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4 -5.68508"
+        Position="-3.95313 -4.13821"
         currentSound="19" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4 -6.48923"
+        Position="-3.96876 -5.31736"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4 -7.29261"
+        Position="-3.96875 -6.51136"
         currentSound="21" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-0 -5.68508"
+        Position="0.078125 -4.12258"
         currentSound="19" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="0 -6.48923"
+        Position="0.09375 -5.28611"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="0 -7.29261"
+        Position="0.078125 -6.49574"
         currentSound="21" />
     <Trigger
         Name="WorldBoundary"

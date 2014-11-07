@@ -44,22 +44,4 @@
         WorldLockedImage="{PhysicsLauncherAssets}:LockedWorldImageOneImageMap"
         WorldProgress="1"
         WorldSelectBackground="{PhysicsLauncherAssets}:WorldSelectMenuBackgroundImageImageMap" />
-    <ScriptObject
-        Name="World1"
-        internalName="World 2"
-        ContainerImage="{PhysicsLauncherAssets}:ScoreContainerImageMap"
-        LevelHighScore0="0"
-        LevelImageList0="{PhysicsLauncherAssets}:LevelImageImageMap"
-        LevelList0="world2level1"
-        LevelLocked0="1"
-        LevelLockedImage0="{PhysicsLauncherAssets}:LockedLevelImageImageMap"
-        LevelStars0="0"
-        WorldBackground0="{PhysicsLauncherAssets}:LevelSelectMenuBackgroundImageTwoImageMap"
-        WorldImage="{PhysicsLauncherAssets}:WorldImageTwoImageMap"
-        WorldImageBlank="{PhysicsLauncherAssets}:worldPanelBackgroundBlankImageMap"
-        WorldLevelCount="1"
-        WorldLocked="1"
-        WorldLockedImage="{PhysicsLauncherAssets}:LockedWorldImageTwoImageMap"
-        WorldProgress="0"
-        WorldSelectBackground="{PhysicsLauncherAssets}:WorldSelectMenuBackgroundImageTwoImageMap" />
 </SimSet>
