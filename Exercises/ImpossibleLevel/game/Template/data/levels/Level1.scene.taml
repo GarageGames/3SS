@@ -83,7 +83,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="2.5"
+                horizontalScrollSpeed="0.5"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -102,7 +102,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="10"
+                horizontalScrollSpeed="1"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -121,7 +121,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="20"
+                horizontalScrollSpeed="2"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -211,22 +211,22 @@
         <SceneObject
             internalName="BuilderObject"
             Prefab="LauncherObjectPrefab0"
-            Position="-11 -5.5" />
+            Position="-12 -5.5" />
         <SceneObject
             internalName="collisionObject"
             Prefab="CollisionObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-12 -5.5" />
         <Sprite
             internalName="SlingshotForegroundObject"
             Prefab="ForkForgroundObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-12 -5.5" />
         <Sprite
             internalName="SlingshotBackgroundObject"
             Prefab="ForkBackgroundObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-12 -5.5" />
         <Sprite
             internalName="seatObject"
             Prefab="SeatObjectPrefab0"

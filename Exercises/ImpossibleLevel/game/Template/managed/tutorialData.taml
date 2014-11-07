@@ -4,10 +4,12 @@
         Name="DefaultProjectileTutorial"
         internalName="DefaultProjectileTutorial"
         Image0="{PhysicsLauncherAssets}:TutorialImageImageMap"
-        TutorialRead="0" />
+        TutorialRead="1"
+        WorldLocked="1" />
     <ScriptObject
         Name="NewProjectile1Tutorial"
         internalName="NewProjectile1Tutorial"
         Image0="{PhysicsLauncherAssets}:TutorialImageImageMap"
-        TutorialRead="0" />
+        TutorialRead="0"
+        WorldLocked="0" />
 </SimSet>
