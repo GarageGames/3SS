@@ -135,32 +135,26 @@
     <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="-3.95313 -2.77186"
+        Position="-3.95313 -5.13124"
         Angle="0.0271617"
         currentSound="17" />
     <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="-5.57813 -6.31875"
+        Position="-1.35938 -5.1625"
         Angle="0.0271617"
         currentSound="18" />
     <Sprite
         internalName="DefaultEnemy"
         Prefab="WorldObjectPrefab0"
-        Position="0.104065 -2.74062"
+        Position="-2.64594 -5.16249"
         Angle="-90.1877"
         currentSound="16" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-3.95313 -4.13821"
-        currentSound="19" />
-    <Sprite
-        internalName="DefaultBox"
-        Prefab="WorldObjectPrefab1"
-        size="3 3"
-        Position="-3.96876 -5.31736"
+        Position="-2.64064 -6.52048"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
@@ -172,20 +166,8 @@
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="0.078125 -4.12258"
+        Position="-1.34375 -6.52883"
         currentSound="19" />
-    <Sprite
-        internalName="DefaultBox"
-        Prefab="WorldObjectPrefab1"
-        size="3 3"
-        Position="0.09375 -5.28611"
-        currentSound="20" />
-    <Sprite
-        internalName="DefaultBox"
-        Prefab="WorldObjectPrefab1"
-        size="3 3"
-        Position="0.078125 -6.49574"
-        currentSound="21" />
     <Trigger
         Name="WorldBoundary"
         class="WorldTrigger"
@@ -196,10 +178,10 @@
         <Trigger.CollisionShapes>
             <Polygon
                 Sensor="1"
-                Point0="16 -8"
-                Point1="16 8"
-                Point2="-16 8"
-                Point3="-16 -8" />
+                Point0="-16 -8"
+                Point1="16 -8"
+                Point2="16 8"
+                Point3="-16 8" />
         </Trigger.CollisionShapes>
     </Trigger>
     <SceneObject

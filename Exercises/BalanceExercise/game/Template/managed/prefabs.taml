@@ -8,7 +8,7 @@
             internalName="Default Projectile"
             SceneLayer="15"
             Active="0"
-            DefaultDensity="5.7276206"
+            DefaultDensity="8.7505312"
             DefaultFriction="0.75"
             DefaultRestitution="0.300000012"
             AngularDamping="2.25"
@@ -104,6 +104,24 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
+                    Hit="1"
+                    Impact="3" />
+                <Connection
+                    Hit="1"
+                    PlaySound="6" />
+                <Connection
+                    EndMove="1"
+                    End="2" />
+                <Connection
+                    EndMove="1"
+                    play="12" />
+                <Connection
+                    StartMove="1"
+                    Start="2" />
+                <Connection
+                    Resting="4"
+                    Vanish="16" />
+                <Connection
                     launched="14"
                     Activate="4" />
                 <Connection
@@ -130,32 +148,11 @@
                 <Connection
                     Vanishing="16"
                     play="13" />
-                <Connection
-                    Hit="1"
-                    Impact="3" />
-                <Connection
-                    Hit="1"
-                    PlaySound="6" />
-                <Connection
-                    EndMove="1"
-                    End="2" />
-                <Connection
-                    EndMove="1"
-                    play="12" />
-                <Connection
-                    StartMove="1"
-                    Start="2" />
-                <Connection
-                    Resting="4"
-                    Vanish="16" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Circle
-                    Density="1"
-                    Friction="0.2"
-                    Restitution="0"
                     Radius="0.44729"
-                    Offset="-0.0286805 0.0228745" />
+                    Offset="0.0259755 0.0111325" />
             </Sprite.CollisionShapes>
         </Sprite>
         <Sprite
@@ -163,7 +160,7 @@
             internalName="New Projectile"
             SceneLayer="15"
             Active="0"
-            DefaultDensity="5.66942024"
+            DefaultDensity="8.66161442"
             DefaultFriction="0.75"
             DefaultRestitution="0.300000012"
             AngularDamping="2.25"
@@ -306,11 +303,8 @@
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Circle
-                    Density="1"
-                    Friction="0.2"
-                    Restitution="0"
                     Radius="0.44958"
-                    Offset="-0.035793 -0.003314" />
+                    Offset="0.024936 0.0201696" />
             </Sprite.CollisionShapes>
         </Sprite>
     </SimSet>
@@ -346,9 +340,6 @@
                 </SceneObject.Behaviors>
                 <SceneObject.BehaviorConnections>
                     <Connection
-                        stretchOutput="2"
-                        PlaySoundNoInterrupt="4" />
-                    <Connection
                         inputUp="3"
                         launch="2" />
                     <Connection
@@ -366,6 +357,9 @@
                     <Connection
                         inputDrag="3"
                         onMove="1" />
+                    <Connection
+                        stretchOutput="2"
+                        PlaySoundNoInterrupt="4" />
                 </SceneObject.BehaviorConnections>
                 <SceneObject.CollisionShapes>
                     <Circle
@@ -658,7 +652,7 @@
                 <DamageableBehavior
                     Id="2"
                     instanceName=""
-                    startingHealth="25"
+                    startingHealth="10"
                     indestructableFlag="0"
                     minDamageThreshold="1"
                     minSpeedThreshold="0.05"
@@ -759,6 +753,12 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
+                <Connection
                     addedToSceneOutput="1"
                     play="3" />
                 <Connection
@@ -815,12 +815,6 @@
                 <Connection
                     Vanishing="8"
                     play="9" />
-                <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
@@ -948,18 +942,6 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
-                    vanishedOutput="8"
-                    onDestroyInput="21" />
-                <Connection
-                    Vanishing="8"
-                    play="9" />
-                <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
-                <Connection
                     addedToSceneOutput="1"
                     play="3" />
                 <Connection
@@ -1010,6 +992,18 @@
                 <Connection
                     OnDamageState1="2"
                     PlaySound="12" />
+                <Connection
+                    vanishedOutput="8"
+                    onDestroyInput="21" />
+                <Connection
+                    Vanishing="8"
+                    play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
@@ -1137,6 +1131,12 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
+                <Connection
                     addedToSceneOutput="1"
                     play="3" />
                 <Connection
@@ -1193,17 +1193,9 @@
                 <Connection
                     Vanishing="8"
                     play="9" />
-                <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
-                    Density="1"
-                    Restitution="0"
                     Point0="0.56024 -0.21162"
                     Point1="0.56024 0.93292"
                     Point2="-0.58431 0.93292"
@@ -1215,7 +1207,7 @@
             internalName="NewObject"
             SceneLayer="15"
             size="3 3"
-            DefaultDensity="0.0246229637"
+            DefaultDensity="0"
             CollisionCallback="1">
             <Sprite.Behaviors>
                 <WorldObjectBehavior
@@ -1224,7 +1216,7 @@
                 <DamageableBehavior
                     Id="2"
                     instanceName=""
-                    startingHealth="25"
+                    startingHealth="10"
                     indestructableFlag="0"
                     minDamageThreshold="1"
                     minSpeedThreshold="0.0500000007"
@@ -1325,18 +1317,6 @@
             </Sprite.Behaviors>
             <Sprite.BehaviorConnections>
                 <Connection
-                    vanishedOutput="8"
-                    onDestroyInput="21" />
-                <Connection
-                    Vanishing="8"
-                    play="9" />
-                <Connection
-                    onCreatedOutput="21"
-                    adjustGMValue="22" />
-                <Connection
-                    onDestroyedOutput="21"
-                    adjustGMValue="23" />
-                <Connection
                     addedToSceneOutput="1"
                     play="3" />
                 <Connection
@@ -1387,10 +1367,21 @@
                 <Connection
                     OnDamageState1="2"
                     PlaySound="12" />
+                <Connection
+                    vanishedOutput="8"
+                    onDestroyInput="21" />
+                <Connection
+                    Vanishing="8"
+                    play="9" />
+                <Connection
+                    onCreatedOutput="21"
+                    adjustGMValue="22" />
+                <Connection
+                    onDestroyedOutput="21"
+                    adjustGMValue="23" />
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
-                    Density="1"
                     Point0="0.5529 -0.17555"
                     Point1="0.5529 0.99768"
                     Point2="-0.62033 0.99768"
@@ -1577,10 +1568,12 @@
             </Sprite.BehaviorConnections>
             <Sprite.CollisionShapes>
                 <Polygon
-                    Point0="0.475 -0.475"
-                    Point1="0.475 0.475"
-                    Point2="-0.475 0.475"
-                    Point3="-0.475 -0.475" />
+                    Density="1"
+                    Restitution="0"
+                    Point0="0.49524 -0.48283"
+                    Point1="0.49524 0.46717"
+                    Point2="-0.45476 0.46717"
+                    Point3="-0.45476 -0.48283" />
             </Sprite.CollisionShapes>
         </Sprite>
     </SimSet>
