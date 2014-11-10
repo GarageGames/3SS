@@ -1,0 +1,242 @@
+<Scene
+    Name="MainScene"
+    Gravity="0 -9.81"
+    layerSortMode0="Batch"
+    layerSortMode1="Batch"
+    layerSortMode2="Batch"
+    layerSortMode3="Batch"
+    layerSortMode4="Batch"
+    layerSortMode5="Batch"
+    layerSortMode6="Batch"
+    layerSortMode7="Batch"
+    layerSortMode8="Batch"
+    layerSortMode9="Batch"
+    layerSortMode10="Batch"
+    layerSortMode11="Batch"
+    layerSortMode12="Batch"
+    layerSortMode13="Batch"
+    layerSortMode14="Batch"
+    layerSortMode15="Z Axis"
+    layerSortMode16="Batch"
+    layerSortMode17="Batch"
+    layerSortMode18="Batch"
+    layerSortMode19="Batch"
+    layerSortMode20="Batch"
+    layerSortMode21="Batch"
+    layerSortMode22="Batch"
+    layerSortMode23="Batch"
+    layerSortMode24="Batch"
+    layerSortMode25="Batch"
+    layerSortMode26="Batch"
+    layerSortMode27="Batch"
+    layerSortMode28="Batch"
+    layerSortMode29="Batch"
+    layerSortMode30="Batch"
+    layerSortMode31="Batch"
+    cameraPosition="0 0"
+    cameraSize="16 12"
+    levelSize="32 16"
+    music="{PhysicsLauncherAssets}:music_gameplay_finalSound"
+    NumAvailable0="0"
+    NumAvailable1="0"
+    NumAvailable2="0"
+    NumAvailable3="0"
+    NumAvailable4="0"
+    RewardScore0="3000"
+    RewardScore1="3100"
+    RewardScore2="3200"
+    RewardScore3="3300"
+    RewardScore4="3400"
+    Tutorial0="NewProjectile1Tutorial"
+    Tutorial1="Box1Tutorial">
+    <Scroller
+        Name="Sky"
+        SceneLayer="31"
+        size="32 16"
+        FixedAngle="1"
+        BodyType="static"
+        Awake="0"
+        CollisionSuppress="1"
+        GravityScale="0"
+        ImageMap="@asset={PhysicsLauncherAssets}:SkyImageMap"
+        Frame="0">
+        <Scroller.Behaviors>
+            <ParallaxObjectBehavior
+                Id="1"
+                horizontalScrollSpeed="0"
+                verticalScrollSpeed="0"
+                tileable="1" />
+        </Scroller.Behaviors>
+    </Scroller>
+    <Scroller
+        Name="Background2"
+        SceneLayer="30"
+        size="32 16"
+        FixedAngle="1"
+        BodyType="static"
+        Awake="0"
+        CollisionSuppress="1"
+        GravityScale="0"
+        ImageMap="@asset={PhysicsLauncherAssets}:Background2ImageMap"
+        Frame="0">
+        <Scroller.Behaviors>
+            <ParallaxObjectBehavior
+                Id="1"
+                horizontalScrollSpeed="2.5"
+                verticalScrollSpeed="0"
+                tileable="1" />
+        </Scroller.Behaviors>
+    </Scroller>
+    <Scroller
+        Name="Background1"
+        SceneLayer="29"
+        size="32 16"
+        FixedAngle="1"
+        BodyType="static"
+        Awake="0"
+        CollisionSuppress="1"
+        GravityScale="0"
+        ImageMap="@asset={PhysicsLauncherAssets}:Background1ImageMap"
+        Frame="0">
+        <Scroller.Behaviors>
+            <ParallaxObjectBehavior
+                Id="1"
+                horizontalScrollSpeed="10"
+                verticalScrollSpeed="0"
+                tileable="1" />
+        </Scroller.Behaviors>
+    </Scroller>
+    <Scroller
+        Name="Foreground"
+        SceneLayer="10"
+        size="32 16"
+        FixedAngle="1"
+        BodyType="static"
+        Awake="0"
+        CollisionSuppress="1"
+        GravityScale="0"
+        ImageMap="@asset={PhysicsLauncherAssets}:ForegroundImageMap"
+        Frame="0">
+        <Scroller.Behaviors>
+            <ParallaxObjectBehavior
+                Id="1"
+                horizontalScrollSpeed="20"
+                verticalScrollSpeed="0"
+                tileable="1" />
+        </Scroller.Behaviors>
+    </Scroller>
+    <Sprite
+        Name="ground"
+        Prefab="WorldObjectPrefab2"
+        size="32 1"
+        Position="0 -7.5"
+        currentSound="15" />
+    <Sprite
+        internalName="DefaultEnemy"
+        Prefab="WorldObjectPrefab0"
+        Position="-4.23028 -3.30926"
+        Angle="-0.00464742"
+        currentSound="16" />
+    <Sprite
+        internalName="DefaultEnemy"
+        Prefab="WorldObjectPrefab0"
+        Position="-7.90599 -6.8225"
+        Angle="1.62409e-005"
+        currentSound="17" />
+    <Sprite
+        internalName="DefaultEnemy"
+        Prefab="WorldObjectPrefab0"
+        Position="-6.641 -6.8225"
+        Angle="2.1835e-005"
+        currentSound="18" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-4.24617 -4.48045"
+        Angle="-0.00409119"
+        currentSound="19" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-4.26371 -5.65158"
+        Angle="-0.00300663"
+        currentSound="20" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-4.28051 -6.82261"
+        Angle="-0.000682935"
+        currentSound="21" />
+    <Trigger
+        Name="WorldBoundary"
+        class="WorldTrigger"
+        size="32 16"
+        BodyType="static"
+        GatherContacts="1"
+        CollisionCallback="1">
+        <Trigger.CollisionShapes>
+            <Polygon
+                Sensor="1"
+                Point0="16 -8"
+                Point1="16 8"
+                Point2="-16 8"
+                Point3="-16 -8" />
+        </Trigger.CollisionShapes>
+    </Trigger>
+    <SceneObject
+        Name="GameMaster"
+        BodyType="static"
+        Projectile0Count="2"
+        Projectile1Count="3"
+        Projectile2Count="1"
+        Projectile3Count="1"
+        Projectile4Count="3"
+        Score="0"
+        WinObjectiveCount="0">
+        <SceneObject.Behaviors>
+            <PhysicsLauncherGMBehavior
+                Id="1"
+                scoreDisplayObject="ScoreDisplay"
+                projectileSlot0IconObject="ProjectileSlot0"
+                projectileSlot0CountDisplayObject="ProjectileSlot0CountDisplay" />
+        </SceneObject.Behaviors>
+    </SceneObject>
+    <SceneObjectGroup
+        Name="LauncherSceneGroup"
+        internalName="Default Launcher">
+        <SceneObject
+            internalName="BuilderObject"
+            Prefab="LauncherObjectPrefab0"
+            Position="-11 -5.5" />
+        <SceneObject
+            internalName="collisionObject"
+            Prefab="CollisionObjectPrefab0"
+            size="4 4"
+            Position="-11 -5.5" />
+        <Sprite
+            internalName="SlingshotForegroundObject"
+            Prefab="ForkForgroundObjectPrefab0"
+            size="4 4"
+            Position="-11 -5.5" />
+        <Sprite
+            internalName="SlingshotBackgroundObject"
+            Prefab="ForkBackgroundObjectPrefab0"
+            size="4 4"
+            Position="-11 -5.5" />
+        <Sprite
+            internalName="seatObject"
+            Prefab="SeatObjectPrefab0"
+            size="1.5 1.5" />
+        <Sprite
+            internalName="BandObject0"
+            Prefab="Band0ObjectPrefab0"
+            size="0.5 0.5" />
+        <Sprite
+            internalName="BandObject1"
+            Prefab="Band1ObjectPrefab0"
+            size="0.5 0.5" />
+    </SceneObjectGroup>
+</Scene>
