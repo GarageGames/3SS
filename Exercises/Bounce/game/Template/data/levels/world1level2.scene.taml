@@ -33,18 +33,19 @@
     layerSortMode29="Batch"
     layerSortMode30="Batch"
     layerSortMode31="Batch"
+    AvailProjectile0="NewProjectile1"
     cameraPosition="0 0"
     cameraSize="16 12"
-    levelSize="32 16"
+    levelSize="16 16"
     music="{PhysicsLauncherAssets}:music_gameplay_finalSound"
-    NumAvailable0="0"
+    NumAvailable0="3"
     NumAvailable1="0"
     NumAvailable2="0"
     NumAvailable3="0"
     NumAvailable4="0"
-    RewardScore0="3000"
-    RewardScore1="3100"
-    RewardScore2="3200"
+    RewardScore0="1600"
+    RewardScore1="1700"
+    RewardScore2="1800"
     RewardScore3="3300"
     RewardScore4="3400"
     Tutorial0="NewProjectile1Tutorial"
@@ -52,7 +53,7 @@
     <Scroller
         Name="Sky"
         SceneLayer="31"
-        size="32 16"
+        size="16 16"
         FixedAngle="1"
         BodyType="static"
         Awake="0"
@@ -71,7 +72,7 @@
     <Scroller
         Name="Background2"
         SceneLayer="30"
-        size="32 16"
+        size="16 16"
         FixedAngle="1"
         BodyType="static"
         Awake="0"
@@ -90,7 +91,7 @@
     <Scroller
         Name="Background1"
         SceneLayer="29"
-        size="32 16"
+        size="16 16"
         FixedAngle="1"
         BodyType="static"
         Awake="0"
@@ -109,7 +110,7 @@
     <Scroller
         Name="Foreground"
         SceneLayer="10"
-        size="32 16"
+        size="16 16"
         FixedAngle="1"
         BodyType="static"
         Awake="0"
@@ -132,58 +133,61 @@
         Position="0 -7.5"
         currentSound="15" />
     <Sprite
-        internalName="DefaultEnemy"
-        Prefab="WorldObjectPrefab0"
-        Position="-4.23028 -3.30926"
-        Angle="-0.00464742"
-        currentSound="16" />
-    <Sprite
-        internalName="DefaultEnemy"
-        Prefab="WorldObjectPrefab0"
-        Position="-7.90599 -6.8225"
-        Angle="1.62409e-005"
-        currentSound="17" />
-    <Sprite
-        internalName="DefaultEnemy"
-        Prefab="WorldObjectPrefab0"
-        Position="-6.641 -6.8225"
-        Angle="2.1835e-005"
-        currentSound="18" />
-    <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4.24617 -4.48045"
-        Angle="-0.00409119"
+        Position="-2.92188 3.56492"
         currentSound="19" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4.26371 -5.65158"
-        Angle="-0.00300663"
+        Position="7.32813 3.56492"
+        currentSound="19" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="3.5 3.57327"
         currentSound="20" />
     <Sprite
         internalName="DefaultBox"
         Prefab="WorldObjectPrefab1"
         size="3 3"
-        Position="-4.28051 -6.82261"
-        Angle="-0.000682935"
+        Position="-1.625 3.55114"
+        currentSound="21" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="6.0625 3.56492"
+        currentSound="19" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-0.359375 3.57327"
+        currentSound="20" />
+    <Sprite
+        internalName="DefaultBox"
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="0.9375 3.55114"
         currentSound="21" />
     <Trigger
         Name="WorldBoundary"
         class="WorldTrigger"
-        size="32 16"
+        size="16 16"
         BodyType="static"
         GatherContacts="1"
         CollisionCallback="1">
         <Trigger.CollisionShapes>
             <Polygon
                 Sensor="1"
-                Point0="16 -8"
-                Point1="16 8"
-                Point2="-16 8"
-                Point3="-16 -8" />
+                Point0="-8 -8"
+                Point1="8 -8"
+                Point2="8 8"
+                Point3="-8 8" />
         </Trigger.CollisionShapes>
     </Trigger>
     <SceneObject
@@ -210,33 +214,115 @@
         <SceneObject
             internalName="BuilderObject"
             Prefab="LauncherObjectPrefab0"
-            Position="-11 -5.5" />
+            Position="-5.92188 -5.375" />
         <SceneObject
             internalName="collisionObject"
             Prefab="CollisionObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-5.92188 -5.375" />
         <Sprite
             internalName="SlingshotForegroundObject"
             Prefab="ForkForgroundObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-5.92188 -5.375" />
         <Sprite
             internalName="SlingshotBackgroundObject"
             Prefab="ForkBackgroundObjectPrefab0"
             size="4 4"
-            Position="-11 -5.5" />
+            Position="-5.92188 -5.375" />
         <Sprite
             internalName="seatObject"
             Prefab="SeatObjectPrefab0"
-            size="1.5 1.5" />
+            size="1.5 1.5"
+            Position="-0.42185 0.125" />
         <Sprite
             internalName="BandObject0"
             Prefab="Band0ObjectPrefab0"
-            size="0.5 0.5" />
+            size="0.5 0.5"
+            Position="-0.42185 0.125" />
         <Sprite
             internalName="BandObject1"
             Prefab="Band1ObjectPrefab0"
-            size="0.5 0.5" />
+            size="0.5 0.5"
+            Position="-0.42185 0.125" />
     </SceneObjectGroup>
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="1.57813 -6.6875" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="1.57813 -4.125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="1.57813 -5.40625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="1.57813 -2.84375" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="4.76563 3.5625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.34375 2.28125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="2.20313 3.5625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -6.6875" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -5.40625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -4.125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -2.84375" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -1.5625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 -0.28125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="7.32813 1" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-2.9375 2.28125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-2.9375 1" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-2.9375 -0.28125" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="1.57813 -1.5625" />
+    <Sprite
+        Prefab="WorldObjectPrefab1"
+        size="3 3"
+        Position="-2.9375 -1.5625" />
+    <Sprite
+        Prefab="WorldObjectPrefab0"
+        Position="4.51563 -6.40625" />
 </Scene>
