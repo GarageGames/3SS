@@ -86,7 +86,7 @@ function GuiEditorOpenGui()
     // group. And, it should be the only thing in the group.
     if (!isObject(%guiContent))
     {
-        MessageBox("Torque Game Builder", "You have loaded a Gui file that was created before this version.  It has been loaded but you must open it manually from the content list dropdown", "Ok", "Information");   
+        MessageBox("3SS", "You have loaded a Gui file that was created before this version.  It has been loaded but you must open it manually from the content list dropdown", "Ok", "Information");   
         return 0;
     }
   
@@ -131,7 +131,7 @@ function GuiEditorSaveGui()
         $GuiDirty = false;
     }
     else
-        MessageBox("Torque Game Builder", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only.", "Ok", "Error");
+        MessageBox("3SS", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only.", "Ok", "Error");
    
 }
 

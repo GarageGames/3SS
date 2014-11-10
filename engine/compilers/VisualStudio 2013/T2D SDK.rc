@@ -79,12 +79,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName", "GarageGames"
-            VALUE "FileDescription", "TorqueGameBuilder"
+            VALUE "FileDescription", "3StepStudio"
             VALUE "FileVersion", "1, 5, 0, 0"
             VALUE "InternalName", "TGB"
             VALUE "LegalCopyright", "Copyright (C) 2006-2007"
-            VALUE "OriginalFilename", "TGB.exe"
-            VALUE "ProductName", "Torque Game Builder"
+            VALUE "OriginalFilename", "3StepStudio.exe"
+            VALUE "ProductName", "3 Step Studio"
             VALUE "ProductVersion", "1, 5, 0, 0"
         END
     END
