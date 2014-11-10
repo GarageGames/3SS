@@ -119,12 +119,6 @@
     <Filter Include="Source Files\input">
       <UniqueIdentifier>{2745477e-d913-4db1-8427-daf9762cb7ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\qt">
-      <UniqueIdentifier>{cce1bdb9-9f61-4728-b8f7-a138be98365b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\web">
-      <UniqueIdentifier>{778c9315-2368-4332-9e4f-1cf28a3d34c5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\editor">
       <UniqueIdentifier>{26657fd7-292c-44be-8666-1d9a04cf9ab1}</UniqueIdentifier>
     </Filter>
@@ -702,27 +696,6 @@
     <ClCompile Include="..\..\source\module\moduleManager.cc">
       <Filter>Source Files\module</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\qt\moc_WebRender.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtManager.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtThread.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\WebRender.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\WebRenderEvents.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtCommandPump.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtAppHandler.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\source\persistence\tinyXML\tinystr.cpp">
       <Filter>Source Files\persistence\tinyXML</Filter>
     </ClCompile>
@@ -738,12 +711,6 @@
     <ClCompile Include="..\..\source\persistence\SimXMLDocument.cpp">
       <Filter>Source Files\persistence</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtFileDownloader.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\moc_QtFileDownloader.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\source\persistence\taml\tamlBinaryWriter.cc">
       <Filter>Source Files\persistence\taml</Filter>
     </ClCompile>
@@ -758,24 +725,6 @@
     </ClCompile>
     <ClCompile Include="..\..\source\assets\assetFieldTypes.cc">
       <Filter>Source Files\assets</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtNetworkManager.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\moc_QtNetworkManager.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtCookieJar.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\moc_QtCookieJar.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\QtHttpRequestHandler.cc">
-      <Filter>Source Files\qt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\moc_QtHttpRequestHandler.cc">
-      <Filter>Source Files\qt</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\persistence\taml\tamlXmlParser.cc">
       <Filter>Source Files\persistence\taml</Filter>
@@ -950,24 +899,6 @@
     </ClCompile>
     <ClCompile Include="..\..\source\graphics\PNGImage.cpp">
       <Filter>Source Files\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\DownloadManager.cc">
-      <Filter>Source Files\web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\DownloadManagerEvents.cc">
-      <Filter>Source Files\web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\HttpManager.cc">
-      <Filter>Source Files\web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\HttpManagerEvents.cc">
-      <Filter>Source Files\web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\ScriptFunctions.cc">
-      <Filter>Source Files\web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\web\UserManager.cc">
-      <Filter>Source Files\web</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\editor\levelBuilderBaseEditTool.cc">
       <Filter>Source Files\editor</Filter>
@@ -1406,9 +1337,6 @@
     </ClCompile>
     <ClCompile Include="..\..\source\2d\sceneobject\IsoCompositeSprite.cc">
       <Filter>Source Files\2d\sceneobject</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\qt\guiWebViewCtrl.cc">
-      <Filter>Source Files\qt</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\2d\gui\SceneWindow.cc">
       <Filter>Source Files\2d\gui</Filter>
@@ -1979,27 +1907,6 @@
     <ClInclude Include="..\..\source\module\moduleManager_ScriptBinding.h">
       <Filter>Source Files\module</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\source\qt\QtManager.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\QtThread.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\WebRenderEvents.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\QtCommandPump.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\IQtAppService.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\IQtCommandService.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\QtAppHandler.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\source\persistence\tinyXML\tinystr.h">
       <Filter>Source Files\persistence\tinyXML</Filter>
     </ClInclude>
@@ -2023,9 +1930,6 @@
     </ClInclude>
     <ClInclude Include="..\..\source\persistence\taml\tamlCollection.h">
       <Filter>Source Files\persistence\taml</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\qt\QtManager_ScriptBinding.h">
-      <Filter>Source Files\qt</Filter>
     </ClInclude>
     <ClInclude Include="..\..\source\assets\assetDefinition.h">
       <Filter>Source Files\assets</Filter>
@@ -2227,39 +2131,6 @@
     </ClInclude>
     <ClInclude Include="..\..\source\graphics\PNGImage.h">
       <Filter>Source Files\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\DownloadManager.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\DownloadManager_ScriptBinding.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\DownloadManagerEvents.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\HttpManager.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\HttpManager_ScriptBinding.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\HttpManagerEvents.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\IDownloadProvider.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\IHttpCallback.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\IHttpServicesProvider.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\UserManager.h">
-      <Filter>Source Files\web</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\web\UserManager_ScriptBinding.h">
-      <Filter>Source Files\web</Filter>
     </ClInclude>
     <ClInclude Include="..\..\source\editor\levelBuilderBaseEditTool.h">
       <Filter>Source Files\editor</Filter>
@@ -2819,9 +2690,6 @@
     <ClInclude Include="..\..\source\algorithm\md5.h">
       <Filter>Source Files\algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\source\qt\guiWebViewCtrl.h">
-      <Filter>Source Files\qt</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\source\2d\gui\SceneWindow.h">
       <Filter>Source Files\2d\gui</Filter>
     </ClInclude>
@@ -2889,21 +2757,6 @@
     </CustomBuild>
     <CustomBuild Include="..\..\source\platform\platformCPUInfo.asm">
       <Filter>Source Files\platform</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\WebRender.h">
-      <Filter>Source Files\qt</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtFileDownloader.h">
-      <Filter>Source Files\qt</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtNetworkManager.h">
-      <Filter>Source Files\qt</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtCookieJar.h">
-      <Filter>Source Files\qt</Filter>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtHttpRequestHandler.h">
-      <Filter>Source Files\qt</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

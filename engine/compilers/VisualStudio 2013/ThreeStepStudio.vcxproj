@@ -75,7 +75,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../Lib/Qt/include;../../Lib/Qt/include/QtCore;../../Lib/Qt/include/QtWebKit;../../Lib/Qt/include/QtGui;../../Lib/Qt/include/QtNetwork;../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>TORQUE_DEBUG;TORQUE_DEBUG_GUARD;_CRT_SECURE_NO_DEPRECATE;UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -100,10 +100,10 @@
       <AdditionalIncludeDirectories>../../Lib/MSPlatformSDK/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>QtCore4.lib;QtGui4.lib;QtNetwork4.lib;QtWebKit4.lib;COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../../3StepStudio_DEBUG.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../Lib/Qt/Lib/VS2010;../../Lib/unicode;../../lib/dinput;../../lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Lib/unicode;../../lib/dinput;../../lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
@@ -124,7 +124,7 @@
     <ClCompile>
       <Optimization>MinSpace</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../Lib/Qt/include;../../Lib/Qt/include/QtCore;../../Lib/Qt/include/QtWebKit;../../Lib/Qt/include/QtGui;../../Lib/Qt/include/QtNetwork;../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../Lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../Lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -149,10 +149,10 @@
       <AdditionalIncludeDirectories>../../Lib/MSPlatformSDK/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>QtCore4.lib;QtGui4.lib;QtNetwork4.lib;QtWebKit4.lib;COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../../3StepStudio.exe</OutputFile>
       <SuppressStartupBanner>false</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../Lib/Qt/Lib/VS2010;../../Lib/unicode;../../lib/dinput;../../Lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Lib/unicode;../../lib/dinput;../../Lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
@@ -184,7 +184,7 @@
     <ClCompile>
       <Optimization>MinSpace</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../Lib/Qt/include;../../Lib/Qt/include/QtCore;../../Lib/Qt/include/QtWebKit;../../Lib/Qt/include/QtGui;../../Lib/Qt/include/QtNetwork;../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../Lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../Lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>TORQUE_SHIPPING;UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -209,10 +209,10 @@
       <AdditionalIncludeDirectories>../../Lib/MSPlatformSDK/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>QtCore4.lib;QtGui4.lib;QtNetwork4.lib;QtWebKit4.lib;COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>COMCTL32.LIB;COMDLG32.LIB;USER32.LIB;ADVAPI32.LIB;GDI32.LIB;WINMM.LIB;WSOCK32.LIB;vfw32.lib;Imm32.lib;unicows.lib;shell32.lib;shlwapi.lib;ole32.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../../3StepStudio.exe</OutputFile>
       <SuppressStartupBanner>false</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../Lib/Qt/Lib/VS2010;../../Lib/unicode;../../lib/dinput;../../Lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Lib/unicode;../../lib/dinput;../../Lib/MSPlatformSDK/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>$(IntDir)$(ProjectName).pdb</ProgramDatabaseFile>
@@ -492,22 +492,6 @@
     <ClCompile Include="..\..\source\platform\platformFont.cc" />
     <ClCompile Include="..\..\source\platform\platformString.cc" />
     <ClCompile Include="..\..\source\platform\Tickable.cc" />
-    <ClCompile Include="..\..\source\qt\guiWebViewCtrl.cc" />
-    <ClCompile Include="..\..\source\qt\moc_QtCookieJar.cc" />
-    <ClCompile Include="..\..\source\qt\moc_QtFileDownloader.cc" />
-    <ClCompile Include="..\..\source\qt\moc_QtHttpRequestHandler.cc" />
-    <ClCompile Include="..\..\source\qt\moc_QtNetworkManager.cc" />
-    <ClCompile Include="..\..\source\qt\moc_WebRender.cc" />
-    <ClCompile Include="..\..\source\qt\QtAppHandler.cc" />
-    <ClCompile Include="..\..\source\qt\QtCommandPump.cc" />
-    <ClCompile Include="..\..\source\qt\QtCookieJar.cc" />
-    <ClCompile Include="..\..\source\qt\QtFileDownloader.cc" />
-    <ClCompile Include="..\..\source\qt\QtHttpRequestHandler.cc" />
-    <ClCompile Include="..\..\source\qt\QtManager.cc" />
-    <ClCompile Include="..\..\source\qt\QtNetworkManager.cc" />
-    <ClCompile Include="..\..\source\qt\QtThread.cc" />
-    <ClCompile Include="..\..\source\qt\WebRender.cc" />
-    <ClCompile Include="..\..\source\qt\WebRenderEvents.cc" />
     <ClCompile Include="..\..\source\audio\audio.cc" />
     <ClCompile Include="..\..\source\audio\audioBuffer.cc" />
     <ClCompile Include="..\..\source\audio\audioDataBlock.cc" />
@@ -645,12 +629,6 @@
     <ClCompile Include="..\..\source\gui\editor\guiInspectorTypes.cc" />
     <ClCompile Include="..\..\source\gui\editor\guiMenuBar.cc" />
     <ClCompile Include="..\..\source\gui\editor\guiSeparatorCtrl.cc" />
-    <ClCompile Include="..\..\source\web\DownloadManager.cc" />
-    <ClCompile Include="..\..\source\web\DownloadManagerEvents.cc" />
-    <ClCompile Include="..\..\source\web\HttpManager.cc" />
-    <ClCompile Include="..\..\source\web\HttpManagerEvents.cc" />
-    <ClCompile Include="..\..\source\web\ScriptFunctions.cc" />
-    <ClCompile Include="..\..\source\web\UserManager.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\source\2d\assets\AnimationAsset.h" />
@@ -970,11 +948,6 @@
     <ClInclude Include="..\..\source\platform\platformString.h" />
     <ClInclude Include="..\..\source\platform\platformTimeManager.h" />
     <ClInclude Include="..\..\source\platform\Tickable.h" />
-    <ClInclude Include="..\..\source\qt\guiWebViewCtrl.h" />
-    <ClInclude Include="..\..\source\qt\IQtAppService.h" />
-    <ClInclude Include="..\..\source\qt\IQtCommandService.h" />
-    <ClInclude Include="..\..\source\qt\QtAppHandler.h" />
-    <ClInclude Include="..\..\source\qt\QtCommandPump.h" />
     <ClInclude Include="..\..\source\sim\scriptGroup.h" />
     <ClInclude Include="..\..\source\sim\scriptObject.h" />
     <ClInclude Include="..\..\source\sim\simBase.h" />
@@ -996,76 +969,6 @@
     <ClInclude Include="..\..\source\string\stringUnit.h" />
     <ClInclude Include="..\..\source\string\unicode.h" />
     <ClInclude Include="..\..\source\torqueConfig.h" />
-    <ClInclude Include="..\..\source\web\DownloadManager.h" />
-    <ClInclude Include="..\..\source\web\DownloadManagerEvents.h" />
-    <ClInclude Include="..\..\source\web\DownloadManager_ScriptBinding.h" />
-    <ClInclude Include="..\..\source\web\HttpManager.h" />
-    <ClInclude Include="..\..\source\web\HttpManagerEvents.h" />
-    <ClInclude Include="..\..\source\web\HttpManager_ScriptBinding.h" />
-    <ClInclude Include="..\..\source\web\IDownloadProvider.h" />
-    <ClInclude Include="..\..\source\web\IHttpCallback.h" />
-    <ClInclude Include="..\..\source\web\IHttpServicesProvider.h" />
-    <ClInclude Include="..\..\source\web\UserManager.h" />
-    <ClInclude Include="..\..\source\web\UserManager_ScriptBinding.h" />
-    <CustomBuild Include="..\..\source\qt\QtHttpRequestHandler.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtHttpRequestHandler.h" -o "$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtHttpRequestHandler.h" -o "$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtHttpRequestHandler.h" -o "$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mocing QtHttpRequestHandler</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mocing QtHttpRequestHandler</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Mocing QtHttpRequestHandler</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)../../source/qt/moc_QtHttpRequestHandler.cc</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtCookieJar.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtCookieJar.h" -o "$(ProjectDir)../../source/qt/moc_QtCookieJar.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtCookieJar.h" -o "$(ProjectDir)../../source/qt/moc_QtCookieJar.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtCookieJar.h" -o "$(ProjectDir)../../source/qt/moc_QtCookieJar.cc"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mocing QtNetworkManager</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Mocing QtNetworkManager</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mocing QtNetworkManager</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)../../source/qt/moc_QtCookieJar.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)../../source/qt/moc_QtCookieJar.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">$(ProjectDir)../../source/qt/moc_QtCookieJar.cc</Outputs>
-    </CustomBuild>
-    <ClInclude Include="..\..\source\qt\QtManager_ScriptBinding.h" />
-    <CustomBuild Include="..\..\source\qt\QtNetworkManager.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtNetworkManager.h" -o "$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtNetworkManager.h" -o "$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtNetworkManager.h" -o "$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mocing QtNetworkManager</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mocing QtNetworkManager</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Mocing QtNetworkManager</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)../../source/qt/moc_QtNetworkManager.cc</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\source\qt\QtFileDownloader.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtFileDownloader.h" -o "$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtFileDownloader.h" -o "$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/QtFileDownloader.h" -o "$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mocing QtFileDownloader</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Mocing QtFileDownloader</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mocing QtFileDownloader</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">$(ProjectDir)../../source/qt/moc_QtFileDownloader.cc</Outputs>
-    </CustomBuild>
-    <ClInclude Include="..\..\source\qt\QtManager.h" />
-    <ClInclude Include="..\..\source\qt\QtThread.h" />
-    <CustomBuild Include="..\..\source\qt\WebRender.h">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/WebRender.h" -o "$(ProjectDir)../../source/qt/moc_WebRender.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/WebRender.h" -o "$(ProjectDir)../../source/qt/moc_WebRender.cc"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">"$(ProjectDir)../../lib/Qt/bin/Win32/moc.exe" "$(ProjectDir)../../source/qt/WebRender.h" -o "$(ProjectDir)../../source/qt/moc_WebRender.cc"</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mocing WebRender</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mocing WebRender</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">Mocing WebRender</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)../../source/qt/moc_WebRender.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)../../source/qt/moc_WebRender.cc</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">$(ProjectDir)../../source/qt/moc_WebRender.cc</Outputs>
-    </CustomBuild>
-    <ClInclude Include="..\..\source\qt\WebRenderEvents.h" />
     <ClInclude Include="..\..\source\audio\audio.h" />
     <ClInclude Include="..\..\source\audio\audioBuffer.h" />
     <ClInclude Include="..\..\source\audio\audioDataBlock.h" />
