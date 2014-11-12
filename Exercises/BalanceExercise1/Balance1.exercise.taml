@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{BalanceExercise1}"
+	VersionId="1"
+	Description="Balance Level One"
+	Purchased="1"
+	Synchronized="1"
+	Dependencies="{PhysicsLauncher}=1"
+	Type="Exercise"
+	Genre="Physics"
+	Icon="BalanceIcon"
+	Creator="GGInteractive"
+	/>
