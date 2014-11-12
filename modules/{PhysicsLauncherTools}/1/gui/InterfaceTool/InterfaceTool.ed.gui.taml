@@ -5353,7 +5353,7 @@
                     Visible="1"
                     Active="1"
                     hovertime="1000"
-                    text="CreditsImageImageMap"
+                    text="StoryImageImageMap"
                     maxLength="1024"
                     historySize="0"
                     password="0"

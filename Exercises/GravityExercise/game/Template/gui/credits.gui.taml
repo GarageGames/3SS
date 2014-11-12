@@ -43,7 +43,7 @@
         Active="0"
         tooltipWidth="250"
         hovertime="1000"
-        Image="@asset={PhysicsLauncherAssets}:CreditsImageImageMap" />
+        Image="@asset={PhysicsLauncherAssets}:StoryImageImageMap" />
     <GuiAutoScrollCtrl
         canSaveDynamicFields="0"
         isContainer="1"
