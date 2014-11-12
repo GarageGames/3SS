@@ -597,17 +597,6 @@ static void processKeyMessage(UINT message, WPARAM wParam, LPARAM lParam)
 
    // Store the current modifier keys
    Input::setModifierKeys(modifierKeys);
-#ifdef LOG_INPUT
-   char keyName[25];
-   GetKeyNameText( lParam, keyName, 24 );
-   if ( event.action == SI_MAKE )
-      Input::log( "EVENT (Win): %s key pressed (Repeat count: %d). MODS:%c%c%c\n", keyName, repeatCount,
-      ( modKey & SI_SHIFT ? 'S' : '.' ),
-      ( modKey & SI_CTRL ? 'C' : '.' ),
-      ( modKey & SI_ALT ? 'A' : '.' ) );
-   else
-      Input::log( "EVENT (Win): %s key released.\n", keyName );
-#endif
 
    Game->postEvent(event);
 }
@@ -722,12 +711,6 @@ static void mouseButtonEvent(S32 action, S32 objInst)
    event.ascii = 0;
    event.fValue = action == SI_MAKE ? 1.0f : 0.0f;
 
-#ifdef LOG_INPUT
-   if ( action == SI_MAKE )
-      Input::log( "EVENT (Win): mouse button%d pressed. MODS:%c%c%c\n", buttonId, ( modifierKeys & SI_SHIFT ? 'S' : '.' ), ( modifierKeys & SI_CTRL ? 'C' : '.' ), ( modifierKeys & SI_ALT ? 'A' : '.' ) );
-   else
-      Input::log( "EVENT (Win): mouse button%d released.\n", buttonId );
-#endif
    Game->postEvent(event);
 }
 
@@ -750,10 +733,6 @@ static void mouseWheelEvent( S32 delta )
       event.modifier = modifierKeys;
       event.ascii = 0;
       event.fValue = (F32)delta;
-
-#ifdef LOG_INPUT
-      Input::log( "EVENT (Win): mouse wheel moved. delta = %d\n", delta );
-#endif
 
       Game->postEvent( event );
    }
@@ -1152,11 +1131,6 @@ case WM_MOUSEMOVE:
                      event.yPos = yPos;  // vertical position of cursor
       event.modifier = modifierKeys;
 
-#ifdef LOG_INPUT
-#ifdef LOG_MOUSEMOVE
-      Input::log( "EVENT (Win): mouse move to (%d, %d).\n", event.xPos, event.yPos );
-#endif
-#endif
       Game->postEvent(event);
    }
    break;
