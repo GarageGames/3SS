@@ -1,1 +1,0 @@
-user animations directory

@@ -7,6 +7,6 @@
 	Dependencies="{PhysicsLauncher}=1"
 	Type="Exercise"
 	Genre="Physics"
-	Icon="BalanceIcon"
+	Icon="BalanceExercise1Icon"
 	Creator="GGInteractive"
 	/>
