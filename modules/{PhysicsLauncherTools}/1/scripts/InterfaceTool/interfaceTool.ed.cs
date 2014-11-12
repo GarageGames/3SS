@@ -2614,7 +2614,7 @@ function InterfaceToolTabBook::onTabSelected(%this, %data)
                 InterfaceTool.helpManager.openHelpSet("interfaceToolPauseHelp");
                 InterfaceTool.helpManager.start();
 
-            case "Credits  ":
+            case "Story  ":
                 InterfaceTool.selectedPage = 6;
                 InterfaceTool.initCreditsTab();
                 InterfaceTool.selectedTab = "It_CreditsPaneContainer";

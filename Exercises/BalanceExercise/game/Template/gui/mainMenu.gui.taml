@@ -108,7 +108,7 @@
         groupNum="-1"
         buttonType="PushButton"
         useMouseEvents="0"
-        NormalImage="@asset={PhysicsLauncherAssets}:CreditsBtnUpImageMap"
-        HoverImage="@asset={PhysicsLauncherAssets}:CreditsBtnHoverImageMap"
-        DownImage="@asset={PhysicsLauncherAssets}:CreditsBtnDownImageMap" />
+        NormalImage="@asset={PhysicsLauncherAssets}:StoryBtnUpImageMap"
+        HoverImage="@asset={PhysicsLauncherAssets}:StoryBtnHoverImageMap"
+        DownImage="@asset={PhysicsLauncherAssets}:StoryBtnDownImageMap" />
 </GuiControl>

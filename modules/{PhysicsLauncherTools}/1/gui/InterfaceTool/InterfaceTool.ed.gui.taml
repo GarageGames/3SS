@@ -549,7 +549,7 @@
                         Visible="1"
                         Active="1"
                         hovertime="1000"
-                        text="CreditsBtnUpImageMap"
+                        text="StoryBtnUpImageMap"
                         maxLength="1024"
                         historySize="0"
                         password="0"
