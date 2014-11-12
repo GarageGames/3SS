@@ -11,6 +11,9 @@ function AssetLibrary::open(%this, %tab, %tagFilter, %lockToTag, %cellSpritesOnl
     %this.helpManager.start();
 
     activatePackage(AssetLibraryPackage);
+    
+    // Make sure the filter box is clear.
+    ASSearchBox.setText("");
 
     cleanTemporaryAssets();
 
@@ -55,7 +58,7 @@ function AssetLibrary::open(%this, %tab, %tagFilter, %lockToTag, %cellSpritesOnl
         ASOkButton.Visible = 1;
 
         ASCancelButton.Visible = 1;
-    }
+    }    
    
     // Clear any other tools from the view
     EditorShellGui.clearViews();

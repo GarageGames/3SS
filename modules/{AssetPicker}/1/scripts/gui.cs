@@ -7,6 +7,9 @@ function AssetPicker::open(%this, %assetType, %tagFilter, %category, %requesting
 {
     activatePackage(AssetPickerPackage);
     
+    // Clear the filter box.
+    APSearchBox.setText("");
+    
     %this.category = %category;
     %this.assetType = %assetType;
     %this.tagFilter = %tagFilter;
@@ -18,6 +21,7 @@ function AssetPicker::open(%this, %assetType, %tagFilter, %category, %requesting
     
     APTagDropdown.refresh(true, "");
     %this.updateGui();
+    
 }
 
 function AssetPicker::close(%this)
