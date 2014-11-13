@@ -810,6 +810,8 @@ function LevelBuilderToolPresenter::refreshWorldList(%this)
 /// </summary>
 function LevelBuilderToolPresenter::onRightViewWake(%this)
 {
+    %worldObjectSet = $PrefabSet.findObjectByInternalName("WorldObjectSet");
+    
     if (!%this.RightViewInitialized)
         %this.initializeRightView();
         
@@ -827,7 +829,7 @@ function LevelBuilderToolPresenter::onRightViewWake(%this)
     
     %this.RightView.clearObjectList();
 
-    for (%i = 0; %i < WorldObjectSet.getCount(); %i++)
+    for (%i = 0; %i < %worldObjectSet.getCount(); %i++)
     {
         %container = new GuiControl()
         {
@@ -849,7 +851,7 @@ function LevelBuilderToolPresenter::onRightViewWake(%this)
             Profile = "GuiTransparentProfile";
         };
         
-        %object = WorldObjectSet.getObject(%i);
+        %object = %worldObjectSet.getObject(%i);
 
         %sceneObjectControl.setup(%object);
         
