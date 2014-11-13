@@ -228,7 +228,7 @@ static void _OnMouseMovedDragged(EventRef theEvent, bool drag, U32 modifiers)
       event.action     = SI_MOVE;
 
       // get the deltas
-      CGMouseDelta mdx, mdy;
+      int mdx, mdy;
       CGGetLastMouseDelta(&mdx, &mdy);
       
       // deliver the x and y events separately. 
