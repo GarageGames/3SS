@@ -568,6 +568,24 @@ ConsoleFunction(pathCopy, bool, 3, 4, "pathCopy(fromFile, toFile [, nooverwrite 
    return Platform::pathCopy( qualifiedFromFile, qualifiedToFile, nooverwrite );
 }
 
+ConsoleFunction(fileRename, bool, 3, 3, "fileRename(fromFile, toFile)")
+{
+    static char fromFile[1024];
+    static char toFile[1024];
+    
+    static char qualifiedFromFile[1024];
+    static char qualifiedToFile[1024];
+    
+    Con::expandPath( fromFile, sizeof( fromFile ), argv[1] );
+    Con::expandPath( toFile, sizeof( toFile ), argv[2] );
+    
+    Platform::makeFullPathName(fromFile, qualifiedFromFile, sizeof(qualifiedFromFile));
+    Platform::makeFullPathName(toFile, qualifiedToFile, sizeof(qualifiedToFile));
+
+    
+    return Platform::fileRename(qualifiedFromFile, qualifiedToFile);
+}
+
 ConsoleFunction(getWorkingDirectory, const char *, 1, 1, "alias to getCurrentDirectory()")
 {
    return Platform::getCurrentDirectory();
