@@ -121,7 +121,7 @@ function WorldTool::load(%this)
     %this.refresh();
 
     // Select the world and level
-    %this.WorldListContainer.setSelected(%this.worldIndex);
+    %this.WorldListContainer.setSelected(%this.worldIndex+1);
     $Wt_ToolInitialized = true;
     %this.LevelListContainer.setSelected(%levelIndex);
     %this.LevelListContainer.scrollToButton(%levelIndex);
