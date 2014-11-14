@@ -107,7 +107,7 @@
             maxLength="1024" />
         <GuiTextEditCtrl
             Name="NPNameEdit"
-      			class="AssetTextEdit"
+      		class="AssetTextEdit"
             canSaveDynamicFields="0"
             isContainer="0"
             Profile="GuiTextEditProfile"
@@ -129,7 +129,8 @@
             tabComplete="0"
             sinkAllKeyEvents="0"
             passwordMask="*"
-            truncate="0" />
+            truncate="0" 
+            dependentControl="NPCreateButton"/>
         <GuiTextCtrl
             Name="NPCreateLabel"
             canSaveDynamicFields="0"
