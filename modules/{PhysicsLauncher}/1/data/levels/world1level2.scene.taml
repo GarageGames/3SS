@@ -63,7 +63,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="0"
+                horizontalScrollSpeed="0.5"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -81,7 +81,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="2.5"
+                horizontalScrollSpeed="0.75"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -99,7 +99,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="10"
+                horizontalScrollSpeed="0.9"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -117,7 +117,7 @@
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="20"
+                horizontalScrollSpeed="1.1"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
