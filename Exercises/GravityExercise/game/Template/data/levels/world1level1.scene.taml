@@ -59,12 +59,13 @@
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
+        UpdateCallback="1"
         ImageMap="@asset={PhysicsLauncherAssets}:SkyImageMap"
         Frame="0">
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="0"
+                horizontalScrollSpeed="0.5"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -78,12 +79,13 @@
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
+        UpdateCallback="1"
         ImageMap="@asset={PhysicsLauncherAssets}:Background2ImageMap"
         Frame="0">
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="0.5"
+                horizontalScrollSpeed="0.75"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -97,12 +99,13 @@
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
+        UpdateCallback="1"
         ImageMap="@asset={PhysicsLauncherAssets}:Background1ImageMap"
         Frame="0">
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="1"
+                horizontalScrollSpeed="0.9"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
@@ -116,12 +119,13 @@
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
+        UpdateCallback="1"
         ImageMap="@asset={PhysicsLauncherAssets}:ForegroundImageMap"
         Frame="0">
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="2"
+                horizontalScrollSpeed="1.1"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>

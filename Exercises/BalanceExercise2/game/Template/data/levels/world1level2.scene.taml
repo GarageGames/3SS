@@ -52,76 +52,72 @@
     Tutorial1="Box1Tutorial">
     <Scroller
         Name="Sky"
+        imageMap="@asset={PhysicsLauncherAssets}:SkyImageMap"
         SceneLayer="31"
-        size="32 16"
-        FixedAngle="1"
-        BodyType="static"
+        size="32.000 16.000"
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
-        ImageMap="@asset={PhysicsLauncherAssets}:SkyImageMap"
-        Frame="0">
+        UpdateCallback="1"
+        >
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="0"
+                horizontalScrollSpeed="0.5"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
     </Scroller>
     <Scroller
         Name="Background2"
+        imageMap="@asset={PhysicsLauncherAssets}:Background2ImageMap"
         SceneLayer="30"
-        size="32 16"
-        FixedAngle="1"
-        BodyType="static"
+        size="32.000 16.000"
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
-        ImageMap="@asset={PhysicsLauncherAssets}:Background2ImageMap"
-        Frame="0">
+        UpdateCallback="1"
+        >
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="2.5"
+                horizontalScrollSpeed="0.75"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
     </Scroller>
     <Scroller
         Name="Background1"
+        imageMap="@asset={PhysicsLauncherAssets}:Background1ImageMap"
         SceneLayer="29"
-        size="32 16"
-        FixedAngle="1"
-        BodyType="static"
+        size="32.000 16.000"
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
-        ImageMap="@asset={PhysicsLauncherAssets}:Background1ImageMap"
-        Frame="0">
+        UpdateCallback="1"
+        >
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="10"
+                horizontalScrollSpeed="0.9"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
     </Scroller>
     <Scroller
         Name="Foreground"
+        imageMap="@asset={PhysicsLauncherAssets}:ForegroundImageMap"
         SceneLayer="10"
-        size="32 16"
-        FixedAngle="1"
-        BodyType="static"
+        size="32.000 16.000"
         Awake="0"
         CollisionSuppress="1"
         GravityScale="0"
-        ImageMap="@asset={PhysicsLauncherAssets}:ForegroundImageMap"
-        Frame="0">
+        UpdateCallback="1"
+        >
         <Scroller.Behaviors>
             <ParallaxObjectBehavior
                 Id="1"
-                horizontalScrollSpeed="20"
+                horizontalScrollSpeed="1.1"
                 verticalScrollSpeed="0"
                 tileable="1" />
         </Scroller.Behaviors>
