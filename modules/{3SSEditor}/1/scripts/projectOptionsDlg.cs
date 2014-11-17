@@ -39,6 +39,46 @@ function ProjectOptionsGui::updateProject(%this)
         %fileLocation = findProjectFileByName(%this.originalName);
         
         TamlWrite(%project, %fileLocation);
+	
+        %gameLocation = filePath(%fileLocation);
+
+        if($platform $= "windows")
+        {
+            %originalBinary = %gameLocation @ "/" @ %this.originalName @ ".exe";
+            %newBinary = %gameLocation @ "/" @ %project.projectName @ ".exe";
+            
+            if(!isFile(%originalBinary))
+	    {
+                %originalBinary = expandPath("^tool/templates/projectFiles/");
+           
+                if (isDebugBuild())
+                    %originalBinary = %originalBinary @ "/" @ "3StepStudioGame_Debug" @ ".exe";
+                else
+                    %originalBinary = %originalBinary @ "/" @ "3StepStudioGame" @ ".exe";
+            
+                pathCopy(%originalBinary, %newBinary, false);            
+            }
+            else
+            {
+                fileRename(%originalBinary, %newBinary);
+            }
+        }
+        else
+        {            
+            %srcpath = expandPath("^tool/templates/projectFiles/");
+            %appname = %gameLocation @ "/" @ %project.projectName @ ".app";
+            %originalBinary = %gameLocation @ "/" @ %this.originalName @ ".app";
+
+            if (isDebugBuild())
+                %executeable = "3StepStudioGame_Debug.app";
+            else
+                %executeable = "3StepStudioGame.app";
+    
+            echo("Source path: " @ %srcpath @ %executeable);
+            echo("New path: " @ %appname);
+            pathCopy(%srcpath @ %executeable, %appname, false);
+            directoryDelete(%originalBinary);
+        }
     }
     
     if (isObject(%this.invokingGui) && %this.invokingGui.isMethod("refresh"))
@@ -66,7 +106,7 @@ function ProjectOptionsGui::duplicateProject(%this)
         %fileLocation = findProjectFileByName(%duplicateName);
     }
     
-    createNewProject(%duplicateName, %sourceModuleName, false);
+    createNewProject(%duplicateName, filePath(findProjectFileByName(%originalName)) @ "/", %sourceModuleName, true, false, %this.project.Type);
 
     if (isObject(%this.invokingGui) && %this.invokingGui.isMethod("refresh"))
             %this.invokingGui.refresh();
@@ -88,7 +128,7 @@ function ProjectOptionsGui::deleteProject(%this)
     
     if (%fileLocation !$= "")
     {
-        %localDataDirectory = $UserGamesLocation @ "/My Games/" @ $Game::CompanyName @ "/" @ %module @ "/" @ %this.originalName;
+        %localDataDirectory = $UserGamesLocation @ "/Save Files/" @ $Game::CompanyName @ "/" @ %module @ "/" @ %this.originalName;
         %directory = filePath(%fileLocation);
         
         directoryDelete(%directory);

@@ -62,6 +62,7 @@ function queryCreatedProjects()
     for (%file = findFirstFile(%projectFileSpec); %file !$= ""; %file = findNextFile(%projectFileSpec))
     {
         %project = TamlRead(%file);
+        %project.location = %file;
         CreatedProjectSet.add(%project);
     }
     
@@ -237,11 +238,8 @@ function AG_GamesList::Refresh(%this)
 
         %templateModule = ModuleDatabase.getDefinitionFromId(%moduleId);
         
-        if (%templateModule.description !$= %this.filter && %this.filter !$= "All Games")
+        if ((%templateModule.description !$= %this.filter) && (%this.filter !$= "All Games"))
             continue;
-            
-        %projectLocation = $UserGamesLocation @ "/" @ %gameProject.sourceModule;
-        %project = %projectLocation @ "/" @ %projectName @ %projectFile;
             
         // Get the icon for this template
         %icon = %templateModule.Icon;
@@ -266,10 +264,10 @@ function AG_GamesList::Refresh(%this)
             InactiveImage = %inactiveIcon;
             DownImage = %downIcon;
             toolTipProfile="GuiToolTipProfile";
-                toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
+            toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
         };
 
-        %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %project @ "\");";
+        %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %gameProject.location @ "\");";
      
         %gameName = new GuiTextCtrl()
         {

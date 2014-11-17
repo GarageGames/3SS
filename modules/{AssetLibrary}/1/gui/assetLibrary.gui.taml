@@ -259,6 +259,7 @@
             text="Search"
             maxLength="1024" />
         <GuiTextEditCtrl
+	    Name="ASSearchBox"
             canSaveDynamicFields="0"
             isContainer="0"
             Profile="GuiTextEditProfile"

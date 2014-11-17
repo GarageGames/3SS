@@ -14,5 +14,5 @@
         Text="The graphics you use for the Main Menu page will set the tone for your overall game theme." />
     <ScriptObject
         Name="Tip4"
-        Text="Unchecking the Include Credits checkbox will make the Credits tab unavailable." />
+        Text="Unchecking the Include Story checkbox will make the Story tab unavailable." />
 </SimSet>

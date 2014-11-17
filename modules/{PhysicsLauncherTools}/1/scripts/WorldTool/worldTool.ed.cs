@@ -31,10 +31,8 @@ function WorldTool::onWake(%this)
 /// </summary>
 function WorldTool::getWorldData(%this)
 {
-    if (isFile($PhysicsLauncher::WorldListFile))
-        %this.currentWorldData = TamlRead($PhysicsLauncher::WorldListFile);
-    else
-        %this.currentWorldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    %this.currentWorldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    loadGameData(%this.currentWorldData);
 
     %this.worldCount = %this.currentWorldData.getCount();
     
@@ -183,7 +181,9 @@ function WorldTool::saveData(%this)
         TamlWrite(%this.currentWorldData, "^PhysicsLauncherTemplate/managed/worldList.taml");
 
         if ( isFile( $PhysicsLauncher::WorldListFile ) )
+        {
             TamlWrite(%this.currentWorldData, $PhysicsLauncher::WorldListFile);
+        }
     }
     // If there is no loaded level, don't save it....
     if (%this.lastLevelName !$= "")
@@ -298,6 +298,7 @@ function WorldTool::selectWorld(%this, %data)
     else
     {
         %this.clearLevelData();
+        %this.lastLevelName = "";
         if ( isObject( %this.selectedLevelBtn ) )
             %this.selectedLevelBtn.delete();
 
@@ -872,6 +873,7 @@ function WorldTool::finalizeWorldAdd(%this, %data)
     %this.refreshWorldList();
     %this.WorldListContainer.scrollToButton(%index);
     %this.selectWorld(%index);
+    %this.lastLevelName = "";
 }
 
 /// <summary>

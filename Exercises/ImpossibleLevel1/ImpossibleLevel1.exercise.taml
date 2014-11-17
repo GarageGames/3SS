@@ -1,0 +1,12 @@
+<ModuleDefinition
+	ModuleId="{ImpossibleLevel1}"
+	VersionId="1"
+	Description="Impossible Level 1"
+	Purchased="1"
+	Synchronized="1"
+	Dependencies="{PhysicsLauncher}=1"
+	Type="Exercise"
+	Genre="Physics"
+	Icon="ImpossibleLevel1Icon"
+	Creator="GGInteractive"
+	/>

@@ -562,9 +562,13 @@ function PhysicsLauncherTools::renameCurrentLevelFile(%oldFileName, %newFileName
 function PhysicsLauncherTools::getWorldData()
 {
     if (isFile($PhysicsLauncher::WorldListFile))
+    {
         $PhysicsLauncherTools::currentWorldData = TamlRead($PhysicsLauncher::WorldListFile);
+    }
     else
+    {
         $PhysicsLauncherTools::currentWorldData = TamlRead("^{UserGame}/managed/worldList.taml");
+    }
 
     $PhysicsLauncherTools::worldCount = $PhysicsLauncherTools::currentWorldData.getCount();
     

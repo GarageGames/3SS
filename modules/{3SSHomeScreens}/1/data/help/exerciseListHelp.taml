@@ -1,0 +1,6 @@
+<SimSet
+    Name="ExerciseListTips">
+    <ScriptObject
+        Name="Tip0"
+        Text="This page displays the exercises that you can work with to create a new game. To access your previously saved exercises go to the My Games screen." />
+</SimSet>

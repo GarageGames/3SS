@@ -9201,15 +9201,9 @@
 					"\"$(SRCROOT)/../../lib/Qt/lib/Xcode/Dylibs\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudio_Debug;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = "";
 			};
@@ -9254,15 +9248,9 @@
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = linkmap.txt;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudioGame_Debug;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -9399,15 +9387,9 @@
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = linkmap.txt;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudioGame;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -9570,15 +9552,9 @@
 					"\"$(SRCROOT)/../../lib/Qt/lib/Xcode/Dylibs\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudio;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = "";
 			};
@@ -9621,15 +9597,9 @@
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = linkmap.txt;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudioGame;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Shipping;
@@ -9808,15 +9778,9 @@
 					"\"$(SRCROOT)/../../lib/Qt/lib/Xcode/Dylibs\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_CFLAGS = (
-					"-force_cpusubtype_ALL",
-					"-falign-functions=16",
-					"-falign-loops=16",
-					"-falign-labels=16",
-					"-falign-jumps=16",
-					"-malign-natural",
-				);
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = 3StepStudio;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = "";
 			};
