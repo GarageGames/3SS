@@ -1325,7 +1325,7 @@ HWND CreateOpenGLWindow( U32 width, U32 height, bool fullScreen, bool allowSizin
    else
 #ifdef TORQUE_TOOLS
       if (!allowSizing)
-         windowStyle |= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX);
+		  windowStyle |= (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_POPUP);
       else
          windowStyle |= ( WS_OVERLAPPEDWINDOW );
 #else
