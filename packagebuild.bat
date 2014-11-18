@@ -13,4 +13,8 @@ del /s BuildPackage\Exercises\*.cs
 del /s BuildPackage\Exercises\*main.cs.dso
 XCOPY Exercises\*main.cs "BuildPackage/Exercises" /E
 del /s BuildPackage\Exercises\*.exe
+del /s BuildPackage\Exercises\*.torsion
 del /s BuildPackage\Templates\projectFiles\main.cs.dso
+del /s BuildPackage\Templates\projectFiles\cleandso.bat
+del /s BuildPackage\Templates\projectFiles\Game.torsion
+
