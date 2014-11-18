@@ -16,6 +16,23 @@ function Hs_HomeButton::onClick(%this)
     
     // Push the template selector view
     EditorShellGui.addView(TemplateListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
+}
+
+/// <summary>
+/// Switches to the Exercises Page
+/// </summary>
+function Hs_ExercisesButton::onClick(%this)
+{
+    ResetCommonToolButtons();
+    %this.setStateOn(true);
+    
+    // Clear all the views from the shell
+    EditorShellGui.clearViews();
+    
+    // Push the exercises view
+    EditorShellGui.addView(ExerciseListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
 }
 
 /// <summary>
@@ -32,5 +49,6 @@ function Hs_MyGamesButton::onClick(%this)
 function ResetCommonToolButtons()
 {
     Hs_HomeButton.setStateOn(false);
+    Hs_ExercisesButton.setStateOn(false);
     Hs_MyGamesButton.setStateOn(false);
 }

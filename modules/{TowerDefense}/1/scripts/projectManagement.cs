@@ -39,7 +39,7 @@ function TowerDefense::initializeProject()
 {
     //_loadGameConfigurationData();
     
-    $TowerDefense::UserHomeDirectory = getUserHomeDirectory();
+    $TowerDefense::UserHomeDirectory = $UserGamesLocation;
     
     //---------------------------------------------------------------
     // Recursive behavior loading

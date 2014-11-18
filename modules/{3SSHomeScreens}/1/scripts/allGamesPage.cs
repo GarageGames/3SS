@@ -13,6 +13,7 @@ function showAllGames()
     
     // Push the template selector view
     EditorShellGui.addView(AllGamesGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
     
     if($templateCount <= 0)
         parseTemplates();
@@ -50,7 +51,7 @@ function queryCreatedProjects()
         clearProjectSet(); //CreatedProjectSet.clear();
     
     // All projects should be created in this specific location (user app folder), so set the path
-    %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects";
+    %projectLocation = $UserGamesLocation;
 
     %projectFile = "/project.tssproj";
 
@@ -61,6 +62,7 @@ function queryCreatedProjects()
     for (%file = findFirstFile(%projectFileSpec); %file !$= ""; %file = findNextFile(%projectFileSpec))
     {
         %project = TamlRead(%file);
+        %project.location = %file;
         CreatedProjectSet.add(%project);
     }
     
@@ -72,7 +74,7 @@ function findProjectFileByName(%name)
     %projectFound = false;
     
     // All projects should be created in this specific location (user app folder), so set the path
-    %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects";
+    %projectLocation = $UserGamesLocation;
 
     %projectFile = "/project.tssproj";
 
@@ -178,6 +180,7 @@ function AG_BackButton::onClick(%this)
 {
     EditorShellGui.clearViews();
     EditorShellGui.addView(TemplateListGui, "");
+    EditorShellGui.addView(GamesLocationGui, "");
     if ( isObject(AG_GamesList.helpManager) )
     {
         AG_GamesList.helpManager.stop();
@@ -235,11 +238,8 @@ function AG_GamesList::Refresh(%this)
 
         %templateModule = ModuleDatabase.getDefinitionFromId(%moduleId);
         
-        if (%templateModule.description !$= %this.filter && %this.filter !$= "All Games")
+        if ((%templateModule.description !$= %this.filter) && (%this.filter !$= "All Games"))
             continue;
-            
-        %projectLocation = getUserHomeDirectory() @ "/3StepStudioProjects" @ "/" @ %gameProject.sourceModule;
-        %project = %projectLocation @ "/" @ %projectName @ %projectFile;
             
         // Get the icon for this template
         %icon = %templateModule.Icon;
@@ -264,10 +264,10 @@ function AG_GamesList::Refresh(%this)
             InactiveImage = %inactiveIcon;
             DownImage = %downIcon;
             toolTipProfile="GuiToolTipProfile";
-                toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
+            toolTip="Select to open " @ %projectName @ " in 3 Step Studio.";
         };
 
-        %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %project @ "\");";
+        %gameButton.Command = "TemplateSelector::OpenProject(\"" @ %gameProject.location @ "\");";
      
         %gameName = new GuiTextCtrl()
         {

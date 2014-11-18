@@ -37,6 +37,31 @@ function parseTemplates()
         $templateCount++;        
     }
 }
+
+function parseExercises()
+{
+    $exerciseCount = 0;
+    
+    // Scan for Exercises
+    
+    // All Exercises should be created in this specific location, so set the path
+    %exerciseLocation = $ExercisesLocation;
+
+    %exerciseFileSpec = %exerciseLocation @ "/*.exercise.taml";
+    
+    addResPath(%exerciseLocation);
+    
+    for (%file = findFirstFile(%exerciseFileSpec); %file !$= ""; %file = findNextFile(%exerciseFileSpec))
+    {
+        %exercise = TamlRead(%file);
+        $exerciseList[$exerciseCount] = %exercise;
+                    
+        $exerciseCount++;
+    }
+    
+    removeResPath(%exerciseLocation);
+}
+
 function synchronizeGame()
 {
     %gameLocation = expandPath("^project");
@@ -68,12 +93,24 @@ function synchronizeGame()
 function newProject(%name)
 {
     if ($templateCount <= 0)
+    {
         parseTemplates();
+    }
     
     showNewProjectDialog(%name);
 }
 
-function createNewProject(%name, %template, %openImmediately)
+function newExercise(%name)
+{
+    if ($exerciseCount <= 0)
+    {
+        parseExercises();
+    }
+    
+    showNewExerciseDialog(%name);
+}
+
+function createNewProject(%name, %sourceFilesLocation, %template, %duplicate, %openImmmediately, %type)
 {
     if (!isValidFileName(%name))
         return;
@@ -83,7 +120,7 @@ function createNewProject(%name, %template, %openImmediately)
 
     // The location of the new game project will be in the user's home directory
     // under the 3StepStudioProjects folder
-    %gameLocation = expandPath(getUserHomeDirectory() @ "/3StepStudioProjects/" @ %template @ "/" @ %directory @ "/");
+    %gameLocation = expandPath($UserGamesLocation @ "/" @ %template @ "/" @ %directory @ "/");
    
     if (isFile(%gameLocation @ "project.tssproj"))
     {
@@ -95,28 +132,28 @@ function createNewProject(%name, %template, %openImmediately)
     Canvas.popDialog(NewProjectDlg);
 
     // Game directory that will contain the template module
-    pathCopy($ProjectFilesLocation @ "game", %gameLocation @ "game", false);
+    pathCopy(%sourceFilesLocation @ "game", %gameLocation @ "game", false);
     
     // Modules directory that will contain module dependencies
-    pathCopy($ProjectFilesLocation @ "modules", %gameLocation @ "modules", false);
+    pathCopy(%sourceFilesLocation @ "modules", %gameLocation @ "modules", false);
 
     // Main Script
-    pathCopy($ProjectFilesLocation @ "main.cs", %gameLocation @ "main.cs");
+    pathCopy(%sourceFilesLocation @ "main.cs", %gameLocation @ "main.cs");
     
     // T2D project
-    pathCopy($ProjectFilesLocation @ "project.tssproject", %gameLocation @ "project.tssproj");
+    pathCopy(%sourceFilesLocation @ "project.tssproject", %gameLocation @ "project.tssproj");
     
     // OpenAL DLL
-    pathCopy($ProjectFilesLocation @ "OpenAL32.dll", %gameLocation @ "OpenAL32.dll");
+    pathCopy(%sourceFilesLocation @ "OpenAL32.dll", %gameLocation @ "OpenAL32.dll");
     
     // OpenGL DLL
-    pathCopy($ProjectFilesLocation @ "opengl2d3d.dll", %gameLocation @ "opengl2d3d.dll");
+    pathCopy(%sourceFilesLocation @ "opengl2d3d.dll", %gameLocation @ "opengl2d3d.dll");
     
     // Torsion file
-    pathCopy($ProjectFilesLocation @ "Game.torsion", %gameLocation @ "Game.torsion");
+    pathCopy(%sourceFilesLocation @ "Game.torsion", %gameLocation @ "Game.torsion");
     
     // iOS loading screen
-    pathCopy($ProjectFilesLocation @ "Default.png", %gameLocation @ "Default.png");
+    pathCopy(%sourceFilesLocation @ "Default.png", %gameLocation @ "Default.png");
 
     // Set the new game's executables to match the name the user provided
     copyProjectGameBinaries(%gameLocation, %directory);
@@ -129,34 +166,37 @@ function createNewProject(%name, %template, %openImmediately)
     // Mutate the original module ID into something unique for the created game
     %mutatedID = "{UserGame}";
     
-    %sourceModule = ModuleDatabase.getDefinitionFromId(%moduleID, "Template");
-    
-    if (%sourceModule $= "")
+    if (!%duplicate)    
     {
-        error("!!! ERROR: Could not find template module for copying!!!");
-        return;        
-    }
-    
-    // Store the folder path of the module definition we are going to copy
-    %sourceModulePath = %sourceModule.ModulePath;
-    
-    // Store the file path of the module definition (.module)
-    %moduleFilePath = %sourceModule.ModuleFilePath;
+        %sourceModule = ModuleDatabase.getDefinitionFromId(%moduleID, "Template");
+        
+        if (%sourceModule $= "")
+        {
+            error("!!! ERROR: Could not find template module for copying!!!");
+            return;        
+        }
+        
+        // Store the folder path of the module definition we are going to copy
+        %sourceModulePath = %sourceModule.ModulePath;
+        
+        // Store the file path of the module definition (.module)
+        %moduleFilePath = %sourceModule.ModuleFilePath;
 
-    // Store the directory where the copied module will exist
-    %newModulePath = %gameLocation @ "/game/Template";
-    
-    // Store the new file path for copied template module. This should
-    // match the mutated ModuleId
-    %newModuleFilePath = %newModulePath @ "/" @ %mutatedID @ ".module.taml";
-    
-    ModuleDatabase.copyModule(%sourceModule, %mutatedID, %newModulePath, false);
-    
-    // If the module file did not copy or did not exist, error out
-    if (!isFile(%newModuleFilePath))
-    {
-        error("!!! Module definition not copied !!!");
-        return;
+        // Store the directory where the copied module will exist
+        %newModulePath = %gameLocation @ "/game/Template";
+        
+        // Store the new file path for copied template module. This should
+        // match the mutated ModuleId
+        %newModuleFilePath = %newModulePath @ "/" @ %mutatedID @ ".module.taml";
+        
+        ModuleDatabase.copyModule(%sourceModule, %mutatedID, %newModulePath, false);
+        
+        // If the module file did not copy or did not exist, error out
+        if (!isFile(%newModuleFilePath))
+        {
+            error("!!! Module definition not copied !!!");
+            return;
+        }
     }
     
     LBProjectObj.sourceModule = %moduleID;
@@ -170,11 +210,20 @@ function createNewProject(%name, %template, %openImmediately)
     %strippedTime = stripChars(%time, ":");
     LBProjectObj.lastModified = %date @ "." @ %strippedTime;
     
+    if (%type !$= "")
+    {
+        LBProjectObj.type = %type;
+    }
+    else
+    {
+        LBProjectObj.type = "TSSProject";
+    }
+    
     // Post Create Project
     Projects::GetEventManager().postEvent("_ProjectCreate", %projectFile);   
     
     // Post Open Event
-    if (! LBProjectObj.isActive() && %openImmediately)
+    if (!LBProjectObj.isActive() && %openImmmediately)
     {
         Projects::GetEventManager().postEvent("_ProjectOpen", %projectFile);
         $Game::ProductName = %name;

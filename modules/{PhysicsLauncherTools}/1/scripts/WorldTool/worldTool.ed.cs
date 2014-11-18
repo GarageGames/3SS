@@ -31,10 +31,8 @@ function WorldTool::onWake(%this)
 /// </summary>
 function WorldTool::getWorldData(%this)
 {
-    if (isFile($PhysicsLauncher::WorldListFile))
-        %this.currentWorldData = TamlRead($PhysicsLauncher::WorldListFile);
-    else
-        %this.currentWorldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    %this.currentWorldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    loadGameData(%this.currentWorldData);
 
     %this.worldCount = %this.currentWorldData.getCount();
     
@@ -122,18 +120,29 @@ function WorldTool::load(%this)
     %this.worldIndex = %worldIndex;
     %this.refresh();
 
-    // If the selected world is empty, select the next world.
-    while ( %this.currentWorlds[%this.worldIndex].WorldLevelCount < 1 )
-    {
-        %this.worldIndex++;
-        if ( %this.worldIndex > %this.currentWorldData.getCount() )
-            break;
-    }
-    %this.WorldListContainer.setSelected(%this.worldIndex);
+    // Select the world and level
+    if (%this.WorldListContainer.contentPane.getCount() > 2)
+      %this.WorldListContainer.setSelected(1);
+    else
+      %this.WorldListContainer.setSelected(%this.worldIndex);
+      
     $Wt_ToolInitialized = true;
-    %this.LevelListContainer.setSelected(%levelIndex);
-    %this.LevelListContainer.scrollToButton(%levelIndex);
-
+    
+    // The level list ends with the "Add Level" button so make sure we don't
+    // select that if there are no levels for this world.
+    %levelCount = %this.currentWorlds[%this.worldIndex].WorldLevelCount;
+    if(%levelCount > 0)
+    {
+        // There is at least one valid level for this world
+        %this.LevelListContainer.setSelected(%levelIndex);
+        %this.LevelListContainer.scrollToButton(%levelIndex);
+    }
+    else
+    {
+        // There are no levels for this world
+        %this.clearLevelData(false);
+    }
+    
     PhysicsLauncherTools::audioButtonInitialize(Wt_LevelMusicPlayBtn);
 }
 
@@ -189,7 +198,9 @@ function WorldTool::saveData(%this)
         TamlWrite(%this.currentWorldData, "^PhysicsLauncherTemplate/managed/worldList.taml");
 
         if ( isFile( $PhysicsLauncher::WorldListFile ) )
+        {
             TamlWrite(%this.currentWorldData, $PhysicsLauncher::WorldListFile);
+        }
     }
     // If there is no loaded level, don't save it....
     if (%this.lastLevelName !$= "")
@@ -304,6 +315,7 @@ function WorldTool::selectWorld(%this, %data)
     else
     {
         %this.clearLevelData();
+        %this.lastLevelName = "";
         if ( isObject( %this.selectedLevelBtn ) )
             %this.selectedLevelBtn.delete();
 
@@ -878,6 +890,7 @@ function WorldTool::finalizeWorldAdd(%this, %data)
     %this.refreshWorldList();
     %this.WorldListContainer.scrollToButton(%index);
     %this.selectWorld(%index);
+    %this.lastLevelName = "";
 }
 
 /// <summary>
@@ -1329,44 +1342,38 @@ function WorldTool::deleteLevel(%this, %index)
     %this.currentLevelList[%index] = "";
 
     // Clear out the empty slot and shrink list
-    %k = 0;
+    %newLevelCount = 0;
     for (%i = 0; %i < %this.currentWorlds[%this.worldIndex].WorldLevelCount; %i++)
     {
         %tempLevel = %this.currentLevelList[%i];
         if (%tempLevel !$= "")
         {
-            %levels[%k] = %tempLevel;
-            %highScores[%k] = %this.currentWorlds[%this.worldIndex].LevelHighScore[%i];
-            %buttonImage[%k] = %this.currentWorlds[%this.worldIndex].LevelImageList[%i];
-            %levelLocked[%k] = %this.currentWorlds[%this.worldIndex].LevelLocked[%i];
-            %levelLockedImage[%k] = %this.currentWorlds[%this.worldIndex].LevelLockedImage[%i];
-            %levelStars[%k] = %this.currentWorlds[%this.worldIndex].LevelStars[%i];
-            %k++;
-        }
-        else
-        {
-            %this.currentWorlds[%this.worldIndex].LevelImageList[%i] = "";
-            %this.currentWorlds[%this.worldIndex].LevelList[%i] = "";
-            %this.currentWorlds[%this.worldIndex].LevelHighScore[%i] = "";
-            %this.currentWorlds[%this.worldIndex].LevelLocked[%i] = "";
-            %this.currentWorlds[%this.worldIndex].LevelLockedImage[%i] = "";
-            %this.currentWorlds[%this.worldIndex].LevelStars[%i] = "";
+            // This is a level to keep so we'll store it
+            %levels[%newLevelCount] = %tempLevel;
+            %highScores[%newLevelCount] = %this.currentWorlds[%this.worldIndex].LevelHighScore[%i];
+            %buttonImage[%newLevelCount] = %this.currentWorlds[%this.worldIndex].LevelImageList[%i];
+            %levelLocked[%newLevelCount] = %this.currentWorlds[%this.worldIndex].LevelLocked[%i];
+            %levelLockedImage[%newLevelCount] = %this.currentWorlds[%this.worldIndex].LevelLockedImage[%i];
+            %levelStars[%newLevelCount] = %this.currentWorlds[%this.worldIndex].LevelStars[%i];
+
+            %newLevelCount++;
         }
     }
-    %this.currentLevelList[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelList[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelHighScore[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelImageList[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelLocked[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelLockedImage[%k] = "";
-    %this.currentWorlds[%this.worldIndex].LevelStars[%k] = "";
+    
+    %this.currentLevelList[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelList[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelHighScore[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelImageList[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelLocked[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelLockedImage[%newLevelCount] = "";
+    %this.currentWorlds[%this.worldIndex].LevelStars[%newLevelCount] = "";
 
-    %this.currentWorlds[%this.worldIndex].WorldLevelCount = %k;
+    %this.currentWorlds[%this.worldIndex].WorldLevelCount = %newLevelCount;
 
     // Update the world's level list
-    %levelCount = %this.currentWorlds[%this.worldIndex].WorldLevelCount;
-    for (%i = 0; %i < %levelCount; %i++)
+    for (%i = 0; %i < %newLevelCount; %i++)
     {
+        // Copy data from saved level that we'll be keeping
         %this.currentWorlds[%this.worldIndex].LevelList[%i] = %levels[%i];
         %this.currentWorlds[%this.worldIndex].LevelImageList[%i] = %buttonImage[%i];
         %this.currentWorlds[%this.worldIndex].LevelHighScore[%i] = %highScores[%i];
@@ -1376,30 +1383,45 @@ function WorldTool::deleteLevel(%this, %index)
         
         %this.currentLevelList[%i] = %levels[%i];
     }
-    %this.currentWorlds[%this.worldIndex].WorldLevelCount = %k;
 
+    // Save the new level list
     %levelFile = expandPath("^PhysicsLauncherTemplate/data/levels/" @ %levelName @ ".scene.taml");
     fileDelete(%levelFile);
     %this.saveData();
+    
+    // Rebuild the GUI level list.  This will also add the "Add Level" button at the bottom
+    // of the list.
     %this.refreshLevelList();
 
     if ( isObject ( %this.levelSelectBtnCtrl ) )
     {
         if (%this.LevelListContainer.scrollCtrl.isMember(%this.levelSelectBtnCtrl))
+        {
             %this.LevelListContainer.scrollCtrl.remove(%this.levelSelectBtnCtrl);
+        }
         %this.levelSelectBtnCtrl.delete();
     }
 
-    if (%k > 0 && %index > 0)
+    if (%newLevelCount > 0)
     {
-        %this.LevelListContainer.setSelected(%index - 1);
-        %this.LevelListContainer.scrollToButton(%index - 1);
+        // There is at least one level for this world
+        if (%index > 0)
+        {
+            %this.LevelListContainer.setSelected(%index - 1);
+            %this.LevelListContainer.scrollToButton(%index - 1);
+        }
+        else
+        {
+        %this.LevelListContainer.setSelected(0);
+        %this.LevelListContainer.scrollToButton(0);
+        }
     }
     else
     {
-        %this.LevelListContainer.setSelected(0);
-        %this.LevelListContainer.scrollToButton(0);
+        // There are no more levels for this world
+        %this.clearLevelData(false);
     }
+    
     PhysicsLauncherTools::getWorldData();
 }
 

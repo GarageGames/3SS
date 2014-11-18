@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="newExercise_inactive"
+    AssetInternal="1"
+    ImageFile="@assetFile=#newExercise_inactive.png" />

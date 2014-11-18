@@ -70,5 +70,5 @@ function checkSaveChanges( %documentName, %cancelOption )
    else
       %buttons = "SaveDontSave";
       
-   return MessageBox( "Torque Game Builder", %msg, %buttons, "Question" );   
+   return MessageBox( "3SS", %msg, %buttons, "Question" );   
 }

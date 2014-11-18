@@ -67,7 +67,7 @@ function SaveGui(%guiObject)
       $GuiDirty = false;
    }
    else
-      MessageBox("Torque Game Builder", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only.", "Ok", "Error" );
+      MessageBox("3SS", "There was an error writing to file '" @ %currentFile @ "'. The file may be read-only.", "Ok", "Error" );
    
 }
 

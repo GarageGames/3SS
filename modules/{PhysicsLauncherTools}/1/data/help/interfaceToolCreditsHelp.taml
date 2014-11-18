@@ -2,11 +2,11 @@
     Name="InterfaceToolCreditsHelp">
     <ScriptObject
         Name="Tip0"
-        Text="You can use two images on your Credits screen, a background and an overlay.  Most people use the overlay for the credits text. But you can get creative with the two images." />
+        Text="You can use two images on your Story screen, a background and an overlay.  Most people use the overlay for the story text. But you can get creative with the two images." />
     <ScriptObject
         Name="Tip1"
-        Text="If you decide you don’t want to use a Credits Screen you can disable it on the Interface - Main Menu tab." />
+        Text="If you decide you don’t want to use a Story Screen you can disable it on the Interface - Main Menu tab." />
     <ScriptObject
         Name="Tip2"
-        Text="The Credits page is a great place to recognize anyone and everyone who has helped you create your game." />
+        Text="The Story page is a great place to add some background to your game and its characters." />
 </SimSet>

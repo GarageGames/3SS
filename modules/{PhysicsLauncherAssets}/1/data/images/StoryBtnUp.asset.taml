@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="StoryBtnUpImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#StoryBtnUp.png" />

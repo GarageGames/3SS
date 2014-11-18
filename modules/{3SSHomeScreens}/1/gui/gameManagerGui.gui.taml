@@ -28,7 +28,7 @@
         Active="1"
         hovertime="1000"
         toolTipProfile="GuiToolTipProfile"
-        toolTip="Select to return to the Home Screen."
+        toolTip="Select to return to the Templates Screen."
         text="Back"
         groupNum="-1"
         buttonType="PushButton"

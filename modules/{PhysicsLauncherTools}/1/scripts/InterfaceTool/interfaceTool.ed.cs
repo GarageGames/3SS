@@ -277,15 +277,6 @@ function InterfaceTool::initWorldSelectTab(%this)
     AssetDatabase.releaseAsset(It_WorldBackBtnSelectEdit.stateAsset[0]);
     It_WorldBackBtnSelectEdit.type = "gui";
 
-    It_WorldBackgroundBtnSelectEdit.stateControl = "WorldSelectBackground";
-    It_WorldBackgroundBtnSelectEdit.stateAsset[0] = WorldSelectBackground.Image;
-    It_WorldBackgroundBtnSelectEdit.stateField[0] = "Image";
-    It_WorldBackgroundBtnSelectEdit.assetSize = WorldSelectBackground.extent;
-    %temp = AssetDatabase.acquireAsset(It_WorldBackgroundBtnSelectEdit.stateAsset[0]);
-    It_WorldBackgroundBtnSelectEdit.setText(%temp.AssetName);
-    AssetDatabase.releaseAsset(It_WorldBackgroundBtnSelectEdit.stateAsset[0]);
-    It_WorldBackgroundBtnSelectEdit.type = "gui";
-
     $It_TabInitializing = false;
 }
 
@@ -998,6 +989,7 @@ function InterfaceTool::updateRewardPreviews(%this, %visible)
     RewardImage_4.setImage(It_WinLoseLargeRewardBtnSelectEdit.stateAsset[0]);
 }
 
+// This method builds each world panel in the pane
 function InterfaceTool::populateWorldPane(%this)
 {
     It_WorldListContentPane.clear();
@@ -1023,8 +1015,10 @@ function InterfaceTool::populateWorldPane(%this)
    It_WorldListContentPane.refresh();
 }
 
+// This method build an individual world panel for the world list pane
 function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPreview)
 {
+    // The panel into which all of the other controls go
     %panel = new GuiControl()
     {
         canSaveDynamicFields="1";
@@ -1033,7 +1027,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         HorizSizing="right";
         VertSizing="bottom";
         Position="0 0";
-        Extent="206 237";
+        Extent="206 263";
         MinExtent="8 2";
         canSave="0";
         Visible="1";
@@ -1042,6 +1036,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
             index = %index;
     };
 
+    // The preview image for the world
     %previewImage = new GuiControl()
     {
         canSaveDynamicFields="0";
@@ -1060,6 +1055,8 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     %panel.addGuiControl(%previewImage);
     %previewImage.addGuiControl(%controlPreview);
 
+    // The current Container asset name.  The user cannot actually edit this
+    // text as a GuiMouseEventCtrl is placed over it.
     %containerSelectEdit = new GuiTextEditCtrl()
     {
         canSaveDynamicFields="1";
@@ -1067,8 +1064,8 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiFileEditBoxProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="85 204";
-        Extent="91 25";
+        Position="90 230";
+        Extent="86 25";
         MinExtent="8 2";
         canSave="0";
         Visible="1";
@@ -1093,6 +1090,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     }
     AssetDatabase.releaseAsset(%containerSelectEdit.asset);
 
+    // The Container button to open the asset picker
     %containerSelectBtn = new GuiImageButtonCtrl()
     {
         Class="It_WorldPaneContainerSelectBtn";
@@ -1101,7 +1099,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiDefaultProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="176 204";
+        Position="176 230";
         Extent="22 25";
         MinExtent="8 2";
         canSave="0";
@@ -1124,6 +1122,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     };
     %panel.addGuiControl(%containerSelectBtn);
 
+    // Covers %containerSelectEdit to open the asset picker
     %containerMouseEvent = new GuiMouseEventCtrl()
     {
         class="It_AssetBrowseEditClick";
@@ -1132,8 +1131,8 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiTransparentProfile";
         HorizSizing="left";
         VertSizing="top";
-        Position="85 204";
-        Extent="91 25";
+        Position="90 230";
+        Extent="86 25";
         MinExtent="8 2";
         canSave="0";
         Visible="1";
@@ -1146,6 +1145,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     };
     %panel.addGuiControl(%containerMouseEvent);
 
+    // The label for the Container line
     %containerLabel = new GuiTextCtrl()
     {
         canSaveDynamicFields="1";
@@ -1153,7 +1153,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiTextProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="9 208";
+        Position="9 234";
         Extent="72 16";
         MinExtent="8 2";
         canSave="0";
@@ -1165,6 +1165,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     };
     %panel.addGuiControl(%containerLabel);
 
+    // The label for the Icon line
     %iconLabel = new GuiTextCtrl()
     {
         canSaveDynamicFields="1";
@@ -1172,7 +1173,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiTextProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="9 182";
+        Position="9 208";
         Extent="32 16";
         MinExtent="8 2";
         canSave="0";
@@ -1184,6 +1185,8 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     };
     %panel.addGuiControl(%iconLabel);
 
+    // The current Icon asset name.  The user cannot actually edit this
+    // text as a GuiMouseEventCtrl is placed over it.
     %iconSelectEdit = new GuiTextEditCtrl()
     {
         canSaveDynamicFields="1";
@@ -1191,8 +1194,8 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
         Profile="GuiFileEditBoxProfile";
         HorizSizing="right";
         VertSizing="bottom";
-        Position="85 177";
-        Extent="91 25";
+        Position="90 203";
+        Extent="86 25";
         MinExtent="8 2";
         canSave="0";
         Visible="1";
@@ -1212,6 +1215,169 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     %iconSelectEdit.setText(%temp.AssetName);
     AssetDatabase.releaseAsset(%iconSelectEdit.asset);
 
+    // The Icon button to open the asset picker
+    %iconSelectBtn = new GuiImageButtonCtrl()
+    {
+        Class="It_WorldPaneIconSelectBtn";
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiDefaultProfile";
+        HorizSizing="right";
+        VertSizing="bottom";
+        Position="176 203";
+        Extent="22 25";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        toolTipProfile="GuiToolTipProfile";
+        toolTip="Select the image file from the Asset Picker for the World Icon button.";
+        groupNum="-1";
+        buttonType="PushButton";
+        useMouseEvents="0";
+        isLegacyVersion="0";
+        NormalImage="{EditorAssets}:assetImageMap";
+        HoverImage="{EditorAssets}:asset_hImageMap";
+        DownImage="{EditorAssets}:asset_dImageMap";
+        InactiveImage="{EditorAssets}:asset_iImageMap";
+            edit=%iconSelectEdit;
+            world = %worldData;
+            preview = "WorldSelectButton" @ %index;
+            lockedDropdown = %lockState;
+    };
+    %panel.addGuiControl(%iconSelectBtn);
+
+    // Covers %iconSelectEdit to open the asset picker
+    %iconMouseEvent = new GuiMouseEventCtrl()
+    {
+        class="It_AssetBrowseEditClick";
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiTransparentProfile";
+        HorizSizing="left";
+        VertSizing="top";
+        Position="90 203";
+        Extent="86 25";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        toolTipProfile="GuiToolTipProfile";
+        toolTip="Select the image file from the Asset Picker for the World Icon button.";
+        groupNum="-1";
+            button=%iconSelectBtn;
+    };
+    %panel.addGuiControl(%iconMouseEvent);
+
+    // The label for the Background line
+    %backgroundLabel = new GuiTextCtrl()
+    {
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiTextProfile";
+        HorizSizing="right";
+        VertSizing="bottom";
+        Position="9 182";
+        Extent="80 18";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        text="Background";
+        maxLength="1024";
+    };
+    %panel.addGuiControl(%backgroundLabel);
+
+    // The current Background asset name.  The user cannot actually edit this
+    // text as a GuiMouseEventCtrl is placed over it.
+    %backgroundSelectEdit = new GuiTextEditCtrl()
+    {
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiFileEditBoxProfile";
+        HorizSizing="right";
+        VertSizing="bottom";
+        Position="90 177";
+        Extent="86 25";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        maxLength="1024";
+        historySize="0";
+        password="0";
+        tabComplete="0";
+        sinkAllKeyEvents="0";
+        passwordMask="*";
+        truncate="1";
+    };
+    %panel.addGuiControl(%backgroundSelectEdit);
+    %backgroundSelectEdit.asset = %worldData.WorldSelectBackground;
+    %temp = AssetDatabase.acquireAsset(%backgroundSelectEdit.asset);
+    %backgroundSelectEdit.setText(%temp.AssetName);
+    AssetDatabase.releaseAsset(%backgroundSelectEdit.asset);
+
+    // The Background button to open the asset picker
+    %backgroundSelectBtn = new GuiImageButtonCtrl()
+    {
+        Class="It_WorldPaneBackgroundSelectBtn";
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiDefaultProfile";
+        HorizSizing="right";
+        VertSizing="bottom";
+        Position="176 177";
+        Extent="22 25";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        toolTipProfile="GuiToolTipProfile";
+        toolTip="Select the image file from the Asset Picker for the World Background button.";
+        groupNum="-1";
+        buttonType="PushButton";
+        useMouseEvents="0";
+        isLegacyVersion="0";
+        NormalImage="{EditorAssets}:assetImageMap";
+        HoverImage="{EditorAssets}:asset_hImageMap";
+        DownImage="{EditorAssets}:asset_dImageMap";
+        InactiveImage="{EditorAssets}:asset_iImageMap";
+            edit=%backgroundSelectEdit;
+            world = %worldData;
+            preview = "WorldSelectBackground" @ %index;
+            lockedDropdown = %lockState;
+    };
+    %panel.addGuiControl(%backgroundSelectBtn);
+
+    // Covers %backgroundSelectEdit to open the asset picker
+    %backgroundMouseEvent = new GuiMouseEventCtrl()
+    {
+        class="It_AssetBrowseEditClick";
+        canSaveDynamicFields="1";
+        isContainer="0";
+        Profile="GuiTransparentProfile";
+        HorizSizing="left";
+        VertSizing="top";
+        Position="90 177";
+        Extent="86 25";
+        MinExtent="8 2";
+        canSave="0";
+        Visible="1";
+        Active="1";
+        hovertime="1000";
+        toolTipProfile="GuiToolTipProfile";
+        toolTip="Select the image file from the Asset Picker for the World Background button.";
+        groupNum="-1";
+            button=%backgroundSelectBtn;
+    };
+    %panel.addGuiControl(%backgroundMouseEvent);
+
+    // The Locked/Unlocked popup
     %lockState = new GuiPopUpMenuCtrl()
     {
         class="It_WorldPaneLockStateDropdown";
@@ -1242,60 +1408,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     %lockState.setSelected(!%worldData.WorldLocked);
     %panel.addGuiControl(%lockState);
 
-    %iconSelectBtn = new GuiImageButtonCtrl()
-    {
-        Class="It_WorldPaneIconSelectBtn";
-        canSaveDynamicFields="1";
-        isContainer="0";
-        Profile="GuiDefaultProfile";
-        HorizSizing="right";
-        VertSizing="bottom";
-        Position="176 177";
-        Extent="22 25";
-        MinExtent="8 2";
-        canSave="0";
-        Visible="1";
-        Active="1";
-        hovertime="1000";
-        toolTipProfile="GuiToolTipProfile";
-        toolTip="Select the image file from the Asset Picker for the World Icon button.";
-        groupNum="-1";
-        buttonType="PushButton";
-        useMouseEvents="0";
-        isLegacyVersion="0";
-        NormalImage="{EditorAssets}:assetImageMap";
-        HoverImage="{EditorAssets}:asset_hImageMap";
-        DownImage="{EditorAssets}:asset_dImageMap";
-        InactiveImage="{EditorAssets}:asset_iImageMap";
-            edit=%iconSelectEdit;
-            world = %worldData;
-            preview = "WorldSelectButton" @ %index;
-            lockedDropdown = %lockState;
-    };
-    %panel.addGuiControl(%iconSelectBtn);
-
-    %iconMouseEvent = new GuiMouseEventCtrl()
-    {
-        class="It_AssetBrowseEditClick";
-        canSaveDynamicFields="1";
-        isContainer="0";
-        Profile="GuiTransparentProfile";
-        HorizSizing="left";
-        VertSizing="top";
-        Position="85 177";
-        Extent="91 25";
-        MinExtent="8 2";
-        canSave="0";
-        Visible="1";
-        Active="1";
-        hovertime="1000";
-        toolTipProfile="GuiToolTipProfile";
-        toolTip="Select the image file from the Asset Picker for the World Icon button.";
-        groupNum="-1";
-            button=%iconSelectBtn;
-    };
-    %panel.addGuiControl(%iconMouseEvent);
-
+    // The preview button
     %previewBtn = new GuiImageButtonCtrl()
     {
         Class="It_WorldPanePreviewBtn";        
@@ -1324,6 +1437,7 @@ function InterfaceTool::createWorldPane(%this, %index, %worldData, %controlPrevi
     };
     %previewImage.addGuiControl(%previewBtn);
 
+    // The name of the world
     %worldNameLabel = new GuiTextEditCtrl()
     {
         canSaveDynamicFields="1";
@@ -1751,10 +1865,8 @@ function InterfaceTool::displayRewardImages(%this, %currentButton)
 
 function InterfaceTool::getWorldData(%this)
 {
-    if (isFile($PhysicsLauncher::WorldListFile))
-        %this.worldData = TamlRead($PhysicsLauncher::WorldListFile);
-    else
-        %this.worldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    %this.worldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    loadGameData(%this.worldData);
 }
 
 function InterfaceTool::saveData(%this)
@@ -1764,9 +1876,7 @@ function InterfaceTool::saveData(%this)
         if (isObject(%this.worldData))
         {
             TamlWrite(%this.worldData, "^PhysicsLauncherTemplate/managed/worldList.taml");
-
-            if (isFile($PhysicsLauncher::WorldListFile))
-                TamlWrite(%this.worldData, $PhysicsLauncher::WorldListFile);
+            saveGameData(%this.worldData);
         }
 
         %this.saveFonts();
@@ -2504,7 +2614,7 @@ function InterfaceToolTabBook::onTabSelected(%this, %data)
                 InterfaceTool.helpManager.openHelpSet("interfaceToolPauseHelp");
                 InterfaceTool.helpManager.start();
 
-            case "Credits  ":
+            case "Story  ":
                 InterfaceTool.selectedPage = 6;
                 InterfaceTool.initCreditsTab();
                 InterfaceTool.selectedTab = "It_CreditsPaneContainer";
@@ -2527,6 +2637,26 @@ function InterfaceToolTabBook::onTabSelected(%this, %data)
 function It_WorldPanePreviewBtn::onClick(%this)
 {
     GuiPreviewGui.display(%this.preview.getObject(0));
+}
+
+function It_WorldPaneBackgroundSelectBtn::onClick(%this)
+{
+    AssetPicker.open("ImageAsset", "", "", %this);
+}
+
+function It_WorldPaneBackgroundSelectBtn::setSelectedAsset(%this, %assetID)
+{
+    %asset = AssetDatabase.acquireAsset(%assetID);
+
+    %temp = AssetDatabase.acquireAsset(%assetID);
+    %this.edit.setText(%temp.AssetName);
+    AssetDatabase.releaseAsset(%assetID);
+    %this.edit.asset = %assetID;
+
+    %this.preview.Image = %assetID;
+    %this.world.WorldSelectBackground = %assetID;
+
+    InterfaceTool.saveData();
 }
 
 function It_WorldPaneIconSelectBtn::onClick(%this)
@@ -2745,18 +2875,6 @@ function It_LevelIconBtnSelectBtn::setSelectedAsset(%this, %assetID)
     %normalIcon = InterfaceTool.worldData.LevelImage;
     %lockedIcon = InterfaceTool.worldData.LevelLockedImage;
     InterfaceTool.setLevelIcons(%normalIcon, %lockedIcon);
-}
-
-function It_WorldBackgroundBtnSelectBtn::setSelectedAsset(%this, %assetID)
-{
-    %paneCount = It_WorldListContentPane.getCount() + 1;
-    for (%i = 1; %i < %paneCount; %i++)
-    {
-        %background = "WorldSelectBackground" @ %i;
-        %background.setImage(%assetID);
-        %world = InterfaceTool.worldData.getObject(%i);
-        %world.WorldSelectBackground = %assetID;
-    }
 }
 
 function It_LargeRewardSelectButton::onClick(%this)

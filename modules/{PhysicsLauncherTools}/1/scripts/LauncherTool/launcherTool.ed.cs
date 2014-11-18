@@ -130,8 +130,8 @@ function LauncherTool::refresh(%this)
     Lt_PullbackEffectPopup.setSelected(%effectIndex);
     
     // Refresh Pullback Sound
-    %sound = SlingshotLauncherBuilder::getPullbackSound(%this.currentObject); 
-    Lt_PullbackSoundFileField.setText(%sound); 
+    %soundAsset = SlingshotLauncherBuilder::getPullbackSound(%this.currentObject); 
+    Lt_PullbackSoundFileField.setText(AssetDatabase.getAssetName(%soundAsset)); 
     
     // Refresh Fork Foreground
     %forkForeground = SlingshotLauncherBuilder::getForkForegroundAsset(%this.currentObject);
@@ -643,13 +643,22 @@ function LauncherTool::validateLauncherSet(%this)
 }
 
 function LauncherTool::onLauncherRemove(%this, %data)
-{
-    %index = %data - 1;
+{    
     %this.refreshObjectView();
     %this.refresh();
-    $LauncherToolObjectScrollView.setSelected(%index);
-    $LauncherToolObjectScrollView.scrollToButton(%index);
+    
+    if(%data > 0)
+    {
+       $LauncherToolObjectScrollView.setSelected(%data - 1);
+       $LauncherToolObjectScrollView.scrollToButton(%data - 1);
+    }
+    else
+    {
+       $LauncherToolObjectScrollView.setSelected(%data);
+       $LauncherToolObjectScrollView.scrollToButton(%data);
+    }
 }
+
 //------------------------------------------------------------------------------
 // Name
 //------------------------------------------------------------------------------
@@ -766,8 +775,8 @@ function Lt_PullbackSoundFileButton::setSelectedAsset(%this, %asset)
     SlingshotLauncherBuilder::setPullbackSound(LauncherTool.currentObject, %asset);   
     
     // Refresh field text
-    %sound = SlingshotLauncherBuilder::getPullbackSound(LauncherTool.currentObject); 
-    Lt_PullbackSoundFileField.setText(%sound);
+    %soundAsset = SlingshotLauncherBuilder::getPullbackSound(LauncherTool.currentObject); 
+    Lt_PullbackSoundFileField.setText(AssetDatabase.getAssetName(%soundAsset));
 }
 
 //------------------------------------------------------------------------------

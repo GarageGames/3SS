@@ -1,0 +1,58 @@
+<AssetTagsManifest>
+    <AssetTagsManifest.Tags>
+        <tag
+            Name="Backgrounds" />
+        <tag
+            Name="Terrain" />
+        <tag
+            Name="Projectiles" />
+        <tag
+            Name="Objects" />
+        <tag
+            Name="Win Conditions" />
+    </AssetTagsManifest.Tags>
+    <AssetTagsManifest.Assets>
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultWorldObjectAnim0"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_GorillaIdleProjectileAnim"
+            Name="Projectiles" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultWorldObjectAnim2"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultWorldObjectAnim1"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultBoxAnim0"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_BananaBunchAnim"
+            Name="Win Conditions" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultPathAnim"
+            Name="Projectiles" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_GorillaFlightProjectileAnim"
+            Name="Projectiles" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultBoxAnim1"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultBoxAnim2"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_GorillaTumbleProjectileAnim"
+            Name="Projectiles" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultDustAnim"
+            Name="Projectiles" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultWorldObjectAnim3"
+            Name="Objects" />
+        <tag
+            assetID="{PhysicsLauncherAssets}:PL_DefaultBoxAnim3"
+            Name="Objects" />
+    </AssetTagsManifest.Assets>
+</AssetTagsManifest>

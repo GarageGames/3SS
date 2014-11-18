@@ -54,12 +54,6 @@ bool DInputManager::enable()
       {
 		 bool result = SUCCEEDED( fnDInputCreate( winState.appInstance, DIRECTINPUT_VERSION,
 			IID_IDirectInput8, reinterpret_cast<void**>(&mDInputInterface), NULL ));
-         if ( result )
-         {
-#ifdef LOG_INPUT
-            Input::log( "DirectX 8 or greater detected.\n" );
-#endif
-         }
 
          if ( result )
          {
@@ -71,10 +65,6 @@ bool DInputManager::enable()
    }
 
    disable();
-
-#ifdef LOG_INPUT
-   Input::log( "Failed to enable DirectInput.\n" );
-#endif
 
    return false;
 }
@@ -190,10 +180,6 @@ void DInputManager::enumerateDevices()
 {
    if ( mDInputInterface )
    {
-#ifdef LOG_INPUT
-      Input::log( "Enumerating input devices...\n" );
-#endif
-
       DInputDevice::init();
       DInputDevice::smDInputInterface = mDInputInterface;
       mDInputInterface->EnumDevices( DI8DEVTYPE_KEYBOARD, EnumDevicesProc, this, DIEDFL_ATTACHEDONLY );
@@ -235,16 +221,10 @@ bool DInputManager::enableKeyboard()
    if ( smKeyboardEnabled )
    {
       Con::printf( "DirectInput keyboard enabled." );
-#ifdef LOG_INPUT
-      Input::log( "Keyboard enabled.\n" );
-#endif
    }
    else
    {
       Con::warnf( "DirectInput keyboard failed to enable!" );
-#ifdef LOG_INPUT
-      Input::log( "Keyboard failed to enable!\n" );
-#endif
    }
 
    return( smKeyboardEnabled );
@@ -260,9 +240,6 @@ void DInputManager::disableKeyboard()
    mgr->deactivateKeyboard();
    smKeyboardEnabled = false;
    Con::printf( "DirectInput keyboard disabled." );
-#ifdef LOG_INPUT
-   Input::log( "Keyboard disabled.\n" );
-#endif
 }
 
 //------------------------------------------------------------------------------
@@ -279,9 +256,6 @@ bool DInputManager::activateKeyboard()
 
    // Acquire only one keyboard:
    mKeyboardActive = acquire( KeyboardDeviceType, 0 );
-#ifdef LOG_INPUT
-   Input::log( mKeyboardActive ? "Keyboard activated.\n" : "Keyboard failed to activate!\n" );
-#endif
    return( mKeyboardActive );
 }
 
@@ -292,9 +266,6 @@ void DInputManager::deactivateKeyboard()
    {
       unacquire( KeyboardDeviceType, SI_ANY );
       mKeyboardActive = false;
-#ifdef LOG_INPUT
-      Input::log( "Keyboard deactivated.\n" );
-#endif
    }
 }
 
@@ -315,16 +286,10 @@ bool DInputManager::enableMouse()
    if ( smMouseEnabled )
    {
       Con::printf( "DirectInput mouse enabled." );
-#ifdef LOG_INPUT
-      Input::log( "Mouse enabled.\n" );
-#endif
    }
    else
    {
       Con::warnf( "DirectInput mouse failed to enable!" );
-#ifdef LOG_INPUT
-      Input::log( "Mouse failed to enable!\n" );
-#endif
    }
 
    return( smMouseEnabled );
@@ -340,9 +305,6 @@ void DInputManager::disableMouse()
    mgr->deactivateMouse();
    smMouseEnabled = false;
    Con::printf( "DirectInput mouse disabled." );
-#ifdef LOG_INPUT
-   Input::log( "Mouse disabled.\n" );
-#endif
 }
 
 //------------------------------------------------------------------------------
@@ -358,9 +320,6 @@ bool DInputManager::activateMouse()
       return( false );
 
    mMouseActive = acquire( MouseDeviceType, SI_ANY );
-#ifdef LOG_INPUT
-   Input::log( mMouseActive ? "Mouse activated.\n" : "Mouse failed to activate!\n" );
-#endif
    return( mMouseActive );
 }
 
@@ -371,9 +330,6 @@ void DInputManager::deactivateMouse()
    {
       unacquire( MouseDeviceType, SI_ANY );
       mMouseActive = false;
-#ifdef LOG_INPUT
-      Input::log( "Mouse deactivated.\n" );
-#endif
    }
 }
 
@@ -394,16 +350,10 @@ bool DInputManager::enableJoystick()
    if ( smJoystickEnabled )
    {
       Con::printf( "DirectInput joystick enabled." );
-#ifdef LOG_INPUT
-      Input::log( "Joystick enabled.\n" );
-#endif
    }
    else
    {
       Con::warnf( "DirectInput joystick failed to enable!" );
-#ifdef LOG_INPUT
-      Input::log( "Joystick failed to enable!\n" );
-#endif
    }
 
    return( smJoystickEnabled );
@@ -419,9 +369,6 @@ void DInputManager::disableJoystick()
    mgr->deactivateJoystick();
    smJoystickEnabled = false;
    Con::printf( "DirectInput joystick disabled." );
-#ifdef LOG_INPUT
-   Input::log( "Joystick disabled.\n" );
-#endif
 }
 
 //------------------------------------------------------------------------------
@@ -437,9 +384,6 @@ bool DInputManager::activateJoystick()
       return( false );
 
    mJoystickActive = acquire( JoystickDeviceType, SI_ANY );
-#ifdef LOG_INPUT
-   Input::log( mJoystickActive ? "Joystick activated.\n" : "Joystick failed to activate!\n" );
-#endif
    return( mJoystickActive );
 }
 
@@ -450,9 +394,6 @@ void DInputManager::deactivateJoystick()
    {
       unacquire( JoystickDeviceType, SI_ANY );
       mJoystickActive = false;
-#ifdef LOG_INPUT
-      Input::log( "Joystick deactivated.\n" );
-#endif
    }
 }
 

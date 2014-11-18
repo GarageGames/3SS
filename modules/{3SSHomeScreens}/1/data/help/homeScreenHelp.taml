@@ -2,5 +2,5 @@
     Name="HomeScreenTips">
     <ScriptObject
         Name="Tip0"
-        Text="This page displays the templates that you can work with to create a new game. To access your previously saved games go the My Games screen." />
+        Text="This page displays the templates that you can work with to create a new game. To access your previously saved games go to the My Games screen." />
 </SimSet>

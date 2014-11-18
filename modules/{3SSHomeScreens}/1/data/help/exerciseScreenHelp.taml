@@ -1,0 +1,6 @@
+<SimSet
+    Name="ExerciseScreenTips">
+    <ScriptObject
+        Name="Tip0"
+        Text="This page displays all of your current exercise projects." />
+</SimSet>
