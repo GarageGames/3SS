@@ -121,7 +121,11 @@ function WorldTool::load(%this)
     %this.refresh();
 
     // Select the world and level
-    %this.WorldListContainer.setSelected(%this.worldIndex);
+    if (%this.WorldListContainer.contentPane.getCount() > 2)
+      %this.WorldListContainer.setSelected(1);
+    else
+      %this.WorldListContainer.setSelected(%this.worldIndex);
+      
     $Wt_ToolInitialized = true;
     
     // The level list ends with the "Add Level" button so make sure we don't
