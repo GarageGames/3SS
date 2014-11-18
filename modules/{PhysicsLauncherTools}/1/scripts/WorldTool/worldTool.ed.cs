@@ -48,6 +48,10 @@ function WorldTool::getWorldData(%this)
 /// the Unmapped Worlds list and the first level in that world and displays the 
 /// relevant data.
 /// </summary>
+
+// Temporary hack to make the first run of the world tool start with the first world and not unused levels
+$WorldToolFirstLoad = true;
+
 function WorldTool::load(%this)
 {
     // keep dropdowns from firing onSelect during initialization, etc.
@@ -121,10 +125,15 @@ function WorldTool::load(%this)
     %this.refresh();
 
     // Select the world and level
-    if (%this.WorldListContainer.contentPane.getCount() > 2)
-      %this.WorldListContainer.setSelected(1);
+    if (%this.WorldListContainer.contentPane.getCount() > 2 && $WorldToolFirstLoad)
+    {  
+       %this.WorldListContainer.setSelected(1);
+       $WorldToolFirstLoad = false;
+    }
     else
       %this.WorldListContainer.setSelected(%this.worldIndex);
+      
+    
       
     $Wt_ToolInitialized = true;
     

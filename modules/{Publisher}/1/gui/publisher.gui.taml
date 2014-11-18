@@ -148,6 +148,7 @@
             BorderMargin="2"
             Invisible="0"
             LeftMargin="0" />
+<!-- DISABLING FOR GAME DEV CURRICULUM
         <GuiRadioCtrl
             Name="PublisherRadioButtonOSX"
             canSaveDynamicFields="0"
@@ -169,7 +170,7 @@
             buttonType="RadioButton"
             useMouseEvents="0"
             useInactiveState="0" />
-<!-- DISABLING FOR GAME DEV CURRICULUM
+
         <GuiRadioCtrl
             Name="PublisherRadioButtoniOS"
             canSaveDynamicFields="0"
@@ -213,6 +214,7 @@
             buttonType="RadioButton"
             useMouseEvents="0"
             useInactiveState="0" />
+<!-- DISABLING FOR GAME DEV CURRICULUM
         <GuiTextCtrl
             canSaveDynamicFields="0"
             isContainer="0"
@@ -228,7 +230,6 @@
             hovertime="1000"
             text="Mac"
             maxLength="1024" />
-<!-- DISABLING FOR GAME DEV CURRICULUM
         <GuiTextCtrl
             canSaveDynamicFields="0"
             isContainer="0"
