@@ -12,7 +12,7 @@ function onExit()
 //-----------------------------------------------------------------------------
 function isIgnoredPath(%path)
 {
-   if (%path $= ".svn")
+   if (%path $= ".svn" || %path $= "GameDev")
       return true;
    else
       return false;
