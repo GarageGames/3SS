@@ -118,6 +118,9 @@ bool QtManager::startUpThread()
 
         if(m_pAppThread)
         {
+			// Make sure the thread has started running so that we may immediately process commands
+			m_pAppThread->waitForThreadRun(2000);
+
             m_pCommandService = m_pAppThread;
             result = true;
         }

@@ -101,6 +101,54 @@ void QtThread::stopAndWait()
     m_StopSemaphore.acquire(true, 10000);
 }
 
+void QtThread::waitForThreadRun(U32 timeoutMS)
+{
+	bool block = (timeoutMS == 0) ? true : false;
+
+	bool signal = m_Semaphore.acquire(false);
+	if (signal)
+	{
+		// Thread is not running
+		m_Semaphore.release();
+	}
+	else
+	{
+		// Thread is running
+		return;
+	}
+
+	// Busy wait for the thread to start running.
+	S32 counter = timeoutMS;
+	if (counter == 0)
+	{
+		counter = -1;
+	}
+	while (counter != 0)
+	{
+		// Sleep for a bit
+		Platform::sleep(1);
+
+		// Try again
+		signal = m_Semaphore.acquire(false);
+		if (signal)
+		{
+			// Thread is not running
+			m_Semaphore.release();
+		}
+		else
+		{
+			// Thread is running
+			return;
+		}
+
+		// Count down
+		if (counter >= 0)
+		{
+			--counter;
+		}
+	}
+}
+
 //-----------------------------------------------------------------------------
 
 void QtThread::sendCommand(IQtCommandService::Command* c)

@@ -113,7 +113,10 @@ bool GuiWebViewCtrl::onAdd()
 void GuiWebViewCtrl::onRemove()
 {
     // Destroy the web render
-    QtManager::singleton()->DestroyWebRender(m_WebRenderId);
+	if (QtManager::singleton())
+	{
+		QtManager::singleton()->DestroyWebRender(m_WebRenderId);
+	}
     m_WebRenderId = -1;
 
     // Call parent.

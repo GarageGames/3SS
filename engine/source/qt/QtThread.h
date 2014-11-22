@@ -35,6 +35,9 @@ public:
     // Stop the thread and wait for it to finish
     void stopAndWait();
 
+	// Wait for the thread to start running.  A timeout of 0 means an infinite wait.
+	void waitForThreadRun(U32 timeoutMS=0);
+
 protected:
     // Qt application
     QApplication* m_pApp;
