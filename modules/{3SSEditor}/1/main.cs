@@ -17,6 +17,7 @@ function initialize3SSEditor(%scopeSet)
     exec("./scripts/3SSConfirmDeleteProject.cs");
     exec("./scripts/verticalScrollContainer.cs");
     exec("./scripts/welcome.cs");
+    exec("./scripts/webViewGui.cs");
     
     //-----------------------------------------------------------------------------
     // Load GUIs
