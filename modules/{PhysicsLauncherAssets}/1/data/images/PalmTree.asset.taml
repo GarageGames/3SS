@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="PalmTreeImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#PalmTree.png" />

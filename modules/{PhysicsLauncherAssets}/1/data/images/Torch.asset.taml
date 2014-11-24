@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="TorchImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Torch.png" />

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="SteelBeamImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#SteelBeam.png" />

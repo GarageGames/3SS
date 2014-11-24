@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="StonePillarImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#StonePillar.png" />

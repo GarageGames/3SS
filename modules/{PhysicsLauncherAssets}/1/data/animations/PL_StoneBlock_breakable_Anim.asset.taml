@@ -1,0 +1,6 @@
+<AnimationAsset
+    AssetName="PL_StoneBlock_breakable_Anim"
+    ImageMap="@asset={PhysicsLauncherAssets}:StoneBlock_breakable_SpriteSheetImageMap"
+    AnimationFrames="0 1 2 3 4 5 6 7 8"
+    AnimationTime="0.75"
+    AnimationCycle="0" />

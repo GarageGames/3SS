@@ -1,0 +1,6 @@
+<AnimationAsset
+    AssetName="PL_GolemTumbleProjectile_Anim"
+    ImageMap="@asset={PhysicsLauncherAssets}:Golem_SpriteSheetImageMap"
+    AnimationFrames="56 57 58 59 60 61 62 63"
+    AnimationTime="0.666666687"
+    AnimationCycle="0" />

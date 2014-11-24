@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="StoneBlock_breakable_StaticImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#StoneBlock_breakable_Static.png" />

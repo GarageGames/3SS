@@ -1,0 +1,5 @@
+<AnimationAsset
+    AssetName="PL_GolemFlightProjectile_Anim"
+    ImageMap="@asset={PhysicsLauncherAssets}:Golem_SpriteSheetImageMap"
+    AnimationFrames="40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55"
+    AnimationTime="1.33333337" />
