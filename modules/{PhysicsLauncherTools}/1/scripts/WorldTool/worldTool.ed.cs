@@ -3017,6 +3017,11 @@ function WorldTool::moveProjectileEntries(%this, %index)
 // World Tool text object callback handlers
 //-----------------------------------------------------------------------------
 
+function Wt_LevelNameEdit::onSleep(%this)
+{
+    %this.onValidate();
+}
+
 function Wt_LevelNameEdit::onReturn(%this)
 {
     %this.onValidate();
@@ -3159,6 +3164,8 @@ function Wt_LevelSelectButton::onMouseUp(%this)
 /// </summary>
 function Wt_LevelEditToolBtn::onClick(%this)
 {
+    %this.getRoot().clearFirstResponder();
+    
     %level = WorldTool.lastLevelName;
     LevelBuilderToolPresenter.load();
     LevelBuilderToolPresenter.loadLevel(WorldTool.currentWorldData.getObject(WorldTool.worldIndex).getInternalName(), %level);

@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="Stone_SlingShot_SlingImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Stone_SlingShot_Sling.png" />

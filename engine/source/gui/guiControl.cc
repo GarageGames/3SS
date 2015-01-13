@@ -951,6 +951,17 @@ ConsoleMethod( GuiControl, getParent, S32, 2, 2, "() @return Returns the Id of t
 
 }
 
+ConsoleMethod(GuiControl, getRoot, S32, 2, 2, "() @return Returns the Id of the root GuiCanvas control")
+{
+	GuiCanvas* canvas = object->getRoot();
+	if (canvas)
+	{
+		return canvas->getId();
+	}
+
+	return 0;
+}
+
 ConsoleMethod( GuiControl, setValue, void, 3, 3, "( value ) Use the setValue method to set the control specific value to value. Purpose and type varies by control type.\n"
                                                                 "@param value Some control specific value.\n"
                                                                 "@return No return value")
@@ -1523,8 +1534,14 @@ bool GuiControl::isFirstResponder()
 
 void GuiControl::setFirstResponder( GuiControl* firstResponder )
 {
-   if ( firstResponder && firstResponder->mProfile->mCanKeyFocus )
+   if (firstResponder && firstResponder->mProfile->mCanKeyFocus)
+   {
       mFirstResponder = firstResponder;
+   }
+   else if (!firstResponder)
+   {
+      mFirstResponder = NULL;
+   }
 
    GuiControl *parent = getParent();
    if ( parent )

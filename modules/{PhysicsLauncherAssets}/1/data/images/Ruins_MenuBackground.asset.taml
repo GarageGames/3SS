@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="Ruins_MenuBackgroundImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#Ruins_MenuBackground.png" />

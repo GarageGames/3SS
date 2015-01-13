@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="SteelBoxImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#SteelBox.png" />

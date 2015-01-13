@@ -742,7 +742,7 @@ function LevelBuilderToolPresenter::refreshLevelList(%this)
 {
     $LevelBuilderTool::CurrentLevel = "";
     
-    %selectedWorld = WorldData.findObjectByInternalName(%this.LeftView.getSelectedWorld());
+    %selectedWorld = %this.worldData.findObjectByInternalName(%this.LeftView.getSelectedWorld());
     
     %index = 0;
     
@@ -793,11 +793,14 @@ function LevelBuilderToolPresenter::refreshWorldList(%this)
     
     %this.LeftView.clearWorldList();    
     
-    for (%i = 0; %i < WorldData.getCount(); %i++)
-        %this.LeftView.addToWorldList(WorldData.getObject(%i).getInternalName());
+    %this.worldData = TamlRead("^PhysicsLauncherTemplate/managed/worldList.taml");
+    loadGameData(%this.worldData);
+    
+    for (%i = 0; %i < %this.worldData.getCount(); %i++)
+        %this.LeftView.addToWorldList(%this.worldData.getObject(%i).getInternalName());
      
     // Set to the first World after Unused, if available
-    %this.LeftView.selectWorld(WorldData.getObject(WorldData.getCount() > 1).getInternalName(), true);
+    %this.LeftView.selectWorld(%this.worldData.getObject(%this.worldData.getCount() > 1).getInternalName(), true);
 }
 
 

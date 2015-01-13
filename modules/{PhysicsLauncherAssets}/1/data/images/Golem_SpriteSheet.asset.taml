@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="Golem_SpriteSheetImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#Golem_SpriteSheet.png"
+    CellCountX="8"
+    CellCountY="8"
+    CellWidth="128"
+    CellHeight="128" />

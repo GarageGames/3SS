@@ -108,6 +108,12 @@ ConsoleMethod( GuiCanvas, popLayer, void, 2, 3, "( layer ) Use the popLayer meth
    Canvas->popDialogControl(layer);
 }
 
+ConsoleMethod(GuiCanvas, clearFirstResponder, void, 2, 2, "() Clear the current first responder.\n"
+	"@return No return value")
+{
+	Canvas->setFirstResponder(NULL);
+}
+
 ConsoleMethod(GuiCanvas, cursorOn, void, 2, 2, "() Use the cursorOn method to enable the cursor.\n"
                                                                 "@return No return value")
 {

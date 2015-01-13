@@ -1,0 +1,4 @@
+<ImageAsset
+    AssetName="Ruins_LevelSelect_BackgroundImageMap"
+    AssetCategory="gui"
+    ImageFile="@assetFile=#Ruins_LevelSelect_Background.png" />

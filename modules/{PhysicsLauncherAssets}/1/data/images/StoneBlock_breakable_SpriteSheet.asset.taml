@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="StoneBlock_breakable_SpriteSheetImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#StoneBlock_breakable_SpriteSheet.png"
+    CellCountX="3"
+    CellCountY="3"
+    CellWidth="170"
+    CellHeight="170" />

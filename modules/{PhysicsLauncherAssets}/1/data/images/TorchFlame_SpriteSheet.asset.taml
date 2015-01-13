@@ -1,0 +1,8 @@
+<ImageAsset
+    AssetName="TorchFlame_SpriteSheetImageMap"
+    AssetCategory="sprites"
+    ImageFile="@assetFile=#TorchFlame_SpriteSheet.png"
+    CellCountX="6"
+    CellCountY="2"
+    CellWidth="85"
+    CellHeight="128" />
