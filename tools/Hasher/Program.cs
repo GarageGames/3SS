@@ -12,6 +12,8 @@ namespace Hasher
     {
         static void Main(string[] args)
         {
+            string hs = GetHash(".\\Modules\\{WiXTool}\\1\\WiX\\BlankFile.zip");
+
             string[] files = Directory.GetFiles(".", "*.*", SearchOption.AllDirectories);
 
             FileStream fs = File.Open("manifest.txt", FileMode.Create);

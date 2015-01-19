@@ -76,7 +76,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>TORQUE_DEBUG;TORQUE_DEBUG_GUARD;_CRT_SECURE_NO_DEPRECATE;UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>TORQUE_DEBUG;TORQUE_DEBUG_GUARD;_CRT_SECURE_NO_DEPRECATE;UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -125,7 +125,7 @@
       <Optimization>MinSpace</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>../../Lib/zlib;../../Lib/lpng;../../Lib/ljpeg;../../Lib/openal/win32;../../Source;../../Lib/MSPlatformSDK/Include;../../lib/dinput;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>UNICODE;TORQUE_DISABLE_MEMORY_MANAGER;TORQUE_MULTITHREAD;_CRT_SECURE_NO_DEPRECATE;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -373,6 +373,8 @@
     <ClCompile Include="..\..\source\editor\preferencesManager.cc" />
     <ClCompile Include="..\..\source\game\defaultGame.cc" />
     <ClCompile Include="..\..\source\game\gameInterface.cc" />
+    <ClCompile Include="..\..\source\game\md5.cc" />
+    <ClCompile Include="..\..\source\game\updater.cc" />
     <ClCompile Include="..\..\source\graphics\bitmapBmp.cc" />
     <ClCompile Include="..\..\source\graphics\bitmapJpeg.cc" />
     <ClCompile Include="..\..\source\graphics\bitmapPng.cc" />
@@ -830,6 +832,8 @@
     <ClInclude Include="..\..\source\editor\preferencesManager.h" />
     <ClInclude Include="..\..\source\game\defaultGame.h" />
     <ClInclude Include="..\..\source\game\gameInterface.h" />
+    <ClInclude Include="..\..\source\game\md5.h" />
+    <ClInclude Include="..\..\source\game\updater.h" />
     <ClInclude Include="..\..\source\graphics\bitRender.h" />
     <ClInclude Include="..\..\source\graphics\color.h" />
     <ClInclude Include="..\..\source\graphics\dgl.h" />
