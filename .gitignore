@@ -34,6 +34,8 @@ Torque2D_DEBUG.exe
 3StepStudioGame.exe
 3StepStudioGame_Debug.exe
 linkmap.txt
+bin/
+obj/
     
 # Compiled source #
 ###################
