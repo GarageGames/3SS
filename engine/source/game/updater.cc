@@ -4,6 +4,7 @@
 #include "console/console.h"
 #include <windows.h>
 
+static const char* _ServerPath = "store.gginteractive.com:80";
 static char _3SSDir[1024];
 
 static HANDLE _hLogFile = INVALID_HANDLE_VALUE;
@@ -507,7 +508,7 @@ DWORD WINAPI UpdateCheckThread(void* param)
 {
 	// Fetch manifest from the server
 	WebFile* web = new WebFile();
-	web->get("store.gginteractive.com:80", "/download/3ss/manifest.txt");
+	web->get(_ServerPath, "/download/3ss/manifest.txt");
 	
 	// Read in local manifest if it exists
 	U8* localManifest = 0;
@@ -611,7 +612,7 @@ DWORD WINAPI UpdateCheckThread(void* param)
 							dlfile->_url[j] = '/';
 					}
 
-					dlfile->get("store.gginteractive.com:80", dlfile->_url);
+					dlfile->get(_ServerPath, dlfile->_url);
 					UpdateLog("(%d/%d) - Downloading file %s", i + 1, updateFileCount, dlentry->_file);
 					dlfile->finish();
 
@@ -659,9 +660,19 @@ DWORD WINAPI UpdateCheckThread(void* param)
 	return 0;
 }
 
-void Updater::Init()
-{
+void Updater::Init(const char** argv, int argc)
+{	
 	InitUpdateLog();
+
+	for (int i = 1; i < argc; i++)
+	{
+		if (!_stricmp(argv[i], "-qa"))
+		{
+			_ServerPath = "qa.store.gginteractive.com:80";
+			UpdateLog("Using QA server for updates");
+			break;
+		}
+	}
 
 	GetCurrentDirectoryA(sizeof(_3SSDir), _3SSDir);
 

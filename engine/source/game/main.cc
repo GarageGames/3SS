@@ -128,7 +128,7 @@ extern void processConnectedAcceptEvent( ConnectedAcceptEvent * event );
 
 /// Initalizes the components of the game like the TextureManager, ResourceManager
 /// console...etc.
-static bool initLibraries()
+static bool initLibraries(const char** argv, int argc)
 {
     PlatformAssert::create();
     _StringTable::create();
@@ -141,7 +141,7 @@ static bool initLibraries()
     }
 
 #ifdef EDITOR
-	Updater::Init();
+	Updater::Init(argv, argc);
 #endif
     
 #ifdef TORQUE_OS_IOS
@@ -513,7 +513,7 @@ bool DefaultGame::mainInit(int argc, const char **argv)
 //   Memory::enableLogging("testMem.log");
 //   Memory::setBreakAlloc(104717);
     
-   if(!initLibraries())
+   if(!initLibraries(argv, argc))
       return false;
     
    // Set up the command line args for the console scripts...
