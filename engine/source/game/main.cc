@@ -35,6 +35,7 @@
 #include "debug/profiler.h"
 #include "network/serverQuery.h"
 #include "game/defaultGame.h"
+#include "game/updater.h"
 #include "platform/nativeDialogs/msgBox.h"
 #include <stdio.h>
 
@@ -127,7 +128,7 @@ extern void processConnectedAcceptEvent( ConnectedAcceptEvent * event );
 
 /// Initalizes the components of the game like the TextureManager, ResourceManager
 /// console...etc.
-static bool initLibraries()
+static bool initLibraries(const char** argv, int argc)
 {
     PlatformAssert::create();
     _StringTable::create();
@@ -138,6 +139,10 @@ static bool initLibraries()
         printf("Network Error : Unable to initialize the network... aborting.");
         return false;
     }
+
+#ifdef EDITOR
+	Updater::Init(argv, argc);
+#endif
     
 #ifdef TORQUE_OS_IOS
    //3MB default is way too big for iPhone!!!
@@ -181,7 +186,7 @@ static bool initLibraries()
 
    Processor::init();
    Math::init();
-
+   
    Platform::init();    // platform specific initialization
     
 #if defined(TORQUE_OS_IOS) && defined(_USE_STORE_KIT)
@@ -508,7 +513,7 @@ bool DefaultGame::mainInit(int argc, const char **argv)
 //   Memory::enableLogging("testMem.log");
 //   Memory::setBreakAlloc(104717);
     
-   if(!initLibraries())
+   if(!initLibraries(argv, argc))
       return false;
     
    // Set up the command line args for the console scripts...

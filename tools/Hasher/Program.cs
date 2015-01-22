@@ -29,8 +29,6 @@ namespace Hasher
         {
             MD5 md5 = MD5.Create();
             byte[] data = File.ReadAllBytes(filename);
-
-
             byte[] hash = md5.ComputeHash(data);
 
             string hashStr = "";
