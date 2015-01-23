@@ -19,6 +19,9 @@ namespace Hasher
 
             foreach (string file in files)
             {
+                if (file == ".\\manifest.txt")
+                    continue;
+
                 string hash = GetHash(file);
                 sw.WriteLine(file + "," + hash);
             }
