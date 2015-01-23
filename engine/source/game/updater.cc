@@ -664,15 +664,19 @@ void Updater::Init(const char** argv, int argc)
 {	
 	InitUpdateLog();
 
+	bool qaMode = false;
 	for (int i = 1; i < argc; i++)
 	{
 		if (!_stricmp(argv[i], "-qa"))
 		{
 			_ServerPath = "qa.store.gginteractive.com:80";
 			UpdateLog("Using QA server for updates");
+			qaMode = true;
 			break;
 		}
 	}
+	if (!qaMode && argc > 1)
+		return;
 
 	GetCurrentDirectoryA(sizeof(_3SSDir), _3SSDir);
 
