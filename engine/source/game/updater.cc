@@ -485,7 +485,7 @@ void ManifestProcessDirectory(const char* directory, HANDLE hManifest)
 		strcat(relPath, findData.cFileName);
 		if (findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
-			if (findData.cFileName[0] != '.')
+			if (findData.cFileName[0] != '.' && !strstr(findData.cFileName, "Uninstall"))
 				ManifestProcessDirectory(relPath, hManifest);
 		}
 	} while (FindNextFileA(hFind, &findData));
