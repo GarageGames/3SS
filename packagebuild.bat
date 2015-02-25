@@ -17,4 +17,10 @@ del /s BuildPackage\Exercises\*.torsion
 del /s BuildPackage\Templates\projectFiles\main.cs.dso
 del /s BuildPackage\Templates\projectFiles\cleandso.bat
 del /s BuildPackage\Templates\projectFiles\Game.torsion
+rmdir /s /q BuildPackage\Modules\{TowerDefense}
+rmdir /s /q BuildPackage\Modules\{TowerDefenseAssets}
+rmdir /s /q BuildPackage\Modules\{TowerDefenseTools}
+
+
+
 
