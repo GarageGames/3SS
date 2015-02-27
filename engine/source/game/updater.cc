@@ -448,7 +448,7 @@ void ManifestProcessDirectory(const char* directory, HANDLE hManifest)
 		}
 		else
 		{
-			if (strstr(relPath, ".log") || strstr(relPath, "manifest.txt") || strstr(relPath, "uninstall.exe"))
+			if (strstr(relPath, ".log") || strstr(relPath, "manifest.txt") || strstr(relPath, "uninstall.exe") || strstr(relPath, "lua5.1.dll"))
 				continue;
 
 			// Read in file data
@@ -689,7 +689,7 @@ void Updater::Init(const char** argv, int argc)
 	if (attrib != INVALID_FILE_ATTRIBUTES && (attrib & FILE_ATTRIBUTE_DIRECTORY))
 	{
 		// There is a pending update
-		ApplyUpdate(updateDir);
+		ApplyUpdate(updateDir, qaMode);
 	}
 	else
 	{
@@ -698,7 +698,7 @@ void Updater::Init(const char** argv, int argc)
 	}
 }
 
-void Updater::ApplyUpdate(const char* updateDir)
+void Updater::ApplyUpdate(const char* updateDir, bool qaMode)
 {
 	UpdateLog("Applying Update...");
 
@@ -820,6 +820,6 @@ void Updater::ApplyUpdate(const char* updateDir)
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
 	UpdateLog("Launching exe: %s", exePath);
-	CreateProcessA(exePath, 0, 0, 0, FALSE, CREATE_NEW_PROCESS_GROUP, 0, 0, &si, &pi);
+	CreateProcessA(exePath, qaMode ? "-qa" : 0, 0, 0, FALSE, CREATE_NEW_PROCESS_GROUP, 0, 0, &si, &pi);
 	ExitProcess(-100);
 }
