@@ -33,7 +33,8 @@ static void UpdateLog(const char* fmt, ...)
 		dVsprintf(buf, sizeof(buf), fmt, argptr);
 		strcat(buf, "\r\n");
 		OutputDebugStringA(buf);
-		WriteFile(_hLogFile, buf, strlen(buf), 0, 0);
+		DWORD bytesWritten = 0;
+		WriteFile(_hLogFile, buf, strlen(buf), &bytesWritten, 0);
 		va_end(argptr);
 	}
 }
@@ -240,8 +241,9 @@ void CompareManifests(Manifest* om, Manifest* nm, HANDLE hDelFiles, DWORD& delFi
 				// File found but hashes dont match, mark for update
 				if (hUpdateFiles)
 				{
-					WriteFile(hUpdateFiles, oe->_file, strlen(oe->_file), 0, 0);
-					WriteFile(hUpdateFiles, "\n", 1, 0, 0);
+					DWORD bytesWritten = 0;
+					WriteFile(hUpdateFiles, oe->_file, strlen(oe->_file), &bytesWritten, 0);
+					WriteFile(hUpdateFiles, "\n", 1, &bytesWritten, 0);
 
 					// mark for download
 					downloads[updateFilesCount] = ne;
@@ -255,8 +257,9 @@ void CompareManifests(Manifest* om, Manifest* nm, HANDLE hDelFiles, DWORD& delFi
 			delFilesCount++;
 			if (hDelFiles)
 			{
-				WriteFile(hDelFiles, oe->_file, strlen(oe->_file), 0, 0);
-				WriteFile(hDelFiles, "\n", 1, 0, 0);
+				DWORD bytesWritten = 0;
+				WriteFile(hDelFiles, oe->_file, strlen(oe->_file), &bytesWritten, 0);
+				WriteFile(hDelFiles, "\n", 1, &bytesWritten, 0);
 			}
 		}
 	}
@@ -281,8 +284,9 @@ void CompareManifests(Manifest* om, Manifest* nm, HANDLE hDelFiles, DWORD& delFi
 			// File is in new manifest but not old manifest, its a new file.  Queue it for update
 			if (hUpdateFiles)
 			{
-				WriteFile(hUpdateFiles, ne->_file, strlen(ne->_file), 0, 0);
-				WriteFile(hUpdateFiles, "\n", 1, 0, 0);
+				DWORD bytesWritten = 0;
+				WriteFile(hUpdateFiles, ne->_file, strlen(ne->_file), &bytesWritten, 0);
+				WriteFile(hUpdateFiles, "\n", 1, &bytesWritten, 0);
 
 				downloads[updateFilesCount] = ne;
 			}
@@ -308,7 +312,8 @@ U8* HashFile(const char* file)
 	HANDLE hFile = CreateFileA(file, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, 0);
 	int size = GetFileSize(hFile, 0);
 	U8* data = (U8*)malloc(size);
-	ReadFile(hFile, data, size, 0, 0);
+	DWORD bytesRead = 0;
+	ReadFile(hFile, data, size, &bytesRead, 0);
 	CloseHandle(hFile);
 
 	U8* hash = Hash(data, size);
@@ -420,7 +425,8 @@ void LoadManifestFile(U8** mainifestData, DWORD* manifestSize)
 		{
 			*manifestSize = GetFileSize(hFile, 0);
 			*mainifestData = (U8*)malloc(*manifestSize);
-			ReadFile(hFile, *mainifestData, *manifestSize, 0, 0);
+			DWORD bytesRead = 0;
+			ReadFile(hFile, *mainifestData, *manifestSize, &bytesRead, 0);
 			CloseHandle(hFile);
 		}
 	}
@@ -454,7 +460,8 @@ void ManifestProcessDirectory(const char* directory, HANDLE hManifest)
 			// Read in file data
 			HANDLE hFile = CreateFileA(relPath, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, 0);
 			U8* data = (U8*)malloc(findData.nFileSizeLow);
-			ReadFile(hFile, data, findData.nFileSizeLow, 0, 0);			
+			DWORD bytesRead = 0;
+			ReadFile(hFile, data, findData.nFileSizeLow, &bytesRead, 0);			
 			CloseHandle(hFile);
 
 			// Hash the data
@@ -469,7 +476,8 @@ void ManifestProcessDirectory(const char* directory, HANDLE hManifest)
 			strcat(line, ",");
 			strcat(line, hashStr);
 			strcat(line, "\r\n");
-			WriteFile(hManifest, line, strlen(line), 0, 0);
+			DWORD bytesWritten = 0;
+			WriteFile(hManifest, line, strlen(line), &bytesWritten, 0);
 			
 			free(hashStr);
 		}
@@ -623,7 +631,8 @@ DWORD WINAPI UpdateCheckThread(void* param)
 					{
 						ValidateDirectory(localFile);
 						HANDLE hFile = CreateFileA(localFile, GENERIC_READ | GENERIC_WRITE, 0, 0, CREATE_ALWAYS, 0, 0);
-						WriteFile(hFile, dlfile->_data, dlfile->_dataSize, 0, 0);
+						DWORD bytesWritten = 0;
+						WriteFile(hFile, dlfile->_data, dlfile->_dataSize, &bytesWritten, 0);
 						CloseHandle(hFile);
 					}
 					else
@@ -715,7 +724,8 @@ void Updater::ApplyUpdate(const char* updateDir, bool qaMode)
 			DWORD size = GetFileSize(hFile, 0);
 			
 			char* data = (char*)malloc(size + 1);
-			ReadFile(hFile, data, size, 0, 0);
+			DWORD bytesRead = 0;
+			ReadFile(hFile, data, size, &bytesRead, 0);
 			CloseHandle(hFile);
 			data[size] = 0;
 
@@ -748,7 +758,8 @@ void Updater::ApplyUpdate(const char* updateDir, bool qaMode)
 			DWORD size = GetFileSize(hFile, 0);
 
 			char* data = (char*)malloc(size + 1);
-			ReadFile(hFile, data, size, 0, 0);
+			DWORD bytesRead = 0;
+			ReadFile(hFile, data, size, &bytesRead, 0);
 			CloseHandle(hFile);
 			data[size] = 0;
 
