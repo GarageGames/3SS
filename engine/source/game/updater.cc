@@ -844,7 +844,9 @@ void Updater::ApplyUpdate(const char* updateDir)
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
+	if (qaMode)
+		strcat(exePath, " -qa");
 	UpdateLog("Launching exe: %s", exePath);
-	CreateProcessA(exePath, qaMode ? "-qa" : 0, 0, 0, FALSE, CREATE_NEW_PROCESS_GROUP, 0, 0, &si, &pi);
+	CreateProcessA(NULL, exePath, 0, 0, FALSE, CREATE_NEW_PROCESS_GROUP, 0, 0, &si, &pi);
 	ExitProcess(-100);
 }
