@@ -6,6 +6,7 @@
 
 static const char* _ServerPath = "store.gginteractive.com:80";
 static char _3SSDir[1024];
+static bool _qaMode = false;
 
 static HANDLE _hLogFile = INVALID_HANDLE_VALUE;
 
@@ -560,6 +561,14 @@ DWORD WINAPI UpdateCheckThread(void* param)
 			HANDLE hUpdateFiles = 0;
 
 			char fileName[1024];
+			if (_qaMode)
+			{
+				strcpy(fileName, dldir);
+				strcat(fileName, "qamode");
+				HANDLE qafile = CreateFileA(fileName, GENERIC_READ | GENERIC_WRITE, 0, 0, CREATE_ALWAYS, 0, 0);
+				CloseHandle(qafile);
+			}
+						
 			if (delFileCount > 0)
 			{
 				strcpy(fileName, dldir);
@@ -673,18 +682,18 @@ void Updater::Init(const char** argv, int argc)
 {	
 	InitUpdateLog();
 
-	bool qaMode = false;
+	_qaMode = false;
 	for (int i = 1; i < argc; i++)
 	{
 		if (!_stricmp(argv[i], "-qa"))
 		{
 			_ServerPath = "qa.store.gginteractive.com:80";
 			UpdateLog("Using QA server for updates");
-			qaMode = true;
+			_qaMode = true;
 			break;
 		}
 	}
-	if (!qaMode && argc > 1)
+	if (!_qaMode && argc > 1)
 		return;
 
 	GetCurrentDirectoryA(sizeof(_3SSDir), _3SSDir);
@@ -698,7 +707,7 @@ void Updater::Init(const char** argv, int argc)
 	if (attrib != INVALID_FILE_ATTRIBUTES && (attrib & FILE_ATTRIBUTE_DIRECTORY))
 	{
 		// There is a pending update
-		ApplyUpdate(updateDir, qaMode);
+		ApplyUpdate(updateDir);
 	}
 	else
 	{
@@ -707,12 +716,17 @@ void Updater::Init(const char** argv, int argc)
 	}
 }
 
-void Updater::ApplyUpdate(const char* updateDir, bool qaMode)
+void Updater::ApplyUpdate(const char* updateDir)
 {
 	UpdateLog("Applying Update...");
+	
+	char delFiles[1024];
+
+	strcpy(delFiles, updateDir);
+	strcat(delFiles, "qamode");
+	bool qaMode = (GetFileAttributesA(delFiles) != INVALID_FILE_ATTRIBUTES);
 
 	// Delete any files that need to be deleted
-	char delFiles[1024];
 	strcpy(delFiles, updateDir);
 	strcat(delFiles, "delfiles.txt");
 	DWORD attribs = GetFileAttributesA(delFiles);
