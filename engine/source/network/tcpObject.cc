@@ -157,37 +157,48 @@ void TCPObject::onConnectionRequest(const NetAddress *addr, U32 connectId)
    char addrBuf[256];
    Net::addressToString(addr, addrBuf);
    dSprintf(idBuf, sizeof(idBuf), "%d", connectId);
-   Con::executef(this, 3, "onConnectRequest", addrBuf, idBuf);
+
+   if (isMethod("onConnectRequest"))
+	   Con::executef(this, 3, "onConnectRequest", addrBuf, idBuf);
 }
 
 bool TCPObject::processLine(U8 *line)
 {
-   Con::executef(this, 2, "onLine", line);
+	if (isMethod("onLine"))
+		Con::executef(this, 2, "onLine", line);
    return true;
 }
 
 void TCPObject::onDNSResolved()
 {
    mState = DNSResolved;
-   Con::executef(this, 1, "onDNSResolved");
+
+   if (isMethod("onDNSResolved"))
+	   Con::executef(this, 1, "onDNSResolved");   
 }
 
 void TCPObject::onDNSFailed()
 {
    mState = Disconnected;
-   Con::executef(this, 1, "onDNSFailed");
+   
+   if (isMethod("onDNSFailed"))
+	   Con::executef(this, 1, "onDNSFailed");
 }
 
 void TCPObject::onConnected()
 {
    mState = Connected;
-   Con::executef(this, 1, "onConnected");
+   
+   if (isMethod("onConnected"))
+	   Con::executef(this, 1, "onConnected");
 }
 
 void TCPObject::onConnectFailed()
 {
    mState = Disconnected;
-   Con::executef(this, 1, "onConnectFailed");
+
+   if (isMethod("onConnectFailed"))
+	   Con::executef(this, 1, "onConnectFailed");
 }
 
 void TCPObject::finishLastLine()
@@ -206,7 +217,9 @@ void TCPObject::onDisconnect()
 {
    finishLastLine();
    mState = Disconnected;
-   Con::executef(this, 1, "onDisconnect");
+
+   if (isMethod("onDisconnect"))
+	   Con::executef(this, 1, "onDisconnect");
 }
 
 void TCPObject::listen(U16 port)
